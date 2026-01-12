@@ -1,0 +1,11 @@
+id,name,email,department,salary,hire_date,status
+1,Иван Иванов,ivanov@test.com,IT,75000,2020-01-15,active
+2,Петр Петров,petrov@test.com,HR,65000,2019-03-22,active
+3,Сидоров Сидор,sidorov@test.com,Finance,80000,2021-07-10,active
+4,Мария Кузнецова,kuznetsova@test.com,Marketing,70000,2022-11-05,inactive
+5,Алексей Смирнов,smirnov@test.com,IT,85000,2018-09-13,active
+6,Елена Попова,popova@test.com,Sales,72000,2023-02-28,active
+7,Дмитрий Новиков,novikov@test.com,IT,68000,2021-05-17,active
+8,Ольга Волкова,volkova@test.com,HR,63000,2020-08-09,inactive
+9,Андрей Соколов,sokolov@test.com,Finance,90000,2017-12-01,active
+10,Татьяна Лебедева,lebedeva@test.com,Marketing,67000,2022-04-20,active
