@@ -1,0 +1,50 @@
+Request: Create a function that calculates the area of a rectangle given its length and width.
+
+Function Name: calculateRectangleArea
+
+Parameters: 
+- length (number): length of the rectangle
+- width (number): width of the rectangle
+
+Return Type: number (representing the area of the rectangle)
+
+Code:
+
+```
+function calculateRectangleArea(length, width) {
+    //check if parameters are numbers
+    if (typeof length !== 'number' || typeof width !== 'number') {
+        return 'Error: Parameters must be numbers';
+    }
+    //calculate area by multiplying length and width
+    let area = length * width;
+    //return the area
+    return area;
+}
+```
+
+Documentation:
+
+Function Name: calculateRectangleArea
+
+Description: This function takes in the length and width of a rectangle and calculates its area by multiplying the two values.
+
+Parameters:
+- length (number): the length of the rectangle
+- width (number): the width of the rectangle
+
+Return Type: number (representing the area of the rectangle)
+
+Example Usage:
+```
+let rectangleLength = 5;
+let rectangleWidth = 10;
+let area = calculateRectangleArea(rectangleLength, rectangleWidth);
+console.log(area); //output: 50
+```
+
+Edge Cases:
+- If the parameters are not numbers, the function will return an error message.
+- If either of the parameters is a negative number, the function will still calculate the area but the result will be negative. To avoid this, ensure that the parameters are positive numbers.
+
+Note: This function does not take into account any units of measurement for length and width. It is assumed that the parameters are in the same unit of measurement.
