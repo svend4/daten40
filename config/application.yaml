@@ -1,0 +1,199 @@
+# Тестовая конфигурация приложения
+name: test-application
+version: 1.0.0
+environment: development
+created: 2026-01-12
+
+# Настройки сервера
+server:
+  host: 0.0.0.0
+  port: 3000
+  protocol: https
+  timeout: 30000
+  cors:
+    enabled: true
+    origins:
+      - http://localhost:3000
+      - https://example.com
+    methods:
+      - GET
+      - POST
+      - PUT
+      - DELETE
+    credentials: true
+
+# Настройки базы данных
+database:
+  type: postgresql
+  host: localhost
+  port: 5432
+  name: testdb
+  username: testuser
+  password: ${DB_PASSWORD}  # Из переменных окружения
+  pool:
+    min: 2
+    max: 10
+    idle_timeout: 30000
+  ssl:
+    enabled: false
+    reject_unauthorized: false
+
+# Redis настройки
+redis:
+  host: localhost
+  port: 6379
+  password: ${REDIS_PASSWORD}
+  db: 0
+  prefix: 'test:'
+  ttl: 3600
+
+# Логирование
+logging:
+  level: debug
+  format: json
+  console:
+    enabled: true
+    colorize: true
+  file:
+    enabled: true
+    path: ./logs/app.log
+    max_size: 10485760  # 10MB
+    max_files: 5
+    compress: true
+
+# Аутентификация
+authentication:
+  jwt:
+    secret: ${JWT_SECRET}
+    expires_in: 7d
+    refresh_token_expires_in: 30d
+    algorithm: HS256
+  oauth:
+    providers:
+      - name: google
+        client_id: ${GOOGLE_CLIENT_ID}
+        client_secret: ${GOOGLE_CLIENT_SECRET}
+        callback_url: /auth/google/callback
+      - name: github
+        client_id: ${GITHUB_CLIENT_ID}
+        client_secret: ${GITHUB_CLIENT_SECRET}
+        callback_url: /auth/github/callback
+
+# Фичи приложения
+features:
+  analytics:
+    enabled: true
+    provider: google-analytics
+    tracking_id: UA-XXXXXXXXX-X
+  
+  notifications:
+    email:
+      enabled: true
+      provider: sendgrid
+      from: noreply@example.com
+      api_key: ${SENDGRID_API_KEY}
+    
+    push:
+      enabled: false
+      provider: firebase
+      server_key: ${FIREBASE_SERVER_KEY}
+  
+  file_upload:
+    enabled: true
+    max_size: 10485760  # 10MB
+    allowed_types:
+      - image/jpeg
+      - image/png
+      - image/gif
+      - application/pdf
+      - text/plain
+    storage:
+      provider: s3
+      bucket: test-bucket
+      region: eu-central-1
+  
+  caching:
+    enabled: true
+    ttl: 300
+    strategy: redis
+  
+  rate_limiting:
+    enabled: true
+    window_ms: 900000  # 15 минут
+    max_requests: 100
+    skip_successful_requests: false
+
+# API настройки
+api:
+  version: v1
+  prefix: /api
+  documentation:
+    enabled: true
+    path: /api/docs
+    swagger_ui: true
+  
+  endpoints:
+    users:
+      path: /users
+      methods: [GET, POST, PUT, DELETE]
+      auth_required: true
+      rate_limit: 100
+    
+    products:
+      path: /products
+      methods: [GET, POST, PUT, DELETE]
+      auth_required: true
+      rate_limit: 200
+    
+    health:
+      path: /health
+      methods: [GET]
+      auth_required: false
+      rate_limit: 1000
+
+# Мониторинг
+monitoring:
+  enabled: true
+  metrics:
+    - cpu_usage
+    - memory_usage
+    - request_count
+    - response_time
+    - error_rate
+  
+  alerts:
+    email:
+      enabled: true
+      recipients:
+        - admin@example.com
+        - ops@example.com
+    
+    slack:
+      enabled: false
+      webhook_url: ${SLACK_WEBHOOK_URL}
+      channel: '#alerts'
+
+# Резервное копирование
+backup:
+  enabled: true
+  schedule: '0 2 * * *'  # Каждый день в 2:00
+  retention_days: 30
+  storage:
+    provider: s3
+    bucket: backups-bucket
+    encryption: true
+
+# Тестирование
+testing:
+  unit_tests:
+    enabled: true
+    coverage_threshold: 80
+  
+  integration_tests:
+    enabled: true
+    test_database: testdb_integration
+  
+  e2e_tests:
+    enabled: false
+    headless: true
+    browser: chromium
