@@ -1,0 +1,42 @@
+{
+  "project": "Test Data Repository",
+  "version": "1.0.0",
+  "created": "2026-01-12",
+  "users": [
+    {
+      "id": 1,
+      "name": "Test User 1",
+      "email": "user1@example.com",
+      "role": "admin",
+      "active": true
+    },
+    {
+      "id": 2,
+      "name": "Test User 2",
+      "email": "user2@example.com",
+      "role": "user",
+      "active": true
+    },
+    {
+      "id": 3,
+      "name": "Test User 3",
+      "email": "user3@example.com",
+      "role": "guest",
+      "active": false
+    }
+  ],
+  "settings": {
+    "language": "ru",
+    "timezone": "Europe/Moscow",
+    "features": {
+      "github_integration": true,
+      "auto_save": true,
+      "notifications": false
+    }
+  },
+  "statistics": {
+    "total_files": 42,
+    "total_size_mb": 15.7,
+    "last_update": "2026-01-12T10:30:00Z"
+  }
+}
