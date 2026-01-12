@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <application>
+    <name>Test Application</name>
+    <version>2.5.1</version>
+    <environment>development</environment>
+  </application>
+  
+  <database>
+    <host>localhost</host>
+    <port>5432</port>
+    <name>test_db</name>
+    <username>test_user</username>
+    <pool_size>20</pool_size>
+  </database>
+  
+  <features>
+    <feature name="analytics" enabled="true" />
+    <feature name="notifications" enabled="false" />
+    <feature name="backup" enabled="true" />
+    <feature name="caching" enabled="true" />
+  </features>
+  
+  <logging>
+    <level>DEBUG</level>
+    <format>json</format>
+    <outputs>
+      <output type="file" path="/var/log/app.log" />
+      <output type="console" />
+    </outputs>
+  </logging>
+  
+  <api>
+    <endpoints>
+      <endpoint path="/api/v1/users" method="GET" auth="required" />
+      <endpoint path="/api/v1/data" method="POST" auth="required" />
+      <endpoint path="/health" method="GET" auth="public" />
+    </endpoints>
+    <rate_limit requests="1000" period="3600" />
+  </api>
+</configuration>
