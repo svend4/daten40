@@ -1,0 +1,68 @@
+{
+  "schema": "ifos.block.manifest.v1",
+  "block_id": "NEXT-22",
+  "title": "Exceptions, Waivers & Risk Acceptance",
+  "date": "2026-01-13",
+  "status": "draft",
+  "owners": [
+    "svend4"
+  ],
+  "artifacts": [
+    {
+      "type": "readme",
+      "path": "blocks/NEXT-22/README_20260113.md"
+    },
+    {
+      "type": "spec",
+      "path": "blocks/NEXT-22/spec_20260113.md"
+    },
+    {
+      "type": "manifest",
+      "path": "blocks/NEXT-22/manifest_20260113.json"
+    },
+    {
+      "type": "checksums",
+      "path": "blocks/NEXT-22/checksums_20260113.json"
+    }
+  ],
+  "optional_artifacts": [
+    {
+      "type": "schema",
+      "path": "blocks/NEXT-22/schema_20260113.json"
+    },
+    {
+      "type": "openapi",
+      "path": "blocks/NEXT-22/openapi_20260113.yaml"
+    },
+    {
+      "type": "pack_files",
+      "path": "blocks/NEXT-22/pack_files_20260113/"
+    },
+    {
+      "type": "zip",
+      "path": "releases/NEXT-22_exceptions_waivers_risk_acceptance_pack_20260113.zip"
+    }
+  ],
+  "dependencies": {
+    "blocks": [
+      "NEXT-21",
+      "NEXT-20",
+      "NEXT-19",
+      "NEXT-18",
+      "NEXT-17",
+      "IFOS_42801_43200_case_management_ticketing_os_pack",
+      "IFOS_52801_53200_notifications_activity_feed_os_pack",
+      "IFOS_77601_78000_audit_compliance_reporting_os_pack"
+    ]
+  },
+  "tags": [
+    "ifos",
+    "compliance",
+    "exceptions",
+    "waivers",
+    "risk-acceptance",
+    "approvals",
+    "audit"
+  ],
+  "notes": "Append-only publication. Overrides must be scoped, expiring, and auditable (worm_ref)."
+}
