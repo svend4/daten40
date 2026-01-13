@@ -1,0 +1,26 @@
+{
+  "schema": "ifos.block.manifest.v1",
+  "block_id": "NEXT-XX",
+  "title": "<Название блока>",
+  "date": "YYYY-MM-DD",
+  "status": "draft",
+  "owners": ["<owner>"]
+,
+  "artifacts": [
+    {"type": "readme", "path": "blocks/NEXT-XX/README_YYYYMMDD.md"},
+    {"type": "spec", "path": "blocks/NEXT-XX/spec_YYYYMMDD.md"},
+    {"type": "manifest", "path": "blocks/NEXT-XX/manifest_YYYYMMDD.json"},
+    {"type": "checksums", "path": "blocks/NEXT-XX/checksums_YYYYMMDD.json"}
+  ],
+  "optional_artifacts": [
+    {"type": "openapi", "path": "blocks/NEXT-XX/openapi_YYYYMMDD.yaml"},
+    {"type": "schema", "path": "blocks/NEXT-XX/schema_YYYYMMDD.json"},
+    {"type": "pack_files", "path": "blocks/NEXT-XX/pack_files_YYYYMMDD/"},
+    {"type": "zip", "path": "releases/NEXT-XX_<slug>_YYYYMMDD.zip"}
+  ],
+  "dependencies": {
+    "blocks": ["<block_id>"]
+  },
+  "tags": ["ifos", "compliance"],
+  "notes": ""
+}
