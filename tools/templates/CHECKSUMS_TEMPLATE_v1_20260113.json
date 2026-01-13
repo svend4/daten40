@@ -1,0 +1,9 @@
+{
+  "generated_at": "YYYY-MM-DDTHH:MM:SSZ",
+  "algo": "sha256",
+  "files": {
+    "blocks/NEXT-XX/README_YYYYMMDD.md": {"sha256": "<sha256>", "bytes": 0},
+    "blocks/NEXT-XX/spec_YYYYMMDD.md": {"sha256": "<sha256>", "bytes": 0},
+    "blocks/NEXT-XX/manifest_YYYYMMDD.json": {"sha256": "<sha256>", "bytes": 0}
+  }
+}
