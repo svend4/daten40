@@ -1,0 +1,65 @@
+{
+  "schema": "ifos.block.manifest.v1",
+  "block_id": "NEXT-18",
+  "title": "Evidence Retention & WORM Logs",
+  "date": "2026-01-13",
+  "status": "draft",
+  "owners": [
+    "svend4"
+  ],
+  "artifacts": [
+    {
+      "type": "readme",
+      "path": "blocks/NEXT-18/README_20260113.md"
+    },
+    {
+      "type": "spec",
+      "path": "blocks/NEXT-18/spec_20260113.md"
+    },
+    {
+      "type": "manifest",
+      "path": "blocks/NEXT-18/manifest_20260113.json"
+    },
+    {
+      "type": "checksums",
+      "path": "blocks/NEXT-18/checksums_20260113.json"
+    }
+  ],
+  "optional_artifacts": [
+    {
+      "type": "schema",
+      "path": "blocks/NEXT-18/schema_20260113.json"
+    },
+    {
+      "type": "openapi",
+      "path": "blocks/NEXT-18/openapi_20260113.yaml"
+    },
+    {
+      "type": "pack_files",
+      "path": "blocks/NEXT-18/pack_files_20260113/"
+    },
+    {
+      "type": "zip",
+      "path": "releases/NEXT-18_evidence_retention_worm_pack_20260113.zip"
+    }
+  ],
+  "dependencies": {
+    "blocks": [
+      "NEXT-17",
+      "NEXT-12",
+      "NEXT-13",
+      "NEXT-14",
+      "NEXT-15",
+      "NEXT-16"
+    ]
+  },
+  "tags": [
+    "ifos",
+    "compliance",
+    "evidence",
+    "worm",
+    "retention",
+    "audit"
+  ],
+  "notes": "Append-only publication. ZIP optional; prefer pack_files if binary upload unstable."
+}
