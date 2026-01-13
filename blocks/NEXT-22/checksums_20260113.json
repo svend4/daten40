@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-01-13T00:00:00Z",
+  "algo": "sha256",
+  "files": {
+    "blocks/NEXT-22/README_20260113.md": {
+      "sha256": "fbe2265735edf11fcaca54d6a55d9539c3e4c6a5c44cde77ac24aa3dac651362",
+      "bytes": 5257
+    },
+    "blocks/NEXT-22/spec_20260113.md": {
+      "sha256": "3df5b0e6d6fe4a97b5515be0edcd13b719882d192bf9c79977fea3cee2cca305",
+      "bytes": 7240
+    },
+    "blocks/NEXT-22/manifest_20260113.json": {
+      "sha256": "e16cbc922d1321a237cca0419864e188fe154f2e5b615ddb6dd5e6dbe174e45d",
+      "bytes": 1543
+    }
+  }
+}
