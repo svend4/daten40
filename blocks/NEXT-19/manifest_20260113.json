@@ -1,0 +1,66 @@
+{
+  "schema": "ifos.block.manifest.v1",
+  "block_id": "NEXT-19",
+  "title": "Compliance Timeline & Snapshots",
+  "date": "2026-01-13",
+  "status": "draft",
+  "owners": [
+    "svend4"
+  ],
+  "artifacts": [
+    {
+      "type": "readme",
+      "path": "blocks/NEXT-19/README_20260113.md"
+    },
+    {
+      "type": "spec",
+      "path": "blocks/NEXT-19/spec_20260113.md"
+    },
+    {
+      "type": "manifest",
+      "path": "blocks/NEXT-19/manifest_20260113.json"
+    },
+    {
+      "type": "checksums",
+      "path": "blocks/NEXT-19/checksums_20260113.json"
+    }
+  ],
+  "optional_artifacts": [
+    {
+      "type": "schema",
+      "path": "blocks/NEXT-19/schema_20260113.json"
+    },
+    {
+      "type": "openapi",
+      "path": "blocks/NEXT-19/openapi_20260113.yaml"
+    },
+    {
+      "type": "pack_files",
+      "path": "blocks/NEXT-19/pack_files_20260113/"
+    },
+    {
+      "type": "zip",
+      "path": "releases/NEXT-19_compliance_timeline_snapshots_pack_20260113.zip"
+    }
+  ],
+  "dependencies": {
+    "blocks": [
+      "NEXT-18",
+      "NEXT-17",
+      "NEXT-12",
+      "NEXT-13",
+      "NEXT-14",
+      "NEXT-15",
+      "NEXT-16"
+    ]
+  },
+  "tags": [
+    "ifos",
+    "compliance",
+    "timeline",
+    "snapshot",
+    "diff",
+    "audit"
+  ],
+  "notes": "Append-only publication. ZIP optional; prefer text + pack_files if binary upload unstable."
+}
