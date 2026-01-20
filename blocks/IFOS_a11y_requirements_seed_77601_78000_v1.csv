@@ -1,0 +1,26 @@
+id,requirement,wcag,level,surface,severity,test_method,status
+A11Y-001,Все интерактивные элементы доступны с клавиатуры (Tab/Shift+Tab/Enter/Space).,2.1.1,A,ui_components,critical,auto+manual,required
+A11Y-002,Фокус всегда видим (focus ring) и не скрыт стилями.,2.4.7,AA,ui_components,high,manual,required
+A11Y-003,Управление фокусом в модальных окнах: trap-focus + возврат фокуса.,2.4.3,A,modal_dialog,high,manual,required
+A11Y-004,Контраст текста и интерактивных элементов соответствует требованиям.,1.4.3,AA,theme_tokens,high,auto+manual,required
+A11Y-005,Не полагаться только на цвет для передачи смысла (ошибки/статусы).,1.4.1,A,forms,high,manual,required
+A11Y-006,Формы имеют label/aria-label и связанный текст ошибки (aria-describedby).,3.3.2,A,forms,critical,auto+manual,required
+A11Y-007,Сообщения об ошибках и успешных действиях доступны скрин‑ридеру (aria-live).,4.1.3,AA,notifications,high,manual,required
+A11Y-008,Таб‑порядок логичен и следует визуальному порядку.,2.4.3,A,ui_layout,high,manual,required
+A11Y-009,Есть skip-link на основной контент для длинных страниц/панелей.,2.4.1,A,app_shell,medium,manual,recommended
+A11Y-010,Изображения имеют alt; декоративные — пустой alt.,1.1.1,A,content_pipeline,high,auto+manual,required
+A11Y-011,Видео имеют субтитры; аудио — транскрипт.,1.2.2,A,content_pipeline,medium,manual,recommended
+A11Y-012,Компоненты таблиц/гридов поддерживают навигацию и озвучивание заголовков.,1.3.1,A,data_grid,high,manual,required
+A11Y-013,Иконки кнопок имеют доступные имена (aria-label или текст).,4.1.2,A,ui_components,high,auto+manual,required
+A11Y-014,Ссылки и кнопки различимы и имеют понятный текст.,2.4.4,A,content,medium,manual,recommended
+A11Y-015,Интерфейс корректно работает при zoom 200%+ и reflow.,1.4.10,AA,responsive_layout,high,manual,required
+A11Y-016,Снижение движения (reduce motion) отключает не‑критичные анимации.,2.3.3,AAA,ui_motion,low,manual,optional
+A11Y-017,Поля ввода имеют понятные подсказки и не теряют контекст при ошибке.,3.3.3,AA,forms,medium,manual,recommended
+A11Y-018,"Заголовки и структура страниц семантичны (H1..Hn), без пропусков.",1.3.1,A,app_shell,medium,auto+manual,recommended
+A11Y-019,Язык страницы задан корректно (lang) и переключается при локализации.,3.1.1,A,i18n,medium,auto,recommended
+A11Y-020,Диалоги подтверждения не блокируют пользователя без альтернатив.,2.2.1,A,dialogs,medium,manual,recommended
+A11Y-021,Ошибки валидации показываются рядом с полем и суммарно вверху формы.,3.3.1,A,forms,high,manual,required
+A11Y-022,Горячие клавиши конфигурируемы и не конфликтуют с OS/браузером.,2.1.4,A,shortcuts,medium,manual,recommended
+A11Y-023,Нет ловушек клавиатуры: фокус можно покинуть стандартными средствами.,2.1.2,A,ui_components,critical,manual,required
+A11Y-024,Ошибки в мастерах настройки (wizard) объясняются понятным языком.,3.3.3,AA,guided_setup,medium,manual,recommended
+A11Y-025,Экспортируемые документы (PDF/Doc) имеют структуру и теги (где применимо).,1.3.1,A,export_pipeline,medium,manual,optional

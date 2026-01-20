@@ -1,0 +1,67 @@
+{
+  "audit_run_id": "AUD-2026-01-10-0001",
+  "target": {
+    "type": "page",
+    "app": "ui_console",
+    "path": "/marketplace/listing/123"
+  },
+  "tooling": {
+    "auto": [
+      "axe-core"
+    ],
+    "manual": [
+      "keyboard-only",
+      "screen-reader"
+    ]
+  },
+  "summary": {
+    "issues_total": 5,
+    "critical": 1,
+    "high": 2,
+    "medium": 2,
+    "low": 0
+  },
+  "issues": [
+    {
+      "issue_id": "ISS-0001",
+      "severity": "critical",
+      "wcag_ref": "2.1.1",
+      "title": "Кнопка покупки недоступна с клавиатуры",
+      "component": "purchase_button",
+      "repro_steps": [
+        "Открыть страницу",
+        "Нажимать Tab до секции покупки",
+        "Фокус пропускает кнопку"
+      ],
+      "expected": "Фокус попадает на кнопку; Enter активирует действие",
+      "status": "open",
+      "owner_team": "Marketplace-UI"
+    },
+    {
+      "issue_id": "ISS-0002",
+      "severity": "high",
+      "wcag_ref": "1.4.3",
+      "title": "Недостаточный контраст текста цены",
+      "component": "price_label",
+      "status": "open"
+    }
+  ],
+  "remediation_plan": {
+    "plan_id": "RP-0001",
+    "owner_team": "Marketplace-UI",
+    "milestones": [
+      {
+        "name": "Fix",
+        "due": "2026-01-18"
+      },
+      {
+        "name": "Verify",
+        "due": "2026-01-20"
+      },
+      {
+        "name": "Release",
+        "due": "2026-01-22"
+      }
+    ]
+  }
+}
