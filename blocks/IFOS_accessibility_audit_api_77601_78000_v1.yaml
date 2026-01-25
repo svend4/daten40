@@ -1,0 +1,37 @@
+openapi: 3.0.3
+info:
+  title: IFOS Accessibility (A11y) API
+  version: "1.0"
+paths:
+  /a11y/profiles:
+    get:
+      summary: List accessibility profiles
+      responses:
+        "200": { description: OK }
+    post:
+      summary: Create/update an accessibility profile
+      responses:
+        "200": { description: OK }
+  /a11y/audits:
+    post:
+      summary: Create an audit run
+      responses:
+        "201": { description: Created }
+    get:
+      summary: List audit runs
+      responses:
+        "200": { description: OK }
+  /a11y/issues:
+    get:
+      summary: Query issues
+      responses:
+        "200": { description: OK }
+    patch:
+      summary: Update issue status/owner
+      responses:
+        "200": { description: OK }
+  /a11y/reports:
+    get:
+      summary: Get aggregated reports and exports
+      responses:
+        "200": { description: OK }
