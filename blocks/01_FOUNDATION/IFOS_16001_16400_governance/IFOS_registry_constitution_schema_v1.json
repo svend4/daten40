@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Registry Constitution Schema v1",
+  "type": "object",
+  "required": [
+    "constitution_id",
+    "jurisdiction",
+    "version",
+    "principles",
+    "publication_minimum",
+    "moderation_process",
+    "sanctions_catalog",
+    "appeal_process",
+    "transparency"
+  ],
+  "properties": {
+    "constitution_id": {
+      "type": "string"
+    },
+    "jurisdiction": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "principles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "publication_minimum": {
+      "type": "object",
+      "properties": {
+        "requires_license": {
+          "type": "boolean"
+        },
+        "requires_contracts": {
+          "type": "boolean"
+        },
+        "requires_flags": {
+          "type": "boolean"
+        },
+        "requires_contact": {
+          "type": "boolean"
+        },
+        "requires_security_scan": {
+          "type": "boolean"
+        }
+      }
+    },
+    "moderation_process": {
+      "type": "object",
+      "properties": {
+        "stages": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "auto",
+              "moderator",
+              "panel",
+              "federation"
+            ]
+          }
+        },
+        "sla_hours": {
+          "type": "integer"
+        }
+      }
+    },
+    "sanctions_catalog": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "appeal_process": {
+      "type": "object",
+      "properties": {
+        "deadline_days": {
+          "type": "integer"
+        },
+        "panel": {
+          "type": "string"
+        },
+        "public_summary": {
+          "type": "boolean"
+        }
+      }
+    },
+    "transparency": {
+      "type": "object",
+      "properties": {
+        "public_reports": {
+          "type": "boolean"
+        },
+        "publish_sanctions_summary": {
+          "type": "boolean"
+        },
+        "publish_method_versions": {
+          "type": "boolean"
+        }
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
