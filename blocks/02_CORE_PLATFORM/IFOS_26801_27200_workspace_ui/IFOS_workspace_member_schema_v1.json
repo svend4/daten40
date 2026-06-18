@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS WorkspaceMember Schema v1",
+  "type": "object",
+  "required": [
+    "workspace_id",
+    "user_id",
+    "role",
+    "added_at",
+    "version"
+  ],
+  "properties": {
+    "workspace_id": {
+      "type": "string"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "viewer",
+        "editor",
+        "admin"
+      ]
+    },
+    "scopes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "cards",
+          "flows",
+          "packages",
+          "secrets",
+          "export",
+          "admin"
+        ]
+      }
+    },
+    "added_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
