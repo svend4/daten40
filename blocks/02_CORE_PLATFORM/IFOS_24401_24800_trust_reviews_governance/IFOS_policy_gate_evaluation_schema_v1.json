@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Policy Gate Evaluation Schema v1",
+  "type": "object",
+  "required": [
+    "gate_id",
+    "policy_id",
+    "subject_id",
+    "profile_id",
+    "status",
+    "findings",
+    "suggested_fixes",
+    "evaluated_at",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "gate_id": {
+      "type": "string"
+    },
+    "policy_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "profile_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pass",
+        "warn",
+        "fail"
+      ]
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "suggested_fixes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evaluated_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
