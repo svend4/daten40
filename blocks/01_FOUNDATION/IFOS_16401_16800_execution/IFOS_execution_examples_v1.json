@@ -1,0 +1,243 @@
+{
+  "sandbox_policy": {
+    "policy_id": "pol.sandbox.default",
+    "mode": "sandbox",
+    "network": {
+      "default": "deny",
+      "allow_domains": [
+        "api.telegram.org",
+        "rss.example.com"
+      ],
+      "allow_ports": [
+        443
+      ]
+    },
+    "filesystem": {
+      "default": "deny",
+      "allow_paths": [
+        "/tmp"
+      ]
+    },
+    "limits": {
+      "timeout_sec": 60,
+      "memory_mb": 512,
+      "concurrency": 1
+    },
+    "redaction": {
+      "mask_secrets": true,
+      "mask_pii": true,
+      "patterns": [
+        "Bearer\\s+[A-Za-z0-9\\-\\._~\\+\\/]+=*"
+      ]
+    },
+    "flags_policy": {
+      "pii": {
+        "require_mode": "restricted",
+        "extra_redaction": true
+      },
+      "money": {
+        "require_signed": true,
+        "require_mode": "restricted"
+      },
+      "security_sensitive": {
+        "require_signed": true,
+        "require_mode": "restricted"
+      }
+    },
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T13:00:00Z"
+  },
+  "job": {
+    "job_id": "job.travel.7y7hschh",
+    "tenant_id": "ten.travelhub.001",
+    "bundle_id": "bundle.travelhub.core",
+    "bundle_version": "1.0.0",
+    "target": "n8n",
+    "config": {
+      "rss_url": "https://rss.example.com/travel.xml",
+      "digest_hour": 9,
+      "chat_id": "-1001234567890"
+    },
+    "secrets": [
+      {
+        "name": "telegram_bot_token",
+        "ref": "secret://ten/travelhub.001/vault/telegram_bot_token",
+        "scopes": [
+          "telegram:send"
+        ],
+        "rotate_days": 90,
+        "redaction": {
+          "mask": true,
+          "patterns": [
+            "[0-9]{9}:[A-Za-z0-9_-]{20,}"
+          ]
+        }
+      }
+    ],
+    "policy_ref": "pol.sandbox.default",
+    "schedule": {
+      "enabled": true,
+      "cron": "0 9 * * *",
+      "timezone": "Europe/Berlin"
+    },
+    "created_at": "2026-01-02T13:00:00Z",
+    "updated_at": "2026-01-02T13:00:00Z"
+  },
+  "run_record": {
+    "run_id": "run.r.sfi0bot2",
+    "job_id": "job.travel.7y7hschh",
+    "status": "success",
+    "started_at": "2026-01-02T13:00:00Z",
+    "finished_at": "2026-01-02T13:00:00Z",
+    "metrics": {
+      "duration_ms": 842,
+      "cpu_ms": 210,
+      "mem_mb_peak": 190,
+      "network_bytes": 120340,
+      "steps_total": 8,
+      "steps_failed": 0
+    },
+    "artifacts": [
+      {
+        "name": "digest_preview.json",
+        "uri": "artifact://runs/digest_preview.json",
+        "sha256": "(sha256)"
+      }
+    ],
+    "logs_ref": "log://runs/job.travel.7y7hschh/latest",
+    "audit_refs": [
+      "aud.run.start.001",
+      "aud.run.finish.001"
+    ],
+    "evidence_update": {
+      "level": "L1",
+      "ref": "evid.smoke.test.001"
+    }
+  },
+  "build_manifest": {
+    "build_id": "bld.b.aicfimvx",
+    "source": {
+      "bundle_id": "bundle.travelhub.core",
+      "bundle_version": "1.0.0",
+      "git_commit": "abc1234",
+      "registry_refs": [
+        "reg:function:telegram.send_message@1.0.0",
+        "reg:function:rss.read_feed@1.0.0"
+      ]
+    },
+    "locks": {
+      "deps": [
+        {
+          "name": "requests",
+          "version": "2.32.0",
+          "sha256": "(sha256)"
+        }
+      ],
+      "container_image": {
+        "name": "ifos/travelhub-runtime",
+        "digest": "sha256:(digest)"
+      }
+    },
+    "steps": [
+      "fetch sources",
+      "resolve deps",
+      "build image",
+      "sign artifacts"
+    ],
+    "artifacts": [
+      {
+        "name": "image.ifos/travelhub-runtime",
+        "uri": "oci://ifos/travelhub-runtime@sha256:(digest)",
+        "sha256": "(sha256)"
+      }
+    ],
+    "signatures": [
+      {
+        "signer": "pub.travelhub",
+        "sig": "(sig)",
+        "alg": "ed25519"
+      },
+      {
+        "signer": "node.builder.01",
+        "sig": "(sig)",
+        "alg": "ed25519"
+      }
+    ],
+    "created_at": "2026-01-02T13:00:00Z",
+    "method_version": "build.v1"
+  },
+  "install_plan": {
+    "plan_id": "plan.p.jo1yidv4",
+    "bundle_id": "bundle.travelhub.core",
+    "bundle_version": "1.0.0",
+    "target": "n8n",
+    "steps": [
+      {
+        "kind": "install",
+        "name": "Import n8n workflow",
+        "details": "Upload workflow JSON and create nodes."
+      },
+      {
+        "kind": "provision_secret",
+        "name": "Create credential placeholder",
+        "details": "Bind telegram_bot_token SecretRef to n8n credential."
+      },
+      {
+        "kind": "configure",
+        "name": "Set RSS URL and schedule",
+        "details": "Write config to workflow parameters."
+      },
+      {
+        "kind": "smoke_test",
+        "name": "Test Telegram send",
+        "details": "Send a test message to test chat."
+      },
+      {
+        "kind": "schedule",
+        "name": "Enable cron",
+        "details": "Enable daily schedule 09:00 Europe/Berlin."
+      }
+    ],
+    "required_secrets": [
+      {
+        "name": "telegram_bot_token",
+        "type": "api_key",
+        "scopes": [
+          "telegram:send"
+        ],
+        "how_to_get": "Create a Telegram bot with BotFather and copy token.",
+        "test_call": "telegram.send_message (test) -> chat_id"
+      }
+    ],
+    "smoke_tests": [
+      {
+        "name": "telegram_send_test",
+        "criteria": "receive message within 10s",
+        "timeout_sec": 10
+      }
+    ],
+    "rollback": {
+      "steps": [
+        "disable workflow schedule",
+        "remove workflow",
+        "revoke credential placeholder"
+      ],
+      "max_minutes": 10
+    },
+    "generated_at": "2026-01-02T13:00:00Z"
+  },
+  "rollback_plan": {
+    "rollback_id": "rb.rb.5tli1ueh",
+    "target": "n8n",
+    "subject": {
+      "kind": "install_plan",
+      "id": "plan.p.jo1yidv4"
+    },
+    "steps": [
+      "disable workflow schedule",
+      "remove workflow",
+      "revoke credential placeholder"
+    ],
+    "created_at": "2026-01-02T13:00:00Z"
+  }
+}
