@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS PackageSignature Schema v1",
+  "type": "object",
+  "required": [
+    "signer_id",
+    "key_id",
+    "signed_hashes",
+    "signature",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "signer_id": {
+      "type": "string"
+    },
+    "key_id": {
+      "type": "string"
+    },
+    "signed_hashes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "signature": {
+      "type": "string",
+      "description": "base64 signature"
+    },
+    "ts": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
