@@ -1,0 +1,62 @@
+{
+  "registry_id": "reg.r.dlf6zbk3lw",
+  "entries": [
+    {
+      "name": "IFOS_metric_schema_v1.json",
+      "ref": "file://IFOS_metric_schema_v1.json",
+      "hash": "sha256:a89e87718203caf8619dfb5cd36db93876fa94ce877d9dd63161e934c7e764e2"
+    },
+    {
+      "name": "IFOS_log_event_schema_v1.json",
+      "ref": "file://IFOS_log_event_schema_v1.json",
+      "hash": "sha256:0e4066acd4ecaa7dd4dcdc3ec4008917a01430e32d33887d4d5adf6bc650b8ab"
+    },
+    {
+      "name": "IFOS_trace_span_schema_v1.json",
+      "ref": "file://IFOS_trace_span_schema_v1.json",
+      "hash": "sha256:7a5fff0037309cd9e26a353c8a7ee4c4597d85170d7cc516b724a51ffefff7fc"
+    },
+    {
+      "name": "IFOS_health_check_schema_v1.json",
+      "ref": "file://IFOS_health_check_schema_v1.json",
+      "hash": "sha256:173c1317ce0f86e8412b144c01b4854d68e43039aba7d194f01cf4c0c1051e7e"
+    },
+    {
+      "name": "IFOS_slo_schema_v1.json",
+      "ref": "file://IFOS_slo_schema_v1.json",
+      "hash": "sha256:d297d2f211ef2d71cbf6c845a055ca466891196fcbab490b2f2f34de9e1a47f8"
+    },
+    {
+      "name": "IFOS_alert_rule_schema_v1.json",
+      "ref": "file://IFOS_alert_rule_schema_v1.json",
+      "hash": "sha256:a7ccb1cb22dc65f87e57a1eb4cb1abcec48d156d7c96b5a650a223e483d6547e"
+    },
+    {
+      "name": "IFOS_incident_schema_v1.json",
+      "ref": "file://IFOS_incident_schema_v1.json",
+      "hash": "sha256:38f05d8e5ce378fa16e1a65ab0abe7e646bc28a9e0e9f257fdd0efd2b8103d11"
+    },
+    {
+      "name": "IFOS_run_report_schema_v1.json",
+      "ref": "file://IFOS_run_report_schema_v1.json",
+      "hash": "sha256:c9e09b298a995dda83d56a189a543967a755df3a37b50cc478c21c6ddad3d095"
+    },
+    {
+      "name": "IFOS_diagnostic_finding_schema_v1.json",
+      "ref": "file://IFOS_diagnostic_finding_schema_v1.json",
+      "hash": "sha256:e4711adc0d8ca895aa49305a0c73cdaeabe69417d1f9d940c72b3b9aa9f70162"
+    },
+    {
+      "name": "IFOS_auto_fix_plan_schema_v1.json",
+      "ref": "file://IFOS_auto_fix_plan_schema_v1.json",
+      "hash": "sha256:ff1b6c51da2a96e9c54764d268404f508784c2b290a39a43896b9969007cdc8a"
+    },
+    {
+      "name": "IFOS_reliability_policy_schema_v1.json",
+      "ref": "file://IFOS_reliability_policy_schema_v1.json",
+      "hash": "sha256:173d826a8243fc30fa17c0f2e347631e01b6947f518361505949ac6ab9908f4e"
+    }
+  ],
+  "updated_at": "2026-01-03T07:10:00Z",
+  "version": "1.0.0"
+}
