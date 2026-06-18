@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Idempotency Policy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "mode",
+    "key_fields",
+    "dedupe_window_seconds",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "none",
+        "best_effort",
+        "strict"
+      ]
+    },
+    "key_fields": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dedupe_window_seconds": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "safe_retry_steps": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 1
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
