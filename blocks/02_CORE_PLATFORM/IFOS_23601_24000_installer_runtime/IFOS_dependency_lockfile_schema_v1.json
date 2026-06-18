@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Dependency Lockfile Schema v1",
+  "type": "object",
+  "required": [
+    "lock_id",
+    "subject_id",
+    "resolved",
+    "hash",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "lock_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "resolved": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "hash": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
