@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SBOM Schema v1",
+  "type": "object",
+  "required": [
+    "sbom_id",
+    "subject",
+    "format",
+    "components",
+    "licenses",
+    "hashes",
+    "generated_at",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "sbom_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "format": {
+      "type": "string",
+      "enum": [
+        "cyclonedx",
+        "spdx",
+        "custom"
+      ]
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "purl": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "hash": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "licenses": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "hashes": {
+      "type": "object",
+      "properties": {
+        "bundle_digest": {
+          "type": "string"
+        },
+        "sbom_digest": {
+          "type": "string"
+        }
+      }
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
