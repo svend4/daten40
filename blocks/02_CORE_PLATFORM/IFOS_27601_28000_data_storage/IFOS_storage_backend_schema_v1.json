@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS StorageBackend Schema v1",
+  "type": "object",
+  "required": [
+    "backend_id",
+    "kind",
+    "config",
+    "scopes",
+    "enabled",
+    "version"
+  ],
+  "properties": {
+    "backend_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "local_fs",
+        "s3",
+        "gdrive",
+        "postgres",
+        "sqlite",
+        "vector_db",
+        "other"
+      ]
+    },
+    "config": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "encryption": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "scopes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "raw",
+          "normalized",
+          "artifacts",
+          "indexes",
+          "backups"
+        ]
+      }
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
