@@ -1,0 +1,347 @@
+{
+  "ui_card": {
+    "card_id": "card.c.s5vd3v6tkc",
+    "title": "RSS → Сводка → Telegram",
+    "summary": "Собирает новости, убирает дубликаты, делает краткую сводку и отправляет в Telegram.",
+    "category": "news",
+    "tags": [
+      "rss",
+      "summary",
+      "telegram"
+    ],
+    "inputs": [
+      {
+        "name": "Источник RSS",
+        "type": "connector",
+        "required": true,
+        "hint": "RSS connector"
+      },
+      {
+        "name": "Токен Telegram",
+        "type": "secret_ref",
+        "required": true,
+        "hint": "secretref.telegram.bot"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "Дайджест",
+        "type": "report",
+        "hint": "HTML/PDF/Telegram message"
+      }
+    ],
+    "widgets": [
+      {
+        "widget_id": "w.w.de1qhf92by",
+        "type": "status_badge",
+        "data_ref": "metric:job.daily_brief.health",
+        "options": {},
+        "version": "1.0.0"
+      },
+      {
+        "widget_id": "w.w.rhouxtkg16",
+        "type": "last_run",
+        "data_ref": "run:last(job.daily_brief)",
+        "options": {},
+        "version": "1.0.0"
+      }
+    ],
+    "actions": [
+      {
+        "action_id": "a.a.v173rpdnov",
+        "kind": "run_job",
+        "label": "Run now",
+        "target": {
+          "kind": "job",
+          "id": "job.daily_brief"
+        },
+        "params": {},
+        "guards": {
+          "requires_policy_check": true
+        },
+        "version": "1.0.0"
+      },
+      {
+        "action_id": "a.a.hxfc4ed609",
+        "kind": "configure",
+        "label": "Configure",
+        "target": {
+          "kind": "job",
+          "id": "job.daily_brief"
+        },
+        "params": {},
+        "guards": {
+          "requires_role": [
+            "Builder"
+          ]
+        },
+        "version": "1.0.0"
+      }
+    ],
+    "status": "ok",
+    "docs_ref": "docs://daily_brief",
+    "version": "1.0.0"
+  },
+  "vitrine": {
+    "vitrine_id": "vit.v.0u4fzkbzgh",
+    "title": "Новости дня",
+    "goal": "Получить короткую повестку дня и отправить себе в мессенджер.",
+    "layout": {
+      "type": "columns",
+      "settings": {
+        "left": "cards",
+        "right": "outputs"
+      }
+    },
+    "cards": [
+      "card.c.s5vd3v6tkc"
+    ],
+    "widgets": [
+      {
+        "widget_id": "w.w.sogjzev646",
+        "type": "table_preview",
+        "data_ref": "collection:news.top?limit=10",
+        "options": {
+          "title": "Топ-10"
+        },
+        "version": "1.0.0"
+      }
+    ],
+    "primary_action": {
+      "action_id": "a.a.kyg2ac9vl5",
+      "kind": "run_job",
+      "label": "Собрать дайджест",
+      "target": {
+        "kind": "job",
+        "id": "job.daily_brief"
+      },
+      "params": {},
+      "guards": {
+        "requires_policy_check": true
+      },
+      "version": "1.0.0"
+    },
+    "presets": [
+      {
+        "name": "Только технологии",
+        "params": {
+          "topic": "tech"
+        }
+      },
+      {
+        "name": "Только Германия",
+        "params": {
+          "region": "DE"
+        }
+      }
+    ],
+    "help": "Нажмите «Собрать дайджест». При первом запуске укажите Telegram secret_ref.",
+    "version": "1.0.0"
+  },
+  "dashboard": {
+    "dashboard_id": "dash.d.rk6hilj84x",
+    "title": "Мой рабочий стол",
+    "sections": [
+      {
+        "title": "Витрины",
+        "items": [
+          {
+            "kind": "vitrine",
+            "ref": "vit.v.0u4fzkbzgh"
+          }
+        ]
+      },
+      {
+        "title": "Последние запуски",
+        "items": [
+          {
+            "kind": "widget",
+            "ref": "w.last_runs"
+          }
+        ]
+      },
+      {
+        "title": "Предупреждения",
+        "items": [
+          {
+            "kind": "widget",
+            "ref": "w.alerts"
+          }
+        ]
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "compare_view": {
+    "compare_id": "cmp.c.guezuonhi5",
+    "subject": "hosting",
+    "columns": [
+      {
+        "name": "Цена/мес",
+        "field": "price_month",
+        "type": "money",
+        "weight": 0.35
+      },
+      {
+        "name": "Надёжность",
+        "field": "uptime_score",
+        "type": "rating",
+        "weight": 0.35
+      },
+      {
+        "name": "Простота деплоя",
+        "field": "deploy_ease",
+        "type": "rating",
+        "weight": 0.2
+      },
+      {
+        "name": "Отзывы",
+        "field": "avg_rating",
+        "type": "rating",
+        "weight": 0.1
+      }
+    ],
+    "constraints": {
+      "region": "EU",
+      "supports_webhooks": true
+    },
+    "scoring": {
+      "model": "weighted_sum",
+      "params": {
+        "normalize": true
+      }
+    },
+    "explain": {
+      "enabled": true,
+      "template": "#{rank}: {name} потому что {top_reasons}"
+    },
+    "version": "1.0.0"
+  },
+  "news_conference": {
+    "conf_id": "conf.n.58avbwlrjg",
+    "scope": {
+      "time_window": "day",
+      "topics": [
+        "tech",
+        "economy"
+      ],
+      "locale": "ru-RU"
+    },
+    "sources": [
+      "src.rss.tech",
+      "src.rss.business"
+    ],
+    "pipeline": {
+      "dedupe": true,
+      "cluster": true,
+      "rank": true,
+      "narratives_compare": true
+    },
+    "agenda": [
+      {
+        "topic": "tech",
+        "top_n": 7,
+        "questions": [
+          "Что изменилось?",
+          "Кто выиграет?",
+          "Какой риск?"
+        ]
+      },
+      {
+        "topic": "economy",
+        "top_n": 5,
+        "questions": [
+          "Что значит для рынка?",
+          "Какие сценарии дальше?"
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "html",
+        "target": "artifact://reports/daily.html"
+      },
+      {
+        "kind": "telegram",
+        "target": "channel://me"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "navigation_tree": {
+    "nav_id": "nav.n.8iv4w0scbl",
+    "root": {
+      "title": "IFOS",
+      "children": [
+        {
+          "title": "Витрины",
+          "kind": "section",
+          "ref": "section.vitrines",
+          "children": [
+            {
+              "title": "Новости дня",
+              "kind": "vitrine",
+              "ref": "vit.v.0u4fzkbzgh",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Сравнение",
+          "kind": "section",
+          "ref": "section.compare",
+          "children": [
+            {
+              "title": "Сравнить хостинги",
+              "kind": "link",
+              "ref": "ui://compare/cmp.c.guezuonhi5",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Маркетплейс",
+          "kind": "section",
+          "ref": "section.market",
+          "children": []
+        }
+      ]
+    },
+    "version": "1.0.0"
+  },
+  "user_preferences": {
+    "user_id": "user.123",
+    "language": "ru-RU",
+    "mode": "advanced",
+    "favorites": [
+      "vit.v.0u4fzkbzgh",
+      "card.c.s5vd3v6tkc"
+    ],
+    "pinned": [
+      "dash.d.rk6hilj84x"
+    ],
+    "theme": "system",
+    "accessibility": {
+      "high_contrast": false,
+      "large_text": false,
+      "reduce_motion": true
+    },
+    "version": "1.0.0"
+  },
+  "i18n_bundle": {
+    "bundle_id": "i18n.b.imnatc6x14",
+    "locale": "ru-RU",
+    "strings": {
+      "action.run": "Запустить",
+      "action.install": "Установить",
+      "action.configure": "Настроить",
+      "status.ok": "Работает",
+      "status.degraded": "Есть проблемы",
+      "status.broken": "Сломано",
+      "nav.vitrines": "Витрины",
+      "nav.compare": "Сравнение",
+      "nav.market": "Маркетплейс"
+    },
+    "version": "1.0.0"
+  }
+}
