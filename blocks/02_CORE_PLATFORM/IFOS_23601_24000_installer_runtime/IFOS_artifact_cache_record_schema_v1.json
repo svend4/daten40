@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Artifact Cache Record Schema v1",
+  "type": "object",
+  "required": [
+    "cache_id",
+    "artifact_id",
+    "hash",
+    "location",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "cache_id": {
+      "type": "string"
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "hash": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "ttl_days": {
+      "type": "integer"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
