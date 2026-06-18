@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Health Check Schema v1",
+  "type": "object",
+  "required": [
+    "check_id",
+    "subject_id",
+    "checks",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "check_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "kind"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "ping",
+              "scope_check",
+              "read_only_query",
+              "queue_lag",
+              "file_exists"
+            ]
+          },
+          "target": {
+            "type": "string"
+          },
+          "timeout_ms": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
