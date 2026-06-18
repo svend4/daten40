@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Promo Pack Schema v1",
+  "type": "object",
+  "required": [
+    "promo_id",
+    "listing_ref",
+    "type",
+    "rules",
+    "assets",
+    "period",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "promo_id": {
+      "type": "string"
+    },
+    "listing_ref": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "featured",
+        "bundle_discount",
+        "trial_extension",
+        "coupon"
+      ]
+    },
+    "rules": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "period": {
+      "type": "object",
+      "properties": {
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
