@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Review Fraud Signal Schema v1",
+  "type": "object",
+  "required": [
+    "signal_id",
+    "listing_id",
+    "signal_kind",
+    "score",
+    "features",
+    "computed_at",
+    "method_version"
+  ],
+  "properties": {
+    "signal_id": {
+      "type": "string"
+    },
+    "listing_id": {
+      "type": "string"
+    },
+    "signal_kind": {
+      "type": "string",
+      "enum": [
+        "install_spike",
+        "text_duplication",
+        "no_usage",
+        "ip_cluster",
+        "review_ring",
+        "low_context"
+      ]
+    },
+    "score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "features": {
+      "type": "object",
+      "description": "raw computed stats",
+      "properties": {
+        "reviews_count": {
+          "type": "integer"
+        },
+        "unique_ips": {
+          "type": "integer"
+        },
+        "dup_text_ratio": {
+          "type": "number"
+        },
+        "runs_after_install_ratio": {
+          "type": "number"
+        },
+        "context_attached_ratio": {
+          "type": "number"
+        },
+        "time_window_hours": {
+          "type": "number"
+        }
+      }
+    },
+    "computed_at": {
+      "type": "string"
+    },
+    "method_version": {
+      "type": "string"
+    },
+    "recommended_action": {
+      "type": "string",
+      "enum": [
+        "ignore",
+        "downweight",
+        "moderate",
+        "quarantine",
+        "freeze_score"
+      ]
+    }
+  }
+}
