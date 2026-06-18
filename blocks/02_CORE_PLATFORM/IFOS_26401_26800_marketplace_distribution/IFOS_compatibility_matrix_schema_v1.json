@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS CompatibilityMatrix Schema v1",
+  "type": "object",
+  "required": [
+    "matrix_id",
+    "supported",
+    "conflicts",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "matrix_id": {
+      "type": "string"
+    },
+    "supported": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "runtime",
+          "runtime_version"
+        ],
+        "properties": {
+          "runtime": {
+            "type": "string"
+          },
+          "runtime_version": {
+            "type": "string"
+          },
+          "os": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "linux",
+                "windows",
+                "mac",
+                "android",
+                "ios",
+                "other"
+              ]
+            }
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "with",
+          "reason"
+        ],
+        "properties": {
+          "with": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
