@@ -1,0 +1,51 @@
+openapi: 3.0.3
+info:
+  title: IFOS Data Quality & Knowledge API
+  version: "1.0.0"
+servers:
+  - url: https://data.ifos.local/v1
+tags:
+  - name: Raw
+  - name: Normalize
+  - name: Taxonomy
+  - name: Dedupe
+  - name: Entities
+  - name: Trust
+  - name: Datasets
+paths:
+  /raw:
+    post:
+      tags: [Raw]
+      summary: Ingest raw record
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"202": {description: Accepted}}
+  /normalize:
+    post:
+      tags: [Normalize]
+      summary: Normalize raw record
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"200": {description: OK}}
+  /dedupe:
+    post:
+      tags: [Dedupe]
+      summary: Dedupe/cluster normalized records
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"200": {description: OK}}
+  /entities/resolve:
+    post:
+      tags: [Entities]
+      summary: Resolve entities for records
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"200": {description: OK}}
+  /trust/score:
+    post:
+      tags: [Trust]
+      summary: Compute trust score
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"200": {description: OK}}
+  /datasets/versions:
+    post:
+      tags: [Datasets]
+      summary: Create dataset snapshot version
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"201": {description: Created}}
