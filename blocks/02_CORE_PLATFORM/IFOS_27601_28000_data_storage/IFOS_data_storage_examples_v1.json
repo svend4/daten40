@@ -1,0 +1,264 @@
+{
+  "data_source": {
+    "source_id": "src.s.43ny9sdc3t",
+    "workspace_id": "ws.w.wt3mmfde8r",
+    "kind": "rss",
+    "config": {
+      "url": "https://example.com/rss.xml",
+      "user_agent": "IFOS/1.0"
+    },
+    "auth": {
+      "secret_ref": "",
+      "headers": {}
+    },
+    "rate_limit_ref": "rl.workspace.default",
+    "trust_score": 0.7,
+    "notes": "Демо источник",
+    "update_strategy": {
+      "kind": "poll",
+      "interval_seconds": 3600,
+      "etag": "",
+      "last_modified": ""
+    },
+    "created_at": "2026-01-03T05:05:00Z",
+    "updated_at": "2026-01-03T05:05:00Z",
+    "version": "1.0.0"
+  },
+  "retention_policy": {
+    "retention_policy_id": "ret.r.b7943u6t7z",
+    "rules": [
+      {
+        "scope": "raw",
+        "action": "archive",
+        "after_days": 7,
+        "legal_hold": false
+      },
+      {
+        "scope": "normalized",
+        "action": "keep",
+        "after_days": 0,
+        "legal_hold": false
+      },
+      {
+        "scope": "artifacts",
+        "action": "delete",
+        "after_days": 30,
+        "legal_hold": false
+      },
+      {
+        "scope": "logs",
+        "action": "delete",
+        "after_days": 14,
+        "legal_hold": false
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "collection": {
+    "collection_id": "col.c.v2n44sqwxf",
+    "workspace_id": "ws.w.wt3mmfde8r",
+    "name": "Новости",
+    "description": "RSS новости, нормализованные записи",
+    "schema_profile": {
+      "required_fields": [
+        "title",
+        "url",
+        "published_at",
+        "content"
+      ],
+      "optional_fields": [
+        "author",
+        "tags"
+      ],
+      "language": "ru"
+    },
+    "filters": {
+      "language": "ru"
+    },
+    "tags": [
+      "news"
+    ],
+    "retention_policy_ref": "ret.r.b7943u6t7z",
+    "created_at": "2026-01-03T05:05:00Z",
+    "updated_at": "2026-01-03T05:05:00Z",
+    "version": "1.0.0"
+  },
+  "item_record": {
+    "canonical_id": "item.i.wqeydkly6h",
+    "collection_id": "col.c.v2n44sqwxf",
+    "source_ref": "src.s.43ny9sdc3t",
+    "source_item_id": "urn:demo:1",
+    "url": "https://example.com/post/1",
+    "title": "Демо новость",
+    "published_at": "2026-01-03T05:05:00Z",
+    "author": "",
+    "content": "Текст новости...",
+    "language": "ru",
+    "metadata": {
+      "tags": [
+        "demo"
+      ],
+      "category": "tech"
+    },
+    "hashes": {
+      "url_hash": "sha256:demo",
+      "content_hash": "sha256:demo2",
+      "title_hash": "sha256:demo3"
+    },
+    "provenance": {
+      "ingest_run_id": "run.demo",
+      "parser": "rss_parser",
+      "parser_version": "1.0.0",
+      "raw_ref": "raw://snapshots/1.xml"
+    },
+    "revisions": [
+      {
+        "rev": 1,
+        "ts": "2026-01-03T05:05:00Z",
+        "diff": {
+          "created": true
+        }
+      }
+    ],
+    "created_at": "2026-01-03T05:05:00Z",
+    "updated_at": "2026-01-03T05:05:00Z",
+    "version": "1.0.0"
+  },
+  "storage_backend": {
+    "backend_id": "be.b.ppwsxo1wai",
+    "kind": "local_fs",
+    "config": {
+      "root": "/var/ifos"
+    },
+    "encryption": {
+      "at_rest": false
+    },
+    "scopes": [
+      "raw",
+      "normalized",
+      "artifacts",
+      "indexes",
+      "backups"
+    ],
+    "enabled": true,
+    "version": "1.0.0"
+  },
+  "index": {
+    "index_id": "idx.x.b8rerve5hs",
+    "workspace_id": "ws.w.wt3mmfde8r",
+    "kind": "fulltext",
+    "collections": [
+      "col.c.v2n44sqwxf"
+    ],
+    "update_mode": "incremental",
+    "status": "ready",
+    "metrics": {
+      "docs": 1
+    },
+    "updated_at": "2026-01-03T05:05:00Z",
+    "version": "1.0.0"
+  },
+  "cache_policy": {
+    "cache_policy_id": "cache.c.6hv20pnel3",
+    "scope": "source_fetch",
+    "ttl_seconds": 3600,
+    "max_size_bytes": 104857600,
+    "invalidation": {
+      "by_source": true,
+      "by_tag": true,
+      "by_collection": false
+    },
+    "version": "1.0.0"
+  },
+  "artifact": {
+    "artifact_id": "art.a.rfirqqy188",
+    "workspace_id": "ws.w.wt3mmfde8r",
+    "collection_id": "col.c.v2n44sqwxf",
+    "type": "markdown",
+    "uri": "artifact://runs/run.demo/report.md",
+    "size_bytes": 1200,
+    "checksum": "sha256:demo",
+    "created_by_run_id": "run.demo",
+    "sources": [
+      "src.s.43ny9sdc3t"
+    ],
+    "retention_policy_ref": "ret.r.b7943u6t7z",
+    "created_at": "2026-01-03T05:05:00Z",
+    "version": "1.0.0"
+  },
+  "export_job": {
+    "export_id": "exp.e.qdt7kqiw08",
+    "workspace_id": "ws.w.wt3mmfde8r",
+    "kind": "bundle",
+    "selection": {
+      "collections": [
+        "col.c.v2n44sqwxf"
+      ],
+      "query": "published_at >= now-7d",
+      "include_artifacts": true
+    },
+    "status": "queued",
+    "output_artifact_ref": "",
+    "started_at": "",
+    "finished_at": "",
+    "version": "1.0.0"
+  },
+  "import_job": {
+    "import_id": "imp.i.3gcptvitbf",
+    "workspace_id": "ws.w.wt3mmfde8r",
+    "kind": "bundle",
+    "input_uri": "file:///tmp/news_bundle.zip",
+    "mapping": {
+      "title": "title",
+      "url": "url"
+    },
+    "validation": {
+      "schema": "ItemRecord v1",
+      "checksums": true
+    },
+    "status": "queued",
+    "started_at": "",
+    "finished_at": "",
+    "report_artifact_ref": "",
+    "version": "1.0.0"
+  },
+  "backup_plan": {
+    "backup_plan_id": "bp.b.p3i3dkx4wb",
+    "workspace_id": "ws.w.wt3mmfde8r",
+    "kind": "hybrid",
+    "targets": [
+      "raw",
+      "normalized",
+      "artifacts",
+      "schemas",
+      "configs"
+    ],
+    "schedule_ref": "sch.daily.02:00",
+    "verify_restore": true,
+    "encryption": {
+      "enabled": true,
+      "method": "age"
+    },
+    "destination_backend_ref": "be.b.ppwsxo1wai",
+    "retention_policy_ref": "ret.r.b7943u6t7z",
+    "version": "1.0.0"
+  },
+  "checksum_manifest": {
+    "manifest_id": "man.m.s1a34ja5cl",
+    "kind": "bundle",
+    "entries": [
+      {
+        "path": "records/news.json",
+        "sha256": "...",
+        "size_bytes": 123
+      },
+      {
+        "path": "artifacts/report.md",
+        "sha256": "...",
+        "size_bytes": 456
+      }
+    ],
+    "created_at": "2026-01-03T05:05:00Z",
+    "version": "1.0.0"
+  }
+}
