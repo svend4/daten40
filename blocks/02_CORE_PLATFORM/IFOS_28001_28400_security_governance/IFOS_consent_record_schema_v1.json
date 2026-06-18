@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ConsentRecord Schema v1",
+  "type": "object",
+  "required": [
+    "consent_id",
+    "workspace_id",
+    "subject_id",
+    "purposes",
+    "data_categories",
+    "granted_at",
+    "expires_at",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "consent_id": {
+      "type": "string"
+    },
+    "workspace_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "purposes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "data_categories": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "granted_at": {
+      "type": "string"
+    },
+    "expires_at": {
+      "type": "string"
+    },
+    "revoked_at": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "granted",
+        "revoked",
+        "expired"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
