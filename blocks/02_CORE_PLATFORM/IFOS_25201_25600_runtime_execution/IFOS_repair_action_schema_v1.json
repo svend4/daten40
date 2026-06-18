@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Repair Action Schema v1",
+  "type": "object",
+  "required": [
+    "repair_id",
+    "job_id",
+    "kind",
+    "status",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "repair_id": {
+      "type": "string"
+    },
+    "job_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "retry_step",
+        "switch_endpoint",
+        "rotate_secret",
+        "degraded_mode",
+        "manual_intervention"
+      ]
+    },
+    "params": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "planned",
+        "applied",
+        "failed",
+        "reverted"
+      ]
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
