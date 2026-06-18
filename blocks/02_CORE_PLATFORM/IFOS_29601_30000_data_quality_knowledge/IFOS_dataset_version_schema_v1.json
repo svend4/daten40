@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DatasetVersion Schema v1",
+  "type": "object",
+  "required": [
+    "dataset_id",
+    "version_id",
+    "created_at",
+    "snapshot_refs",
+    "diff_summary",
+    "migration",
+    "version"
+  ],
+  "properties": {
+    "dataset_id": {
+      "type": "string"
+    },
+    "version_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "snapshot_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "diff_summary": {
+      "type": "string"
+    },
+    "migration": {
+      "type": "object",
+      "properties": {
+        "from": {
+          "type": "string"
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
