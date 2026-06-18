@@ -1,0 +1,63 @@
+openapi: 3.0.3
+info:
+  title: IFOS Quality & Documentation API
+  version: "1.0.0"
+  description: "Quality assessment, docs generation, tests/CI, uplift plans and jobs."
+servers:
+  - url: https://quality.ifos.local/v1
+tags:
+  - name: Quality
+  - name: Docs
+  - name: Tests
+  - name: Uplift
+paths:
+  /quality/assess:
+    post:
+      tags: [Quality]
+      summary: Assess subject quality and produce gaps + recommendations
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /docs/readme/generate:
+    post:
+      tags: [Docs]
+      summary: Generate README bundle from template and metadata
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
+  /tests/run:
+    post:
+      tags: [Tests]
+      summary: Run test suite (sandbox) and return results
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /uplift/plan:
+    post:
+      tags: [Uplift]
+      summary: Create uplift plan for a target level
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /uplift/apply:
+    post:
+      tags: [Uplift]
+      summary: Apply uplift plan and emit artifacts
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
