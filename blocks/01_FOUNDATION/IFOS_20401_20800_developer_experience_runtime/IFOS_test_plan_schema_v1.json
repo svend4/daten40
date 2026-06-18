@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Test Plan Schema v1",
+  "type": "object",
+  "required": [
+    "plan_id",
+    "subject",
+    "tests",
+    "environments",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "plan_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "tests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "unit",
+              "integration",
+              "e2e",
+              "chaos"
+            ]
+          },
+          "steps": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "expected": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "environments": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "local",
+          "ci",
+          "staging",
+          "prod"
+        ]
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
