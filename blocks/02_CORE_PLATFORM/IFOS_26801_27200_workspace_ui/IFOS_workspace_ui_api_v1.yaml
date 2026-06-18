@@ -1,0 +1,103 @@
+openapi: 3.0.3
+info:
+  title: IFOS Workspace & UI API
+  version: "1.0.0"
+  description: "Workspaces, cards, flows, macros, templates, dashboards, demos, UI events."
+servers:
+  - url: https://ui.ifos.local/v1
+tags:
+  - name: Workspaces
+  - name: Cards
+  - name: Flows
+  - name: Templates
+  - name: Macros
+  - name: Dashboards
+  - name: Demo
+  - name: Events
+paths:
+  /workspaces:
+    post:
+      tags: [Workspaces]
+      summary: Create workspace
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+    get:
+      tags: [Workspaces]
+      summary: List workspaces
+      responses:
+        "200": {description: OK}
+  /cards:
+    post:
+      tags: [Cards]
+      summary: Create/Update UI card
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+    get:
+      tags: [Cards]
+      summary: List cards by workspace
+      parameters:
+        - name: workspace_id
+          in: query
+          required: true
+          schema: {type: string}
+      responses:
+        "200": {description: OK}
+  /flows/run:
+    post:
+      tags: [Flows]
+      summary: Run flow and return run_id
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
+  /templates/apply:
+    post:
+      tags: [Templates]
+      summary: Apply template to workspace
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /dashboards:
+    get:
+      tags: [Dashboards]
+      summary: Get dashboard for workspace
+      parameters:
+        - name: workspace_id
+          in: query
+          required: true
+          schema: {type: string}
+      responses:
+        "200": {description: OK}
+  /demo/start:
+    post:
+      tags: [Demo]
+      summary: Start demo session
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /events:
+    post:
+      tags: [Events]
+      summary: Append UI event
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
