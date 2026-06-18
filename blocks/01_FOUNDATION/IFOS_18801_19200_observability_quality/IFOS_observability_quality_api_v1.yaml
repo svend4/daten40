@@ -1,0 +1,97 @@
+openapi: 3.0.3
+info:
+  title: IFOS Observability & Quality API
+  version: "1.0.0"
+  description: "Metrics, SLI/SLO, tests, smoke, synthetic monitoring, quality scoring, release gates, incidents, dashboards."
+servers:
+  - url: https://quality.ifos.local/v1
+tags:
+  - name: Metrics
+  - name: SLO
+  - name: Tests
+  - name: Synthetic
+  - name: Quality
+  - name: Gates
+  - name: Incidents
+  - name: Dashboard
+paths:
+  /metrics/ingest:
+    post:
+      tags: [Metrics]
+      summary: Ingest a metric sample batch
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
+  /slo/evaluate:
+    post:
+      tags: [SLO]
+      summary: Evaluate SLOs for a subject over a window
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /tests/run:
+    post:
+      tags: [Tests]
+      summary: Run tests (smoke/regression/integration) for a subject
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /synthetic/run:
+    post:
+      tags: [Synthetic]
+      summary: Execute a synthetic check now
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /quality/score:
+    post:
+      tags: [Quality]
+      summary: Compute quality score for a subject
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /gates/decision:
+    post:
+      tags: [Gates]
+      summary: Produce release gate decision (allow/block)
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /incidents/report:
+    post:
+      tags: [Incidents]
+      summary: Create/update an incident report
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /dashboard/summary:
+    post:
+      tags: [Dashboard]
+      summary: Build dashboard summary for a subject and period
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
