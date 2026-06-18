@@ -1,0 +1,29 @@
+{
+  "evidence_id": "evid.2026-01-01.stub.001",
+  "recipe_id": "recipe.rss_to_telegram.digest_v1",
+  "level": "L1_dry_run",
+  "checks": [
+    {
+      "kind": "schema_validate",
+      "status": "PASS",
+      "artifact": "validation_log.txt"
+    },
+    {
+      "kind": "dry_run",
+      "status": "PASS",
+      "artifact": "dry_run_log.json"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "rendered_message_preview",
+      "sha256": "(stub)"
+    },
+    {
+      "name": "compiler_notes",
+      "sha256": "(stub)"
+    }
+  ],
+  "created_at": "2026-01-01T10:00:00Z",
+  "notes": "Example evidence log format. In real system, sha256 are real."
+}
