@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RateLimit Schema v1",
+  "type": "object",
+  "required": [
+    "rate_limit_id",
+    "scope",
+    "limit",
+    "window_seconds",
+    "version"
+  ],
+  "properties": {
+    "rate_limit_id": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string",
+      "enum": [
+        "workspace",
+        "tenant",
+        "job",
+        "package",
+        "global"
+      ]
+    },
+    "limit": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "window_seconds": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "burst": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
