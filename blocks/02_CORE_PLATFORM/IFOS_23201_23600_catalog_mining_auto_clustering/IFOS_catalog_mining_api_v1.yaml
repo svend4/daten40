@@ -1,0 +1,86 @@
+openapi: 3.0.3
+info:
+  title: IFOS Catalog Mining API
+  version: "1.0.0"
+  description: "Ingest sources, extract atom functions, dedupe, embed, cluster, generate vitrines, and run quality uplift."
+servers:
+  - url: https://mining.ifos.local/v1
+tags:
+  - name: Sources
+  - name: Ingest
+  - name: Extract
+  - name: Dedupe
+  - name: Cluster
+  - name: Uplift
+  - name: Vitrines
+paths:
+  /sources/register:
+    post:
+      tags: [Sources]
+      summary: Register a source reference
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /ingest/start:
+    post:
+      tags: [Ingest]
+      summary: Start ingest job for source
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
+  /extract/atoms:
+    post:
+      tags: [Extract]
+      summary: Extract atom functions from normalized content
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /dedupe/run:
+    post:
+      tags: [Dedupe]
+      summary: Dedupe and merge atom functions
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /cluster/build:
+    post:
+      tags: [Cluster]
+      summary: Build clusters
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /uplift/run:
+    post:
+      tags: [Uplift]
+      summary: Run quality uplift steps for subject
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
+  /vitrines/generate:
+    post:
+      tags: [Vitrines]
+      summary: Generate cluster vitrines
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
