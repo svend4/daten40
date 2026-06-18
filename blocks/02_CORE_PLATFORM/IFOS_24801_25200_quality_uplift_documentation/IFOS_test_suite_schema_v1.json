@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Test Suite Schema v1",
+  "type": "object",
+  "required": [
+    "suite_id",
+    "subject_id",
+    "cases",
+    "level",
+    "environment",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "suite_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "cases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "smoke",
+        "integration",
+        "regression"
+      ]
+    },
+    "environment": {
+      "type": "string",
+      "enum": [
+        "local",
+        "sandbox",
+        "staging"
+      ]
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
