@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SLI Schema v1",
+  "type": "object",
+  "required": [
+    "sli_id",
+    "subject",
+    "metric_ref",
+    "window",
+    "calculation",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "sli_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "metric_ref": {
+      "type": "string"
+    },
+    "window": {
+      "type": "string"
+    },
+    "calculation": {
+      "type": "object",
+      "properties": {
+        "method": {
+          "type": "string"
+        },
+        "query": {
+          "type": "string"
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
