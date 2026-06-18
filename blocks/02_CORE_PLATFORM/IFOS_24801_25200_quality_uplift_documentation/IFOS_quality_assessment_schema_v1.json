@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Quality Assessment Schema v1",
+  "type": "object",
+  "required": [
+    "assessment_id",
+    "subject_id",
+    "current_level",
+    "target_level",
+    "gaps",
+    "recommendations",
+    "computed_at",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "assessment_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "current_level": {
+      "type": "string",
+      "enum": [
+        "L0",
+        "L1",
+        "L2",
+        "L3",
+        "L4",
+        "L5"
+      ]
+    },
+    "target_level": {
+      "type": "string",
+      "enum": [
+        "L0",
+        "L1",
+        "L2",
+        "L3",
+        "L4",
+        "L5"
+      ]
+    },
+    "gaps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "computed_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
