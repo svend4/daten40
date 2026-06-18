@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Source Schema v1",
+  "type": "object",
+  "required": [
+    "source_id",
+    "type",
+    "uri",
+    "enabled",
+    "ingest_rules",
+    "created_at",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "rss",
+        "html",
+        "pdf",
+        "api",
+        "file",
+        "webhook"
+      ]
+    },
+    "uri": {
+      "type": "string"
+    },
+    "auth": {
+      "type": "object",
+      "properties": {
+        "secret_ref": {
+          "type": "string"
+        },
+        "method": {
+          "type": "string",
+          "enum": [
+            "none",
+            "api_key",
+            "bearer",
+            "oauth2"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "ingest_rules": {
+      "type": "object",
+      "properties": {
+        "filters": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "selectors": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "pagination": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "license_notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "schedule_ref": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
