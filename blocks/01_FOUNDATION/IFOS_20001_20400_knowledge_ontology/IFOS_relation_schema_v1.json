@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Relation Schema v1",
+  "type": "object",
+  "required": [
+    "rel_id",
+    "from",
+    "type",
+    "to",
+    "weight",
+    "evidence",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "rel_id": {
+      "type": "string"
+    },
+    "from": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "HAS_CAPABILITY",
+        "CONTAINS",
+        "CALLS",
+        "OWNS",
+        "REQUIRES",
+        "VERIFIED_BY",
+        "ALIAS_OF",
+        "DUPLICATE_OF",
+        "IN_CATEGORY"
+      ]
+    },
+    "to": {
+      "type": "string"
+    },
+    "weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
