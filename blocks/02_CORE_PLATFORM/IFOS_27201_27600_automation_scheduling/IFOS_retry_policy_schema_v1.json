@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RetryPolicy Schema v1",
+  "type": "object",
+  "required": [
+    "retry_policy_id",
+    "max_attempts",
+    "backoff",
+    "retry_on",
+    "version"
+  ],
+  "properties": {
+    "retry_policy_id": {
+      "type": "string"
+    },
+    "max_attempts": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "backoff": {
+      "type": "object",
+      "required": [
+        "kind"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "none",
+            "linear",
+            "exponential"
+          ]
+        },
+        "base_seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "max_seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "jitter": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "retry_on": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
