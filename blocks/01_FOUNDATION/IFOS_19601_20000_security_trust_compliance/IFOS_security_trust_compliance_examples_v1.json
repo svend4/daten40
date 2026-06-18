@@ -1,0 +1,334 @@
+{
+  "publisher_id": "pub.acme.4nrevya88q",
+  "permissions_manifest": {
+    "perm_id": "perm.news.a57pu7yqoq",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.news_digest.core",
+      "version": "1.0.0"
+    },
+    "requested": [
+      "net.http.fetch",
+      "secrets.read",
+      "storage.write",
+      "schedule.create",
+      "llm.invoke",
+      "deliver.telegram",
+      "deliver.email"
+    ],
+    "network": {
+      "mode": "allowlist",
+      "allowlist": [
+        "rss.example.com",
+        "api.telegram.org",
+        "api.openai.com",
+        "smtp.example.com"
+      ]
+    },
+    "secrets": {
+      "read": [
+        "secret.telegram.bot_token",
+        "secret.smtp.password",
+        "secret.llm.api_key"
+      ]
+    },
+    "storage": {
+      "read_paths": [
+        "/sandbox/*"
+      ],
+      "write_paths": [
+        "/sandbox/*"
+      ]
+    },
+    "runtime": {
+      "timeouts": {
+        "run_seconds": 30,
+        "install_seconds": 180
+      },
+      "limits": {
+        "cpu_cores": 1.0,
+        "ram_mb": 512
+      }
+    },
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:30:00Z"
+  },
+  "sandbox_profile": {
+    "sandbox_id": "sbx.default.yo14l7isln",
+    "name": "default-allowlist",
+    "network_mode": "allowlist",
+    "file_mode": "sandbox_only",
+    "resource_limits": {
+      "cpu_cores": 1.0,
+      "ram_mb": 512,
+      "timeout_seconds": 30
+    },
+    "side_effects": {
+      "allow_delete": false,
+      "allow_external_write": false,
+      "allow_schedule_create": true
+    },
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:30:00Z"
+  },
+  "sbom": {
+    "sbom_id": "sbom.news.fysps7lvwo",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.news_digest.core",
+      "version": "1.0.0"
+    },
+    "format": "cyclonedx",
+    "components": [
+      {
+        "name": "n8n",
+        "version": "1.0.0",
+        "purl": "pkg:npm/n8n@1.0.0",
+        "type": "application",
+        "hash": "sha256:..."
+      },
+      {
+        "name": "rss-parser",
+        "version": "3.12.0",
+        "purl": "pkg:npm/rss-parser@3.12.0",
+        "type": "library",
+        "hash": "sha256:..."
+      }
+    ],
+    "licenses": [
+      "MIT"
+    ],
+    "hashes": {
+      "bundle_digest": "sha256:bundle...",
+      "sbom_digest": "sha256:sbom..."
+    },
+    "generated_at": "2026-01-02T19:30:00Z",
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:30:00Z"
+  },
+  "signature": {
+    "signature_id": "sig.news.52wdoqstgw",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.news_digest.core",
+      "version": "1.0.0"
+    },
+    "publisher_id": "pub.acme.4nrevya88q",
+    "algorithm": "ed25519",
+    "key_id": "key.k.0s3y6yqgvn",
+    "digest": "sha256:bundle...",
+    "signature": "BASE64_SIGNATURE_BYTES",
+    "signed_at": "2026-01-02T19:30:00Z",
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:30:00Z"
+  },
+  "vulnerability": {
+    "vuln_id": "vuln.cve.5g4ve9hsjr",
+    "source": "cve",
+    "severity": "medium",
+    "component": {
+      "name": "rss-parser",
+      "version": "3.12.0",
+      "purl": "pkg:npm/rss-parser@3.12.0"
+    },
+    "description": "Potential SSRF vector in permissive fetch usage (example).",
+    "fix": "Enable allowlist + strict URL validation.",
+    "refs": [
+      "CVE-YYYY-NNNN (example)"
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:30:00Z"
+  },
+  "scan_report": {
+    "scan_id": "scan.news.bu280700hz",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.news_digest.core",
+      "version": "1.0.0"
+    },
+    "scanners": [
+      "dep_scan",
+      "secret_scan",
+      "sast",
+      "license"
+    ],
+    "status": "warn",
+    "vulnerabilities": [
+      "vuln.cve.5g4ve9hsjr"
+    ],
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "low": 0
+    },
+    "generated_at": "2026-01-02T19:30:00Z",
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:30:00Z"
+  },
+  "policy_bundle": {
+    "policy_id": "pol.base.5qp7vzkg6x",
+    "name": "Marketplace Base Policy",
+    "rules": [
+      {
+        "id": "deny_critical_vulns",
+        "if": {
+          "scan.summary.critical": {
+            ">": 0
+          }
+        },
+        "then": {
+          "decision": "deny",
+          "reason": "critical vulnerabilities present"
+        }
+      },
+      {
+        "id": "warn_high_vulns",
+        "if": {
+          "scan.summary.high": {
+            ">": 0
+          }
+        },
+        "then": {
+          "decision": "warn",
+          "reason": "high vulnerabilities present"
+        }
+      },
+      {
+        "id": "deny_no_signature",
+        "if": {
+          "signature.verified": {
+            "==": false
+          }
+        },
+        "then": {
+          "decision": "deny",
+          "reason": "signature not verified"
+        }
+      }
+    ],
+    "enforcement": {
+      "default": "allow",
+      "strictness": "medium"
+    },
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:30:00Z"
+  },
+  "trust_score": {
+    "trust_id": "trust.news.u21ha4ke7m",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.news_digest.core",
+      "version": "1.0.0"
+    },
+    "score": 0.86,
+    "components": [
+      {
+        "name": "SignatureVerified",
+        "value": 1.0,
+        "weight": 0.25,
+        "notes": "ed25519 verified"
+      },
+      {
+        "name": "SBOMComplete",
+        "value": 0.9,
+        "weight": 0.15,
+        "notes": "most components present"
+      },
+      {
+        "name": "VulnerabilityRisk",
+        "value": 0.9,
+        "weight": 0.25,
+        "notes": "no critical/high; 1 medium"
+      },
+      {
+        "name": "PolicyCompliance",
+        "value": 1.0,
+        "weight": 0.15,
+        "notes": "no denies; 1 warn"
+      },
+      {
+        "name": "PermissionsRisk",
+        "value": 0.75,
+        "weight": 0.1,
+        "notes": "secrets+network allowlist ok"
+      },
+      {
+        "name": "IncidentHistory",
+        "value": 0.8,
+        "weight": 0.1,
+        "notes": "recent sev2 resolved"
+      }
+    ],
+    "recommendations": [
+      "Устранить medium vuln или добавить validation тест",
+      "Добавить attestation build provenance"
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:30:00Z"
+  },
+  "audit_log_records": [
+    {
+      "audit_id": "audit.a.qa6z6ip047",
+      "at": "2026-01-02T19:30:00Z",
+      "actor": {
+        "kind": "tenant",
+        "id": "tenant.demo"
+      },
+      "action": "install",
+      "subject": {
+        "kind": "bundle",
+        "id": "bundle.news_digest.core",
+        "version": "1.0.0"
+      },
+      "result": "success",
+      "metadata": {
+        "tx_id": "tx.install.001"
+      },
+      "version": "1.0.0",
+      "updated_at": "2026-01-02T19:30:00Z"
+    },
+    {
+      "audit_id": "audit.b.w5pwr6qtzb",
+      "at": "2026-01-02T19:30:00Z",
+      "actor": {
+        "kind": "system",
+        "id": "runner"
+      },
+      "action": "secret_access",
+      "subject": {
+        "kind": "bundle",
+        "id": "bundle.news_digest.core",
+        "version": "1.0.0"
+      },
+      "result": "success",
+      "metadata": {
+        "secret_ref": "secret.telegram.bot_token",
+        "scope": "tenant.demo"
+      },
+      "version": "1.0.0",
+      "updated_at": "2026-01-02T19:30:00Z"
+    },
+    {
+      "audit_id": "audit.c.c4a02jhrd1",
+      "at": "2026-01-02T19:30:00Z",
+      "actor": {
+        "kind": "system",
+        "id": "policy"
+      },
+      "action": "policy_decision",
+      "subject": {
+        "kind": "bundle",
+        "id": "bundle.news_digest.core",
+        "version": "1.0.0"
+      },
+      "result": "warn",
+      "metadata": {
+        "policy_id": "pol.base.5qp7vzkg6x",
+        "reason": "medium vuln"
+      },
+      "version": "1.0.0",
+      "updated_at": "2026-01-02T19:30:00Z"
+    }
+  ]
+}
