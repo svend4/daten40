@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Sandbox Session Schema v1",
+  "type": "object",
+  "required": [
+    "session_id",
+    "profile_id",
+    "status",
+    "limits",
+    "created_at",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "session_id": {
+      "type": "string"
+    },
+    "profile_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "starting",
+        "running",
+        "stopped",
+        "failed"
+      ]
+    },
+    "limits": {
+      "type": "object",
+      "properties": {
+        "max_calls": {
+          "type": "integer"
+        },
+        "max_runtime_sec": {
+          "type": "integer"
+        },
+        "network_allowlist": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
