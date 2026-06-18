@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UserPreferences Schema v1",
+  "type": "object",
+  "required": [
+    "user_id",
+    "language",
+    "mode",
+    "favorites",
+    "pinned",
+    "theme",
+    "version"
+  ],
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "simple",
+        "advanced",
+        "pro"
+      ]
+    },
+    "favorites": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "pinned": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "theme": {
+      "type": "string",
+      "enum": [
+        "system",
+        "light",
+        "dark"
+      ]
+    },
+    "accessibility": {
+      "type": "object",
+      "properties": {
+        "high_contrast": {
+          "type": "boolean"
+        },
+        "large_text": {
+          "type": "boolean"
+        },
+        "reduce_motion": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
