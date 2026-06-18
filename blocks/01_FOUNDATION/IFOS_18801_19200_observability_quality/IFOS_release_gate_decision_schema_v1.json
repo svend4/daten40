@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Release Gate Decision Schema v1",
+  "type": "object",
+  "required": [
+    "decision_id",
+    "subject",
+    "release_type",
+    "status",
+    "checks",
+    "recommendations",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "decision_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "release_type": {
+      "type": "string",
+      "enum": [
+        "publish",
+        "update",
+        "hotfix"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "allow",
+        "block",
+        "allow_with_warnings"
+      ]
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pass",
+              "fail",
+              "warn"
+            ]
+          },
+          "ref": {
+            "type": "string"
+          },
+          "details": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
