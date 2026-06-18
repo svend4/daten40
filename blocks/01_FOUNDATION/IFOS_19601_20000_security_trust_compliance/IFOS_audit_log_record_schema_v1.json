@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Audit Log Record Schema v1",
+  "type": "object",
+  "required": [
+    "audit_id",
+    "at",
+    "actor",
+    "action",
+    "subject",
+    "result",
+    "metadata",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "audit_id": {
+      "type": "string"
+    },
+    "at": {
+      "type": "string"
+    },
+    "actor": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "user",
+            "tenant",
+            "system",
+            "publisher"
+          ]
+        },
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "install",
+        "update",
+        "rollback",
+        "run",
+        "secret_access",
+        "permission_grant",
+        "policy_decision",
+        "scan",
+        "publish"
+      ]
+    },
+    "subject": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "result": {
+      "type": "string",
+      "enum": [
+        "success",
+        "fail",
+        "warn"
+      ]
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
