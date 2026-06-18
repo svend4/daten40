@@ -1,0 +1,128 @@
+openapi: 3.0.3
+info:
+  title: IFOS Knowledge & Docs API
+  version: "1.0.0"
+  description: "Docs pages/cards, glossary, FAQ, tutorials, troubleshooting cases, workflow explain, knowledge graph, doc bundle export, search."
+servers:
+  - url: https://docs.ifos.local/v1
+tags:
+  - name: Docs
+  - name: Glossary
+  - name: FAQ
+  - name: Tutorials
+  - name: Troubleshooting
+  - name: Explain
+  - name: Graph
+  - name: Bundle
+  - name: Search
+paths:
+  /docs/cards:
+    post:
+      tags: [Docs]
+      summary: Create/update doc card
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /docs/pages:
+    post:
+      tags: [Docs]
+      summary: Create/update doc page
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /glossary/terms:
+    post:
+      tags: [Glossary]
+      summary: Add glossary term
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /faq/items:
+    post:
+      tags: [FAQ]
+      summary: Add FAQ item
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /tutorials:
+    post:
+      tags: [Tutorials]
+      summary: Create tutorial
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /tutorials/from-run:
+    post:
+      tags: [Tutorials]
+      summary: Mine tutorial from a successful run (sanitized)
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /troubleshooting/cases:
+    post:
+      tags: [Troubleshooting]
+      summary: Add troubleshooting case
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /explain/workflow:
+    post:
+      tags: [Explain]
+      summary: Explain a workflow (Make/n8n/WP/native)
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /graph/build:
+    post:
+      tags: [Graph]
+      summary: Build or update knowledge graph from entities
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /bundle/export:
+    post:
+      tags: [Bundle]
+      summary: Export a doc bundle for offline use
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /search/query:
+    post:
+      tags: [Search]
+      summary: Search across docs entities
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
