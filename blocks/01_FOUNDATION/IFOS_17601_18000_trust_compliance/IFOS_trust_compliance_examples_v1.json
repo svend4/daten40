@@ -1,0 +1,311 @@
+{
+  "license_ref": {
+    "license_id": "lic.mit.v1",
+    "spdx": "MIT",
+    "name": "MIT License",
+    "text_url": "https://spdx.org/licenses/MIT.html",
+    "permissions": [
+      "commercial-use",
+      "distribution",
+      "modification",
+      "private-use"
+    ],
+    "obligations": [
+      "include-notice"
+    ],
+    "restrictions": [],
+    "notes": "Common permissive license.",
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T16:00:00Z"
+  },
+  "sbom": {
+    "sbom_id": "sbom.t.hvax3jvn",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.travelhub.core",
+      "version": "1.0.0"
+    },
+    "format": "ifos-min",
+    "components": [
+      {
+        "name": "requests",
+        "version": "2.32.3",
+        "sha256": "(sha256)",
+        "license_ref": "lic.apache2.v1",
+        "source": "pypi",
+        "type": "library"
+      },
+      {
+        "name": "telegram_adapter",
+        "version": "1.0.0",
+        "sha256": "(sha256)",
+        "license_ref": "lic.mit.v1",
+        "source": "registry:adapter.telegram",
+        "type": "adapter"
+      },
+      {
+        "name": "rss_parser",
+        "version": "1.1.0",
+        "sha256": "(sha256)",
+        "license_ref": "lic.mit.v1",
+        "source": "registry:function.rss.parse",
+        "type": "library"
+      }
+    ],
+    "generated_at": "2026-01-02T16:00:00Z",
+    "version": "1.0.0"
+  },
+  "provenance_record": {
+    "prov_id": "prov.p.0wvx91jv",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.travelhub.core",
+      "version": "1.0.0"
+    },
+    "publisher": {
+      "id": "pub.travelhub",
+      "key_ref": "keys.pub.travelhub.ed25519",
+      "contact": "security@travelhub.example"
+    },
+    "sources": [
+      {
+        "type": "git",
+        "ref": "git:abcd1234",
+        "note": "tag v1.0.0"
+      },
+      {
+        "type": "registry",
+        "ref": "registry:bundle.travelhub.core@1.0.0"
+      }
+    ],
+    "inputs": [
+      {
+        "name": "source_tree",
+        "sha256": "(sha256)",
+        "ref": "git:abcd1234"
+      },
+      {
+        "name": "sbom",
+        "sha256": "b4d7860a2874ded03021450254c8172d5192b76e25b10f0cad8c4e17f3456ca4",
+        "ref": "sbom.t.hvax3jvn"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "artifact.tar.zst",
+        "sha256": "f1cadf269be4d41ee870cca38680fc52bfabd6fa72acfab0d070b5b76b47b831",
+        "ref": "artifact:bundle.travelhub.core@1.0.0"
+      }
+    ],
+    "build_env": {
+      "os": "linux",
+      "toolchain": "python+poetry",
+      "container": "ghcr.io/ifos/builder:1.0",
+      "reproducible": false
+    },
+    "created_at": "2026-01-02T16:00:00Z",
+    "version": "1.0.0"
+  },
+  "signature_envelope": {
+    "sig_id": "sig.s.orb6j444",
+    "subject_ref": {
+      "kind": "bundle",
+      "id": "bundle.travelhub.core",
+      "version": "1.0.0",
+      "artifact_ref": "artifact:bundle.travelhub.core@1.0.0"
+    },
+    "subject_hash": "f1cadf269be4d41ee870cca38680fc52bfabd6fa72acfab0d070b5b76b47b831",
+    "signer": {
+      "publisher_id": "pub.travelhub",
+      "key_ref": "keys.pub.travelhub.ed25519",
+      "key_fingerprint": "fp:ed25519:1234abcd"
+    },
+    "algorithm": "ed25519",
+    "signature": "(base64)",
+    "signed_at": "2026-01-02T16:00:00Z",
+    "verification": {
+      "method": "ed25519_verify",
+      "trust_chain": [
+        "registry.publisher.pub.travelhub",
+        "keys.pub.travelhub.ed25519"
+      ]
+    },
+    "version": "1.0.0"
+  },
+  "policy_profile": {
+    "profile_id": "pol.b2b.eq17xcke",
+    "name": "B2B default strict",
+    "mode": "b2b",
+    "rules": [
+      {
+        "id": "r.license",
+        "type": "license",
+        "decision": "allow_with_conditions",
+        "conditions": {
+          "require_known_licenses": true
+        },
+        "note": "Unknown licenses -> WARN/FAIL depending on risk."
+      },
+      {
+        "id": "r.sbom",
+        "type": "sbom",
+        "decision": "allow_with_conditions",
+        "conditions": {
+          "require": true
+        },
+        "note": "SBOM must exist for installation."
+      },
+      {
+        "id": "r.signature",
+        "type": "signature",
+        "decision": "allow_with_conditions",
+        "conditions": {
+          "require_valid_signature": true
+        },
+        "note": "Signed artifact required."
+      },
+      {
+        "id": "r.network",
+        "type": "network",
+        "decision": "allow_with_conditions",
+        "conditions": {
+          "allow": true,
+          "require_evidence_level": "L2"
+        },
+        "note": "Network access requires L2 evidence."
+      },
+      {
+        "id": "r.webhooks",
+        "type": "webhooks",
+        "decision": "deny",
+        "conditions": {},
+        "note": "Disable inbound webhooks by default in B2B mode."
+      }
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T16:00:00Z"
+  },
+  "rbac_role": {
+    "role_id": "role.operator.v1",
+    "name": "Operator",
+    "permissions": [
+      "run_job",
+      "view_logs",
+      "view_docs",
+      "view_ratings"
+    ],
+    "scope": "tenant",
+    "inherits": [],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T16:00:00Z"
+  },
+  "audit_event": {
+    "event_id": "evt.e.69nld2cc",
+    "actor": {
+      "tenant_id": "ten.travelhub.001",
+      "user_id": "u.123",
+      "role": "Operator",
+      "ip_hash": "iphash:xxx"
+    },
+    "action": "install_bundle",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.travelhub.core",
+      "version": "1.0.0",
+      "ref": "registry:bundle.travelhub.core@1.0.0"
+    },
+    "result": "pass",
+    "details": {
+      "mode": "b2b",
+      "gate": "pass"
+    },
+    "evidence_refs": [
+      "sig.s.orb6j444",
+      "sbom.t.hvax3jvn",
+      "prov.p.0wvx91jv",
+      "run.smoke.pass.001"
+    ],
+    "at": "2026-01-02T16:00:00Z",
+    "version": "1.0.0"
+  },
+  "compliance_attestation": {
+    "att_id": "att.a.hpg5zwty",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.travelhub.core",
+      "version": "1.0.0"
+    },
+    "claims": [
+      {
+        "type": "license_ok",
+        "status": "pass",
+        "note": "All components have known licenses; obligations listed."
+      },
+      {
+        "type": "sbom_present",
+        "status": "pass",
+        "note": "SBOM generated and stored."
+      },
+      {
+        "type": "signature_valid",
+        "status": "warn",
+        "note": "Signature present; verification depends on keychain sync."
+      },
+      {
+        "type": "sandbox_supported",
+        "status": "pass",
+        "note": "Mock adapters available."
+      }
+    ],
+    "issuer": {
+      "id": "ifos.trust.service",
+      "key_ref": "keys.ifos.trust.ed25519",
+      "method": "automated+policy"
+    },
+    "issued_at": "2026-01-02T16:00:00Z",
+    "valid_until": "2026-07-01T00:00:00Z",
+    "evidence_refs": [
+      "sbom.t.hvax3jvn",
+      "sig.s.orb6j444",
+      "prov.p.0wvx91jv"
+    ],
+    "version": "1.0.0"
+  },
+  "vulnerability_advisory": {
+    "adv_id": "adv.v.jztmonge",
+    "subject": {
+      "kind": "adapter",
+      "id": "adapter.telegram"
+    },
+    "severity": "high",
+    "affected": [
+      "<1.0.2"
+    ],
+    "summary": "Potential token leak via verbose error logging in debug mode.",
+    "workaround": "Disable debug logging; enable redaction filter.",
+    "fixed_in": "1.0.2",
+    "timeline": {
+      "reported_at": "2025-12-20T10:00:00Z",
+      "ack_at": "2025-12-20T18:00:00Z",
+      "fixed_at": "2025-12-22T12:00:00Z",
+      "disclosed_at": "2025-12-27T12:00:00Z"
+    },
+    "published_at": "2026-01-02T16:00:00Z",
+    "cve": "",
+    "version": "1.0.0"
+  },
+  "consent_record": {
+    "consent_id": "cons.c.3ds6relo",
+    "tenant_id": "ten.travelhub.001",
+    "user_id": "u.123",
+    "policy_profile_id": "pol.b2b.eq17xcke",
+    "policy_version": "1.0.0",
+    "scope": {
+      "kind": "cluster",
+      "id": "cluster.travelhub.prod",
+      "note": "Enable network access under L2 evidence conditions."
+    },
+    "accepted_at": "2026-01-02T16:00:00Z",
+    "version": "1.0.0"
+  }
+}
