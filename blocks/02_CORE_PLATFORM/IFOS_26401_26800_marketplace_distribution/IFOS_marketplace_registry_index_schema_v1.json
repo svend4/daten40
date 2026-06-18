@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Marketplace RegistryIndex Schema v1",
+  "type": "object",
+  "required": [
+    "index_id",
+    "items",
+    "packages",
+    "vitrines",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "index_id": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "packages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "vitrines": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "channels": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "stable",
+          "beta",
+          "nightly"
+        ]
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
