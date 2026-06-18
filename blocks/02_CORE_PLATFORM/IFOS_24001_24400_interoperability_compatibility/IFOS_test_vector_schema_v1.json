@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Test Vector Schema v1",
+  "type": "object",
+  "required": [
+    "vector_id",
+    "contract_id",
+    "inputs",
+    "expected_outputs",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "vector_id": {
+      "type": "string"
+    },
+    "contract_id": {
+      "type": "string"
+    },
+    "inputs": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "expected_outputs": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
