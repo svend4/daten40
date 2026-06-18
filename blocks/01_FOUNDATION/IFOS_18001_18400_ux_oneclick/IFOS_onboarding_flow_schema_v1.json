@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Onboarding Flow Schema v1",
+  "type": "object",
+  "required": [
+    "flow_id",
+    "title",
+    "steps",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "flow_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "title"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "choose_goal",
+              "choose_platform",
+              "select_template",
+              "connect_accounts",
+              "first_run",
+              "next_improvements",
+              "share"
+            ]
+          },
+          "title": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
