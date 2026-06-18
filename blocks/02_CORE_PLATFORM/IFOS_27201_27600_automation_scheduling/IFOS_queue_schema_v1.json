@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Queue Schema v1",
+  "type": "object",
+  "required": [
+    "queue_id",
+    "name",
+    "priority",
+    "concurrency",
+    "visibility_timeout_seconds",
+    "dead_letter_queue_id",
+    "version"
+  ],
+  "properties": {
+    "queue_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "high",
+        "normal",
+        "low"
+      ]
+    },
+    "concurrency": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "visibility_timeout_seconds": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "dead_letter_queue_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
