@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SLAPolicy Schema v1",
+  "type": "object",
+  "required": [
+    "sla_policy_id",
+    "max_start_delay_seconds",
+    "max_runtime_seconds",
+    "maintenance_windows",
+    "version"
+  ],
+  "properties": {
+    "sla_policy_id": {
+      "type": "string"
+    },
+    "max_start_delay_seconds": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "max_runtime_seconds": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "maintenance_windows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "rrule": {
+            "type": "string"
+          },
+          "max_runtime_seconds": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
