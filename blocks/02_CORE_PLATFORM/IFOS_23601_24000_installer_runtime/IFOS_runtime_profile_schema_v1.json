@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Runtime Profile Schema v1",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "name",
+    "mode",
+    "constraints",
+    "quota",
+    "logging",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "profile_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "dev",
+        "sandbox",
+        "staging",
+        "prod"
+      ]
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "quota": {
+      "type": "string"
+    },
+    "logging": {
+      "type": "object",
+      "properties": {
+        "pii_redaction": {
+          "type": "boolean"
+        },
+        "verbosity": {
+          "type": "string",
+          "enum": [
+            "low",
+            "normal",
+            "high"
+          ]
+        }
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
