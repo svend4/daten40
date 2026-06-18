@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Install Wizard Schema v1",
+  "type": "object",
+  "required": [
+    "wizard_id",
+    "subject",
+    "mode",
+    "steps",
+    "install_plan_ref",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "wizard_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "sandbox",
+        "personal",
+        "team",
+        "b2b",
+        "government"
+      ]
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "kind"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "mode_check",
+              "requirements",
+              "adapter_select",
+              "dry_run",
+              "plan_review",
+              "apply",
+              "post_install"
+            ]
+          },
+          "ui": {
+            "type": "object",
+            "properties": {
+              "help": {
+                "type": "string"
+              },
+              "fields_ref": {
+                "type": "string"
+              },
+              "buttons": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "install_plan_ref": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
