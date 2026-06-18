@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Revenue Share Schema v1",
+  "type": "object",
+  "required": [
+    "share_id",
+    "subject",
+    "publisher",
+    "platform",
+    "split",
+    "effective_from",
+    "version"
+  ],
+  "properties": {
+    "share_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "publisher": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "payout_account_ref": {
+          "type": "string"
+        }
+      }
+    },
+    "platform": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "payout_account_ref": {
+          "type": "string"
+        }
+      }
+    },
+    "split": {
+      "type": "object",
+      "properties": {
+        "publisher_pct": {
+          "type": "number"
+        },
+        "platform_pct": {
+          "type": "number"
+        },
+        "affiliate_pct": {
+          "type": "number"
+        }
+      }
+    },
+    "effective_from": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
