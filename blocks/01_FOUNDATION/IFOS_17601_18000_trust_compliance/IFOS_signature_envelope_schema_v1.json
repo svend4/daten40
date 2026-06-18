@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Signature Envelope Schema v1",
+  "type": "object",
+  "required": [
+    "sig_id",
+    "subject_hash",
+    "subject_ref",
+    "signer",
+    "algorithm",
+    "signature",
+    "signed_at",
+    "version"
+  ],
+  "properties": {
+    "sig_id": {
+      "type": "string"
+    },
+    "subject_ref": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "artifact_ref": {
+          "type": "string"
+        }
+      }
+    },
+    "subject_hash": {
+      "type": "string"
+    },
+    "signer": {
+      "type": "object",
+      "properties": {
+        "publisher_id": {
+          "type": "string"
+        },
+        "key_ref": {
+          "type": "string"
+        },
+        "key_fingerprint": {
+          "type": "string"
+        }
+      }
+    },
+    "algorithm": {
+      "type": "string",
+      "enum": [
+        "ed25519",
+        "rsa-pss",
+        "ecdsa-p256",
+        "hmac-sha256"
+      ]
+    },
+    "signature": {
+      "type": "string",
+      "description": "base64 signature"
+    },
+    "signed_at": {
+      "type": "string"
+    },
+    "verification": {
+      "type": "object",
+      "properties": {
+        "method": {
+          "type": "string"
+        },
+        "trust_chain": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
