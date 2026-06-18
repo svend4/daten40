@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Observability Config Schema v1",
+  "type": "object",
+  "required": [
+    "obs_id",
+    "profile_id",
+    "logging",
+    "metrics",
+    "tracing",
+    "alerts",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "obs_id": {
+      "type": "string"
+    },
+    "profile_id": {
+      "type": "string"
+    },
+    "logging": {
+      "type": "object",
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": [
+            "debug",
+            "info",
+            "warn",
+            "error"
+          ]
+        },
+        "no_log_fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "tracing": {
+      "type": "object",
+      "properties": {
+        "sampling_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "alerts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
