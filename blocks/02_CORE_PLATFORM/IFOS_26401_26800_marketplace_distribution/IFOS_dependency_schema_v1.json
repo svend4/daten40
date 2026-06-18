@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Dependency Schema v1",
+  "type": "object",
+  "required": [
+    "dep_id",
+    "kind",
+    "name",
+    "version_range",
+    "required",
+    "version"
+  ],
+  "properties": {
+    "dep_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "package",
+        "service",
+        "capability"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "version_range": {
+      "type": "string",
+      "description": "semver range e.g. >=1.2 <2.0"
+    },
+    "required": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
