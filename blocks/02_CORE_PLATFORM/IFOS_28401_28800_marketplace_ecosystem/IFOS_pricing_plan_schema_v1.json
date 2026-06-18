@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS PricingPlan Schema v1",
+  "type": "object",
+  "required": [
+    "plan_id",
+    "kind",
+    "currency",
+    "price",
+    "billing",
+    "limits",
+    "rev_share",
+    "version"
+  ],
+  "properties": {
+    "plan_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "free",
+        "freemium",
+        "subscription",
+        "one_time",
+        "enterprise"
+      ]
+    },
+    "currency": {
+      "type": "string"
+    },
+    "price": {
+      "type": "number",
+      "minimum": 0
+    },
+    "billing": {
+      "type": "object",
+      "properties": {
+        "period": {
+          "type": "string",
+          "enum": [
+            "month",
+            "year",
+            "one_time",
+            "custom"
+          ]
+        },
+        "trial_days": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "rev_share": {
+      "type": "object",
+      "properties": {
+        "marketplace_pct": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "publisher_pct": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        }
+      },
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
