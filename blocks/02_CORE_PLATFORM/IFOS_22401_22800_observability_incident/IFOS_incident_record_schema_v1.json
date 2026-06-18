@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Incident Record Schema v1",
+  "type": "object",
+  "required": [
+    "incident_id",
+    "title",
+    "severity",
+    "status",
+    "started_at",
+    "affected",
+    "owner",
+    "links",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "incident_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "P1",
+        "P2",
+        "P3"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "mitigated",
+        "resolved"
+      ]
+    },
+    "started_at": {
+      "type": "string"
+    },
+    "resolved_at": {
+      "type": "string"
+    },
+    "affected": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "owner": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "suspected_cause": {
+      "type": "string"
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
