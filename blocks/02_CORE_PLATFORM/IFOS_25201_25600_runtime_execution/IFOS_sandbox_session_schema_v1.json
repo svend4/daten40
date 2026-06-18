@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Sandbox Session Schema v1",
+  "type": "object",
+  "required": [
+    "session_id",
+    "subject_id",
+    "profile_id",
+    "isolation",
+    "test_vectors",
+    "jobs",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "session_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "profile_id": {
+      "type": "string"
+    },
+    "isolation": {
+      "type": "object",
+      "properties": {
+        "dry_run": {
+          "type": "boolean"
+        },
+        "stub_endpoints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "domain_allowlist": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "test_vectors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "jobs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
