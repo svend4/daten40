@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Auto Form Schema v1",
+  "type": "object",
+  "required": [
+    "form_id",
+    "title",
+    "fields",
+    "validation",
+    "storage",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "form_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "fields": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "type"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "text",
+              "password",
+              "number",
+              "select",
+              "multiselect",
+              "url",
+              "email",
+              "toggle",
+              "textarea",
+              "file"
+            ]
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "default": {
+            "type": "string"
+          },
+          "help": {
+            "type": "string"
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "secret": {
+            "type": "boolean"
+          },
+          "test_connection": {
+            "type": "object",
+            "properties": {
+              "endpoint": {
+                "type": "string"
+              },
+              "method": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "properties": {
+        "schema_ref": {
+          "type": "string"
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "storage": {
+      "type": "object",
+      "properties": {
+        "secret_store": {
+          "type": "string"
+        },
+        "redaction": {
+          "type": "boolean"
+        },
+        "ttl_days": {
+          "type": "integer"
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
