@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Embedding Index Schema v1",
+  "type": "object",
+  "required": [
+    "index_id",
+    "model",
+    "dims",
+    "items",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "index_id": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "dims": {
+      "type": "integer"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "entity_id": {
+            "type": "string"
+          },
+          "vector_ref": {
+            "type": "string"
+          },
+          "text_ref": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
