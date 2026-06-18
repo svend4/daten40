@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Search Explanation Schema v1",
+  "type": "object",
+  "required": [
+    "query",
+    "result_id",
+    "final_score",
+    "breakdown",
+    "matches",
+    "penalties",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "query": {
+      "type": "string"
+    },
+    "result_id": {
+      "type": "string"
+    },
+    "final_score": {
+      "type": "number"
+    },
+    "breakdown": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "component": {
+            "type": "string"
+          },
+          "score": {
+            "type": "number"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "matches": {
+      "type": "object",
+      "properties": {
+        "terms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "penalties": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "string"
+          },
+          "value": {
+            "type": "number"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
