@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Accessibility Profile Schema v1",
+  "type": "object",
+  "required": [
+    "a11y_id",
+    "name",
+    "settings",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "a11y_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "settings": {
+      "type": "object",
+      "properties": {
+        "font_scale": {
+          "type": "number",
+          "minimum": 1.0,
+          "maximum": 2.5
+        },
+        "high_contrast": {
+          "type": "boolean"
+        },
+        "simple_language": {
+          "type": "boolean"
+        },
+        "reduce_steps": {
+          "type": "boolean"
+        },
+        "screen_reader_hints": {
+          "type": "boolean"
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
