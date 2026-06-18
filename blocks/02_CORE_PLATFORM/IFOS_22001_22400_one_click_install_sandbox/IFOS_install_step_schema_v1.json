@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Install Step Schema v1",
+  "type": "object",
+  "required": [
+    "step_id",
+    "type",
+    "status",
+    "inputs",
+    "outputs",
+    "retries",
+    "timeout_s",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "step_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "fetch_payload",
+        "verify_signatures",
+        "verify_sbom",
+        "apply_policy_precheck",
+        "install_plugin",
+        "import_workflow",
+        "import_flow",
+        "configure_credentials",
+        "configure_webhooks",
+        "run_migrations",
+        "run_smoke_tests",
+        "promote_to_prod",
+        "post_install_monitoring_enable",
+        "cleanup_sandbox"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "planned",
+        "running",
+        "success",
+        "fail",
+        "skipped"
+      ]
+    },
+    "inputs": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "outputs": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "retries": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 10
+    },
+    "timeout_s": {
+      "type": "integer",
+      "minimum": 5,
+      "maximum": 7200
+    },
+    "error": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
