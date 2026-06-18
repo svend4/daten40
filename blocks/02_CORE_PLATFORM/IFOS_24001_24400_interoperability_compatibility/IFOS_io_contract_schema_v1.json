@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS I/O Contract Schema v1",
+  "type": "object",
+  "required": [
+    "contract_id",
+    "action",
+    "title",
+    "inputs",
+    "outputs",
+    "errors",
+    "tags",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "contract_id": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "type",
+          "required"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "constraints": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "semantics": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "example": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "type"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "constraints": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "example": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "code",
+          "handling"
+        ],
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "handling": {
+            "type": "string",
+            "enum": [
+              "retry",
+              "backoff",
+              "fail_fast",
+              "ignore",
+              "manual"
+            ]
+          },
+          "idempotent": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "policy": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
