@@ -1,0 +1,323 @@
+{
+  "review": {
+    "review_id": "rev.r.fc41gwd7",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.travelhub.core",
+      "version": "1.0.0"
+    },
+    "author": {
+      "tenant_id": "ten.travelhub.001",
+      "user_id": "u.123",
+      "reputation": 0.72
+    },
+    "stars": 5,
+    "text": "Установилось одной кнопкой, smoke test прошёл. Добавил фильтры — всё стабильно.",
+    "context": {
+      "target": "n8n",
+      "install_plan_id": "plan.p1",
+      "job_id": "job.travel.abc",
+      "use_case": "travel_digest"
+    },
+    "verified_usage": true,
+    "evidence_refs": [
+      "run.pass.001",
+      "evid.smoke.001"
+    ],
+    "claims": [
+      {
+        "type": "stability",
+        "value": "30 days no failures",
+        "severity": "low"
+      }
+    ],
+    "status": "published",
+    "created_at": "2026-01-02T15:00:00Z",
+    "version": "1.0.0"
+  },
+  "evidence_score": {
+    "score_id": "esc.s.dyugkxo0",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.travelhub.core",
+      "version": "1.0.0"
+    },
+    "score": 0.86,
+    "signals": [
+      {
+        "name": "verified_runs_30d",
+        "value": "28",
+        "weight": 0.35,
+        "note": "high stability"
+      },
+      {
+        "name": "smoke_tests",
+        "value": "present",
+        "weight": 0.15,
+        "note": "L1 evidence"
+      },
+      {
+        "name": "docs_score",
+        "value": "0.9",
+        "weight": 0.15,
+        "note": "doc cards complete"
+      },
+      {
+        "name": "dispute_rate",
+        "value": "0.01",
+        "weight": -0.1,
+        "note": "low disputes"
+      },
+      {
+        "name": "fraud_signals",
+        "value": "0",
+        "weight": -0.1,
+        "note": "clean"
+      }
+    ],
+    "computed_at": "2026-01-02T15:00:00Z",
+    "method_version": "evidence.v1"
+  },
+  "rating": {
+    "rating_id": "rat.x.1jc1v1w1",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.travelhub.core",
+      "version": "1.0.0"
+    },
+    "stars_avg": 4.7,
+    "count": 142,
+    "distribution": {
+      "1": 2,
+      "2": 3,
+      "3": 11,
+      "4": 38,
+      "5": 88
+    },
+    "evidence_weighted_score": 4.55,
+    "confidence": {
+      "low": 4.43,
+      "high": 4.67,
+      "method": "wilson+evidence"
+    },
+    "updated_at": "2026-01-02T15:00:00Z",
+    "version": "1.0.0"
+  },
+  "pricing_plan": {
+    "plan_id": "price.p.049w48ab",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.travelhub.core",
+      "version": "1.0.0"
+    },
+    "model": "usage",
+    "currency": "EUR",
+    "terms": {
+      "per_run": 0.01,
+      "per_1000_steps": 0.02,
+      "per_gb_transfer": 0.1,
+      "included_quota": {
+        "runs": 100
+      },
+      "notes": "Идеально для малых команд."
+    },
+    "trial_days": 14,
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T15:00:00Z"
+  },
+  "usage_record": {
+    "usage_id": "use.u.nsdvkji6",
+    "tenant_id": "ten.travelhub.001",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.travelhub.core",
+      "version": "1.0.0"
+    },
+    "period_start": "2025-12-01T00:00:00Z",
+    "period_end": "2025-12-31T23:59:59Z",
+    "metrics": {
+      "runs": 62,
+      "steps": 184000,
+      "duration_ms": 820000,
+      "network_bytes": 230000000,
+      "storage_writes": 1200
+    },
+    "source_run_refs": [
+      "run.001",
+      "run.002",
+      "run.003"
+    ],
+    "created_at": "2026-01-02T15:00:00Z"
+  },
+  "invoice": {
+    "invoice_id": "inv.i.lvxhf0uk",
+    "tenant_id": "ten.travelhub.001",
+    "currency": "EUR",
+    "period_start": "2025-12-01T00:00:00Z",
+    "period_end": "2025-12-31T23:59:59Z",
+    "line_items": [
+      {
+        "name": "Included quota (runs 100)",
+        "qty": 1,
+        "unit_price": 0.0,
+        "amount": 0.0,
+        "subject": {
+          "kind": "bundle",
+          "id": "bundle.travelhub.core"
+        },
+        "usage_ref": "use.u.nsdvkji6"
+      },
+      {
+        "name": "Extra runs",
+        "qty": 0,
+        "unit_price": 0.01,
+        "amount": 0.0,
+        "subject": {
+          "kind": "bundle",
+          "id": "bundle.travelhub.core"
+        },
+        "usage_ref": "use.u.nsdvkji6"
+      },
+      {
+        "name": "Steps (per 1000)",
+        "qty": 184.0,
+        "unit_price": 0.02,
+        "amount": 3.68,
+        "subject": {
+          "kind": "bundle",
+          "id": "bundle.travelhub.core"
+        },
+        "usage_ref": "use.u.nsdvkji6"
+      }
+    ],
+    "subtotal": 3.68,
+    "tax": 0.0,
+    "total": 3.68,
+    "status": "issued",
+    "evidence_refs": [
+      "usage:use.u.nsdvkji6",
+      "runs:run.001,run.002,run.003"
+    ],
+    "created_at": "2026-01-02T15:00:00Z",
+    "version": "1.0.0"
+  },
+  "revenue_share": {
+    "share_id": "rs.rs.0tjen7oy",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.travelhub.core",
+      "version": "1.0.0"
+    },
+    "publisher": {
+      "id": "pub.travelhub",
+      "payout_account_ref": "acct.publisher.001"
+    },
+    "platform": {
+      "id": "ifos.market",
+      "payout_account_ref": "acct.platform.001"
+    },
+    "split": {
+      "publisher_pct": 0.7,
+      "platform_pct": 0.25,
+      "affiliate_pct": 0.05
+    },
+    "effective_from": "2026-01-01T00:00:00Z",
+    "version": "1.0.0"
+  },
+  "promotion_rule": {
+    "rule_id": "prom.r.w7qo6lke",
+    "name": "Feature Stable & Verified bundles",
+    "conditions": {
+      "min_evidence_score": 0.8,
+      "min_install_success_rate": 0.9,
+      "max_dispute_rate": 0.03,
+      "min_docs_score": 0.85,
+      "targets": [
+        "make",
+        "n8n",
+        "wp",
+        "native"
+      ]
+    },
+    "actions": {
+      "boost": 1.25,
+      "badge": "Verified+Stable",
+      "feature_in": [
+        "home_top",
+        "category_top"
+      ],
+      "suppress": false
+    },
+    "priority": 10,
+    "enabled": true,
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T15:00:00Z"
+  },
+  "leaderboard": {
+    "board_id": "lb.w.9kqp4uge",
+    "title": "Лучшие bundles по стабильности (месяц)",
+    "period": {
+      "start": "2025-12-01",
+      "end": "2025-12-31",
+      "label": "Dec 2025"
+    },
+    "metric": "stability",
+    "entries": [
+      {
+        "rank": 1,
+        "subject": {
+          "kind": "bundle",
+          "id": "bundle.travelhub.core"
+        },
+        "score": 0.94,
+        "evidence_level": "L2",
+        "notes": "28/30 успешных запусков, быстрый install"
+      },
+      {
+        "rank": 2,
+        "subject": {
+          "kind": "bundle",
+          "id": "bundle.news_digest.core"
+        },
+        "score": 0.91,
+        "evidence_level": "L2",
+        "notes": "высокая полнота доков"
+      }
+    ],
+    "generated_at": "2026-01-02T15:00:00Z",
+    "version": "1.0.0"
+  },
+  "antifraud_signal": {
+    "signal_id": "af.af.6klgriki",
+    "kind": "review_spam",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.some.new",
+      "tenant_id": "ten.spam.001"
+    },
+    "severity": "high",
+    "features": [
+      {
+        "name": "review_density_10min",
+        "value": "43",
+        "weight": 0.35,
+        "note": "too many in short time"
+      },
+      {
+        "name": "verified_ratio",
+        "value": "0.02",
+        "weight": 0.25,
+        "note": "almost none verified"
+      },
+      {
+        "name": "text_similarity",
+        "value": "0.91",
+        "weight": 0.25,
+        "note": "template-like"
+      }
+    ],
+    "recommended_action": "Hide reviews, freeze rating 72h, require verified usage; send to governance for sanction.",
+    "generated_at": "2026-01-02T15:00:00Z",
+    "method_version": "antifraud.v1"
+  }
+}
