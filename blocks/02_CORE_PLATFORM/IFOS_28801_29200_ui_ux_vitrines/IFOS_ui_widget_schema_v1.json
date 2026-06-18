@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UIWidget Schema v1",
+  "type": "object",
+  "required": [
+    "widget_id",
+    "type",
+    "data_ref",
+    "options",
+    "version"
+  ],
+  "properties": {
+    "widget_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "status_badge",
+        "progress",
+        "last_run",
+        "logs_link",
+        "input_form",
+        "table_preview",
+        "chart_preview",
+        "compare_row",
+        "news_tile",
+        "text",
+        "actions_bar"
+      ]
+    },
+    "data_ref": {
+      "type": "string",
+      "description": "Reference to data source: collection/query/metric."
+    },
+    "options": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
