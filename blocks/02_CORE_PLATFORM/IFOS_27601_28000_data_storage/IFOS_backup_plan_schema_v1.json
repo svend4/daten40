@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS BackupPlan Schema v1",
+  "type": "object",
+  "required": [
+    "backup_plan_id",
+    "workspace_id",
+    "kind",
+    "targets",
+    "schedule_ref",
+    "verify_restore",
+    "encryption",
+    "retention_policy_ref",
+    "version"
+  ],
+  "properties": {
+    "backup_plan_id": {
+      "type": "string"
+    },
+    "workspace_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "full",
+        "incremental",
+        "hybrid"
+      ]
+    },
+    "targets": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "raw",
+          "normalized",
+          "artifacts",
+          "indexes",
+          "schemas",
+          "configs"
+        ]
+      }
+    },
+    "schedule_ref": {
+      "type": "string"
+    },
+    "verify_restore": {
+      "type": "boolean"
+    },
+    "encryption": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "destination_backend_ref": {
+      "type": "string"
+    },
+    "retention_policy_ref": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
