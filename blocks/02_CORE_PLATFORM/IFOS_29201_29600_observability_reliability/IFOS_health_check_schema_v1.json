@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS HealthCheck Schema v1",
+  "type": "object",
+  "required": [
+    "check_id",
+    "target",
+    "kind",
+    "interval_sec",
+    "timeout_sec",
+    "last_result",
+    "version"
+  ],
+  "properties": {
+    "check_id": {
+      "type": "string"
+    },
+    "target": {
+      "type": "object",
+      "required": [
+        "kind",
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "connector",
+            "job",
+            "package",
+            "vitrine",
+            "system"
+          ]
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "connector",
+        "secret",
+        "quota",
+        "storage",
+        "index",
+        "end_to_end"
+      ]
+    },
+    "interval_sec": {
+      "type": "integer",
+      "minimum": 10
+    },
+    "timeout_sec": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "last_result": {
+      "type": "object",
+      "required": [
+        "ts",
+        "status"
+      ],
+      "properties": {
+        "ts": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "ok",
+            "degraded",
+            "broken"
+          ]
+        },
+        "details": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
