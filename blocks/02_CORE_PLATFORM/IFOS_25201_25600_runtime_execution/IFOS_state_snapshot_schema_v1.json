@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS State Snapshot Schema v1",
+  "type": "object",
+  "required": [
+    "snapshot_id",
+    "job_id",
+    "when",
+    "resources",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "snapshot_id": {
+      "type": "string"
+    },
+    "job_id": {
+      "type": "string"
+    },
+    "when": {
+      "type": "string",
+      "enum": [
+        "before",
+        "after"
+      ]
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "ref"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string"
+          },
+          "ref": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
