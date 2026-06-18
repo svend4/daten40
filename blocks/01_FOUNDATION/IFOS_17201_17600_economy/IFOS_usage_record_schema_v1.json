@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Usage Record Schema v1",
+  "type": "object",
+  "required": [
+    "usage_id",
+    "tenant_id",
+    "subject",
+    "period_start",
+    "period_end",
+    "metrics",
+    "source_run_refs",
+    "created_at"
+  ],
+  "properties": {
+    "usage_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "period_start": {
+      "type": "string"
+    },
+    "period_end": {
+      "type": "string"
+    },
+    "metrics": {
+      "type": "object",
+      "properties": {
+        "runs": {
+          "type": "integer"
+        },
+        "steps": {
+          "type": "integer"
+        },
+        "duration_ms": {
+          "type": "integer"
+        },
+        "network_bytes": {
+          "type": "integer"
+        },
+        "storage_writes": {
+          "type": "integer"
+        }
+      }
+    },
+    "source_run_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at": {
+      "type": "string"
+    }
+  }
+}
