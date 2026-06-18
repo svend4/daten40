@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Runtime Job Schema v1",
+  "type": "object",
+  "required": [
+    "job_id",
+    "subject",
+    "inputs_ref",
+    "status",
+    "started_at",
+    "ended_at",
+    "outputs_ref",
+    "failure",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "job_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "inputs_ref": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "queued",
+        "running",
+        "success",
+        "fail",
+        "cancelled"
+      ]
+    },
+    "started_at": {
+      "type": "string"
+    },
+    "ended_at": {
+      "type": "string"
+    },
+    "outputs_ref": {
+      "type": "string"
+    },
+    "failure": {
+      "type": "object",
+      "properties": {
+        "step_id": {
+          "type": "string"
+        },
+        "error_code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "retryable": {
+          "type": "boolean"
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
