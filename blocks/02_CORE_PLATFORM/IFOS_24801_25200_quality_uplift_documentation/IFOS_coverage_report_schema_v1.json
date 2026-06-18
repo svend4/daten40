@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Coverage Report Schema v1",
+  "type": "object",
+  "required": [
+    "coverage_id",
+    "subject_id",
+    "metrics",
+    "run_at",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "coverage_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "run_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
