@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ComplianceProfile Schema v1",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "workspace_id",
+    "name",
+    "requirements",
+    "enabled",
+    "version"
+  ],
+  "properties": {
+    "profile_id": {
+      "type": "string"
+    },
+    "workspace_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "requirements": {
+      "type": "object",
+      "properties": {
+        "encryption_in_transit": {
+          "type": "boolean"
+        },
+        "encryption_at_rest": {
+          "type": "boolean"
+        },
+        "audit_mandatory": {
+          "type": "boolean"
+        },
+        "pii_minimization": {
+          "type": "boolean"
+        },
+        "export_controls": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
