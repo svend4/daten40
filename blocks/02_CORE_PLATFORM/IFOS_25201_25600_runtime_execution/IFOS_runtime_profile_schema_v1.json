@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Runtime Profile Schema v1",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "env",
+    "platform",
+    "constraints",
+    "logging",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "profile_id": {
+      "type": "string"
+    },
+    "env": {
+      "type": "string",
+      "enum": [
+        "dev",
+        "sandbox",
+        "staging",
+        "prod"
+      ]
+    },
+    "platform": {
+      "type": "string",
+      "enum": [
+        "make",
+        "n8n",
+        "wordpress",
+        "custom"
+      ]
+    },
+    "region": {
+      "type": "string"
+    },
+    "tenant": {
+      "type": "string"
+    },
+    "constraints": {
+      "type": "object",
+      "properties": {
+        "network_allowlist": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "max_runtime_seconds": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_steps": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "storage_mb": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "logging": {
+      "type": "object",
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": [
+            "debug",
+            "info",
+            "warn",
+            "error"
+          ]
+        },
+        "no_log_fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "redaction": {
+          "type": "string",
+          "enum": [
+            "mask",
+            "drop"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
