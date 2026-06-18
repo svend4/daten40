@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS IdempotencyKey Schema v1",
+  "type": "object",
+  "required": [
+    "key_id",
+    "job_id",
+    "key",
+    "ttl_seconds",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "key_id": {
+      "type": "string"
+    },
+    "job_id": {
+      "type": "string"
+    },
+    "key": {
+      "type": "string"
+    },
+    "ttl_seconds": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "done",
+        "failed"
+      ]
+    },
+    "result_ref": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
