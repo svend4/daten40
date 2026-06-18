@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UIAction Schema v1",
+  "type": "object",
+  "required": [
+    "action_id",
+    "kind",
+    "label",
+    "target",
+    "params",
+    "guards",
+    "version"
+  ],
+  "properties": {
+    "action_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "install_package",
+        "run_job",
+        "open_vitrine",
+        "export_bundle",
+        "configure",
+        "approve",
+        "other"
+      ]
+    },
+    "label": {
+      "type": "string"
+    },
+    "target": {
+      "type": "object",
+      "required": [
+        "kind",
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "package",
+            "job",
+            "vitrine",
+            "collection",
+            "bundle",
+            "policy_gate",
+            "url",
+            "other"
+          ]
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "params": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "guards": {
+      "type": "object",
+      "properties": {
+        "requires_role": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "requires_policy_check": {
+          "type": "boolean"
+        },
+        "requires_mfa": {
+          "type": "boolean"
+        },
+        "requires_approval": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
