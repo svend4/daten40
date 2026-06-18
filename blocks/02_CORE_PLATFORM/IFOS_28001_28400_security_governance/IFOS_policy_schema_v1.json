@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Policy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "workspace_id",
+    "name",
+    "effect",
+    "actions",
+    "resources",
+    "conditions",
+    "version",
+    "enabled"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "workspace_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "effect": {
+      "type": "string",
+      "enum": [
+        "allow",
+        "deny",
+        "require"
+      ]
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "conditions": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "enforced_measures": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "mfa",
+          "approval",
+          "signed_package",
+          "audit",
+          "encryption"
+        ]
+      }
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
