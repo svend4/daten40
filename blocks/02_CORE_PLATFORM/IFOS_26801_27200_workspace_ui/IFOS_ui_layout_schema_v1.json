@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UILayout Schema v1",
+  "type": "object",
+  "required": [
+    "layout_id",
+    "grid",
+    "sections",
+    "responsive",
+    "version"
+  ],
+  "properties": {
+    "layout_id": {
+      "type": "string"
+    },
+    "grid": {
+      "type": "object",
+      "properties": {
+        "columns": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "gap": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "components"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "components": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tab": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "responsive": {
+      "type": "object",
+      "properties": {
+        "mobile_columns": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "collapse_tabs": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "presentation_mode": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
