@@ -1,0 +1,160 @@
+{
+  "listing": {
+    "listing_id": "lst.telegram_rss_digest.001",
+    "item_type": "recipe",
+    "item_ref": "recipe.rss_to_telegram.digest_v1",
+    "title": "RSS → Telegram дайджест (простая кнопка)",
+    "summary": "Считывает RSS и отправляет новые элементы в Telegram одним сообщением.",
+    "version": "1.0.0",
+    "authors": [
+      "IFOS Community"
+    ],
+    "publisher": "pub.ifos.demo",
+    "license": "MIT",
+    "price": {
+      "model": "free"
+    },
+    "tags": [
+      "rss",
+      "telegram",
+      "digest"
+    ],
+    "domains": [
+      "news",
+      "office"
+    ],
+    "targets_supported": [
+      "make_cloud",
+      "n8n_selfhost",
+      "cli_script_python",
+      "cli_script_bash"
+    ],
+    "required_secrets": [
+      "TELEGRAM_BOT_TOKEN"
+    ],
+    "policy_flags": {
+      "pii": false,
+      "money": false,
+      "security_sensitive": false
+    },
+    "evidence_summary": {
+      "min_level": "L1_dry_run",
+      "runs_verified": 3,
+      "last_verified_at": "2026-01-01T10:00:00Z"
+    },
+    "trust_score": {
+      "score": 78.5,
+      "breakdown": {
+        "evidence": 85,
+        "security": 90,
+        "popularity": 60,
+        "freshness": 70,
+        "support": 75
+      }
+    },
+    "links": {
+      "docs": "doc://recipe.rss_to_telegram.digest_v1",
+      "source": "git://ifos/recipes/rss_to_telegram",
+      "artifact_bundle": "artifact://lst.telegram_rss_digest.001/v1"
+    },
+    "created_at": "2026-01-01T10:00:00Z",
+    "updated_at": "2026-01-01T10:00:00Z"
+  },
+  "review": {
+    "review_id": "rev.0001",
+    "listing_id": "lst.telegram_rss_digest.001",
+    "user_ref": "usr.demo.01",
+    "rating": 5,
+    "text": "Завёл за 10 минут. Dry-run показал превью, потом реальный запуск в тестовый чат. Очень удобно.",
+    "target": "n8n_selfhost",
+    "tags": [
+      "easy",
+      "works"
+    ],
+    "evidence_ref": "evid.0001",
+    "created_at": "2026-01-01T10:00:00Z"
+  },
+  "evidence_record": {
+    "evidence_record_id": "evid.0001",
+    "listing_id": "lst.telegram_rss_digest.001",
+    "item_version": "1.0.0",
+    "level": "L1_dry_run",
+    "result": "PASS",
+    "checks": [
+      {
+        "kind": "schema_validate",
+        "status": "PASS"
+      },
+      {
+        "kind": "dry_run",
+        "status": "PASS",
+        "notes": "Preview length OK; no secrets in output."
+      },
+      {
+        "kind": "secret_scan",
+        "status": "PASS",
+        "notes": "No token patterns found."
+      }
+    ],
+    "artifacts": [
+      {
+        "name": "dry_run_log.json",
+        "sha256": "(stub)",
+        "uri": "artifact://evid.0001/dry_run_log.json",
+        "redacted": true
+      },
+      {
+        "name": "rendered_preview.txt",
+        "sha256": "(stub)",
+        "uri": "artifact://evid.0001/preview.txt",
+        "redacted": true
+      }
+    ],
+    "environment": {
+      "target": "n8n_selfhost",
+      "connector_versions": {
+        "n8n": "1.x"
+      },
+      "os": "linux",
+      "runtime": "node"
+    },
+    "signature": {
+      "publisher_key_id": "key.demo.01",
+      "sig_alg": "none"
+    },
+    "created_at": "2026-01-01T10:00:00Z"
+  },
+  "moderation_ticket": {
+    "ticket_id": "tkt.0001",
+    "subject_type": "review",
+    "subject_ref": "rev.0001",
+    "reason": "quality",
+    "status": "approved",
+    "reporter_ref": "usr.demo.02",
+    "moderator_ref": "mod.demo.01",
+    "decision_notes": "Review includes evidence_ref and target; accepted.",
+    "actions": [
+      "link_evidence_verified"
+    ],
+    "created_at": "2026-01-01T10:00:00Z",
+    "updated_at": "2026-01-01T10:00:00Z"
+  },
+  "trust_score": {
+    "version": "1.0.0",
+    "listing_id": "lst.telegram_rss_digest.001",
+    "score": 78.5,
+    "breakdown": {
+      "evidence": 85,
+      "security": 90,
+      "popularity": 60,
+      "freshness": 70,
+      "support": 75
+    },
+    "explain": [
+      "L1 evidence: 3 независимых dry-run записи (PASS).",
+      "Secret-scan: PASS, policy low risk.",
+      "Freshness средний: обновлений не было 60+ дней."
+    ],
+    "computed_at": "2026-01-01T10:00:00Z"
+  }
+}
