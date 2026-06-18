@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Provenance Record Schema v1",
+  "type": "object",
+  "required": [
+    "prov_id",
+    "subject_id",
+    "chain",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "prov_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "chain": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "ref",
+          "ts"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "source",
+              "conversion",
+              "install",
+              "receipt",
+              "review",
+              "trust_score",
+              "moderation"
+            ]
+          },
+          "ref": {
+            "type": "string"
+          },
+          "ts": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
