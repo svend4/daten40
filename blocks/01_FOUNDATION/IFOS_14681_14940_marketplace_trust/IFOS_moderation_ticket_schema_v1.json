@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Moderation Ticket Schema v1",
+  "type": "object",
+  "required": [
+    "ticket_id",
+    "subject_type",
+    "subject_ref",
+    "reason",
+    "status",
+    "created_at"
+  ],
+  "properties": {
+    "ticket_id": {
+      "type": "string"
+    },
+    "subject_type": {
+      "type": "string",
+      "enum": [
+        "listing",
+        "review",
+        "evidence_record",
+        "publisher"
+      ]
+    },
+    "subject_ref": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string",
+      "enum": [
+        "spam",
+        "security",
+        "policy_violation",
+        "copyright",
+        "trademark",
+        "quality"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "needs_changes",
+        "approved",
+        "rejected",
+        "banned"
+      ]
+    },
+    "reporter_ref": {
+      "type": "string"
+    },
+    "moderator_ref": {
+      "type": "string"
+    },
+    "decision_notes": {
+      "type": "string"
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
