@@ -1,0 +1,324 @@
+{
+  "tenant": {
+    "tenant_id": "ten.travelhub.001",
+    "name": "TravelHub GmbH",
+    "status": "active",
+    "contact": {
+      "email": "ops@travelhub.example",
+      "org_url": "https://travelhub.example"
+    },
+    "retention_policy_ref": "ret.ten.travelhub.001",
+    "sso_config_ref": "sso.ten.travelhub.001",
+    "default_roles": {
+      "group:travelhub-admins": "Admin",
+      "group:travelhub-ops": "Operator"
+    },
+    "created_at": "2026-01-02T10:00:00Z",
+    "updated_at": "2026-01-02T10:00:00Z"
+  },
+  "retention_policy": {
+    "retention_policy_id": "ret.ten.travelhub.001",
+    "tenant_id": "ten.travelhub.001",
+    "defaults": {
+      "run_logs_days": 30,
+      "artifacts_days": 14,
+      "evidence_days": 180,
+      "mode": "delete"
+    },
+    "overrides": [
+      {
+        "when": {
+          "flags": {
+            "pii": true
+          }
+        },
+        "run_logs_days": 7,
+        "artifacts_days": 3,
+        "evidence_days": 30,
+        "mode": "anonymize"
+      },
+      {
+        "when": {
+          "flags": {
+            "money": true
+          }
+        },
+        "run_logs_days": 90,
+        "artifacts_days": 30,
+        "evidence_days": 365,
+        "mode": "archive"
+      }
+    ],
+    "encryption": {
+      "at_rest": true,
+      "key_per_tenant": true
+    },
+    "created_at": "2026-01-02T10:00:00Z",
+    "updated_at": "2026-01-02T10:00:00Z"
+  },
+  "rbac_policy": {
+    "policy_id": "pol.ten.travelhub.001",
+    "tenant_id": "ten.travelhub.001",
+    "version": "1.0.0",
+    "rules": [
+      {
+        "rule_id": "r1",
+        "effect": "ALLOW",
+        "actions": [
+          "create_job",
+          "update_job",
+          "run_job",
+          "view_runs"
+        ],
+        "roles": [
+          "Builder",
+          "Operator"
+        ],
+        "resource_types": [
+          "job",
+          "run"
+        ]
+      },
+      {
+        "rule_id": "r2",
+        "effect": "ALLOW_WITH_CONDITIONS",
+        "actions": [
+          "publish_evidence"
+        ],
+        "roles": [
+          "Verifier"
+        ],
+        "resource_types": [
+          "evidence_record"
+        ],
+        "conditions": {
+          "require_2fa": true,
+          "min_level": "L2_integration"
+        }
+      },
+      {
+        "rule_id": "r3",
+        "effect": "DENY",
+        "actions": [
+          "read_secret"
+        ],
+        "roles": [
+          "Operator",
+          "Builder"
+        ],
+        "resource_types": [
+          "secret"
+        ],
+        "conditions": {
+          "note": "Only Admin can read secrets directly; runtime uses vault under service identity."
+        }
+      }
+    ],
+    "created_at": "2026-01-02T10:00:00Z",
+    "updated_at": "2026-01-02T10:00:00Z"
+  },
+  "billing_plan": {
+    "plan_id": "plan.pro.2026",
+    "name": "Pro (usage-based)",
+    "currency": "EUR",
+    "rates": {
+      "per_run": 0.01,
+      "per_step": 0.001,
+      "per_request": 0.002,
+      "per_storage_mb_day": 0.0002,
+      "per_verified_evidence": 0.5
+    },
+    "free_allowance": {
+      "runs": 1000,
+      "requests": 2000,
+      "storage_mb_day": 500
+    },
+    "effective_from": "2026-01-01",
+    "effective_to": ""
+  },
+  "usage_events": [
+    {
+      "usage_id": "use.mvmxqgfp",
+      "tenant_id": "ten.travelhub.001",
+      "workspace_id": "ws.prod",
+      "job_id": "job.rss_to_telegram.001",
+      "run_id": "run.rss_to_telegram.0001",
+      "meters": {
+        "runs": 1,
+        "steps": 12,
+        "requests": 5,
+        "storage_mb_day": 0.3,
+        "verified_evidence": 0
+      },
+      "flags": {
+        "pii": false,
+        "money": false,
+        "security_sensitive": false
+      },
+      "ts": "2026-01-02T10:00:00Z"
+    },
+    {
+      "usage_id": "use.427c10db",
+      "tenant_id": "ten.travelhub.001",
+      "workspace_id": "ws.prod",
+      "job_id": "job.price_compare.001",
+      "run_id": "run.price_compare.0042",
+      "meters": {
+        "runs": 1,
+        "steps": 30,
+        "requests": 40,
+        "storage_mb_day": 1.2,
+        "verified_evidence": 1
+      },
+      "flags": {
+        "pii": false,
+        "money": true,
+        "security_sensitive": false
+      },
+      "ts": "2026-01-02T10:00:00Z"
+    }
+  ],
+  "invoice": {
+    "invoice_id": "inv.ten.travelhub.001.2026-01",
+    "tenant_id": "ten.travelhub.001",
+    "plan_id": "plan.pro.2026",
+    "period": {
+      "from": "2026-01-01",
+      "to": "2026-01-31"
+    },
+    "currency": "EUR",
+    "lines": [
+      {
+        "meter": "runs",
+        "qty": 2,
+        "unit_price": 0.01,
+        "amount": 0.02
+      },
+      {
+        "meter": "steps",
+        "qty": 42,
+        "unit_price": 0.001,
+        "amount": 0.042
+      },
+      {
+        "meter": "requests",
+        "qty": 45,
+        "unit_price": 0.002,
+        "amount": 0.09
+      },
+      {
+        "meter": "storage_mb_day",
+        "qty": 1.5,
+        "unit_price": 0.0002,
+        "amount": 0.0003
+      },
+      {
+        "meter": "verified_evidence",
+        "qty": 1,
+        "unit_price": 0.5,
+        "amount": 0.5
+      }
+    ],
+    "subtotal": 0.6523,
+    "tax": 0.0,
+    "total": 0.6523,
+    "status": "issued",
+    "created_at": "2026-01-02T10:00:00Z"
+  },
+  "audit_event": {
+    "audit_id": "aud.kvpige3o",
+    "tenant_id": "ten.travelhub.001",
+    "workspace_id": "ws.prod",
+    "actor": {
+      "type": "user",
+      "id": "usr.alice",
+      "roles": [
+        "Verifier"
+      ],
+      "ip": "203.0.113.10"
+    },
+    "action": "publish_evidence",
+    "resource": {
+      "type": "evidence_record",
+      "id": "evid.0007",
+      "flags": {
+        "money": true
+      }
+    },
+    "result": "ALLOW",
+    "reason": "ALLOW_WITH_CONDITIONS satisfied (2FA, second approver).",
+    "ts": "2026-01-02T10:00:00Z",
+    "trace_id": "trace_abcd1234",
+    "hash_chain": {
+      "prev_hash": "(prev)",
+      "this_hash": "(this)",
+      "alg": "sha256"
+    }
+  },
+  "sso_config": {
+    "sso_config_id": "sso.ten.travelhub.001",
+    "tenant_id": "ten.travelhub.001",
+    "enabled": true,
+    "provider": {
+      "type": "oidc",
+      "issuer": "https://login.example-idp.com",
+      "client_id": "ifos-travelhub",
+      "redirect_uris": [
+        "https://ifos.example/callback"
+      ]
+    },
+    "scim": {
+      "enabled": true,
+      "endpoint": "https://ifos.example/scim/v2",
+      "group_to_role_map": {
+        "travelhub-admins": "Admin",
+        "travelhub-ops": "Operator"
+      }
+    },
+    "created_at": "2026-01-02T10:00:00Z",
+    "updated_at": "2026-01-02T10:00:00Z"
+  },
+  "federation_node": {
+    "node_id": "node.community.01",
+    "name": "IFOS Community Node",
+    "base_url": "https://community.ifos.example",
+    "public_key": "(pubkey)",
+    "trust_policy": {
+      "accept_signed_only": false,
+      "min_trust_score": 60,
+      "allowed_publishers": [],
+      "blocked_publishers": [
+        "pub.bad.actor"
+      ]
+    },
+    "sync": {
+      "enabled": true,
+      "mode": "pull",
+      "interval_min": 60
+    },
+    "created_at": "2026-01-02T10:00:00Z",
+    "updated_at": "2026-01-02T10:00:00Z"
+  },
+  "federation_sync_event": {
+    "sync_id": "sync.h4h1v5or",
+    "from_node": "node.community.01",
+    "to_node": "node.enterprise.01",
+    "kind": "trust_scores",
+    "items": [
+      {
+        "listing_id": "lst.telegram_rss_digest.001",
+        "score": 78.5,
+        "breakdown": {
+          "evidence": 85,
+          "security": 90,
+          "freshness": 70,
+          "support": 75,
+          "popularity": 60
+        }
+      }
+    ],
+    "ts": "2026-01-02T10:00:00Z",
+    "result": "PASS",
+    "notes": "Imported trust scores; local policy kept only >=60."
+  }
+}
