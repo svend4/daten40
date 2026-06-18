@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Anti-Fraud Signal Schema v1",
+  "type": "object",
+  "required": [
+    "signal_id",
+    "subject_id",
+    "type",
+    "severity",
+    "evidence",
+    "created_at",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "signal_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "velocity_spike",
+        "text_duplication",
+        "low_verified_ratio",
+        "ip_cluster",
+        "publisher_self_review",
+        "fingerprint_cluster"
+      ]
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
