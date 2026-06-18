@@ -1,0 +1,310 @@
+{
+  "template_bundle": {
+    "template_id": "tpl.rss.pbv108htxk",
+    "intent": "RSS → Digest → Telegram",
+    "subject_skeleton": {
+      "kind": "bundle",
+      "id": "bundle.template.rss_digest",
+      "version": "0.1.0"
+    },
+    "files": [
+      {
+        "path": "workflow.json",
+        "role": "workflow",
+        "content_ref": "ref://workflow.sample"
+      },
+      {
+        "path": "permissions.json",
+        "role": "permissions",
+        "content_ref": "ref://permissions.sample"
+      },
+      {
+        "path": "smoke.json",
+        "role": "smoke",
+        "content_ref": "ref://smoke.sample"
+      }
+    ],
+    "smoke_checks": [
+      "smoke.c1.9fysu4kn39",
+      "smoke.c2.mbcdj3jgjd"
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T20:10:00Z"
+  },
+  "sdk_manifest": {
+    "sdk_id": "sdk.core.19jx40xnm3",
+    "name": "IFOS Core SDK",
+    "capabilities": [
+      "ingest.rss",
+      "dedupe",
+      "summarize.llm",
+      "deliver.telegram",
+      "deliver.email",
+      "schedule.daily"
+    ],
+    "connectors": [
+      {
+        "id": "connector.telegram",
+        "interface": "deliver.telegram",
+        "auth_types": [
+          "bot_token"
+        ]
+      }
+    ],
+    "schemas": [
+      {
+        "name": "NormalizedItem",
+        "schema_ref": "schema://normalized_item_v1"
+      }
+    ],
+    "errors": [
+      {
+        "code": "NET_TIMEOUT",
+        "meaning": "Network timeout",
+        "retryable": true
+      },
+      {
+        "code": "AUTH_FAIL",
+        "meaning": "Auth invalid",
+        "retryable": false
+      }
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T20:10:00Z"
+  },
+  "runtime_job": {
+    "job_id": "job.run.li8w3xzdce",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.news_digest.core",
+      "version": "1.1.0"
+    },
+    "inputs_ref": "ref://inputs.sample",
+    "status": "success",
+    "started_at": "2026-01-02T20:10:00Z",
+    "ended_at": "2026-01-02T20:10:00Z",
+    "outputs_ref": "ref://outputs.sample",
+    "failure": {},
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T20:10:00Z"
+  },
+  "runtime_logs": [
+    {
+      "log_id": "log.l1.4jyolmheer",
+      "at": "2026-01-02T20:10:00Z",
+      "level": "info",
+      "correlation_id": "corr.123",
+      "job_id": "job.run.li8w3xzdce",
+      "step_id": "ingest",
+      "message": "Fetched RSS items",
+      "fields": {
+        "count": 25
+      },
+      "version": "1.0.0",
+      "updated_at": "2026-01-02T20:10:00Z"
+    },
+    {
+      "log_id": "log.l2.k51i3z3t3w",
+      "at": "2026-01-02T20:10:00Z",
+      "level": "info",
+      "correlation_id": "corr.123",
+      "job_id": "job.run.li8w3xzdce",
+      "step_id": "summarize",
+      "message": "LLM summary complete",
+      "fields": {
+        "tokens_in": 1200,
+        "tokens_out": 420
+      },
+      "version": "1.0.0",
+      "updated_at": "2026-01-02T20:10:00Z"
+    }
+  ],
+  "metrics_snapshot": {
+    "metrics_id": "m.m.zlgkkbmpnq",
+    "job_id": "job.run.li8w3xzdce",
+    "at": "2026-01-02T20:10:00Z",
+    "counters": {
+      "steps.success": 5,
+      "retries": 1,
+      "external.calls": 12
+    },
+    "timers": {
+      "step.ingest.ms": 520,
+      "step.summarize.ms": 2400,
+      "job.total.ms": 4100
+    },
+    "cost": {
+      "llm_tokens_in": 1200,
+      "llm_tokens_out": 420,
+      "estimated_usd": 0.03
+    },
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T20:10:00Z"
+  },
+  "trace_spans": [
+    {
+      "span_id": "sp.a.ismdhgvh5b",
+      "trace_id": "tr.123",
+      "parent_span_id": "",
+      "job_id": "job.run.li8w3xzdce",
+      "step_id": "ingest",
+      "name": "ingest.rss",
+      "start": "2026-01-02T20:10:00Z",
+      "end": "2026-01-02T20:10:00Z",
+      "attrs": {
+        "domain": "rss.example.com"
+      },
+      "version": "1.0.0",
+      "updated_at": "2026-01-02T20:10:00Z"
+    },
+    {
+      "span_id": "sp.b.8ghfablo1u",
+      "trace_id": "tr.123",
+      "parent_span_id": "",
+      "job_id": "job.run.li8w3xzdce",
+      "step_id": "summarize",
+      "name": "summarize.llm",
+      "start": "2026-01-02T20:10:00Z",
+      "end": "2026-01-02T20:10:00Z",
+      "attrs": {
+        "model": "gpt"
+      },
+      "version": "1.0.0",
+      "updated_at": "2026-01-02T20:10:00Z"
+    }
+  ],
+  "test_plan": {
+    "plan_id": "plan.t.yldxequlza",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.news_digest.core",
+      "version": "1.1.0"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "type": "unit",
+        "steps": [
+          "parse",
+          "dedupe"
+        ],
+        "expected": "schemas valid"
+      },
+      {
+        "id": "t2",
+        "type": "integration",
+        "steps": [
+          "telegram_send"
+        ],
+        "expected": "200 OK (mocked)"
+      },
+      {
+        "id": "t3",
+        "type": "e2e",
+        "steps": [
+          "full"
+        ],
+        "expected": "message delivered"
+      }
+    ],
+    "environments": [
+      "local",
+      "ci"
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T20:10:00Z"
+  },
+  "smoke_check": {
+    "smoke_id": "smoke.s.hggmt5kiud",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.news_digest.core",
+      "version": "1.1.0"
+    },
+    "checks": [
+      {
+        "name": "validate_config",
+        "status": "pass",
+        "details": "ok"
+      },
+      {
+        "name": "dry_run_sample",
+        "status": "pass",
+        "details": "output schema ok"
+      },
+      {
+        "name": "allowlist_dns",
+        "status": "warn",
+        "details": "smtp.example.com not reachable in local"
+      }
+    ],
+    "status": "warn",
+    "report": "Local environment limitation (expected).",
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T20:10:00Z"
+  },
+  "migration": {
+    "migration_id": "mig.m1.ay0tlv36q2",
+    "from_version": "1.0.0",
+    "to_version": "1.1.0",
+    "changes": [
+      {
+        "path": "config.llm.model",
+        "type": "default",
+        "note": "set default model if missing"
+      },
+      {
+        "path": "config.telegram.chat_id",
+        "type": "rename",
+        "note": "moved to config.delivery.telegram.chat_id"
+      }
+    ],
+    "script_ref": "ref://migrations/mig_1_0_to_1_1.py",
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T20:10:00Z"
+  },
+  "publish_job": {
+    "publish_id": "pubjob.p.b5kgncfgfa",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.news_digest.core",
+      "version": "1.1.0"
+    },
+    "steps": [
+      {
+        "name": "tests",
+        "status": "pass",
+        "details": "all tests ok"
+      },
+      {
+        "name": "smoke",
+        "status": "warn",
+        "details": "local smtp unreachable"
+      },
+      {
+        "name": "scans",
+        "status": "pass",
+        "details": "no critical/high"
+      },
+      {
+        "name": "sbom+sign",
+        "status": "pass",
+        "details": "ed25519 signed"
+      },
+      {
+        "name": "upload",
+        "status": "pass",
+        "details": "artifacts uploaded"
+      }
+    ],
+    "status": "success",
+    "artifacts": [
+      "sbom.json",
+      "signature.json",
+      "listing.json"
+    ],
+    "created_at": "2026-01-02T20:10:00Z",
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T20:10:00Z"
+  }
+}
