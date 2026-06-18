@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Dispute Case Schema v1",
+  "type": "object",
+  "required": [
+    "case_id",
+    "opened_by",
+    "target_ref",
+    "claim",
+    "status",
+    "timeline",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "case_id": {
+      "type": "string"
+    },
+    "opened_by": {
+      "type": "string"
+    },
+    "target_ref": {
+      "type": "string"
+    },
+    "claim": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "triage",
+        "needs_info",
+        "resolved",
+        "rejected"
+      ]
+    },
+    "timeline": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "ts",
+          "event"
+        ],
+        "properties": {
+          "ts": {
+            "type": "string"
+          },
+          "event": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "resolution": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
