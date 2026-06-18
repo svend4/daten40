@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UI Telemetry Event Schema v1",
+  "type": "object",
+  "required": [
+    "event_id",
+    "tenant_id",
+    "session_id",
+    "event",
+    "at",
+    "properties",
+    "consent_ref",
+    "version"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "session_id": {
+      "type": "string"
+    },
+    "event": {
+      "type": "string",
+      "enum": [
+        "wizard_step_view",
+        "wizard_step_complete",
+        "wizard_error",
+        "card_view",
+        "card_action_click",
+        "undo_start",
+        "undo_complete"
+      ]
+    },
+    "properties": {
+      "type": "object"
+    },
+    "at": {
+      "type": "string"
+    },
+    "consent_ref": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
