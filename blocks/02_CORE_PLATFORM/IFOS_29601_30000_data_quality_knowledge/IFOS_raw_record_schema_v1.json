@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RawRecord Schema v1",
+  "type": "object",
+  "required": [
+    "raw_id",
+    "source_id",
+    "fetched_at",
+    "payload",
+    "content_hash",
+    "meta",
+    "version"
+  ],
+  "properties": {
+    "raw_id": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "fetched_at": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "content_hash": {
+      "type": "string"
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
