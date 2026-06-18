@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Leaderboard Schema v1",
+  "type": "object",
+  "required": [
+    "board_id",
+    "title",
+    "period",
+    "metric",
+    "entries",
+    "generated_at",
+    "version"
+  ],
+  "properties": {
+    "board_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "period": {
+      "type": "object",
+      "properties": {
+        "start": {
+          "type": "string"
+        },
+        "end": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        }
+      }
+    },
+    "metric": {
+      "type": "string",
+      "enum": [
+        "stability",
+        "install_speed",
+        "docs_quality",
+        "value",
+        "reuse_in_clusters",
+        "growth"
+      ]
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "rank": {
+            "type": "integer"
+          },
+          "subject": {
+            "type": "object"
+          },
+          "score": {
+            "type": "number"
+          },
+          "evidence_level": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
