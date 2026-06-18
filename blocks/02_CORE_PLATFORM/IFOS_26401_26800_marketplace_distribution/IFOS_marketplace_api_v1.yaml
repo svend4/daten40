@@ -1,0 +1,99 @@
+openapi: 3.0.3
+info:
+  title: IFOS Marketplace & Distribution API
+  version: "1.0.0"
+  description: "Catalog, vitrines, packages, install plans, run, updates, signatures."
+servers:
+  - url: https://market.ifos.local/v1
+tags:
+  - name: Catalog
+  - name: Packages
+  - name: Vitrines
+  - name: Install
+  - name: Updates
+  - name: Reviews
+paths:
+  /catalog/items:
+    get:
+      tags: [Catalog]
+      summary: List marketplace items
+      responses:
+        "200": {description: OK}
+  /catalog/items/{item_id}:
+    get:
+      tags: [Catalog]
+      summary: Get item
+      parameters:
+        - name: item_id
+          in: path
+          required: true
+          schema: {type: string}
+      responses:
+        "200": {description: OK}
+  /packages/{package_id}:
+    get:
+      tags: [Packages]
+      summary: Get package metadata
+      parameters:
+        - name: package_id
+          in: path
+          required: true
+          schema: {type: string}
+      responses:
+        "200": {description: OK}
+  /vitrines:
+    get:
+      tags: [Vitrines]
+      summary: List vitrines
+      responses:
+        "200": {description: OK}
+  /install/plan:
+    post:
+      tags: [Install]
+      summary: Build InstallPlan for item/package and target runtime
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /install/execute:
+    post:
+      tags: [Install]
+      summary: Execute InstallPlan (server-side runner)
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
+  /run:
+    post:
+      tags: [Install]
+      summary: Run package entrypoint in sandbox
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /updates/check:
+    post:
+      tags: [Updates]
+      summary: Check for updates based on UpdatePolicy
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /reviews:
+    post:
+      tags: [Reviews]
+      summary: Submit review
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
