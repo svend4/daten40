@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UI Action Schema v1",
+  "type": "object",
+  "required": [
+    "action_id",
+    "name",
+    "intent",
+    "version"
+  ],
+  "properties": {
+    "action_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "intent": {
+      "type": "string"
+    },
+    "shortcut": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

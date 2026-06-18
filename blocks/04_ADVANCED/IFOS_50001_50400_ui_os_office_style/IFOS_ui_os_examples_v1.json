@@ -1,0 +1,101 @@
+{
+  "ui_state": {
+    "user": {
+      "id": "u1",
+      "role": "editor"
+    },
+    "mode": "compose",
+    "context": {
+      "topic": "RSS→Telegram"
+    },
+    "panels": [
+      "trust",
+      "quality",
+      "compatibility"
+    ],
+    "version": "1.0.0"
+  },
+  "card_model": {
+    "card_id": "card.c.6tikmor87x4s",
+    "entity_type": "bundle",
+    "entity_id": "bun.example",
+    "sections": [
+      {
+        "title": "Summary",
+        "body": "RSS→Dedup→Telegram"
+      },
+      {
+        "title": "Install",
+        "body": "One-click"
+      }
+    ],
+    "badges": [
+      "verified",
+      "self-hosted"
+    ],
+    "actions": [
+      {
+        "label": "Install",
+        "op": "wizard.install.start"
+      },
+      {
+        "label": "Compare",
+        "op": "mode.compare"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "wizard_model": {
+    "wizard_id": "wiz.w.4d5jsw053erw",
+    "type": "install",
+    "steps": [
+      {
+        "id": "target",
+        "title": "Выбор среды"
+      },
+      {
+        "id": "preflight",
+        "title": "Проверка"
+      },
+      {
+        "id": "deploy",
+        "title": "Установка"
+      },
+      {
+        "id": "receipt",
+        "title": "Отчёт"
+      }
+    ],
+    "bindings": {
+      "bundle_id": "bun.example"
+    },
+    "version": "1.0.0"
+  },
+  "conference_model": {
+    "conf_id": "conf.k.9rl9qaeiht58",
+    "topic": "Главные новости недели",
+    "inputs": [
+      {
+        "type": "rss",
+        "url": "https://example.com/feed"
+      }
+    ],
+    "clusters": [
+      {
+        "title": "Тема 1",
+        "items": 3
+      },
+      {
+        "title": "Тема 2",
+        "items": 2
+      }
+    ],
+    "outputs": [
+      {
+        "type": "protocol",
+        "format": "md"
+      }
+    ],
+    "version": "2.0.0"
+  }
+}

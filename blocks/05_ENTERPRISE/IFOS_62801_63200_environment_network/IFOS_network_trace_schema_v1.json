@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Network Trace Schema v1",
+  "type": "object",
+  "required": [
+    "trace_id",
+    "spans",
+    "timestamp",
+    "version"
+  ],
+  "properties": {
+    "trace_id": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "spans": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

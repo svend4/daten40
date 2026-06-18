@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Payout Split Schema v1",
+  "type": "object",
+  "required": [
+    "payout_id",
+    "gross",
+    "currency",
+    "splits",
+    "version"
+  ],
+  "properties": {
+    "payout_id": {
+      "type": "string"
+    },
+    "gross": {
+      "type": "number"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "splits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "party",
+          "percent"
+        ],
+        "properties": {
+          "party": {
+            "type": "string"
+          },
+          "percent": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

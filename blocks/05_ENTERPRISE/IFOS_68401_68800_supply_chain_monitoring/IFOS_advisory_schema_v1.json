@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Advisory",
+  "type": "object",
+  "required": [
+    "advisory_id",
+    "source",
+    "title",
+    "published_at",
+    "affected"
+  ],
+  "properties": {
+    "advisory_id": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "NVD",
+        "OSV",
+        "GHSA",
+        "VENDOR",
+        "CERT",
+        "OTHER"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3
+    },
+    "published_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH",
+        "CRITICAL",
+        "UNKNOWN"
+      ]
+    },
+    "cvss": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 10
+    },
+    "cwe": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "references": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "affected": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/affectedComponent"
+      }
+    },
+    "metadata": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    }
+  },
+  "definitions": {
+    "versionRange": {
+      "type": "object",
+      "properties": {
+        "introduced": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "fixed": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "last_affected": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "affectedComponent": {
+      "type": "object",
+      "required": [
+        "purl",
+        "ranges"
+      ],
+      "properties": {
+        "purl": {
+          "type": "string"
+        },
+        "ranges": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/versionRange"
+          }
+        },
+        "fixed_versions": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "ecosystem": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "package_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

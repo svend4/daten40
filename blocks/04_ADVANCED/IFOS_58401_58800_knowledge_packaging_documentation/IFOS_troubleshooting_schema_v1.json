@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Troubleshooting Scenario Schema v1",
+  "type": "object",
+  "required": [
+    "scenario_id",
+    "name",
+    "causes",
+    "checks",
+    "solutions",
+    "prevention",
+    "version"
+  ],
+  "properties": {
+    "scenario_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "causes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "solutions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "prevention": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

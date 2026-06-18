@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ForensicReport Schema v1",
+  "type": "object",
+  "required": [
+    "report_id",
+    "case_id",
+    "created_at",
+    "summary",
+    "timeline",
+    "impact",
+    "root_cause",
+    "containment",
+    "remediation",
+    "evidence_refs",
+    "version"
+  ],
+  "properties": {
+    "report_id": {
+      "type": "string"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "timeline": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "impact": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "root_cause": {
+      "type": "string"
+    },
+    "containment": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "remediation": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "annex": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

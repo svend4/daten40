@@ -1,0 +1,20 @@
+{
+  "contract_id": "download_event.v1",
+  "fields": {
+    "event_id": "string",
+    "share_id": "string",
+    "report_id": "string",
+    "auditor_email": "string",
+    "artifact_uri": "string",
+    "artifact_sha256": "string",
+    "downloaded_at": "datetime",
+    "ip": "string",
+    "user_agent": "string",
+    "bytes": "integer",
+    "result": "string",
+    "reason": "string"
+  },
+  "privacy_level": "restricted",
+  "retention_policy": "security_default",
+  "audit": "required"
+}

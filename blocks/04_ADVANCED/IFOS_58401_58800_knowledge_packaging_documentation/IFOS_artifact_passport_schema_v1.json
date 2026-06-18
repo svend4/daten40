@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Artifact Passport Schema v1",
+  "type": "object",
+  "required": [
+    "artifact_id",
+    "type",
+    "name",
+    "version",
+    "summary",
+    "requirements",
+    "compatibility",
+    "links"
+  ],
+  "properties": {
+    "artifact_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "connector",
+        "macro",
+        "bundle",
+        "vitrine",
+        "lesson"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "problem": {
+      "type": "string"
+    },
+    "requirements": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "risks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "compatibility": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "license": {
+      "type": "string"
+    },
+    "maintainers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "enrollment_token": "tok_live_7d_ABC123",
+  "expires_in_hours": 24,
+  "subject": {
+    "org_id": "org_123",
+    "workspace_id": "ws_789",
+    "principal_type": "connector",
+    "principal_id": "conn_slack_001"
+  },
+  "requested_profile": "client_mtls_connector",
+  "steps": [
+    {
+      "step": "generate_keypair",
+      "location": "connector_host",
+      "note": "private key stays local or in KMS agent"
+    },
+    {
+      "step": "create_csr",
+      "fields": [
+        "CN=connector:conn_slack_001,O=org_123",
+        "SAN=conn_slack_001.ifos"
+      ]
+    },
+    {
+      "step": "submit_csr",
+      "endpoint": "/pki/csrs",
+      "auth": "enrollment_token"
+    },
+    {
+      "step": "issue_certificate",
+      "endpoint": "/pki/certificates/issue",
+      "issuer": "org_default_issuer"
+    },
+    {
+      "step": "store_cert_chain",
+      "location": "secret_vault",
+      "rotation": "auto_renew_days=7"
+    },
+    {
+      "step": "enable_mtls",
+      "runtime": "edge_gateway",
+      "verify": "trust_bundle=tenant_default"
+    }
+  ]
+}

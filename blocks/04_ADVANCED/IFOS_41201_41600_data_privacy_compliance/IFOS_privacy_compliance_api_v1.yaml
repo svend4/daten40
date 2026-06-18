@@ -1,0 +1,36 @@
+openapi: 3.0.3
+info:
+  title: IFOS Privacy & Compliance API
+  version: "1.0.0"
+servers:
+  - url: https://compliance.ifos.local/v1
+tags:
+  - name: Classification
+  - name: Policies
+  - name: Consent
+  - name: RoPA
+  - name: DSAR
+  - name: Jobs
+  - name: Retention
+  - name: Evidence
+paths:
+  /classification:
+    post: {tags:[Classification], summary: Upsert classification labels, responses: {"200": {description: OK}}}
+  /policies/pii:
+    post: {tags:[Policies], summary: Upsert PII policy, responses: {"200": {description: OK}}}
+  /consent:
+    post: {tags:[Consent], summary: Append consent record, responses: {"201": {description: Created}}}
+  /ropa/activities:
+    post: {tags:[RoPA], summary: Upsert processing activity, responses: {"200": {description: OK}}}
+  /dsar:
+    post: {tags:[DSAR], summary: Create DSAR request, responses: {"201": {description: Created}}}
+  /jobs/redaction:
+    post: {tags:[Jobs], summary: Create redaction job, responses: {"201": {description: Created}}}
+  /jobs/anonymization:
+    post: {tags:[Jobs], summary: Create anonymization job, responses: {"201": {description: Created}}}
+  /retention/policies:
+    post: {tags:[Retention], summary: Upsert retention policy, responses: {"200": {description: OK}}}
+  /retention/legal-hold:
+    post: {tags:[Retention], summary: Create/release legal hold, responses: {"200": {description: OK}}}
+  /evidence/packs:
+    post: {tags:[Evidence], summary: Create compliance evidence pack, responses: {"201": {description: Created}}}

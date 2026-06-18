@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ScaffoldResult Schema v1",
+  "type": "object",
+  "required": [
+    "result_id",
+    "request_id",
+    "files",
+    "instructions",
+    "version"
+  ],
+  "properties": {
+    "result_id": {
+      "type": "string"
+    },
+    "request_id": {
+      "type": "string"
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "content": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "instructions": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

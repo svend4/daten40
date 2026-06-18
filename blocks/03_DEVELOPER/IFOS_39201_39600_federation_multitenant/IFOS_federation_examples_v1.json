@@ -1,0 +1,200 @@
+{
+  "org": {
+    "org_id": "org.o.eomm8fq93xck",
+    "name": "Example Org A",
+    "status": "active",
+    "billing_profile": {
+      "plan": "enterprise"
+    },
+    "created_at": "2026-01-03T20:05:00Z",
+    "version": "1.0.0"
+  },
+  "tenant_provider": {
+    "tenant_id": "ten.a.hz84l8gvfgcq",
+    "org_id": "org.o.eomm8fq93xck",
+    "name": "Provider Tenant (Platform Team)",
+    "isolation": "db_schema",
+    "policies": {
+      "dlp": "block",
+      "export_mask_pii": true
+    },
+    "created_at": "2026-01-03T20:05:00Z",
+    "version": "1.0.0"
+  },
+  "tenant_consumer": {
+    "tenant_id": "ten.b.1fbg3pqhk0vn",
+    "org_id": "org.o.eomm8fq93xck",
+    "name": "Consumer Tenant (Ops Team)",
+    "isolation": "db_schema",
+    "policies": {
+      "dlp": "block",
+      "export_mask_pii": true
+    },
+    "created_at": "2026-01-03T20:05:00Z",
+    "version": "1.0.0"
+  },
+  "namespace": {
+    "namespace_id": "ns.n.udmlgw110nnm",
+    "tenant_id": "ten.a.hz84l8gvfgcq",
+    "prefix": "orgA.platform",
+    "owners": [
+      "user.admin"
+    ],
+    "version": "1.0.0"
+  },
+  "trust_boundary": {
+    "boundary_id": "tb.t.b38n7iiizifl",
+    "from_tenant": "ten.a.hz84l8gvfgcq",
+    "to_tenant": "ten.b.1fbg3pqhk0vn",
+    "capabilities": [
+      "read",
+      "run",
+      "install",
+      "share"
+    ],
+    "constraints": {
+      "max_data_level": "INTERNAL",
+      "require_policy_match": {
+        "dlp": "block"
+      }
+    },
+    "status": "active",
+    "version": "1.0.0"
+  },
+  "peer": {
+    "peer_id": "peer.p.n83mvz3u14s2",
+    "name": "Partner IFOS Instance",
+    "endpoint": "https://partner-ifos.example/v1",
+    "auth": {
+      "type": "mTLS",
+      "client_cert_ref": "secret://mtls/client"
+    },
+    "protocol_version": "ifos-federation/1.0",
+    "capabilities": [
+      "sync_registry",
+      "sync_bundles",
+      "share_grants"
+    ],
+    "status": "healthy",
+    "version": "1.0.0"
+  },
+  "share_grant": {
+    "grant_id": "grant.g.z5cjykm86p5k",
+    "provider_tenant": "ten.a.hz84l8gvfgcq",
+    "consumer_tenant": "ten.b.1fbg3pqhk0vn",
+    "assets": [
+      {
+        "type": "vitrine",
+        "id": "vit.office2.basics"
+      },
+      {
+        "type": "bundle",
+        "id": "bundle.office2"
+      }
+    ],
+    "permissions": [
+      "read",
+      "install",
+      "run"
+    ],
+    "restrictions": {
+      "no_export": true,
+      "run_only": false
+    },
+    "expires_at": null,
+    "status": "active",
+    "created_at": "2026-01-03T20:05:00Z",
+    "version": "1.0.0"
+  },
+  "cross_tenant_request": {
+    "request_id": "req.r.wu7qir0dkbnh",
+    "from_tenant": "ten.b.1fbg3pqhk0vn",
+    "to_tenant": "ten.a.hz84l8gvfgcq",
+    "requested_assets": [
+      {
+        "type": "bundle",
+        "id": "bundle.office2"
+      }
+    ],
+    "message": "Нужен доступ для автоматизации Office 2.0 в нашем тенанте",
+    "status": "requested",
+    "approvals": null,
+    "created_at": "2026-01-03T20:05:00Z",
+    "version": "1.0.0"
+  },
+  "sync_job": {
+    "sync_id": "sync.s.02bsh0uk4rb1",
+    "direction": "pull",
+    "scope": {
+      "include": [
+        "registry",
+        "bundles",
+        "vitrines"
+      ],
+      "exclude_data": true
+    },
+    "peer_id": "peer.p.n83mvz3u14s2",
+    "schedule": {
+      "freq": "daily",
+      "hour": 2
+    },
+    "integrity": {
+      "require_signature": true
+    },
+    "status": "queued",
+    "report": null,
+    "created_at": "2026-01-03T20:05:00Z",
+    "version": "1.0.0"
+  },
+  "conflict_record": {
+    "conflict_id": "conf.c.dirneg710mfx",
+    "object": {
+      "type": "bundle",
+      "id": "bundle.office2"
+    },
+    "left": {
+      "version": "1.1.0",
+      "hash": "sha256:aaa"
+    },
+    "right": {
+      "version": "1.0.9",
+      "hash": "sha256:bbb"
+    },
+    "strategy": "semver_prefer_high",
+    "resolution": null,
+    "status": "open",
+    "created_at": "2026-01-03T20:05:00Z",
+    "version": "1.0.0"
+  },
+  "shard_map": {
+    "shard_map_id": "smap.m.c1wdvz38fq8z",
+    "shards": [
+      {
+        "shard_id": "sh.de.1",
+        "region": "DE",
+        "endpoint": "https://db-de-1"
+      },
+      {
+        "shard_id": "sh.eu.1",
+        "region": "EU",
+        "endpoint": "https://db-eu-1",
+        "role": "secondary"
+      }
+    ],
+    "routing": [
+      {
+        "match": {
+          "tenant_id": "ten.a.hz84l8gvfgcq"
+        },
+        "to_shard": "sh.de.1"
+      },
+      {
+        "match": {
+          "tenant_id": "ten.b.1fbg3pqhk0vn"
+        },
+        "to_shard": "sh.de.1"
+      }
+    ],
+    "version": "1.0.0"
+  }
+}

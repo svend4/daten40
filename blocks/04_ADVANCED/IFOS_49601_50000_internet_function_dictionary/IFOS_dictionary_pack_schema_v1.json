@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DictionaryPack Schema v1",
+  "type": "object",
+  "required": [
+    "pack_id",
+    "locale",
+    "terms",
+    "synonyms",
+    "ontology",
+    "grammar",
+    "mappings",
+    "version"
+  ],
+  "properties": {
+    "pack_id": {
+      "type": "string"
+    },
+    "locale": {
+      "type": "string"
+    },
+    "terms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "synonyms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "ontology": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "grammar": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "mappings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

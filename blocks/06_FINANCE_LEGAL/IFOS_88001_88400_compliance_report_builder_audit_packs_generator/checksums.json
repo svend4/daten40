@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-01-11T18:45:20",
+  "algorithm": "sha256",
+  "files": {
+    "README.md": "26069c6e289fe24b4901e5305a6e4a34f53167bb9be7d59786662d662e9d31f1",
+    "manifest.json": "2c08ce02ab80ccdd59b52c082ad5a4eb99c4c45d284e91d405a173622d6548f0",
+    "MASTER_INDEX_DELTA.json": "6e075a7a094ceb1a91786c172023964b8ac07d58fc6f270c8dec6a1941ec189f",
+    "docs/REPORT_STRUCTURE.md": "39fd845e3429c024f72418b382a6a85ec1a44990e6800e62ac635a28d749dbf1",
+    "docs/AUDIT_PACK_LAYOUT.md": "963676b1aeb5567a5f0960901463a52252ca058f7016c7b2e06e42a09d2c2eff",
+    "docs/CONTROL_TRACEABILITY.md": "ea605f949c10a543e8278716279b9a4f8c26fe5fec4d4e7975bfd91b7fa83762",
+    "docs/EXPORT_MODES.md": "2ac6aac5b3d5da2b898690cc2a54eaf3f6148aa44d47f2a0127ba2366a6c3be2",
+    "data-contracts/report_build_request.v1.json": "328b5d69621f32beab6c0fd4a45e257a81975eb4f07d808ed33a6e788f630588",
+    "data-contracts/report_output_manifest.v1.json": "8cd78b876c0523540208bc68254c0619ad662f4ac326e7fe127e123d0fbaedd9",
+    "data-contracts/control_table_row.v1.json": "a165570fee6dcf20d3e2beec9b801f427778d71326904afd9fb07f70b75ac33b",
+    "api/openapi_report_builder_v1.json": "988ea4d0729d76fc5f1268e0228538c48174c5bb7614f4e63742737c8f5b69ce",
+    "templates/report_base.md": "17648714d15b87aec3cbd8f8fdf1d707cd03bf384c607da2727bd6939878453f",
+    "templates/controls_section.md": "579a4e40d4b74504ac5942216d8138f957f71226277416402b18d923000eae4d",
+    "templates/soc2_cover.md": "f11ed52ddf37a5a0061b271ea1d3903dbfa8a2f3edf6eb202d1a0ea29efe5b5a",
+    "templates/hipaa_cover.md": "21258fd75ce1038182aeb572d061719b6ce15390f7d209e8bd35bb0a4e2c7a8d",
+    "templates/gdpr_cover.md": "d9159e5fc41db2911526abb564e6b7191d237ff4baf0d143fe967b53a8ecee2b",
+    "tables/SCHEMAS.md": "315bfdbad1fca2f8d6e7d6f74298b8007ba9d9c68226644a7c940df69805ea9e",
+    "service/fastapi_skeleton.py": "942e60b7dd27c24be260a3542237f7f0101bdd32d1dd07d968765e2dce28bf87",
+    "engine/report_builder_skeleton.py": "f3a0557c0c7b6416cfdb8c5707430fb2b20bc158a028b6fc37706c84ab51673d",
+    "examples/report_build_request_soc2.json": "c6d55feaa914a846f2a9efbed9294973d7830002bea712d62250e80cd08e8f6e",
+    "examples/report_build_request_full.json": "f5b4d49131c80183a8ee345e1723329f1d03f264c0a778e7786c519294d9282c",
+    "db/postgres_schema.sql": "5b5e92a8e7c00725bd289526e6a2fc1139537d0fd6ca64589e0908fc1e85cbc6",
+    "tests/TEST_PLAN.md": "172215ccf91fcef100e34c9beaf898a7469471af224aed95d3ea99b3946a1c0b"
+  }
+}

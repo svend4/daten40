@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS IngestSource Schema v1",
+  "type": "object",
+  "required": [
+    "source_id",
+    "type",
+    "name",
+    "config",
+    "schedule",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "rss",
+        "website",
+        "api",
+        "github",
+        "gdrive",
+        "pdf",
+        "appstore",
+        "other"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "config": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "schedule": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "limits": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "legal": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "paused",
+        "disabled"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

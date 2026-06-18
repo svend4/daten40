@@ -1,0 +1,24 @@
+openapi: 3.0.3
+info:
+  title: IFOS Standards & Interop API
+  version: "1.0.0"
+servers:
+  - url: https://interop.ifos.local/v1
+tags:
+  - name: Contracts
+  - name: Profiles
+  - name: Capabilities
+  - name: Adapters
+  - name: Conformance
+  - name: Compatibility
+paths:
+  /contracts:
+    post: {tags:[Contracts], summary: Register IO contract, responses: {"200": {description: OK}}}
+  /profiles:
+    post: {tags:[Profiles], summary: Register connector profile, responses: {"200": {description: OK}}}
+  /adapters/generate:
+    post: {tags:[Adapters], summary: Generate adapter between contracts, responses: {"200": {description: OK}}}
+  /conformance/run:
+    post: {tags:[Conformance], summary: Run conformance suite, responses: {"200": {description: OK}}}
+  /compatibility/matrix:
+    post: {tags:[Compatibility], summary: Build compatibility matrix, responses: {"200": {description: OK}}}

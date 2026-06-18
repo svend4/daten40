@@ -1,0 +1,16 @@
+{
+  "job_id": "job_access_reviews",
+  "evidence_id": "access_review_records",
+  "collector": "iam_exporter",
+  "cadence": "quarterly",
+  "format": "csv",
+  "time_window": {
+    "type": "previous_quarter"
+  },
+  "environment": "prod",
+  "credentials_ref": "cred://iam/prod",
+  "tags": {
+    "policy_pack": "cp_us_hipaa_soc2_baseline",
+    "control": "soc2.CC6.1"
+  }
+}

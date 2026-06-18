@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS TrialPolicy Schema v1",
+  "type": "object",
+  "required": [
+    "trial_policy_id",
+    "kind",
+    "duration_days",
+    "usage_allowance",
+    "auto_convert",
+    "version"
+  ],
+  "properties": {
+    "trial_policy_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "time_based",
+        "usage_based",
+        "feature_based"
+      ]
+    },
+    "duration_days": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "usage_allowance": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "auto_convert": {
+      "type": "boolean"
+    },
+    "post_trial_behavior": {
+      "type": "string",
+      "enum": [
+        "stop",
+        "downgrade",
+        "read_only"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

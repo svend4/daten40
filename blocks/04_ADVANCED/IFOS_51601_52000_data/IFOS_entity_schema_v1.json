@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Entity Schema v1",
+  "type": "object",
+  "required": [
+    "entity_id",
+    "entity_type",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "entity_id": {
+      "type": "string"
+    },
+    "entity_type": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

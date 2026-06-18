@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS MigrationPlan Schema v1",
+  "type": "object",
+  "required": [
+    "mig_id",
+    "bundle_id",
+    "from",
+    "to",
+    "steps",
+    "dry_run",
+    "version"
+  ],
+  "properties": {
+    "mig_id": {
+      "type": "string"
+    },
+    "bundle_id": {
+      "type": "string"
+    },
+    "from": {
+      "type": "string"
+    },
+    "to": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dry_run": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UsageEvent Schema v1",
+  "type": "object",
+  "required": [
+    "event_id",
+    "meter_id",
+    "entitlement_id",
+    "amount",
+    "occurred_at",
+    "idempotency_key",
+    "meta",
+    "version"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "meter_id": {
+      "type": "string"
+    },
+    "entitlement_id": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "number",
+      "minimum": 0
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "idempotency_key": {
+      "type": "string"
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

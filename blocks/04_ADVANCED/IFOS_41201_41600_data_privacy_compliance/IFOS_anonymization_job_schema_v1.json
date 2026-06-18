@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS AnonymizationJob Schema v1",
+  "type": "object",
+  "required": [
+    "job_id",
+    "target",
+    "method",
+    "status",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "job_id": {
+      "type": "string"
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "method": {
+      "type": "string",
+      "enum": [
+        "aggregation",
+        "k_anonymity",
+        "generalization",
+        "suppression"
+      ]
+    },
+    "params": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "queued",
+        "running",
+        "failed",
+        "succeeded"
+      ]
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

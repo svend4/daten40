@@ -1,0 +1,19 @@
+{
+  "report_id": "REP-EXAMPLE-001",
+  "auditor_email": "auditor@example.com",
+  "ttl_seconds": 1209600,
+  "allowed_files": [
+    "report.pdf",
+    "audit_pack.zip",
+    "tables/controls.csv",
+    "tables/evidence_inventory.csv"
+  ],
+  "ip_allowlist": [
+    "203.0.113.10/32",
+    "198.51.100.0/24"
+  ],
+  "max_downloads": 20,
+  "require_email_verification": true,
+  "watermark_enabled": true,
+  "notes": "External auditor access for Q4"
+}

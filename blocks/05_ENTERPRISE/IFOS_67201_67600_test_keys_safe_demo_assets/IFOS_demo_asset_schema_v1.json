@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DemoAsset Schema v1",
+  "type": "object",
+  "required": [
+    "asset_id",
+    "name",
+    "kind",
+    "classification",
+    "generator",
+    "reset",
+    "version"
+  ],
+  "properties": {
+    "asset_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "synthetic_dataset",
+        "webhook_fixtures",
+        "mock_files",
+        "seed_records",
+        "scenario_pack"
+      ]
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "classes"
+      ],
+      "properties": {
+        "classes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "generator": {
+      "type": "object",
+      "required": [
+        "type",
+        "ref"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "script",
+            "make_scenario",
+            "n8n_workflow",
+            "sql",
+            "manual"
+          ]
+        },
+        "ref": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "reset": {
+      "type": "object",
+      "required": [
+        "type",
+        "instructions"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "api_reset",
+            "delete_and_reseed",
+            "new_sandbox_account",
+            "manual"
+          ]
+        },
+        "instructions": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "notes": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

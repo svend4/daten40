@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS FunctionCapabilityLink Schema v1",
+  "type": "object",
+  "required": [
+    "link_id",
+    "term_id",
+    "capability",
+    "weight",
+    "version"
+  ],
+  "properties": {
+    "link_id": {
+      "type": "string"
+    },
+    "term_id": {
+      "type": "string"
+    },
+    "capability": {
+      "type": "string"
+    },
+    "weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

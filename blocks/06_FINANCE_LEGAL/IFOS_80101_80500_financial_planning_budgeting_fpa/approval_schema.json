@@ -1,0 +1,8 @@
+{
+  "id": "string",
+  "object_type": "enum: budget|forecast|assumption",
+  "object_id": "string",
+  "status": "enum: draft|submitted|approved|rejected",
+  "approver": "string",
+  "timestamp": "string"
+}

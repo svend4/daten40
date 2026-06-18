@@ -1,0 +1,89 @@
+{
+  "profile": {
+    "user_id": "u.123",
+    "locale": "ru-RU",
+    "timezone": "Europe/Berlin",
+    "persona": "solo",
+    "likes": [
+      "automation",
+      "wordpress",
+      "news_digest"
+    ],
+    "blocks": [
+      "crypto",
+      "adult"
+    ],
+    "version": "1.0.0"
+  },
+  "context": {
+    "context_id": "ctx.c.aa3aff7wbhti",
+    "intent": "build comparison portal MVP",
+    "platform": "web",
+    "constraints": {
+      "budget_eur": 0,
+      "privacy": "high",
+      "preferred": "open_source"
+    },
+    "ts": "2026-01-04T07:55:00Z",
+    "version": "1.0.0"
+  },
+  "rec_request": {
+    "request_id": "req.r.4p9u2yln4lsh",
+    "user_id": "u.123",
+    "context": {
+      "intent": "news digest conference mode",
+      "platform": "web"
+    },
+    "filters": {
+      "trust_min": "Tier1",
+      "max_setup_minutes": 30
+    },
+    "k": 10,
+    "ts": "2026-01-04T07:55:00Z",
+    "version": "1.0.0"
+  },
+  "rec_response": {
+    "request_id": "req.*",
+    "items": [
+      {
+        "item_id": "bundle.starter_news_digest",
+        "score": 0.86,
+        "explain": [
+          "подходит под intent",
+          "быстрый запуск",
+          "Tier2"
+        ]
+      },
+      {
+        "item_id": "macro.wordpress_plugin_audit",
+        "score": 0.79,
+        "explain": [
+          "WordPress",
+          "docs ok"
+        ]
+      }
+    ],
+    "bundles": [
+      {
+        "bundle_id": "bundle.starter_news_digest",
+        "items": [
+          "con.rss",
+          "con.web_scrape",
+          "macro.summarize",
+          "vitrine.daily_digest"
+        ]
+      }
+    ],
+    "ts": "2026-01-04T07:55:00Z",
+    "version": "1.0.0"
+  },
+  "feedback": {
+    "event_id": "fb.f.m6zjinkb5obs",
+    "user_id": "u.123",
+    "item_id": "bundle.starter_news_digest",
+    "type": "like",
+    "value": true,
+    "ts": "2026-01-04T07:55:00Z",
+    "version": "1.0.0"
+  }
+}

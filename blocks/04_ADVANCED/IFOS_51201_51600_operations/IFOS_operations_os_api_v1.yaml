@@ -1,0 +1,26 @@
+openapi: 3.0.3
+info:
+  title: IFOS Operations OS API
+  version: "1.0.0"
+servers:
+  - url: https://ops.ifos.local/v1
+tags:
+  - name: SLO
+  - name: Alerts
+  - name: Incidents
+  - name: Runbooks
+  - name: Cost
+  - name: Backup
+paths:
+  /slo:
+    post: {tags:[SLO], summary: Create SLO, responses: {"200": {description: OK}}}
+  /alerts:
+    post: {tags:[Alerts], summary: Create alert, responses: {"200": {description: OK}}}
+  /incidents:
+    post: {tags:[Incidents], summary: Create incident, responses: {"200": {description: OK}}}
+  /runbooks:
+    get: {tags:[Runbooks], summary: List runbooks, responses: {"200": {description: OK}}}
+  /cost/budgets:
+    post: {tags:[Cost], summary: Create budget, responses: {"200": {description: OK}}}
+  /backup/plans:
+    post: {tags:[Backup], summary: Create backup plan, responses: {"200": {description: OK}}}

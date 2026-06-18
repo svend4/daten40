@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Sandbox Audit Event Schema v1",
+  "type": "object",
+  "required": [
+    "event_id",
+    "ts",
+    "type",
+    "actor",
+    "connector_id",
+    "decision",
+    "version"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "ts": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "sandbox.start",
+        "sandbox.stop",
+        "egress.allow",
+        "egress.deny",
+        "limit.kill",
+        "rate.limit",
+        "file.write.deny",
+        "secret.lease",
+        "attestation.emit"
+      ]
+    },
+    "actor": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "connector_id": {
+      "type": "string"
+    },
+    "decision": {
+      "type": "string"
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

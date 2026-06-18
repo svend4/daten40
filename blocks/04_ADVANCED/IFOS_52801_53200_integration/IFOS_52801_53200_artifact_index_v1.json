@@ -1,0 +1,172 @@
+{
+  "artifact_set": "IFOS_52801_53200",
+  "entries": [
+    {
+      "name": "IFOS_integration_os_52801_53200_v1.md",
+      "ref": "file://IFOS_integration_os_52801_53200_v1.md",
+      "hash": "sha256:85748816094abffaea2e898ec04ff17d8e03f880f56aa1184d750e3e28926135"
+    },
+    {
+      "name": "IFOS_integration_os_api_v1.yaml",
+      "ref": "file://IFOS_integration_os_api_v1.yaml",
+      "hash": "sha256:687dbd84d8f7bd2ba1723f3636dac58e0393763507c47dde619902338a0636c7"
+    },
+    {
+      "name": "IFOS_integration_os_examples_v1.json",
+      "ref": "file://IFOS_integration_os_examples_v1.json",
+      "hash": "sha256:f12b509cb1717c65f4d5cafb9b356cc3fc54d0d07edeaae8cd3be63d6fdbacc9"
+    },
+    {
+      "name": "IFOS_connector_registry_seed_52801_53200_v1.csv",
+      "ref": "file://IFOS_connector_registry_seed_52801_53200_v1.csv",
+      "hash": "sha256:bb41e1b6f95a269f4068ac105d35132561eb09888084523d316c2e0f8d023871"
+    },
+    {
+      "name": "IFOS_integration_overview_spec_v1.md",
+      "ref": "file://IFOS_integration_overview_spec_v1.md",
+      "hash": "sha256:fb750e7aa289690220d22da5f25fe3b2af9fe32c4857bfadb4ed79c0a1d17b9e"
+    },
+    {
+      "name": "IFOS_auth_secrets_spec_v1.md",
+      "ref": "file://IFOS_auth_secrets_spec_v1.md",
+      "hash": "sha256:5a499c4ff724fb7a12b43d69550a6c26614e490b447879b6fd47c66245a10f0d"
+    },
+    {
+      "name": "IFOS_webhooks_events_spec_v1.md",
+      "ref": "file://IFOS_webhooks_events_spec_v1.md",
+      "hash": "sha256:83b3b08e1b6b100369c8120060cb3b92852ee33f6853d77454caa66618e48c34"
+    },
+    {
+      "name": "IFOS_retries_backoff_idempotency_spec_v1.md",
+      "ref": "file://IFOS_retries_backoff_idempotency_spec_v1.md",
+      "hash": "sha256:dea4d66bb31ecf7ed111ef40bb584d5287070e5c4321212ad9ff8268f3a0b15a"
+    },
+    {
+      "name": "IFOS_rate_limits_quotas_spec_v1.md",
+      "ref": "file://IFOS_rate_limits_quotas_spec_v1.md",
+      "hash": "sha256:04e90bf06a9d1999b882f28dd20ef53b7615daf572788ad13af9a38c23721467"
+    },
+    {
+      "name": "IFOS_pagination_cursor_spec_v1.md",
+      "ref": "file://IFOS_pagination_cursor_spec_v1.md",
+      "hash": "sha256:b9928ea99e3e0a3418069e67135f49c2452e6bde13b168ec548a0d36d377e038"
+    },
+    {
+      "name": "IFOS_field_mapping_transform_spec_v1.md",
+      "ref": "file://IFOS_field_mapping_transform_spec_v1.md",
+      "hash": "sha256:0116035c4f0bf9f21d4a485f8cf79a4c0fdf6c457502eacc7b987fa00e1d8136"
+    },
+    {
+      "name": "IFOS_error_taxonomy_spec_v1.md",
+      "ref": "file://IFOS_error_taxonomy_spec_v1.md",
+      "hash": "sha256:649383e66a40512bf4e809ea8e31345d55d20dd02a8d952b1afc5226499581a5"
+    },
+    {
+      "name": "IFOS_connector_contract_spec_v1.md",
+      "ref": "file://IFOS_connector_contract_spec_v1.md",
+      "hash": "sha256:927e42dd1fd74371d8a2e039cc582349a66e67964c4a9b02e7a127902a65c281"
+    },
+    {
+      "name": "IFOS_connector_testing_spec_v1.md",
+      "ref": "file://IFOS_connector_testing_spec_v1.md",
+      "hash": "sha256:b9607708319f83b6305c0d272dfcd914f44768fe96dbbc44547742ca39da1f04"
+    },
+    {
+      "name": "IFOS_connector_observability_spec_v1.md",
+      "ref": "file://IFOS_connector_observability_spec_v1.md",
+      "hash": "sha256:0bbcb2bcadc2d2bce58a00ac20971fda998dbffc4ac935533c2ce1ac646177d3"
+    },
+    {
+      "name": "IFOS_connector_security_spec_v1.md",
+      "ref": "file://IFOS_connector_security_spec_v1.md",
+      "hash": "sha256:8024acac91ddd927697cba82d9ab3a448b1ae0ebb0f8e9673eae0abd3eed0742"
+    },
+    {
+      "name": "IFOS_connector_registry_fields_spec_v1.md",
+      "ref": "file://IFOS_connector_registry_fields_spec_v1.md",
+      "hash": "sha256:6324ae6d83259def815a1bd41a7f65e334d327d6b4dcb665b7cee3d8d69574c3"
+    },
+    {
+      "name": "IFOS_connector_schema_v1.json",
+      "ref": "file://IFOS_connector_schema_v1.json",
+      "hash": "sha256:5009175220a4172c8719fbba20f2ff30a97988482407bd58eee6812eedc69444"
+    },
+    {
+      "name": "IFOS_connector_capabilities_schema_v1.json",
+      "ref": "file://IFOS_connector_capabilities_schema_v1.json",
+      "hash": "sha256:f5371dba9e09e3a001f5613c7002f04f784f7e9d0d33b8b644ab370464c8e689"
+    },
+    {
+      "name": "IFOS_auth_config_schema_v1.json",
+      "ref": "file://IFOS_auth_config_schema_v1.json",
+      "hash": "sha256:9b3530506ac5303999719460d36a91016aae6f988504d0c81971657250479cea"
+    },
+    {
+      "name": "IFOS_secret_ref_schema_v1.json",
+      "ref": "file://IFOS_secret_ref_schema_v1.json",
+      "hash": "sha256:7fafef9dc62ae99c5895de44506a9cb77b24496a2a9aae10bcbad296f0708fb2"
+    },
+    {
+      "name": "IFOS_webhook_schema_v1.json",
+      "ref": "file://IFOS_webhook_schema_v1.json",
+      "hash": "sha256:9e269503a1303830de35b60dba1d193c7128ca47ac154adba08b53a034c5965d"
+    },
+    {
+      "name": "IFOS_request_schema_v1.json",
+      "ref": "file://IFOS_request_schema_v1.json",
+      "hash": "sha256:a9085710f1d95e75f6d7cf6602591b492a3a39c7a8913b063b95cc0b25331b19"
+    },
+    {
+      "name": "IFOS_response_schema_v1.json",
+      "ref": "file://IFOS_response_schema_v1.json",
+      "hash": "sha256:7f34178561a890a5894cafbc15b19f4a087013c1c04cfa239556d279324f5f2d"
+    },
+    {
+      "name": "IFOS_error_schema_v1.json",
+      "ref": "file://IFOS_error_schema_v1.json",
+      "hash": "sha256:ba43b987c8bfbdb6cc3820fab7218905f750f952ae827cbf10ee52a07fd5a34b"
+    },
+    {
+      "name": "IFOS_ratelimit_schema_v1.json",
+      "ref": "file://IFOS_ratelimit_schema_v1.json",
+      "hash": "sha256:fcf1e46282495e14d357e11359fc0c969777783b9ee4ca0693c4a11d6f492e2d"
+    },
+    {
+      "name": "IFOS_field_mapping_schema_v1.json",
+      "ref": "file://IFOS_field_mapping_schema_v1.json",
+      "hash": "sha256:8d74023e7de8683e87ac843dd89b51bfc7deba3f6279eba7ac473763c77ea0d9"
+    },
+    {
+      "name": "IFOS_connector_testcase_schema_v1.json",
+      "ref": "file://IFOS_connector_testcase_schema_v1.json",
+      "hash": "sha256:63d86818bbde3d891fe19ffce7cd986a16f3f0d3f58f21d5e8a77e2a68cee55d"
+    },
+    {
+      "name": "ifos_connector_client_stub_v1.py",
+      "ref": "file://ifos_connector_client_stub_v1.py",
+      "hash": "sha256:4ea84f78159f03904e92a14c5638d55857bfd1d48c601306a7fab72d25be1eac"
+    },
+    {
+      "name": "ifos_retry_policy_stub_v1.py",
+      "ref": "file://ifos_retry_policy_stub_v1.py",
+      "hash": "sha256:4f51e61babdd8562eb3c64100eec61b7974ec8bf06c5221aae28f59bae834212"
+    },
+    {
+      "name": "ifos_webhook_verify_stub_v1.py",
+      "ref": "file://ifos_webhook_verify_stub_v1.py",
+      "hash": "sha256:f9a4beb1981b971e633b241d1bc20c3d15c6f43f73d444c679450377a21fc239"
+    },
+    {
+      "name": "ifos_ratelimit_bucket_stub_v1.py",
+      "ref": "file://ifos_ratelimit_bucket_stub_v1.py",
+      "hash": "sha256:657a2044333bd8753a486885a196f1b68ce1a8b15c59420ae2486267cf1724c7"
+    },
+    {
+      "name": "ifos_connector_contract_check_stub_v1.py",
+      "ref": "file://ifos_connector_contract_check_stub_v1.py",
+      "hash": "sha256:ab21f17d600d232f67d5146173805bea08eb7a1d9f7089db822980e3445a2ce5"
+    }
+  ],
+  "created_at": "2026-01-04T16:35:00Z",
+  "version": "1.0.0"
+}

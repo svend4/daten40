@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SandboxProvider Schema v1",
+  "type": "object",
+  "required": [
+    "provider_id",
+    "name",
+    "sandbox_endpoints",
+    "how_to_enable",
+    "limits",
+    "test_events",
+    "version"
+  ],
+  "properties": {
+    "provider_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "sandbox_endpoints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "how_to_enable": {
+      "type": "string"
+    },
+    "limits": {
+      "type": "object",
+      "properties": {
+        "rate_limit_per_min": {
+          "type": "integer"
+        },
+        "data_retention_days": {
+          "type": "integer"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "test_events": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reset_instructions": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS KW Document Schema v1",
+  "type": "object",
+  "required": [
+    "doc_id",
+    "doc_type",
+    "title",
+    "body",
+    "meta",
+    "links",
+    "version"
+  ],
+  "properties": {
+    "doc_id": {
+      "type": "string"
+    },
+    "doc_type": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "string"
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

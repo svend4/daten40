@@ -1,0 +1,152 @@
+{
+  "artifact_set": "IFOS_63201_63600",
+  "entries": [
+    {
+      "name": "IFOS_multicloud_hybrid_connectivity_os_63201_63600_v1.md",
+      "ref": "file://IFOS_multicloud_hybrid_connectivity_os_63201_63600_v1.md",
+      "hash": "sha256:33aa3dfe9e729171c232a3546cfb579efe6b1ec19250c7390f06633bbdf5f073"
+    },
+    {
+      "name": "IFOS_federation_control_plane_api_v1.yaml",
+      "ref": "file://IFOS_federation_control_plane_api_v1.yaml",
+      "hash": "sha256:78520ba956ddf0f66f5b7f20c2157150732a5c6149f68933f6b6fcf655566219"
+    },
+    {
+      "name": "IFOS_multicloud_hybrid_examples_63201_63600_v1.json",
+      "ref": "file://IFOS_multicloud_hybrid_examples_63201_63600_v1.json",
+      "hash": "sha256:49ab16f86da7ed87dd1d82bec28c4d40f507f835f54dfa240e8be3318206df56"
+    },
+    {
+      "name": "IFOS_federations_seed_63201_63600_v1.csv",
+      "ref": "file://IFOS_federations_seed_63201_63600_v1.csv",
+      "hash": "sha256:dc312c539ff0de2ef794eb1d6d1ba111e8449b9de54a44873ed392a8e55604e9"
+    },
+    {
+      "name": "IFOS_tunnels_seed_63201_63600_v1.csv",
+      "ref": "file://IFOS_tunnels_seed_63201_63600_v1.csv",
+      "hash": "sha256:077848be01e9ed9fc8a1bc9a321dfda23102cabe5c2d14c08ca9d718ff7eb50b"
+    },
+    {
+      "name": "IFOS_hybrid_gateways_seed_63201_63600_v1.csv",
+      "ref": "file://IFOS_hybrid_gateways_seed_63201_63600_v1.csv",
+      "hash": "sha256:9e3eb74cadefb66bd6a4b611b7dfecd9733d534ea7548cadec5687f2d11605ae"
+    },
+    {
+      "name": "IFOS_config_sync_jobs_seed_63201_63600_v1.csv",
+      "ref": "file://IFOS_config_sync_jobs_seed_63201_63600_v1.csv",
+      "hash": "sha256:223d55343f71a5c57ea26f28775c281a87d092e4ab16082fc0f89be17d669475"
+    },
+    {
+      "name": "IFOS_cross_env_routing_seed_63201_63600_v1.csv",
+      "ref": "file://IFOS_cross_env_routing_seed_63201_63600_v1.csv",
+      "hash": "sha256:cad34c884f8d6f985d1a2ea7df8c44513032564d3b2e3066a1d3352d4caf979e"
+    },
+    {
+      "name": "IFOS_dr_plans_seed_63201_63600_v1.csv",
+      "ref": "file://IFOS_dr_plans_seed_63201_63600_v1.csv",
+      "hash": "sha256:092b151bdaf4c346929ff191c144a3e0e16f89bb9e98521c2d7b3f39a61fa864"
+    },
+    {
+      "name": "IFOS_multicloud_cost_seed_63201_63600_v1.csv",
+      "ref": "file://IFOS_multicloud_cost_seed_63201_63600_v1.csv",
+      "hash": "sha256:ee6488b0ec1ae65a01d6ec46abb50bda292671753d52431377549774a59dcb19"
+    },
+    {
+      "name": "IFOS_env_federation_spec_v1.md",
+      "ref": "file://IFOS_env_federation_spec_v1.md",
+      "hash": "sha256:792388568c186058e0f68392f9d2824e1e137af89d2d3ca7bb1bd62491f4d0a5"
+    },
+    {
+      "name": "IFOS_tunnels_gateways_spec_v1.md",
+      "ref": "file://IFOS_tunnels_gateways_spec_v1.md",
+      "hash": "sha256:a9e585c6273f5dd189faeed14aa4218275a9b48de64884a3223e6454060f7cdd"
+    },
+    {
+      "name": "IFOS_config_sync_promotion_spec_v1.md",
+      "ref": "file://IFOS_config_sync_promotion_spec_v1.md",
+      "hash": "sha256:8284f2fbe31c816a217efe6a1fd4cff0c9996838a0ffc401c51525f4e16a1f84"
+    },
+    {
+      "name": "IFOS_hybrid_connectors_gateway_spec_v1.md",
+      "ref": "file://IFOS_hybrid_connectors_gateway_spec_v1.md",
+      "hash": "sha256:c0aa6fc97f0bf3be4a6df4fd7932483aff7e4469b257bc0acafcf767646a8268"
+    },
+    {
+      "name": "IFOS_cross_env_routing_policy_spec_v1.md",
+      "ref": "file://IFOS_cross_env_routing_policy_spec_v1.md",
+      "hash": "sha256:979adbccea1e44f2d04e0c9174835e777296e05b2c81f05c9c831c6b23c58ef6"
+    },
+    {
+      "name": "IFOS_cross_cloud_identity_trust_spec_v1.md",
+      "ref": "file://IFOS_cross_cloud_identity_trust_spec_v1.md",
+      "hash": "sha256:e7ca4552499e3d5eb95ea9475e2c77b41ab44a1dfba80c8b812449fe1369ab51"
+    },
+    {
+      "name": "IFOS_data_residency_multiregion_spec_v1.md",
+      "ref": "file://IFOS_data_residency_multiregion_spec_v1.md",
+      "hash": "sha256:79e1c40d49ddaa17e9822e93fc3b3db9ff5b50bd4b503b90a2a53c13e38bf3e9"
+    },
+    {
+      "name": "IFOS_backup_dr_failover_spec_v1.md",
+      "ref": "file://IFOS_backup_dr_failover_spec_v1.md",
+      "hash": "sha256:035436de1457b4dfcfcb5a4a22f5bce36d55f9b132378c5613156517e074a11f"
+    },
+    {
+      "name": "IFOS_multicloud_cost_visibility_spec_v1.md",
+      "ref": "file://IFOS_multicloud_cost_visibility_spec_v1.md",
+      "hash": "sha256:b2ae9cf14af873e656d1ae93f0d5f8a2fa1664c02c13cb04c18c07c2ed0617cc"
+    },
+    {
+      "name": "IFOS_federation_schema_v1.json",
+      "ref": "file://IFOS_federation_schema_v1.json",
+      "hash": "sha256:c08294e8d9a0975f53646ed96cb725f9a2f61a288a1306cb7b8afc1c22730121"
+    },
+    {
+      "name": "IFOS_tunnel_schema_v1.json",
+      "ref": "file://IFOS_tunnel_schema_v1.json",
+      "hash": "sha256:c7263d4ff44ccc43c6ac464c0c1cb9f43cd2c33a1f5659c91d5fa96b9da3902a"
+    },
+    {
+      "name": "IFOS_hybrid_gateway_schema_v1.json",
+      "ref": "file://IFOS_hybrid_gateway_schema_v1.json",
+      "hash": "sha256:4b01e4c92b5613529c5d5d8756e03a50c9da133c7969adf69dff334f02df7121"
+    },
+    {
+      "name": "IFOS_config_sync_job_schema_v1.json",
+      "ref": "file://IFOS_config_sync_job_schema_v1.json",
+      "hash": "sha256:f9c63e6eb0e61b0d5c5fc1bf8d619a1790460d163d92b7d903c3a1ba6ff48f86"
+    },
+    {
+      "name": "IFOS_cross_env_routing_policy_schema_v1.json",
+      "ref": "file://IFOS_cross_env_routing_policy_schema_v1.json",
+      "hash": "sha256:d2843ab634106317e26f1ed1efd076eb81aa821136d6b433a5f851ae32be45b5"
+    },
+    {
+      "name": "IFOS_cross_cloud_trust_schema_v1.json",
+      "ref": "file://IFOS_cross_cloud_trust_schema_v1.json",
+      "hash": "sha256:194975a5c9291be4a45e83f4dab025a7d1045fa159062247fa932e9aada8d142"
+    },
+    {
+      "name": "IFOS_dr_plan_schema_v1.json",
+      "ref": "file://IFOS_dr_plan_schema_v1.json",
+      "hash": "sha256:1faf2f941c4a7ff3ac1e55a4c2b690d82daca17b3ef9ac38800f36e9826dfbae"
+    },
+    {
+      "name": "IFOS_multicloud_cost_model_schema_v1.json",
+      "ref": "file://IFOS_multicloud_cost_model_schema_v1.json",
+      "hash": "sha256:8953f7c5c7aea919bfb09bbf67a89e09ea39dc50e9b485c82de8aae015dfc787"
+    },
+    {
+      "name": "ifos_config_promotion_stub_v1.py",
+      "ref": "file://ifos_config_promotion_stub_v1.py",
+      "hash": "sha256:e9c6fe569e83a2d8d9e1ea9400355fe533af17d600c0fd7c171d311785642c3b"
+    },
+    {
+      "name": "ifos_failover_router_stub_v1.py",
+      "ref": "file://ifos_failover_router_stub_v1.py",
+      "hash": "sha256:3a95e13c06c8403f6969b5b12ba0e29bceb3a2cd015803ff715dbb2d8a9f806f"
+    }
+  ],
+  "created_at": "2026-01-02T16:15:50Z",
+  "version": "1.0.0"
+}

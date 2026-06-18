@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ChunkSpec Schema v1",
+  "type": "object",
+  "required": [
+    "chunk_spec_id",
+    "tenant_id",
+    "strategy",
+    "target_tokens",
+    "overlap_tokens",
+    "version"
+  ],
+  "properties": {
+    "chunk_spec_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "strategy": {
+      "type": "string",
+      "enum": [
+        "fixed",
+        "heading_aware",
+        "semantic",
+        "code_aware",
+        "hybrid"
+      ]
+    },
+    "target_tokens": {
+      "type": "integer",
+      "minimum": 50
+    },
+    "overlap_tokens": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "boundaries": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "rules": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

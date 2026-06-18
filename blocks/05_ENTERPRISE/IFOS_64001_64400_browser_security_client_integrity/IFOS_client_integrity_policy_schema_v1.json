@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Client Integrity Policy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "rate_limits",
+    "anomaly_rules",
+    "challenges",
+    "version"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "rate_limits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "anomaly_rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "challenges": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "appeals": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

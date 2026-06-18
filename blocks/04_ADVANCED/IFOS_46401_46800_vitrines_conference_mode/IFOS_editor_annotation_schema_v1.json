@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS EditorAnnotation Schema v1",
+  "type": "object",
+  "required": [
+    "annotation_id",
+    "target_id",
+    "type",
+    "note",
+    "author",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "annotation_id": {
+      "type": "string"
+    },
+    "target_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "important",
+        "controversial",
+        "verify",
+        "feature",
+        "rename"
+      ]
+    },
+    "note": {
+      "type": "string"
+    },
+    "author": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

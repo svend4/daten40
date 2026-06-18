@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Transfer Policy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "chunk_size_kb",
+    "parallel",
+    "resume",
+    "version"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "chunk_size_kb": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "parallel": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "resume": {
+      "type": "boolean"
+    },
+    "hash": {
+      "type": "string"
+    },
+    "retry_policy": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

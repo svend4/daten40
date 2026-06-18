@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS LocaleFallbacks Schema v1",
+  "type": "object",
+  "required": [
+    "locale_id",
+    "chain",
+    "legal_strings_must_translate",
+    "version"
+  ],
+  "properties": {
+    "locale_id": {
+      "type": "string"
+    },
+    "chain": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "legal_strings_must_translate": {
+      "type": "boolean"
+    },
+    "mark_machine_translated": {
+      "type": "boolean",
+      "default": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

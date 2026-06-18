@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Deployment Profile Schema v1",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "name",
+    "topology",
+    "capabilities",
+    "version"
+  ],
+  "properties": {
+    "profile_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "topology": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "defaults": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

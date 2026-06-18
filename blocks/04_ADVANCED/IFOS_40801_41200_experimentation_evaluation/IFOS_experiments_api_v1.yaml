@@ -1,0 +1,31 @@
+openapi: 3.0.3
+info:
+  title: IFOS Experimentation & Evaluation API
+  version: "1.0.0"
+servers:
+  - url: https://experiments.ifos.local/v1
+tags:
+  - name: Experiments
+  - name: Events
+  - name: Metrics
+  - name: Benchmarks
+  - name: Reviews
+  - name: Feedback
+  - name: Gates
+paths:
+  /experiments:
+    post: {tags:[Experiments], summary: Create/update experiment, responses: {"200": {description: OK}}}
+  /experiments/assign:
+    post: {tags:[Experiments], summary: Get deterministic assignment for subject, responses: {"200": {description: OK}}}
+  /events:
+    post: {tags:[Events], summary: Append evaluation event, responses: {"201": {description: Created}}}
+  /scorecards:
+    post: {tags:[Metrics], summary: Publish scorecard, responses: {"201": {description: Created}}}
+  /benchmarks/run:
+    post: {tags:[Benchmarks], summary: Run benchmark suite, responses: {"200": {description: OK}}}
+  /reviews:
+    post: {tags:[Reviews], summary: Append human review, responses: {"201": {description: Created}}}
+  /feedback:
+    post: {tags:[Feedback], summary: Append feedback item, responses: {"201": {description: Created}}}
+  /gates/evaluate:
+    post: {tags:[Gates], summary: Evaluate release gate, responses: {"200": {description: OK}}}

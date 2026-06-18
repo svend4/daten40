@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS GatewayChangeTicket Schema v1",
+  "type": "object",
+  "required": [
+    "ticket_id",
+    "tenant_id",
+    "requested_by",
+    "change_type",
+    "justification",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "ticket_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "requested_by": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "change_type": {
+      "type": "string",
+      "enum": [
+        "add_domain",
+        "increase_quota",
+        "change_tls_policy",
+        "enable_proxy_inspection"
+      ]
+    },
+    "justification": {
+      "type": "string"
+    },
+    "risk_assessment": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "submitted",
+        "approved",
+        "rejected",
+        "implemented"
+      ]
+    },
+    "approvals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

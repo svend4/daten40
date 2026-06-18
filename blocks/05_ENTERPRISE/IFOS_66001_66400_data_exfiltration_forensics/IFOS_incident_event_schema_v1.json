@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS IncidentEvent Schema v1",
+  "type": "object",
+  "required": [
+    "event_id",
+    "event_ts",
+    "ingest_ts",
+    "category",
+    "severity",
+    "correlation",
+    "source",
+    "summary",
+    "version"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "event_ts": {
+      "type": "string"
+    },
+    "ingest_ts": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "exfil",
+        "auth",
+        "policy",
+        "anomaly",
+        "runtime",
+        "secrets",
+        "identity"
+      ]
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "correlation": {
+      "type": "object",
+      "required": [
+        "tenant_id"
+      ],
+      "properties": {
+        "tenant_id": {
+          "type": "string"
+        },
+        "workflow_id": {
+          "type": "string"
+        },
+        "connector_id": {
+          "type": "string"
+        },
+        "route_id": {
+          "type": "string"
+        },
+        "sandbox_run_id": {
+          "type": "string"
+        },
+        "trace_id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "summary": {
+      "type": "string"
+    },
+    "details": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "redaction": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

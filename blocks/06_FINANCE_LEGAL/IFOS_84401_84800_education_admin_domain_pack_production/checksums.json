@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-01-11T16:54:28",
+  "algorithm": "sha256",
+  "files": {
+    "README.md": "16a4a238d1bcbacf5d23a394454ba98539a65e0a37cd35572cec545548c91815",
+    "manifest.json": "f0d1353877b27450366298a87eaf44163fa18f845dd68e368f53a9e1ed975868",
+    "MASTER_INDEX_DELTA.json": "ea8bd42cd882070b7e345b20ebcd1bbb79fa96d98644ff36dd382ee4fc9a2523",
+    "policies/policies.md": "abbd7410edaabf835bd19684b7c4b12321ce34d3d6f530ed7111f02e35dc3f40",
+    "data-contracts/student.v1.json": "215456f12c6c59c02c941e356f7f97c5b19b646917b13108e039de90ffb765fb",
+    "data-contracts/enrollment_request.v1.json": "c65f0b7cc1a7f7647c41be0ee5958ae0b91fc0beeb5ed7f43f57d01aeac8158c",
+    "data-contracts/document.v1.json": "165d89f3de3306cf51ca810599d8c6fc8bc49c17a1c336f62bc1c93a1dd59f2f",
+    "data-contracts/notification.v1.json": "3a1538147a2c860e9fdcc929755542f2786a6df10334b0917387f43259c6f446",
+    "kpis/kpi_catalog.csv": "e0d80d343f1e2a704bb0d018c63c435f4223f419a406bc646815ec8f2918ce41",
+    "bundles/enrollment_docs_notify.json": "1d44e3076d685654652cec8c7c432aa616e8c334fe02ee06590c33196d9a07c4",
+    "examples/enrollment_request.json": "e64b13a07f89403f8dd00c880889ab3a8536890f51554d3b0862faca0a1fa497",
+    "tests/TEST_PLAN.md": "73267a12a20ab37f931e4b43e63339f784b5824d75cfe0f8238faa242f97af3b"
+  }
+}

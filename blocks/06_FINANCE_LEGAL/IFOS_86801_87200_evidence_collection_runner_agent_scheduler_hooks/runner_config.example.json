@@ -1,0 +1,24 @@
+{
+  "runner_id": "runner-prod-01",
+  "environment": "prod",
+  "registry_api": "https://evidence-registry.example.com",
+  "storage": {
+    "bucket": "ifos-evidence-prod",
+    "cas_prefix": "artifacts/sha256",
+    "exports_prefix": "exports/audit_packs"
+  },
+  "signing": {
+    "enabled": true,
+    "scheme": "kms",
+    "kms_key_alias": "alias/ifos-evidence"
+  },
+  "redaction": {
+    "enabled": true,
+    "ruleset": "phi_pii_minimal"
+  },
+  "limits": {
+    "max_artifact_mb": 500,
+    "max_parallel_jobs": 3,
+    "retry_max": 5
+  }
+}

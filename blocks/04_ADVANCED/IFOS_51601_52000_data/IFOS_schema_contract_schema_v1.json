@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SchemaContract Schema v1",
+  "type": "object",
+  "required": [
+    "contract_id",
+    "schema_name",
+    "schema_version",
+    "compat",
+    "migration",
+    "version"
+  ],
+  "properties": {
+    "contract_id": {
+      "type": "string"
+    },
+    "schema_name": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "compat": {
+      "type": "string",
+      "enum": [
+        "backward",
+        "forward",
+        "breaking"
+      ]
+    },
+    "migration": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

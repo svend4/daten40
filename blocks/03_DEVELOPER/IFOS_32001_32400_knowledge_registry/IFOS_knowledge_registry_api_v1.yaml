@@ -1,0 +1,111 @@
+openapi: 3.0.3
+info:
+  title: IFOS Knowledge Registry API
+  version: "1.0.0"
+servers:
+  - url: https://registry.ifos.local/v1
+tags:
+  - name: Items
+  - name: Taxonomy
+  - name: Reviews
+  - name: Trust
+  - name: Compatibility
+  - name: Dependencies
+  - name: Install
+  - name: Search
+  - name: Ranking
+  - name: Vitrines
+  - name: Moderation
+paths:
+  /items:
+    post:
+      tags: [Items]
+      summary: Create/update registry item
+      responses: {"200": {description: OK}}
+    get:
+      tags: [Items]
+      summary: List items
+      responses: {"200": {description: OK}}
+  /items/{item_id}:
+    get:
+      tags: [Items]
+      summary: Get item by id
+      parameters:
+        - in: path
+          name: item_id
+          required: true
+          schema: {type: string}
+      responses: {"200": {description: OK}}
+  /taxonomy/nodes:
+    post:
+      tags: [Taxonomy]
+      summary: Create/update taxonomy node
+      responses: {"200": {description: OK}}
+    get:
+      tags: [Taxonomy]
+      summary: List taxonomy nodes
+      responses: {"200": {description: OK}}
+  /reviews:
+    post:
+      tags: [Reviews]
+      summary: Submit review for item
+      responses: {"201": {description: Created}}
+  /trust/signals:
+    post:
+      tags: [Trust]
+      summary: Add trust signal
+      responses: {"201": {description: Created}}
+  /compatibility/{item_id}:
+    get:
+      tags: [Compatibility]
+      summary: Get compatibility matrix for item
+      parameters:
+        - in: path
+          name: item_id
+          required: true
+          schema: {type: string}
+      responses: {"200": {description: OK}}
+  /dependencies/resolve/{item_id}:
+    post:
+      tags: [Dependencies]
+      summary: Resolve dependency graph for item in given context
+      parameters:
+        - in: path
+          name: item_id
+          required: true
+          schema: {type: string}
+      responses: {"200": {description: OK}}
+  /install/run/{item_id}:
+    post:
+      tags: [Install]
+      summary: One-click install and run (or dry-run)
+      parameters:
+        - in: path
+          name: item_id
+          required: true
+          schema: {type: string}
+      responses: {"202": {description: Accepted}}
+  /search:
+    post:
+      tags: [Search]
+      summary: Search items by terms/taxonomy/tags
+      responses: {"200": {description: OK}}
+  /ranking:
+    post:
+      tags: [Ranking]
+      summary: Rank items for query and context (explainable)
+      responses: {"200": {description: OK}}
+  /vitrines:
+    post:
+      tags: [Vitrines]
+      summary: Create/update vitrine
+      responses: {"200": {description: OK}}
+    get:
+      tags: [Vitrines]
+      summary: List vitrines
+      responses: {"200": {description: OK}}
+  /moderation/decisions:
+    post:
+      tags: [Moderation]
+      summary: Record moderation decision
+      responses: {"201": {description: Created}}

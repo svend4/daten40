@@ -1,0 +1,5 @@
+{
+  "provider": "okta",
+  "org": "example",
+  "review_group": "privileged-access-reviewers"
+}

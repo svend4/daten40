@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS CurationPick Schema v1",
+  "type": "object",
+  "required": [
+    "pick_id",
+    "title",
+    "entities",
+    "rationale",
+    "editor",
+    "version"
+  ],
+  "properties": {
+    "pick_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "rationale": {
+      "type": "string"
+    },
+    "editor": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

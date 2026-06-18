@@ -1,0 +1,157 @@
+{
+  "artifact_set": "IFOS_48001_48400",
+  "entries": [
+    {
+      "name": "IFOS_reviews_feedback_os_48001_48400_v1.md",
+      "ref": "file://IFOS_reviews_feedback_os_48001_48400_v1.md",
+      "hash": "sha256:f4590f6c8643fc09668746754e62d21cba3df713f9d059d6c3f65d04057f3707"
+    },
+    {
+      "name": "IFOS_reviews_api_v1.yaml",
+      "ref": "file://IFOS_reviews_api_v1.yaml",
+      "hash": "sha256:17d8d7d105f31c3a9630145c87e4db8767656881fc68a02002130bdddd08ae43"
+    },
+    {
+      "name": "IFOS_reviews_examples_v1.json",
+      "ref": "file://IFOS_reviews_examples_v1.json",
+      "hash": "sha256:0355bc7170c9b1609702e0ae950bbe77daabca179e8519bb9c896839c643fcac"
+    },
+    {
+      "name": "IFOS_review_schema_v1.json",
+      "ref": "file://IFOS_review_schema_v1.json",
+      "hash": "sha256:eac9c0f39135a8581aef15a0be9bb6a5c305bdd1b87c58ac5035b9a405988064"
+    },
+    {
+      "name": "IFOS_rating_schema_v1.json",
+      "ref": "file://IFOS_rating_schema_v1.json",
+      "hash": "sha256:148ffac900a9245f37a6e522b0301de8accd3ee7e688713e9db0580f2beaa6c9"
+    },
+    {
+      "name": "IFOS_reviewer_profile_schema_v1.json",
+      "ref": "file://IFOS_reviewer_profile_schema_v1.json",
+      "hash": "sha256:ccb084fc79d8def13a8533da4a5277cdd14648c22236ad956926b13aa6f2252f"
+    },
+    {
+      "name": "IFOS_purchase_proof_schema_v1.json",
+      "ref": "file://IFOS_purchase_proof_schema_v1.json",
+      "hash": "sha256:14c45bdb77d8c342be1f6f9d563bc5887527b1fd5fdadbbdab29d11ddeefa625"
+    },
+    {
+      "name": "IFOS_review_moderation_result_schema_v1.json",
+      "ref": "file://IFOS_review_moderation_result_schema_v1.json",
+      "hash": "sha256:6148f07f90fc8ba0d41be112e555b71763beabdc8a39d1a6cc09a1f302db1188"
+    },
+    {
+      "name": "IFOS_spam_signal_schema_v1.json",
+      "ref": "file://IFOS_spam_signal_schema_v1.json",
+      "hash": "sha256:a88ea869dc92d5b0caaf607e877a1bf03ebd32d4a24fab16f09b32be9650d25e"
+    },
+    {
+      "name": "IFOS_reputation_score_schema_v1.json",
+      "ref": "file://IFOS_reputation_score_schema_v1.json",
+      "hash": "sha256:af4ae38a7a56487d8455dc55ddca1016ecbcacba3934b9ac3207960eee27574f"
+    },
+    {
+      "name": "IFOS_provider_response_schema_v1.json",
+      "ref": "file://IFOS_provider_response_schema_v1.json",
+      "hash": "sha256:bcf557c491b1702b71ac23c317e99ee7222e23c789cc1c26d7e0cd52bb38e094"
+    },
+    {
+      "name": "IFOS_review_summary_schema_v1.json",
+      "ref": "file://IFOS_review_summary_schema_v1.json",
+      "hash": "sha256:62f85071a05ce5010a7580d5c9c1e2191b1d84f3f0a6616ec11a6cd59544382b"
+    },
+    {
+      "name": "IFOS_review_conference_schema_v1.json",
+      "ref": "file://IFOS_review_conference_schema_v1.json",
+      "hash": "sha256:6e4ae80aa6a86c1d8bbbdd3a0e888301e22b1418cfbcb9c2a688c3ff5118ac0e"
+    },
+    {
+      "name": "IFOS_complaint_case_schema_v1.json",
+      "ref": "file://IFOS_complaint_case_schema_v1.json",
+      "hash": "sha256:5037b1878ec5f9e4fa9053d3780d1edd2d89c18b4e295806ead789653c3f42e4"
+    },
+    {
+      "name": "IFOS_review_appeal_schema_v1.json",
+      "ref": "file://IFOS_review_appeal_schema_v1.json",
+      "hash": "sha256:35cff8e78f681a9afc79e48d194427ef49c3076278021af4ebde9e001fc56374"
+    },
+    {
+      "name": "IFOS_reviews_policy_schema_v1.json",
+      "ref": "file://IFOS_reviews_policy_schema_v1.json",
+      "hash": "sha256:92b0454415e54d1c002f546baa76ec99dab8be56cb46114dbe150921fe14d964"
+    },
+    {
+      "name": "IFOS_reviews_audit_log_schema_v1.json",
+      "ref": "file://IFOS_reviews_audit_log_schema_v1.json",
+      "hash": "sha256:6a4f870383e8068b2a47dc1e6f8b31937e9e3de3b437e65c5d152c3ed7a65c16"
+    },
+    {
+      "name": "IFOS_reviews_collection_spec_v1.md",
+      "ref": "file://IFOS_reviews_collection_spec_v1.md",
+      "hash": "sha256:7bce2ff80a23cb7d561db73e234caa46fc369ae2337fb7816e218183e88120fe"
+    },
+    {
+      "name": "IFOS_reviews_verification_spec_v1.md",
+      "ref": "file://IFOS_reviews_verification_spec_v1.md",
+      "hash": "sha256:22dad6286424b13ce961eabaf9b762528ce21f2c99763b14bd02ebee3e7078f1"
+    },
+    {
+      "name": "IFOS_reviews_moderation_spec_v1.md",
+      "ref": "file://IFOS_reviews_moderation_spec_v1.md",
+      "hash": "sha256:16068d5909f6317bf002b93c1b65364e2137c3668a3ce193c8636a8c5c05ee37"
+    },
+    {
+      "name": "IFOS_reviews_ranking_display_spec_v1.md",
+      "ref": "file://IFOS_reviews_ranking_display_spec_v1.md",
+      "hash": "sha256:131944509b28175996dd525e872940fa365dc5cb8f7db528c1c6f04bb0151b3f"
+    },
+    {
+      "name": "IFOS_reviews_conference_mode_spec_v1.md",
+      "ref": "file://IFOS_reviews_conference_mode_spec_v1.md",
+      "hash": "sha256:87ced466c8c7a28a2915ecada7c4cdc60e4bf5b92635b367f947877156461630"
+    },
+    {
+      "name": "IFOS_reviews_disputes_appeals_spec_v1.md",
+      "ref": "file://IFOS_reviews_disputes_appeals_spec_v1.md",
+      "hash": "sha256:02c0bddbc1d96cc0203e39ff62ae2d7bdfb80018d777fd6479b837e50596b60f"
+    },
+    {
+      "name": "IFOS_reviews_anti_spam_signals_spec_v1.md",
+      "ref": "file://IFOS_reviews_anti_spam_signals_spec_v1.md",
+      "hash": "sha256:08127c2cb3b80f012d4487a5d7bbdd1a159cec42803f08cc5bd3b5fd19791369"
+    },
+    {
+      "name": "IFOS_reviews_privacy_minimization_spec_v1.md",
+      "ref": "file://IFOS_reviews_privacy_minimization_spec_v1.md",
+      "hash": "sha256:f64442996b532d5e457a793b686413c10f0e3b3acc522666f1adf67459480a08"
+    },
+    {
+      "name": "ifos_review_moderator_stub_v1.py",
+      "ref": "file://ifos_review_moderator_stub_v1.py",
+      "hash": "sha256:05435e40b5a2d86e828f1e470339a3158eb6215dc5977a222b24ff711894a9ba"
+    },
+    {
+      "name": "ifos_review_spam_detector_stub_v1.py",
+      "ref": "file://ifos_review_spam_detector_stub_v1.py",
+      "hash": "sha256:742c8003a2038973f2e6bd7e081463b83277348e7a1c11ae923a8cbca4f6643c"
+    },
+    {
+      "name": "ifos_reputation_updater_stub_v1.py",
+      "ref": "file://ifos_reputation_updater_stub_v1.py",
+      "hash": "sha256:4ad81df616d7e75731bd390d62faf1f663f3350da3127d9fc9f71e24643d54ac"
+    },
+    {
+      "name": "ifos_review_summarizer_stub_v1.py",
+      "ref": "file://ifos_review_summarizer_stub_v1.py",
+      "hash": "sha256:cfbd7a6981d0f2014f643e069ee8b6b973066bac69cb866b64ee0459abee8866"
+    },
+    {
+      "name": "ifos_review_conference_builder_stub_v1.py",
+      "ref": "file://ifos_review_conference_builder_stub_v1.py",
+      "hash": "sha256:383ab11879824c17030db7599ecd377d1bcd28dc347e9fa611e071847182fa89"
+    }
+  ],
+  "created_at": "2026-01-04T10:40:00Z",
+  "version": "1.0.0"
+}

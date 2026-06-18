@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UICardModel Schema v1",
+  "type": "object",
+  "required": [
+    "card_id",
+    "entity_type",
+    "entity_id",
+    "sections",
+    "badges",
+    "actions",
+    "version"
+  ],
+  "properties": {
+    "card_id": {
+      "type": "string"
+    },
+    "entity_type": {
+      "type": "string",
+      "enum": [
+        "term",
+        "registry_item",
+        "bundle",
+        "news_cluster",
+        "review_cluster"
+      ]
+    },
+    "entity_id": {
+      "type": "string"
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "badges": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

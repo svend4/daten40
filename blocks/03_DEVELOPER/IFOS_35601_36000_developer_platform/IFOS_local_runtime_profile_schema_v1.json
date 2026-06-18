@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS LocalRuntimeProfile Schema v1",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "name",
+    "storage",
+    "queue",
+    "secrets_mode",
+    "observability",
+    "version"
+  ],
+  "properties": {
+    "profile_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "storage": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "queue": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "secrets_mode": {
+      "type": "string",
+      "enum": [
+        "dev_stub",
+        "vault_dev",
+        "vault_prod"
+      ]
+    },
+    "observability": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

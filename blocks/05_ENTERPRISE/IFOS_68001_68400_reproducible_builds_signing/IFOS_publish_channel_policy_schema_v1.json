@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS PublishChannelPolicy Schema v1",
+  "type": "object",
+  "required": [
+    "channel",
+    "verification_policy_id",
+    "publisher_requirements",
+    "version_schema"
+  ],
+  "properties": {
+    "channel": {
+      "type": "string",
+      "enum": [
+        "private",
+        "public",
+        "partner"
+      ]
+    },
+    "verification_policy_id": {
+      "type": "string"
+    },
+    "publisher_requirements": {
+      "type": "object",
+      "properties": {
+        "vendor_verified": {
+          "type": "boolean"
+        },
+        "security_contact_required": {
+          "type": "boolean"
+        },
+        "support_sla_required": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "version_schema": {
+      "type": "string",
+      "const": "1.0.0"
+    }
+  }
+}

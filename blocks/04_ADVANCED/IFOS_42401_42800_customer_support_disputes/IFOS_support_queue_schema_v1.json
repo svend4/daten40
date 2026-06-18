@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SupportQueue Schema v1",
+  "type": "object",
+  "required": [
+    "queue_id",
+    "name",
+    "routing_rules",
+    "version"
+  ],
+  "properties": {
+    "queue_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "routing_rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "members": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

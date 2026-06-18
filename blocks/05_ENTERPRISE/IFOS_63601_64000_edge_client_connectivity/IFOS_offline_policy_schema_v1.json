@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Offline Policy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "cache_strategies",
+    "queue_ops",
+    "version"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "cache_strategies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "queue_ops": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "forbidden_ops": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

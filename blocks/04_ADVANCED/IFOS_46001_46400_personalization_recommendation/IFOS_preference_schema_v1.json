@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Preference Schema v1",
+  "type": "object",
+  "required": [
+    "pref_id",
+    "user_id",
+    "key",
+    "value",
+    "source",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "pref_id": {
+      "type": "string"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "key": {
+      "type": "string"
+    },
+    "value": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "explicit",
+        "implicit"
+      ]
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

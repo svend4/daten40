@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Error Schema v1",
+  "type": "object",
+  "required": [
+    "category",
+    "retryable",
+    "message",
+    "user_action",
+    "version"
+  ],
+  "properties": {
+    "category": {
+      "type": "string"
+    },
+    "retryable": {
+      "type": "boolean"
+    },
+    "message": {
+      "type": "string"
+    },
+    "user_action": {
+      "type": "string"
+    },
+    "internal_code": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

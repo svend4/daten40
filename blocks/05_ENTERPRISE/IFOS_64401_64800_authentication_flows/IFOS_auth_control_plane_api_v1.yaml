@@ -1,0 +1,19 @@
+openapi: 3.0.3
+info:
+  title: IFOS Auth Control Plane API
+  version: "1.0.0"
+servers:
+  - url: https://auth.ifos.local/v1
+paths:
+  /profiles:
+    get: {summary: List auth profiles, responses: {"200": {description: OK}}}
+  /oidc/providers:
+    get: {summary: List OIDC providers, responses: {"200": {description: OK}}}
+  /clients:
+    get: {summary: List OAuth clients, responses: {"200": {description: OK}}}
+  /token/policies:
+    get: {summary: List token policies, responses: {"200": {description: OK}}}
+  /mfa/policies:
+    get: {summary: List MFA policies, responses: {"200": {description: OK}}}
+  /events:
+    post: {summary: Ingest auth event, responses: {"200": {description: OK}}}

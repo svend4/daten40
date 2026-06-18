@@ -1,0 +1,77 @@
+{
+  "registry_id": "reg.obs.6c2e5j042we2",
+  "entries": [
+    {
+      "name": "IFOS_log_event_schema_v1.json",
+      "ref": "file://IFOS_log_event_schema_v1.json",
+      "hash": "sha256:fb91e9abb20f1b0df9d3232e3d505b2adf146adf9a0d995f3af4267758e068e1"
+    },
+    {
+      "name": "IFOS_metric_schema_v1.json",
+      "ref": "file://IFOS_metric_schema_v1.json",
+      "hash": "sha256:57c6fc09312336d25604d4dc9e1417f533a5be5504c8b4b992494f96b1888ac7"
+    },
+    {
+      "name": "IFOS_trace_span_schema_v1.json",
+      "ref": "file://IFOS_trace_span_schema_v1.json",
+      "hash": "sha256:1576be54b468540308cdcceb2e7536e2436085fa21ca044380288e6184dad48a"
+    },
+    {
+      "name": "IFOS_health_check_schema_v1.json",
+      "ref": "file://IFOS_health_check_schema_v1.json",
+      "hash": "sha256:f3d6d19b6b56746a0d2d5002b501a18c1a5792bb482e32f1f2cef969a5b2e3df"
+    },
+    {
+      "name": "IFOS_slo_schema_v1.json",
+      "ref": "file://IFOS_slo_schema_v1.json",
+      "hash": "sha256:ba351a37ebcbbbc493e88657df45e97d4eb29243a4f843416912cf2e0b0ee152"
+    },
+    {
+      "name": "IFOS_sla_schema_v1.json",
+      "ref": "file://IFOS_sla_schema_v1.json",
+      "hash": "sha256:e89b6a4fbb8cb0a9e8b63a7afd469333c17e92ecc9c2b6d9c23486efcc1e8d34"
+    },
+    {
+      "name": "IFOS_alert_rule_schema_v1.json",
+      "ref": "file://IFOS_alert_rule_schema_v1.json",
+      "hash": "sha256:086e0d7bffe67e67c26d0acf55fceaeb03e15187243b7c6dea54bf1ee4625057"
+    },
+    {
+      "name": "IFOS_reliability_incident_schema_v1.json",
+      "ref": "file://IFOS_reliability_incident_schema_v1.json",
+      "hash": "sha256:aefd6b7b8b276d681df2e75fb62183eb7c5f89c949e788503f9ee086872aa7f8"
+    },
+    {
+      "name": "IFOS_run_record_schema_v1.json",
+      "ref": "file://IFOS_run_record_schema_v1.json",
+      "hash": "sha256:fd47b71b058a496d3af7c02329f4f0f9e9448386dca61a5fb31201e3180bc328"
+    },
+    {
+      "name": "IFOS_retry_policy_schema_v1.json",
+      "ref": "file://IFOS_retry_policy_schema_v1.json",
+      "hash": "sha256:5a97644426167ed476f98a802ec38e7a9a8d264a3440b6958b617649805a0b92"
+    },
+    {
+      "name": "IFOS_circuit_breaker_schema_v1.json",
+      "ref": "file://IFOS_circuit_breaker_schema_v1.json",
+      "hash": "sha256:2bb7f405afed118b299ec074d1f99d0bd8156908ffd2fc1fe5eb40b65686c436"
+    },
+    {
+      "name": "IFOS_rollback_plan_schema_v1.json",
+      "ref": "file://IFOS_rollback_plan_schema_v1.json",
+      "hash": "sha256:92d289c391321c6869199aea01c21af9349168aa3f512475c98b11054ab77378"
+    },
+    {
+      "name": "IFOS_canary_release_schema_v1.json",
+      "ref": "file://IFOS_canary_release_schema_v1.json",
+      "hash": "sha256:db4317580bdbd4edbc81991506bcf66cac4b4d020f6811a6ed7615c2f892e4cc"
+    },
+    {
+      "name": "IFOS_autofix_rule_schema_v1.json",
+      "ref": "file://IFOS_autofix_rule_schema_v1.json",
+      "hash": "sha256:74d120ad9ce1779744490899e55e2b1e57d88ad4670de01f871d6cbd920df4d2"
+    }
+  ],
+  "updated_at": "2026-01-03T12:33:00Z",
+  "version": "1.0.0"
+}

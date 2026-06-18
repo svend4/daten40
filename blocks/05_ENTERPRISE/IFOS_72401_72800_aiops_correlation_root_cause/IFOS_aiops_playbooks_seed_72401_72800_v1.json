@@ -1,0 +1,74 @@
+{
+  "actions": [
+    {
+      "action_id": "open_incident",
+      "safety_level": "require_approval",
+      "creates": [
+        "ticket",
+        "timeline",
+        "dashboard_links"
+      ],
+      "targets": [
+        "incident_response_system"
+      ],
+      "template": "SEV: {{severity}} | {{metric}} regression | {{release}} | {{region}}"
+    },
+    {
+      "action_id": "suggest:disable_flag_or_rollback",
+      "safety_level": "suggest",
+      "suggestions": [
+        {
+          "type": "disable_flag",
+          "when": "flag_cohort_lift > 0.15",
+          "payload": {
+            "flag_key": "{{top_flag}}",
+            "scope": "{{affected_tenants_or_percent}}"
+          }
+        },
+        {
+          "type": "rollback",
+          "when": "release_time_overlap_score > 0.6",
+          "payload": {
+            "deploy_id": "{{deploy_id}}"
+          }
+        }
+      ]
+    },
+    {
+      "action_id": "suggest:rollback_or_reroute",
+      "safety_level": "suggest",
+      "suggestions": [
+        {
+          "type": "reroute",
+          "when": "region_is_single AND other_regions_healthy",
+          "payload": {
+            "from": "{{region}}",
+            "to": "{{best_region}}",
+            "weight": "50%"
+          }
+        },
+        {
+          "type": "rollback",
+          "when": "release_time_overlap_score > 0.6",
+          "payload": {
+            "deploy_id": "{{deploy_id}}"
+          }
+        }
+      ]
+    }
+  ],
+  "evidence": {
+    "required_links": [
+      "rum_dashboard",
+      "slo_dashboard",
+      "trace_samples"
+    ],
+    "required_fields": [
+      "release_version",
+      "region",
+      "service",
+      "metric",
+      "window"
+    ]
+  }
+}

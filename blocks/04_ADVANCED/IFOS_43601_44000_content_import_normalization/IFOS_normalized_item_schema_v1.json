@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS NormalizedItem Schema v1",
+  "type": "object",
+  "required": [
+    "item_id",
+    "kind",
+    "title",
+    "body",
+    "links",
+    "locale",
+    "ts",
+    "provenance",
+    "version"
+  ],
+  "properties": {
+    "item_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "article",
+        "product",
+        "review",
+        "repo",
+        "doc",
+        "event",
+        "other"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "summary": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "body": {
+      "type": "string"
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "locale": {
+      "type": "string"
+    },
+    "timestamps": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "entities": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

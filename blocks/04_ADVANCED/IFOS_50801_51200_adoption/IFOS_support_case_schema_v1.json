@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SupportCase Schema v1",
+  "type": "object",
+  "required": [
+    "case_id",
+    "bundle_id",
+    "run_id",
+    "symptoms",
+    "diagnostics",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "case_id": {
+      "type": "string"
+    },
+    "bundle_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "symptoms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "diagnostics": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "resolved",
+        "escalated"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

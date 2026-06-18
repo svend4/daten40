@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ConnectorPackage Schema v1",
+  "type": "object",
+  "required": [
+    "package_id",
+    "connector_id",
+    "artifacts",
+    "sbom",
+    "signature",
+    "version"
+  ],
+  "properties": {
+    "package_id": {
+      "type": "string"
+    },
+    "connector_id": {
+      "type": "string"
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "sbom": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "signature": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

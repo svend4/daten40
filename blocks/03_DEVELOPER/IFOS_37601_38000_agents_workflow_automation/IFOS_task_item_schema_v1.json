@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS TaskItem Schema v1",
+  "type": "object",
+  "required": [
+    "task_id",
+    "tenant_id",
+    "title",
+    "inputs",
+    "definition_of_done",
+    "version"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "inputs": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "definition_of_done": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "priority": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        null,
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

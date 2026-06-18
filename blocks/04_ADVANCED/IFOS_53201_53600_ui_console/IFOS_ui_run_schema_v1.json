@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UI Run Schema v1",
+  "type": "object",
+  "required": [
+    "run_id",
+    "process_id",
+    "status",
+    "timeline",
+    "cost",
+    "links",
+    "version"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string"
+    },
+    "process_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "timeline": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "cost": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

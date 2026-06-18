@@ -1,0 +1,19 @@
+{
+  "contract_id": "evidence_collection_run.v1",
+  "fields": {
+    "run_id": "string",
+    "job": "evidence_collection_job.v1",
+    "started_at": "datetime",
+    "finished_at": "datetime",
+    "status": "string",
+    "artifact_sha256": "string",
+    "artifact_uri": "string",
+    "registry_event_id": "string",
+    "signature": "signature.v1",
+    "metrics": "object",
+    "errors": "array[object]"
+  },
+  "privacy_level": "internal",
+  "retention_policy": "security_default",
+  "audit": "required"
+}

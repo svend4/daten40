@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS BYOK Schema v1",
+  "type": "object",
+  "required": [
+    "byok_id",
+    "tenant_id",
+    "kms_type",
+    "key_ref",
+    "rotation",
+    "version"
+  ],
+  "properties": {
+    "byok_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "kms_type": {
+      "type": "string",
+      "enum": [
+        "aws_kms",
+        "gcp_kms",
+        "azure_keyvault",
+        "hsm_onprem"
+      ]
+    },
+    "key_ref": {
+      "type": "string"
+    },
+    "rotation": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "encryption_context": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

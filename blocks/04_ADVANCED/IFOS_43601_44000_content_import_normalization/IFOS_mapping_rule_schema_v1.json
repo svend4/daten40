@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS MappingRule Schema v1",
+  "type": "object",
+  "required": [
+    "rule_id",
+    "schema_id",
+    "source_kind",
+    "mappings",
+    "version"
+  ],
+  "properties": {
+    "rule_id": {
+      "type": "string"
+    },
+    "schema_id": {
+      "type": "string"
+    },
+    "source_kind": {
+      "type": "string"
+    },
+    "mappings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "defaults": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "transforms": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,231 @@
+{
+  "classification": {
+    "object_ref": {
+      "type": "dataset",
+      "id": "ds.123"
+    },
+    "class": "PII",
+    "pii_types": [
+      "email",
+      "phone"
+    ],
+    "sensitivity": 80,
+    "allowed_zones": [
+      "EU_ONLY",
+      "NO_PUBLIC_LINKS"
+    ],
+    "labels": [
+      "customer_data"
+    ],
+    "version": "1.0.0"
+  },
+  "pii_policy": {
+    "policy_id": "pii.p.dmmytxsntikr",
+    "applies_to": {
+      "tenant_tier": "all",
+      "classes": [
+        "PII",
+        "RESTRICTED"
+      ]
+    },
+    "controls": {
+      "masking_required": true,
+      "tokenize_ids": true,
+      "no_raw_export": true
+    },
+    "export_rules": {
+      "allow_public_links": false,
+      "allow_third_party": false
+    },
+    "encryption": {
+      "at_rest": "required",
+      "in_transit": "required"
+    },
+    "version": "1.0.0"
+  },
+  "consent_record": {
+    "consent_id": "cons.c.4cmcjwcals5k",
+    "subject_id": "subj.s.1fdloconukz7",
+    "purposes": [
+      "support",
+      "account"
+    ],
+    "status": "granted",
+    "channel": "web_form",
+    "expires_at": null,
+    "evidence": {
+      "ts": "2026-01-04T00:05:00Z",
+      "ip_hash": "sha256:h.rnkqsnd0s2u9",
+      "signature": "sig.stub"
+    },
+    "ts": "2026-01-04T00:05:00Z",
+    "version": "1.0.0"
+  },
+  "processing_activity": {
+    "activity_id": "act.a.5r7pvqx4it3f",
+    "process": {
+      "type": "workflow",
+      "id": "wf.customer_support",
+      "version": "2.1.0"
+    },
+    "data_categories": [
+      "contact_info",
+      "support_tickets"
+    ],
+    "purposes": [
+      "support"
+    ],
+    "recipients": [
+      "internal_support_team"
+    ],
+    "retention": {
+      "tickets_days": 365,
+      "logs_days": 30
+    },
+    "security_measures": [
+      "encryption_at_rest",
+      "role_based_access",
+      "audit_logging"
+    ],
+    "lawful_basis": "contract",
+    "version": "1.0.0"
+  },
+  "dsar_request": {
+    "dsar_id": "dsar.d.m4kakfvkpxfq",
+    "type": "deletion",
+    "subject": {
+      "subject_id": "subj.s.1fdloconukz7",
+      "email_hash": "sha256:h.v1nvq3f6poso"
+    },
+    "identity_verification": {
+      "method": "email_challenge",
+      "status": "verified"
+    },
+    "scope": {
+      "include": [
+        "datasets",
+        "artifacts",
+        "logs"
+      ],
+      "exclude": [
+        "legal_hold"
+      ]
+    },
+    "status": "received",
+    "report_ref": null,
+    "created_at": "2026-01-04T00:05:00Z",
+    "version": "1.0.0"
+  },
+  "redaction_job": {
+    "job_id": "red.r.u54q8y8heogb",
+    "target": {
+      "type": "artifact",
+      "id": "art.567"
+    },
+    "rules": [
+      {
+        "type": "email",
+        "action": "mask"
+      },
+      {
+        "type": "phone",
+        "action": "mask_keep_last4"
+      }
+    ],
+    "status": "queued",
+    "ts": "2026-01-04T00:05:00Z",
+    "version": "1.0.0"
+  },
+  "anonymization_job": {
+    "job_id": "anon.a.etyj3kswxban",
+    "target": {
+      "type": "dataset",
+      "id": "ds.999"
+    },
+    "method": "aggregation",
+    "params": {
+      "group_by": [
+        "region"
+      ],
+      "drop": [
+        "email",
+        "phone"
+      ]
+    },
+    "status": "queued",
+    "ts": "2026-01-04T00:05:00Z",
+    "version": "1.0.0"
+  },
+  "retention_policy": {
+    "policy_id": "ret.p.4gnjgnwtf1el",
+    "rules": [
+      {
+        "class": "PII",
+        "action": "delete",
+        "after_days": 365
+      },
+      {
+        "class": "INTERNAL",
+        "action": "archive",
+        "after_days": 730
+      }
+    ],
+    "default_action": "retain",
+    "version": "1.0.0"
+  },
+  "legal_hold": {
+    "hold_id": "hold.h.h2n0zhiai1l3",
+    "scope": {
+      "type": "tenant",
+      "id": "ten.t.o4ifzattoked",
+      "objects": [
+        "ds.123",
+        "art.567"
+      ]
+    },
+    "reason": "audit_in_progress",
+    "status": "active",
+    "requested_by": {
+      "id": "compliance.officer",
+      "role": "dpo"
+    },
+    "ts": "2026-01-04T00:05:00Z",
+    "version": "1.0.0"
+  },
+  "evidence_pack": {
+    "pack_id": "pack.p.mk60mq46nfer",
+    "subject": {
+      "type": "dsar",
+      "id": "dsar.d.m4kakfvkpxfq"
+    },
+    "policies": [
+      "pii.*",
+      "ret.*"
+    ],
+    "audit_refs": [
+      "audit://evt.1",
+      "audit://evt.2"
+    ],
+    "actions": [
+      {
+        "type": "delete",
+        "object": "ds.123"
+      },
+      {
+        "type": "redact",
+        "object": "art.567"
+      }
+    ],
+    "hashes": [
+      "sha256:h.faqgte300n90",
+      "sha256:h.mma3a6osv9xb"
+    ],
+    "signature": {
+      "alg": "ed25519",
+      "key_ref": "key://tenant/compliance",
+      "signature": "<stub>"
+    },
+    "ts": "2026-01-04T00:05:00Z",
+    "version": "1.0.0"
+  }
+}

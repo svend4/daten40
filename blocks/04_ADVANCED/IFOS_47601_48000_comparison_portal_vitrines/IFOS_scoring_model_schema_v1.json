@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ScoringModel Schema v1",
+  "type": "object",
+  "required": [
+    "model_id",
+    "vertical",
+    "method",
+    "formula",
+    "explain",
+    "guardrails",
+    "version"
+  ],
+  "properties": {
+    "model_id": {
+      "type": "string"
+    },
+    "vertical": {
+      "type": "string"
+    },
+    "method": {
+      "type": "string",
+      "enum": [
+        "weighted_sum",
+        "rules",
+        "constraints",
+        "hybrid"
+      ]
+    },
+    "formula": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "explain": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "guardrails": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

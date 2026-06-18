@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Refactor Patch Schema v1",
+  "type": "object",
+  "required": [
+    "patch_id",
+    "target_ref",
+    "diff",
+    "applies_to_version",
+    "version"
+  ],
+  "properties": {
+    "patch_id": {
+      "type": "string"
+    },
+    "target_ref": {
+      "type": "string"
+    },
+    "diff": {
+      "type": "string"
+    },
+    "applies_to_version": {
+      "type": "string"
+    },
+    "rollback": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

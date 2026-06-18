@@ -1,0 +1,178 @@
+{
+  "dataset": {
+    "dataset_id": "ds.d.bg7mi4w6pw0q",
+    "tenant_id": "ten.t.6ljqqh5ocznh",
+    "name": "registry_seed.csv",
+    "location": "store://datasets/registry_seed.csv",
+    "format": "csv",
+    "schema_ref": "schema://IFOS_registry.csv",
+    "classification": "INTERNAL",
+    "content_hash": "sha256:h.a9pfoye3wcko",
+    "created_at": "2026-01-03T22:15:00Z",
+    "version": "1.0.0"
+  },
+  "artifact": {
+    "artifact_id": "art.a.f34p7boqzgcj",
+    "tenant_id": "ten.t.6ljqqh5ocznh",
+    "type": "report",
+    "location": "store://artifacts/weekly_report.pdf",
+    "content_hash": "sha256:h.wjarrytmixrm",
+    "classification": "INTERNAL",
+    "metadata": {
+      "title": "Weekly IFOS Summary"
+    },
+    "created_at": "2026-01-03T22:15:00Z",
+    "version": "1.0.0"
+  },
+  "transformation": {
+    "transform_id": "tr.x.rlqpp3enzykd",
+    "actor": {
+      "type": "user",
+      "id": "user.owner"
+    },
+    "asset": {
+      "type": "workflow",
+      "id": "wf.import_and_rank",
+      "version": "1.2.0"
+    },
+    "inputs": [
+      {
+        "type": "dataset",
+        "id": "ds.d.bg7mi4w6pw0q"
+      },
+      {
+        "type": "config",
+        "id": "cfg.rank_v1"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "artifact",
+        "id": "art.a.f34p7boqzgcj"
+      }
+    ],
+    "parameters": {
+      "dedup": true,
+      "ranking": "hybrid"
+    },
+    "env": {
+      "runtime": "ifos/1.0",
+      "model": "gpt-x",
+      "region": "DE"
+    },
+    "ts": "2026-01-03T22:15:00Z",
+    "metering_ref": "meter://mtr.123",
+    "execution_ref": "exec://job.456",
+    "version": "1.0.0"
+  },
+  "lineage_graph": {
+    "graph_id": "graph.g.w2vj8rmfki5e",
+    "nodes": [
+      {
+        "type": "dataset",
+        "id": "ds.d.bg7mi4w6pw0q"
+      },
+      {
+        "type": "artifact",
+        "id": "art.a.f34p7boqzgcj"
+      },
+      {
+        "type": "transformation",
+        "id": "tr.x.rlqpp3enzykd"
+      }
+    ],
+    "edges": [
+      {
+        "edge_id": "e.e.yobouc8pgxuo",
+        "from": {
+          "type": "dataset",
+          "id": "ds.d.bg7mi4w6pw0q"
+        },
+        "to": {
+          "type": "artifact",
+          "id": "art.a.f34p7boqzgcj"
+        },
+        "transform_id": "tr.x.rlqpp3enzykd",
+        "version": "1.0.0"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "provenance_claim": {
+    "claim_id": "cl.c.w3dkdfpo7ns6",
+    "subject": {
+      "type": "artifact",
+      "id": "art.a.f34p7boqzgcj"
+    },
+    "statement": {
+      "created_from": [
+        {
+          "type": "dataset",
+          "id": "ds.d.bg7mi4w6pw0q"
+        }
+      ],
+      "via_transform": "tr.x.rlqpp3enzykd"
+    },
+    "evidence": [
+      {
+        "evidence_id": "ev.e.v4791pt4gn99",
+        "type": "execution_ref",
+        "ref": "exec://job.456",
+        "hash": null,
+        "version": "1.0.0"
+      },
+      {
+        "evidence_id": "ev.e.ikbmsthk1x05",
+        "type": "hash",
+        "ref": "store://artifacts/weekly_report.pdf",
+        "hash": "sha256:h.w8rprfytsys1",
+        "version": "1.0.0"
+      }
+    ],
+    "status": "asserted",
+    "ts": "2026-01-03T22:15:00Z",
+    "signature": {
+      "sig_id": "sig.s.d8pspkw7lqci",
+      "alg": "ed25519",
+      "key_ref": "key://tenant/signing",
+      "payload_hash": "sha256:h.1u1liyrhy1mt",
+      "ts": "2026-01-03T22:15:00Z",
+      "version": "1.0.0"
+    },
+    "version": "1.0.0"
+  },
+  "explain_record": {
+    "explain_id": "ex.x.984762cf37df",
+    "subject": {
+      "type": "artifact",
+      "id": "art.a.f34p7boqzgcj"
+    },
+    "context": {
+      "query": "weekly top changes",
+      "filters": {
+        "tenant": "ten.t.6ljqqh5ocznh"
+      },
+      "ranking": "hybrid"
+    },
+    "reasons": [
+      "matched_keyword",
+      "high_trust_source",
+      "recent_update"
+    ],
+    "sources": [
+      {
+        "type": "dataset",
+        "id": "ds.d.bg7mi4w6pw0q"
+      },
+      {
+        "type": "transformation",
+        "id": "tr.x.rlqpp3enzykd"
+      }
+    ],
+    "warnings": [
+      "incomplete_sources_possible"
+    ],
+    "ts": "2026-01-03T22:15:00Z",
+    "version": "1.0.0"
+  }
+}

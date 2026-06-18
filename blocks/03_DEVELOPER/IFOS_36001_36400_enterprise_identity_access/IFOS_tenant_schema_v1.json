@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Tenant Schema v1",
+  "type": "object",
+  "required": [
+    "tenant_id",
+    "name",
+    "billing_profile",
+    "security_profile",
+    "data_residency",
+    "version"
+  ],
+  "properties": {
+    "tenant_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "billing_profile": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "security_profile": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "data_residency": {
+      "type": "string"
+    },
+    "default_policies": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

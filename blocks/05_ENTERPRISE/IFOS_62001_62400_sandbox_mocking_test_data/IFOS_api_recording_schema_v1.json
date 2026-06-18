@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS API Recording Schema v1",
+  "type": "object",
+  "required": [
+    "recording_id",
+    "connector_id",
+    "entries",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "recording_id": {
+      "type": "string"
+    },
+    "connector_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "redaction_profile": {
+      "type": "string"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "request",
+          "response"
+        ],
+        "properties": {
+          "request": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "response": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "timing_ms": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "hash": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

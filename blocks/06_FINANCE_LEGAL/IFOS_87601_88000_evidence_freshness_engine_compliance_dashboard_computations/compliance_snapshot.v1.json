@@ -1,0 +1,23 @@
+{
+  "contract_id": "compliance_snapshot.v1",
+  "fields": {
+    "snapshot_id": "string",
+    "environment": "string",
+    "policy_packs": "array[string]",
+    "computed_at": "datetime",
+    "coverage_percent": "number",
+    "counts": {
+      "fresh": "integer",
+      "stale": "integer",
+      "missing": "integer",
+      "expired": "integer"
+    },
+    "top_missing": "array[evidence_freshness_status.v1]",
+    "top_stale": "array[evidence_freshness_status.v1]",
+    "by_control": "array[object]",
+    "by_domain": "array[object]"
+  },
+  "privacy_level": "internal",
+  "retention_policy": "security_default",
+  "audit": "required"
+}

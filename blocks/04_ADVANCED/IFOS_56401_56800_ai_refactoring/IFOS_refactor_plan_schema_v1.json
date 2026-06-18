@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Refactor Plan Schema v1",
+  "type": "object",
+  "required": [
+    "plan_id",
+    "target_ref",
+    "changes",
+    "evidence",
+    "risk",
+    "version"
+  ],
+  "properties": {
+    "plan_id": {
+      "type": "string"
+    },
+    "target_ref": {
+      "type": "string"
+    },
+    "changes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "risk": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "expected_impact": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

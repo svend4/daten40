@@ -1,0 +1,17 @@
+{
+  "contract_id": "invoice.v1",
+  "fields": {
+    "invoice_id": "string",
+    "customer_id": "string",
+    "customer_email": "string",
+    "currency": "string",
+    "subtotal": "number",
+    "vat_amount": "number",
+    "total": "number",
+    "issue_date": "date",
+    "due_date": "date",
+    "status": "string"
+  },
+  "privacy_level": "confidential",
+  "retention_policy": "finance_default"
+}

@@ -1,0 +1,147 @@
+{
+  "artifact_set": "IFOS_62001_62400",
+  "entries": [
+    {
+      "name": "IFOS_sandbox_mocking_test_data_os_62001_62400_v1.md",
+      "ref": "file://IFOS_sandbox_mocking_test_data_os_62001_62400_v1.md",
+      "hash": "sha256:1f6d484b4e5f1bebbd597d83d01a647e312f6b6150b62b39f44e0248a20884bd"
+    },
+    {
+      "name": "IFOS_mock_server_api_v1.yaml",
+      "ref": "file://IFOS_mock_server_api_v1.yaml",
+      "hash": "sha256:5aa5912d4b59794e7c2461763268f52182af6d1b6838e65574ab13c6d971b276"
+    },
+    {
+      "name": "IFOS_sandbox_examples_v1.json",
+      "ref": "file://IFOS_sandbox_examples_v1.json",
+      "hash": "sha256:45b92639fd827552f754ba544c5d0e410b52bf14b97bc5c005f25b12964a0b2b"
+    },
+    {
+      "name": "IFOS_datasets_seed_62001_62400_v1.csv",
+      "ref": "file://IFOS_datasets_seed_62001_62400_v1.csv",
+      "hash": "sha256:fb9b201f837f2a1cdcfa5a486c40363e0920440c93de9915b85b885b6db92907"
+    },
+    {
+      "name": "IFOS_generators_seed_62001_62400_v1.csv",
+      "ref": "file://IFOS_generators_seed_62001_62400_v1.csv",
+      "hash": "sha256:a2365954dc77ab7af4f2eb8261deaf280db11b89ef06cbb0a13b496e30c2d6d2"
+    },
+    {
+      "name": "IFOS_mock_routes_seed_62001_62400_v1.csv",
+      "ref": "file://IFOS_mock_routes_seed_62001_62400_v1.csv",
+      "hash": "sha256:d6966f7bafd733e9cae8cac510ce435c4b1d08ef268f4d4ec1e674a2186fb78d"
+    },
+    {
+      "name": "IFOS_demo_tenants_seed_62001_62400_v1.csv",
+      "ref": "file://IFOS_demo_tenants_seed_62001_62400_v1.csv",
+      "hash": "sha256:a114e69768a2cfa0e767bae07939af1e944cf7908fcd3bb100befa0f62951309"
+    },
+    {
+      "name": "IFOS_contract_tests_seed_62001_62400_v1.csv",
+      "ref": "file://IFOS_contract_tests_seed_62001_62400_v1.csv",
+      "hash": "sha256:b0ce1fc4d84e6dee78bfc483bd436f190c560e74c4a6ea48e16270dcb4a749fe"
+    },
+    {
+      "name": "IFOS_sandbox_overview_spec_v1.md",
+      "ref": "file://IFOS_sandbox_overview_spec_v1.md",
+      "hash": "sha256:2b6b1832a1fca04f53ef62a1764c15fdb0e7696a117de7f2de368597f70bac31"
+    },
+    {
+      "name": "IFOS_mock_server_spec_v1.md",
+      "ref": "file://IFOS_mock_server_spec_v1.md",
+      "hash": "sha256:06b75ab0e12dd0da3cd1aa4ea935bb39faf3ae48eeef0d2532c3b4823a6aaf73"
+    },
+    {
+      "name": "IFOS_fixtures_dataset_spec_v1.md",
+      "ref": "file://IFOS_fixtures_dataset_spec_v1.md",
+      "hash": "sha256:e6e66345169b76dba47798f40357a546c39750c93392f7779153d0f2394a095e"
+    },
+    {
+      "name": "IFOS_test_data_generators_spec_v1.md",
+      "ref": "file://IFOS_test_data_generators_spec_v1.md",
+      "hash": "sha256:29644ead02679e68bb7fd9e90abdb922b4de421b8f8f42d171678cb840647e92"
+    },
+    {
+      "name": "IFOS_record_replay_spec_v1.md",
+      "ref": "file://IFOS_record_replay_spec_v1.md",
+      "hash": "sha256:71b6096a527d62d50f8b00127036df94a3a0dc9b9837dfc5553231601bc921f5"
+    },
+    {
+      "name": "IFOS_demo_tenants_spec_v1.md",
+      "ref": "file://IFOS_demo_tenants_spec_v1.md",
+      "hash": "sha256:432df0c20e3bbf9083c8f55192e9f0ad73ef652098e7dd2084ba01e969fbd44e"
+    },
+    {
+      "name": "IFOS_contract_tests_spec_v1.md",
+      "ref": "file://IFOS_contract_tests_spec_v1.md",
+      "hash": "sha256:28dd551312d25c7026492dc8e6c7a7113bf2827ded4acef8badf3473b4a381ee"
+    },
+    {
+      "name": "IFOS_sandbox_privacy_redaction_spec_v1.md",
+      "ref": "file://IFOS_sandbox_privacy_redaction_spec_v1.md",
+      "hash": "sha256:2eeedf4dc1728d1b69c7d33e7e299bfcfc130817322e76215839e4d313be5b5f"
+    },
+    {
+      "name": "IFOS_sandbox_ui_wizard_spec_v1.md",
+      "ref": "file://IFOS_sandbox_ui_wizard_spec_v1.md",
+      "hash": "sha256:0dc3b2743f47af1933748ca33eb97b308bbb223ebbca7b78f7bd6a799a815532"
+    },
+    {
+      "name": "IFOS_ci_test_pipeline_spec_v1.md",
+      "ref": "file://IFOS_ci_test_pipeline_spec_v1.md",
+      "hash": "sha256:4a142f1fe48d194bf257cbf141a59b953875ed1566fec4df3f99678cbd32e6b1"
+    },
+    {
+      "name": "IFOS_fixture_schema_v1.json",
+      "ref": "file://IFOS_fixture_schema_v1.json",
+      "hash": "sha256:c71800e3fecd3386374a880b3e37d67f979ca5dbcdaa19f12eb0654c6104433f"
+    },
+    {
+      "name": "IFOS_dataset_schema_v1.json",
+      "ref": "file://IFOS_dataset_schema_v1.json",
+      "hash": "sha256:096ebeb78d3f3dd4ea300a4926756c8751445d57b8644972a4f5bffe9129d7ba"
+    },
+    {
+      "name": "IFOS_generator_schema_v1.json",
+      "ref": "file://IFOS_generator_schema_v1.json",
+      "hash": "sha256:9b28d7bc2eef461b6807c9ab37bfa68d7bda38f88855f345f9ef63e7b1f522d9"
+    },
+    {
+      "name": "IFOS_mock_route_schema_v1.json",
+      "ref": "file://IFOS_mock_route_schema_v1.json",
+      "hash": "sha256:003e84f82576dff99d83924a9ad15744ad4971479fb3e375c8b7ec81c74265e2"
+    },
+    {
+      "name": "IFOS_api_recording_schema_v1.json",
+      "ref": "file://IFOS_api_recording_schema_v1.json",
+      "hash": "sha256:3bdd6322be9aaf003124c764e7c3b899a68c98499b16e33d94e7ee26843b098e"
+    },
+    {
+      "name": "IFOS_demo_tenant_schema_v1.json",
+      "ref": "file://IFOS_demo_tenant_schema_v1.json",
+      "hash": "sha256:0daaf9f11e3ce6aa506386ab54959bc57214ccb1f8eac38351f68115478ca799"
+    },
+    {
+      "name": "IFOS_contract_test_schema_v1.json",
+      "ref": "file://IFOS_contract_test_schema_v1.json",
+      "hash": "sha256:7c79946e12a2fb61438872eba89c82a2595e329a10a29e7ba27e693e28ff1bf5"
+    },
+    {
+      "name": "ifos_mock_server_fastapi_stub_v1.py",
+      "ref": "file://ifos_mock_server_fastapi_stub_v1.py",
+      "hash": "sha256:1dcd26bbb926247d0f9815d007a80768e955eee5ddedd8e8c6f25690611383bf"
+    },
+    {
+      "name": "ifos_test_data_generator_stub_v1.py",
+      "ref": "file://ifos_test_data_generator_stub_v1.py",
+      "hash": "sha256:86462c3a162fbce3d566b9fb9e933bcaf2d9418ad13e1830cb6711c59c2e2ef8"
+    },
+    {
+      "name": "ifos_record_replay_proxy_stub_v1.py",
+      "ref": "file://ifos_record_replay_proxy_stub_v1.py",
+      "hash": "sha256:2e7e7e76fabb2f65dcd3d40c7e7170558f87142a388e47f2ff554455809b370c"
+    }
+  ],
+  "created_at": "2026-01-02T16:01:32Z",
+  "version": "1.0.0"
+}

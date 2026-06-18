@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS TaxonomyNode Schema v1",
+  "type": "object",
+  "required": [
+    "node_id",
+    "path",
+    "level",
+    "title",
+    "synonyms",
+    "version"
+  ],
+  "properties": {
+    "node_id": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "domain",
+        "category",
+        "capability",
+        "variant"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "synonyms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "examples": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

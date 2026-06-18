@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS EntityLink Schema v1",
+  "type": "object",
+  "required": [
+    "link_id",
+    "a_entity_id",
+    "b_entity_id",
+    "type",
+    "score",
+    "evidence",
+    "version"
+  ],
+  "properties": {
+    "link_id": {
+      "type": "string"
+    },
+    "a_entity_id": {
+      "type": "string"
+    },
+    "b_entity_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "same_as",
+        "related_to",
+        "owned_by",
+        "part_of"
+      ]
+    },
+    "score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

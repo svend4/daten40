@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS HealthStatus Schema v1",
+  "type": "object",
+  "required": [
+    "health_id",
+    "target_kind",
+    "target_id",
+    "status",
+    "checks",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "health_id": {
+      "type": "string"
+    },
+    "target_kind": {
+      "type": "string",
+      "enum": [
+        "item",
+        "bundle",
+        "connector",
+        "runtime"
+      ]
+    },
+    "target_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ok",
+        "degraded",
+        "down",
+        "unknown"
+      ]
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "status"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ok",
+              "fail",
+              "warn"
+            ]
+          },
+          "latency_ms": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "detail": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

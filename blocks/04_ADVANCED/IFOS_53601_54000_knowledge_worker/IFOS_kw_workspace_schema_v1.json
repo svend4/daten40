@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS KW Workspace Schema v1",
+  "type": "object",
+  "required": [
+    "workspace_id",
+    "name",
+    "roles",
+    "settings",
+    "version"
+  ],
+  "properties": {
+    "workspace_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "roles": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "settings": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

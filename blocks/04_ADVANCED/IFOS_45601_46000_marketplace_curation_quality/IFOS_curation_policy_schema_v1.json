@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS CurationPolicy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "featured_rules",
+    "categories",
+    "dedup_rules",
+    "version"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "featured_rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dedup_rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

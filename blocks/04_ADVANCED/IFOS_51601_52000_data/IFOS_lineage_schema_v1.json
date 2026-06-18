@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Lineage Schema v1",
+  "type": "object",
+  "required": [
+    "lineage_id",
+    "entity_id",
+    "producers",
+    "transforms",
+    "version"
+  ],
+  "properties": {
+    "lineage_id": {
+      "type": "string"
+    },
+    "entity_id": {
+      "type": "string"
+    },
+    "producers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "transforms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

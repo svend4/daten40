@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SLA Schema v1",
+  "type": "object",
+  "required": [
+    "sla_id",
+    "name",
+    "targets",
+    "support",
+    "version"
+  ],
+  "properties": {
+    "sla_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "targets": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "support": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "applies_to": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

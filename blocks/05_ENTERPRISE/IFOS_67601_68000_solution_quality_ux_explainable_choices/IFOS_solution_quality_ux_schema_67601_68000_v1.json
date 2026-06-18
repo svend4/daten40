@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Solution Quality UX",
+  "type": "object",
+  "required": [
+    "solution_card",
+    "choice_cards",
+    "risk_cards",
+    "gap_cards"
+  ],
+  "properties": {
+    "solution_card": {
+      "type": "object"
+    },
+    "choice_cards": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "risk_cards": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "gap_cards": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "decision_log": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

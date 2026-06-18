@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RegistryItem Schema v1",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "kind",
+    "summary",
+    "capabilities",
+    "inputs",
+    "outputs",
+    "install_recipe_id",
+    "dependencies",
+    "license_policy_id",
+    "links",
+    "maintainer",
+    "quality",
+    "version"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "plugin",
+        "app",
+        "scenario",
+        "api",
+        "template",
+        "library",
+        "dataset",
+        "bundle"
+      ]
+    },
+    "summary": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "taxonomy_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "install_recipe_id": {
+      "type": "string"
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "license_policy_id": {
+      "type": "string"
+    },
+    "compatibility_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "trust_score": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "links": {
+      "type": "object",
+      "required": [
+        "source_url"
+      ],
+      "properties": {
+        "source_url": {
+          "type": "string"
+        },
+        "docs_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "homepage": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "artifact_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "maintainer": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "verified": {
+          "type": "boolean"
+        },
+        "contact": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "quality": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "stable",
+        "deprecated"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

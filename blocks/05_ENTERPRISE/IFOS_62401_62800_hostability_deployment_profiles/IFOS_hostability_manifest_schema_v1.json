@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Hostability Manifest Schema v1",
+  "type": "object",
+  "required": [
+    "app_id",
+    "requires",
+    "version"
+  ],
+  "properties": {
+    "app_id": {
+      "type": "string"
+    },
+    "requires": {
+      "type": "object",
+      "required": [
+        "must"
+      ],
+      "properties": {
+        "must": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "should": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "optional": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "runtime": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "network": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "auth": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "observability": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

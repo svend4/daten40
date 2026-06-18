@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-01-11T17:40:44",
+  "algorithm": "sha256",
+  "files": {
+    "README.md": "ce73063594ed21393937dee474dec05019ad5cefcca71b5d26589a08892f92fd",
+    "manifest.json": "dea6604162278ed9e642052f8a133844a67fe3d61fcf7559edde65d3aee4a09d",
+    "MASTER_INDEX_DELTA.json": "cc2b4b507ade75f1c36bb9d258edd06df5f0adbaaa0ea340e1a1f2ee7d22e0f0",
+    "ui/PolicyDebugger_SPEC.md": "080c6a88604ca32cbb297cdf91f7b09048b8d983d6c22496ea01b941c1aaa9bd",
+    "ui/EvidenceInspector_SPEC.md": "ed9a611910d8a61e62399c17836e0f42ab3c6118c5868700fb585701b5fb5de2",
+    "ui/AdminConsole_ComplianceWidgets_SPEC.md": "0ff6166bda2697333946671e99ab0460390aad98a360363154f04379070a083c",
+    "api/openapi_policy_tooling_v1.json": "60cee2317ff8662f22a70a4884e6238643add3914cb96b6b1873a9b8f8995ecd",
+    "cli/README.md": "d32d24dff99bc0148b5494f10218e2cd13800dec7015c5c1259954187d15d0b4",
+    "cli/ifos_policy_cli_skeleton.py": "ef8bfe3901e16863810cb1e42ec5df6fba101006737e2a480064af8ca8be02e0",
+    "data-contracts/policy_trace.v1.json": "ee971353900546a57a52387738f2d3403bbbdbd17fde3c50cc475caafd83d1d9",
+    "data-contracts/policy_step_trace.v1.json": "7a174f8dd56891fd114abb75b0bdb334e9434e92ec65ab28ce7c4ddb72f3ae8b",
+    "data-contracts/simulation_report.v1.json": "a8b05fc07fba906b03c6923f76528b3af2e056c6ba636b608b509d0d45265d8f",
+    "examples/simulate_gdpr_dsar_context.json": "2bfe48b55f1f44153f96d04a23dcbffacb20a810193f7ed6afd8b60700e6338e",
+    "examples/simulate_hipaa_phi_export_context.json": "ef0de8196af9ecd15e974451b6fe7c440e505dc6bc922ce6a2ecc3ad0208dbe4",
+    "tests/TEST_PLAN.md": "d4b6269b03f7f5644fcb48999089af269229a18129a457488886b45a689ca182"
+  }
+}

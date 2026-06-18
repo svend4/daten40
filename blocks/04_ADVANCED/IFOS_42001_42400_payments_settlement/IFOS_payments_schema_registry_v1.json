@@ -1,0 +1,57 @@
+{
+  "registry_id": "reg.pay.74oc5bhr98z3",
+  "entries": [
+    {
+      "name": "IFOS_product_price_schema_v1.json",
+      "ref": "file://IFOS_product_price_schema_v1.json",
+      "hash": "sha256:59ffcec00edfaa08179dcb94cf935857ce6ccc77086dca55eddfe472784d22ab"
+    },
+    {
+      "name": "IFOS_quote_schema_v1.json",
+      "ref": "file://IFOS_quote_schema_v1.json",
+      "hash": "sha256:b69d804832df2227b3f1c7ba2f332671cdd6384d030706f79c51135f582cdeff"
+    },
+    {
+      "name": "IFOS_invoice_schema_v1.json",
+      "ref": "file://IFOS_invoice_schema_v1.json",
+      "hash": "sha256:b31ebfb594d47b4464068a56cd05b0e6ed2510a11cd33a7e95d18f59597e00d0"
+    },
+    {
+      "name": "IFOS_payment_intent_schema_v1.json",
+      "ref": "file://IFOS_payment_intent_schema_v1.json",
+      "hash": "sha256:f763d5c38dd07ecdcdf4ebc7541e29eb542107978bbf93993858f58987b27d07"
+    },
+    {
+      "name": "IFOS_receipt_schema_v1.json",
+      "ref": "file://IFOS_receipt_schema_v1.json",
+      "hash": "sha256:927d8bad584fda7d9c7015a60db68670aed78034f5dc7920ef4b6a8b9ddceff5"
+    },
+    {
+      "name": "IFOS_refund_schema_v1.json",
+      "ref": "file://IFOS_refund_schema_v1.json",
+      "hash": "sha256:4e3e7ffc0f99f1c46025c44a7867ccc31329b7669fc7302c7a6deaf4c10157c2"
+    },
+    {
+      "name": "IFOS_chargeback_schema_v1.json",
+      "ref": "file://IFOS_chargeback_schema_v1.json",
+      "hash": "sha256:1b311ed86eb832d1cb5f313181652486b51606f20bc326f93e78f82a43b373ae"
+    },
+    {
+      "name": "IFOS_vendor_ledger_schema_v1.json",
+      "ref": "file://IFOS_vendor_ledger_schema_v1.json",
+      "hash": "sha256:1bf2bdddabe49c1ad200888bdc09f5ca3f2113ec2b9f844871c705fe094764db"
+    },
+    {
+      "name": "IFOS_payout_schema_v1.json",
+      "ref": "file://IFOS_payout_schema_v1.json",
+      "hash": "sha256:d246cb44dd488870e4ce7e461f38be01a790381a41de975d7f8ac800a602cc40"
+    },
+    {
+      "name": "IFOS_tax_vat_schema_v1.json",
+      "ref": "file://IFOS_tax_vat_schema_v1.json",
+      "hash": "sha256:51ec1e4006e744dbd2eff6096dbc894f72061c93b6528a92b541e004d6986feb"
+    }
+  ],
+  "updated_at": "2026-01-04T01:20:00Z",
+  "version": "1.0.0"
+}

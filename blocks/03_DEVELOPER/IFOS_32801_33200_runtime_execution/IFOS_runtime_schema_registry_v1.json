@@ -1,0 +1,82 @@
+{
+  "registry_id": "reg.rt.xvdvmnnzgsmf",
+  "entries": [
+    {
+      "name": "IFOS_runtime_environment_schema_v1.json",
+      "ref": "file://IFOS_runtime_environment_schema_v1.json",
+      "hash": "sha256:e2ff5a42b415cdc8e625582aeb8395bfc872d344f12c221d3a78280b3d6a9214"
+    },
+    {
+      "name": "IFOS_sandbox_profile_schema_v1.json",
+      "ref": "file://IFOS_sandbox_profile_schema_v1.json",
+      "hash": "sha256:2ad10d2b552b4b31ec4070c4eb957b06428596aa1ffbc7b3acf531bdcfbd66ba"
+    },
+    {
+      "name": "IFOS_execution_policy_schema_v1.json",
+      "ref": "file://IFOS_execution_policy_schema_v1.json",
+      "hash": "sha256:74e19d8173a2c2ebc88b6efdd0ecd9bf1edbf880dee9c83b03b4e271cf4f9738"
+    },
+    {
+      "name": "IFOS_secret_ref_schema_v1.json",
+      "ref": "file://IFOS_secret_ref_schema_v1.json",
+      "hash": "sha256:7b8a07d1b190d4b54020745f43b31f71df9134e9daf3599f83c1ba9a58d26ed9"
+    },
+    {
+      "name": "IFOS_secret_binding_schema_v1.json",
+      "ref": "file://IFOS_secret_binding_schema_v1.json",
+      "hash": "sha256:3fdfe0d2c400e1bf3fbd6a0d52ced06e29809741efd293d814dbc3eea289cc3b"
+    },
+    {
+      "name": "IFOS_run_request_schema_v1.json",
+      "ref": "file://IFOS_run_request_schema_v1.json",
+      "hash": "sha256:6163249c9d5333aa100b2e4ad5eabc97ad6acb7331e14b5a96961ebbde8d42b1"
+    },
+    {
+      "name": "IFOS_run_result_schema_v1.json",
+      "ref": "file://IFOS_run_result_schema_v1.json",
+      "hash": "sha256:d3e012d2ca342a726f318d8e1b9b3facb6a3b8431989bfa0719289da00ea78a9"
+    },
+    {
+      "name": "IFOS_job_queue_schema_v1.json",
+      "ref": "file://IFOS_job_queue_schema_v1.json",
+      "hash": "sha256:a44199d4b34eca65d1c679e0e31d70e4a3e4f53510c1016a9bf0624c694d6119"
+    },
+    {
+      "name": "IFOS_job_event_schema_v1.json",
+      "ref": "file://IFOS_job_event_schema_v1.json",
+      "hash": "sha256:2dc3b5664b52730fd03c5c2fb8ed29b716da36b84b6119ef44026f42c7770d11"
+    },
+    {
+      "name": "IFOS_log_entry_schema_v1.json",
+      "ref": "file://IFOS_log_entry_schema_v1.json",
+      "hash": "sha256:c69761d344c789eab670e15f3f70673c542f99f2e89efa26f038f429443b3ff1"
+    },
+    {
+      "name": "IFOS_health_status_schema_v1.json",
+      "ref": "file://IFOS_health_status_schema_v1.json",
+      "hash": "sha256:6b5969682ea40039d9a6262de080cad025820170e91b0e446a8241bf8c59c7cf"
+    },
+    {
+      "name": "IFOS_rollback_plan_schema_v1.json",
+      "ref": "file://IFOS_rollback_plan_schema_v1.json",
+      "hash": "sha256:31f700252844587ea700313c785a4714022bca3d27270a6e2ee614e565991263"
+    },
+    {
+      "name": "IFOS_connector_driver_schema_v1.json",
+      "ref": "file://IFOS_connector_driver_schema_v1.json",
+      "hash": "sha256:be31563e941271f496cc748cf6925c3fa105bd11823ae65f568bac5a3122eafe"
+    },
+    {
+      "name": "IFOS_artifact_provenance_schema_v1.json",
+      "ref": "file://IFOS_artifact_provenance_schema_v1.json",
+      "hash": "sha256:c72d9971fe4bb62b1239843ba23552e3314d0e60a68b52a5e9f75a69921df9d6"
+    },
+    {
+      "name": "IFOS_runtime_capability_schema_v1.json",
+      "ref": "file://IFOS_runtime_capability_schema_v1.json",
+      "hash": "sha256:069c70a07f783fef12e01b781fe515680a46b8a9956912434f7c7df21db9e715"
+    }
+  ],
+  "updated_at": "2026-01-03T10:45:00Z",
+  "version": "1.0.0"
+}

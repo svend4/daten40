@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Integration Schema v1",
+  "type": "object",
+  "required": [
+    "integration_id",
+    "partner_id",
+    "name",
+    "capabilities",
+    "auth",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "integration_id": {
+      "type": "string"
+    },
+    "partner_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "auth": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "scopes": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "rate_limits": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "docs_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "examples_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "supported_locales": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "supported_regions": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "published",
+        "deprecated",
+        "disabled"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

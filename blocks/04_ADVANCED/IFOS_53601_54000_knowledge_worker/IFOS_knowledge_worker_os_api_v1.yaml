@@ -1,0 +1,23 @@
+openapi: 3.0.3
+info:
+  title: IFOS Knowledge Worker OS API
+  version: "1.0.0"
+servers:
+  - url: https://kw.ifos.local/v1
+tags:
+  - name: Workspaces
+  - name: Projects
+  - name: Documents
+  - name: Versions
+  - name: Exports
+paths:
+  /workspaces:
+    post: {tags:[Workspaces], summary: Create workspace, responses: {"200": {description: OK}}}
+  /projects:
+    post: {tags:[Projects], summary: Create project, responses: {"200": {description: OK}}}
+  /documents:
+    post: {tags:[Documents], summary: Create/update document, responses: {"200": {description: OK}}}
+  /versions:
+    post: {tags:[Versions], summary: Add version entry, responses: {"200": {description: OK}}}
+  /exports:
+    post: {tags:[Exports], summary: Create export job, responses: {"200": {description: OK}}}

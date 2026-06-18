@@ -1,0 +1,23 @@
+openapi: 3.0.3
+info:
+  title: IFOS Data OS API
+  version: "1.0.0"
+servers:
+  - url: https://data.ifos.local/v1
+tags:
+  - name: Entities
+  - name: Records
+  - name: Canonical
+  - name: Conflicts
+  - name: Snapshots
+paths:
+  /entities:
+    post: {tags:[Entities], summary: Create entity, responses: {"200": {description: OK}}}
+  /records:
+    post: {tags:[Records], summary: Ingest record, responses: {"200": {description: OK}}}
+  /canonical/recompute:
+    post: {tags:[Canonical], summary: Recompute canonical record, responses: {"200": {description: OK}}}
+  /conflicts:
+    get: {tags:[Conflicts], summary: List conflicts, responses: {"200": {description: OK}}}
+  /snapshots:
+    post: {tags:[Snapshots], summary: Create snapshot, responses: {"200": {description: OK}}}

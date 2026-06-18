@@ -1,0 +1,193 @@
+{
+  "partner": {
+    "partner_id": "par.p.dnhlt789v2pz",
+    "name": "Example Partner GmbH",
+    "type": "vendor",
+    "status": "active",
+    "contacts": [
+      {
+        "name": "Tech Lead",
+        "email": "tech@example.com"
+      }
+    ],
+    "regions": [
+      "DE",
+      "EU"
+    ],
+    "legal_zones": [
+      "EU"
+    ],
+    "metadata": {
+      "website": "example.com"
+    },
+    "created_at": "2026-01-04T02:45:00Z",
+    "version": "1.0.0"
+  },
+  "integration": {
+    "integration_id": "int.i.mlszgzxoc2rt",
+    "partner_id": "par.*",
+    "name": "Make.com Connector (Sandbox)",
+    "category": "automation",
+    "capabilities": [
+      "read",
+      "write",
+      "webhook"
+    ],
+    "auth": {
+      "type": "api_key",
+      "location": "header",
+      "header": "X-API-Key"
+    },
+    "scopes": [
+      "flows:read",
+      "flows:write"
+    ],
+    "rate_limits": {
+      "rpm": 120,
+      "burst": 20
+    },
+    "docs_ref": "file://docs/make_connector.md",
+    "examples_ref": "file://examples/make_connector.json",
+    "supported_locales": [
+      "de-DE",
+      "en-US",
+      "ru-RU"
+    ],
+    "supported_regions": [
+      "EU"
+    ],
+    "status": "published",
+    "version": "1.0.0"
+  },
+  "api_key": {
+    "key_id": "key.k.8ldfgz4nmgf9",
+    "partner_id": "par.*",
+    "scopes": [
+      "integrations:write",
+      "webhooks:write"
+    ],
+    "status": "active",
+    "rotation_days": 90,
+    "usage_limits": {
+      "rpm": 120
+    },
+    "created_at": "2026-01-04T02:45:00Z",
+    "version": "1.0.0"
+  },
+  "sandbox_key": {
+    "sandbox_key_id": "skey.s.h8pg0ya8k1xg",
+    "partner_id": "par.*",
+    "status": "active",
+    "limits": {
+      "rpm": 60,
+      "daily_runs": 1000
+    },
+    "testdata_profiles": [
+      "basic_billing",
+      "demo_runs"
+    ],
+    "created_at": "2026-01-04T02:45:00Z",
+    "version": "1.0.0"
+  },
+  "webhook": {
+    "webhook_id": "wh.w.n68jpmnehpnh",
+    "partner_id": "par.*",
+    "endpoint": "https://partner.example.com/webhooks/ifos",
+    "events": [
+      "run.completed",
+      "payment.succeeded"
+    ],
+    "secret_ref": "secret://vault/wh_*",
+    "retry_policy": {
+      "max_retries": 10,
+      "backoff": "exponential"
+    },
+    "status": "active",
+    "version": "1.0.0"
+  },
+  "certification": {
+    "cert_id": "cert.c.8pfg3i7a44a8",
+    "integration_id": "int.*",
+    "level": "silver",
+    "checks": [
+      {
+        "name": "sandbox_present",
+        "ok": true
+      },
+      {
+        "name": "docs_ok",
+        "ok": true
+      },
+      {
+        "name": "webhook_signed",
+        "ok": true
+      }
+    ],
+    "status": "passed",
+    "reviewed_at": "2026-01-04T02:45:00Z",
+    "expires_at": null,
+    "version": "1.0.0"
+  },
+  "rating": {
+    "rating_id": "rate.r.cvxld5o7ec9u",
+    "target": {
+      "type": "integration",
+      "id": "int.*"
+    },
+    "score": 5,
+    "reasons": [
+      "reliable",
+      "docs_good",
+      "fast_support"
+    ],
+    "text": "Очень хорошая интеграция, всё работает.",
+    "verified": true,
+    "ts": "2026-01-04T02:45:00Z",
+    "version": "1.0.0"
+  },
+  "affiliate_program": {
+    "program_id": "aff.a.n85gtj0xbp56",
+    "partner_id": "par.*",
+    "model": "RevShare",
+    "terms": {
+      "revshare_percent": 20,
+      "cookie_days": 30
+    },
+    "attribution": {
+      "mode": "s2s",
+      "click_id_param": "cid"
+    },
+    "status": "active",
+    "version": "1.0.0"
+  },
+  "offer": {
+    "offer_id": "off.o.o59wd4i2z35y",
+    "program_id": "aff.*",
+    "name": "Marketplace Pro — Germany",
+    "landing": "https://ifos.example.com/de/pro",
+    "regions": [
+      "DE"
+    ],
+    "payout": {
+      "type": "revshare",
+      "percent": 20
+    },
+    "promo_codes": [
+      "DEPRO10"
+    ],
+    "status": "active",
+    "version": "1.0.0"
+  },
+  "fraud_signal": {
+    "signal_id": "sig.s.4h5zoxmtw5mv",
+    "partner_id": "par.*",
+    "type": "bot_traffic",
+    "severity": "high",
+    "evidence": {
+      "ip_entropy": 0.1,
+      "ua_repeat": 0.95
+    },
+    "ts": "2026-01-04T02:45:00Z",
+    "version": "1.0.0"
+  }
+}

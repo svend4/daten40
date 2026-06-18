@@ -1,0 +1,89 @@
+{
+  "item": {
+    "item_id": "reg.i.0yzbt5dp4bme",
+    "name": "WordPress Plugin: Example Forms",
+    "item_type": "plugin",
+    "summary": "Формы + интеграции вебхуков.",
+    "capabilities": [
+      "forms.capture",
+      "automation.webhook",
+      "storage.db.mysql"
+    ],
+    "io": {
+      "inputs": [
+        "form_submit"
+      ],
+      "outputs": [
+        "webhook_call",
+        "db_write"
+      ]
+    },
+    "links": {
+      "homepage": "https://example.org",
+      "repo": "https://github.com/example/forms"
+    },
+    "license": "GPL-2.0-or-later",
+    "maintenance": {
+      "release_cadence": "monthly",
+      "last_release": "2025-12-12"
+    },
+    "version": "1.0.0"
+  },
+  "compat": {
+    "matrix_id": "cmp.m.ssaz84lhzy3l",
+    "item_id": "reg.*",
+    "platforms": [
+      {
+        "platform": "wordpress",
+        "min": "6.0",
+        "max": "6.x"
+      }
+    ],
+    "constraints": [
+      "php>=8.0",
+      "mysql>=5.7"
+    ],
+    "known_conflicts": [
+      {
+        "with": "plugin.other",
+        "note": "конфликт хуков"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "install": {
+    "install_id": "ins.n.j3g5qlr2dko7",
+    "item_id": "reg.*",
+    "method": "wp_cli",
+    "steps": [
+      "wp plugin install example-forms --activate"
+    ],
+    "env": {
+      "php": "8.2"
+    },
+    "version": "1.0.0"
+  },
+  "bundle": {
+    "bundle_id": "bun.b.eecjtnffvx2s",
+    "name": "News → Dedup → Conference",
+    "goal": "Собрать новости, удалить дубликаты, сделать протокол-конференцию.",
+    "items": [
+      "reg.connector.rss",
+      "reg.ai.summarizer",
+      "reg.dedup.core"
+    ],
+    "install": {
+      "method": "docker",
+      "compose": "compose.yaml"
+    },
+    "run": {
+      "start": "docker compose up -d",
+      "check": "GET /health"
+    },
+    "exports": [
+      "zip",
+      "docker-compose"
+    ],
+    "version": "1.0.0"
+  }
+}

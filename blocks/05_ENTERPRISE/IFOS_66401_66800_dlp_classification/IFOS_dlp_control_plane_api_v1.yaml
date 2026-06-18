@@ -1,0 +1,31 @@
+openapi: 3.0.3
+info:
+  title: IFOS DLP & Data Classification Control Plane API
+  version: "1.0.0"
+servers:
+  - url: https://dlp.ifos.local/v1
+paths:
+  /taxonomy/classes:
+    get: {summary: List data classes, responses: {"200": {description: OK}}}
+    post: {summary: Create/update a data class, responses: {"200": {description: OK}}}
+  /taxonomy/labels:
+    get: {summary: List labels, responses: {"200": {description: OK}}}
+    post: {summary: Create/update label, responses: {"200": {description: OK}}}
+  /scanners/catalog:
+    get: {summary: List scanners, responses: {"200": {description: OK}}}
+  /scan:
+    post: {summary: Scan payload/file and return classification result, responses: {"200": {description: OK}}}
+  /dlp/rules:
+    get: {summary: List DLP rules, responses: {"200": {description: OK}}}
+    post: {summary: Create/update DLP rule, responses: {"200": {description: OK}}}
+  /dlp/policies:
+    get: {summary: List DLP policies, responses: {"200": {description: OK}}}
+    post: {summary: Create/update DLP policy, responses: {"200": {description: OK}}}
+  /redaction/profiles:
+    get: {summary: List redaction profiles, responses: {"200": {description: OK}}}
+    post: {summary: Create/update redaction profile, responses: {"200": {description: OK}}}
+  /contracts:
+    get: {summary: List data contracts, responses: {"200": {description: OK}}}
+    post: {summary: Create/update data contract, responses: {"200": {description: OK}}}
+  /decide/transfer:
+    post: {summary: Evaluate transfer decision for outbound request, responses: {"200": {description: OK}}}

@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ReconciliationJob Schema v1",
+  "type": "object",
+  "required": [
+    "job_id",
+    "scope",
+    "status",
+    "stats",
+    "conflicts",
+    "started_at",
+    "version"
+  ],
+  "properties": {
+    "job_id": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "queued",
+        "running",
+        "ok",
+        "error"
+      ]
+    },
+    "stats": {
+      "type": "object",
+      "properties": {
+        "records_seen": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "candidates": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "merged": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "conflicts": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "items"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "dedupe_unsure",
+              "entity_conflict",
+              "fact_conflict"
+            ]
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "finished_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

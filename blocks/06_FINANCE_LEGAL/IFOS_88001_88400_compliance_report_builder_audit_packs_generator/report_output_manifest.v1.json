@@ -1,0 +1,24 @@
+{
+  "contract_id": "report_output_manifest.v1",
+  "fields": {
+    "report_id": "string",
+    "request_id": "string",
+    "generated_at": "datetime",
+    "environment": "string",
+    "policy_packs": "array[string]",
+    "coverage_percent": "number",
+    "counts": "object",
+    "outputs": "array[object]",
+    "evidence_inventory": "array[object]",
+    "control_table_uri": "string",
+    "gaps": {
+      "missing": "array[object]",
+      "stale": "array[object]"
+    },
+    "hash_manifest_uri": "string",
+    "signatures": "object"
+  },
+  "privacy_level": "internal",
+  "retention_policy": "security_default",
+  "audit": "required"
+}

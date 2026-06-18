@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS PaymentIntent Schema v1",
+  "type": "object",
+  "required": [
+    "intent_id",
+    "amount",
+    "currency",
+    "status",
+    "processor",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "intent_id": {
+      "type": "string"
+    },
+    "invoice_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "amount": {
+      "type": "number"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "created",
+        "authorized",
+        "captured",
+        "failed",
+        "cancelled"
+      ]
+    },
+    "processor": {
+      "type": "string"
+    },
+    "processor_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "idempotency_key": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,92 @@
+openapi: 3.0.3
+info:
+  title: IFOS Runtime & Execution API
+  version: "1.0.0"
+servers:
+  - url: https://runtime.ifos.local/v1
+tags:
+  - name: Runtime
+  - name: Secrets
+  - name: Policies
+  - name: Sandbox
+  - name: Jobs
+  - name: Logs
+  - name: Health
+  - name: Rollback
+  - name: Connectors
+  - name: Provenance
+paths:
+  /run:
+    post:
+      tags: [Runtime]
+      summary: Submit run request (async)
+      responses: {"202": {description: Accepted}}
+  /run/{run_id}:
+    get:
+      tags: [Runtime]
+      summary: Get run result
+      parameters:
+        - in: path
+          name: run_id
+          required: true
+          schema: {type: string}
+      responses: {"200": {description: OK}}
+  /secrets/refs:
+    post:
+      tags: [Secrets]
+      summary: Register secret reference (no secret value)
+      responses: {"200": {description: OK}}
+  /policies:
+    post:
+      tags: [Policies]
+      summary: Create/update execution policy
+      responses: {"200": {description: OK}}
+  /sandbox/profiles:
+    post:
+      tags: [Sandbox]
+      summary: Create/update sandbox profile
+      responses: {"200": {description: OK}}
+  /jobs/queues:
+    post:
+      tags: [Jobs]
+      summary: Create/update job queue
+      responses: {"200": {description: OK}}
+  /logs/{run_id}:
+    get:
+      tags: [Logs]
+      summary: Stream logs for a run
+      parameters:
+        - in: path
+          name: run_id
+          required: true
+          schema: {type: string}
+      responses: {"200": {description: OK}}
+  /health/{target_kind}/{target_id}:
+    get:
+      tags: [Health]
+      summary: Get health status
+      parameters:
+        - in: path
+          name: target_kind
+          required: true
+          schema: {type: string}
+        - in: path
+          name: target_id
+          required: true
+          schema: {type: string}
+      responses: {"200": {description: OK}}
+  /rollback:
+    post:
+      tags: [Rollback]
+      summary: Run rollback plan (async)
+      responses: {"202": {description: Accepted}}
+  /connectors/drivers:
+    post:
+      tags: [Connectors]
+      summary: Register connector driver
+      responses: {"200": {description: OK}}
+  /provenance:
+    post:
+      tags: [Provenance]
+      summary: Register artifact provenance
+      responses: {"200": {description: OK}}

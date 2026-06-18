@@ -1,0 +1,16 @@
+{
+  "contract_id": "access_attempt_event.v1",
+  "fields": {
+    "event_id": "string",
+    "share_id": "string",
+    "report_id": "string",
+    "attempted_at": "datetime",
+    "ip": "string",
+    "user_agent": "string",
+    "result": "string",
+    "reason": "string"
+  },
+  "privacy_level": "restricted",
+  "retention_policy": "security_default",
+  "audit": "required"
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RetrievalResult Schema v1",
+  "type": "object",
+  "required": [
+    "result_id",
+    "tenant_id",
+    "query_id",
+    "items",
+    "version"
+  ],
+  "properties": {
+    "result_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "query_id": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "chunk_id",
+          "score"
+        ],
+        "properties": {
+          "chunk_id": {
+            "type": "string"
+          },
+          "score": {
+            "type": "number"
+          },
+          "doc_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

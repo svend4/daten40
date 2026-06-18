@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS GovernanceRule Schema v1",
+  "type": "object",
+  "required": [
+    "rule_id",
+    "tenant_id",
+    "phase",
+    "condition",
+    "effect",
+    "version"
+  ],
+  "properties": {
+    "rule_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "phase": {
+      "type": "string",
+      "enum": [
+        "ingest",
+        "storage",
+        "runtime",
+        "export",
+        "logging"
+      ]
+    },
+    "condition": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "effect": {
+      "type": "string",
+      "enum": [
+        "allow",
+        "deny",
+        "mask",
+        "redact",
+        "quarantine",
+        "alert"
+      ]
+    },
+    "priority": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

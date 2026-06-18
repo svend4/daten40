@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS CanaryRelease Schema v1",
+  "type": "object",
+  "required": [
+    "canary_id",
+    "canonical_id",
+    "from_version",
+    "to_version",
+    "plan",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "canary_id": {
+      "type": "string"
+    },
+    "canonical_id": {
+      "type": "string"
+    },
+    "from_version": {
+      "type": "string"
+    },
+    "to_version": {
+      "type": "string"
+    },
+    "plan": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "planned",
+        "running",
+        "rolled_back",
+        "completed"
+      ]
+    },
+    "started_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "ended_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

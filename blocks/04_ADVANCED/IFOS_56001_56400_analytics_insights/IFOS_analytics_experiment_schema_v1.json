@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Experiment Schema v1",
+  "type": "object",
+  "required": [
+    "experiment_id",
+    "name",
+    "variants",
+    "guardrails",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "experiment_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "variants": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "guardrails": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "planned",
+        "running",
+        "stopped",
+        "completed"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

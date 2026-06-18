@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS MacroRun Schema v1",
+  "type": "object",
+  "required": [
+    "run_id",
+    "macro_id",
+    "params",
+    "state",
+    "ts",
+    "tenant",
+    "version"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string"
+    },
+    "macro_id": {
+      "type": "string"
+    },
+    "params": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "queued",
+        "running",
+        "done",
+        "error",
+        "cancelled"
+      ]
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "tenant": {
+      "type": "string"
+    },
+    "logs_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "artifacts": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "quota_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

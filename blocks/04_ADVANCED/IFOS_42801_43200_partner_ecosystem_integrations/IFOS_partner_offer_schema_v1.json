@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS PartnerOffer Schema v1",
+  "type": "object",
+  "required": [
+    "offer_id",
+    "program_id",
+    "name",
+    "regions",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "offer_id": {
+      "type": "string"
+    },
+    "program_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "landing": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "regions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "payout": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "promo_codes": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "paused",
+        "ended"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

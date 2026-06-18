@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UI Incident Schema v1",
+  "type": "object",
+  "required": [
+    "incident_id",
+    "severity",
+    "summary",
+    "impacted",
+    "timeline",
+    "owner",
+    "version"
+  ],
+  "properties": {
+    "incident_id": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "summary": {
+      "type": "string"
+    },
+    "impacted": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "timeline": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "owner": {
+      "type": "string"
+    },
+    "runbooks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "contract_id": "dsar_request.v1",
+  "fields": {
+    "request_id": "string",
+    "subject_id": "string",
+    "type": "string",
+    "received_at": "datetime",
+    "status": "string"
+  },
+  "privacy_level": "confidential",
+  "retention_policy": "personal_data_default",
+  "audit": "required"
+}

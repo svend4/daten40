@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS NormalizedRecord Schema v1",
+  "type": "object",
+  "required": [
+    "record_id",
+    "source_id",
+    "kind",
+    "canonical_title",
+    "canonical_url",
+    "published_at",
+    "content_text",
+    "language",
+    "tags",
+    "entities",
+    "fingerprints",
+    "provenance",
+    "version"
+  ],
+  "properties": {
+    "record_id": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "news",
+        "product",
+        "service",
+        "review",
+        "doc",
+        "plugin",
+        "scenario"
+      ]
+    },
+    "canonical_title": {
+      "type": "string"
+    },
+    "canonical_url": {
+      "type": "string"
+    },
+    "published_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "content_text": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "fingerprints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "source_url",
+        "fetched_at"
+      ],
+      "properties": {
+        "source_url": {
+          "type": "string"
+        },
+        "fetched_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "extractor": {
+          "type": "string"
+        },
+        "raw_hash": {
+          "type": "string"
+        },
+        "snippet": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

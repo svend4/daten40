@@ -1,0 +1,76 @@
+{
+  "solution_card": {
+    "title": "Новостной дайджест → Telegram",
+    "goal": "Собирать новости, удалять дубликаты, ранжировать и отправлять в Telegram ежедневно",
+    "pipeline_steps": [
+      "fetch_rss",
+      "dedup",
+      "rank",
+      "summarize",
+      "send_telegram"
+    ],
+    "total_cost_estimate": "free/low",
+    "risk_summary": "низкий риск, требуется ключ Telegram bot"
+  },
+  "choice_cards": [
+    {
+      "capability_id": "cap:notify.telegram",
+      "selected_connector": "make:telegram",
+      "reasons": [
+        "есть готовый модуль",
+        "простая настройка",
+        "поддержка планировщика"
+      ],
+      "alternatives": [
+        {
+          "connector": "n8n:telegram",
+          "pros": [
+            "self-host"
+          ],
+          "cons": [
+            "нужна настройка"
+          ],
+          "cost": "free"
+        },
+        {
+          "connector": "custom:webhook",
+          "pros": [
+            "гибко"
+          ],
+          "cons": [
+            "код"
+          ],
+          "cost": "dev"
+        }
+      ]
+    }
+  ],
+  "risk_cards": [
+    {
+      "risk_type": "rate_limit",
+      "likelihood": "low",
+      "impact": "medium",
+      "mitigations": [
+        "кэшировать",
+        "backoff retry"
+      ]
+    }
+  ],
+  "gap_cards": [
+    {
+      "missing_capability": "cap:news.summarize_llm",
+      "fix_options": [
+        "use_ai_copilot",
+        "use_external_llm_api",
+        "skip_summary"
+      ]
+    }
+  ],
+  "decision_log": [
+    {
+      "ts": "2026-01-03",
+      "decision": "selected make:telegram for cap:notify.telegram",
+      "why": "lowest setup cost"
+    }
+  ]
+}

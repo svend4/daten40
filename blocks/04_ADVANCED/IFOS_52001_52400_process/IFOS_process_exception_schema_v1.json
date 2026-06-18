@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ProcessException Schema v1",
+  "type": "object",
+  "required": [
+    "exc_id",
+    "exec_id",
+    "step_id",
+    "kind",
+    "details",
+    "version"
+  ],
+  "properties": {
+    "exc_id": {
+      "type": "string"
+    },
+    "exec_id": {
+      "type": "string"
+    },
+    "step_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "temporary",
+        "logical",
+        "external",
+        "security"
+      ]
+    },
+    "details": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

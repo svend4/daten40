@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS QualityGateRule Schema v1",
+  "type": "object",
+  "required": [
+    "rule_id",
+    "name",
+    "scope",
+    "check",
+    "action",
+    "severity",
+    "version"
+  ],
+  "properties": {
+    "rule_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "check": {
+      "type": "object",
+      "required": [
+        "field",
+        "op"
+      ],
+      "properties": {
+        "field": {
+          "type": "string"
+        },
+        "op": {
+          "type": "string",
+          "enum": [
+            "exists",
+            "min_len",
+            "max_len",
+            "regex",
+            "domain_allowlist",
+            "not_in",
+            "in"
+          ]
+        },
+        "value": {}
+      },
+      "additionalProperties": true
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "reject",
+        "quarantine",
+        "accept_with_flags"
+      ]
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

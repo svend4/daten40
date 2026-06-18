@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SLAPolicy Schema v1",
+  "type": "object",
+  "required": [
+    "sla_id",
+    "scope",
+    "targets",
+    "calendar",
+    "version"
+  ],
+  "properties": {
+    "sla_id": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "targets": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "calendar": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "breach_actions": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

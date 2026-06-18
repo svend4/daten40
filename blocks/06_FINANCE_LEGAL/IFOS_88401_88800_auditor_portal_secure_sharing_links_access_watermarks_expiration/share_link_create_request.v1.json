@@ -1,0 +1,17 @@
+{
+  "contract_id": "share_link_create_request.v1",
+  "fields": {
+    "report_id": "string",
+    "auditor_email": "string",
+    "ttl_seconds": "integer",
+    "allowed_files": "array[string]",
+    "ip_allowlist": "array[string]",
+    "max_downloads": "integer",
+    "require_email_verification": "boolean",
+    "watermark_enabled": "boolean",
+    "notes": "string"
+  },
+  "privacy_level": "internal",
+  "retention_policy": "security_default",
+  "audit": "required"
+}

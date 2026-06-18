@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ExecutionRecord Schema v1",
+  "type": "object",
+  "required": [
+    "exec_id",
+    "job_id",
+    "attempt",
+    "status",
+    "started_at",
+    "version"
+  ],
+  "properties": {
+    "exec_id": {
+      "type": "string"
+    },
+    "job_id": {
+      "type": "string"
+    },
+    "attempt": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "running",
+        "failed",
+        "succeeded"
+      ]
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ended_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "error": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

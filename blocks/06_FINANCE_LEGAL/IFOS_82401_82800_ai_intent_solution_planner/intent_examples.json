@@ -1,0 +1,26 @@
+[
+  {
+    "goal": "Собирай лиды из формы на сайте, добавляй в CRM и отправляй письмо подтверждения",
+    "constraints": {
+      "privacy_level": "confidential",
+      "max_monthly_cost_usd": 50,
+      "allow_connectors": [
+        "wordpress",
+        "webhook",
+        "hubspot",
+        "gmail",
+        "sendgrid"
+      ]
+    }
+  },
+  {
+    "goal": "Каждый день собирать продажи из Shopify в Google Sheets и строить отчёт",
+    "constraints": {
+      "max_monthly_cost_usd": 30,
+      "allow_connectors": [
+        "shopify",
+        "google_sheets"
+      ]
+    }
+  }
+]

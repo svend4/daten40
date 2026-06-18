@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Doc Rubric Schema v1",
+  "type": "object",
+  "required": [
+    "rubric_id",
+    "criteria",
+    "version"
+  ],
+  "properties": {
+    "rubric_id": {
+      "type": "string"
+    },
+    "criteria": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "weight"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "weight": {
+            "type": "number"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

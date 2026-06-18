@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Release Schema v1",
+  "type": "object",
+  "required": [
+    "release_id",
+    "changesets",
+    "snapshot_ref",
+    "signed_pack_ref",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "release_id": {
+      "type": "string"
+    },
+    "changesets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "snapshot_ref": {
+      "type": "string"
+    },
+    "signed_pack_ref": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "planned",
+        "running",
+        "released",
+        "rolled_back"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

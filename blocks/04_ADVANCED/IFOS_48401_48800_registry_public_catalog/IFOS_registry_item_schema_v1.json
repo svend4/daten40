@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RegistryItem Schema v1",
+  "type": "object",
+  "required": [
+    "item_id",
+    "name",
+    "item_type",
+    "summary",
+    "capabilities",
+    "io",
+    "links",
+    "license",
+    "maintenance",
+    "version"
+  ],
+  "properties": {
+    "item_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "item_type": {
+      "type": "string",
+      "enum": [
+        "app",
+        "plugin",
+        "connector",
+        "workflow",
+        "template",
+        "library",
+        "service"
+      ]
+    },
+    "summary": {
+      "type": "string"
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "io": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "license": {
+      "type": "string"
+    },
+    "maintenance": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

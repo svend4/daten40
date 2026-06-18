@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RedactionJob Schema v1",
+  "type": "object",
+  "required": [
+    "job_id",
+    "target",
+    "rules",
+    "status",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "job_id": {
+      "type": "string"
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "queued",
+        "running",
+        "failed",
+        "succeeded"
+      ]
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

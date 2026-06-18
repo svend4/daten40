@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS GatewayOutboundRequestLog Schema v1",
+  "type": "object",
+  "required": [
+    "log_id",
+    "ts",
+    "tenant_id",
+    "route_id",
+    "decision",
+    "dest",
+    "bytes",
+    "receipt",
+    "version"
+  ],
+  "properties": {
+    "log_id": {
+      "type": "string"
+    },
+    "ts": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "route_id": {
+      "type": "string"
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "allow",
+        "deny"
+      ]
+    },
+    "rule_id": {
+      "type": "string"
+    },
+    "dest": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "bytes": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "timing_ms": {
+      "type": "integer"
+    },
+    "dlp_matches": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "receipt": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

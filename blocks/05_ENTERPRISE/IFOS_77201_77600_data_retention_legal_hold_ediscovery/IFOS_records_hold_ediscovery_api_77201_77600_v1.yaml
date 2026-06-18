@@ -1,0 +1,24 @@
+openapi: 3.0.3
+info:
+  title: IFOS Records, Retention & Legal Hold API
+  version: "1.0"
+paths:
+  /records/retention/policies:
+    get:
+      summary: List retention policies
+    post:
+      summary: Create or update a retention policy
+  /records/holds:
+    post:
+      summary: Create a legal hold case
+  /records/holds/{case_id}/bind:
+    post:
+      summary: Apply a hold to a set of entities or a query
+  /records/holds/{case_id}/export:
+    post:
+      summary: Create an eDiscovery export package for a case
+  /records/holds/{case_id}:
+    get:
+      summary: Get hold case details
+    patch:
+      summary: Update status (suspend/close)

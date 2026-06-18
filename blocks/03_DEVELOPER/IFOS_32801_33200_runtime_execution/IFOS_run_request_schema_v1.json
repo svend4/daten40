@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RunRequest Schema v1",
+  "type": "object",
+  "required": [
+    "run_id",
+    "target_kind",
+    "target_id",
+    "env_id",
+    "sandbox_id",
+    "policy_id",
+    "inputs",
+    "secrets",
+    "trigger",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string"
+    },
+    "target_kind": {
+      "type": "string",
+      "enum": [
+        "item",
+        "bundle",
+        "vitrine"
+      ]
+    },
+    "target_id": {
+      "type": "string"
+    },
+    "env_id": {
+      "type": "string"
+    },
+    "sandbox_id": {
+      "type": "string"
+    },
+    "policy_id": {
+      "type": "string"
+    },
+    "inputs": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "secrets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "trigger": {
+      "type": "object",
+      "required": [
+        "kind"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "manual",
+            "schedule",
+            "webhook",
+            "event",
+            "install"
+          ]
+        },
+        "meta": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "idempotency_key": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

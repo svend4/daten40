@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Tenant Schema v1",
+  "type": "object",
+  "required": [
+    "tenant_id",
+    "org_id",
+    "name",
+    "isolation",
+    "policies",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "tenant_id": {
+      "type": "string"
+    },
+    "org_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "isolation": {
+      "type": "string",
+      "enum": [
+        "logical",
+        "db_schema",
+        "db_cluster"
+      ]
+    },
+    "policies": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

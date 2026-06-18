@@ -1,0 +1,41 @@
+{
+  "headers_policy_example": {
+    "policy_id": "hdr.default",
+    "headers": {
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "strict-origin-when-cross-origin",
+      "Permissions-Policy": "geolocation=(), microphone=(), camera=()"
+    },
+    "applies_to": [
+      "/*"
+    ],
+    "version": "1.0.0"
+  },
+  "csp_policy_example": {
+    "policy_id": "csp.web.enforce",
+    "mode": "enforce",
+    "directives": {
+      "default-src": [
+        "'self'"
+      ],
+      "script-src": [
+        "'self'",
+        "'nonce-{{NONCE}}'"
+      ],
+      "object-src": [
+        "'none'"
+      ],
+      "frame-ancestors": [
+        "'none'"
+      ]
+    },
+    "report_uri": "/csp-report",
+    "version": "1.0.0"
+  },
+  "csrf_double_submit_example": {
+    "cookie": "csrf_token=...",
+    "header": "X-CSRF-Token: ...",
+    "rule": "values must match; token rotates per session"
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "artifact_set": "IFOS_52401_52800",
+  "entries": [
+    {
+      "name": "IFOS_ai_copilot_os_52401_52800_v1.md",
+      "ref": "file://IFOS_ai_copilot_os_52401_52800_v1.md",
+      "hash": "sha256:78f8a74ad72a408d09dbd605d317bae040d279c08b414bf5bbc961329e23c9c3"
+    },
+    {
+      "name": "IFOS_ai_copilot_os_api_v1.yaml",
+      "ref": "file://IFOS_ai_copilot_os_api_v1.yaml",
+      "hash": "sha256:1bc3a792cc3240503508d67c17f4a64b192656a33a8933fece23b21a48e2a2c9"
+    },
+    {
+      "name": "IFOS_ai_copilot_os_examples_v1.json",
+      "ref": "file://IFOS_ai_copilot_os_examples_v1.json",
+      "hash": "sha256:b8c2e27819ec7b2c1af7e4d4d3ec15264ef668dc5294f1a990ba9151ff3d10fc"
+    },
+    {
+      "name": "IFOS_promptpacks_seed_52401_52800_v1.csv",
+      "ref": "file://IFOS_promptpacks_seed_52401_52800_v1.csv",
+      "hash": "sha256:2da41d3173895d686f09cf7f0a7f56ed521c8626c1af717adcc1d32701fb047a"
+    },
+    {
+      "name": "IFOS_ai_copilot_overview_spec_v1.md",
+      "ref": "file://IFOS_ai_copilot_overview_spec_v1.md",
+      "hash": "sha256:87f8f61082facb67168db49c1b3ed9b43e27d41bbe4fa256525eea5066e18200"
+    },
+    {
+      "name": "IFOS_intent_to_bundle_spec_v1.md",
+      "ref": "file://IFOS_intent_to_bundle_spec_v1.md",
+      "hash": "sha256:18171befa07c886be4e12bc630640a09c9c9e89b540242e4cef1b088e0c08019"
+    },
+    {
+      "name": "IFOS_promptpacks_playbooks_spec_v1.md",
+      "ref": "file://IFOS_promptpacks_playbooks_spec_v1.md",
+      "hash": "sha256:cad68d54348d3e48d7a980f18613c3d441b28bff5394c0467759460680c74706"
+    },
+    {
+      "name": "IFOS_planner_designer_spec_v1.md",
+      "ref": "file://IFOS_planner_designer_spec_v1.md",
+      "hash": "sha256:ebd0dd0c840878d88b3708e97f09b4efa20c993bc5f0efb067312a4b2316ac1d"
+    },
+    {
+      "name": "IFOS_validation_lints_spec_v1.md",
+      "ref": "file://IFOS_validation_lints_spec_v1.md",
+      "hash": "sha256:9c8455c326ba7020f50db675e17a0ba53e21f8158616e94d9f3cc1dc16ac934c"
+    },
+    {
+      "name": "IFOS_explainability_why_spec_v1.md",
+      "ref": "file://IFOS_explainability_why_spec_v1.md",
+      "hash": "sha256:60f8f3abdc22763ea5d791b9a6e30871b5beb31cfae98784e5d16a98ddcc0d5f"
+    },
+    {
+      "name": "IFOS_autodocs_spec_v1.md",
+      "ref": "file://IFOS_autodocs_spec_v1.md",
+      "hash": "sha256:52b71cdfa7fa0eb1a7313272538fa930431f032668e906cca149cb92b46e83b2"
+    },
+    {
+      "name": "IFOS_autotest_sandbox_spec_v1.md",
+      "ref": "file://IFOS_autotest_sandbox_spec_v1.md",
+      "hash": "sha256:8b9066fef4c95cb306692a8cc8fdb37c2ffe50eca3b985ced2035a5f4504246e"
+    },
+    {
+      "name": "IFOS_kb_grounding_spec_v1.md",
+      "ref": "file://IFOS_kb_grounding_spec_v1.md",
+      "hash": "sha256:3fb70734ef8ab8a6224550b917860f531a3c2b77ee065d52c8364202921a6585"
+    },
+    {
+      "name": "IFOS_safety_privacy_ai_spec_v1.md",
+      "ref": "file://IFOS_safety_privacy_ai_spec_v1.md",
+      "hash": "sha256:30fe4a5b3803bda821bfd0d3aba128c7e10f37b06410c95f6993d415a84e0522"
+    },
+    {
+      "name": "IFOS_copilot_metrics_eval_spec_v1.md",
+      "ref": "file://IFOS_copilot_metrics_eval_spec_v1.md",
+      "hash": "sha256:9efb2bb1c6514eadf6a72e92e66ad4a8c60d14ca949d25a46fa67eada90a839a"
+    },
+    {
+      "name": "IFOS_intent_schema_v1.json",
+      "ref": "file://IFOS_intent_schema_v1.json",
+      "hash": "sha256:7bbed769ac33def781991dac0a3b0025fc73718d60a9ed7c742d3d072c679b58"
+    },
+    {
+      "name": "IFOS_copilot_plan_schema_v1.json",
+      "ref": "file://IFOS_copilot_plan_schema_v1.json",
+      "hash": "sha256:f23033d32484e56f2975127ecf172b7e7549f95da7c8d24eb5d0204b77853bfc"
+    },
+    {
+      "name": "IFOS_recipe_schema_v1.json",
+      "ref": "file://IFOS_recipe_schema_v1.json",
+      "hash": "sha256:4b1ff0f757648256b8c723de33f3d844e11aafa2d992047abe51e769dfd9c96a"
+    },
+    {
+      "name": "IFOS_promptpack_schema_v1.json",
+      "ref": "file://IFOS_promptpack_schema_v1.json",
+      "hash": "sha256:47b3d67fcd169bc62f90cfb8eadafa5eebe8f7387d367af2a601aead0c7ea61a"
+    },
+    {
+      "name": "IFOS_lint_schema_v1.json",
+      "ref": "file://IFOS_lint_schema_v1.json",
+      "hash": "sha256:b5a2f8e5655af08906352cf4e549c1067b77e10130d0532f8af3a71af64935a1"
+    },
+    {
+      "name": "IFOS_explain_schema_v1.json",
+      "ref": "file://IFOS_explain_schema_v1.json",
+      "hash": "sha256:3caf74d41c0c232aa3cc477ec557a4ed01acf74fa41a5167dae55f8136bbb1f6"
+    },
+    {
+      "name": "IFOS_autodoc_schema_v1.json",
+      "ref": "file://IFOS_autodoc_schema_v1.json",
+      "hash": "sha256:2eba196ca9a7a403fc126ef25cddbd11d8d0b0b2d017f48080e69847579498e7"
+    },
+    {
+      "name": "IFOS_testcase_schema_v1.json",
+      "ref": "file://IFOS_testcase_schema_v1.json",
+      "hash": "sha256:94c181c55fd09f0d6fcd8f277839afbec24c01e044231c3ac8cb0da1bba66110"
+    },
+    {
+      "name": "IFOS_eval_schema_v1.json",
+      "ref": "file://IFOS_eval_schema_v1.json",
+      "hash": "sha256:12d95d1d601740109786568e79c7bbfccf7ed62649b08ebd3b62448f00b03470"
+    },
+    {
+      "name": "ifos_copilot_planner_stub_v1.py",
+      "ref": "file://ifos_copilot_planner_stub_v1.py",
+      "hash": "sha256:ef5c0081838e4f23d2aad59c2a707861a592d3f7a7ee7a86a1f7bc4f56b7ee63"
+    },
+    {
+      "name": "ifos_copilot_linter_stub_v1.py",
+      "ref": "file://ifos_copilot_linter_stub_v1.py",
+      "hash": "sha256:96f786791e30098638e81c636c5f33af65c412f9e36b4196a6d6e1e5e31e661f"
+    },
+    {
+      "name": "ifos_autodoc_generator_stub_v1.py",
+      "ref": "file://ifos_autodoc_generator_stub_v1.py",
+      "hash": "sha256:cefc5e6188121047ee04aa017ed8a0d23a02ff69a9a2da162b35832c83b3517f"
+    },
+    {
+      "name": "ifos_autotest_runner_stub_v1.py",
+      "ref": "file://ifos_autotest_runner_stub_v1.py",
+      "hash": "sha256:1c6a0a053576d6be3f835d7820bfd7ea410f63f65da6a0bde5f762086c110249"
+    },
+    {
+      "name": "ifos_explainer_stub_v1.py",
+      "ref": "file://ifos_explainer_stub_v1.py",
+      "hash": "sha256:b47202436184913c0717254ade490f6a32fd690cc7468d82b7465194f0c9b779"
+    }
+  ],
+  "created_at": "2026-01-04T16:05:00Z",
+  "version": "1.0.0"
+}

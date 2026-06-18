@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS AffiliateDisclosure Schema v1",
+  "type": "object",
+  "required": [
+    "disclosure_id",
+    "scope",
+    "affiliate_links",
+    "ranking_influence",
+    "policy",
+    "version"
+  ],
+  "properties": {
+    "disclosure_id": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string"
+    },
+    "affiliate_links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "ranking_influence": {
+      "type": "string",
+      "enum": [
+        "none",
+        "partial",
+        "unknown"
+      ]
+    },
+    "policy": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

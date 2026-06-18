@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS QueryIntent Schema v1",
+  "type": "object",
+  "required": [
+    "intent_id",
+    "intent_type",
+    "entities",
+    "constraints",
+    "requested_output",
+    "version"
+  ],
+  "properties": {
+    "intent_id": {
+      "type": "string"
+    },
+    "intent_type": {
+      "type": "string",
+      "enum": [
+        "compare",
+        "install",
+        "build",
+        "troubleshoot",
+        "learn",
+        "monitor",
+        "buy"
+      ]
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "requested_output": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

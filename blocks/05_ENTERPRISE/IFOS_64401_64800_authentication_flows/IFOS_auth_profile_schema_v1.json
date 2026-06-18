@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Auth Profile Schema v1",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "oidc_provider_id",
+    "client_app_id",
+    "token_policy_id",
+    "mfa_policy_id",
+    "scope_policy_id",
+    "session_policy_id",
+    "revocation_policy_id",
+    "version"
+  ],
+  "properties": {
+    "profile_id": {
+      "type": "string"
+    },
+    "oidc_provider_id": {
+      "type": "string"
+    },
+    "client_app_id": {
+      "type": "string"
+    },
+    "token_policy_id": {
+      "type": "string"
+    },
+    "mfa_policy_id": {
+      "type": "string"
+    },
+    "scope_policy_id": {
+      "type": "string"
+    },
+    "session_policy_id": {
+      "type": "string"
+    },
+    "revocation_policy_id": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

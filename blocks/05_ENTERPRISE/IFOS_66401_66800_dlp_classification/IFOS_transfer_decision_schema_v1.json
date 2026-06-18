@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS TransferDecision Schema v1",
+  "type": "object",
+  "required": [
+    "decision_id",
+    "created_at",
+    "decision",
+    "policy_id",
+    "rule_id",
+    "classified",
+    "correlation",
+    "version"
+  ],
+  "properties": {
+    "decision_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "ALLOW",
+        "TRANSFORM",
+        "DENY"
+      ]
+    },
+    "policy_id": {
+      "type": "string"
+    },
+    "rule_id": {
+      "type": "string"
+    },
+    "classified": {
+      "type": "object",
+      "required": [
+        "classes",
+        "labels"
+      ],
+      "properties": {
+        "classes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "applied_redaction_profile_id": {
+      "type": "string"
+    },
+    "require_receipts": {
+      "type": "boolean"
+    },
+    "reason_code": {
+      "type": "string"
+    },
+    "human_reason": {
+      "type": "string"
+    },
+    "correlation": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

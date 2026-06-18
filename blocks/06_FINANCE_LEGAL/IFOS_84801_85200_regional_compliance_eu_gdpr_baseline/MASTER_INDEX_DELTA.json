@@ -1,0 +1,23 @@
+{
+  "apply_to": ">= v30",
+  "delta": {
+    "section": "COMPLIANCE",
+    "add": [
+      {
+        "id_range": "IFOS_84801_85200",
+        "name": "Regional Compliance Extensions (EU/GDPR Baseline Pack)",
+        "slug": "regional_compliance_eu_gdpr_baseline",
+        "type": "CompliancePack",
+        "layer": "Compliance",
+        "status": "Production",
+        "dependencies": [
+          "IFOS_00001_00400"
+        ],
+        "artifacts": [
+          "IFOS_84801_85200_regional_compliance_eu_gdpr_baseline_os_pack.zip"
+        ],
+        "notes": "EU GDPR baseline: residency, DSAR workflows, evidence, templates"
+      }
+    ]
+  }
+}

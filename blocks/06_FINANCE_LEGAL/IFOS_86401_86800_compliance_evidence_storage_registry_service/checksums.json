@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-01-11T17:51:51",
+  "algorithm": "sha256",
+  "files": {
+    "README.md": "9803dbaa737c8ec73cc7ee547e0cc7b9cc1f8ab48d64daea52791a6470e97762",
+    "manifest.json": "0254bd2d2ac8845d3b3b115e029716ed2e93ef6079ed1e3d8e0f2e99a5ec1e4f",
+    "MASTER_INDEX_DELTA.json": "787017f75ca0a56337df9db429960bc76321a401732fabe2eb79993d859ccc40",
+    "docs/CONCEPTS.md": "16c8322a3647a6db05dc686ef6ca0dbf46f5749e7c8ca2fe9d5965267edacfa2",
+    "docs/STORAGE_LAYOUT.md": "ae124ba5b523a185881326d345fef08fa2b3ea5cb6269a310686a167ae9cc189",
+    "docs/REGISTRY_MODEL.md": "3660593eded3b1ed596d8a6edf9f7c9794b92de1661a7ad7e53e27253e317fd1",
+    "data-contracts/evidence_item.v1.json": "a408e7f03978f3eab0303c796573a784b9844aaf7ca7a04b2f3c19cd31d5c30d",
+    "data-contracts/evidence_append_event.v1.json": "905535d5bd497aac49c8d79638700e0daae9742af21a919bd23d47b4c15ae5fb",
+    "data-contracts/signature.v1.json": "adda099e4b7fba9424bff5fc0be9a6853e200a5617d9097ae1d4fb43fb1605b0",
+    "data-contracts/provenance.v1.json": "3963af513b66c91b1becc8a7c74e8494065b13421782eda9faff7c1e9db99f56",
+    "data-contracts/audit_pack_manifest.v1.json": "adc0fac86b75ca02b1352bfb10b645951fec6dbe13b98988bfb505e6e6eebc82",
+    "api/openapi_evidence_registry_v1.json": "b8d7a142b82ed351195c03b060e56ffd98ab248a5ed5eb19107148052c3a6980",
+    "db/postgres_schema.sql": "4f2b4beb6cadafac8ae6258b44c1f3c2e47fbe1c34eaacc6c8effefe4cab4154",
+    "service/fastapi_skeleton.py": "e081dcfc07f3e0861d389d69847ca4a4a0e79e83270e7d58649ac86a4774ac43",
+    "examples/evidence_item_phi_access_logs.json": "b707eee998214fe3dc8e8260bbb259a3b684433377cf70198560209bbd7a061e",
+    "examples/evidence_item_soc2_access_review.json": "235f4bfd906ace25bee8947a8901d33df1e4c0d39b8463b84e25dbc94dacf233",
+    "examples/audit_pack_manifest.json": "75c0ee47fa35ad846ee2857f6a392f271970adae7644181743a3e8353eedd7fe",
+    "tests/TEST_PLAN.md": "749078514ea50dc1d8c5a1e2427cfd35ec3c81c6f8a26ef175c26c6576cd0aad"
+  }
+}

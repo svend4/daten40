@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DocItem Schema v1",
+  "type": "object",
+  "required": [
+    "doc_id",
+    "tenant_id",
+    "source_id",
+    "uri",
+    "content_type",
+    "version"
+  ],
+  "properties": {
+    "doc_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "uri": {
+      "type": "string"
+    },
+    "content_type": {
+      "type": "string"
+    },
+    "fingerprint": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "meta": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS QualityScan Schema v1",
+  "type": "object",
+  "required": [
+    "scan_id",
+    "item_id",
+    "scores",
+    "findings",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "scan_id": {
+      "type": "string"
+    },
+    "item_id": {
+      "type": "string"
+    },
+    "scores": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

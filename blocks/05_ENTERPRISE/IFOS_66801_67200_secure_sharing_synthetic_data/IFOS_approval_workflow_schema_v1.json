@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ApprovalWorkflow Schema v1",
+  "type": "object",
+  "required": [
+    "flow_id",
+    "rules",
+    "version"
+  ],
+  "properties": {
+    "flow_id": {
+      "type": "string"
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "classes",
+          "require"
+        ],
+        "properties": {
+          "classes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "require": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "auto",
+                "owner",
+                "security",
+                "legal",
+                "dual_owner_security"
+              ]
+            }
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

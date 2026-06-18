@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS EgressPolicy Schema v1",
+  "type": "object",
+  "required": [
+    "egress_policy_id",
+    "mode",
+    "rules",
+    "version"
+  ],
+  "properties": {
+    "egress_policy_id": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "deny_all",
+        "allowlist",
+        "record_only"
+      ]
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "dns_policy": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "traffic_budgets": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

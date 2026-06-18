@@ -1,0 +1,24 @@
+{
+  "apply_to": ">= v30",
+  "delta": {
+    "section": "COMPLIANCE_EVIDENCE",
+    "add": [
+      {
+        "id_range": "IFOS_87201_87600",
+        "name": "Collector Plugins Pack (AuditLog/IAM/Config/Backups/Incidents)",
+        "slug": "collector_plugins_pack_audit_iam_config_backups_incidents",
+        "type": "PluginsPack",
+        "layer": "ComplianceEvidence",
+        "status": "Production",
+        "dependencies": [
+          "IFOS_86801_87200",
+          "IFOS_86401_86800"
+        ],
+        "artifacts": [
+          "IFOS_87201_87600_collector_plugins_pack_audit_iam_config_backups_incidents_os_pack.zip"
+        ],
+        "notes": "Starter collector plugin catalog for evidence runner"
+      }
+    ]
+  }
+}

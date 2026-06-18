@@ -1,0 +1,27 @@
+openapi: 3.0.3
+info:
+  title: IFOS Runner & Macro Engine API
+  version: "1.0.0"
+servers:
+  - url: https://runner.ifos.local/v1
+tags:
+  - name: Runs
+  - name: DAG
+  - name: Secrets
+  - name: Schedules
+  - name: Approvals
+paths:
+  /runs/macro:
+    post: {tags:[Runs], summary: Start macro run, responses: {"202": {description: Accepted}}}
+  /runs/workflow:
+    post: {tags:[Runs], summary: Start workflow run, responses: {"202": {description: Accepted}}}
+  /runs/{run_id}:
+    get: {tags:[Runs], summary: Get run status, responses: {"200": {description: OK}}}
+  /dag/compile:
+    post: {tags:[DAG], summary: Compile macro into DAG, responses: {"200": {description: OK}}}
+  /secrets:
+    post: {tags:[Secrets], summary: Store secret metadata, responses: {"201": {description: Created}}}
+  /schedules:
+    post: {tags:[Schedules], summary: Create schedule, responses: {"201": {description: Created}}}
+  /approvals:
+    post: {tags:[Approvals], summary: Approve gated run, responses: {"200": {description: OK}}}

@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-01-11T17:01:37",
+  "algorithm": "sha256",
+  "files": {
+    "README.md": "7ef7b8463047c9f8ed412c712ac4b62c0fb99164ca281ba7160e44a754ac5170",
+    "manifest.json": "2aecf6862f8d686146c8911996dc1ffd37db65d320df2f2ae9d4303cc53f231c",
+    "MASTER_INDEX_DELTA.json": "b18d218f11dd4330c2e1ec9b56330e5b0453af99878b28661c612a7f5e1f8669",
+    "policies/policies.md": "3fdcfc87b1f3222bba22ca2b02a0f37d8e73a130c21f1d2cece722db9affc62c",
+    "evidence/evidence_catalog.csv": "b5813eeebd693586950b4f02df7575fa95cd65833f4b58ffbfae5504cbe74e94",
+    "templates/ropa_template.csv": "d3550bcdf883693f17d3c478ee9cf019b042032086e9fc8b9a74dfe141f86b1b",
+    "templates/data_mapping_template.csv": "813c8dfb52bd8b8055e16c4bbba85d64b12eb1ae345bb493eda50df7497c629f",
+    "templates/lawful_basis_template.csv": "18b24bec8abb4334013680a33ec508d06b24cc2ebcc218a8f8f75da009e5ca86",
+    "templates/vendor_dpa_checklist.md": "56df613320883a82a567eb8a6580b571c8acb7782c68753983b430bc3185e677",
+    "bundles/dsar_access_export.json": "f71c83dd48c789baaad1cc60cdd3a0f73859685e449ecd2b2567f2f5d40c06b1",
+    "bundles/dsar_delete_erasure.json": "8446781ef2a2cc140d8107ead1fcd33baab38b00ef120e6d6fdce7360fb3c992",
+    "data-contracts/dsar_request.v1.json": "c61d6ca225ac8f0afc1ce0eb2840ad80bf1fd6b2069a88929f0863a0147adc39",
+    "data-contracts/dsar_export_package.v1.json": "2dcfe64b7871d42ae331cab09d8550372ec12d0384e85507527925c1d9be3b97",
+    "data-contracts/dsar_decision.v1.json": "6058a9ceb59aaacca362a2b455eecfbffb5c1143b8e94f0244cc3ad03a4e160c",
+    "data-contracts/deletion_receipt.v1.json": "4a2893ea640adbfcfd28ad51f1d4784fad50a3f770ff60758fbacca713d0d922",
+    "examples/dsar_request.json": "8ea8d19d954a1e1ec2996ee724797a98a6b45325df4c2594fde72b0ee72d7894",
+    "tests/TEST_PLAN.md": "740308cda041a27eda55250152a8ea295637664d80036e8272175dd89bc13df7"
+  }
+}

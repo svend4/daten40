@@ -1,0 +1,96 @@
+{
+  "course": {
+    "course_id": "crs.c.o9o8eav415rr",
+    "name": "Automation Starter (Make/n8n)",
+    "level": "beginner",
+    "clusters": [
+      "clu.automation.basics"
+    ],
+    "lessons": [
+      "lsn.l.9ddlvfi5lq2c"
+    ],
+    "labs": [
+      "lab.b.i4w0vfx9lkrv"
+    ],
+    "badge_awarded": "bdg.g.tclwph823ybb",
+    "version": "1.0.0"
+  },
+  "lesson": {
+    "lesson_id": "lsn.l.9ddlvfi5lq2c",
+    "title": "Retry/Timeout basics",
+    "goal": "Научиться ставить таймауты и ретраи, чтобы сценарий был надёжным.",
+    "prerequisites": [
+      "connector.http"
+    ],
+    "steps": [
+      "Открой workflow",
+      "Добавь timeout 30s",
+      "Добавь retry 3",
+      "Запусти тест"
+    ],
+    "common_errors": [
+      "Слишком короткий timeout",
+      "Retry без idempotency"
+    ],
+    "checks": [
+      "run completed",
+      "error_rate below threshold"
+    ],
+    "version": "1.0.0"
+  },
+  "lab": {
+    "lab_id": "lab.b.i4w0vfx9lkrv",
+    "title": "Weekly RSS Digest Lab",
+    "dataset": "dataset.rss_demo_v1",
+    "tasks": [
+      "Fetch RSS",
+      "Dedup by url+title",
+      "Store to vault",
+      "Publish summary"
+    ],
+    "grading": {
+      "must_create": [
+        "vault:weekly_digest.json"
+      ],
+      "must_emit": [
+        "event:run.ok"
+      ]
+    },
+    "version": "1.0.0"
+  },
+  "assessment": {
+    "assessment_id": "asm.a.mzm8ch5ecmkd",
+    "type": "practical",
+    "items": [
+      {
+        "task": "Build workflow with retries",
+        "points": 10
+      }
+    ],
+    "passing": {
+      "min_points": 8
+    },
+    "version": "1.0.0"
+  },
+  "badge": {
+    "badge_id": "bdg.g.tclwph823ybb",
+    "name": "IFOS Automation L1",
+    "level": "L1",
+    "skills": [
+      "retries",
+      "timeouts",
+      "basic_macros"
+    ],
+    "issuer": "IFOS Academy",
+    "verify_url": "https://learn.ifos.local/verify/bdg.g.tclwph823ybb",
+    "version": "1.0.0"
+  },
+  "skill": {
+    "skill_id": "sk.s.hlvs2rtnngnf",
+    "name": "Build basic automation macro",
+    "cluster_ref": "clu.automation.basics",
+    "difficulty": 2,
+    "estimated_hours": 2.5,
+    "version": "1.0.0"
+  }
+}

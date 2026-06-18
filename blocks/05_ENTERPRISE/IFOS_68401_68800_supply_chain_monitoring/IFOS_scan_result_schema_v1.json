@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Scan Result",
+  "type": "object",
+  "required": [
+    "scan_id",
+    "target_type",
+    "target_id",
+    "findings"
+  ],
+  "properties": {
+    "scan_id": {
+      "type": "string"
+    },
+    "target_type": {
+      "type": "string",
+      "enum": [
+        "PACKAGE",
+        "BUNDLE",
+        "TENANT",
+        "CHANNEL"
+      ]
+    },
+    "target_id": {
+      "type": "string"
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "finished_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "policy_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/finding"
+      }
+    },
+    "risk_score": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "OK",
+        "WARN",
+        "BLOCK",
+        "QUARANTINE"
+      ]
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "definitions": {
+    "finding": {
+      "type": "object",
+      "required": [
+        "advisory_id",
+        "purl",
+        "match_confidence"
+      ],
+      "properties": {
+        "advisory_id": {
+          "type": "string"
+        },
+        "purl": {
+          "type": "string"
+        },
+        "installed_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "match_confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "severity": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "recommended_action": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "suppressed": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "suppression_rule_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

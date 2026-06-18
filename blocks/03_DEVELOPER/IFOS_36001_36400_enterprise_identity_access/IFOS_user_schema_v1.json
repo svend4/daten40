@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS User Schema v1",
+  "type": "object",
+  "required": [
+    "user_id",
+    "tenant_id",
+    "email",
+    "display_name",
+    "status",
+    "org_unit_id",
+    "version"
+  ],
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "blocked",
+        "invited"
+      ]
+    },
+    "org_unit_id": {
+      "type": "string"
+    },
+    "roles": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "attributes": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "pack_id": "AUDITPACK-EXAMPLE-001",
+  "created_at": "2026-01-11T03:00:00Z",
+  "scope": {
+    "policy_pack": "cp_us_hipaa_soc2_baseline",
+    "date_range": [
+      "2026-01-01",
+      "2026-01-10"
+    ]
+  },
+  "evidence_items": [
+    {
+      "evidence_id": "phi_access_logs",
+      "artifact_sha256": "9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f",
+      "artifact_uri": "s3://..."
+    },
+    {
+      "evidence_id": "access_review_records",
+      "artifact_sha256": "abababababababababababababababababababababababababababababababab",
+      "artifact_uri": "s3://..."
+    }
+  ],
+  "export_uri": "s3://ifos-evidence-prod/exports/audit_packs/2026/01/AUDITPACK-EXAMPLE-001.zip",
+  "hash": "sha256:cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd"
+}

@@ -1,0 +1,168 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "IFOS Compliance Report Builder API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/reports/build": {
+      "post": {
+        "summary": "Start building compliance report + audit pack",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReportBuildRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Build accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReportBuildAccepted"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reports/status": {
+      "get": {
+        "summary": "Check build status",
+        "parameters": [
+          {
+            "name": "report_id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReportStatus"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reports/manifest": {
+      "get": {
+        "summary": "Get report output manifest",
+        "parameters": [
+          {
+            "name": "report_id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Manifest",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReportOutputManifest"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ReportBuildRequest": {
+        "type": "object",
+        "properties": {
+          "environment": {
+            "type": "string"
+          },
+          "policy_packs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "export_mode": {
+            "type": "string"
+          },
+          "formats": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "time_range": {
+            "type": "object"
+          },
+          "requested_by": {
+            "type": "string"
+          }
+        }
+      },
+      "ReportBuildAccepted": {
+        "type": "object",
+        "properties": {
+          "report_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "queued_at": {
+            "type": "string"
+          }
+        }
+      },
+      "ReportStatus": {
+        "type": "object",
+        "properties": {
+          "report_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "progress": {
+            "type": "number"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "ReportOutputManifest": {
+        "type": "object",
+        "properties": {
+          "report_id": {
+            "type": "string"
+          },
+          "outputs": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "coverage_percent": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}

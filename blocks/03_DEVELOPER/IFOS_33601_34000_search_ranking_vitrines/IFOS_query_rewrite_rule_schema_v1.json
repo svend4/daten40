@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS QueryRewriteRule Schema v1",
+  "type": "object",
+  "required": [
+    "rule_id",
+    "lang",
+    "pattern",
+    "rewrite",
+    "enabled",
+    "version"
+  ],
+  "properties": {
+    "rule_id": {
+      "type": "string"
+    },
+    "lang": {
+      "type": "string"
+    },
+    "pattern": {
+      "type": "string"
+    },
+    "rewrite": {
+      "type": "string"
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

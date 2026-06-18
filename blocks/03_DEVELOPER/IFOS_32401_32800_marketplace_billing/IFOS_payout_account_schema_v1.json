@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS PayoutAccount Schema v1",
+  "type": "object",
+  "required": [
+    "account_id",
+    "seller_id",
+    "kind",
+    "details",
+    "verified",
+    "version"
+  ],
+  "properties": {
+    "account_id": {
+      "type": "string"
+    },
+    "seller_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "iban",
+        "paypal",
+        "stripe_connect",
+        "manual"
+      ]
+    },
+    "details": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "verified": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

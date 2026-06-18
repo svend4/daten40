@@ -1,0 +1,71 @@
+{
+  "bundle_id": "invoice_to_cash_reconcile",
+  "name": "Invoice → Collect → Reconcile",
+  "version": "1.0.0",
+  "connectors": [
+    "doc_storage",
+    "email",
+    "payment_gateway",
+    "accounting_ledger",
+    "notification"
+  ],
+  "secrets_required": [
+    "payment_gateway_api_key"
+  ],
+  "entrypoint": {
+    "trigger": "webhook.http_post",
+    "plan_id": "plan_invoice_to_cash"
+  },
+  "policies": [
+    "audit.logging",
+    "privacy.confidential",
+    "tax.vat_baseline"
+  ],
+  "steps": [
+    {
+      "id": "generate_invoice",
+      "capability": "create_invoice_document",
+      "outputs": [
+        "invoice.v1"
+      ]
+    },
+    {
+      "id": "send_invoice",
+      "capability": "send_invoice_email",
+      "inputs": [
+        "invoice.v1"
+      ],
+      "outputs": [
+        "invoice.v1"
+      ]
+    },
+    {
+      "id": "collect_payment",
+      "capability": "create_payment_link_and_track",
+      "inputs": [
+        "invoice.v1"
+      ],
+      "outputs": [
+        "payment.v1"
+      ]
+    },
+    {
+      "id": "reconcile",
+      "capability": "match_payment_to_invoice",
+      "inputs": [
+        "invoice.v1",
+        "payment.v1"
+      ],
+      "outputs": [
+        "ledger_entry.v1"
+      ]
+    },
+    {
+      "id": "post_ledger",
+      "capability": "post_ledger_entry",
+      "inputs": [
+        "ledger_entry.v1"
+      ]
+    }
+  ]
+}

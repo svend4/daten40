@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RegistryPublisher Schema v1",
+  "type": "object",
+  "required": [
+    "publisher_id",
+    "name",
+    "verification",
+    "contacts",
+    "version"
+  ],
+  "properties": {
+    "publisher_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "contacts": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

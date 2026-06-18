@@ -1,0 +1,29 @@
+openapi: 3.0.3
+info:
+  title: IFOS Exfiltration & Forensics Control Plane API
+  version: "1.0.0"
+servers:
+  - url: https://forensics.ifos.local/v1
+paths:
+  /events/query:
+    post:
+      summary: Query normalized incident events
+      responses:
+        "200": {description: OK}
+  /alerts/rules:
+    get: {summary: List alert rules, responses: {"200": {description: OK}}}
+    post: {summary: Create/update alert rule, responses: {"200": {description: OK}}}
+  /cases:
+    get: {summary: List incident cases, responses: {"200": {description: OK}}}
+    post: {summary: Create incident case, responses: {"200": {description: OK}}}
+  /cases/{case_id}:
+    get: {summary: Read case, responses: {"200": {description: OK}}}
+    patch: {summary: Update case status/owner, responses: {"200": {description: OK}}}
+  /cases/{case_id}/evidence:
+    post: {summary: Attach evidence item (chain-of-custody), responses: {"200": {description: OK}}}
+  /cases/{case_id}/graph:
+    post: {summary: Build correlation graph for case, responses: {"200": {description: OK}}}
+  /cases/{case_id}/report:
+    post: {summary: Generate forensic report, responses: {"200": {description: OK}}}
+  /retention/policies:
+    get: {summary: List log retention policies, responses: {"200": {description: OK}}}

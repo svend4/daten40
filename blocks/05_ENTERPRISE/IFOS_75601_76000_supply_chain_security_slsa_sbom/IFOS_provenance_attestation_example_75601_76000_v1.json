@@ -1,0 +1,45 @@
+{
+  "artifact": {
+    "artifact_id": "bundle_p0p1_mvpplus",
+    "type": "bundle",
+    "version": "2026-01-03",
+    "digest": "sha256:<digest>",
+    "publisher_id": "ifos_official"
+  },
+  "builder": {
+    "pipeline_id": "ci_main_release",
+    "runner": "github-actions",
+    "build_env": "linux-amd64",
+    "timestamp": "2026-01-03T10:59:18Z"
+  },
+  "source": {
+    "repo": "git://example/ifos",
+    "commit": "<commit_sha>",
+    "ref": "refs/tags/v1.0.0"
+  },
+  "attestations": [
+    {
+      "type": "build_provenance",
+      "level": "2",
+      "details": "reproducible build config hash <...>"
+    },
+    {
+      "type": "test_results",
+      "status": "pass",
+      "suite": "integration",
+      "coverage": "0.73"
+    },
+    {
+      "type": "security_scan",
+      "status": "pass",
+      "scanner": "depscan",
+      "notes": "0 critical, 2 medium"
+    }
+  ],
+  "signature": {
+    "key_id": "kms:key_ifos_release_v3",
+    "algorithm": "ed25519",
+    "signed_digest": "sha256:<digest>",
+    "signature_b64": "<sig>"
+  }
+}

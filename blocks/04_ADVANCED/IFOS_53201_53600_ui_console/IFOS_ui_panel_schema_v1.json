@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UI Panel Schema v1",
+  "type": "object",
+  "required": [
+    "panel_id",
+    "title",
+    "widgets",
+    "version"
+  ],
+  "properties": {
+    "panel_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "widgets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

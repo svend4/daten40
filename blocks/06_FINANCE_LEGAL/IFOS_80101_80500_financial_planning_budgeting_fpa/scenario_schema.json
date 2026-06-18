@@ -1,0 +1,9 @@
+{
+  "id": "string",
+  "name": "string",
+  "type": "enum: base|best|worst|custom",
+  "start_period": "string",
+  "end_period": "string",
+  "locked": "boolean",
+  "created_at": "string"
+}

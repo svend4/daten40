@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS TemplatePack Schema v1",
+  "type": "object",
+  "required": [
+    "template_id",
+    "name",
+    "kind",
+    "files",
+    "version"
+  ],
+  "properties": {
+    "template_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "connector",
+        "bundle",
+        "blueprint",
+        "ui_card",
+        "full_project"
+      ]
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

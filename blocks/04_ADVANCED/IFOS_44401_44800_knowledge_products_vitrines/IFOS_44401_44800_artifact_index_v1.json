@@ -1,0 +1,147 @@
+{
+  "artifact_set": "IFOS_44401_44800",
+  "entries": [
+    {
+      "name": "IFOS_knowledge_products_vitrines_os_44401_44800_v1.md",
+      "ref": "file://IFOS_knowledge_products_vitrines_os_44401_44800_v1.md",
+      "hash": "sha256:882a006634bdc2101d191d8da94a17d57c1643e9e26f121aafefa6f85f714518"
+    },
+    {
+      "name": "IFOS_products_vitrines_api_v1.yaml",
+      "ref": "file://IFOS_products_vitrines_api_v1.yaml",
+      "hash": "sha256:372fe52304ae43b2659e1521401cf53e6974237e8f6739d8b7c4a5b84b71acdb"
+    },
+    {
+      "name": "IFOS_products_vitrines_examples_v1.json",
+      "ref": "file://IFOS_products_vitrines_examples_v1.json",
+      "hash": "sha256:8bcf003d4688848e33496959992bd9afa619cc4e8900fac7e594260617a1244f"
+    },
+    {
+      "name": "IFOS_knowledge_product_schema_v1.json",
+      "ref": "file://IFOS_knowledge_product_schema_v1.json",
+      "hash": "sha256:bd6a549c985ee9749bee895c9dadfbd7ff1e6c4dd3112ef7baeac84c551fb529"
+    },
+    {
+      "name": "IFOS_vitrine_schema_v1.json",
+      "ref": "file://IFOS_vitrine_schema_v1.json",
+      "hash": "sha256:88501976076cc240d4e827cd52cfbaf57c0f504453d041a21305505b28ff927e"
+    },
+    {
+      "name": "IFOS_card_schema_v1.json",
+      "ref": "file://IFOS_card_schema_v1.json",
+      "hash": "sha256:3ef813c16d0091a6aa0e3f417a8cf655953b7bf805cd240bcbe9bf3984b3bf86"
+    },
+    {
+      "name": "IFOS_comparison_schema_v1.json",
+      "ref": "file://IFOS_comparison_schema_v1.json",
+      "hash": "sha256:efe7a795c272405b023220ae06bb1283c2e34c17b062df9a33fce2c52a2bf44f"
+    },
+    {
+      "name": "IFOS_collection_schema_v1.json",
+      "ref": "file://IFOS_collection_schema_v1.json",
+      "hash": "sha256:105bdca27042e628de78492cdd4c0c0c7b49d1375692070af6896046151f5cf0"
+    },
+    {
+      "name": "IFOS_bundle_schema_v1.json",
+      "ref": "file://IFOS_bundle_schema_v1.json",
+      "hash": "sha256:4f740a25177d0b2ae34d1227a0277d6cd8efa94d2adbe4714d912793441b0f59"
+    },
+    {
+      "name": "IFOS_macro_schema_v1.json",
+      "ref": "file://IFOS_macro_schema_v1.json",
+      "hash": "sha256:05ecc0230d4acc736848efb37b57ccb3bb8d1db7fd2c618800966687ce7987a5"
+    },
+    {
+      "name": "IFOS_workflow_template_schema_v1.json",
+      "ref": "file://IFOS_workflow_template_schema_v1.json",
+      "hash": "sha256:dfe3bbc27627d39979978baa1d8cec10369178793a12109c6e44ff2b30845e30"
+    },
+    {
+      "name": "IFOS_landing_page_schema_v1.json",
+      "ref": "file://IFOS_landing_page_schema_v1.json",
+      "hash": "sha256:36c5d104c674c288e610feedba70854a92dc448cd8cc9e914d242d180b276ceb"
+    },
+    {
+      "name": "IFOS_publish_job_schema_v1.json",
+      "ref": "file://IFOS_publish_job_schema_v1.json",
+      "hash": "sha256:26d2d504bca851f84576c8e08695c48e799e119e4345647761246f3661ff10c8"
+    },
+    {
+      "name": "IFOS_rating_model_schema_v1.json",
+      "ref": "file://IFOS_rating_model_schema_v1.json",
+      "hash": "sha256:814d5e67b8ee051802321002d524cfc3ac8faecb2aa1eab44c9f34fdde761d6f"
+    },
+    {
+      "name": "IFOS_review_summary_schema_v1.json",
+      "ref": "file://IFOS_review_summary_schema_v1.json",
+      "hash": "sha256:e352c142a400067fef04badccfaf26546aa44f7e2f44267c9b4df8854aa40f82"
+    },
+    {
+      "name": "IFOS_install_recipe_schema_v1.json",
+      "ref": "file://IFOS_install_recipe_schema_v1.json",
+      "hash": "sha256:722723d107e1e15bf3d3a347a138638464ab106f7ea326c13f97f904c8b17134"
+    },
+    {
+      "name": "IFOS_one_click_run_schema_v1.json",
+      "ref": "file://IFOS_one_click_run_schema_v1.json",
+      "hash": "sha256:2bcabfa208f30719f9be01d9b7facbb170b7f0ee093e857ec9cb29cefec95fe5"
+    },
+    {
+      "name": "IFOS_knowledge_products_spec_v1.md",
+      "ref": "file://IFOS_knowledge_products_spec_v1.md",
+      "hash": "sha256:1ec84133d7ed0a4dcfa6ade6bb854db3318fce9fb8a6a6a5ebf2f56e98f136a4"
+    },
+    {
+      "name": "IFOS_cards_compare_spec_v1.md",
+      "ref": "file://IFOS_cards_compare_spec_v1.md",
+      "hash": "sha256:e8a83cb7e90e81b81fea3e54dd445dc7b938f3cedc7391c7db885f37375e7b7e"
+    },
+    {
+      "name": "IFOS_vitrines_collections_spec_v1.md",
+      "ref": "file://IFOS_vitrines_collections_spec_v1.md",
+      "hash": "sha256:a7862338e561b8eb7d9f4a4332b8ab1bef51d692b591692efb20a4c826a89f1a"
+    },
+    {
+      "name": "IFOS_bundles_recipes_spec_v1.md",
+      "ref": "file://IFOS_bundles_recipes_spec_v1.md",
+      "hash": "sha256:817e314822583d110b77b9f5018f8390f7b74c2041606c8b194b61d5c6e9882a"
+    },
+    {
+      "name": "IFOS_macros_templates_spec_v1.md",
+      "ref": "file://IFOS_macros_templates_spec_v1.md",
+      "hash": "sha256:404df3ea49dce8874be485b4c026db269273d5b48feb8614894df6c413bf38bd"
+    },
+    {
+      "name": "IFOS_publishing_distribution_spec_v1.md",
+      "ref": "file://IFOS_publishing_distribution_spec_v1.md",
+      "hash": "sha256:8f90ef1ddedfa9e9805a18b364cec933f5a5b1007fb448e6b00924d66e2abf9f"
+    },
+    {
+      "name": "IFOS_ratings_reviews_model_spec_v1.md",
+      "ref": "file://IFOS_ratings_reviews_model_spec_v1.md",
+      "hash": "sha256:068b65d273d5c6bcfab56b61df696cf9afd33563249245b45bf4dcf1cb9b2d63"
+    },
+    {
+      "name": "ifos_vitrine_renderer_stub_v1.py",
+      "ref": "file://ifos_vitrine_renderer_stub_v1.py",
+      "hash": "sha256:1350f9f39a519c8453390f8f32bc57849e4731a83ab8487ad73a72c803df3f2f"
+    },
+    {
+      "name": "ifos_rating_scoring_stub_v1.py",
+      "ref": "file://ifos_rating_scoring_stub_v1.py",
+      "hash": "sha256:5aa920ba91a99a487f0801281bdc445708dbc090c0274a7dcad42433b4ebb22f"
+    },
+    {
+      "name": "ifos_bundle_builder_stub_v1.py",
+      "ref": "file://ifos_bundle_builder_stub_v1.py",
+      "hash": "sha256:5b9359b84c4b6b52ec798acdaac6b87fe4592b962547b77ea10c022efbf4b37a"
+    },
+    {
+      "name": "ifos_one_click_runner_stub_v1.py",
+      "ref": "file://ifos_one_click_runner_stub_v1.py",
+      "hash": "sha256:dcf94a3d96db8024ab786874120a24f72dd953a6e36c00156db088b087f88270"
+    }
+  ],
+  "created_at": "2026-01-04T05:25:00Z",
+  "version": "1.0.0"
+}

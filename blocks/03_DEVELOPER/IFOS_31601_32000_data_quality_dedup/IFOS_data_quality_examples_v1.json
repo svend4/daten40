@@ -1,0 +1,198 @@
+{
+  "source_profile": {
+    "source_id": "src.s.2kb007cut3n1",
+    "name": "Example RSS Aggregator",
+    "kind": "rss",
+    "base_url": "https://news.example.com",
+    "trust": {
+      "score": 0.6,
+      "notes": "Aggregator; may repost"
+    },
+    "formats": [
+      "rss",
+      "html"
+    ],
+    "policies": {
+      "allow_domains": [
+        "news.example.com",
+        "blog.example.org"
+      ],
+      "strip_query_params": [
+        "utm_source",
+        "utm_medium",
+        "utm_campaign"
+      ],
+      "rate_limit_per_min": 60
+    },
+    "version": "1.0.0"
+  },
+  "normalized_records": [
+    {
+      "record_id": "rec.r.ft1bi4aaqnoh",
+      "source_id": "src.s.2kb007cut3n1",
+      "kind": "news",
+      "canonical_title": "New product X launched in Germany",
+      "canonical_url": "https://blog.example.org/post/product-x-launched",
+      "published_at": "2026-01-02T08:10:00Z",
+      "content_text": "Product X is launched. Key features include ...",
+      "language": "en",
+      "tags": [
+        "product",
+        "launch"
+      ],
+      "entities": [],
+      "fingerprints": [
+        "fp:exact_url:aa",
+        "fp:title_day:bb",
+        "fp:simhash_text:cc"
+      ],
+      "provenance": {
+        "source_url": "https://news.example.com/item?id=123&utm_source=agg",
+        "fetched_at": "2026-01-03T10:05:00Z",
+        "extractor": "rss_v1",
+        "raw_hash": "sha256:...",
+        "snippet": "Product X is launched..."
+      },
+      "version": "1.0.0"
+    },
+    {
+      "record_id": "rec.r.g4lbgqean29l",
+      "source_id": "src.s.2kb007cut3n1",
+      "kind": "news",
+      "canonical_title": "Germany: Product X launch",
+      "canonical_url": "https://blog.example.org/post/product-x-launched/",
+      "published_at": "2026-01-02T08:12:00Z",
+      "content_text": "Today Product X has been launched. Key features include ...",
+      "language": "en",
+      "tags": [
+        "launch"
+      ],
+      "entities": [],
+      "fingerprints": [
+        "fp:exact_url:aa",
+        "fp:title_day:bb",
+        "fp:simhash_text:cd"
+      ],
+      "provenance": {
+        "source_url": "https://news.example.com/item?id=124&utm_medium=rss",
+        "fetched_at": "2026-01-03T10:05:00Z",
+        "extractor": "rss_v1",
+        "raw_hash": "sha256:...",
+        "snippet": "Today Product X has been launched..."
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev.e.fmufpm10j4fy",
+      "kind": "snippet",
+      "source_url": "https://news.example.com/item?id=123",
+      "captured_at": "2026-01-03T10:05:00Z",
+      "hash": "sha256:...",
+      "snippet": "Product X is launched...",
+      "version": "1.0.0"
+    },
+    {
+      "evidence_id": "ev.e.k345y7gwdksj",
+      "kind": "html_hash",
+      "source_url": "https://blog.example.org/post/product-x-launched",
+      "captured_at": "2026-01-03T10:05:00Z",
+      "hash": "sha256:...",
+      "snippet": "<title>Product X launched</title>",
+      "version": "1.0.0"
+    }
+  ],
+  "dedupe_candidate": {
+    "pair_id": "pair.p.j3u23ft8c14a",
+    "a_record_id": "rec.r.ft1bi4aaqnoh",
+    "b_record_id": "rec.r.g4lbgqean29l",
+    "signals": {
+      "url_equal": true,
+      "title_sim": 0.86,
+      "text_sim": 0.91,
+      "date_delta_hours": 0.03
+    },
+    "version": "1.0.0"
+  },
+  "dedupe_decision": {
+    "decision_id": "dec.d.b8k4gpoux050",
+    "pair_id": "pair.p.j3u23ft8c14a",
+    "decision": "same",
+    "score": 0.94,
+    "reasons": [
+      "canonical_url equal after normalization",
+      "text_sim > 0.9",
+      "published_at within 5 minutes"
+    ],
+    "merge_policy": {
+      "keep": "earliest_published",
+      "prefer_source": "blog.example.org"
+    },
+    "version": "1.0.0"
+  },
+  "entity": {
+    "entity_id": "ent.e.qjim80qzot7e",
+    "type": "product",
+    "names": [
+      "Product X",
+      "X"
+    ],
+    "external_ids": {
+      "sku": "X-1000"
+    },
+    "features": {
+      "domains": [
+        "blog.example.org"
+      ],
+      "identifiers": [
+        "sku:X-1000"
+      ]
+    },
+    "confidence": 0.7,
+    "version": "1.0.0"
+  },
+  "fact": {
+    "fact_id": "fact.f.th7z45twau1a",
+    "predicate": "launch_date",
+    "subject_entity_id": "ent.e.qjim80qzot7e",
+    "object": "date",
+    "unit": null,
+    "currency": null,
+    "version": "1.0.0"
+  },
+  "fact_version": {
+    "fact_version_id": "fv.v.c9hqi1nj2ndv",
+    "fact_id": "fact.f.th7z45twau1a",
+    "value": "2026-01-02",
+    "valid_from": "2026-01-02T00:00:00Z",
+    "valid_to": null,
+    "observed_at": "2026-01-03T10:05:00Z",
+    "source_id": "src.s.2kb007cut3n1",
+    "confidence": 0.65,
+    "evidence_ids": [
+      "ev.e.fmufpm10j4fy",
+      "ev.e.k345y7gwdksj"
+    ],
+    "version": "1.0.0"
+  },
+  "reconciliation_job": {
+    "job_id": "job.j.xwb44giqlfyn",
+    "scope": {
+      "source_id": "src.s.2kb007cut3n1",
+      "kind": "news",
+      "window_days": 30
+    },
+    "status": "ok",
+    "stats": {
+      "records_seen": 2,
+      "candidates": 1,
+      "merged": 1,
+      "conflicts": 0
+    },
+    "conflicts": [],
+    "started_at": "2026-01-03T10:05:00Z",
+    "finished_at": "2026-01-03T10:05:00Z",
+    "version": "1.0.0"
+  }
+}

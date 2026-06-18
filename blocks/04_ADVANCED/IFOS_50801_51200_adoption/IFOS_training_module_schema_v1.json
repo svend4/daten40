@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS TrainingModule Schema v1",
+  "type": "object",
+  "required": [
+    "module_id",
+    "role",
+    "duration_min",
+    "objectives",
+    "labs",
+    "version"
+  ],
+  "properties": {
+    "module_id": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "duration_min": {
+      "type": "number",
+      "minimum": 1
+    },
+    "objectives": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "labs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

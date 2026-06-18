@@ -1,0 +1,174 @@
+{
+  "tag": {
+    "tag": "email",
+    "lang": "multi",
+    "description": "Email sending/processing related",
+    "version": "1.0.0"
+  },
+  "taxonomy": {
+    "taxonomy_id": "tax.t.695sqkl925rp",
+    "root": "IFOS",
+    "nodes": [
+      {
+        "id": "communication",
+        "parent": "IFOS",
+        "title": "Коммуникации"
+      },
+      {
+        "id": "email",
+        "parent": "communication",
+        "title": "Email"
+      },
+      {
+        "id": "automation",
+        "parent": "IFOS",
+        "title": "Автоматизация"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "synonym": {
+    "syn_id": "syn.s.od5a8cxlf655",
+    "lang": "ru",
+    "terms": [
+      "письмо",
+      "email",
+      "емейл",
+      "почта"
+    ],
+    "normalized": "email",
+    "notes": "query expansion",
+    "version": "1.0.0"
+  },
+  "ontology_node": {
+    "canonical_id": "canon.function.send_email",
+    "type": "Function",
+    "title": "Отправить письмо",
+    "description": "Отправка email через выбранный коннектор с шаблоном и логированием.",
+    "tags": [
+      "communication",
+      "email",
+      "notification"
+    ],
+    "examples": [
+      "Отправить отчёт на почту каждый день"
+    ],
+    "meta": {
+      "difficulty": "easy"
+    },
+    "version": "1.0.0"
+  },
+  "ontology_edge": {
+    "edge_id": "edge.e.34zrvhokcl30",
+    "src": "canon.bundle.email_sender_v2",
+    "dst": "canon.connector.smtp",
+    "kind": "uses_connector",
+    "weight": 0.9,
+    "meta": {
+      "reason": "bundle integrates smtp connector"
+    },
+    "version": "1.0.0"
+  },
+  "embedding": {
+    "emb_id": "emb.m.4r1lh7hbow99",
+    "object_ref": "canon.function.send_email",
+    "model": "text-embedding-3-large",
+    "vector": [
+      0.01,
+      -0.02,
+      0.03
+    ],
+    "text_fingerprint": "sha256:...",
+    "updated_at": "2026-01-03T13:01:00Z",
+    "version": "1.0.0"
+  },
+  "semantic_query": {
+    "query_id": "q.q.gwamq9x6mm4l",
+    "raw_query": "Нужно письмо в телеграм и копия в гугл диск",
+    "intents": [
+      "send",
+      "notify",
+      "store"
+    ],
+    "constraints": {
+      "no_code": true,
+      "gdpr": true
+    },
+    "candidates": [
+      {
+        "canonical_id": "canon.bundle.telegram_email_bridge",
+        "score": 0.81
+      }
+    ],
+    "created_at": "2026-01-03T13:01:00Z",
+    "version": "1.0.0"
+  },
+  "cluster": {
+    "cluster_id": "cl.c.qra8s2frdlqm",
+    "title": "Коммуникации: уведомления и рассылки",
+    "members": [
+      "canon.bundle.email_sender_v2",
+      "canon.bundle.telegram_notifier_v1"
+    ],
+    "labels": [
+      "email",
+      "telegram",
+      "notifications"
+    ],
+    "centroid": [
+      0.02,
+      0.01,
+      -0.03
+    ],
+    "use_cases": [
+      "оповещения",
+      "рассылки",
+      "уведомления"
+    ],
+    "version": "1.0.0"
+  },
+  "explanation": {
+    "explain_id": "ex.x.dekzu9stve9o",
+    "context": "query",
+    "decision": "recommend",
+    "reasons": [
+      "Найдено совпадение по intents: send+notify+store",
+      "Bundle имеет готовый blueprint и кнопку установки",
+      "Совместим с политикой GDPR (no raw logs)"
+    ],
+    "evidence": [
+      "canon.bundle.telegram_email_bridge",
+      "policy.gdpr_logs_v1"
+    ],
+    "confidence": 0.77,
+    "next_actions": [
+      "Выбрать коннектор Gmail/SMTP",
+      "Дать токен Telegram",
+      "Запустить тестовый прогон"
+    ],
+    "version": "1.0.0"
+  },
+  "qa_card": {
+    "qa_id": "qa.q.wez3a251t43h",
+    "lang": "ru",
+    "question": "Как быстро сделать уведомления: email → telegram?",
+    "short_answer": "Выберите bundle 'telegram_email_bridge', подключите Gmail и Telegram, включите правило пересылки.",
+    "recommended": [
+      "canon.bundle.telegram_email_bridge"
+    ],
+    "pitfalls": [
+      "не хранить токены в логах",
+      "включить retry при 429"
+    ],
+    "setup_steps": [
+      "Подключите Gmail connector",
+      "Подключите Telegram bot token",
+      "Выберите правило фильтрации писем",
+      "Запустите dry-run"
+    ],
+    "alternatives": [
+      "Сделать через Make.com сценарий + Gmail + Telegram"
+    ],
+    "version": "1.0.0"
+  }
+}

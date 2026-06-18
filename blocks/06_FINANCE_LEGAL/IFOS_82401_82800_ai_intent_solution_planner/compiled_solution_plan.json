@@ -1,0 +1,126 @@
+{
+  "plan_id": "plan_20260111_151308",
+  "intent": {
+    "goal": "Собирай лиды из формы на сайте, добавляй в CRM и отправляй письмо подтверждения",
+    "constraints": {
+      "privacy_level": "confidential",
+      "max_monthly_cost_usd": 50,
+      "allow_connectors": [
+        "wordpress",
+        "webhook",
+        "hubspot",
+        "gmail",
+        "sendgrid"
+      ]
+    }
+  },
+  "nodes": [
+    {
+      "id": "step1",
+      "capability": "capture_form_submission",
+      "connector": "wordpress",
+      "operation": "form_submission_webhook",
+      "params": {
+        "form_id": "lead_form"
+      },
+      "scores": {
+        "total": 0.86
+      },
+      "alternatives": [
+        {
+          "connector": "webhook",
+          "operation": "http_post",
+          "scores": {
+            "total": 0.78
+          }
+        }
+      ]
+    },
+    {
+      "id": "step2",
+      "capability": "create_crm_contact",
+      "connector": "hubspot",
+      "operation": "contacts.create",
+      "params": {
+        "map": {
+          "email": "{{step1.email}}",
+          "name": "{{step1.name}}"
+        }
+      },
+      "scores": {
+        "total": 0.83
+      },
+      "alternatives": [
+        {
+          "connector": "salesforce",
+          "operation": "contacts.create",
+          "scores": {
+            "total": 0.72
+          }
+        }
+      ]
+    },
+    {
+      "id": "step3",
+      "capability": "send_email",
+      "connector": "sendgrid",
+      "operation": "send_email",
+      "params": {
+        "to": "{{step1.email}}",
+        "template": "lead_confirm"
+      },
+      "scores": {
+        "total": 0.81
+      },
+      "alternatives": [
+        {
+          "connector": "gmail",
+          "operation": "send",
+          "scores": {
+            "total": 0.69
+          }
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "step1",
+      "to": "step2",
+      "contract": {
+        "type": "lead",
+        "fields": [
+          "email",
+          "name"
+        ]
+      }
+    },
+    {
+      "from": "step1",
+      "to": "step3",
+      "contract": {
+        "type": "email_target",
+        "fields": [
+          "email"
+        ]
+      }
+    }
+  ],
+  "checks": [
+    {
+      "type": "auth",
+      "connector": "hubspot"
+    },
+    {
+      "type": "quota",
+      "connector": "sendgrid"
+    }
+  ],
+  "fallbacks": [
+    {
+      "on": "step3_fail",
+      "do": "use_alternative",
+      "alternative": "gmail.send"
+    }
+  ]
+}

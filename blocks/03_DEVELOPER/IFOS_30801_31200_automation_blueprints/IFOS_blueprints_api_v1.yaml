@@ -1,0 +1,44 @@
+openapi: 3.0.3
+info:
+  title: IFOS Automation Blueprints API
+  version: "1.0.0"
+servers:
+  - url: https://bp.ifos.local/v1
+tags:
+  - name: Blueprints
+  - name: Import
+  - name: Export
+  - name: Tests
+  - name: Graph
+paths:
+  /blueprints:
+    post:
+      tags: [Blueprints]
+      summary: Create blueprint
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"201": {description: Created}}
+  /import/make:
+    post:
+      tags: [Import]
+      summary: Import Make scenario JSON into blueprint
+      responses: {"202": {description: Accepted}}
+  /import/n8n:
+    post:
+      tags: [Import]
+      summary: Import n8n workflow JSON into blueprint
+      responses: {"202": {description: Accepted}}
+  /import/wordpress:
+    post:
+      tags: [Import]
+      summary: Build blueprint from WordPress plugin inventory
+      responses: {"202": {description: Accepted}}
+  /tests/run:
+    post:
+      tags: [Tests]
+      summary: Run blueprint tests
+      responses: {"200": {description: OK}}
+  /export/bundle:
+    post:
+      tags: [Export]
+      summary: Export signed blueprint bundle
+      responses: {"200": {description: OK}}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DocsPack Schema v1",
+  "type": "object",
+  "required": [
+    "docs_id",
+    "item_id",
+    "quickstart",
+    "guides",
+    "troubleshooting",
+    "version"
+  ],
+  "properties": {
+    "docs_id": {
+      "type": "string"
+    },
+    "item_id": {
+      "type": "string"
+    },
+    "quickstart": {
+      "type": "string"
+    },
+    "guides": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "troubleshooting": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

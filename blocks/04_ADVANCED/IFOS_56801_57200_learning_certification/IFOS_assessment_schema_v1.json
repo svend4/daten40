@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Assessment Schema v1",
+  "type": "object",
+  "required": [
+    "assessment_id",
+    "type",
+    "items",
+    "passing",
+    "version"
+  ],
+  "properties": {
+    "assessment_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "quiz",
+        "practical",
+        "scenario",
+        "capstone"
+      ]
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "passing": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

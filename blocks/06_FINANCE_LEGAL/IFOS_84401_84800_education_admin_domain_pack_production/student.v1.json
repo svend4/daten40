@@ -1,0 +1,11 @@
+{
+  "contract_id": "student.v1",
+  "fields": {
+    "student_id": "string",
+    "name": "string",
+    "dob": "date",
+    "guardian_contact": "object"
+  },
+  "privacy_level": "internal",
+  "retention_policy": "edu_default"
+}

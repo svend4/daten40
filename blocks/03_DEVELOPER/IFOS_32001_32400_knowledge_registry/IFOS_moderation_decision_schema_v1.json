@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ModerationDecision Schema v1",
+  "type": "object",
+  "required": [
+    "decision_id",
+    "target_kind",
+    "target_id",
+    "decision",
+    "reasons",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "decision_id": {
+      "type": "string"
+    },
+    "target_kind": {
+      "type": "string",
+      "enum": [
+        "item",
+        "review",
+        "vitrine",
+        "tag",
+        "taxonomy_node"
+      ]
+    },
+    "target_id": {
+      "type": "string"
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "approved",
+        "rejected",
+        "quarantined"
+      ]
+    },
+    "reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

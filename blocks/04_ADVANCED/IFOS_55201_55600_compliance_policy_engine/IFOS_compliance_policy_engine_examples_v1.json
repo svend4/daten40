@@ -1,0 +1,59 @@
+{
+  "policy": {
+    "policy_id": "pol.p.70z7ewr3elon",
+    "name": "Default Team Policy Pack",
+    "version": "1.0.0",
+    "rules": [
+      "rule.r.ops0vsyxweip"
+    ],
+    "metadata": {
+      "region": "EU",
+      "tenant": "teamA"
+    }
+  },
+  "rule": {
+    "rule_id": "rule.r.ops0vsyxweip",
+    "when": "export_pack",
+    "if": "contains(secret_ref) OR contains(api_key)",
+    "then": [
+      "deny('Secrets must not be exported')"
+    ],
+    "severity": "block",
+    "version": "1.0.0"
+  },
+  "decision": {
+    "decision_id": "dec.d.axw9kk0djpdb",
+    "outcome": "deny",
+    "actions": [
+      "block_export"
+    ],
+    "reason": "Detected secret_ref in pack contents",
+    "ts": "2026-01-04T19:40:00Z",
+    "version": "1.0.0"
+  },
+  "waiver": {
+    "waiver_id": "wvr.w.7b7jka67hzdo",
+    "scope": "export_pack:project.audit_case_17",
+    "issued_by": "role.security_officer",
+    "expires_at": "2026-02-01T00:00:00Z",
+    "reason": "Legal request; provide audit pack to court",
+    "controls": [
+      "watermark",
+      "limit_audience",
+      "audit_downloads"
+    ],
+    "version": "1.0.0"
+  },
+  "audit_event": {
+    "event_id": "evt.e.51grbr062nwu",
+    "actor": "user.stefan",
+    "action": "export_pack",
+    "object_refs": [
+      "pack.audit.p.kjznbvf83av4",
+      "policy.pol.p.70z7ewr3elon"
+    ],
+    "decision_ref": "dec.d.axw9kk0djpdb",
+    "ts": "2026-01-04T19:40:00Z",
+    "version": "1.0.0"
+  }
+}

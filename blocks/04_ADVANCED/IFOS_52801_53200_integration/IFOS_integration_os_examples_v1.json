@@ -1,0 +1,68 @@
+{
+  "connector": {
+    "connector_id": "con.c.e9eign0a0da2",
+    "name": "Telegram Bot API",
+    "provider": "telegram",
+    "capabilities": {
+      "read": true,
+      "write": true,
+      "webhook": true,
+      "version": "1.0.0"
+    },
+    "auth": {
+      "method": "api_key",
+      "secret_refs": [
+        "vault://ifos/telegram/token"
+      ],
+      "scopes": [
+        "bot"
+      ],
+      "version": "1.0.0"
+    },
+    "resources": [
+      "messages",
+      "files",
+      "updates"
+    ],
+    "limits": {
+      "requests_per_min": 300,
+      "payload_kb_max": 512
+    },
+    "version": "1.0.0"
+  },
+  "error_timeout": {
+    "category": "timeout",
+    "retryable": true,
+    "message": "Provider timeout",
+    "user_action": "No action; system will retry",
+    "version": "1.0.0"
+  },
+  "webhook": {
+    "webhook_id": "wh.w.cpkq9ekz2toe",
+    "provider": "stripe",
+    "event_types": [
+      "payment_intent.succeeded"
+    ],
+    "verify": {
+      "method": "hmac",
+      "header": "Stripe-Signature"
+    },
+    "version": "1.0.0"
+  },
+  "mapping": {
+    "mapping_id": "map.m.qt4dq75bvxdo",
+    "source_system": "wordpress",
+    "entity_type": "Document",
+    "fields": [
+      {
+        "from": "post_title",
+        "to": "title"
+      },
+      {
+        "from": "post_content",
+        "to": "body"
+      }
+    ],
+    "version": "1.0.0"
+  }
+}

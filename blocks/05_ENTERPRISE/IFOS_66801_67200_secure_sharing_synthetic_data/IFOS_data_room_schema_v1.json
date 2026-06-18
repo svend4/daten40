@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DataRoom Schema v1",
+  "type": "object",
+  "required": [
+    "room_id",
+    "name",
+    "allowed_classes",
+    "default_sample_policy_id",
+    "approval_flow_id",
+    "version"
+  ],
+  "properties": {
+    "room_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "publishers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "consumers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allowed_classes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "default_sample_policy_id": {
+      "type": "string"
+    },
+    "approval_flow_id": {
+      "type": "string"
+    },
+    "default_controls": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

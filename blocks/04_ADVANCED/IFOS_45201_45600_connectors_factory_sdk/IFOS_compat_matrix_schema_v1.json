@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS CompatMatrix Schema v1",
+  "type": "object",
+  "required": [
+    "compat_id",
+    "connector_id",
+    "matrix",
+    "version"
+  ],
+  "properties": {
+    "compat_id": {
+      "type": "string"
+    },
+    "connector_id": {
+      "type": "string"
+    },
+    "matrix": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

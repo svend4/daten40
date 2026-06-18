@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS EnterpriseTemplatePack Schema v1",
+  "type": "object",
+  "required": [
+    "pack_id",
+    "name",
+    "goal",
+    "roles",
+    "terms",
+    "bundle_id",
+    "dashboards",
+    "kpis",
+    "version"
+  ],
+  "properties": {
+    "pack_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "goal": {
+      "type": "string"
+    },
+    "roles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "terms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "bundle_id": {
+      "type": "string"
+    },
+    "dashboards": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "kpis": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

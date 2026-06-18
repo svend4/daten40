@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS QACard Schema v1",
+  "type": "object",
+  "required": [
+    "qa_id",
+    "lang",
+    "question",
+    "short_answer",
+    "recommended",
+    "setup_steps",
+    "version"
+  ],
+  "properties": {
+    "qa_id": {
+      "type": "string"
+    },
+    "lang": {
+      "type": "string",
+      "enum": [
+        "ru",
+        "en",
+        "de"
+      ]
+    },
+    "question": {
+      "type": "string"
+    },
+    "short_answer": {
+      "type": "string"
+    },
+    "recommended": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "pitfalls": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "setup_steps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "alternatives": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

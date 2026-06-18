@@ -1,0 +1,26 @@
+{
+  "apply_to": ">= v30",
+  "delta": {
+    "section": "COMPLIANCE_EVIDENCE",
+    "add": [
+      {
+        "id_range": "IFOS_87601_88000",
+        "name": "Evidence Freshness Engine + Compliance Dashboard Computations",
+        "slug": "evidence_freshness_engine_compliance_dashboard_computations",
+        "type": "Service/Engine",
+        "layer": "ComplianceEvidence",
+        "status": "Production",
+        "dependencies": [
+          "IFOS_86401_86800",
+          "IFOS_86001_86400",
+          "IFOS_86801_87200",
+          "IFOS_87201_87600"
+        ],
+        "artifacts": [
+          "IFOS_87601_88000_evidence_freshness_engine_compliance_dashboard_computations_os_pack.zip"
+        ],
+        "notes": "Freshness + missing detection + coverage snapshots + dashboard datasets + alert rules"
+      }
+    ]
+  }
+}

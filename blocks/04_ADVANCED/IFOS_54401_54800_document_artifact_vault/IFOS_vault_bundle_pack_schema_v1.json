@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Vault BundlePack Schema v1",
+  "type": "object",
+  "required": [
+    "pack_id",
+    "manifest",
+    "files",
+    "hashes",
+    "version"
+  ],
+  "properties": {
+    "pack_id": {
+      "type": "string"
+    },
+    "manifest": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "hashes": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ActionTemplate Schema v1",
+  "type": "object",
+  "required": [
+    "template_id",
+    "term_id",
+    "params",
+    "defaults",
+    "outputs",
+    "version"
+  ],
+  "properties": {
+    "template_id": {
+      "type": "string"
+    },
+    "term_id": {
+      "type": "string"
+    },
+    "params": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "defaults": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

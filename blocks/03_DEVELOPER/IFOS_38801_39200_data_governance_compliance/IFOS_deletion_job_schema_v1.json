@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DeletionJob Schema v1",
+  "type": "object",
+  "required": [
+    "job_id",
+    "scope",
+    "requested_by",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "job_id": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "requested_by": {
+      "type": "string"
+    },
+    "requested_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "approvals": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "queued",
+        "running",
+        "blocked",
+        "failed",
+        "succeeded"
+      ]
+    },
+    "report": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

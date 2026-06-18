@@ -1,0 +1,29 @@
+openapi: 3.0.3
+info:
+  title: IFOS Lineage & Provenance API
+  version: "1.0.0"
+servers:
+  - url: https://lineage.ifos.local/v1
+tags:
+  - name: Datasets
+  - name: Artifacts
+  - name: Transformations
+  - name: Graph
+  - name: Claims
+  - name: Explain
+  - name: Integrity
+paths:
+  /datasets:
+    post: {tags:[Datasets], summary: Upsert dataset, responses: {"200": {description: OK}}}
+  /artifacts:
+    post: {tags:[Artifacts], summary: Upsert artifact, responses: {"200": {description: OK}}}
+  /transformations:
+    post: {tags:[Transformations], summary: Append transformation, responses: {"201": {description: Created}}}
+  /graph/query:
+    post: {tags:[Graph], summary: Query lineage graph upstream/downstream, responses: {"200": {description: OK}}}
+  /claims:
+    post: {tags:[Claims], summary: Create provenance claim, responses: {"201": {description: Created}}}
+  /explain:
+    post: {tags:[Explain], summary: Create explain record, responses: {"201": {description: Created}}}
+  /integrity/verify:
+    post: {tags:[Integrity], summary: Verify hashes/signatures, responses: {"200": {description: OK}}}

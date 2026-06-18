@@ -1,0 +1,95 @@
+{
+  "artifact_set": "IFOS_67201_67600",
+  "created_at": "2026-01-02T17:24:44Z",
+  "version": "1.0.0",
+  "entries": [
+    {
+      "name": "IFOS_test_keys_safe_demo_assets_os_67201_67600_v1.md",
+      "hash": "sha256:22a61a60c7756464d35d7b0b8155e8c059db7fee200757931d1f7242079568e2"
+    },
+    {
+      "name": "IFOS_testkeys_ops_runbook_67201_67600_v1.md",
+      "hash": "sha256:8a933ed4c210ec2ff3f4efa6450b92046f5eea6db7e91865579367eba0ed6b84"
+    },
+    {
+      "name": "IFOS_testkeys_threat_model_67201_67600_v1.md",
+      "hash": "sha256:5fa491edd825a3c445295419836152feea96bfe0caecc68ee21203402540aa1c"
+    },
+    {
+      "name": "IFOS_testkeys_control_plane_api_v1.yaml",
+      "hash": "sha256:e2b98fa9505f988d836536e3248318b7c6aa0cbadc3b77aa9c36b8415ffa675a"
+    },
+    {
+      "name": "IFOS_testkeys_examples_67201_67600_v1.json",
+      "hash": "sha256:eba3bd33471b95289c15bebd117b159696535addfb49e4617d9b2b4c146ebe69"
+    },
+    {
+      "name": "IFOS_sandbox_provider_schema_v1.json",
+      "hash": "sha256:67f615c8bf021e782b96f873ca317078ede4a4298f995b3d483f9b6c5bee47fb"
+    },
+    {
+      "name": "IFOS_test_key_entry_schema_v1.json",
+      "hash": "sha256:303716e28114038fc047f371e7d36719c8f1df9622ce408212f5946a235f1370"
+    },
+    {
+      "name": "IFOS_credential_policy_schema_v1.json",
+      "hash": "sha256:ff2e7756cf1969c1b9da5a92b2bc0d80c038e090e1d25882d9df7a814894e8ad"
+    },
+    {
+      "name": "IFOS_key_rotation_job_schema_v1.json",
+      "hash": "sha256:450d14abecc43b8816d792ca98aecd620e35a7e7ed8245078e4c934eba317584"
+    },
+    {
+      "name": "IFOS_demo_asset_schema_v1.json",
+      "hash": "sha256:543de4ec0f5148fd466f8a04e0c8867c21e5ed31707ae7582185db23f82407cb"
+    },
+    {
+      "name": "IFOS_trial_bundle_schema_v1.json",
+      "hash": "sha256:17800bee40492df2a2e269b694fd757f7f1a6dc599d1c882a2782a0d393d7ed0"
+    },
+    {
+      "name": "IFOS_key_request_schema_v1.json",
+      "hash": "sha256:560692429e502b7ce297873b89e2f52e1604dfdd2a166a4aaa2c724fdb1aa838"
+    },
+    {
+      "name": "IFOS_key_grant_schema_v1.json",
+      "hash": "sha256:a9a4de5bbd253eaa6f6f9fa3e60b055f32277798420d7abeeeb932947b5a8717"
+    },
+    {
+      "name": "IFOS_safe_dataset_asset_schema_v1.json",
+      "hash": "sha256:6426c8d1ba2ab0caa5d886f5c9ce7bc8e36bda7ac7c87d48690ece2e48a7ab1e"
+    },
+    {
+      "name": "IFOS_sandbox_providers_seed_67201_67600_v1.csv",
+      "hash": "sha256:5b6ca562fbec0ee8d5297e1c62e2b156a7f711fbd81ac0fc68a5b1bd72f46987"
+    },
+    {
+      "name": "IFOS_test_key_catalog_seed_67201_67600_v1.csv",
+      "hash": "sha256:6748e4dc6cee1be5ccf2411fe25b75dad2813f60c1b40baf924e040fcffb70dc"
+    },
+    {
+      "name": "IFOS_credential_policies_seed_67201_67600_v1.csv",
+      "hash": "sha256:6e2ab1c74859e38e0ad90b57714a1b63ef2993a09a0737dfdcc7688d6d0e315f"
+    },
+    {
+      "name": "IFOS_key_rotation_jobs_seed_67201_67600_v1.csv",
+      "hash": "sha256:c98b6241732c0193e3cb5082ca0241ece8bfb03565c0b2b1d4a602fde4bb4cee"
+    },
+    {
+      "name": "IFOS_demo_assets_seed_67201_67600_v1.csv",
+      "hash": "sha256:b166e8a4fd9828adc6d75b57c0fcdd48e5b10f62e859b0846c879064de6faad1"
+    },
+    {
+      "name": "IFOS_trial_bundles_seed_67201_67600_v1.csv",
+      "hash": "sha256:3e29134f1f517a612983cdc0f162699026207aa3b188bb03de7d5d14a4773b1b"
+    },
+    {
+      "name": "IFOS_key_request_templates_seed_67201_67600_v1.csv",
+      "hash": "sha256:a218d80ebca65e5f3fe285ecb22acc111f82073a01490a3bb6b258dd6c190b73"
+    },
+    {
+      "name": "IFOS_safe_datasets_seed_67201_67600_v1.csv",
+      "hash": "sha256:7a758b5c5e9d00ecb466cef141610d54e763a51206668fdec5a79fa1824b3e6e"
+    }
+  ]
+}

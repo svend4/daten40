@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS NewsQualityGuardrails Schema v1",
+  "type": "object",
+  "required": [
+    "guard_id",
+    "rules",
+    "version"
+  ],
+  "properties": {
+    "guard_id": {
+      "type": "string"
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

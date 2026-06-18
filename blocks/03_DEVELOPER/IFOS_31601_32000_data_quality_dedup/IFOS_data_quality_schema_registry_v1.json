@@ -1,0 +1,82 @@
+{
+  "registry_id": "reg.dq.hgjau03dy24d",
+  "entries": [
+    {
+      "name": "IFOS_source_profile_schema_v1.json",
+      "ref": "file://IFOS_source_profile_schema_v1.json",
+      "hash": "sha256:e00698fd1b8489375a51b762d80c21c940acb923c8480ecb6bd9011e9b2c8501"
+    },
+    {
+      "name": "IFOS_data_contract_schema_v1.json",
+      "ref": "file://IFOS_data_contract_schema_v1.json",
+      "hash": "sha256:81b6c4cb6fb3de2a32e0079c98dddf0af5aedbcb379a6e440cd7b2aa348ef9a9"
+    },
+    {
+      "name": "IFOS_transformation_spec_schema_v1.json",
+      "ref": "file://IFOS_transformation_spec_schema_v1.json",
+      "hash": "sha256:995cc3366a93dea8b326a93e39ed75cc33663ab7d43201230cad21f256142506"
+    },
+    {
+      "name": "IFOS_normalized_record_schema_v1.json",
+      "ref": "file://IFOS_normalized_record_schema_v1.json",
+      "hash": "sha256:82d99ed801ac48f65e29502f1a680c1313fa98dc1dfffc84cb7736af374d0835"
+    },
+    {
+      "name": "IFOS_fingerprint_schema_v1.json",
+      "ref": "file://IFOS_fingerprint_schema_v1.json",
+      "hash": "sha256:61d1413a98e979a4165ba984cf6661584b2e409e49d2c300e645b8f911c5fa23"
+    },
+    {
+      "name": "IFOS_quality_gate_rule_schema_v1.json",
+      "ref": "file://IFOS_quality_gate_rule_schema_v1.json",
+      "hash": "sha256:064b73877c31e6279f88c2cb3594a7ff11a50bcffc2e20689599c4e272574d8c"
+    },
+    {
+      "name": "IFOS_validation_report_schema_v1.json",
+      "ref": "file://IFOS_validation_report_schema_v1.json",
+      "hash": "sha256:976f74be8aeabbfb816c3600fb065beb5bd051b7d4aa750f72a75137792d0ce8"
+    },
+    {
+      "name": "IFOS_dedupe_candidate_schema_v1.json",
+      "ref": "file://IFOS_dedupe_candidate_schema_v1.json",
+      "hash": "sha256:b0765517413554e68dd3a05d6d612c8f2466f8ed88d3a4001990ba7360912c02"
+    },
+    {
+      "name": "IFOS_dedupe_decision_schema_v1.json",
+      "ref": "file://IFOS_dedupe_decision_schema_v1.json",
+      "hash": "sha256:357d738dc93c8ab537f0d9498544a5340a7b4dace7b594904d919cd81cf6948d"
+    },
+    {
+      "name": "IFOS_entity_schema_v1.json",
+      "ref": "file://IFOS_entity_schema_v1.json",
+      "hash": "sha256:f8dc6ee8049b492e8e1a9b48b04de67d00e0519e92eee589a2585901dd8d09fa"
+    },
+    {
+      "name": "IFOS_entity_link_schema_v1.json",
+      "ref": "file://IFOS_entity_link_schema_v1.json",
+      "hash": "sha256:75324ff14237d19b48cabe624b54962b297f3329d72ea5bec28b150c1e707e01"
+    },
+    {
+      "name": "IFOS_fact_schema_v1.json",
+      "ref": "file://IFOS_fact_schema_v1.json",
+      "hash": "sha256:0dc322d0a094d007b3858826828cc2b76a5953f7608f60e9efcad05bb07dd86f"
+    },
+    {
+      "name": "IFOS_fact_version_schema_v1.json",
+      "ref": "file://IFOS_fact_version_schema_v1.json",
+      "hash": "sha256:1260bb13e745bd1f7313c306dbb54afb4e8f128b1cc58171487e943983c56c3e"
+    },
+    {
+      "name": "IFOS_provenance_evidence_schema_v1.json",
+      "ref": "file://IFOS_provenance_evidence_schema_v1.json",
+      "hash": "sha256:37b1c849d5b3c37e44f9e864737f5e0a5f86f63281a2edace8e08b75b8b7480d"
+    },
+    {
+      "name": "IFOS_reconciliation_job_schema_v1.json",
+      "ref": "file://IFOS_reconciliation_job_schema_v1.json",
+      "hash": "sha256:917c925e0502f139eb43751e30fc777777f4cae32a2795b5a54794c56cb714cb"
+    }
+  ],
+  "updated_at": "2026-01-03T10:05:00Z",
+  "version": "1.0.0"
+}

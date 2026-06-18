@@ -1,0 +1,19 @@
+openapi: 3.0.3
+info:
+  title: IFOS Registry Public API
+  version: "1.0.0"
+servers:
+  - url: https://registry.ifos.local/v1
+tags:
+  - name: Items
+  - name: Search
+  - name: Bundles
+paths:
+  /items:
+    post: {tags:[Items], summary: Submit registry item, responses: {"200": {description: OK}}}
+  /items/{item_id}:
+    get: {tags:[Items], summary: Read item card, responses: {"200": {description: OK}}}
+  /search:
+    post: {tags:[Search], summary: Search by tags/capabilities, responses: {"200": {description: OK}}}
+  /bundles:
+    post: {tags:[Bundles], summary: Publish bundle, responses: {"200": {description: OK}}}

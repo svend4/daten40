@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS MarketplaceListing Schema v1",
+  "type": "object",
+  "required": [
+    "listing_id",
+    "target_kind",
+    "target_id",
+    "seller_id",
+    "pricing_model_id",
+    "trial_policy_id",
+    "support",
+    "refund_policy",
+    "regions",
+    "currency",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "listing_id": {
+      "type": "string"
+    },
+    "target_kind": {
+      "type": "string",
+      "enum": [
+        "item",
+        "bundle",
+        "vitrine"
+      ]
+    },
+    "target_id": {
+      "type": "string"
+    },
+    "seller_id": {
+      "type": "string"
+    },
+    "pricing_model_id": {
+      "type": "string"
+    },
+    "trial_policy_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "support": {
+      "type": "object",
+      "properties": {
+        "sla_hours": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "channels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "included_updates_months": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "refund_policy": {
+      "type": "object",
+      "properties": {
+        "days": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "regions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "currency": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "active",
+        "suspended",
+        "retired"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

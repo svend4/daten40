@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DatasetAsset Schema v1",
+  "type": "object",
+  "required": [
+    "dataset_id",
+    "room_id",
+    "name",
+    "kind",
+    "classification",
+    "published_at",
+    "version"
+  ],
+  "properties": {
+    "dataset_id": {
+      "type": "string"
+    },
+    "room_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "table",
+        "files",
+        "api_snapshot",
+        "event_stream_sample",
+        "schema_only"
+      ]
+    },
+    "owner": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "classes",
+        "labels"
+      ],
+      "properties": {
+        "classes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "default_sample_policy_id": {
+      "type": "string"
+    },
+    "available_representations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "schema",
+          "sample",
+          "deid",
+          "synthetic"
+        ]
+      }
+    },
+    "published_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

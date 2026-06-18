@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Invoice (example)",
+  "type": "object",
+  "required": [
+    "number",
+    "totals"
+  ],
+  "properties": {
+    "number": {
+      "type": "string"
+    },
+    "totals": {
+      "type": "object",
+      "required": [
+        "total"
+      ],
+      "properties": {
+        "total": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}

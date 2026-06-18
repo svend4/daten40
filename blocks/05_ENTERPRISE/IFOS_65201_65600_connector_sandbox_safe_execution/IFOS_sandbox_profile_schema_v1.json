@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SandboxProfile Schema v1",
+  "type": "object",
+  "required": [
+    "sandbox_profile_id",
+    "isolation_level",
+    "egress_policy_id",
+    "resource_limits_id",
+    "rate_limit_policy_id",
+    "version"
+  ],
+  "properties": {
+    "sandbox_profile_id": {
+      "type": "string"
+    },
+    "isolation_level": {
+      "type": "string",
+      "enum": [
+        "dev_local",
+        "restricted_net",
+        "policy_enforced",
+        "high_assurance"
+      ]
+    },
+    "egress_policy_id": {
+      "type": "string"
+    },
+    "resource_limits_id": {
+      "type": "string"
+    },
+    "rate_limit_policy_id": {
+      "type": "string"
+    },
+    "allow_file_write": {
+      "type": "boolean",
+      "default": false
+    },
+    "allow_exec": {
+      "type": "boolean",
+      "default": false
+    },
+    "notes": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

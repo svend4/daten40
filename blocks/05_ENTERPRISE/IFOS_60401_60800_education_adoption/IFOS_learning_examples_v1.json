@@ -1,0 +1,79 @@
+{
+  "course": {
+    "course_id": "crs.c.6mjm2fny1z2q",
+    "title": "IFOS Foundation",
+    "level": "foundation",
+    "lessons": [
+      "lsn.l.naa4e8pss1ph"
+    ],
+    "labs": [
+      "lab.b.z1h49w4qm58z"
+    ],
+    "version": "1.0.0"
+  },
+  "lesson": {
+    "lesson_id": "lsn.l.naa4e8pss1ph",
+    "title": "Что такое артефакт, bundle и macro",
+    "content": "Определения + примеры.",
+    "quiz": [
+      {
+        "q": "Что такое bundle?",
+        "a": [
+          "пакет артефактов"
+        ],
+        "correct": [
+          0
+        ]
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "lab": {
+    "lab_id": "lab.b.z1h49w4qm58z",
+    "title": "News digest in 10 minutes",
+    "steps": [
+      "import sources",
+      "dedup",
+      "rank",
+      "publish vitrine"
+    ],
+    "expected": [
+      "daily digest page",
+      "scorecard"
+    ],
+    "version": "1.0.0"
+  },
+  "cert": {
+    "cert_id": "cert.x.9g6sagi1twaa",
+    "name": "Certified Builder",
+    "requirements": [
+      "complete builder track",
+      "pass exam 70%+"
+    ],
+    "exam": {
+      "duration_min": 60,
+      "questions": 40
+    },
+    "version": "1.0.0"
+  },
+  "learning_path": {
+    "path_id": "path.p.1rqkh0qavm6i",
+    "persona": "builder",
+    "steps": [
+      "quickstart lab",
+      "foundation course",
+      "builder course",
+      "first bundle publish"
+    ],
+    "version": "1.0.0"
+  },
+  "badge": {
+    "badge_id": "bdg.d.pdz0yly8s4fs",
+    "name": "First Bundle Published",
+    "criteria": [
+      "publish 1 bundle",
+      "passes sandbox benchmarks"
+    ],
+    "version": "1.0.0"
+  }
+}

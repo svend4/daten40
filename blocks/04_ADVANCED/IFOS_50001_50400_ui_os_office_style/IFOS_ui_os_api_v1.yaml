@@ -1,0 +1,23 @@
+openapi: 3.0.3
+info:
+  title: IFOS UI OS API
+  version: "1.0.0"
+servers:
+  - url: https://ui.ifos.local/v1
+tags:
+  - name: Mode
+  - name: Cards
+  - name: Wizards
+  - name: Conference
+  - name: Journal
+paths:
+  /mode/switch:
+    post: {tags:[Mode], summary: Switch UI mode, responses: {"200": {description: OK}}}
+  /cards/render:
+    post: {tags:[Cards], summary: Render card model, responses: {"200": {description: OK}}}
+  /wizards/start:
+    post: {tags:[Wizards], summary: Start wizard, responses: {"200": {description: OK}}}
+  /conference/run:
+    post: {tags:[Conference], summary: Run conference mode, responses: {"200": {description: OK}}}
+  /journal/append:
+    post: {tags:[Journal], summary: Append journal entry, responses: {"200": {description: OK}}}

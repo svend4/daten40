@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS CatalogItemState Schema v1",
+  "type": "object",
+  "required": [
+    "state_id",
+    "tenant_id",
+    "canonical_id",
+    "state",
+    "reason",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "state_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "canonical_id": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "allowed",
+        "blocked",
+        "pending_review",
+        "deprecated"
+      ]
+    },
+    "reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ticket_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

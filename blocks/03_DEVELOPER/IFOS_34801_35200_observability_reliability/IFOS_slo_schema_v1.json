@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SLO Schema v1",
+  "type": "object",
+  "required": [
+    "slo_id",
+    "tenant_id",
+    "name",
+    "objective",
+    "window",
+    "metric",
+    "version"
+  ],
+  "properties": {
+    "slo_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "objective": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "window": {
+      "type": "string",
+      "enum": [
+        "7d",
+        "28d",
+        "90d"
+      ]
+    },
+    "metric": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS BlueprintExportBundle Schema v1",
+  "type": "object",
+  "required": [
+    "bundle_id",
+    "blueprint_id",
+    "files",
+    "signature",
+    "attestation",
+    "version"
+  ],
+  "properties": {
+    "bundle_id": {
+      "type": "string"
+    },
+    "blueprint_id": {
+      "type": "string"
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "hash"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "hash": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "signature": {
+      "type": "string"
+    },
+    "attestation": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

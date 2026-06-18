@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ChainOfCustody Schema v1",
+  "type": "object",
+  "required": [
+    "coc_id",
+    "evidence_id",
+    "steps",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "coc_id": {
+      "type": "string"
+    },
+    "evidence_id": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "ts",
+          "actor",
+          "action",
+          "hash"
+        ],
+        "properties": {
+          "ts": {
+            "type": "string"
+          },
+          "actor": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "collected",
+              "exported",
+              "sealed",
+              "transferred",
+              "accessed",
+              "verified",
+              "released"
+            ]
+          },
+          "hash": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "artifact_set": "IFOS_65601_66000",
+  "created_at": "2026-01-02T16:57:31Z",
+  "entries": [
+    {
+      "name": "IFOS_api_gateway_egress_control_os_65601_66000_v1.md",
+      "hash": "sha256:75b31d4e882680071236ed2a86223f0ee3d0d0a588ffe129d23450f17e78fd77"
+    },
+    {
+      "name": "IFOS_gateway_ops_runbook_65601_66000_v1.md",
+      "hash": "sha256:1ffc352a6c2fcc30c15cf4deda6c926cf098b591641d4a98e53c5e78d6b15935"
+    },
+    {
+      "name": "IFOS_gateway_threat_model_65601_66000_v1.md",
+      "hash": "sha256:2e514ae9c18c7d5503ae88d46dfd0f3546ace24036fa82a2bf46d4c24ceebe11"
+    },
+    {
+      "name": "IFOS_gateway_control_plane_api_v1.yaml",
+      "hash": "sha256:cdd50c1b52e42d8150887dafe47928242be2834ad027d169409b4c952275bd1c"
+    },
+    {
+      "name": "IFOS_gateway_examples_65601_66000_v1.json",
+      "hash": "sha256:fbe30d566cefa3dbd0171c2300ecac53f4af8686d5cd08e7ca70ebae8015e48c"
+    },
+    {
+      "name": "IFOS_gateway_route_schema_v1.json",
+      "hash": "sha256:0867306b63c6216ed239e1267560a972434f4b9dd6c795b9c6b4c470cccd188b"
+    },
+    {
+      "name": "IFOS_gateway_egress_rule_schema_v1.json",
+      "hash": "sha256:07634b6b86c19e7f939e059a34a6aa241a6b797d2912fc56eddff215c14fac17"
+    },
+    {
+      "name": "IFOS_gateway_allowlist_set_schema_v1.json",
+      "hash": "sha256:53a1bfddb7d7437b63582d7899f0677cf0ed3435df5b5e3d53000e8a63de9a70"
+    },
+    {
+      "name": "IFOS_gateway_tls_policy_schema_v1.json",
+      "hash": "sha256:630a175e833e7624fe4130aab2a44eac677cdb64410bdd412b1f2c67a0488c56"
+    },
+    {
+      "name": "IFOS_gateway_inspection_profile_schema_v1.json",
+      "hash": "sha256:b837120d84228e66dbf06625b1b65e7344102bac425de3f64bbb71d1ed756bdb"
+    },
+    {
+      "name": "IFOS_gateway_dlp_policy_schema_v1.json",
+      "hash": "sha256:7d7dc71d9598dfc459e2779efc3ac0b5deb7c5eb6b2f9448703314edd51b0047"
+    },
+    {
+      "name": "IFOS_gateway_egress_session_schema_v1.json",
+      "hash": "sha256:647ea5f2b0948a5bc127137dfbc62077fb8f7e9b110f4907458f8550df29ef41"
+    },
+    {
+      "name": "IFOS_gateway_outbound_request_log_schema_v1.json",
+      "hash": "sha256:9c559e53fa09145954d0e7d9276f9192f467da67ab97697bd21de096655f0e2b"
+    },
+    {
+      "name": "IFOS_gateway_anomaly_rule_schema_v1.json",
+      "hash": "sha256:36b0965cc686d155b0f3c6637494cae71d0dd58de9e8df05e2387bd7a48f6962"
+    },
+    {
+      "name": "IFOS_gateway_change_ticket_schema_v1.json",
+      "hash": "sha256:ec718e2c37d98d72a6963047f39420bab5f2cf0db66d3fd4f7f4c8b51534171d"
+    },
+    {
+      "name": "IFOS_gateway_routes_seed_65601_66000_v1.csv",
+      "hash": "sha256:9219eace31f2609f177c17545edfdb42c9690be66247f17e67796aa8c067d2c1"
+    },
+    {
+      "name": "IFOS_gateway_allowlists_seed_65601_66000_v1.csv",
+      "hash": "sha256:b92e43263f5c620054c468e12078e65afb193161f83f0eafd9b388393506765f"
+    },
+    {
+      "name": "IFOS_gateway_egress_rules_seed_65601_66000_v1.csv",
+      "hash": "sha256:b34af70206e02cb41dad61ec3513b5622de5f3d64697356d7d21f6d25ff36abf"
+    },
+    {
+      "name": "IFOS_gateway_tls_policies_seed_65601_66000_v1.csv",
+      "hash": "sha256:f2c54d272729d64422db44dd51d686fa0a90a8ba4b1498e16b07957396cb7294"
+    },
+    {
+      "name": "IFOS_gateway_inspection_profiles_seed_65601_66000_v1.csv",
+      "hash": "sha256:e7ef79906a5b54e38a871a7e12f1f0d035841dd9f80d4fdd24018062da86c8ca"
+    },
+    {
+      "name": "IFOS_gateway_dlp_policies_seed_65601_66000_v1.csv",
+      "hash": "sha256:aa63ce4a7b985fca9e15639a0ec9d2497f0313d9982c70e5de54efbf6522e94f"
+    },
+    {
+      "name": "IFOS_gateway_anomaly_rules_seed_65601_66000_v1.csv",
+      "hash": "sha256:c1f9f0156278f21f63c4afd4e1a62ad99823cfb6298b7d383152058866b1e8e5"
+    },
+    {
+      "name": "IFOS_gateway_debug_playbook_seed_65601_66000_v1.csv",
+      "hash": "sha256:3374a99b7d9223df8901001caf7c0a7c78c12567135629da5f453f3a2e04a578"
+    }
+  ],
+  "version": "1.0.0"
+}

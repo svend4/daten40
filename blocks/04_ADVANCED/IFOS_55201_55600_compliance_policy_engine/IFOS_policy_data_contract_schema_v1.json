@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Data Contract Schema v1",
+  "type": "object",
+  "required": [
+    "contract_id",
+    "dataset_type",
+    "schema",
+    "pii_classification",
+    "version"
+  ],
+  "properties": {
+    "contract_id": {
+      "type": "string"
+    },
+    "dataset_type": {
+      "type": "string"
+    },
+    "schema": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "pii_classification": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

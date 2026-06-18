@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS FactVersion Schema v1",
+  "type": "object",
+  "required": [
+    "fact_version_id",
+    "fact_id",
+    "value",
+    "valid_from",
+    "observed_at",
+    "source_id",
+    "confidence",
+    "evidence_ids",
+    "version"
+  ],
+  "properties": {
+    "fact_version_id": {
+      "type": "string"
+    },
+    "fact_id": {
+      "type": "string"
+    },
+    "value": {},
+    "valid_from": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "valid_to": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

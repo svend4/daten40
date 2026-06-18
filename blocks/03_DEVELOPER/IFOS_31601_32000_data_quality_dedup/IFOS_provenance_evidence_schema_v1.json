@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ProvenanceEvidence Schema v1",
+  "type": "object",
+  "required": [
+    "evidence_id",
+    "kind",
+    "source_url",
+    "captured_at",
+    "hash",
+    "snippet",
+    "version"
+  ],
+  "properties": {
+    "evidence_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "html_hash",
+        "screenshot_hash",
+        "snippet",
+        "api_response_hash",
+        "manual_note"
+      ]
+    },
+    "source_url": {
+      "type": "string"
+    },
+    "captured_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "hash": {
+      "type": "string"
+    },
+    "snippet": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

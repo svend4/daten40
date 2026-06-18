@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS OrgProfile Schema v1",
+  "type": "object",
+  "required": [
+    "org_id",
+    "size",
+    "industry",
+    "constraints",
+    "targets",
+    "version"
+  ],
+  "properties": {
+    "org_id": {
+      "type": "string"
+    },
+    "size": {
+      "type": "string",
+      "enum": [
+        "solo",
+        "smb",
+        "mid",
+        "enterprise"
+      ]
+    },
+    "industry": {
+      "type": "string"
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "targets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

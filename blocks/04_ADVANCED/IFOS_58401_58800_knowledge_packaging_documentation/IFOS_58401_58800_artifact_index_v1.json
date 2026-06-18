@@ -1,0 +1,127 @@
+{
+  "artifact_set": "IFOS_58401_58800",
+  "entries": [
+    {
+      "name": "IFOS_knowledge_packaging_documentation_os_58401_58800_v1.md",
+      "ref": "file://IFOS_knowledge_packaging_documentation_os_58401_58800_v1.md",
+      "hash": "sha256:f78f7940caa762e99dee13361009788cdbaf8a8be3da23b36f10ad558583a206"
+    },
+    {
+      "name": "IFOS_packaging_docs_api_v1.yaml",
+      "ref": "file://IFOS_packaging_docs_api_v1.yaml",
+      "hash": "sha256:eca87bc161569dce3b8b2852472bf7fdfb0123d3235c9a8ff3274b82492fd3e9"
+    },
+    {
+      "name": "IFOS_packaging_docs_examples_v1.json",
+      "ref": "file://IFOS_packaging_docs_examples_v1.json",
+      "hash": "sha256:ca7521df6323ed7d8421de70781fb573ca04f14a2004584071fa6e207960f5b3"
+    },
+    {
+      "name": "IFOS_doc_templates_seed_58401_58800_v1.csv",
+      "ref": "file://IFOS_doc_templates_seed_58401_58800_v1.csv",
+      "hash": "sha256:31466d28d0c6b45561f224479c5dcc8dc8f8bf3cc8941d60cd591c7b6001a6f0"
+    },
+    {
+      "name": "IFOS_packaging_docs_overview_spec_v1.md",
+      "ref": "file://IFOS_packaging_docs_overview_spec_v1.md",
+      "hash": "sha256:fcefb53138055ab6bfd840642fd33e90b2f6ebf0e4e45003f06ebe3c8bbdb9f9"
+    },
+    {
+      "name": "IFOS_artifact_passport_spec_v1.md",
+      "ref": "file://IFOS_artifact_passport_spec_v1.md",
+      "hash": "sha256:f97e7f37cfcd28829d376b91af99ce784f76f68d996b61193a506b9c5db28e8e"
+    },
+    {
+      "name": "IFOS_runbook_spec_v1.md",
+      "ref": "file://IFOS_runbook_spec_v1.md",
+      "hash": "sha256:414b3ad69551fb7a6403c2b05ecf320191a75b0f8da473cb76454740030324d8"
+    },
+    {
+      "name": "IFOS_docs_autogeneration_spec_v1.md",
+      "ref": "file://IFOS_docs_autogeneration_spec_v1.md",
+      "hash": "sha256:5ee103cdb6461f6d64190f92e064ce8173f7ea9f846e998b72832833ac6abbaf"
+    },
+    {
+      "name": "IFOS_troubleshooting_playbooks_spec_v1.md",
+      "ref": "file://IFOS_troubleshooting_playbooks_spec_v1.md",
+      "hash": "sha256:8517e2c122c0820f03240c86a151caed22c78aee305df20ded43c5a07e17d6a5"
+    },
+    {
+      "name": "IFOS_examples_golden_paths_spec_v1.md",
+      "ref": "file://IFOS_examples_golden_paths_spec_v1.md",
+      "hash": "sha256:ed4613633931c728688445f6d1d8a918bf513a53015b5cf69f0971c4d9c281b9"
+    },
+    {
+      "name": "IFOS_doc_quality_rubric_spec_v1.md",
+      "ref": "file://IFOS_doc_quality_rubric_spec_v1.md",
+      "hash": "sha256:f3273e83acfef05f7826eed974d3a4eec8ad90a6e180ca3b2a2c51dbd1317aa0"
+    },
+    {
+      "name": "IFOS_docs_versioning_spec_v1.md",
+      "ref": "file://IFOS_docs_versioning_spec_v1.md",
+      "hash": "sha256:cb91ae648900104a36690c83f036315b72edb19d8b6ef4a12736dddbd7196640"
+    },
+    {
+      "name": "IFOS_docs_formats_export_spec_v1.md",
+      "ref": "file://IFOS_docs_formats_export_spec_v1.md",
+      "hash": "sha256:90eb35d04443bca35c6aa220f8a78701a8b69fa817fb865d7783476ef3bb526f"
+    },
+    {
+      "name": "IFOS_office_style_cards_spec_v1.md",
+      "ref": "file://IFOS_office_style_cards_spec_v1.md",
+      "hash": "sha256:7f6aa4d276618e07c9a48ee9d42023aca262dfb02809eebeb3f4add14b49105e"
+    },
+    {
+      "name": "IFOS_install_guides_spec_v1.md",
+      "ref": "file://IFOS_install_guides_spec_v1.md",
+      "hash": "sha256:886e65fafffe905f709a47a97db9384165961b7045b42499068d5fd52ca35e16"
+    },
+    {
+      "name": "IFOS_observability_in_docs_spec_v1.md",
+      "ref": "file://IFOS_observability_in_docs_spec_v1.md",
+      "hash": "sha256:d59585c30bdb2650d4fcee6458b9070afd1eb82b638f2ec35fe8b9d2ef9b2349"
+    },
+    {
+      "name": "IFOS_artifact_passport_schema_v1.json",
+      "ref": "file://IFOS_artifact_passport_schema_v1.json",
+      "hash": "sha256:76335a1df25573b3d3d0e502069faf0e5e0d2d509a1487c022dfe7a2962c5e19"
+    },
+    {
+      "name": "IFOS_runbook_schema_v1.json",
+      "ref": "file://IFOS_runbook_schema_v1.json",
+      "hash": "sha256:5fb8e903f9f6e0abba1add8fe46bad7ad8f26645cbdee1bbe1d6219d5258bf9f"
+    },
+    {
+      "name": "IFOS_troubleshooting_schema_v1.json",
+      "ref": "file://IFOS_troubleshooting_schema_v1.json",
+      "hash": "sha256:4b8ecc537ef694a94422eb272523df9791f96a533c0aa9e9a207dadb715f27ac"
+    },
+    {
+      "name": "IFOS_doc_bundle_schema_v1.json",
+      "ref": "file://IFOS_doc_bundle_schema_v1.json",
+      "hash": "sha256:d5252c952f50931afa870a2110ef4c88d0159f5746c50e8ff23d662239f0e564"
+    },
+    {
+      "name": "IFOS_doc_rubric_schema_v1.json",
+      "ref": "file://IFOS_doc_rubric_schema_v1.json",
+      "hash": "sha256:8950e90e043446708ff39537dad3bff35c7dfbadaf8c8ccdfe4d01c0cf7cdde1"
+    },
+    {
+      "name": "ifos_docs_autogen_stub_v1.py",
+      "ref": "file://ifos_docs_autogen_stub_v1.py",
+      "hash": "sha256:8286c0e26956bb6574b379fbe3a2e514945f655626bbacf992b1bdee003424a8"
+    },
+    {
+      "name": "ifos_docs_linter_stub_v1.py",
+      "ref": "file://ifos_docs_linter_stub_v1.py",
+      "hash": "sha256:034c8479aa72522bb3ce7984e2f691e66e99970573dcf8da23e039657a6b7b84"
+    },
+    {
+      "name": "ifos_runbook_generator_stub_v1.py",
+      "ref": "file://ifos_runbook_generator_stub_v1.py",
+      "hash": "sha256:ebfd1f45d02c61d6bcc3f0278e1f1c11dbc12bfd5e443cf5420e7d7fcc229252"
+    }
+  ],
+  "created_at": "2026-01-04T23:25:00Z",
+  "version": "1.0.0"
+}

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DataSink Schema v1",
+  "type": "object",
+  "required": [
+    "sink_id",
+    "tenant_id",
+    "type",
+    "connection",
+    "version"
+  ],
+  "properties": {
+    "sink_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "warehouse",
+        "analytics_db",
+        "search_index",
+        "object_store",
+        "operational_db"
+      ]
+    },
+    "connection": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

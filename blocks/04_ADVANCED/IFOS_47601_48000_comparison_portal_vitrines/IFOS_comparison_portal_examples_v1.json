@@ -1,0 +1,144 @@
+{
+  "taxonomy": {
+    "taxonomy_id": "tax.t.2vjs40ex8owo",
+    "verticals": [
+      {
+        "id": "travel",
+        "name": "Путешествия",
+        "required": [
+          "price",
+          "dates",
+          "location"
+        ]
+      },
+      {
+        "id": "insurance_auto",
+        "name": "Автострахование",
+        "required": [
+          "coverage",
+          "deductible",
+          "region"
+        ]
+      },
+      {
+        "id": "saas_automation",
+        "name": "Автоматизация (Make/n8n)",
+        "required": [
+          "pricing",
+          "limits",
+          "integrations"
+        ]
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "card": {
+    "card_id": "card.c.g9qy17q0zii7",
+    "vertical": "saas_automation",
+    "name": "Make (Integromat)",
+    "provider": "Make.com",
+    "summary": "Платформа no-code автоматизации и интеграций.",
+    "features": [
+      {
+        "k": "connectors",
+        "v": 1500
+      },
+      {
+        "k": "scheduling",
+        "v": true
+      }
+    ],
+    "limits": [
+      "Лимиты операций зависят от тарифа"
+    ],
+    "citations": [
+      {
+        "url": "https://www.make.com"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "offer": {
+    "offer_id": "off.o.ahtue9u1p307",
+    "card_id": "card.*",
+    "provider": "Make.com",
+    "price": {
+      "amount": 9,
+      "currency": "EUR"
+    },
+    "billing_period": "monthly",
+    "terms": {
+      "ops_limit": 10000,
+      "rollover": false
+    },
+    "availability": {
+      "region": "EU"
+    },
+    "source": {
+      "url": "https://www.make.com/pricing",
+      "type": "web"
+    },
+    "ts": "2026-01-04T10:05:00Z",
+    "version": "1.0.0"
+  },
+  "criteria": {
+    "criteria_id": "crit.k.i1jpdw6wpnxw",
+    "vertical": "saas_automation",
+    "criteria": [
+      {
+        "id": "price",
+        "label": "Цена",
+        "type": "number"
+      },
+      {
+        "id": "connectors",
+        "label": "Кол-во коннекторов",
+        "type": "number"
+      },
+      {
+        "id": "limits",
+        "label": "Лимиты операций",
+        "type": "number"
+      },
+      {
+        "id": "trust",
+        "label": "Надёжность/прозрачность",
+        "type": "number"
+      }
+    ],
+    "normalization": {
+      "price": "min_better",
+      "connectors": "max_better",
+      "limits": "max_better",
+      "trust": "max_better"
+    },
+    "weights_default": {
+      "price": 0.35,
+      "connectors": 0.25,
+      "limits": 0.25,
+      "trust": 0.15
+    },
+    "evidence_rules": {
+      "price": "required",
+      "limits": "required",
+      "connectors": "optional"
+    },
+    "version": "1.0.0"
+  },
+  "disclosure": {
+    "disclosure_id": "disc.d.zo7qaly65gdt",
+    "scope": "portal/saas_automation",
+    "affiliate_links": [
+      {
+        "provider": "Make.com",
+        "has_affiliate": true,
+        "url_pattern": "ref="
+      }
+    ],
+    "ranking_influence": "none",
+    "policy": {
+      "label": "Партнёрская ссылка может принести комиссию; рейтинг не зависит."
+    },
+    "version": "1.0.0"
+  }
+}

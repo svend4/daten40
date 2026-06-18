@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Approval Record Schema v1",
+  "type": "object",
+  "required": [
+    "approval_id",
+    "object_ref",
+    "policy_id",
+    "actor",
+    "decision",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "approval_id": {
+      "type": "string"
+    },
+    "object_ref": {
+      "type": "string"
+    },
+    "policy_id": {
+      "type": "string"
+    },
+    "actor": {
+      "type": "string"
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "approved",
+        "rejected"
+      ]
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

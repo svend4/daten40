@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ExportJob Schema v1",
+  "type": "object",
+  "required": [
+    "export_id",
+    "selector",
+    "format",
+    "status",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "export_id": {
+      "type": "string"
+    },
+    "selector": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "format": {
+      "type": "string",
+      "enum": [
+        "md",
+        "pdf",
+        "html",
+        "json",
+        "csv",
+        "zip"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "queued",
+        "running",
+        "done",
+        "error"
+      ]
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "output_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

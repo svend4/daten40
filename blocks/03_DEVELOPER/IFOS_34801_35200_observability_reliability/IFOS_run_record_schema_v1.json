@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RunRecord Schema v1",
+  "type": "object",
+  "required": [
+    "run_id",
+    "tenant_id",
+    "canonical_id",
+    "status",
+    "started_at",
+    "ended_at",
+    "cost_eur",
+    "version"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "canonical_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "success",
+        "fail",
+        "timeout",
+        "cancelled"
+      ]
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ended_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "cost_eur": {
+      "type": "number"
+    },
+    "meta": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

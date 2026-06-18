@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Review Schema v1",
+  "type": "object",
+  "required": [
+    "review_id",
+    "entity_type",
+    "entity_id",
+    "context",
+    "use_case",
+    "ttfv_minutes",
+    "pros",
+    "cons",
+    "recommendations",
+    "rating",
+    "author",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "review_id": {
+      "type": "string"
+    },
+    "entity_type": {
+      "type": "string",
+      "enum": [
+        "registry_item",
+        "bundle",
+        "term"
+      ]
+    },
+    "entity_id": {
+      "type": "string"
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "use_case": {
+      "type": "string"
+    },
+    "ttfv_minutes": {
+      "type": "number",
+      "minimum": 0
+    },
+    "pros": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rating": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "author": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

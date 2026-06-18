@@ -1,0 +1,33 @@
+openapi: 3.0.3
+info:
+  title: IFOS Localization (i18n/l10n) API
+  version: "1.0.0"
+servers:
+  - url: https://i18n.ifos.local/v1
+tags:
+  - name: Locales
+  - name: Strings
+  - name: Formatting
+  - name: FX
+  - name: Zones
+  - name: Vitrines
+  - name: Ranking
+paths:
+  /locales:
+    post: {tags:[Locales], summary: Upsert locale profile, responses: {"200": {description: OK}}}
+  /strings/keys:
+    post: {tags:[Strings], summary: Upsert translation key, responses: {"200": {description: OK}}}
+  /strings/bundles:
+    post: {tags:[Strings], summary: Upsert translation bundle, responses: {"200": {description: OK}}}
+  /formatting/rules:
+    post: {tags:[Formatting], summary: Upsert formatting rules, responses: {"200": {description: OK}}}
+  /fx:
+    post: {tags:[FX], summary: Publish FX rates, responses: {"201": {description: Created}}}
+  /zones/legal:
+    post: {tags:[Zones], summary: Upsert legal zone, responses: {"200": {description: OK}}}
+  /zones/content:
+    post: {tags:[Zones], summary: Upsert content policy zone, responses: {"200": {description: OK}}}
+  /vitrines/locale-config:
+    post: {tags:[Vitrines], summary: Upsert vitrine locale config, responses: {"200": {description: OK}}}
+  /ranking/locale-policy:
+    post: {tags:[Ranking], summary: Upsert locale ranking policy, responses: {"200": {description: OK}}}

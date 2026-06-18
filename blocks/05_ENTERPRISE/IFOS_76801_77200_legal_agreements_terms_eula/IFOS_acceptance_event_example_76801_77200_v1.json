@@ -1,0 +1,15 @@
+{
+  "event_id": "evt_01HXYZ...",
+  "subject_type": "user",
+  "subject_id": "user_123",
+  "doc_id": "doc_tos_core",
+  "version_id": "ver_tos_1_0_0",
+  "accepted_at": "2026-01-10T20:00:00+01:00",
+  "method": "clickwrap",
+  "locale": "de-DE",
+  "content_hash_sha256": "<sha256-of-doc-content>",
+  "evidence_hash_sha256": "<sha256-of-evidence-snapshot>",
+  "evidence_artifact_uri": "s3://ifos-evidence/evt_01HXYZ/snapshot.pdf",
+  "user_agent_hash": "<sha256-of-ua>",
+  "actor_ip_hash": "<sha256-of-ip>"
+}

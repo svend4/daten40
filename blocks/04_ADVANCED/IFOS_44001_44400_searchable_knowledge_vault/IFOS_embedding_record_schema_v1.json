@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS EmbeddingRecord Schema v1",
+  "type": "object",
+  "required": [
+    "embedding_id",
+    "chunk_id",
+    "model_id",
+    "dim",
+    "vector_ref",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "embedding_id": {
+      "type": "string"
+    },
+    "chunk_id": {
+      "type": "string"
+    },
+    "model_id": {
+      "type": "string"
+    },
+    "dim": {
+      "type": "integer"
+    },
+    "vector_ref": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

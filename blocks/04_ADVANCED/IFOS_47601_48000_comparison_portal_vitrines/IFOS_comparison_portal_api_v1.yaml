@@ -1,0 +1,23 @@
+openapi: 3.0.3
+info:
+  title: IFOS Comparison Portal API
+  version: "1.0.0"
+servers:
+  - url: https://portal.ifos.local/v1
+tags:
+  - name: Cards
+  - name: Offers
+  - name: Scoring
+  - name: Disclosure
+  - name: Vitrines
+paths:
+  /cards:
+    post: {tags:[Cards], summary: Create/Update product card, responses: {"200": {description: OK}}}
+  /offers:
+    post: {tags:[Offers], summary: Ingest offer, responses: {"200": {description: OK}}}
+  /scoring/run:
+    post: {tags:[Scoring], summary: Score offers and build ranking, responses: {"200": {description: OK}}}
+  /disclosure:
+    post: {tags:[Disclosure], summary: Publish disclosure config, responses: {"200": {description: OK}}}
+  /vitrines/build:
+    post: {tags:[Vitrines], summary: Build comparison portal vitrine, responses: {"200": {description: OK}}}

@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "match_id",
+    "bank_txn_id",
+    "match_type",
+    "confidence",
+    "status"
+  ],
+  "properties": {
+    "match_id": {
+      "type": "string"
+    },
+    "bank_txn_id": {
+      "type": "string"
+    },
+    "payment_id": {
+      "type": "string"
+    },
+    "ledger_entry_id": {
+      "type": "string"
+    },
+    "match_type": {
+      "type": "string",
+      "enum": [
+        "exact",
+        "fuzzy",
+        "split",
+        "merge",
+        "manual"
+      ]
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "proposed",
+        "confirmed",
+        "rejected"
+      ]
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

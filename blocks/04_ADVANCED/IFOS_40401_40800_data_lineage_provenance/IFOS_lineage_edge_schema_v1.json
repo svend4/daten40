@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS LineageEdge Schema v1",
+  "type": "object",
+  "required": [
+    "edge_id",
+    "from",
+    "to",
+    "transform_id",
+    "version"
+  ],
+  "properties": {
+    "edge_id": {
+      "type": "string"
+    },
+    "from": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "to": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "transform_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

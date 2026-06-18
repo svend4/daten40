@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS PartnerWebhook Schema v1",
+  "type": "object",
+  "required": [
+    "webhook_id",
+    "partner_id",
+    "endpoint",
+    "events",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "webhook_id": {
+      "type": "string"
+    },
+    "partner_id": {
+      "type": "string"
+    },
+    "endpoint": {
+      "type": "string"
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "secret_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "retry_policy": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "disabled"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "tenant": {
+    "tenant_id": "ten.t.1o3t493ixnwq",
+    "name": "Example GmbH",
+    "region": "DE",
+    "data_residency": "eu",
+    "domains": [
+      "example.de"
+    ],
+    "policy_packs": [
+      "pp.p.3kf6mskkkmvd"
+    ],
+    "created_at": "2026-01-03T11:49:00Z",
+    "version": "1.0.0"
+  },
+  "org_unit": {
+    "org_unit_id": "ou.o.ssi654ky14m6",
+    "tenant_id": "ten.t.1o3t493ixnwq",
+    "name": "IT-Security",
+    "path": "/HQ/IT/Security",
+    "parent_id": null,
+    "tags": [
+      "security"
+    ],
+    "created_at": "2026-01-03T11:49:00Z",
+    "version": "1.0.0"
+  },
+  "permission": {
+    "perm_id": "perm.p.z6q5y0xrspzw",
+    "name": "runtime.run",
+    "scope": "org_unit",
+    "description": "Run approved packages in runtime",
+    "version": "1.0.0"
+  },
+  "role": {
+    "role_id": "role.r.v6rpa109doaw",
+    "tenant_id": "ten.t.1o3t493ixnwq",
+    "name": "Operator",
+    "permissions": [
+      "registry.read",
+      "marketplace.install",
+      "runtime.run"
+    ],
+    "inherits": [
+      "Viewer"
+    ],
+    "built_in": true,
+    "version": "1.0.0"
+  },
+  "policy_pack": {
+    "pack_id": "pp.p.3kf6mskkkmvd",
+    "tenant_id": "ten.t.1o3t493ixnwq",
+    "name": "Balanced SMB",
+    "policies": [
+      "pol.p.mz2tc91ugixe"
+    ],
+    "version": "1.0.0"
+  },
+  "policy": {
+    "policy_id": "pol.p.mz2tc91ugixe",
+    "tenant_id": "ten.t.1o3t493ixnwq",
+    "name": "EU-only + allow official sources",
+    "mode": "balanced",
+    "rules": [
+      {
+        "kind": "data_residency",
+        "allow": [
+          "eu"
+        ]
+      },
+      {
+        "kind": "source_allow",
+        "allow": [
+          "wp_directory",
+          "github_repo",
+          "make_templates"
+        ]
+      },
+      {
+        "kind": "license_deny",
+        "deny": [
+          "GPL-3.0"
+        ]
+      }
+    ],
+    "enabled": true,
+    "applies_to": {
+      "org_unit_id": "ou.o.ssi654ky14m6"
+    },
+    "version": "1.0.0"
+  },
+  "approval_flow": {
+    "flow_id": "flow.f.g5ki9zns63vn",
+    "tenant_id": "ten.t.1o3t493ixnwq",
+    "name": "Install/Run approvals",
+    "trigger": {
+      "actions": [
+        "install",
+        "run"
+      ],
+      "risk_min": "medium"
+    },
+    "steps": [
+      {
+        "kind": "role",
+        "assignee": "TeamLead",
+        "conditions": {
+          "risk": "medium"
+        }
+      },
+      {
+        "kind": "role",
+        "assignee": "SecurityAdmin",
+        "conditions": {
+          "risk": "high"
+        }
+      },
+      {
+        "kind": "role",
+        "assignee": "Finance",
+        "conditions": {
+          "cost_over": 50
+        }
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "approval_request": {
+    "request_id": "req.a.j1p1bclkihul",
+    "tenant_id": "ten.t.1o3t493ixnwq",
+    "requester": "user:stefan",
+    "action": "install",
+    "target": {
+      "canonical_id": "canon.some_bundle",
+      "cost_estimate": 12,
+      "risk": "medium"
+    },
+    "status": "pending",
+    "flow_id": "flow.f.g5ki9zns63vn",
+    "decisions": [],
+    "created_at": "2026-01-03T11:49:00Z",
+    "expires_at": null,
+    "version": "1.0.0"
+  },
+  "catalog_scope": {
+    "scope_id": "cs.c.j0krkj8kdh7w",
+    "tenant_id": "ten.t.1o3t493ixnwq",
+    "scope_type": "org_unit",
+    "scope_ref": "ou.o.ssi654ky14m6",
+    "include": [
+      "vitrine:approved_basics",
+      "bundle:office_automation_pack"
+    ],
+    "exclude": [
+      "canon.high_risk_item"
+    ],
+    "version": "1.0.0"
+  },
+  "catalog_item_state": {
+    "state_id": "cis.c.evwwtec6q0cq",
+    "tenant_id": "ten.t.1o3t493ixnwq",
+    "canonical_id": "canon.high_risk_item",
+    "state": "blocked",
+    "reason": "Outbound network policy violation",
+    "ticket_ref": "JIRA-SEC-128",
+    "updated_at": "2026-01-03T11:49:00Z",
+    "version": "1.0.0"
+  },
+  "license_entitlement": {
+    "entitlement_id": "ent.e.m3kc1t730oov",
+    "tenant_id": "ten.t.1o3t493ixnwq",
+    "product_ref": "marketplace:paid_connector:slack_enterprise",
+    "limits": {
+      "seats": 25,
+      "runs_per_month": 10000
+    },
+    "valid_from": "2026-01-03T11:49:00Z",
+    "valid_to": "2026-12-31T23:59:59Z",
+    "assigned_to": [
+      "group:ops",
+      "group:it"
+    ],
+    "version": "1.0.0"
+  },
+  "audit_event": {
+    "event_id": "aud.e.s72nmitn3kya",
+    "tenant_id": "ten.t.1o3t493ixnwq",
+    "org_unit_id": "ou.o.ssi654ky14m6",
+    "actor": "user:stefan",
+    "action": "APPROVAL_REQUEST_CREATED",
+    "ts": "2026-01-03T11:49:00Z",
+    "targets": [
+      {
+        "kind": "approval_request",
+        "id": "req.a.j1p1bclkihul"
+      }
+    ],
+    "result": "success",
+    "meta": {
+      "canonical_id": "canon.some_bundle",
+      "risk": "medium"
+    },
+    "version": "1.0.0"
+  },
+  "compliance_report": {
+    "report_id": "rep.r.z7gp0umnysk6",
+    "tenant_id": "ten.t.1o3t493ixnwq",
+    "period": {
+      "from": "2026-01-01T00:00:00Z",
+      "to": "2026-01-31T23:59:59Z"
+    },
+    "findings": [
+      {
+        "kind": "license_violation",
+        "count": 0
+      },
+      {
+        "kind": "policy_violations",
+        "count": 2
+      }
+    ],
+    "generated_at": "2026-01-03T11:49:00Z",
+    "version": "1.0.0"
+  },
+  "cost_center": {
+    "cc_id": "cc.c.8r4taauielfj",
+    "tenant_id": "ten.t.1o3t493ixnwq",
+    "name": "Automation Budget",
+    "owner": "user:cfo",
+    "org_unit_id": "/HQ/IT",
+    "tags": [
+      "automation"
+    ],
+    "version": "1.0.0"
+  },
+  "budget_rule": {
+    "rule_id": "br.b.i1t5z0ocxsmj",
+    "tenant_id": "ten.t.1o3t493ixnwq",
+    "cc_id": "cc.c.8r4taauielfj",
+    "limits": {
+      "monthly_eur": 2000,
+      "runs": 50000,
+      "expensive_model_eur": 200
+    },
+    "window": "monthly",
+    "applies_to": {
+      "org_unit_id": "/HQ/IT"
+    },
+    "version": "1.0.0"
+  },
+  "exception_request": {
+    "ex_id": "ex.x.5iurm3dascd1",
+    "tenant_id": "ten.t.1o3t493ixnwq",
+    "requester": "user:secadmin",
+    "policy_id": "pol.p.mz2tc91ugixe",
+    "requested_change": {
+      "kind": "network_outbound",
+      "allow": [
+        "api.vendor.com"
+      ]
+    },
+    "ttl_hours": 72,
+    "status": "pending",
+    "created_at": "2026-01-03T11:49:00Z",
+    "approved_by": null,
+    "version": "1.0.0"
+  },
+  "sso_provider": {
+    "sso_id": "sso.s.ad6i681sc6l3",
+    "tenant_id": "ten.t.1o3t493ixnwq",
+    "kind": "oidc",
+    "config": {
+      "issuer": "https://login.microsoftonline.com/...",
+      "client_id": "...",
+      "group_claim": "groups"
+    },
+    "version": "1.0.0"
+  }
+}

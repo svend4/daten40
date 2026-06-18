@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Appeal Schema v1",
+  "type": "object",
+  "required": [
+    "appeal_id",
+    "case_id",
+    "claim",
+    "evidence",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "appeal_id": {
+      "type": "string"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "claim": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "upheld",
+        "rejected"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

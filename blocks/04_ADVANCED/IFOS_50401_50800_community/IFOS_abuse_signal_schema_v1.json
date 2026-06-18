@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS AbuseSignal Schema v1",
+  "type": "object",
+  "required": [
+    "signal_id",
+    "type",
+    "weight",
+    "evidence",
+    "version"
+  ],
+  "properties": {
+    "signal_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

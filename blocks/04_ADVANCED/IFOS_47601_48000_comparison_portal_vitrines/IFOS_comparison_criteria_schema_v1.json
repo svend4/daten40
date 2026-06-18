@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Comparison Criteria Schema v1",
+  "type": "object",
+  "required": [
+    "criteria_id",
+    "vertical",
+    "criteria",
+    "normalization",
+    "weights_default",
+    "evidence_rules",
+    "version"
+  ],
+  "properties": {
+    "criteria_id": {
+      "type": "string"
+    },
+    "vertical": {
+      "type": "string"
+    },
+    "criteria": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "normalization": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "weights_default": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "evidence_rules": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

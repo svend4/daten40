@@ -1,0 +1,52 @@
+{
+  "registry_id": "reg.r.152ks3wz8e",
+  "entries": [
+    {
+      "name": "IFOS_blueprint_schema_v2.json",
+      "ref": "file://IFOS_blueprint_schema_v2.json",
+      "hash": "sha256:9df2f314158b04a3a3446c55b902442a90c9518f6aa980e8de97e969633e4dc7"
+    },
+    {
+      "name": "IFOS_blueprint_param_schema_v1.json",
+      "ref": "file://IFOS_blueprint_param_schema_v1.json",
+      "hash": "sha256:f5ac78059436a3d16c1d4e1e32d4f81e1f8cccfca8f0025e30dd4d917f604494"
+    },
+    {
+      "name": "IFOS_connector_profile_schema_v1.json",
+      "ref": "file://IFOS_connector_profile_schema_v1.json",
+      "hash": "sha256:98d7dac75d145d2c56cbcd051377e07e1168f38ffafaa6a80ace5f0225da3d59"
+    },
+    {
+      "name": "IFOS_blueprint_test_case_schema_v1.json",
+      "ref": "file://IFOS_blueprint_test_case_schema_v1.json",
+      "hash": "sha256:baf70ac724606e85254542cb8dd41f96ed112be111e16dfb3af83d93baddc4b1"
+    },
+    {
+      "name": "IFOS_blueprint_test_suite_schema_v1.json",
+      "ref": "file://IFOS_blueprint_test_suite_schema_v1.json",
+      "hash": "sha256:1dbb94f226aface88c5482d540c874b8c5eef4d68d1f99094223184c6726f60a"
+    },
+    {
+      "name": "IFOS_blueprint_import_job_schema_v1.json",
+      "ref": "file://IFOS_blueprint_import_job_schema_v1.json",
+      "hash": "sha256:4e84163cbfb9188057b618fcd7f6767f111c2173c6112f965d7d7814682fa10b"
+    },
+    {
+      "name": "IFOS_blueprint_export_bundle_schema_v1.json",
+      "ref": "file://IFOS_blueprint_export_bundle_schema_v1.json",
+      "hash": "sha256:dbb1de3295bd6ae53c79a2bae09548d5ae0fca2672a5ee94e5d326913278d544"
+    },
+    {
+      "name": "IFOS_pipeline_graph_schema_v1.json",
+      "ref": "file://IFOS_pipeline_graph_schema_v1.json",
+      "hash": "sha256:d1c75d1eb2c0e5f2f1b9aa4072beb750828424d188ae1f430a5c75a4e5d29637"
+    },
+    {
+      "name": "IFOS_blueprint_ui_form_schema_v1.json",
+      "ref": "file://IFOS_blueprint_ui_form_schema_v1.json",
+      "hash": "sha256:fdb15f71fe0237af7e61598b67f07dc8c11810374a8b7538af92a4eadea5a155"
+    }
+  ],
+  "updated_at": "2026-01-03T09:25:00Z",
+  "version": "1.0.0"
+}

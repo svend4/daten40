@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RawItem Schema v1",
+  "type": "object",
+  "required": [
+    "raw_id",
+    "source_id",
+    "fetch_job_id",
+    "kind",
+    "payload",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "raw_id": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "fetch_job_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+openapi: 3.0.3
+info:
+  title: IFOS Integration OS API
+  version: "1.0.0"
+servers:
+  - url: https://integration.ifos.local/v1
+tags:
+  - name: Connectors
+  - name: Secrets
+  - name: Webhooks
+  - name: Tests
+paths:
+  /connectors/register:
+    post: {tags:[Connectors], summary: Register connector contract, responses: {"200": {description: OK}}}
+  /secrets/refs:
+    post: {tags:[Secrets], summary: Create secret ref, responses: {"200": {description: OK}}}
+  /webhooks/verify:
+    post: {tags:[Webhooks], summary: Verify webhook signature, responses: {"200": {description: OK}}}
+  /tests/run:
+    post: {tags:[Tests], summary: Run connector contract tests, responses: {"200": {description: OK}}}

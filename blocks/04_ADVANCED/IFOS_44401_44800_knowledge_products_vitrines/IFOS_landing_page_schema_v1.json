@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS LandingPage Schema v1",
+  "type": "object",
+  "required": [
+    "landing_id",
+    "title",
+    "blocks",
+    "cta",
+    "seo",
+    "version"
+  ],
+  "properties": {
+    "landing_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "blocks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "cta": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "seo": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

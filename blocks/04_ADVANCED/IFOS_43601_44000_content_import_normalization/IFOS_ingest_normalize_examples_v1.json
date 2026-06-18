@@ -1,0 +1,233 @@
+{
+  "source": {
+    "source_id": "src.s.8yc8g8fcaplp",
+    "type": "github",
+    "name": "WordPress plugins index",
+    "config": {
+      "repo": "wordpress/wordpress",
+      "paths": [
+        "wp-content/plugins"
+      ],
+      "mode": "snapshot"
+    },
+    "schedule": {
+      "rrule": "FREQ=DAILY;BYHOUR=2;BYMINUTE=0"
+    },
+    "limits": {
+      "rpm": 60
+    },
+    "legal": {
+      "robots": "respect",
+      "terms": "reviewed"
+    },
+    "status": "active",
+    "version": "1.0.0"
+  },
+  "fetch_job": {
+    "job_id": "fj.f.lk4h2hwmyfh8",
+    "source_id": "src.*",
+    "ref": "https://example.com/feed.xml",
+    "ts": "2026-01-04T04:05:00Z",
+    "status": "ok",
+    "http": {
+      "status": 200,
+      "etag": "W/\"abc\""
+    },
+    "checksums": {
+      "sha256": "deadbeef"
+    },
+    "raw_ref": "s3://ifos-raw/fj_*.bin",
+    "version": "1.0.0"
+  },
+  "extractor": {
+    "extractor_id": "ex.e.gix1ealoy64b",
+    "name": "html_article_extractor",
+    "input_types": [
+      "text/html"
+    ],
+    "outputs": [
+      "raw:article"
+    ],
+    "config": {
+      "readability": true
+    },
+    "version": "1.0.0"
+  },
+  "raw_item": {
+    "raw_id": "raw.r.n8st7uouw60g",
+    "source_id": "src.*",
+    "fetch_job_id": "fj.*",
+    "kind": "article",
+    "payload": {
+      "title": "Example",
+      "content": "<p>hello</p>",
+      "links": [
+        "https://x"
+      ]
+    },
+    "ts": "2026-01-04T04:05:00Z",
+    "version": "1.0.0"
+  },
+  "normalized_item": {
+    "item_id": "it.i.htvynn6mq8ll",
+    "kind": "article",
+    "title": "Example",
+    "summary": "Short summary",
+    "body": "hello",
+    "links": [
+      "https://x"
+    ],
+    "locale": "ru-RU",
+    "timestamps": {
+      "published_at": "2026-01-04T04:05:00Z"
+    },
+    "entities": [
+      {
+        "type": "product",
+        "name": "Make.com"
+      }
+    ],
+    "provenance": {
+      "source_id": "src.*",
+      "fetch_job_id": "fj.*",
+      "url": "https://x"
+    },
+    "ts": "2026-01-04T04:05:00Z",
+    "version": "1.0.0"
+  },
+  "mapping_rule": {
+    "rule_id": "mr.m.rhgte6cr62w3",
+    "schema_id": "ifos.article",
+    "source_kind": "article",
+    "mappings": [
+      {
+        "from": "title",
+        "to": "/title"
+      },
+      {
+        "from": "body",
+        "to": "/body"
+      },
+      {
+        "from": "links[0]",
+        "to": "/canonical_url"
+      }
+    ],
+    "defaults": {
+      "locale": "ru-RU"
+    },
+    "transforms": [
+      {
+        "field": "body",
+        "op": "strip_html"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "enrichment_job": {
+    "job_id": "en.e.nx28unl3j9ox",
+    "item_id": "it.*",
+    "steps": [
+      {
+        "op": "lang_detect"
+      },
+      {
+        "op": "entities"
+      },
+      {
+        "op": "cluster"
+      }
+    ],
+    "status": "done",
+    "ts": "2026-01-04T04:05:00Z",
+    "version": "1.0.0"
+  },
+  "pii_redaction_job": {
+    "job_id": "pii.p.d5mi1jvb9kln",
+    "item_id": "it.*",
+    "rules": {
+      "emails": "mask",
+      "phones": "mask",
+      "tokens": "remove"
+    },
+    "status": "done",
+    "redactions": [
+      {
+        "type": "email",
+        "count": 2
+      },
+      {
+        "type": "token",
+        "count": 1
+      }
+    ],
+    "ts": "2026-01-04T04:05:00Z",
+    "version": "1.0.0"
+  },
+  "language_detect": {
+    "item_id": "it.*",
+    "locale": "ru-RU",
+    "confidence": 0.93,
+    "ts": "2026-01-04T04:05:00Z",
+    "version": "1.0.0"
+  },
+  "dedup_key": {
+    "item_id": "it.*",
+    "exact_hash": "sha256:...",
+    "fuzzy_hash": "simhash:...",
+    "version": "1.0.0"
+  },
+  "quarantine_item": {
+    "q_id": "q.q.bou6u47rz9mh",
+    "item_id": "it.*",
+    "reason": "validation_error: missing required field canonical_url",
+    "actions": [
+      {
+        "type": "fix_mapping_rule",
+        "rule_id": "mr.*"
+      },
+      {
+        "type": "reingest",
+        "source_id": "src.*"
+      }
+    ],
+    "status": "open",
+    "ts": "2026-01-04T04:05:00Z",
+    "version": "1.0.0"
+  },
+  "ingest_manifest": {
+    "manifest_id": "man.n.tf8bciwqt1fa",
+    "source_id": "src.*",
+    "fetch_jobs": [
+      "fj.*"
+    ],
+    "raw_items": [
+      "raw.*"
+    ],
+    "normalized_items": [
+      "it.*"
+    ],
+    "mapping_rules": [
+      "mr.*"
+    ],
+    "qa": {
+      "dedup": {
+        "exact": "no_dups"
+      },
+      "quarantine": {
+        "count": 0
+      }
+    },
+    "registry_export_ref": "ref.*",
+    "created_at": "2026-01-04T04:05:00Z",
+    "version": "1.0.0"
+  },
+  "registry_export_ref": {
+    "ref_id": "ref.r.t9z5y5xrs2yj",
+    "registry_id": "schemas.main",
+    "ts": "2026-01-04T04:05:00Z",
+    "uri": "s3://ifos-registry/exports/2026-01-04.json",
+    "hash": "sha256:...",
+    "version": "1.0.0"
+  }
+}

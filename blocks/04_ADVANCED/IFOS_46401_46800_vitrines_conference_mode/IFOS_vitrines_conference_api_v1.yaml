@@ -1,0 +1,26 @@
+openapi: 3.0.3
+info:
+  title: IFOS Vitrines & Conference Mode API
+  version: "1.0.0"
+servers:
+  - url: https://vitrines.ifos.local/v1
+tags:
+  - name: Vitrines
+  - name: Recipes
+  - name: Compare
+  - name: Conference
+  - name: Digests
+  - name: Exports
+paths:
+  /vitrines:
+    post: {tags:[Vitrines], summary: Create/Update vitrine, responses: {"200": {description: OK}}}
+  /recipes:
+    post: {tags:[Recipes], summary: Create/Update query recipe, responses: {"200": {description: OK}}}
+  /compare:
+    post: {tags:[Compare], summary: Build comparison panel, responses: {"200": {description: OK}}}
+  /conference/agenda:
+    post: {tags:[Conference], summary: Generate conference agenda, responses: {"200": {description: OK}}}
+  /digests/run:
+    post: {tags:[Digests], summary: Run digest job now, responses: {"202": {description: Accepted}}}
+  /exports:
+    post: {tags:[Exports], summary: Export vitrine, responses: {"201": {description: Created}}}

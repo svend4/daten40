@@ -1,0 +1,57 @@
+{
+  "registry_id": "reg.partner.6mi8tgzovgn3",
+  "entries": [
+    {
+      "name": "IFOS_partner_schema_v1.json",
+      "ref": "file://IFOS_partner_schema_v1.json",
+      "hash": "sha256:ef37c933a9fdd6570af3a947deee96219e2971f73cde0ed5f5dde5d71bff7e52"
+    },
+    {
+      "name": "IFOS_integration_schema_v1.json",
+      "ref": "file://IFOS_integration_schema_v1.json",
+      "hash": "sha256:dbf277e454951aecc8995c844fa04e7b5b849cd644dd991f310e00d63e471893"
+    },
+    {
+      "name": "IFOS_partner_api_key_schema_v1.json",
+      "ref": "file://IFOS_partner_api_key_schema_v1.json",
+      "hash": "sha256:8d88ae770f750807bd114ddd95965af532cfdb29f69b0b7753306a9e50cb0009"
+    },
+    {
+      "name": "IFOS_partner_sandbox_key_schema_v1.json",
+      "ref": "file://IFOS_partner_sandbox_key_schema_v1.json",
+      "hash": "sha256:b3955b4808e9c04c0b32b3851ad1322f68a3465aa25bbabef9561ce8eb41061e"
+    },
+    {
+      "name": "IFOS_partner_webhook_schema_v1.json",
+      "ref": "file://IFOS_partner_webhook_schema_v1.json",
+      "hash": "sha256:8b0aadb935c2963ac2ada7fd8e7e3040d5d4d9fcb1067ec3d39a405315150734"
+    },
+    {
+      "name": "IFOS_integration_certification_schema_v1.json",
+      "ref": "file://IFOS_integration_certification_schema_v1.json",
+      "hash": "sha256:f114493b7254e47ac461991010d96dbdd6253abd5d2ad4902de59733aa278bae"
+    },
+    {
+      "name": "IFOS_partner_rating_schema_v1.json",
+      "ref": "file://IFOS_partner_rating_schema_v1.json",
+      "hash": "sha256:83ec4be07adf7ab24d67c087553d608d47385dbff160c642cc0bae857220c975"
+    },
+    {
+      "name": "IFOS_affiliate_program_schema_v1.json",
+      "ref": "file://IFOS_affiliate_program_schema_v1.json",
+      "hash": "sha256:4dd5d97eea788cad377bac14998e577104f111084a478e26e5b0e295fb58e455"
+    },
+    {
+      "name": "IFOS_partner_offer_schema_v1.json",
+      "ref": "file://IFOS_partner_offer_schema_v1.json",
+      "hash": "sha256:55352cf50de8e64ccd3d3ecdd1b3c1d877a196efb1a25fca4af0ea7c205bfbb1"
+    },
+    {
+      "name": "IFOS_partner_fraud_signal_schema_v1.json",
+      "ref": "file://IFOS_partner_fraud_signal_schema_v1.json",
+      "hash": "sha256:364f459bfc90ff8bf7ce82af457b3b3db71de87501ff0aa4681bf2381d109097"
+    }
+  ],
+  "updated_at": "2026-01-04T02:45:00Z",
+  "version": "1.0.0"
+}

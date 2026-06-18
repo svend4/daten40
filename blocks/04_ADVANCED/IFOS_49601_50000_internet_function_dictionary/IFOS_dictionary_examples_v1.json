@@ -1,0 +1,85 @@
+{
+  "term": {
+    "term_id": "term.data.fetch.rss",
+    "label": "Получить данные из RSS",
+    "definition": "Извлечь ленту RSS/Atom, нормализовать записи и вернуть события/статьи.",
+    "io": {
+      "input": [
+        "rss_url"
+      ],
+      "output": [
+        "items[]"
+      ]
+    },
+    "examples": [
+      "RSS → список записей",
+      "RSS → дедуп → отправка"
+    ],
+    "related": [
+      "term.data.normalize",
+      "term.data.dedup"
+    ],
+    "tags": [
+      "content",
+      "news",
+      "ingest"
+    ],
+    "version": "1.0.0"
+  },
+  "synonyms": {
+    "syn_id": "syn.s.cmjxlavs5ffu",
+    "term_id": "term.data.fetch.rss",
+    "synonyms": [
+      "rss скачать",
+      "вытянуть rss",
+      "парсить rss",
+      "rss feed"
+    ],
+    "locale": "ru",
+    "version": "1.0.0"
+  },
+  "grammar": {
+    "grammar_id": "gr.g.k8omheqbzsds",
+    "patterns": [
+      "(ACTION) (OBJECT) из (SOURCE) в (TARGET) без (POLICY)"
+    ],
+    "slots": [
+      {
+        "slot": "ACTION",
+        "values": [
+          "собери",
+          "забери",
+          "выгрузи"
+        ]
+      },
+      {
+        "slot": "POLICY",
+        "values": [
+          "дублей",
+          "спама"
+        ]
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "macro": {
+    "macro_id": "mac.m.xf01jaq83ck2",
+    "name": "RSS→Dedup→Telegram",
+    "steps": [
+      "term.data.fetch.rss",
+      "term.data.normalize",
+      "term.data.dedup",
+      "term.notify.telegram.send"
+    ],
+    "gates": [
+      "preflight",
+      "smoke_tests"
+    ],
+    "exports": [
+      "make",
+      "n8n",
+      "docker_compose"
+    ],
+    "version": "1.0.0"
+  }
+}

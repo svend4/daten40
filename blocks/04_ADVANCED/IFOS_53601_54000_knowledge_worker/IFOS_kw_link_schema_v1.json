@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS KW Link Schema v1",
+  "type": "object",
+  "required": [
+    "link_id",
+    "from",
+    "to",
+    "kind",
+    "version"
+  ],
+  "properties": {
+    "link_id": {
+      "type": "string"
+    },
+    "from": {
+      "type": "string"
+    },
+    "to": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

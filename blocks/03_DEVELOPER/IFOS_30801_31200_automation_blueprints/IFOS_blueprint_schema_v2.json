@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Blueprint Schema v2",
+  "type": "object",
+  "required": [
+    "blueprint_id",
+    "name",
+    "intention",
+    "graph",
+    "params",
+    "requirements",
+    "tests",
+    "docs",
+    "version"
+  ],
+  "properties": {
+    "blueprint_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "intention": {
+      "type": "string"
+    },
+    "graph": {
+      "type": "string"
+    },
+    "params": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "requirements": {
+      "type": "object",
+      "properties": {
+        "permissions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "secrets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "tests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "docs": {
+      "type": "object",
+      "properties": {
+        "quickstart": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

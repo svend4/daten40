@@ -1,0 +1,245 @@
+{
+  "package_manifest": {
+    "package_id": "connector.sb.crm",
+    "version": "1.2.3",
+    "type": "connector",
+    "vendor": "Acme Integrations",
+    "license": "Apache-2.0",
+    "source_ref": "git://acme/connector-crm@c0ffee42",
+    "hashes": {
+      "artifact_sha256": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+      "manifest_sha256": "sha256:1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    "requirements": {
+      "runtime": "python>=3.11",
+      "permissions": [
+        "net_outbound"
+      ],
+      "scopes": [
+        "openid",
+        "profile"
+      ],
+      "network": {
+        "allowed_domains": [
+          "sandbox.crm.example"
+        ],
+        "denied_domains": [
+          "api.crm.example"
+        ]
+      }
+    },
+    "version_schema": "1.0.0"
+  },
+  "build_recipe": {
+    "recipe_id": "br.acme.crm.1",
+    "source_ref": "git://acme/connector-crm@c0ffee42",
+    "environment": {
+      "container_image": "ghcr.io/ifos/build-python:3.11",
+      "toolchain": [
+        "python>=3.11",
+        "poetry"
+      ],
+      "os": "linux"
+    },
+    "lockfiles": [
+      "poetry.lock"
+    ],
+    "steps": [
+      "poetry install --sync",
+      "pytest -q",
+      "python -m build"
+    ],
+    "outputs": [
+      "dist/connector_sb_crm-1.2.3-py3-none-any.whl"
+    ],
+    "determinism": {
+      "reproducible": true,
+      "flags": [
+        "SOURCE_DATE_EPOCH=1700000000",
+        "PYTHONHASHSEED=0"
+      ]
+    },
+    "version_schema": "1.0.0"
+  },
+  "sbom": {
+    "sbom_id": "sbom.acme.crm.1",
+    "artifact_sha256": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+    "generated_at": "2026-01-02T16:00:00Z",
+    "components": [
+      {
+        "name": "requests",
+        "version": "2.32.0",
+        "type": "direct",
+        "purl": "pkg:pypi/requests@2.32.0",
+        "hash": "",
+        "source": "pypi"
+      },
+      {
+        "name": "urllib3",
+        "version": "2.2.1",
+        "type": "transitive",
+        "purl": "pkg:pypi/urllib3@2.2.1",
+        "hash": "",
+        "source": "pypi"
+      }
+    ],
+    "licenses": [
+      "Apache-2.0",
+      "MIT"
+    ],
+    "vuln_summary": {
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "low": 2
+    },
+    "version_schema": "1.0.0"
+  },
+  "provenance": {
+    "prov_id": "prov.acme.crm.1",
+    "artifact_sha256": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+    "source_ref": "git://acme/connector-crm@c0ffee42",
+    "actor": {
+      "org": "Acme",
+      "user": "ci-bot"
+    },
+    "runner": {
+      "system": "github-actions",
+      "runner_id": "gha-123",
+      "region": "eu-central-1"
+    },
+    "timestamps": {
+      "started_at": "2026-01-02T15:58:00Z",
+      "finished_at": "2026-01-02T15:59:30Z"
+    },
+    "steps_hash": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+    "version_schema": "1.0.0"
+  },
+  "attestation": {
+    "attest_id": "attest.acme.crm.1",
+    "artifact_sha256": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-01-02T16:00:10Z",
+    "claims": [
+      {
+        "type": "tests_passed",
+        "status": "PASS",
+        "details": "pytest ok"
+      },
+      {
+        "type": "sandbox_smoke_ok",
+        "status": "PASS",
+        "details": "smoke in sb.crm ok"
+      },
+      {
+        "type": "sbom_matches",
+        "status": "PASS",
+        "details": "sbom hash matches"
+      },
+      {
+        "type": "reproducible_build",
+        "status": "PASS",
+        "details": "rebuild matches artifact hash"
+      }
+    ],
+    "signatures": [
+      {
+        "key_id": "sk.ifos.attest",
+        "sig": "sig:MEUCIQD..."
+      }
+    ],
+    "version_schema": "1.0.0"
+  },
+  "publish_receipt": {
+    "receipt_id": "rcpt_pub_GanmpXtTRyun",
+    "package_id": "connector.sb.crm",
+    "package_version": "1.2.3",
+    "channel": "public",
+    "artifact_sha256": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+    "checks": [
+      {
+        "name": "manifest_required",
+        "status": "PASS",
+        "details": ""
+      },
+      {
+        "name": "sbom_required",
+        "status": "PASS",
+        "details": ""
+      },
+      {
+        "name": "provenance_required",
+        "status": "PASS",
+        "details": ""
+      },
+      {
+        "name": "signature_required",
+        "status": "PASS",
+        "details": "sk.ifos.org.signing"
+      }
+    ],
+    "signatures": [
+      {
+        "key_id": "sk.ifos.org.signing",
+        "sig": "sig:MGYCMQ..."
+      }
+    ],
+    "links": {
+      "docs": "market://docs/connector.sb.crm",
+      "vitrine": "market://vitrines/connector.sb.crm",
+      "sbom_ref": "market://sbom/sbom.acme.crm.1",
+      "provenance_ref": "market://prov/prov.acme.crm.1"
+    },
+    "created_at": "2026-01-02T16:01:00Z",
+    "version_schema": "1.0.0"
+  },
+  "trust_score": {
+    "score_id": "ts_score_PFM5KVTRnGO1",
+    "package_id": "connector.sb.crm",
+    "package_version": "1.2.3",
+    "score": 86,
+    "signals": {
+      "has_manifest": true,
+      "has_sbom": true,
+      "has_provenance": true,
+      "has_signature": true,
+      "validation_passed": true,
+      "sandbox_smoke_ok": true,
+      "vuln_critical": 0,
+      "incident_count": 0
+    },
+    "explanations": [
+      "+15 manifest",
+      " +20 sbom",
+      "+15 provenance",
+      "+20 signature",
+      "+15 validation",
+      "+10 sandbox smoke",
+      "Итого: 95, штрафы: 0 → 95 (cap / normalization) → 86"
+    ],
+    "computed_at": "2026-01-02T16:01:10Z",
+    "version_schema": "1.0.0"
+  },
+  "verification_policy_example": {
+    "policy_id": "vp.public.min",
+    "channel": "public",
+    "requirements": {
+      "manifest_required": true,
+      "sbom_required": true,
+      "provenance_required": true,
+      "signature_required": true,
+      "reproducible_required": true
+    },
+    "denylists": {
+      "licenses": [
+        "AGPL-3.0",
+        "GPL-3.0"
+      ],
+      "packages": [],
+      "domains": [
+        "api.crm.example"
+      ]
+    },
+    "min_trust_score": 70,
+    "version_schema": "1.0.0"
+  }
+}

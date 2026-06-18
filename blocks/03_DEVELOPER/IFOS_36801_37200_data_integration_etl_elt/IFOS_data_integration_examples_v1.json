@@ -1,0 +1,235 @@
+{
+  "data_source": {
+    "source_id": "src.s.7ks2ag3w0vep",
+    "tenant_id": "ten.t.39w7iexhlvrx",
+    "type": "saas",
+    "connection": {
+      "connector": "shopify",
+      "auth_ref": "secrets:shopify_token"
+    },
+    "data_sets": [
+      "orders",
+      "customers"
+    ],
+    "version": "1.0.0"
+  },
+  "data_sink": {
+    "sink_id": "snk.s.g799x6st8upx",
+    "tenant_id": "ten.t.39w7iexhlvrx",
+    "type": "warehouse",
+    "connection": {
+      "connector": "bigquery",
+      "project": "demo",
+      "dataset": "analytics"
+    },
+    "version": "1.0.0"
+  },
+  "data_contract": {
+    "contract_id": "dc.d.skt7b9ul73wf",
+    "tenant_id": "ten.t.39w7iexhlvrx",
+    "dataset": "dataset.orders",
+    "schema": [
+      {
+        "name": "order_id",
+        "type": "string",
+        "nullable": false
+      },
+      {
+        "name": "email",
+        "type": "string",
+        "nullable": true,
+        "labels": [
+          "pii.email"
+        ]
+      },
+      {
+        "name": "amount",
+        "type": "number",
+        "nullable": false,
+        "constraints": {
+          "min": 0
+        }
+      }
+    ],
+    "sla": {
+      "freshness_minutes": 60,
+      "max_delay_minutes": 10
+    },
+    "ownership": {
+      "owner_team": "data-platform",
+      "steward": "u.data"
+    },
+    "version": "1.0.0"
+  },
+  "schema_mapping": {
+    "mapping_id": "map.m.s7jvn9bqh9rm",
+    "tenant_id": "ten.t.39w7iexhlvrx",
+    "from_dataset": "shopify.orders",
+    "to_dataset": "dataset.orders",
+    "rules": [
+      {
+        "op": "rename",
+        "from": "id",
+        "to": "order_id"
+      },
+      {
+        "op": "cast",
+        "field": "amount",
+        "to": "number"
+      },
+      {
+        "op": "normalize_email",
+        "field": "email"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "pipeline_spec": {
+    "pipeline_id": "pipe.p.uy4fs9e9drai",
+    "tenant_id": "ten.t.39w7iexhlvrx",
+    "source_ref": "src.s.7ks2ag3w0vep",
+    "sink_ref": "snk.s.g799x6st8upx",
+    "mapping_ref": "map.m.s7jvn9bqh9rm",
+    "schedule": {
+      "type": "cron",
+      "expr": "0 * * * *"
+    },
+    "retries": {
+      "max": 5,
+      "backoff": "exponential"
+    },
+    "checkpoints": {
+      "watermark_field": "updated_at"
+    },
+    "governance": {
+      "dlp_policy": "dlp.default",
+      "retention_policy": "ret.default"
+    },
+    "observability": {
+      "metrics": [
+        "rows",
+        "lag",
+        "cost"
+      ],
+      "alerts": [
+        "freshness_slo"
+      ]
+    },
+    "version": "1.0.0"
+  },
+  "pipeline_run": {
+    "run_id": "run.r.nx8o969t6iql",
+    "tenant_id": "ten.t.39w7iexhlvrx",
+    "pipeline_id": "pipe.p.uy4fs9e9drai",
+    "status": "queued",
+    "started_at": "2026-01-03T14:24:00Z",
+    "ended_at": null,
+    "metrics": null,
+    "version": "1.0.0"
+  },
+  "cdc_spec": {
+    "cdc_id": "cdc.c.jtp6wql2zljq",
+    "tenant_id": "ten.t.39w7iexhlvrx",
+    "db_type": "postgres",
+    "capture": {
+      "wal": "logical",
+      "slot": "ifos_slot"
+    },
+    "decode": {
+      "format": "json"
+    },
+    "deliver": {
+      "sink_ref": "snk.s.g799x6st8upx",
+      "topic": "cdc.orders"
+    },
+    "version": "1.0.0"
+  },
+  "stream_spec": {
+    "stream_id": "str.s.kyckc0p5oie8",
+    "tenant_id": "ten.t.39w7iexhlvrx",
+    "broker": "kafka",
+    "topic": "events.orders",
+    "schema": {
+      "type": "json",
+      "fields": [
+        {
+          "name": "event_id",
+          "type": "string"
+        },
+        {
+          "name": "ts",
+          "type": "datetime"
+        }
+      ]
+    },
+    "delivery": {
+      "semantics": "at_least_once",
+      "consumer_group": "ifos"
+    },
+    "version": "1.0.0"
+  },
+  "batch_job": {
+    "job_id": "job.b.l2i4sfvdnj2m",
+    "tenant_id": "ten.t.39w7iexhlvrx",
+    "pipeline_id": "pipe.p.uy4fs9e9drai",
+    "mode": "incremental",
+    "watermark": {
+      "field": "updated_at",
+      "value": "2026-01-01T00:00:00Z"
+    },
+    "params": {
+      "limit": 10000
+    },
+    "version": "1.0.0"
+  },
+  "quality_check": {
+    "check_id": "qc.q.hop97lw7b2b1",
+    "tenant_id": "ten.t.39w7iexhlvrx",
+    "dataset": "dataset.orders",
+    "type": "validity",
+    "rule": {
+      "field": "email",
+      "pattern": "email"
+    },
+    "on_fail": "quarantine",
+    "version": "1.0.0"
+  },
+  "catalog_entry": {
+    "catalog_id": "cat.c.l1lyurq5hlrn",
+    "tenant_id": "ten.t.39w7iexhlvrx",
+    "dataset": "dataset.orders",
+    "owner": {
+      "team": "data-platform",
+      "steward": "u.data"
+    },
+    "freshness": {
+      "last_update": "2026-01-03T14:24:00Z",
+      "slo_minutes": 60
+    },
+    "schemas": [
+      "dc.d.skt7b9ul73wf"
+    ],
+    "pipelines": [
+      "pipe.p.uy4fs9e9drai"
+    ],
+    "version": "1.0.0"
+  },
+  "lineage_event": {
+    "lineage_id": "lin.l.956xdzf6j18r",
+    "tenant_id": "ten.t.39w7iexhlvrx",
+    "run_id": "run.r.nx8o969t6iql",
+    "ts": "2026-01-03T14:24:00Z",
+    "source": "shopify.orders",
+    "target": "dataset.orders",
+    "transform": {
+      "mapping_ref": "map.m.s7jvn9bqh9rm",
+      "steps": [
+        "extract",
+        "map",
+        "quality",
+        "load"
+      ]
+    },
+    "version": "1.0.0"
+  }
+}

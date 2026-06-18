@@ -1,0 +1,8 @@
+{
+  "patient_id": "P-1001",
+  "name": "Jane Doe",
+  "dob": "1990-05-10",
+  "contact": {
+    "email": "jane@example.com"
+  }
+}

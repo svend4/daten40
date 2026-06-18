@@ -1,0 +1,17 @@
+{
+  "violation_id": "viol_001",
+  "rule_id": "drift_truststore_gateway",
+  "target_id": "gateway://admin-gw-1",
+  "detected_at": "2026-01-09T20:10:00Z",
+  "expected_bundle_hash": "sha256:aaa...",
+  "observed_bundle_hash": "sha256:bbb...",
+  "severity": "critical",
+  "owner_team": "platform-security",
+  "recommended_actions": [
+    "Re-publish trust store bundle ts_internal_admin",
+    "Check recent deployments/changes affecting admin-gw-1",
+    "Open incident if drift persists"
+  ],
+  "case_ref": "case://SEC-2026-0007",
+  "status": "open"
+}

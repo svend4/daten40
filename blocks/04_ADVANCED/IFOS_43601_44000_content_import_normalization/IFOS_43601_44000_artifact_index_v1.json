@@ -1,0 +1,142 @@
+{
+  "artifact_set": "IFOS_43601_44000",
+  "entries": [
+    {
+      "name": "IFOS_content_import_normalization_os_43601_44000_v1.md",
+      "ref": "file://IFOS_content_import_normalization_os_43601_44000_v1.md",
+      "hash": "sha256:4d91caff86f68618600a14901c49d011b3e1ad127cc61af5b252f9f00bbb1d7f"
+    },
+    {
+      "name": "IFOS_ingest_normalize_api_v1.yaml",
+      "ref": "file://IFOS_ingest_normalize_api_v1.yaml",
+      "hash": "sha256:16292fe89a2683e74ce7a73de840c0cd366c73581bc022dc53dd1f39a7cf2b2b"
+    },
+    {
+      "name": "IFOS_ingest_normalize_examples_v1.json",
+      "ref": "file://IFOS_ingest_normalize_examples_v1.json",
+      "hash": "sha256:06ea34735cf4c3f7e8c579f771d3bbb984963bce8d7aa355cd23bf6173ac05ed"
+    },
+    {
+      "name": "IFOS_ingest_source_schema_v1.json",
+      "ref": "file://IFOS_ingest_source_schema_v1.json",
+      "hash": "sha256:15f9964d75866eaac1a0209693869f7e36ca65a2a92b244ff90bd28c2105d0ff"
+    },
+    {
+      "name": "IFOS_fetch_job_schema_v1.json",
+      "ref": "file://IFOS_fetch_job_schema_v1.json",
+      "hash": "sha256:3e57327973c5a4d6e734cca2d3f1683a297097d6f2aed239ba929b7c9b508046"
+    },
+    {
+      "name": "IFOS_extractor_schema_v1.json",
+      "ref": "file://IFOS_extractor_schema_v1.json",
+      "hash": "sha256:77d4308b91537b71546997d1699ab723cbee76a15e0eca6f400663a119fb6da8"
+    },
+    {
+      "name": "IFOS_raw_item_schema_v1.json",
+      "ref": "file://IFOS_raw_item_schema_v1.json",
+      "hash": "sha256:430ac221fa4fc9fa2f0058b0b37050914fa374056e9025ac88b7381d79699810"
+    },
+    {
+      "name": "IFOS_normalized_item_schema_v1.json",
+      "ref": "file://IFOS_normalized_item_schema_v1.json",
+      "hash": "sha256:e8a3be352f745d8219b7886f190c705423f876aa8ce949a3848f7e698a68a2b6"
+    },
+    {
+      "name": "IFOS_mapping_rule_schema_v1.json",
+      "ref": "file://IFOS_mapping_rule_schema_v1.json",
+      "hash": "sha256:ff32f19f515af8fbc8699615fdbd1ebd26843637eca77c7b615824573c2d898c"
+    },
+    {
+      "name": "IFOS_enrichment_job_schema_v1.json",
+      "ref": "file://IFOS_enrichment_job_schema_v1.json",
+      "hash": "sha256:50d23a1c4559248e353044a3e41dca32d506516097cf675ab056ac47e49e1078"
+    },
+    {
+      "name": "IFOS_pii_redaction_job_schema_v1.json",
+      "ref": "file://IFOS_pii_redaction_job_schema_v1.json",
+      "hash": "sha256:c2addd0f2e648301c85c4b9d53b89c3af8d8cb6a25d6de03affcf249a722fb06"
+    },
+    {
+      "name": "IFOS_language_detect_result_schema_v1.json",
+      "ref": "file://IFOS_language_detect_result_schema_v1.json",
+      "hash": "sha256:8add1b787d2961426cf4ac2b8f66df8d794a33a540b805b63c22c805a9d15804"
+    },
+    {
+      "name": "IFOS_dedup_key_schema_v1.json",
+      "ref": "file://IFOS_dedup_key_schema_v1.json",
+      "hash": "sha256:f8884465e605c6abb5193b7fa759ce5f0110382495b84e213815b50f564980b0"
+    },
+    {
+      "name": "IFOS_quarantine_item_schema_v1.json",
+      "ref": "file://IFOS_quarantine_item_schema_v1.json",
+      "hash": "sha256:8950aa7d94d65d8c7a0df9b97d51c9093aae7c9e5b82d9674c58faed2b69ad80"
+    },
+    {
+      "name": "IFOS_ingest_manifest_schema_v1.json",
+      "ref": "file://IFOS_ingest_manifest_schema_v1.json",
+      "hash": "sha256:34d7246680c425a74fcfe6e54301c3b6324ce126453cbcbcf2d6869281066d1b"
+    },
+    {
+      "name": "IFOS_registry_export_ref_schema_v1.json",
+      "ref": "file://IFOS_registry_export_ref_schema_v1.json",
+      "hash": "sha256:7c6a84d36906c98c70f27eca4d9738a92472283f839e5e6c843044e7f42d0d03"
+    },
+    {
+      "name": "IFOS_ingest_pipeline_spec_v1.md",
+      "ref": "file://IFOS_ingest_pipeline_spec_v1.md",
+      "hash": "sha256:d3dce4ee22b21cacd7213d3a0bceaadfe65bcd34bc7bc8621daa79140c063fc4"
+    },
+    {
+      "name": "IFOS_extractors_parsers_spec_v1.md",
+      "ref": "file://IFOS_extractors_parsers_spec_v1.md",
+      "hash": "sha256:13fa90a0b8c476d6d8faeea4667afe9d0ec6edeaca2a9c7fe07dc6345e813ffd"
+    },
+    {
+      "name": "IFOS_normalization_mapping_spec_v1.md",
+      "ref": "file://IFOS_normalization_mapping_spec_v1.md",
+      "hash": "sha256:81a761edc845af3700b303ee9ddebbf905b0310c0e0756f783d1b5e229c5b9ac"
+    },
+    {
+      "name": "IFOS_enrichment_translation_spec_v1.md",
+      "ref": "file://IFOS_enrichment_translation_spec_v1.md",
+      "hash": "sha256:29277a46dd118e1b4f0b98cf013573e22460f34e6877ccbe6ea5b68ec9d70e47"
+    },
+    {
+      "name": "IFOS_pii_redaction_privacy_spec_v1.md",
+      "ref": "file://IFOS_pii_redaction_privacy_spec_v1.md",
+      "hash": "sha256:d11bff2bf5bdf48ff0ebedc9f53f5d839fbcb9820c0913bafc93fa69154f44e1"
+    },
+    {
+      "name": "IFOS_ingest_quality_quarantine_spec_v1.md",
+      "ref": "file://IFOS_ingest_quality_quarantine_spec_v1.md",
+      "hash": "sha256:4fc42dbea269ff1c8b45140f6bdd82e2cf1d742061e71a47a0222fa31600fcc3"
+    },
+    {
+      "name": "ifos_fetcher_stub_v1.py",
+      "ref": "file://ifos_fetcher_stub_v1.py",
+      "hash": "sha256:5e883b0e062f5e36069f2c55d05d1799e939a603cc0996d3508b5df116f044fc"
+    },
+    {
+      "name": "ifos_extractor_router_stub_v1.py",
+      "ref": "file://ifos_extractor_router_stub_v1.py",
+      "hash": "sha256:bcc172c13f68f112241b1d7e8c6bdd924f226152c3f1d9bd354ded0cab053f78"
+    },
+    {
+      "name": "ifos_normalize_mapper_stub_v1.py",
+      "ref": "file://ifos_normalize_mapper_stub_v1.py",
+      "hash": "sha256:70681d004806b14832b1209de85d302ee150ebf47c60e21990a561b984b9b1ee"
+    },
+    {
+      "name": "ifos_dedup_key_stub_v1.py",
+      "ref": "file://ifos_dedup_key_stub_v1.py",
+      "hash": "sha256:68667391a9071f0bac044390b705cf7c4ab1ebe690e61dd8ef0512cc5ad17409"
+    },
+    {
+      "name": "ifos_pii_redaction_stub_v1.py",
+      "ref": "file://ifos_pii_redaction_stub_v1.py",
+      "hash": "sha256:74be8271842f5ba09bff65e914387274adb239a84781e290ccd1e129655b85fb"
+    }
+  ],
+  "created_at": "2026-01-04T04:05:00Z",
+  "version": "1.0.0"
+}

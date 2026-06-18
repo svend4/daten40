@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Suppression Rule",
+  "type": "object",
+  "required": [
+    "rule_id",
+    "scope",
+    "reason",
+    "created_at",
+    "ttl_days",
+    "created_by"
+  ],
+  "properties": {
+    "rule_id": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "object"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ttl_days": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 365
+    },
+    "created_by": {
+      "type": "string"
+    },
+    "approved_by": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "status": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "ACTIVE",
+        "EXPIRED",
+        "REVOKED"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

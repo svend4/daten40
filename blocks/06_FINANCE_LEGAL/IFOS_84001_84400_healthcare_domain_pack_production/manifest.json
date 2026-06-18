@@ -1,0 +1,34 @@
+{
+  "pack_id": "dp_healthcare_ops_prod",
+  "domain": {
+    "slug": "healthcare_ops",
+    "name": "Healthcare Operations",
+    "industry": "Healthcare"
+  },
+  "version": "1.0.0",
+  "status": "production",
+  "compatibility": {
+    "ifos_min_version": "v30",
+    "required_blocks": [
+      "IFOS_00001_00400",
+      "IFOS_82801_83200"
+    ]
+  },
+  "policies": [
+    "privacy.restricted",
+    "audit.logging",
+    "hipaa.baseline"
+  ],
+  "data_contracts": [
+    "patient.v1",
+    "appointment.v1",
+    "consent.v1",
+    "notification.v1"
+  ],
+  "bundles": [
+    {
+      "bundle_id": "patient_intake_schedule_notify",
+      "manifest_path": "bundles/patient_intake_schedule_notify.json"
+    }
+  ]
+}

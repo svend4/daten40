@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RerankSpec Schema v1",
+  "type": "object",
+  "required": [
+    "rerank_id",
+    "tenant_id",
+    "method",
+    "params",
+    "version"
+  ],
+  "properties": {
+    "rerank_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "method": {
+      "type": "string",
+      "enum": [
+        "none",
+        "cross_encoder",
+        "rule_based",
+        "hybrid"
+      ]
+    },
+    "params": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

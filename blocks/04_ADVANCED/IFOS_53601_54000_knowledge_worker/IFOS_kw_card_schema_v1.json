@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS KW Card Schema v1",
+  "type": "object",
+  "required": [
+    "card_id",
+    "card_type",
+    "title",
+    "io",
+    "policies",
+    "cost_risk",
+    "actions",
+    "version"
+  ],
+  "properties": {
+    "card_id": {
+      "type": "string"
+    },
+    "card_type": {
+      "type": "string",
+      "enum": [
+        "bundle",
+        "connector",
+        "entity",
+        "process_step"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "io": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "policies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cost_risk": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

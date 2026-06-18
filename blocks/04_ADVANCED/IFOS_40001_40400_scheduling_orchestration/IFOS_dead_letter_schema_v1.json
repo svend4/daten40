@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DeadLetter Schema v1",
+  "type": "object",
+  "required": [
+    "dlq_id",
+    "job_id",
+    "reason",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "dlq_id": {
+      "type": "string"
+    },
+    "job_id": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "payload_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

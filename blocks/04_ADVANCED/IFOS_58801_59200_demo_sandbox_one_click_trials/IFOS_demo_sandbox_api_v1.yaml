@@ -1,0 +1,22 @@
+openapi: 3.0.3
+info:
+  title: IFOS Demo Sandbox API
+  version: "1.0.0"
+servers:
+  - url: https://sandbox.ifos.local/v1
+tags:
+  - name: Trials
+  - name: Fixtures
+  - name: Replay
+  - name: Compare
+paths:
+  /trials/run:
+    post: {tags:[Trials], summary: Run a trial bundle in sandbox, responses: {"200": {description: OK}}}
+  /fixtures/register:
+    post: {tags:[Fixtures], summary: Register fixture payload, responses: {"200": {description: OK}}}
+  /replay/record:
+    post: {tags:[Replay], summary: Record session for replay, responses: {"200": {description: OK}}}
+  /replay/play:
+    post: {tags:[Replay], summary: Replay session deterministically, responses: {"200": {description: OK}}}
+  /compare/run:
+    post: {tags:[Compare], summary: Run compare mode on multiple bundles, responses: {"200": {description: OK}}}

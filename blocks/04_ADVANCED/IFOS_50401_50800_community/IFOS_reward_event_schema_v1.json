@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RewardEvent Schema v1",
+  "type": "object",
+  "required": [
+    "reward_id",
+    "user_id",
+    "type",
+    "value",
+    "reason",
+    "version"
+  ],
+  "properties": {
+    "reward_id": {
+      "type": "string"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "badge",
+        "credit",
+        "points"
+      ]
+    },
+    "value": {
+      "type": "number",
+      "minimum": 0
+    },
+    "reason": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

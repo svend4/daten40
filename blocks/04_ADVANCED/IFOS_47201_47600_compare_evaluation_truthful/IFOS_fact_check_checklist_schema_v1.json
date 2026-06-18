@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS FactCheckChecklist Schema v1",
+  "type": "object",
+  "required": [
+    "checklist_id",
+    "cluster_id",
+    "steps",
+    "version"
+  ],
+  "properties": {
+    "checklist_id": {
+      "type": "string"
+    },
+    "cluster_id": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

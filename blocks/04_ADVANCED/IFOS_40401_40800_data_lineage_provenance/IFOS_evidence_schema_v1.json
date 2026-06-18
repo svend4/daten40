@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Evidence Schema v1",
+  "type": "object",
+  "required": [
+    "evidence_id",
+    "type",
+    "ref",
+    "hash",
+    "version"
+  ],
+  "properties": {
+    "evidence_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "hash",
+        "execution_ref",
+        "metering_ref",
+        "log_ref",
+        "snapshot"
+      ]
+    },
+    "ref": {
+      "type": "string"
+    },
+    "hash": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

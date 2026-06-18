@@ -1,0 +1,87 @@
+{
+  "artifact_set": "IFOS_66001_66400",
+  "created_at": "2026-01-02T17:04:09Z",
+  "version": "1.0.0",
+  "entries": [
+    {
+      "name": "IFOS_data_exfiltration_forensics_os_66001_66400_v1.md",
+      "hash": "sha256:970b2425faac06443306f4ddb374f7c2a281a053b0b60634a3ecb484cc607dab"
+    },
+    {
+      "name": "IFOS_forensics_ops_runbook_66001_66400_v1.md",
+      "hash": "sha256:2bc93a1c34dfa72fafd0adca1bc82eb895555dfe5e05d24384d85cfc0dafd9a3"
+    },
+    {
+      "name": "IFOS_forensics_threat_model_66001_66400_v1.md",
+      "hash": "sha256:ac801d74f7a64838113aaeeacda2b2d2f95feadb59be25f30a2008b5afdd2696"
+    },
+    {
+      "name": "IFOS_forensics_control_plane_api_v1.yaml",
+      "hash": "sha256:f4bc798a4463be0ec696c4b32531472021ab7883618c04b06e2a777a0ffdc3c0"
+    },
+    {
+      "name": "IFOS_forensics_examples_66001_66400_v1.json",
+      "hash": "sha256:f913840d1a0bcece78447db475bfca15e55562001e306d37da7c20b000b01664"
+    },
+    {
+      "name": "IFOS_incident_event_schema_v1.json",
+      "hash": "sha256:c33bfb54c92a89d6f29f2fbd63d0ceea3d77d225b111910c472d74f01476869b"
+    },
+    {
+      "name": "IFOS_evidence_item_schema_v1.json",
+      "hash": "sha256:1bb26074fff4413136895aacfbf21ddf7e8abba3fb16a65cd2a33a78769b55bf"
+    },
+    {
+      "name": "IFOS_correlation_graph_schema_v1.json",
+      "hash": "sha256:83e59929b965b28d16e596816ad0e52d1941ea689428c9616372a47710c849cb"
+    },
+    {
+      "name": "IFOS_forensic_query_schema_v1.json",
+      "hash": "sha256:66e0b067bd33719674387ee81e6e7ba8b70c4f5b86d3736261686ad4e0072a61"
+    },
+    {
+      "name": "IFOS_forensic_report_schema_v1.json",
+      "hash": "sha256:04c371beb0fac58094c2efd5c63b675b88f5ad07bb7a9eb6f4c11b9f20c47f4b"
+    },
+    {
+      "name": "IFOS_log_retention_policy_schema_v1.json",
+      "hash": "sha256:b13c71094e76a1e89fde09f6803a5ef35b3c5b74d94e281c6a69b88694268b9a"
+    },
+    {
+      "name": "IFOS_exfil_alert_rule_schema_v1.json",
+      "hash": "sha256:d78fc1f278e0bbc7a2ea85badb6aa890799b22aa8241c31a8bfd56834ed92114"
+    },
+    {
+      "name": "IFOS_incident_case_schema_v1.json",
+      "hash": "sha256:250881a56a080cf10521df3bee1f61091ac3b0c60d6a812606f75ddf94e6af97"
+    },
+    {
+      "name": "IFOS_chain_of_custody_schema_v1.json",
+      "hash": "sha256:eaa3ddad46176a0508366ad8d3632b07cd9c80a4ec28ddbfcfced49011c9eb87"
+    },
+    {
+      "name": "IFOS_receipt_bundle_schema_v1.json",
+      "hash": "sha256:12b81d56cb543863d9460c8deda556c6b7706b556e5a79b329483a7f971be53a"
+    },
+    {
+      "name": "IFOS_exfil_detectors_seed_66001_66400_v1.csv",
+      "hash": "sha256:6e737c1b3df5abb552213d565f41fc3824e9bf6ce65bd9561eacae4d914c8983"
+    },
+    {
+      "name": "IFOS_exfil_alert_rules_seed_66001_66400_v1.csv",
+      "hash": "sha256:599ca2dd0c28c3947ab9c9fdf69cb51d9fa6573ab53daf97f328c1f15cd80b5f"
+    },
+    {
+      "name": "IFOS_log_retention_policies_seed_66001_66400_v1.csv",
+      "hash": "sha256:18156ed88ac5b98e945dd1eff516bcaea2ea721d2cdd6c7934c3d9927dbb9f83"
+    },
+    {
+      "name": "IFOS_forensic_report_templates_seed_66001_66400_v1.csv",
+      "hash": "sha256:802d731e72efa5130abc6d24df8ee239a6e15372f0915173527361342f994333"
+    },
+    {
+      "name": "IFOS_investigation_playbook_seed_66001_66400_v1.csv",
+      "hash": "sha256:4ac3cc14ef77df9ea68664fd92c615171862d37c3e091ce6545622a2f0c60bc0"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+openapi: 3.0.3
+info:
+  title: IFOS Orchestration API
+  version: "1.0.0"
+servers:
+  - url: https://orchestrator.ifos.local/v1
+tags:
+  - name: Queues
+  - name: Jobs
+  - name: DAGs
+  - name: Triggers
+  - name: Policies
+  - name: Records
+paths:
+  /queues:
+    post: {tags:[Queues], summary: Upsert queue, responses: {"200": {description: OK}}}
+  /jobs:
+    post: {tags:[Jobs], summary: Enqueue job, responses: {"201": {description: Created}}}
+  /dags:
+    post: {tags:[DAGs], summary: Upsert DAG, responses: {"200": {description: OK}}}
+  /triggers:
+    post: {tags:[Triggers], summary: Upsert schedule trigger, responses: {"200": {description: OK}}}
+  /policies/retry:
+    post: {tags:[Policies], summary: Upsert retry policy, responses: {"200": {description: OK}}}
+  /policies/priority:
+    post: {tags:[Policies], summary: Upsert priority policy, responses: {"200": {description: OK}}}
+  /policies/backpressure:
+    post: {tags:[Policies], summary: Upsert backpressure policy, responses: {"200": {description: OK}}}
+  /records/execution:
+    post: {tags:[Records], summary: Append execution record, responses: {"201": {description: Created}}}
+  /records/dlq:
+    post: {tags:[Records], summary: Append dead-letter record, responses: {"201": {description: Created}}}

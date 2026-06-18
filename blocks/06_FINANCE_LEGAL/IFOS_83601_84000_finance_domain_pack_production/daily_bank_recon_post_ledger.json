@@ -1,0 +1,64 @@
+{
+  "bundle_id": "daily_bank_recon_post_ledger",
+  "name": "Daily Bank Feed → Reconcile → Post Ledger",
+  "version": "1.0.0",
+  "connectors": [
+    "bank_feed",
+    "accounting_ledger",
+    "notification",
+    "google_sheets"
+  ],
+  "secrets_required": [
+    "bank_feed_token"
+  ],
+  "entrypoint": {
+    "trigger": "schedule.daily",
+    "plan_id": "plan_daily_bank_recon"
+  },
+  "policies": [
+    "audit.logging",
+    "privacy.confidential"
+  ],
+  "steps": [
+    {
+      "id": "ingest_bank_feed",
+      "capability": "ingest_bank_transactions",
+      "outputs": [
+        "bank_tx.v1"
+      ]
+    },
+    {
+      "id": "match",
+      "capability": "match_bank_tx_to_payments_invoices",
+      "inputs": [
+        "bank_tx.v1"
+      ],
+      "outputs": [
+        "ledger_entry.v1",
+        "reconciliation_exception.v1"
+      ]
+    },
+    {
+      "id": "post_ledger",
+      "capability": "post_ledger_entry",
+      "inputs": [
+        "ledger_entry.v1"
+      ]
+    },
+    {
+      "id": "log_exceptions",
+      "capability": "append_exception_log",
+      "inputs": [
+        "reconciliation_exception.v1"
+      ],
+      "target": "google_sheets"
+    },
+    {
+      "id": "notify",
+      "capability": "notify_finance_team",
+      "inputs": [
+        "reconciliation_exception.v1"
+      ]
+    }
+  ]
+}

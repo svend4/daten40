@@ -1,0 +1,57 @@
+{
+  "registry_id": "reg.support.z3o22guum0w8",
+  "entries": [
+    {
+      "name": "IFOS_support_ticket_schema_v1.json",
+      "ref": "file://IFOS_support_ticket_schema_v1.json",
+      "hash": "sha256:f4edfcc288b0163887db51b01512004376795597fd4aa8da9f146c57e12f395b"
+    },
+    {
+      "name": "IFOS_sla_policy_schema_v1.json",
+      "ref": "file://IFOS_sla_policy_schema_v1.json",
+      "hash": "sha256:6e3309bf287cf8acb8ce0d03be7828d5cd18591565109c5d16c8f2357a982d55"
+    },
+    {
+      "name": "IFOS_support_queue_schema_v1.json",
+      "ref": "file://IFOS_support_queue_schema_v1.json",
+      "hash": "sha256:89ae14a7621286e917bdf88000bedd97a6c63fe36832bf6c090f5439ddf8f25e"
+    },
+    {
+      "name": "IFOS_escalation_schema_v1.json",
+      "ref": "file://IFOS_escalation_schema_v1.json",
+      "hash": "sha256:bcf0d558a9015392befdce289d3d103b67216496d28808d418c919018a7422f1"
+    },
+    {
+      "name": "IFOS_dispute_case_schema_v1.json",
+      "ref": "file://IFOS_dispute_case_schema_v1.json",
+      "hash": "sha256:e1836278d9dbcb6a298bcc145f9855c67c7e5e5f8eb69b26e0986692c61c4737"
+    },
+    {
+      "name": "IFOS_refund_policy_schema_v1.json",
+      "ref": "file://IFOS_refund_policy_schema_v1.json",
+      "hash": "sha256:7a945dc2cd01db1adf9055f63b4fbb6928cca8dd029512f7274e3d11c76d0dab"
+    },
+    {
+      "name": "IFOS_support_evidence_pack_ref_schema_v1.json",
+      "ref": "file://IFOS_support_evidence_pack_ref_schema_v1.json",
+      "hash": "sha256:3b2fc5a39477016329b00cc5acf9709cc40c88f6243af9775ddc202aa181bd33"
+    },
+    {
+      "name": "IFOS_kb_article_schema_v1.json",
+      "ref": "file://IFOS_kb_article_schema_v1.json",
+      "hash": "sha256:a93f53c34234b6dce51f6348f1663c942f524aa3f1d788eefa1bacc2e4fe7486"
+    },
+    {
+      "name": "IFOS_support_macro_schema_v1.json",
+      "ref": "file://IFOS_support_macro_schema_v1.json",
+      "hash": "sha256:6dabc4ad61c296ae0e7df9e3d1b4e92d62dc209d586cb4b6dba711d402facc37"
+    },
+    {
+      "name": "IFOS_csat_schema_v1.json",
+      "ref": "file://IFOS_csat_schema_v1.json",
+      "hash": "sha256:b896405872ff03ec949d97df48025b429b5043534e85fc68705859d668e34217"
+    }
+  ],
+  "updated_at": "2026-01-04T02:05:00Z",
+  "version": "1.0.0"
+}

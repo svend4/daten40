@@ -1,0 +1,236 @@
+{
+  "experiment": {
+    "experiment_id": "exp.e.0yatt4bd0obg",
+    "tenant_id": "ten.t.mlzo4iv11lz1",
+    "target": {
+      "type": "vitrine",
+      "id": "vitrine.marketplace_install"
+    },
+    "goal": "increase successful install-run while keeping cost stable",
+    "variants": [
+      {
+        "variant_id": "var.a.xf001g54kvzr",
+        "name": "A baseline",
+        "artifact": {
+          "type": "ranking_policy",
+          "id": "rank.v1"
+        },
+        "params": {
+          "k": 20
+        },
+        "weight": 0.5,
+        "version": "1.0.0"
+      },
+      {
+        "variant_id": "var.b.zjjimf42h4cm",
+        "name": "B hybrid",
+        "artifact": {
+          "type": "ranking_policy",
+          "id": "rank.v2"
+        },
+        "params": {
+          "k": 30,
+          "hybrid": true
+        },
+        "weight": 0.5,
+        "version": "1.0.0"
+      }
+    ],
+    "metrics": {
+      "primary": [
+        "success_rate"
+      ],
+      "secondary": [
+        "install_time_p50"
+      ],
+      "guardrails": [
+        "latency_p95",
+        "error_rate",
+        "cost_per_1000_runs"
+      ]
+    },
+    "assignment": {
+      "method": "hash",
+      "salt": "ifos",
+      "subject_key": "tenant+user",
+      "holdout": 0.02
+    },
+    "status": "running",
+    "created_at": "2026-01-03T23:00:00Z",
+    "version": "1.0.0"
+  },
+  "metric_definitions": [
+    {
+      "metric_id": "m.s.i99jf7iktlmv",
+      "name": "success_rate",
+      "type": "primary",
+      "formula": "success_runs/all_runs",
+      "window": "day",
+      "segments": [
+        "tier",
+        "locale"
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "metric_id": "m.l.pz78uiofodek",
+      "name": "latency_p95",
+      "type": "guardrail",
+      "formula": "p95(run_latency_ms)",
+      "window": "hour",
+      "segments": [
+        "tier"
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "metric_id": "m.c.tp6lx44ciqsu",
+      "name": "cost_per_1000_runs",
+      "type": "guardrail",
+      "formula": "(sum(cost_eur)/runs)*1000",
+      "window": "day",
+      "segments": [
+        "tier"
+      ],
+      "version": "1.0.0"
+    }
+  ],
+  "event": {
+    "event_id": "ev.e.5t23xlet452d",
+    "ts": "2026-01-03T23:00:00Z",
+    "tenant_id": "ten.t.mlzo4iv11lz1",
+    "experiment_id": "exp.e.0yatt4bd0obg",
+    "variant_id": "var.b.zjjimf42h4cm",
+    "run_id": "run.r.vld066ip1lmf",
+    "name": "run_succeeded",
+    "payload": {
+      "latency_ms": 620,
+      "cost_eur": 0.012,
+      "safety_flags": 0
+    },
+    "version": "1.0.0"
+  },
+  "scorecard": {
+    "scorecard_id": "sc.s.06y339h0m32g",
+    "experiment_id": "exp.e.0yatt4bd0obg",
+    "period": {
+      "from": "2026-01-01",
+      "to": "2026-01-07"
+    },
+    "metrics": {
+      "A": {
+        "success_rate": 0.71,
+        "latency_p95": 950,
+        "cost_per_1000_runs": 12.4
+      },
+      "B": {
+        "success_rate": 0.75,
+        "latency_p95": 980,
+        "cost_per_1000_runs": 12.6
+      }
+    },
+    "recommendation": "ship",
+    "notes": "B improves success_rate with acceptable guardrails",
+    "ts": "2026-01-03T23:00:00Z",
+    "version": "1.0.0"
+  },
+  "benchmark_suite": {
+    "suite_id": "bm.b.73bjv5ep3zd3",
+    "name": "Marketplace Install Regression",
+    "cases": [
+      {
+        "case_id": "c1",
+        "input": {
+          "bundle": "bundle.wordpress_basic"
+        },
+        "expect": {
+          "install_success": true
+        }
+      },
+      {
+        "case_id": "c2",
+        "input": {
+          "bundle": "bundle.make_importer"
+        },
+        "expect": {
+          "run_success": true
+        }
+      }
+    ],
+    "baseline": {
+      "success_rate_min": 0.7,
+      "latency_p95_max": 1200
+    },
+    "version": "1.0.0"
+  },
+  "human_review": {
+    "review_id": "hr.h.cwftkb465lj7",
+    "subject": {
+      "type": "run",
+      "id": "run.r.hzbrmz6oph04",
+      "experiment_id": "exp.e.0yatt4bd0obg",
+      "variant_id": "var.b.zjjimf42h4cm"
+    },
+    "rubric": "Truthfulness, completeness, safety, usability",
+    "scores": {
+      "truth": 4,
+      "completeness": 4,
+      "safety": 5,
+      "usability": 4
+    },
+    "flags": [],
+    "reviewer": {
+      "id": "rev.001",
+      "role": "qa"
+    },
+    "ts": "2026-01-03T23:00:00Z",
+    "version": "1.0.0"
+  },
+  "feedback_item": {
+    "feedback_id": "fb.f.9voba11m15ma",
+    "tenant_id": "ten.t.mlzo4iv11lz1",
+    "subject": {
+      "type": "vitrine_card",
+      "id": "card.123",
+      "experiment_id": "exp.e.0yatt4bd0obg",
+      "variant_id": "var.b.zjjimf42h4cm"
+    },
+    "rating": "down",
+    "reason": "hard_to_use",
+    "comment": "Too many steps for install",
+    "ts": "2026-01-03T23:00:00Z",
+    "version": "1.0.0"
+  },
+  "release_gate": {
+    "gate_id": "gate.g.imiz0wmn0yas",
+    "target": {
+      "type": "ranking_policy",
+      "id": "rank.v2"
+    },
+    "conditions": [
+      {
+        "metric": "success_rate_delta",
+        "op": ">=",
+        "value": 0.02
+      },
+      {
+        "metric": "latency_p95_delta",
+        "op": "<=",
+        "value": 200
+      },
+      {
+        "metric": "error_rate",
+        "op": "<",
+        "value": 0.01
+      }
+    ],
+    "decision": "allow",
+    "evidence_refs": [
+      "sc.*",
+      "bm.*",
+      "hr.*"
+    ],
+    "ts": "2026-01-03T23:00:00Z",
+    "version": "1.0.0"
+  }
+}

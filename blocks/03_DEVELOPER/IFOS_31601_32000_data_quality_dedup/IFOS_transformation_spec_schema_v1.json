@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS TransformationSpec Schema v1",
+  "type": "object",
+  "required": [
+    "spec_id",
+    "name",
+    "steps",
+    "version"
+  ],
+  "properties": {
+    "spec_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "op"
+        ],
+        "properties": {
+          "op": {
+            "type": "string",
+            "enum": [
+              "trim",
+              "lowercase",
+              "url_canonicalize",
+              "html_to_text",
+              "date_parse",
+              "unit_convert",
+              "lang_detect",
+              "title_cleanup",
+              "map_dictionary",
+              "ner_extract"
+            ]
+          },
+          "params": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

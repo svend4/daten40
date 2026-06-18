@@ -1,0 +1,162 @@
+{
+  "artifact_set": "IFOS_53601_54000",
+  "entries": [
+    {
+      "name": "IFOS_knowledge_worker_os_53601_54000_v1.md",
+      "ref": "file://IFOS_knowledge_worker_os_53601_54000_v1.md",
+      "hash": "sha256:89c454e0fc389a23549ba78d003e05e00a0d69404c1974e0914b3545269e6110"
+    },
+    {
+      "name": "IFOS_knowledge_worker_os_api_v1.yaml",
+      "ref": "file://IFOS_knowledge_worker_os_api_v1.yaml",
+      "hash": "sha256:487a29273266f7349cd429be04d90697b01c39835db7b587cb1da9d9f0ab199e"
+    },
+    {
+      "name": "IFOS_knowledge_worker_examples_v1.json",
+      "ref": "file://IFOS_knowledge_worker_examples_v1.json",
+      "hash": "sha256:719d37a97efd7c64750df33f36fbe40fe8a19c733bf0208836563b0e4e1fc019"
+    },
+    {
+      "name": "IFOS_kw_template_catalog_seed_53601_54000_v1.csv",
+      "ref": "file://IFOS_kw_template_catalog_seed_53601_54000_v1.csv",
+      "hash": "sha256:e2ba9a7a1383f5a2e1b938e3e6ef33295f91646cc12bd306460cc3abb6f84f99"
+    },
+    {
+      "name": "IFOS_kw_overview_spec_v1.md",
+      "ref": "file://IFOS_kw_overview_spec_v1.md",
+      "hash": "sha256:247412c1036860d9ffb047944fbd47e9b0f3c8b44abb62c1e9d57dbba1c7cb05"
+    },
+    {
+      "name": "IFOS_kw_projects_workspaces_spec_v1.md",
+      "ref": "file://IFOS_kw_projects_workspaces_spec_v1.md",
+      "hash": "sha256:5ab0d357e1e09b06096733b63636affa6434a521495da7a2bc682d8641640935"
+    },
+    {
+      "name": "IFOS_kw_documents_cards_spec_v1.md",
+      "ref": "file://IFOS_kw_documents_cards_spec_v1.md",
+      "hash": "sha256:fbb76d880c9d627a28a9582fa175af96547c43b9efc0f7e91eb880bb6db147a7"
+    },
+    {
+      "name": "IFOS_kw_versioning_branching_spec_v1.md",
+      "ref": "file://IFOS_kw_versioning_branching_spec_v1.md",
+      "hash": "sha256:63825d7faf32985729b9e85c993d6ec44b3fcefeacda7b23002fbf021e8eff01"
+    },
+    {
+      "name": "IFOS_kw_comments_review_spec_v1.md",
+      "ref": "file://IFOS_kw_comments_review_spec_v1.md",
+      "hash": "sha256:a0a7b734907748ab5ecd9c68e2a29658c4c5c8d92fe1d9bf3893a398f5b92267"
+    },
+    {
+      "name": "IFOS_kw_templates_snippets_spec_v1.md",
+      "ref": "file://IFOS_kw_templates_snippets_spec_v1.md",
+      "hash": "sha256:1a9392e789be0cd7356134e5517e74996bb5d8ad7a57deff0c9a7a67b475f9ab"
+    },
+    {
+      "name": "IFOS_kw_search_tagging_spec_v1.md",
+      "ref": "file://IFOS_kw_search_tagging_spec_v1.md",
+      "hash": "sha256:3e47cc9c358b7552953993d6ec3a9c629b11214351d7a95b06bda4bce59ab672"
+    },
+    {
+      "name": "IFOS_kw_sharing_permissions_spec_v1.md",
+      "ref": "file://IFOS_kw_sharing_permissions_spec_v1.md",
+      "hash": "sha256:df5c02728fa342a6b0c382c8c664126528232d8c057c1b5684a604128edcda70"
+    },
+    {
+      "name": "IFOS_kw_automation_from_docs_spec_v1.md",
+      "ref": "file://IFOS_kw_automation_from_docs_spec_v1.md",
+      "hash": "sha256:7a3dcc6a044f171924c62ebb2faf240307069cf747c4cb2332b292fb40a126aa"
+    },
+    {
+      "name": "IFOS_kw_exports_spec_v1.md",
+      "ref": "file://IFOS_kw_exports_spec_v1.md",
+      "hash": "sha256:1f499ee1f3b68a53b2ff68b377f2875a8b73c9827597e32b2ede398ead5de643"
+    },
+    {
+      "name": "IFOS_kw_knowledge_links_spec_v1.md",
+      "ref": "file://IFOS_kw_knowledge_links_spec_v1.md",
+      "hash": "sha256:330aa3d4a5599aed57bbf67eb01437bb37a37282b10aebe818f8bf06eac2227e"
+    },
+    {
+      "name": "IFOS_kw_ui_office_patterns_spec_v1.md",
+      "ref": "file://IFOS_kw_ui_office_patterns_spec_v1.md",
+      "hash": "sha256:7b34b2feccca3a4215a52ae0505ed1af63027cbe0e42b9609b9813f0cec49a0c"
+    },
+    {
+      "name": "IFOS_kw_a11y_spec_v1.md",
+      "ref": "file://IFOS_kw_a11y_spec_v1.md",
+      "hash": "sha256:ad6148b55ee7a24af524d89468225c35ef6cd6e0896f459c8acf2049563c8c10"
+    },
+    {
+      "name": "IFOS_kw_workspace_schema_v1.json",
+      "ref": "file://IFOS_kw_workspace_schema_v1.json",
+      "hash": "sha256:1b2e014de560bc50e6c4a4b642a76b2b1e840c0d500fdf0a91b772d1a7765629"
+    },
+    {
+      "name": "IFOS_kw_project_schema_v1.json",
+      "ref": "file://IFOS_kw_project_schema_v1.json",
+      "hash": "sha256:8cce25c8f91def77c28f0cb6a7f428f04f6ae3fadb7f2be29788dacdb0d5621b"
+    },
+    {
+      "name": "IFOS_kw_document_schema_v1.json",
+      "ref": "file://IFOS_kw_document_schema_v1.json",
+      "hash": "sha256:a122307c56112384333e5e1fbffe72cdb5097ad52fc7d4c35dd9ff37a76cd948"
+    },
+    {
+      "name": "IFOS_kw_card_schema_v1.json",
+      "ref": "file://IFOS_kw_card_schema_v1.json",
+      "hash": "sha256:f6155ec511f78520646750bb11dc67c10d68fe07c1c5959ee60ab66ef4d02bda"
+    },
+    {
+      "name": "IFOS_kw_comment_schema_v1.json",
+      "ref": "file://IFOS_kw_comment_schema_v1.json",
+      "hash": "sha256:bda65057b7b3f205f098d3be23a95b4b6380c1dc48ff43a317ebdf90409ca460"
+    },
+    {
+      "name": "IFOS_kw_version_schema_v1.json",
+      "ref": "file://IFOS_kw_version_schema_v1.json",
+      "hash": "sha256:d90744d7f7511ad1656ef78ed38d732671d65569200a190f2ba8ffb2ca51c938"
+    },
+    {
+      "name": "IFOS_kw_tag_schema_v1.json",
+      "ref": "file://IFOS_kw_tag_schema_v1.json",
+      "hash": "sha256:28558c90fcf7143a163ef5ed9cfbd081e9b5a9f30fcfe315e8b8a878663e9c04"
+    },
+    {
+      "name": "IFOS_kw_share_policy_schema_v1.json",
+      "ref": "file://IFOS_kw_share_policy_schema_v1.json",
+      "hash": "sha256:a4bab0bea074d77c68a02f91fc9236e884d80ce600db7733bf5fb637ebfd63a8"
+    },
+    {
+      "name": "IFOS_kw_export_job_schema_v1.json",
+      "ref": "file://IFOS_kw_export_job_schema_v1.json",
+      "hash": "sha256:9b2237c47e80ec8e48d4459b778735f656e6010470c1c8700b15f3ef37e31cb6"
+    },
+    {
+      "name": "IFOS_kw_link_schema_v1.json",
+      "ref": "file://IFOS_kw_link_schema_v1.json",
+      "hash": "sha256:e240b4170e42280ef1131832ae212ec72f563a5d7e45c50878ded0c0a468fb96"
+    },
+    {
+      "name": "ifos_kw_doc_model_stub_v1.py",
+      "ref": "file://ifos_kw_doc_model_stub_v1.py",
+      "hash": "sha256:70002df72a597d429d389519433924c23409208f86a9756c97188d1e62fca4d3"
+    },
+    {
+      "name": "ifos_kw_diff_stub_v1.py",
+      "ref": "file://ifos_kw_diff_stub_v1.py",
+      "hash": "sha256:de6fa3517337d462ee3fa183606a9ed389fa325561cbd7807732be6685ac2ad4"
+    },
+    {
+      "name": "ifos_kw_exporter_stub_v1.py",
+      "ref": "file://ifos_kw_exporter_stub_v1.py",
+      "hash": "sha256:4489cef945cb2ea7948d2b4bc7c75197c63f42c0b7deb6dadd51a3e2abf24f69"
+    },
+    {
+      "name": "ifos_kw_tagger_stub_v1.py",
+      "ref": "file://ifos_kw_tagger_stub_v1.py",
+      "hash": "sha256:ff50bdcd09872fe53f122a504404fef9a07487de8cee92451f6554fb61b5b868"
+    }
+  ],
+  "created_at": "2026-01-04T17:35:00Z",
+  "version": "1.0.0"
+}

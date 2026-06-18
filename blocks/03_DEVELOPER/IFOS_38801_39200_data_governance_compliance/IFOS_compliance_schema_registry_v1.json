@@ -1,0 +1,57 @@
+{
+  "registry_id": "reg.cmp.51bx5ipk3pk6",
+  "entries": [
+    {
+      "name": "IFOS_data_classification_schema_v1.json",
+      "ref": "file://IFOS_data_classification_schema_v1.json",
+      "hash": "sha256:6a1b58d8574927f1eb85fe0fd577d6844263e1f4d62e2c5d158fd1bc4f85e781"
+    },
+    {
+      "name": "IFOS_consent_record_schema_v1.json",
+      "ref": "file://IFOS_consent_record_schema_v1.json",
+      "hash": "sha256:8756956285f6157f73897d6b869a07e6fe6a5938ab96cc9119476dd007bd23aa"
+    },
+    {
+      "name": "IFOS_retention_policy_schema_v1.json",
+      "ref": "file://IFOS_retention_policy_schema_v1.json",
+      "hash": "sha256:9500a284ac9b465bd01077e24f62559275769bb0b0724509b6329d1f4d71876f"
+    },
+    {
+      "name": "IFOS_deletion_job_schema_v1.json",
+      "ref": "file://IFOS_deletion_job_schema_v1.json",
+      "hash": "sha256:ab372413ee73af1c684653006ef22bdd437bd8295af0ddc51182714b50eeeec6"
+    },
+    {
+      "name": "IFOS_dlp_policy_schema_v1.json",
+      "ref": "file://IFOS_dlp_policy_schema_v1.json",
+      "hash": "sha256:a5648db60a65ef92ef9800c25eb4b1984b93a8bf2b2b884057bc03a9fd94558c"
+    },
+    {
+      "name": "IFOS_license_record_schema_v1.json",
+      "ref": "file://IFOS_license_record_schema_v1.json",
+      "hash": "sha256:2009889f63b40453ac06dea7ee92e7eed3f6e7efae8dc334e96658edd6b9323b"
+    },
+    {
+      "name": "IFOS_export_request_schema_v1.json",
+      "ref": "file://IFOS_export_request_schema_v1.json",
+      "hash": "sha256:64dfc9dd5d04b70c4b59139706402e8a8a06d16e171ed30d2a4e743cdc8b71e4"
+    },
+    {
+      "name": "IFOS_audit_event_schema_v1.json",
+      "ref": "file://IFOS_audit_event_schema_v1.json",
+      "hash": "sha256:4bdc4973a9a0a3dccc0c8d4a4ba38579e434f9663af0f6a50eacc7125489bb78"
+    },
+    {
+      "name": "IFOS_legal_hold_schema_v1.json",
+      "ref": "file://IFOS_legal_hold_schema_v1.json",
+      "hash": "sha256:f4c5fe551b1bb2d7b0b3b67ecef9db2a456d7146038913b43b5a49c70c8956ec"
+    },
+    {
+      "name": "IFOS_compliance_policy_pack_schema_v1.json",
+      "ref": "file://IFOS_compliance_policy_pack_schema_v1.json",
+      "hash": "sha256:e42b6581bfbf0ec93d2e45f9f175d61068e0974e97274a8328592b2b6a349c23"
+    }
+  ],
+  "updated_at": "2026-01-03T19:15:00Z",
+  "version": "1.0.0"
+}

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS BundleManifest Schema v2",
+  "type": "object",
+  "required": [
+    "bundle_id",
+    "name",
+    "items",
+    "dependency_graph_id",
+    "install_plan",
+    "version"
+  ],
+  "properties": {
+    "bundle_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dependency_graph_id": {
+      "type": "string"
+    },
+    "install_plan": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "demo_data": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

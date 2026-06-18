@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS KnowledgeProduct Schema v1",
+  "type": "object",
+  "required": [
+    "product_id",
+    "card_id",
+    "schema_links",
+    "licenses",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "product_id": {
+      "type": "string"
+    },
+    "card_id": {
+      "type": "string"
+    },
+    "schema_links": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "docs": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "versions": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "licenses": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "constraints": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "active",
+        "deprecated"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

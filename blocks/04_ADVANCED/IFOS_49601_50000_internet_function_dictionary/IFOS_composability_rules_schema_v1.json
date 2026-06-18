@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ComposabilityRules Schema v1",
+  "type": "object",
+  "required": [
+    "rules_id",
+    "io_rules",
+    "ordering_rules",
+    "safety_rules",
+    "version"
+  ],
+  "properties": {
+    "rules_id": {
+      "type": "string"
+    },
+    "io_rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ordering_rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "safety_rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

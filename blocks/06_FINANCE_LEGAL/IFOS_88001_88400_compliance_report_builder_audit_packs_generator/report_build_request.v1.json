@@ -1,0 +1,18 @@
+{
+  "contract_id": "report_build_request.v1",
+  "fields": {
+    "request_id": "string",
+    "environment": "string",
+    "policy_packs": "array[string]",
+    "time_range": "object",
+    "export_mode": "string",
+    "formats": "array[string]",
+    "branding": "object",
+    "include_sections": "object",
+    "filters": "object",
+    "requested_by": "string"
+  },
+  "privacy_level": "internal",
+  "retention_policy": "security_default",
+  "audit": "required"
+}

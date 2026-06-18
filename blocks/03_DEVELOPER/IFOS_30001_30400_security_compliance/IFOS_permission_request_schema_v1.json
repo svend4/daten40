@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS PermissionRequest Schema v1",
+  "type": "object",
+  "required": [
+    "request_id",
+    "package_id",
+    "permissions",
+    "reason",
+    "duration",
+    "status",
+    "approved_by",
+    "version"
+  ],
+  "properties": {
+    "request_id": {
+      "type": "string"
+    },
+    "package_id": {
+      "type": "string"
+    },
+    "permissions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "target"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "network",
+              "read",
+              "write",
+              "webhook",
+              "schedule",
+              "secrets"
+            ]
+          },
+          "target": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "reason": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "string",
+      "enum": [
+        "one_run",
+        "24h",
+        "permanent"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "denied"
+      ]
+    },
+    "approved_by": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

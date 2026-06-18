@@ -1,0 +1,12 @@
+{
+  "contract_id": "dsar_decision.v1",
+  "fields": {
+    "request_id": "string",
+    "decision": "string",
+    "reason": "string",
+    "decided_at": "datetime"
+  },
+  "privacy_level": "confidential",
+  "retention_policy": "personal_data_default",
+  "audit": "required"
+}

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Incident Schema v1",
+  "type": "object",
+  "required": [
+    "incident_id",
+    "title",
+    "status",
+    "impacted",
+    "timeline",
+    "postmortem",
+    "version"
+  ],
+  "properties": {
+    "incident_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "investigating",
+        "mitigated",
+        "resolved"
+      ]
+    },
+    "impacted": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "timeline": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "postmortem": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

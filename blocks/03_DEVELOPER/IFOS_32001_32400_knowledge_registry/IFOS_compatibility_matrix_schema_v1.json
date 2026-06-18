@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS CompatibilityMatrix Schema v1",
+  "type": "object",
+  "required": [
+    "compatibility_id",
+    "item_id",
+    "platforms",
+    "constraints",
+    "version"
+  ],
+  "properties": {
+    "compatibility_id": {
+      "type": "string"
+    },
+    "item_id": {
+      "type": "string"
+    },
+    "platforms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "min_version": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "max_version": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "runtimes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "versions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "oses": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "properties": {
+        "needs_server": {
+          "type": "boolean"
+        },
+        "needs_api_key": {
+          "type": "boolean"
+        },
+        "pricing": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "self_hosted": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "open_source": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

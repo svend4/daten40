@@ -1,0 +1,268 @@
+{
+  "agent_profile": {
+    "agent_id": "agt.a.ief63qku3izx",
+    "tenant_id": "ten.t.qou8uszee6zr",
+    "name": "OpsAgent",
+    "goals": {
+      "optimize": "quality",
+      "max_cost_per_run": 2.0
+    },
+    "permissions": {
+      "scopes": [
+        "tenant:ten.t.qou8uszee6zr"
+      ],
+      "tools": [
+        "*"
+      ]
+    },
+    "constraints": {
+      "no_external_email_without_approval": true,
+      "no_financial_actions": true
+    },
+    "preferences": {
+      "language": "ru",
+      "report_style": "checklist"
+    },
+    "version": "1.0.0"
+  },
+  "tool_descriptor": {
+    "tool_id": "tool.t.b1qzq0ux7wna",
+    "name": "make.webhook.trigger",
+    "description": "Triggers a Make.com scenario via webhook",
+    "inputs": {
+      "type": "object",
+      "properties": {
+        "webhook_url": {
+          "type": "string"
+        },
+        "payload": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "webhook_url"
+      ]
+    },
+    "outputs": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "run_url": {
+          "type": "string"
+        }
+      }
+    },
+    "side_effects": {
+      "writes_external": true,
+      "targets": [
+        "make.com"
+      ]
+    },
+    "risk": "confirm",
+    "rate_limits": {
+      "rpm": 60
+    },
+    "cost": {
+      "unit": "calls",
+      "estimate": 0.001
+    },
+    "secrets": [
+      "secrets:make_webhook"
+    ],
+    "examples": [
+      {
+        "webhook_url": "https://hook.make.com/xxx",
+        "payload": {
+          "x": 1
+        }
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "tool_registry": {
+    "registry_id": "treg.r.m5hdrbld9n18",
+    "tenant_id": "ten.t.qou8uszee6zr",
+    "tools": [
+      "tool.t.b1qzq0ux7wna"
+    ],
+    "bundles": [
+      {
+        "bundle_id": "bundle.crm",
+        "tools": [
+          "tool.t.b1qzq0ux7wna"
+        ],
+        "name": "CRM Automation Pack"
+      }
+    ],
+    "compat": {
+      "min_ifos_version": "1.0.0"
+    },
+    "version": "1.0.0"
+  },
+  "action_policy": {
+    "policy_id": "pol.p.bqprhzcanpi6",
+    "tenant_id": "ten.t.qou8uszee6zr",
+    "rules": [
+      {
+        "effect": "require_approval",
+        "tool_match": {
+          "risk": "confirm"
+        },
+        "limits": {
+          "max_per_day": 100
+        },
+        "notes": "All external writes require approval"
+      },
+      {
+        "effect": "deny",
+        "tool_match": {
+          "name_prefix": "finance."
+        },
+        "notes": "Finance tools disabled"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "workflow_spec": {
+    "workflow_id": "wf.w.qu4fx0hxgmfu",
+    "tenant_id": "ten.t.qou8uszee6zr",
+    "name": "Lead Intake → CRM",
+    "steps": [
+      {
+        "id": "s1",
+        "tool_ref": "tool.t.b1qzq0ux7wna",
+        "inputs": {
+          "webhook_url": "https://hook.make.com/xxx",
+          "payload": {
+            "lead": "{{context.lead}}"
+          }
+        }
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "task_item": {
+    "task_id": "tsk.t.lbtfworvgiz8",
+    "tenant_id": "ten.t.qou8uszee6zr",
+    "title": "Import new leads and notify owner",
+    "inputs": {
+      "source": "webform"
+    },
+    "definition_of_done": [
+      "Lead saved to CRM",
+      "Owner notified",
+      "Audit event written"
+    ],
+    "priority": "high",
+    "version": "1.0.0"
+  },
+  "plan_spec": {
+    "plan_id": "pln.p.mbl5homqlou7",
+    "tenant_id": "ten.t.qou8uszee6zr",
+    "task_id": "tsk.t.lbtfworvgiz8",
+    "steps": [
+      {
+        "step": "retrieve",
+        "tool": "kb.retrieve"
+      },
+      {
+        "step": "execute_workflow",
+        "workflow_id": "wf.w.qu4fx0hxgmfu"
+      }
+    ],
+    "checks": [
+      {
+        "check": "crm_has_lead",
+        "method": "tool.crm.lookup"
+      }
+    ],
+    "requires_approvals": [
+      "external_write"
+    ],
+    "version": "1.0.0"
+  },
+  "execution_run": {
+    "run_id": "run.x.76j76x3nz5bg",
+    "tenant_id": "ten.t.qou8uszee6zr",
+    "workflow_id": "wf.w.qu4fx0hxgmfu",
+    "status": "paused_for_approval",
+    "started_at": "2026-01-03T16:10:00Z",
+    "ended_at": null,
+    "step_results": [
+      {
+        "step_id": "s1",
+        "status": "pending",
+        "note": "waiting approval"
+      }
+    ],
+    "artifacts": null,
+    "idempotency_key": "lead:123",
+    "version": "1.0.0"
+  },
+  "approval_request": {
+    "approval_id": "apr.a.1yf4l5krxxy1",
+    "tenant_id": "ten.t.qou8uszee6zr",
+    "run_id": "run.x.76j76x3nz5bg",
+    "step_id": "s1",
+    "action": {
+      "tool_ref": "tool.t.b1qzq0ux7wna",
+      "payload": {
+        "lead": "Alice"
+      }
+    },
+    "risk": {
+      "category": "external_write",
+      "impact": "medium"
+    },
+    "status": "pending",
+    "approver": null,
+    "version": "1.0.0"
+  },
+  "connector_bridge": {
+    "bridge_id": "br.b.qzbz2t9wdccu",
+    "tenant_id": "ten.t.qou8uszee6zr",
+    "type": "make",
+    "endpoint": {
+      "base_url": "https://api.make.com",
+      "mode": "webhook"
+    },
+    "mappings": {
+      "workflow_to_scenario": {
+        "Lead Intake → CRM": "12345"
+      }
+    },
+    "auth_ref": "secrets:make_token",
+    "version": "1.0.0"
+  },
+  "schedule_spec": {
+    "schedule_id": "sch.s.hpwugdbfox4g",
+    "tenant_id": "ten.t.qou8uszee6zr",
+    "type": "cron",
+    "expr": "0 9 * * *",
+    "timezone": "Europe/Berlin",
+    "version": "1.0.0"
+  },
+  "audit_event": {
+    "event_id": "aud.e.d86kdrpq6eyt",
+    "tenant_id": "ten.t.qou8uszee6zr",
+    "ts": "2026-01-03T16:10:00Z",
+    "actor": {
+      "type": "agent",
+      "id": "agt.a.ief63qku3izx"
+    },
+    "action": {
+      "type": "workflow.run",
+      "workflow_id": "wf.w.qu4fx0hxgmfu",
+      "run_id": "run.x.76j76x3nz5bg"
+    },
+    "result": {
+      "status": "paused_for_approval"
+    },
+    "links": {
+      "approval_id": "apr.a.1yf4l5krxxy1"
+    },
+    "version": "1.0.0"
+  }
+}

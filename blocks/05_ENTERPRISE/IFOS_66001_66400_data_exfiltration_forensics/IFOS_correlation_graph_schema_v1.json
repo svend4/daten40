@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS CorrelationGraph Schema v1",
+  "type": "object",
+  "required": [
+    "graph_id",
+    "case_id",
+    "nodes",
+    "edges",
+    "generated_at",
+    "version"
+  ],
+  "properties": {
+    "graph_id": {
+      "type": "string"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Actor",
+              "Credential",
+              "Connector",
+              "Workflow",
+              "Route",
+              "Destination",
+              "Dataset",
+              "Event",
+              "Policy"
+            ]
+          },
+          "label": {
+            "type": "string"
+          },
+          "attrs": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "from",
+          "to",
+          "type"
+        ],
+        "properties": {
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "USED",
+              "ISSUED",
+              "DEPLOYED",
+              "CALLED",
+              "EXFILTRATED_TO",
+              "BLOCKED_BY",
+              "ROTATED",
+              "TRIGGERED"
+            ]
+          },
+          "attrs": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

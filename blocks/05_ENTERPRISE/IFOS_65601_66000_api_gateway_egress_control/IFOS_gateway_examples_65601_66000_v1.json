@@ -1,0 +1,58 @@
+{
+  "ticket_add_domain_example": {
+    "ticket_id": "tck_001",
+    "tenant_id": "t_demo",
+    "requested_by": {
+      "role": "developer",
+      "user": "stefan"
+    },
+    "change_type": "add_domain",
+    "justification": "Need access to api.example.com for connector X",
+    "risk_assessment": {
+      "data_class": "internal",
+      "pii": "no",
+      "business_owner": "ops"
+    },
+    "status": "submitted",
+    "approvals": [],
+    "version": "1.0.0"
+  },
+  "egress_session_example": {
+    "session_id": "es_s_Fw5fxh-VmpMj",
+    "tenant_id": "t_demo",
+    "route_id": "rt.core.stripe",
+    "issued_at": "2026-01-02T10:00:00Z",
+    "expires_at": "2026-01-02T10:10:00Z",
+    "subject": {
+      "connector_id": "stripe",
+      "workflow_id": "wf_123",
+      "sandbox_run_id": "run_001"
+    },
+    "bound_attestation_id": "att_xxxxx",
+    "version": "1.0.0"
+  },
+  "outbound_log_example": {
+    "log_id": "ol_l_GNG-p81gRGds",
+    "ts": "2026-01-02T10:02:11Z",
+    "tenant_id": "t_demo",
+    "route_id": "rt.core.stripe",
+    "decision": "allow",
+    "rule_id": "er.strict.core",
+    "dest": {
+      "domain": "api.stripe.com",
+      "port": 443,
+      "path_hash": "sha256:684e8cb9632618bf0e94ed66cd9e6f07332bb5db2f17181db30b1d28009bc2d9"
+    },
+    "bytes": {
+      "request": 1320,
+      "response": 8450
+    },
+    "timing_ms": 240,
+    "dlp_matches": [],
+    "receipt": {
+      "receipt_hash": "sha256:48a2f16d5e91a1cbb9db6ba630152cd3acab56b75b619bfd887d8ed22abed239",
+      "signature": "sig_gw_W2TKZrFXiqb4"
+    },
+    "version": "1.0.0"
+  }
+}

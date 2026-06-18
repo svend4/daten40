@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS KeyGrant Schema v1",
+  "type": "object",
+  "required": [
+    "grant_id",
+    "created_at",
+    "request_id",
+    "decision",
+    "expires_at",
+    "policy_id",
+    "controls",
+    "version"
+  ],
+  "properties": {
+    "grant_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "request_id": {
+      "type": "string"
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "ALLOW",
+        "DENY"
+      ]
+    },
+    "expires_at": {
+      "type": "string"
+    },
+    "policy_id": {
+      "type": "string"
+    },
+    "controls": {
+      "type": "object",
+      "properties": {
+        "sandbox_only": {
+          "type": "boolean"
+        },
+        "endpoint_allowlist": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "canary_tag": {
+          "type": "string"
+        },
+        "rotation_job_id": {
+          "type": "string"
+        },
+        "rate_limit_per_min": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "reason_code": {
+      "type": "string"
+    },
+    "human_reason": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

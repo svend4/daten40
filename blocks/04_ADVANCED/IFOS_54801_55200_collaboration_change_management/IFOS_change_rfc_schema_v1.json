@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RFC Schema v1",
+  "type": "object",
+  "required": [
+    "rfc_id",
+    "title",
+    "problem",
+    "proposal",
+    "impact",
+    "rollout",
+    "rollback",
+    "test_plan",
+    "state",
+    "version"
+  ],
+  "properties": {
+    "rfc_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "problem": {
+      "type": "string"
+    },
+    "proposal": {
+      "type": "string"
+    },
+    "impact": {
+      "type": "string"
+    },
+    "rollout": {
+      "type": "string"
+    },
+    "rollback": {
+      "type": "string"
+    },
+    "test_plan": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "in_review",
+        "approved",
+        "rejected",
+        "implemented"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

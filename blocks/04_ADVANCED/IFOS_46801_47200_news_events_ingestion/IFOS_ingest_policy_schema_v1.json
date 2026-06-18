@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS IngestPolicy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "rate_limits",
+    "robots",
+    "retry",
+    "quarantine",
+    "version"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "rate_limits": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "robots": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "retry": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "quarantine": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

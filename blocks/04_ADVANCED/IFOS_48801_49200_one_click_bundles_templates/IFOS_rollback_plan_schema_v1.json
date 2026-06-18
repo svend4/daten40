@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RollbackPlan Schema v1",
+  "type": "object",
+  "required": [
+    "rollback_id",
+    "bundle_id",
+    "steps",
+    "guards",
+    "version"
+  ],
+  "properties": {
+    "rollback_id": {
+      "type": "string"
+    },
+    "bundle_id": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "guards": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

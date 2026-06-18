@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DeployPlan Schema v1",
+  "type": "object",
+  "required": [
+    "deploy_id",
+    "strategy",
+    "window",
+    "rollback",
+    "checks",
+    "version"
+  ],
+  "properties": {
+    "deploy_id": {
+      "type": "string"
+    },
+    "strategy": {
+      "type": "string",
+      "enum": [
+        "canary",
+        "blue_green",
+        "rolling",
+        "pinned"
+      ]
+    },
+    "window": {
+      "type": "string"
+    },
+    "rollback": {
+      "type": "string"
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

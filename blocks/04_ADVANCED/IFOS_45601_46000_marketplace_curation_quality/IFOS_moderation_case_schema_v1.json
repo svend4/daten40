@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ModerationCase Schema v1",
+  "type": "object",
+  "required": [
+    "case_id",
+    "item_id",
+    "reports",
+    "state",
+    "actions",
+    "audit",
+    "version"
+  ],
+  "properties": {
+    "case_id": {
+      "type": "string"
+    },
+    "item_id": {
+      "type": "string"
+    },
+    "reports": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "triage",
+        "investigating",
+        "resolved",
+        "dismissed"
+      ]
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "audit": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

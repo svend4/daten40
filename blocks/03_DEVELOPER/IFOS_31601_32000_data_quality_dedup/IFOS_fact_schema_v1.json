@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Fact Schema v1",
+  "type": "object",
+  "required": [
+    "fact_id",
+    "predicate",
+    "subject_entity_id",
+    "object",
+    "unit",
+    "currency",
+    "version"
+  ],
+  "properties": {
+    "fact_id": {
+      "type": "string"
+    },
+    "predicate": {
+      "type": "string"
+    },
+    "subject_entity_id": {
+      "type": "string"
+    },
+    "object": {},
+    "unit": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "currency": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

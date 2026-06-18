@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UserProfile Schema v1",
+  "type": "object",
+  "required": [
+    "user_id",
+    "locale",
+    "timezone",
+    "persona",
+    "likes",
+    "blocks",
+    "version"
+  ],
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "locale": {
+      "type": "string"
+    },
+    "timezone": {
+      "type": "string"
+    },
+    "persona": {
+      "type": "string",
+      "enum": [
+        "solo",
+        "team",
+        "enterprise",
+        "developer",
+        "curator"
+      ]
+    },
+    "likes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "blocks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "review": {
+    "review_id": "rev.r.p33ogza62cs5",
+    "entity_type": "bundle",
+    "entity_id": "bun.rss.telegram",
+    "context": {
+      "target": "docker",
+      "os": "linux",
+      "region": "DE"
+    },
+    "use_case": "Новости RSS → Telegram без дублей",
+    "ttfv_minutes": 8,
+    "pros": [
+      "Запустилось быстро",
+      "Хорошие логи"
+    ],
+    "cons": [
+      "Нужно вручную добавить токен"
+    ],
+    "recommendations": [
+      "Подходит для личной ленты",
+      "Не подходит для высоких объёмов без очереди"
+    ],
+    "rating": 4.5,
+    "author": {
+      "user_id": "u123",
+      "level": "reviewer"
+    },
+    "created_at": "2026-01-04T13:20:00Z",
+    "version": "1.0.0"
+  },
+  "rating": {
+    "rating_id": "rate.t.edmcu5ukfc1l",
+    "entity_type": "bundle",
+    "entity_id": "bun.rss.telegram",
+    "score": 86.2,
+    "explain": [
+      "Высокий success rate",
+      "Есть examples",
+      "Уровень verified"
+    ],
+    "components": {
+      "quality": 0.82,
+      "trust": 0.9,
+      "freshness": 0.7,
+      "cost": 0.6,
+      "fit": 0.85
+    },
+    "version": "1.0.0"
+  },
+  "moderation_case": {
+    "case_id": "case.c.faaeefj18npk",
+    "entity": {
+      "type": "review",
+      "id": "rev.bad"
+    },
+    "signals": [
+      "spam_links",
+      "no_details"
+    ],
+    "action": "downrank",
+    "status": "resolved",
+    "version": "1.0.0"
+  },
+  "conference_protocol": {
+    "protocol_id": "prot.p.d84nnqrkw1ph",
+    "topic": "Bundles RSS",
+    "clusters": [
+      {
+        "title": "Боль: токены",
+        "count": 12
+      },
+      {
+        "title": "Боль: дедуп",
+        "count": 5
+      }
+    ],
+    "actions": [
+      "Добавить wizard step для секретов",
+      "Улучшить docs дедуп"
+    ],
+    "version": "1.0.0"
+  }
+}

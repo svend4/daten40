@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS License Schema v1",
+  "type": "object",
+  "required": [
+    "license_id",
+    "name",
+    "type",
+    "terms",
+    "version"
+  ],
+  "properties": {
+    "license_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "open_source",
+        "source_available",
+        "commercial",
+        "dual",
+        "data"
+      ]
+    },
+    "terms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

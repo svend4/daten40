@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SourceComparison Schema v1",
+  "type": "object",
+  "required": [
+    "comparison_id",
+    "cluster_id",
+    "sources",
+    "agreements",
+    "disagreements",
+    "canonical",
+    "version"
+  ],
+  "properties": {
+    "comparison_id": {
+      "type": "string"
+    },
+    "cluster_id": {
+      "type": "string"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "agreements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "disagreements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "canonical": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

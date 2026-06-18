@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Verdict Schema v1",
+  "type": "object",
+  "required": [
+    "verdict_id",
+    "cluster_id",
+    "known",
+    "likely",
+    "uncertain",
+    "actions",
+    "confidence",
+    "version"
+  ],
+  "properties": {
+    "verdict_id": {
+      "type": "string"
+    },
+    "cluster_id": {
+      "type": "string"
+    },
+    "known": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "likely": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "uncertain": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

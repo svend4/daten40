@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DSARRequest Schema v1",
+  "type": "object",
+  "required": [
+    "dsar_id",
+    "type",
+    "subject",
+    "status",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "dsar_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "access",
+        "deletion",
+        "rectification",
+        "portability"
+      ]
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "identity_verification": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "scope": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "received",
+        "in_progress",
+        "completed",
+        "rejected"
+      ]
+    },
+    "report_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS CapacityPlan Schema v1",
+  "type": "object",
+  "required": [
+    "cap_id",
+    "scope",
+    "forecasts",
+    "limits",
+    "version"
+  ],
+  "properties": {
+    "cap_id": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string"
+    },
+    "forecasts": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

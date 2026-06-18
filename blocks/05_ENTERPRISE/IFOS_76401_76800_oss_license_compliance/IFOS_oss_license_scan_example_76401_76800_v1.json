@@ -1,0 +1,64 @@
+{
+  "sbom_id": "sbom_01HXYZ",
+  "format": "spdx-json",
+  "artifact_ref": {
+    "type": "ifos_bundle",
+    "bundle_id": "bundle_P0P1_v3",
+    "digest": "sha256:deadbeef..."
+  },
+  "components": [
+    {
+      "purl": "pkg:npm/react@18.2.0",
+      "name": "react",
+      "version": "18.2.0",
+      "license_declared": "MIT",
+      "license_concluded": "MIT",
+      "license_evidence": [
+        {
+          "source": "spdx",
+          "value": "MIT"
+        }
+      ]
+    },
+    {
+      "purl": "pkg:npm/some-lib@1.4.0",
+      "name": "some-lib",
+      "version": "1.4.0",
+      "license_declared": "AGPL-3.0-only",
+      "license_concluded": "AGPL-3.0-only",
+      "license_evidence": [
+        {
+          "source": "scanner",
+          "value": "AGPL-3.0-only",
+          "confidence": 0.92
+        }
+      ]
+    }
+  ],
+  "policy_evaluation": {
+    "policy_id": "pol_default_marketplace",
+    "result": "FAIL",
+    "blocked_components": [
+      {
+        "purl": "pkg:npm/some-lib@1.4.0",
+        "reason": "License denied: AGPL-3.0-only"
+      }
+    ],
+    "reasons": [
+      "Found denied license AGPL-3.0-only in component pkg:npm/some-lib@1.4.0",
+      "No approved exception found for denied license."
+    ]
+  },
+  "obligations": [
+    {
+      "kind": "include_license_text",
+      "applies_to": "pkg:npm/react@18.2.0",
+      "status": "pending"
+    },
+    {
+      "kind": "attribution",
+      "applies_to": "bundle_P0P1_v3",
+      "status": "blocked"
+    }
+  ]
+}

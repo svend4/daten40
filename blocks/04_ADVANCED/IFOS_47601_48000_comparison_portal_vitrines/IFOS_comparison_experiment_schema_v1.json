@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Comparison Experiment Schema v1",
+  "type": "object",
+  "required": [
+    "exp_id",
+    "vertical",
+    "hypothesis",
+    "variants",
+    "metrics",
+    "guardrails",
+    "version"
+  ],
+  "properties": {
+    "exp_id": {
+      "type": "string"
+    },
+    "vertical": {
+      "type": "string"
+    },
+    "hypothesis": {
+      "type": "string"
+    },
+    "variants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "guardrails": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

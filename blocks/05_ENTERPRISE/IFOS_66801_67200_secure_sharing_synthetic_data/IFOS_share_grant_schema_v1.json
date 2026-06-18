@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ShareGrant Schema v1",
+  "type": "object",
+  "required": [
+    "grant_id",
+    "created_at",
+    "request_id",
+    "decision",
+    "expires_at",
+    "controls",
+    "version"
+  ],
+  "properties": {
+    "grant_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "request_id": {
+      "type": "string"
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "ALLOW",
+        "ALLOW_TRANSFORM",
+        "DENY"
+      ]
+    },
+    "expires_at": {
+      "type": "string"
+    },
+    "dataset_version": {
+      "type": "string"
+    },
+    "controls": {
+      "type": "object",
+      "properties": {
+        "deid_profile_id": {
+          "type": "string"
+        },
+        "synthetic_profile_id": {
+          "type": "string"
+        },
+        "sample_policy_id": {
+          "type": "string"
+        },
+        "watermarking": {
+          "type": "boolean"
+        },
+        "max_rows": {
+          "type": "integer"
+        },
+        "rate_limit_per_min": {
+          "type": "integer"
+        },
+        "receipts_required": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "reason_code": {
+      "type": "string"
+    },
+    "human_reason": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

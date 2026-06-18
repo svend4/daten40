@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Ecosystem Asset Schema v1",
+  "type": "object",
+  "required": [
+    "asset_id",
+    "ecosystem",
+    "name",
+    "capabilities",
+    "version"
+  ],
+  "properties": {
+    "asset_id": {
+      "type": "string"
+    },
+    "ecosystem": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "interfaces": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "deps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "licensing": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "security": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "quality": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

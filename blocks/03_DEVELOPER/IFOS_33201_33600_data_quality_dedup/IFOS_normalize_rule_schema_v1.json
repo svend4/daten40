@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS NormalizeRule Schema v1",
+  "type": "object",
+  "required": [
+    "rule_id",
+    "kind",
+    "pattern",
+    "action",
+    "version"
+  ],
+  "properties": {
+    "rule_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "title_cleanup",
+        "tag_mapping",
+        "category_mapping",
+        "capability_extract",
+        "deps_extract",
+        "license_map",
+        "url_normalize"
+      ]
+    },
+    "pattern": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "action": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

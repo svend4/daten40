@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ValidationResult Schema v1",
+  "type": "object",
+  "required": [
+    "validation_id",
+    "schema_id",
+    "version",
+    "ok",
+    "errors",
+    "warnings",
+    "ts",
+    "versioning"
+  ],
+  "properties": {
+    "validation_id": {
+      "type": "string"
+    },
+    "schema_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "ok": {
+      "type": "boolean"
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "versioning": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

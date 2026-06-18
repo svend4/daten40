@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS GatewayRoute Schema v1",
+  "type": "object",
+  "required": [
+    "route_id",
+    "tenant_id",
+    "source",
+    "destination",
+    "policy_stack",
+    "quotas",
+    "logging",
+    "version"
+  ],
+  "properties": {
+    "route_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "destination": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "policy_stack": {
+      "type": "object",
+      "required": [
+        "egress_rule_id",
+        "tls_policy_id",
+        "inspection_profile_id",
+        "dlp_policy_id"
+      ],
+      "properties": {
+        "egress_rule_id": {
+          "type": "string"
+        },
+        "tls_policy_id": {
+          "type": "string"
+        },
+        "inspection_profile_id": {
+          "type": "string"
+        },
+        "dlp_policy_id": {
+          "type": "string"
+        }
+      }
+    },
+    "quotas": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "logging": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "contract_id": "evidence_item.v1",
+  "fields": {
+    "evidence_id": "string",
+    "artifact_uri": "string",
+    "collected_at": "datetime",
+    "collector": "string",
+    "hash": "string"
+  },
+  "privacy_level": "internal",
+  "retention_policy": "security_default",
+  "audit": "required"
+}

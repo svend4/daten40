@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UI Budget Schema v1",
+  "type": "object",
+  "required": [
+    "budget_id",
+    "scope",
+    "limit",
+    "spent",
+    "period",
+    "actions",
+    "version"
+  ],
+  "properties": {
+    "budget_id": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string"
+    },
+    "limit": {
+      "type": "number"
+    },
+    "spent": {
+      "type": "number"
+    },
+    "period": {
+      "type": "string",
+      "enum": [
+        "day",
+        "week",
+        "month"
+      ]
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

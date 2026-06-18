@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Citation Schema v1",
+  "type": "object",
+  "required": [
+    "citation_id",
+    "url",
+    "raw_id",
+    "snippet",
+    "version"
+  ],
+  "properties": {
+    "citation_id": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "raw_id": {
+      "type": "string"
+    },
+    "snippet": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

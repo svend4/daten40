@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Fixture Schema v1",
+  "type": "object",
+  "required": [
+    "fixture_id",
+    "type",
+    "payload_ref",
+    "version"
+  ],
+  "properties": {
+    "fixture_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "rss_snapshot",
+        "product_catalog",
+        "reviews_set",
+        "webhook_payload",
+        "error_case"
+      ]
+    },
+    "payload_ref": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

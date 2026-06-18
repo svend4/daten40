@@ -1,0 +1,24 @@
+{
+  "apply_to": ">= v30",
+  "delta": {
+    "section": "DOMAIN",
+    "add": [
+      {
+        "id_range": "IFOS_84401_84800",
+        "name": "Education Admin Domain Pack (Production Seed)",
+        "slug": "education_admin_domain_pack_production",
+        "type": "DomainPack",
+        "layer": "Domain",
+        "status": "Production",
+        "dependencies": [
+          "IFOS_00001_00400",
+          "IFOS_82801_83200"
+        ],
+        "artifacts": [
+          "IFOS_84401_84800_education_admin_domain_pack_production_os_pack.zip"
+        ],
+        "notes": "Production education admin pack: enrollment, docs, notifications"
+      }
+    ]
+  }
+}

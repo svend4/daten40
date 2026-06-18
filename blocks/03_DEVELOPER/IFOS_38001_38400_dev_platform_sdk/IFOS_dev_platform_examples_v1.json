@@ -1,0 +1,208 @@
+{
+  "plugin_manifest": {
+    "plugin_id": "plg.p.xf2x9v3oda6e",
+    "name": "ifos-connector-crm",
+    "version": "1.2.0",
+    "author": {
+      "name": "Example Dev",
+      "org": "ExampleOrg"
+    },
+    "license": "Apache-2.0",
+    "capabilities": {
+      "tools": [
+        "crm.lead.upsert",
+        "crm.lead.search"
+      ],
+      "workflows": [
+        "lead_intake"
+      ],
+      "ui_cards": [
+        "lead_card"
+      ]
+    },
+    "dependencies": {
+      "min_ifos": "1.0.0",
+      "python": [
+        "httpx>=0.27"
+      ],
+      "services": [
+        "postgres"
+      ]
+    },
+    "security": {
+      "secrets": [
+        "secrets:crm_token"
+      ],
+      "risk": "confirm",
+      "data_classes": [
+        "PII"
+      ]
+    },
+    "docs": {
+      "readme": "README.md",
+      "examples": [
+        "examples/lead_intake.json"
+      ],
+      "changelog": "CHANGELOG.md"
+    }
+  },
+  "template_pack": {
+    "template_pack_id": "tpl.t.truhiyvyo54f",
+    "name": "Connector Starter Pack",
+    "templates": [
+      {
+        "name": "REST Connector",
+        "path": "templates/rest_connector"
+      },
+      {
+        "name": "Webhook Intake",
+        "path": "templates/webhook_intake"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "scaffold_request": {
+    "request_id": "req.s.h02brendrk95",
+    "type": "connector",
+    "targets": [
+      "python",
+      "typescript"
+    ],
+    "options": {
+      "auth": "api_key",
+      "pagination": "cursor",
+      "retries": true,
+      "docker_compose": true
+    },
+    "version": "1.0.0"
+  },
+  "scaffold_result": {
+    "result_id": "res.s.3b9dj6vnyc3w",
+    "request_id": "req.s.h02brendrk95",
+    "files": [
+      {
+        "path": "README.md",
+        "content": "Generated connector scaffold"
+      },
+      {
+        "path": "src/client.py",
+        "content": null
+      }
+    ],
+    "instructions": "Run tests, set secrets, start sandbox",
+    "version": "1.0.0"
+  },
+  "sdk_profile": {
+    "sdk_profile_id": "sdkp.s.8als4q7cgcwt",
+    "language": "python",
+    "runtime": {
+      "python": "3.12"
+    },
+    "style": "async",
+    "auth": {
+      "type": "api_key",
+      "header": "Authorization"
+    },
+    "defaults": {
+      "timeout_seconds": 30,
+      "retries": 3,
+      "backoff": "exp"
+    },
+    "version": "1.0.0"
+  },
+  "sdk_package": {
+    "package_id": "sdkg.p.az4xscmgr93c",
+    "sdk_profile_id": "sdkp.s.8als4q7cgcwt",
+    "source_api": {
+      "openapi": "IFOS_dev_platform_api_v1.yaml",
+      "schemas": [
+        "IFOS_plugin_manifest_schema_v1.json"
+      ]
+    },
+    "artifacts": [
+      {
+        "type": "wheel",
+        "path": "dist/ifos_sdk-1.0.0-py3-none-any.whl"
+      },
+      {
+        "type": "docs",
+        "path": "docs/index.html"
+      }
+    ],
+    "changelog": "Generated from API v1.0.0",
+    "version": "1.0.0"
+  },
+  "sandbox_env": {
+    "sandbox_id": "sbx.s.tbk4unezjlke",
+    "tenant_id": "tenant.t.qh320gkwa6u5",
+    "isolation": {
+      "type": "docker_compose",
+      "network": "ifos_sandbox"
+    },
+    "fixtures": {
+      "datasets": [
+        "leads.jsonl"
+      ],
+      "secrets": "fake"
+    },
+    "endpoints": {
+      "api": "http://localhost:8080",
+      "mock_crm": "http://localhost:9001"
+    },
+    "version": "1.0.0"
+  },
+  "contract_test": {
+    "test_id": "ct.c.xs5p4pzzxu8r",
+    "plugin_id": "plg.p.xf2x9v3oda6e",
+    "checks": [
+      {
+        "name": "schemas_backward_compatible",
+        "status": "passed"
+      },
+      {
+        "name": "error_shapes",
+        "status": "passed"
+      }
+    ],
+    "status": "passed",
+    "report": {
+      "duration_ms": 1234
+    },
+    "version": "1.0.0"
+  },
+  "publishing_job": {
+    "job_id": "job.j.k90psci2i37z",
+    "plugin_id": "plg.p.xf2x9v3oda6e",
+    "target_channel": "review",
+    "stages": [
+      {
+        "name": "build",
+        "status": "succeeded"
+      },
+      {
+        "name": "contract_tests",
+        "status": "succeeded"
+      },
+      {
+        "name": "sign",
+        "status": "succeeded"
+      }
+    ],
+    "status": "succeeded",
+    "version": "1.0.0"
+  },
+  "compat_matrix": {
+    "matrix_id": "cm.c.h8uvsskvsv50",
+    "entries": [
+      {
+        "plugin": "ifos-connector-crm",
+        "plugin_version": "1.2.0",
+        "ifos_min": "1.0.0",
+        "ifos_max": "1.x",
+        "notes": "No breaking changes"
+      }
+    ],
+    "updated_at": "2026-01-03T17:05:00Z",
+    "version": "1.0.0"
+  }
+}

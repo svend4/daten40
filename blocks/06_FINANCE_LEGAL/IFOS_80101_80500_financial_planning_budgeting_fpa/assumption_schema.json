@@ -1,0 +1,9 @@
+{
+  "id": "string",
+  "name": "string",
+  "driver_type": "enum: rate|volume|fixed|formula",
+  "value": "number|string",
+  "unit": "string",
+  "effective_from": "string",
+  "effective_to": "string"
+}

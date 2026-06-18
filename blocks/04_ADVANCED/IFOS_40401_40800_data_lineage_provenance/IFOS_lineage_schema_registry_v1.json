@@ -1,0 +1,57 @@
+{
+  "registry_id": "reg.lineage.lydkgqd3waqr",
+  "entries": [
+    {
+      "name": "IFOS_dataset_schema_v1.json",
+      "ref": "file://IFOS_dataset_schema_v1.json",
+      "hash": "sha256:2614bad672d51c00a9cacbec1e91f115f83b87383e2baea7a9643ce4c1af3208"
+    },
+    {
+      "name": "IFOS_artifact_schema_v1.json",
+      "ref": "file://IFOS_artifact_schema_v1.json",
+      "hash": "sha256:8aa318fc41268676d2cf155d3eef871178a41cdc3e4d311e8d3a03962289d66d"
+    },
+    {
+      "name": "IFOS_transformation_schema_v1.json",
+      "ref": "file://IFOS_transformation_schema_v1.json",
+      "hash": "sha256:2a201625b173836fcfab10b1d06665fa43d7fdc869b41429565286993c09d1b3"
+    },
+    {
+      "name": "IFOS_lineage_edge_schema_v1.json",
+      "ref": "file://IFOS_lineage_edge_schema_v1.json",
+      "hash": "sha256:c16f5d57a263742d05b417b7ecdd74e36f6be0d413b417f8f754c79fdbbff3a0"
+    },
+    {
+      "name": "IFOS_lineage_graph_schema_v1.json",
+      "ref": "file://IFOS_lineage_graph_schema_v1.json",
+      "hash": "sha256:6f3680dac29a4d6293d71aa12387ff374b533cf6874ff2ef1c8c1e6e7c7f6e99"
+    },
+    {
+      "name": "IFOS_provenance_claim_schema_v1.json",
+      "ref": "file://IFOS_provenance_claim_schema_v1.json",
+      "hash": "sha256:b3d7b4a23032f6e626e3959c7a4b79cb8917561d461c722bae5cdb0e82272e4e"
+    },
+    {
+      "name": "IFOS_evidence_schema_v1.json",
+      "ref": "file://IFOS_evidence_schema_v1.json",
+      "hash": "sha256:07e68d1461b9af1414ee6b28570c73613fdaecbcc40c6b04bf45a8a55ba0a815"
+    },
+    {
+      "name": "IFOS_explain_record_schema_v1.json",
+      "ref": "file://IFOS_explain_record_schema_v1.json",
+      "hash": "sha256:1aa8d9c6c555b0b63af6a9661f7a8bd825441f71b0d8c7c7317d572d409b550b"
+    },
+    {
+      "name": "IFOS_signature_schema_v1.json",
+      "ref": "file://IFOS_signature_schema_v1.json",
+      "hash": "sha256:539c70f6507d248ef772dab2edf39ddaddf36e15aa867ada4cb03f2218190bd6"
+    },
+    {
+      "name": "IFOS_retention_link_schema_v1.json",
+      "ref": "file://IFOS_retention_link_schema_v1.json",
+      "hash": "sha256:188a1d863ea49f75b30c007a106dbe10b24aa96425b5f3b288e7e3d4a164ef67"
+    }
+  ],
+  "updated_at": "2026-01-03T22:15:00Z",
+  "version": "1.0.0"
+}

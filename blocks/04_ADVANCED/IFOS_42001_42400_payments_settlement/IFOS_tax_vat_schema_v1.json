@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Tax/VAT Schema v1",
+  "type": "object",
+  "required": [
+    "tax_id",
+    "zone",
+    "rules",
+    "version"
+  ],
+  "properties": {
+    "tax_id": {
+      "type": "string"
+    },
+    "zone": {
+      "type": "string"
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "provider_hook": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

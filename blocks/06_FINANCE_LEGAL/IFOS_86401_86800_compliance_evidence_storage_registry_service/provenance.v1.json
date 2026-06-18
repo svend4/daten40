@@ -1,0 +1,12 @@
+{
+  "contract_id": "provenance.v1",
+  "fields": {
+    "source_system": "string",
+    "source_version": "string",
+    "collector_runtime": "string",
+    "config_snapshot_sha256": "string",
+    "region": "string"
+  },
+  "privacy_level": "internal",
+  "retention_policy": "security_default"
+}

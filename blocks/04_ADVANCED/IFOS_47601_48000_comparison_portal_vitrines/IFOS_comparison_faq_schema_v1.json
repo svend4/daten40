@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Comparison FAQ Schema v1",
+  "type": "object",
+  "required": [
+    "faq_id",
+    "vertical",
+    "questions",
+    "version"
+  ],
+  "properties": {
+    "faq_id": {
+      "type": "string"
+    },
+    "vertical": {
+      "type": "string"
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

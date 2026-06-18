@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Conflict Schema v1",
+  "type": "object",
+  "required": [
+    "conflict_id",
+    "entity_id",
+    "field",
+    "candidates",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "conflict_id": {
+      "type": "string"
+    },
+    "entity_id": {
+      "type": "string"
+    },
+    "field": {
+      "type": "string"
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "resolved",
+        "ignored"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

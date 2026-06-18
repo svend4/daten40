@@ -1,0 +1,71 @@
+{
+  "event": {
+    "event_id": "evt.e.lv2hf0zoj4gc",
+    "ts": "2026-01-04T20:35:00Z",
+    "tenant_id": "teamA",
+    "actor_id": "anon.u.et6xbpcdlv3t",
+    "object_ref": "process.weekly_digest",
+    "action": "run",
+    "result": "fail",
+    "reason": "connector_timeout",
+    "context": {
+      "client": "android",
+      "region": "DE",
+      "ifos_version": "1.2.0"
+    },
+    "version": "1.0.0"
+  },
+  "recommendation": {
+    "recommendation_id": "rec.r.gz2dfcqkrdix",
+    "type": "connector_reliability",
+    "summary": "У коннектора `telegram` всплеск timeout после релиза 1.4.1 — добавить кеш и ретраи.",
+    "evidence": [
+      "metric:error_rate.telegram>0.02",
+      "events:connector_timeout spike",
+      "release:rel.2026-01-04"
+    ],
+    "action": "create_task('add_retries_cache')",
+    "priority": "high",
+    "version": "1.0.0"
+  },
+  "dashboard": {
+    "dashboard_id": "dash.d.s4d96sb3gl21",
+    "name": "Adoption",
+    "widgets": [
+      {
+        "type": "top_list",
+        "metric": "top_vitrines"
+      },
+      {
+        "type": "funnel",
+        "metric": "flow_completion"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "alert": {
+    "alert_id": "al.a.l8wlna3bik6c",
+    "rule": "error_rate_after_release > 0.02",
+    "status": "fired",
+    "ts": "2026-01-04T20:35:00Z",
+    "links": [
+      "incident.create",
+      "dashboard.reliability"
+    ],
+    "version": "1.0.0"
+  },
+  "experiment": {
+    "experiment_id": "exp.x.ne0ckkdlm7uo",
+    "name": "New onboarding v2",
+    "variants": [
+      "control",
+      "v2"
+    ],
+    "guardrails": {
+      "error_rate_lt": 0.01,
+      "latency_p95_lt_ms": 800
+    },
+    "status": "planned",
+    "version": "1.0.0"
+  }
+}

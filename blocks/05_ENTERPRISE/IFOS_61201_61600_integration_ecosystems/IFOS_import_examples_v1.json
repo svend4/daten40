@@ -1,0 +1,71 @@
+{
+  "source_descriptor": {
+    "source_id": "src.s.d8j1jtebtzrr",
+    "ecosystem": "make",
+    "mode": "file_upload",
+    "ref": "make_export.json",
+    "policy": {
+      "store_raw": true,
+      "store_code": false
+    },
+    "sync_profile": "manual",
+    "version": "1.0.0"
+  },
+  "import_job": {
+    "job_id": "job.j.cgd50fs0u2d1",
+    "source_id": "src.s.d8j1jtebtzrr",
+    "status": "queued",
+    "options": {
+      "dedup": true,
+      "score": true
+    },
+    "created_at": "2026-01-05T01:45:00Z",
+    "version": "1.0.0"
+  },
+  "ecosystem_asset": {
+    "asset_id": "asset.a.vd5w9ysmmg9k",
+    "ecosystem": "make",
+    "name": "Travel price compare",
+    "description": "Scenario that fetches offers and ranks them.",
+    "capabilities": [
+      "fetch_offers",
+      "normalize_currency",
+      "rank_items"
+    ],
+    "deps": [
+      "google_sheets",
+      "http_client"
+    ],
+    "licensing": {
+      "type": "proprietary_metadata_only"
+    },
+    "security": {
+      "risk": "medium",
+      "notes": [
+        "needs api keys"
+      ]
+    },
+    "quality": {
+      "docs": 0.6,
+      "tests": 0.0,
+      "adoption": 0.3
+    },
+    "version": "1.0.0"
+  },
+  "mapping_rule": {
+    "rule_id": "rule.r.xoyqss7daxbe",
+    "ecosystem": "make",
+    "match": {
+      "capability_contains": "rank_items"
+    },
+    "map_to": {
+      "category": "comparison",
+      "entity_type": "blueprint",
+      "tags": [
+        "compare",
+        "ranking"
+      ]
+    },
+    "version": "1.0.0"
+  }
+}

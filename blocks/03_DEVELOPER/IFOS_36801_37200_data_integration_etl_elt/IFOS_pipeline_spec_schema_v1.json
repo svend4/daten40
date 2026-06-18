@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS PipelineSpec Schema v1",
+  "type": "object",
+  "required": [
+    "pipeline_id",
+    "tenant_id",
+    "source_ref",
+    "sink_ref",
+    "mapping_ref",
+    "schedule",
+    "retries",
+    "version"
+  ],
+  "properties": {
+    "pipeline_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "source_ref": {
+      "type": "string"
+    },
+    "sink_ref": {
+      "type": "string"
+    },
+    "mapping_ref": {
+      "type": "string"
+    },
+    "schedule": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "retries": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "checkpoints": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "governance": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "observability": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "capability": {
+    "capability_id": "cap:news.digest_pipeline",
+    "name": "Дайджест-конвейер",
+    "description": "Сбор→дедуп→ранжирование→публикация",
+    "domain": "news",
+    "level": "L2",
+    "inputs": [
+      "rss_feeds",
+      "source_weights"
+    ],
+    "outputs": [
+      "digest_email",
+      "digest_post"
+    ],
+    "preconditions": [
+      "cap:http.request"
+    ],
+    "evidence_types": [
+      "docs_phrase",
+      "workflow_graph"
+    ],
+    "risk_level": "L",
+    "examples": [
+      "Daily news email digest"
+    ]
+  },
+  "thesaurus": [
+    {
+      "term": "дайджест новостей",
+      "lang": "ru",
+      "canonical": "cap:news.digest_pipeline",
+      "type": "phrase"
+    }
+  ],
+  "relations": [
+    {
+      "from": "cap:news.digest_pipeline",
+      "relation": "part_of",
+      "to": "cap:news.rank_items",
+      "weight": 0.8
+    }
+  ]
+}

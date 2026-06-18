@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Release Train Schema v1",
+  "type": "object",
+  "required": [
+    "train_id",
+    "cadence",
+    "windows",
+    "version"
+  ],
+  "properties": {
+    "train_id": {
+      "type": "string"
+    },
+    "cadence": {
+      "type": "string",
+      "enum": [
+        "weekly",
+        "biweekly",
+        "monthly",
+        "quarterly"
+      ]
+    },
+    "windows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "day",
+          "start",
+          "end"
+        ],
+        "properties": {
+          "day": {
+            "type": "string"
+          },
+          "start": {
+            "type": "string"
+          },
+          "end": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

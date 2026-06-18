@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ROIModel Schema v1",
+  "type": "object",
+  "required": [
+    "roi_id",
+    "baseline",
+    "after",
+    "costs",
+    "savings",
+    "payback_months",
+    "version"
+  ],
+  "properties": {
+    "roi_id": {
+      "type": "string"
+    },
+    "baseline": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "after": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "costs": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "savings": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "payback_months": {
+      "type": "number",
+      "minimum": 0
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

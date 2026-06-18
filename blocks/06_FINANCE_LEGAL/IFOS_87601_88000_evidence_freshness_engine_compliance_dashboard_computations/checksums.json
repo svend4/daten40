@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-01-11T18:37:58",
+  "algorithm": "sha256",
+  "files": {
+    "README.md": "a64333e8f91dcb4fd3c988ffccc3b481dc90dbe25fa93fe707ecf60585f2ab36",
+    "manifest.json": "af64ce4ef9ac70c2ccdc50a352560b70581e908fc0d61dac6657e822a571a30e",
+    "MASTER_INDEX_DELTA.json": "f075a9c425f21c487277087fed18e37990e279d38d2061eba17f3168698b1a45",
+    "docs/CADENCE_SEMANTICS.md": "7b4491d83075484d2f82bb4029c7a25a5d0feb4f59e2a4dc4a1c9e3ae6f416b1",
+    "docs/COVERAGE_MODEL.md": "e38145a98a091b49b85c858bc088ce18ceaa21d4fdfd856b56b3c027b0bbc010",
+    "catalogs/evidence_requirements_seed.csv": "588780766902a348bca51da4f669d60a43d011f5448f8bf2125beeade65e2aae",
+    "data-contracts/evidence_requirement.v1.json": "9ebef0215ad54f3983e334324b57ad8c6873f4940b82c25980d1eb28feb179fb",
+    "data-contracts/evidence_freshness_status.v1.json": "a81f60d45cf680a03541e57d473a7e61b593782e2a042dc6f50526a221bfe835",
+    "data-contracts/compliance_snapshot.v1.json": "25275712bec4cb1d1ed3b0004a7db0da9db42e158810971865ff2e4a39666c55",
+    "data-contracts/dashboard_dataset.v1.json": "e8d734ee65565cdeaa9a6a69b11a11f7e94df14f86b2654496061b79b1642e4d",
+    "data-contracts/alert_event.v1.json": "f4d20f578c5fe191a221a36f8b1162fe32bac684fa55b3fa40fe69c45b84bbd7",
+    "api/openapi_freshness_dashboards_v1.json": "b5e204d65f58a149e8e109befd1d6be4a129ec9db96e3f3f1f02868402179e80",
+    "engine/freshness_engine_skeleton.py": "e776f8b88004ece3a57ec38df964f269d62c58447e3fc444ee8f951cff2ff5bf",
+    "dashboards/WIDGET_DATASETS.md": "e3d256c1d31d5db07ce84659c2bcfca59bd37d0425cffe394b6c6e0620c112a5",
+    "dashboards/examples/dataset_compliance_overview.json": "941e560203e6aa28dc3a96c3a9dcf3a161bad66083b109682b63aa43d40f07ea",
+    "alerts/ALERT_RULES.md": "ec54e9a9c5af67262fd96608710daae8fb256df033801183e6fe43793a6731e0",
+    "service/fastapi_skeleton.py": "a2e22ca9fa9aafd0a596231d389e45bd9daf486746c73ae427125471bf757802",
+    "db/postgres_schema.sql": "3b08aae607866c67d4c94769dda57d2af065202a25e68e8e27094b56e0686702",
+    "tests/TEST_PLAN.md": "a811dc338c7493758cafdaed627e664d9832061a51c4bd74a7518104a9810745"
+  }
+}

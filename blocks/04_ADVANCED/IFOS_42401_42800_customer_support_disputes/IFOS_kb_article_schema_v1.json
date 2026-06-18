@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS KBArticle Schema v1",
+  "type": "object",
+  "required": [
+    "article_id",
+    "title",
+    "locale_id",
+    "body",
+    "version"
+  ],
+  "properties": {
+    "article_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "locale_id": {
+      "type": "string"
+    },
+    "category": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "body": {
+      "type": "string"
+    },
+    "tags": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

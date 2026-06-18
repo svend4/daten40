@@ -1,0 +1,16 @@
+{
+  "bundle_id": "dsar_access_export",
+  "context": {
+    "region": "EU",
+    "contains_personal_data": true,
+    "data_residency": "EU"
+  },
+  "steps": [
+    {
+      "step_id": "collect_data",
+      "outputs": [
+        "dsar_export_package.v1"
+      ]
+    }
+  ]
+}

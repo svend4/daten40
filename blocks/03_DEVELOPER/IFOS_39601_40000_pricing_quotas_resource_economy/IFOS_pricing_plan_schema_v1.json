@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS PricingPlan Schema v1",
+  "type": "object",
+  "required": [
+    "plan_id",
+    "name",
+    "currency",
+    "prices",
+    "included",
+    "version"
+  ],
+  "properties": {
+    "plan_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "prices": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "resource_id",
+          "price_per_unit"
+        ],
+        "properties": {
+          "resource_id": {
+            "type": "string"
+          },
+          "price_per_unit": {
+            "type": "number",
+            "minimum": 0
+          },
+          "tier": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "included": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

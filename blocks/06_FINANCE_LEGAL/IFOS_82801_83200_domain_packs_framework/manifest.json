@@ -1,0 +1,40 @@
+{
+  "pack_id": "dp_template",
+  "domain": {
+    "slug": "your-domain",
+    "name": "Your Domain",
+    "industry": "",
+    "keywords": [
+      "ifos",
+      "domain"
+    ]
+  },
+  "version": "0.1.0",
+  "status": "draft",
+  "compatibility": {
+    "ifos_min_version": "v30",
+    "required_blocks": [
+      "IFOS_00001_00400"
+    ]
+  },
+  "connectors": {
+    "allow": [],
+    "deny": []
+  },
+  "policies": [],
+  "data_contracts": [],
+  "kpis": [],
+  "bundles": [
+    {
+      "bundle_id": "bundle_example",
+      "manifest_path": "bundles/bundle_example.json",
+      "description": "Example bundle"
+    }
+  ],
+  "examples": [
+    {
+      "name": "Example input",
+      "path": "examples/example_input.json"
+    }
+  ]
+}

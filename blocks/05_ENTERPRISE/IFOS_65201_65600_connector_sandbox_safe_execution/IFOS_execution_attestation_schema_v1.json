@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ExecutionAttestation Schema v1",
+  "type": "object",
+  "required": [
+    "attestation_id",
+    "ts",
+    "bundle_digest",
+    "sandbox_profile_id",
+    "policies",
+    "node_id",
+    "signature",
+    "version"
+  ],
+  "properties": {
+    "attestation_id": {
+      "type": "string"
+    },
+    "ts": {
+      "type": "string"
+    },
+    "bundle_digest": {
+      "type": "string"
+    },
+    "sandbox_profile_id": {
+      "type": "string"
+    },
+    "policies": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "signature": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

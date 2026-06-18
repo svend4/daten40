@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Experiment Schema v1",
+  "type": "object",
+  "required": [
+    "experiment_id",
+    "tenant_id",
+    "target",
+    "goal",
+    "variants",
+    "metrics",
+    "assignment",
+    "status",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "experiment_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "goal": {
+      "type": "string"
+    },
+    "variants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "assignment": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "running",
+        "paused",
+        "completed",
+        "aborted"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

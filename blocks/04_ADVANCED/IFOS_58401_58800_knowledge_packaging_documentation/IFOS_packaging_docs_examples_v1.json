@@ -1,0 +1,132 @@
+{
+  "passport": {
+    "artifact_id": "art.a.lqws79dea2tu",
+    "type": "bundle",
+    "name": "News Conference Pack (RSS+Ranking)",
+    "version": "1.0.0",
+    "summary": "Собирает новости, дедуплицирует и формирует обзор дня.",
+    "problem": "Много источников — нет ясного обзора и повторяются новости.",
+    "requirements": {
+      "connectors": [
+        "connector.rss"
+      ],
+      "runtime": "runtime.ifos_runner",
+      "keys": []
+    },
+    "risks": [
+      "rate_limits",
+      "source_license_considerations"
+    ],
+    "compatibility": {
+      "cert": "C2",
+      "contracts": [
+        "ctr.search.v1"
+      ]
+    },
+    "license": "MIT",
+    "maintainers": [
+      "role.maintainer.news"
+    ],
+    "links": {
+      "docs": "https://docs.ifos.local/news-pack",
+      "repo": "https://git.example/news-pack"
+    }
+  },
+  "runbook": {
+    "runbook_id": "rb.r.kq0qbdkz4paf",
+    "artifact_ref": "art.a.lqws79dea2tu",
+    "symptoms": [
+      "Новости не обновляются",
+      "Появляются дубликаты"
+    ],
+    "diagnostics": [
+      "Проверить RSS URL",
+      "Проверить лимиты источников",
+      "Проверить dedup rules"
+    ],
+    "fixes": [
+      "Снизить частоту polling",
+      "Включить delta_sync",
+      "Обновить правила дедупликации"
+    ],
+    "rollback": [
+      "Откатить версию bundle на 1.0.0",
+      "Отключить новый источник"
+    ],
+    "escalation": [
+      "Открыть тикет с логами run_id"
+    ],
+    "version": "1.0.0"
+  },
+  "troubleshooting": {
+    "scenario_id": "ts.t.k1qychsgxw9q",
+    "name": "rate_limited",
+    "causes": [
+      "слишком частые запросы",
+      "низкий лимит API"
+    ],
+    "checks": [
+      "посмотреть headers",
+      "посмотреть метрику requests/min"
+    ],
+    "solutions": [
+      "уменьшить частоту",
+      "включить backoff",
+      "кешировать"
+    ],
+    "prevention": [
+      "rate limiter на уровне runtime",
+      "batch режим"
+    ],
+    "version": "1.0.0"
+  },
+  "doc_bundle": {
+    "bundle_id": "db.d.4qpejvzqcxmq",
+    "artifact_ref": "art.a.lqws79dea2tu",
+    "formats": [
+      "md",
+      "html",
+      "pdf",
+      "json"
+    ],
+    "rubric_score": 0.86,
+    "generated": true,
+    "version": "1.0.0"
+  },
+  "rubric": {
+    "rubric_id": "rub.u.fqkf34zrtgnn",
+    "criteria": [
+      {
+        "name": "completeness",
+        "weight": 0.2,
+        "notes": "есть passport/install/quickstart/errors"
+      },
+      {
+        "name": "correctness",
+        "weight": 0.2,
+        "notes": "шаги соответствуют реальности"
+      },
+      {
+        "name": "reproducibility",
+        "weight": 0.15,
+        "notes": "повторяемо на sandbox"
+      },
+      {
+        "name": "troubleshooting",
+        "weight": 0.15,
+        "notes": "есть runbook и сценарии"
+      },
+      {
+        "name": "security_privacy",
+        "weight": 0.15,
+        "notes": "описаны риски"
+      },
+      {
+        "name": "clarity",
+        "weight": 0.15,
+        "notes": "понятный язык"
+      }
+    ],
+    "version": "1.0.0"
+  }
+}

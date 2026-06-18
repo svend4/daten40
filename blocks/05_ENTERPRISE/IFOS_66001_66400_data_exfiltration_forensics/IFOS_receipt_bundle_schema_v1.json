@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ReceiptBundle Schema v1",
+  "type": "object",
+  "required": [
+    "bundle_id",
+    "case_id",
+    "generated_at",
+    "receipts",
+    "hash",
+    "signature",
+    "version"
+  ],
+  "properties": {
+    "bundle_id": {
+      "type": "string"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "receipts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "hash": {
+      "type": "string"
+    },
+    "signature": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

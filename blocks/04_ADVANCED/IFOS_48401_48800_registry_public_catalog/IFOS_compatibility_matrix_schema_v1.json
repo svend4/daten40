@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS CompatibilityMatrix Schema v1",
+  "type": "object",
+  "required": [
+    "matrix_id",
+    "item_id",
+    "platforms",
+    "constraints",
+    "known_conflicts",
+    "version"
+  ],
+  "properties": {
+    "matrix_id": {
+      "type": "string"
+    },
+    "item_id": {
+      "type": "string"
+    },
+    "platforms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "known_conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

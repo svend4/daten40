@@ -1,0 +1,7 @@
+{
+  "evidence_id": "phi_access_logs",
+  "artifact_uri": "s3://evidence/audit/phi_access_logs_2026-01.json",
+  "collected_at": "2026-02-01T00:05:00Z",
+  "collector": "evidence_runner",
+  "hash": "sha256:..."
+}

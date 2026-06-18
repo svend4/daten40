@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS FunctionTerm Schema v1",
+  "type": "object",
+  "required": [
+    "term_id",
+    "label",
+    "definition",
+    "io",
+    "examples",
+    "related",
+    "tags",
+    "version"
+  ],
+  "properties": {
+    "term_id": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "definition": {
+      "type": "string"
+    },
+    "io": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "examples": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "related": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

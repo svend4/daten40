@@ -1,0 +1,311 @@
+{
+  "registry_item": {
+    "id": "item.wp.zorxzqg9dwnw",
+    "name": "WP Plugin: One-Click PDF to Text",
+    "kind": "plugin",
+    "summary": "Extracts text from uploaded PDFs and stores it in posts/meta for search.",
+    "description": "Prototype item for IFOS registry example.",
+    "capabilities": [
+      "pdf_extract_text",
+      "wp_media_hook",
+      "store_metadata",
+      "search_index_update"
+    ],
+    "inputs": [
+      "pdf_file",
+      "wp_post_id"
+    ],
+    "outputs": [
+      "plain_text",
+      "wp_meta_key"
+    ],
+    "taxonomy_paths": [
+      "Docs/Parse/PDF",
+      "CMS/WordPress/Plugins"
+    ],
+    "tags": [
+      "wordpress",
+      "pdf",
+      "ocr",
+      "search"
+    ],
+    "install_recipe_id": "recipe.r.6k09751kk14n",
+    "dependencies": [
+      "runtime:php>=8.1",
+      "service:none",
+      "credential:none"
+    ],
+    "license_policy_id": "lic.l.1kzfhnpg6huc",
+    "compatibility_id": "compat.c.jgi1jizzqfuj",
+    "trust_score": 0.62,
+    "links": {
+      "source_url": "https://github.com/example/wp-pdf-text",
+      "docs_url": "https://github.com/example/wp-pdf-text#readme",
+      "homepage": null,
+      "artifact_url": null
+    },
+    "maintainer": {
+      "name": "Example Maintainer",
+      "verified": false,
+      "contact": null
+    },
+    "quality": "draft",
+    "version": "1.0.0"
+  },
+  "taxonomy_node": {
+    "node_id": "tax.n.iftl6r6q1eca",
+    "path": "Docs/Parse/PDF",
+    "level": "capability",
+    "title": "Parse PDF",
+    "synonyms": [
+      "extract pdf text",
+      "pdf parser",
+      "pdf to text"
+    ],
+    "examples": [
+      "indexing PDFs for search",
+      "summarizing documents"
+    ],
+    "constraints": {
+      "may_require": "native libs / OCR"
+    },
+    "version": "1.0.0"
+  },
+  "install_recipe": {
+    "recipe_id": "recipe.r.6k09751kk14n",
+    "item_id": "item.wp.zorxzqg9dwnw",
+    "steps": [
+      {
+        "op": "download",
+        "params": {
+          "artifact": "git",
+          "url": "https://github.com/example/wp-pdf-text"
+        }
+      },
+      {
+        "op": "wp_plugin_install",
+        "params": {
+          "path": "wp-pdf-text"
+        }
+      },
+      {
+        "op": "set_env",
+        "params": {
+          "key": "PDF_TEXT_MAX_MB",
+          "value": "10"
+        }
+      },
+      {
+        "op": "run_command",
+        "params": {
+          "cmd": "wp plugin activate wp-pdf-text"
+        }
+      }
+    ],
+    "health_checks": [
+      {
+        "kind": "http",
+        "params": {
+          "url": "http://localhost/wp-json/wp-pdf-text/health"
+        }
+      }
+    ],
+    "rollback": [
+      {
+        "op": "wp_plugin_remove",
+        "params": {
+          "slug": "wp-pdf-text"
+        }
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "compatibility": {
+    "compatibility_id": "compat.c.jgi1jizzqfuj",
+    "item_id": "item.wp.zorxzqg9dwnw",
+    "platforms": [
+      {
+        "name": "wordpress",
+        "min_version": "6.0",
+        "max_version": null
+      }
+    ],
+    "runtimes": [
+      {
+        "name": "php",
+        "versions": [
+          "8.1",
+          "8.2",
+          "8.3"
+        ]
+      }
+    ],
+    "oses": [
+      "linux",
+      "windows"
+    ],
+    "constraints": {
+      "needs_server": true,
+      "needs_api_key": false,
+      "pricing": null,
+      "self_hosted": true,
+      "open_source": true
+    },
+    "version": "1.0.0"
+  },
+  "dependency_graph": {
+    "graph_id": "graph.g.n26hlih19yo4",
+    "root_item_id": "item.wp.zorxzqg9dwnw",
+    "nodes": [
+      {
+        "id": "item.wp.zorxzqg9dwnw",
+        "type": "item",
+        "meta": {}
+      },
+      {
+        "id": "runtime:php>=8.1",
+        "type": "runtime",
+        "meta": {}
+      },
+      {
+        "id": "platform:wordpress>=6.0",
+        "type": "service",
+        "meta": {
+          "kind": "cms"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "from": "item.wp.zorxzqg9dwnw",
+        "to": "runtime:php>=8.1",
+        "kind": "depends_on"
+      },
+      {
+        "from": "item.wp.zorxzqg9dwnw",
+        "to": "platform:wordpress>=6.0",
+        "kind": "depends_on"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "license_policy": {
+    "license_policy_id": "lic.l.1kzfhnpg6huc",
+    "kind": "MIT",
+    "text": "MIT License (summary)",
+    "constraints": {
+      "commercial_use": true,
+      "redistribution": true,
+      "requires_attribution": true,
+      "saas_allowed": true
+    },
+    "version": "1.0.0"
+  },
+  "rating_review": {
+    "review_id": "rev.v.cu74w3nu28nq",
+    "item_id": "item.wp.zorxzqg9dwnw",
+    "rating": 4.2,
+    "text": "Works well on WP 6.4 + PHP 8.2. Docs could be clearer.",
+    "tags": [
+      "docs",
+      "performance"
+    ],
+    "environment": {
+      "platform": "wordpress",
+      "platform_version": "6.4",
+      "runtime": "php",
+      "runtime_version": "8.2",
+      "os": "linux"
+    },
+    "proof": {
+      "kind": "install_log_hash",
+      "hash": "sha256:...",
+      "url": null
+    },
+    "created_at": "2026-01-03T10:20:00Z",
+    "moderation": "approved",
+    "version": "1.0.0"
+  },
+  "trust_signal": {
+    "signal_id": "sig.s.s1iqtou4denj",
+    "item_id": "item.wp.zorxzqg9dwnw",
+    "kind": "doc_completeness",
+    "value": {
+      "quickstart": true,
+      "examples": 1,
+      "api_docs": false
+    },
+    "weight": 0.4,
+    "observed_at": "2026-01-03T10:20:00Z",
+    "version": "1.0.0"
+  },
+  "bundle_manifest": {
+    "bundle_id": "bundle.b.nuzptkc3wkyr",
+    "name": "Office PDF Toolkit (WP)",
+    "summary": "PDF ingestion + extraction + search indexing for a small office site.",
+    "items": [
+      "item.wp.zorxzqg9dwnw"
+    ],
+    "dependency_graph_id": "graph.g.n26hlih19yo4",
+    "install_plan": [
+      "recipe.r.6k09751kk14n"
+    ],
+    "demo_data": null,
+    "version": "2.0.0"
+  },
+  "vitrine": {
+    "vitrine_id": "vitrine.t.t7lvc8tm3gne",
+    "name": "Office 2.0 — PDF Knowledge Capture (WordPress)",
+    "goal": "Upload PDFs, extract text, enable search and summaries.",
+    "bundle_id": "bundle.b.nuzptkc3wkyr",
+    "curation": {
+      "criteria": [
+        "open_source",
+        "works_on_self_hosted",
+        "simple_install"
+      ],
+      "notes": "Starter vitrine for demos.",
+      "maintainer": "IFOS Team"
+    },
+    "benchmarks": {
+      "setup_minutes": 15,
+      "ram_mb": 256
+    },
+    "version": "1.0.0"
+  },
+  "ranking_request": {
+    "request_id": "rank.q.v2fjgu08vhgs",
+    "query": "pdf text extract wordpress",
+    "filters": {
+      "kind": [
+        "plugin",
+        "app"
+      ],
+      "open_source_only": true
+    },
+    "context": {
+      "platform": "wordpress",
+      "os": "linux",
+      "open_source_only": true,
+      "self_hosted_only": true
+    },
+    "version": "1.0.0"
+  },
+  "ranking_result": {
+    "request_id": "rank.q.v2fjgu08vhgs",
+    "results": [
+      {
+        "item_id": "item.wp.zorxzqg9dwnw",
+        "score": 0.78,
+        "explain": [
+          "taxonomy match: Docs/Parse/PDF",
+          "compatibility fit: wordpress>=6.0",
+          "trust_score=0.62",
+          "verified reviews weighted"
+        ]
+      }
+    ],
+    "generated_at": "2026-01-03T10:20:00Z",
+    "version": "1.0.0"
+  }
+}

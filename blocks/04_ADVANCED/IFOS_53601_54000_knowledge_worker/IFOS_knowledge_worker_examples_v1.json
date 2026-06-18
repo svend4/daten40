@@ -1,0 +1,61 @@
+{
+  "workspace": {
+    "workspace_id": "ws.w.gzjvhx3yy8l3",
+    "name": "Demo Workspace",
+    "roles": {
+      "owner": [
+        "u1"
+      ],
+      "editor": [
+        "u2"
+      ],
+      "viewer": [
+        "u3"
+      ]
+    },
+    "settings": {
+      "lang": "ru",
+      "policy_level": "medium"
+    },
+    "version": "1.0.0"
+  },
+  "project": {
+    "project_id": "prj.p.v0vbumzyvdj6",
+    "workspace_id": "ws.demo",
+    "title": "Comparison Portal MVP",
+    "goal": "Compare services/products, show reviews, publish weekly digest",
+    "artifacts": [
+      "doc.req",
+      "bun.portal",
+      "proc.review_publish"
+    ],
+    "status": "draft",
+    "version": "1.0.0"
+  },
+  "card": {
+    "card_id": "card.c.avez6pgrzwtj",
+    "card_type": "bundle",
+    "title": "Ingest RSS",
+    "io": {
+      "inputs": [
+        "rss_url"
+      ],
+      "outputs": [
+        "Document[]"
+      ]
+    },
+    "policies": [
+      "pol.no_pii_external_llm"
+    ],
+    "cost_risk": {
+      "cost": "low",
+      "risk": "low"
+    },
+    "actions": [
+      "install",
+      "test",
+      "run"
+    ],
+    "version": "1.0.0"
+  }
+}

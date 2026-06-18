@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Rollout Plan Schema v1",
+  "type": "object",
+  "required": [
+    "plan_id",
+    "artifact_set",
+    "strategy",
+    "stages",
+    "rollback",
+    "version"
+  ],
+  "properties": {
+    "plan_id": {
+      "type": "string"
+    },
+    "artifact_set": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "strategy": {
+      "type": "string",
+      "enum": [
+        "big_bang",
+        "canary",
+        "blue_green",
+        "phased"
+      ]
+    },
+    "stages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "percent",
+          "gates"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "percent": {
+            "type": "number"
+          },
+          "gates": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "rollback": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

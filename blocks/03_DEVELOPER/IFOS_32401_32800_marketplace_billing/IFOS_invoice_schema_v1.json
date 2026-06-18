@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Invoice Schema v1",
+  "type": "object",
+  "required": [
+    "invoice_id",
+    "order_id",
+    "buyer",
+    "seller",
+    "lines",
+    "amount_total",
+    "currency",
+    "issued_at",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "invoice_id": {
+      "type": "string"
+    },
+    "order_id": {
+      "type": "string"
+    },
+    "buyer": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "seller": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "lines": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "description",
+          "amount"
+        ],
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number",
+            "minimum": 0
+          },
+          "tax_rate": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "meta": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "amount_subtotal": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "amount_tax": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "amount_total": {
+      "type": "number",
+      "minimum": 0
+    },
+    "currency": {
+      "type": "string"
+    },
+    "issued_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "pdf_url": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "issued",
+        "paid",
+        "void"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

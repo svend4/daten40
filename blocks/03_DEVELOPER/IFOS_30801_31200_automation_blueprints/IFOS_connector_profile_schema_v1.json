@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ConnectorProfile Schema v1",
+  "type": "object",
+  "required": [
+    "connector_id",
+    "kind",
+    "source_system",
+    "capabilities",
+    "credentials",
+    "version"
+  ],
+  "properties": {
+    "connector_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "make",
+        "n8n",
+        "wordpress",
+        "ifos_native"
+      ]
+    },
+    "source_system": {
+      "type": "string"
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "credentials": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

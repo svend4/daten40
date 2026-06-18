@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ToolDescriptor Schema v1",
+  "type": "object",
+  "required": [
+    "tool_id",
+    "name",
+    "inputs",
+    "outputs",
+    "side_effects",
+    "risk",
+    "version"
+  ],
+  "properties": {
+    "tool_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "inputs": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "outputs": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "side_effects": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "risk": {
+      "type": "string",
+      "enum": [
+        "safe",
+        "confirm",
+        "restricted"
+      ]
+    },
+    "rate_limits": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "cost": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "secrets": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "examples": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

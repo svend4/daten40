@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Session Policy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "mode",
+    "cookie_name",
+    "same_site",
+    "secure",
+    "http_only",
+    "version"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "cookie_session",
+        "bearer_tokens",
+        "hybrid"
+      ]
+    },
+    "cookie_name": {
+      "type": "string"
+    },
+    "same_site": {
+      "type": "string",
+      "enum": [
+        "Lax",
+        "Strict",
+        "None"
+      ]
+    },
+    "secure": {
+      "type": "boolean"
+    },
+    "http_only": {
+      "type": "boolean"
+    },
+    "idle_timeout_s": {
+      "type": "integer"
+    },
+    "absolute_timeout_s": {
+      "type": "integer"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

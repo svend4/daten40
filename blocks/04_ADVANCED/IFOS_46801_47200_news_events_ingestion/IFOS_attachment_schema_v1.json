@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Attachment Schema v1",
+  "type": "object",
+  "required": [
+    "att_id",
+    "raw_id",
+    "type",
+    "url",
+    "hash",
+    "version"
+  ],
+  "properties": {
+    "att_id": {
+      "type": "string"
+    },
+    "raw_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "image",
+        "pdf",
+        "doc",
+        "other"
+      ]
+    },
+    "url": {
+      "type": "string"
+    },
+    "hash": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

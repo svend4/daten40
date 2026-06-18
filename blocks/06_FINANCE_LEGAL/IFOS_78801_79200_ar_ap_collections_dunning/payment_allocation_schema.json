@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "payment_id",
+    "allocations"
+  ],
+  "properties": {
+    "payment_id": {
+      "type": "string"
+    },
+    "allocations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "document_id",
+          "amount"
+        ],
+        "properties": {
+          "document_id": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}

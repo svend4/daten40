@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Analytics Event Schema v1",
+  "type": "object",
+  "required": [
+    "event_id",
+    "ts",
+    "tenant_id",
+    "action",
+    "result",
+    "object_ref",
+    "version"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "actor_id": {
+      "type": "string"
+    },
+    "object_ref": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string"
+    },
+    "result": {
+      "type": "string",
+      "enum": [
+        "ok",
+        "fail"
+      ]
+    },
+    "reason": {
+      "type": "string"
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

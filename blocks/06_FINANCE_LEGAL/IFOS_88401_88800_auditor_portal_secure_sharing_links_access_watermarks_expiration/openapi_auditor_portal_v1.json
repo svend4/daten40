@@ -1,0 +1,42 @@
+{
+  "openapi": "3.0.0",
+  "info": { "title": "IFOS Auditor Portal & Secure Sharing API", "version": "1.0.0" },
+  "paths": {
+    "/sharelinks/create": {
+      "post": {
+        "summary": "Create a share link for an auditor",
+        "responses": { "200": { "description": "Created" } }
+      }
+    },
+    "/sharelinks/revoke": {
+      "post": {
+        "summary": "Revoke a share link",
+        "responses": { "200": { "description": "Revoked" } }
+      }
+    },
+    "/sharelinks/list": {
+      "post": {
+        "summary": "List share links (admin)",
+        "responses": { "200": { "description": "List" } }
+      }
+    },
+    "/portal/session/start": {
+      "post": {
+        "summary": "Start portal session using share token",
+        "responses": { "200": { "description": "Session" } }
+      }
+    },
+    "/portal/artifacts/list": {
+      "get": {
+        "summary": "List artifacts in scope for session",
+        "responses": { "200": { "description": "Artifacts" } }
+      }
+    },
+    "/portal/download": {
+      "post": {
+        "summary": "Return a signed download URL (or stream)",
+        "responses": { "200": { "description": "Download" } }
+      }
+    }
+  }
+}

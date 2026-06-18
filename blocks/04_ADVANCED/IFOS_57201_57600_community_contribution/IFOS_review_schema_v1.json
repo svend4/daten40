@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Review Schema v1",
+  "type": "object",
+  "required": [
+    "review_id",
+    "submission_ref",
+    "status",
+    "comments",
+    "version"
+  ],
+  "properties": {
+    "review_id": {
+      "type": "string"
+    },
+    "submission_ref": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "approve",
+        "request_changes",
+        "comment_only"
+      ]
+    },
+    "comments": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reviewer": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

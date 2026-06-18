@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS PartnerSandboxKey Schema v1",
+  "type": "object",
+  "required": [
+    "sandbox_key_id",
+    "partner_id",
+    "status",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "sandbox_key_id": {
+      "type": "string"
+    },
+    "partner_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "revoked",
+        "expired"
+      ]
+    },
+    "limits": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "testdata_profiles": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "registry_id": "reg.etl.5spn4rpp3fr8",
+  "entries": [
+    {
+      "name": "IFOS_data_source_schema_v1.json",
+      "ref": "file://IFOS_data_source_schema_v1.json",
+      "hash": "sha256:7188366ba7d0f5e8b071da06200b93512b4c6dca2ef5e44c70b39af21a716cde"
+    },
+    {
+      "name": "IFOS_data_sink_schema_v1.json",
+      "ref": "file://IFOS_data_sink_schema_v1.json",
+      "hash": "sha256:0b35300bb7de3a836c2caee5a7684bdd24c006ea2387023912aa9553490f32e0"
+    },
+    {
+      "name": "IFOS_data_contract_schema_v1.json",
+      "ref": "file://IFOS_data_contract_schema_v1.json",
+      "hash": "sha256:f2b08a326dffff36cca7022543a474fbd4f02ed71a8a2e543c90fbc9bcd95c8d"
+    },
+    {
+      "name": "IFOS_schema_mapping_schema_v1.json",
+      "ref": "file://IFOS_schema_mapping_schema_v1.json",
+      "hash": "sha256:c6dba06e5dbe24cb5f3b1476f61848c61208469eaa8a3ac84681bca7ddc72496"
+    },
+    {
+      "name": "IFOS_pipeline_spec_schema_v1.json",
+      "ref": "file://IFOS_pipeline_spec_schema_v1.json",
+      "hash": "sha256:3277795e6557405be168cb9c600be5dd5abd21f9721d61a4ff7efae603845cef"
+    },
+    {
+      "name": "IFOS_pipeline_run_schema_v1.json",
+      "ref": "file://IFOS_pipeline_run_schema_v1.json",
+      "hash": "sha256:0ad017981375360a318617935fb92bf47ffb0528090772fb173ff23e8bc6d01f"
+    },
+    {
+      "name": "IFOS_cdc_spec_schema_v1.json",
+      "ref": "file://IFOS_cdc_spec_schema_v1.json",
+      "hash": "sha256:30401c5388d80f0ad998b8e7e53f172c3381f355ffdff32f97e776a872f55fb3"
+    },
+    {
+      "name": "IFOS_stream_spec_schema_v1.json",
+      "ref": "file://IFOS_stream_spec_schema_v1.json",
+      "hash": "sha256:dfed18a96c0e482b8c57f4aaa7ac24afce9f68aa270d903abd7c6632c4223657"
+    },
+    {
+      "name": "IFOS_batch_job_schema_v1.json",
+      "ref": "file://IFOS_batch_job_schema_v1.json",
+      "hash": "sha256:ed2263f0ba966ac67d3bbdb4f33b0ccda4238ed4b7e279911212a8b912cfcb65"
+    },
+    {
+      "name": "IFOS_data_quality_check_schema_v1.json",
+      "ref": "file://IFOS_data_quality_check_schema_v1.json",
+      "hash": "sha256:de0902d8df855f17686c486724de18174f6613b2c217bca1b733bc381eb148b3"
+    },
+    {
+      "name": "IFOS_data_catalog_entry_schema_v1.json",
+      "ref": "file://IFOS_data_catalog_entry_schema_v1.json",
+      "hash": "sha256:4d26eaed6f42480238d4c9a7acc3453f0274e8db96524be901aa5580693fb58e"
+    },
+    {
+      "name": "IFOS_etl_lineage_event_schema_v1.json",
+      "ref": "file://IFOS_etl_lineage_event_schema_v1.json",
+      "hash": "sha256:0d1847f03630fdeb4b142a188755d9dd0b1b3f6678e25d3a3e4134c2c425d1af"
+    }
+  ],
+  "updated_at": "2026-01-03T14:24:00Z",
+  "version": "1.0.0"
+}

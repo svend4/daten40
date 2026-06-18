@@ -1,0 +1,20 @@
+openapi: 3.0.3
+info:
+  title: IFOS One-Click Bundles API
+  version: "1.0.0"
+servers:
+  - url: https://oneclick.ifos.local/v1
+tags:
+  - name: Bundles
+  - name: Preflight
+  - name: Install
+  - name: Export
+paths:
+  /bundles:
+    post: {tags:[Bundles], summary: Publish bundle manifest, responses: {"200": {description: OK}}}
+  /preflight/run:
+    post: {tags:[Preflight], summary: Run preflight checks, responses: {"200": {description: OK}}}
+  /install/run:
+    post: {tags:[Install], summary: Execute install plan, responses: {"200": {description: OK}}}
+  /export/run:
+    post: {tags:[Export], summary: Export bundle to selected format, responses: {"200": {description: OK}}}

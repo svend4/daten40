@@ -1,0 +1,90 @@
+{
+  "home_dashboard": {
+    "dashboard_id": "dash.home",
+    "name": "Home",
+    "panels": [
+      "panel.today",
+      "panel.costs",
+      "panel.approvals",
+      "panel.integrations",
+      "panel.data_quality"
+    ],
+    "version": "1.0.0"
+  },
+  "panel_today": {
+    "panel_id": "panel.today",
+    "title": "Сегодня",
+    "widgets": [
+      {
+        "type": "counter",
+        "label": "Runs",
+        "value": 124
+      },
+      {
+        "type": "counter",
+        "label": "Failures",
+        "value": 3
+      },
+      {
+        "type": "counter",
+        "label": "Approvals pending",
+        "value": 7
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "approval_item": {
+    "approval_id": "app.a.g00aqayi4lee",
+    "status": "pending",
+    "deadline": "2026-01-05T12:00:00Z",
+    "role": "editor",
+    "context": {
+      "process": "proc.news_publish",
+      "item": "news_cluster#12"
+    },
+    "diff": {
+      "title": {
+        "from": "Old",
+        "to": "New"
+      }
+    },
+    "actions": [
+      "approve",
+      "reject",
+      "request_changes",
+      "delegate"
+    ],
+    "version": "1.0.0"
+  },
+  "conflict": {
+    "conflict_id": "cfl.c.8xwgdi4zt9of",
+    "kind": "schema",
+    "items": [
+      {
+        "entity": "Document",
+        "field": "price",
+        "from": "string",
+        "to": "number"
+      }
+    ],
+    "resolution_options": [
+      "accept_new_schema",
+      "map_transform",
+      "freeze"
+    ],
+    "status": "open",
+    "version": "1.0.0"
+  },
+  "budget": {
+    "budget_id": "bud.b.t0z9t9vm0dr4",
+    "scope": "llm_tokens",
+    "limit": 20.0,
+    "spent": 12.5,
+    "period": "month",
+    "actions": [
+      "set_cap",
+      "enable_degrade_mode"
+    ],
+    "version": "1.0.0"
+  }
+}

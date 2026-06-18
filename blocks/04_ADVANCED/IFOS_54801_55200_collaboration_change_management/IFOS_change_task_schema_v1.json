@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Change Task Schema v1",
+  "type": "object",
+  "required": [
+    "task_id",
+    "title",
+    "state",
+    "priority",
+    "links",
+    "version"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "idea",
+        "doing",
+        "review",
+        "done"
+      ]
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "share_request_example": {
+    "request_id": "req_rq_kAuGmE7YO3Wg",
+    "created_at": "2026-01-02T13:20:00Z",
+    "requestor": {
+      "principal_id": "u_123",
+      "role": "analyst",
+      "tenant_id": "t_demo"
+    },
+    "dataset_id": "ds.billing.payments.sample",
+    "purpose": "Billing QA for connector integration",
+    "scope": {
+      "fields": [
+        "iban",
+        "email",
+        "amount",
+        "created_at"
+      ],
+      "filters": {
+        "created_at": ">=2025-12-01"
+      },
+      "export_outside_room": false
+    },
+    "requested_duration_days": 14,
+    "risk_score": 0.73,
+    "contract_ref": "ct.billing.basic",
+    "version": "1.0.0"
+  },
+  "share_grant_example": {
+    "grant_id": "gr_g_grsI71SuL7ru",
+    "created_at": "2026-01-02T13:22:00Z",
+    "request_id": "req_rq_kAuGmE7YO3Wg",
+    "decision": "ALLOW_TRANSFORM",
+    "expires_at": "2026-01-16T13:22:00Z",
+    "dataset_version": "v2026.01.01",
+    "controls": {
+      "deid_profile_id": "deid.support.v1",
+      "sample_policy_id": "sample.small_random",
+      "watermarking": true,
+      "max_rows": 500,
+      "rate_limit_per_min": 30,
+      "receipts_required": true
+    },
+    "reason_code": "ALLOW_TRANSFORM_REQUIRED",
+    "human_reason": "Financial fields require de-id + sample limits; raw export not allowed.",
+    "version": "1.0.0"
+  },
+  "access_receipt_example": {
+    "receipt_id": "rc_rcp_UMAQoqQoE5Cq",
+    "created_at": "2026-01-02T13:25:10Z",
+    "principal_id": "u_123",
+    "dataset_id": "ds.billing.payments.sample",
+    "action": "DOWNLOAD_DEID",
+    "controls": {
+      "grant_id": "gr_g_grsI71SuL7ru",
+      "deid_profile_id": "deid.support.v1",
+      "sample_policy_id": "sample.small_random",
+      "watermark_token": "wmk_x7f3"
+    },
+    "correlation": {
+      "tenant_id": "t_demo",
+      "workflow_id": "wf_billing",
+      "trace_id": "tr_901"
+    },
+    "version": "1.0.0"
+  }
+}

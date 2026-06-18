@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS PurchaseProof Schema v1",
+  "type": "object",
+  "required": [
+    "proof_id",
+    "author_id",
+    "target_id",
+    "method",
+    "evidence_hash",
+    "redactions",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "proof_id": {
+      "type": "string"
+    },
+    "author_id": {
+      "type": "string"
+    },
+    "target_id": {
+      "type": "string"
+    },
+    "method": {
+      "type": "string",
+      "enum": [
+        "receipt_hash",
+        "provider_api",
+        "usage_log",
+        "other"
+      ]
+    },
+    "evidence_hash": {
+      "type": "string"
+    },
+    "redactions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

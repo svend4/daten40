@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS PublishingPipeline Schema v1",
+  "type": "object",
+  "required": [
+    "pipeline_id",
+    "stages",
+    "channels",
+    "signing_required",
+    "post_publish_smoke",
+    "version"
+  ],
+  "properties": {
+    "pipeline_id": {
+      "type": "string"
+    },
+    "stages": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "build",
+          "validate",
+          "sign",
+          "publish",
+          "notify",
+          "smoke_test"
+        ]
+      }
+    },
+    "channels": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "private",
+          "public",
+          "partner"
+        ]
+      }
+    },
+    "signing_required": {
+      "type": "boolean"
+    },
+    "post_publish_smoke": {
+      "type": "boolean"
+    },
+    "validation_profile": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

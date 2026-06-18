@@ -1,0 +1,23 @@
+openapi: 3.0.3
+info:
+  title: IFOS Community & Contribution API
+  version: "1.0.0"
+servers:
+  - url: https://community.ifos.local/v1
+tags:
+  - name: Submissions
+  - name: Reviews
+  - name: Ratings
+  - name: Moderation
+  - name: Bounties
+paths:
+  /submissions:
+    post: {tags:[Submissions], summary: Create submission, responses: {"200": {description: OK}}}
+  /reviews:
+    post: {tags:[Reviews], summary: Add review to submission, responses: {"200": {description: OK}}}
+  /ratings:
+    post: {tags:[Ratings], summary: Create rating/review, responses: {"200": {description: OK}}}
+  /moderation/cases:
+    post: {tags:[Moderation], summary: Open moderation case, responses: {"200": {description: OK}}}
+  /bounties:
+    post: {tags:[Bounties], summary: Create bounty, responses: {"200": {description: OK}}}

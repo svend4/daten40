@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS KW Export Job Schema v1",
+  "type": "object",
+  "required": [
+    "export_id",
+    "scope",
+    "format",
+    "status",
+    "files",
+    "version"
+  ],
+  "properties": {
+    "export_id": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string"
+    },
+    "format": {
+      "type": "string",
+      "enum": [
+        "pdf",
+        "docx",
+        "html",
+        "zip"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "queued",
+        "running",
+        "done",
+        "failed"
+      ]
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

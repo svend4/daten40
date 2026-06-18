@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS InstallReceipt Schema v1",
+  "type": "object",
+  "required": [
+    "receipt_id",
+    "bundle_id",
+    "installed",
+    "health",
+    "links",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "receipt_id": {
+      "type": "string"
+    },
+    "bundle_id": {
+      "type": "string"
+    },
+    "installed": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "health": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

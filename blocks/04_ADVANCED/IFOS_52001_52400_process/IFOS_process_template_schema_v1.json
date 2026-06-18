@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ProcessTemplate Schema v1",
+  "type": "object",
+  "required": [
+    "template_id",
+    "department",
+    "process_dsl",
+    "bundles",
+    "forms",
+    "policies",
+    "version"
+  ],
+  "properties": {
+    "template_id": {
+      "type": "string"
+    },
+    "department": {
+      "type": "string"
+    },
+    "process_dsl": {
+      "type": "string"
+    },
+    "bundles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "forms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "policies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

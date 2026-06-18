@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ReviewModerationResult Schema v1",
+  "type": "object",
+  "required": [
+    "mod_id",
+    "review_id",
+    "decision",
+    "reasons",
+    "redactions",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "mod_id": {
+      "type": "string"
+    },
+    "review_id": {
+      "type": "string"
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "publish",
+        "hide",
+        "edit",
+        "needs_info"
+      ]
+    },
+    "reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "redactions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

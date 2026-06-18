@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DataContract Schema v1",
+  "type": "object",
+  "required": [
+    "contract_id",
+    "tenant_id",
+    "dataset",
+    "schema",
+    "sla",
+    "ownership",
+    "version"
+  ],
+  "properties": {
+    "contract_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "dataset": {
+      "type": "string"
+    },
+    "schema": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "type"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "nullable": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "labels": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "constraints": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "sla": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "ownership": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

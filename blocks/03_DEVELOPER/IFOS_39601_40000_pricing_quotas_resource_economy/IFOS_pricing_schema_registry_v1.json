@@ -1,0 +1,57 @@
+{
+  "registry_id": "reg.price.aw18iq8e38um",
+  "entries": [
+    {
+      "name": "IFOS_pricing_plan_schema_v1.json",
+      "ref": "file://IFOS_pricing_plan_schema_v1.json",
+      "hash": "sha256:fa45553d977561b6151ec69c3f3945ba9c2c96c481482f923705b9ed67927511"
+    },
+    {
+      "name": "IFOS_usage_meter_schema_v1.json",
+      "ref": "file://IFOS_usage_meter_schema_v1.json",
+      "hash": "sha256:1ba5f2e8353b927284b1f1d574f96f6f8fde65031d97df41bec7b58520aafde8"
+    },
+    {
+      "name": "IFOS_quota_policy_schema_v1.json",
+      "ref": "file://IFOS_quota_policy_schema_v1.json",
+      "hash": "sha256:127bad418c774a6aa55c227dc41f7cd9dcc15efc6f7d6533191efb366550c006"
+    },
+    {
+      "name": "IFOS_rate_limit_schema_v1.json",
+      "ref": "file://IFOS_rate_limit_schema_v1.json",
+      "hash": "sha256:42402eba050a0cd6fc38e4009aa1f2c6bbf3a23c78167157e45ebf0ed80154fe"
+    },
+    {
+      "name": "IFOS_sla_schema_v1.json",
+      "ref": "file://IFOS_sla_schema_v1.json",
+      "hash": "sha256:74feac22d991428fc7f1917f109d899e1e9ca6a95b74991a7bd1519cb88f079b"
+    },
+    {
+      "name": "IFOS_cost_model_schema_v1.json",
+      "ref": "file://IFOS_cost_model_schema_v1.json",
+      "hash": "sha256:a1313a4ee1dd87ce49958bbfaff50491baf7f452faed697a38de8741ffdfd630"
+    },
+    {
+      "name": "IFOS_chargeback_record_schema_v1.json",
+      "ref": "file://IFOS_chargeback_record_schema_v1.json",
+      "hash": "sha256:68fc216fb800a6f1ea5f2816f37e7481a54bd60decdfad4f139b769d654b4059"
+    },
+    {
+      "name": "IFOS_invoice_schema_v1.json",
+      "ref": "file://IFOS_invoice_schema_v1.json",
+      "hash": "sha256:d9feb70663a12af00b79b74e805f189d1051aec5d2dead3c44eb8b10fc667ab4"
+    },
+    {
+      "name": "IFOS_budget_alert_schema_v1.json",
+      "ref": "file://IFOS_budget_alert_schema_v1.json",
+      "hash": "sha256:42ff16fe3e693994d44ddad976a48f4c0654c4ea3cf64f858424fe94ae4a123d"
+    },
+    {
+      "name": "IFOS_resource_class_schema_v1.json",
+      "ref": "file://IFOS_resource_class_schema_v1.json",
+      "hash": "sha256:2dcbcc7b64d1286a7cb699304a1c34d944404cd111ccef3f070bb73efd10bd77"
+    }
+  ],
+  "updated_at": "2026-01-03T21:00:00Z",
+  "version": "1.0.0"
+}

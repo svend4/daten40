@@ -1,0 +1,19 @@
+openapi: 3.0.3
+info:
+  title: IFOS Benchmarks & Rankings API
+  version: "1.0.0"
+servers:
+  - url: https://bench.ifos.local/v1
+tags:
+  - name: Benchmarks
+  - name: Scorecards
+  - name: Leaderboards
+paths:
+  /benchmarks/run:
+    post: {tags:[Benchmarks], summary: Run benchmark for an artifact, responses: {"200": {description: OK}}}
+  /scorecards/generate:
+    post: {tags:[Scorecards], summary: Generate scorecard from runs, responses: {"200": {description: OK}}}
+  /leaderboards/generate:
+    post: {tags:[Leaderboards], summary: Generate leaderboards, responses: {"200": {description: OK}}}
+  /reports/compare:
+    post: {tags:[Benchmarks], summary: Generate compare report for A/B/C, responses: {"200": {description: OK}}}

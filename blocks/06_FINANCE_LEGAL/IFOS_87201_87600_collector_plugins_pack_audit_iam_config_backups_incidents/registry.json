@@ -1,0 +1,122 @@
+{
+  "registry_version": "1.0.0",
+  "plugins": [
+    {
+      "name": "audit_log_exporter",
+      "version": "1.0.0",
+      "capabilities": [
+        "export_audit_logs",
+        "phi_access_logs",
+        "dsar_access_log"
+      ],
+      "supported_formats": [
+        "json",
+        "csv",
+        "ndjson"
+      ],
+      "required_scopes": [
+        "audit.read",
+        "logs.export"
+      ],
+      "outputs": [
+        "evidence_item.v1"
+      ],
+      "typical_evidence_ids": [
+        "phi_access_logs",
+        "dsar_access_log"
+      ]
+    },
+    {
+      "name": "iam_exporter",
+      "version": "1.0.0",
+      "capabilities": [
+        "export_access_review_records",
+        "export_user_access_list",
+        "export_mfa_status"
+      ],
+      "supported_formats": [
+        "csv",
+        "json"
+      ],
+      "required_scopes": [
+        "iam.read",
+        "governance.read"
+      ],
+      "outputs": [
+        "evidence_item.v1"
+      ],
+      "typical_evidence_ids": [
+        "access_review_records"
+      ]
+    },
+    {
+      "name": "config_snapshotter",
+      "version": "1.0.0",
+      "capabilities": [
+        "capture_config_snapshot",
+        "export_security_baselines",
+        "export_rbac_policies"
+      ],
+      "supported_formats": [
+        "zip",
+        "json"
+      ],
+      "required_scopes": [
+        "config.read",
+        "infra.read"
+      ],
+      "outputs": [
+        "evidence_item.v1"
+      ],
+      "typical_evidence_ids": [
+        "config_snapshots"
+      ]
+    },
+    {
+      "name": "backup_restore_test_collector",
+      "version": "1.0.0",
+      "capabilities": [
+        "collect_backup_restore_tests",
+        "collect_dr_plan_tests"
+      ],
+      "supported_formats": [
+        "pdf",
+        "csv",
+        "json"
+      ],
+      "required_scopes": [
+        "backup.read",
+        "dr.read"
+      ],
+      "outputs": [
+        "evidence_item.v1"
+      ],
+      "typical_evidence_ids": [
+        "backup_restore_tests"
+      ]
+    },
+    {
+      "name": "incident_runbook_snapshot_exporter",
+      "version": "1.0.0",
+      "capabilities": [
+        "export_incident_runbooks",
+        "export_postmortem_templates"
+      ],
+      "supported_formats": [
+        "zip",
+        "md",
+        "pdf"
+      ],
+      "required_scopes": [
+        "itsm.read",
+        "docs.read"
+      ],
+      "outputs": [
+        "evidence_item.v1"
+      ],
+      "typical_evidence_ids": [
+        "incident_runbooks"
+      ]
+    }
+  ]
+}

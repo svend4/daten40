@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ShareGrant Schema v1",
+  "type": "object",
+  "required": [
+    "grant_id",
+    "provider_tenant",
+    "consumer_tenant",
+    "assets",
+    "permissions",
+    "status",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "grant_id": {
+      "type": "string"
+    },
+    "provider_tenant": {
+      "type": "string"
+    },
+    "consumer_tenant": {
+      "type": "string"
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "id"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "card",
+              "vitrine",
+              "bundle",
+              "workflow",
+              "schema",
+              "doc"
+            ]
+          },
+          "id": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "permissions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "read",
+          "run",
+          "install"
+        ]
+      }
+    },
+    "restrictions": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "expires_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "revoked",
+        "expired"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

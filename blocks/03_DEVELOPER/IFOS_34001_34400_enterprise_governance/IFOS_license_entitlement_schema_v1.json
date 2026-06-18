@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS LicenseEntitlement Schema v1",
+  "type": "object",
+  "required": [
+    "entitlement_id",
+    "tenant_id",
+    "product_ref",
+    "limits",
+    "valid_from",
+    "valid_to",
+    "version"
+  ],
+  "properties": {
+    "entitlement_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "product_ref": {
+      "type": "string"
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "valid_from": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "valid_to": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "assigned_to": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

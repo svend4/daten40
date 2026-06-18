@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SchemaCompatReport Schema v1",
+  "type": "object",
+  "required": [
+    "report_id",
+    "schema_id",
+    "from_version",
+    "to_version",
+    "mode",
+    "result",
+    "diff",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "report_id": {
+      "type": "string"
+    },
+    "schema_id": {
+      "type": "string"
+    },
+    "from_version": {
+      "type": "string"
+    },
+    "to_version": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "backward",
+        "forward",
+        "full"
+      ]
+    },
+    "result": {
+      "type": "string",
+      "enum": [
+        "compatible",
+        "incompatible",
+        "unknown"
+      ]
+    },
+    "diff": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

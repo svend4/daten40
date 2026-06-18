@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS PaymentWebhookEvent Schema v1",
+  "type": "object",
+  "required": [
+    "event_id",
+    "provider_id",
+    "type",
+    "payload",
+    "received_at",
+    "verified",
+    "version"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "provider_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "received_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "verified": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

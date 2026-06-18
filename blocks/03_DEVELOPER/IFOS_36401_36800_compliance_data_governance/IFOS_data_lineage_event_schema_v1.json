@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DataLineageEvent Schema v1",
+  "type": "object",
+  "required": [
+    "lineage_id",
+    "tenant_id",
+    "ts",
+    "source",
+    "target",
+    "transform",
+    "actor",
+    "version"
+  ],
+  "properties": {
+    "lineage_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "transform": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "actor": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

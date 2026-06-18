@@ -1,0 +1,77 @@
+{
+  "claim": {
+    "claim_id": "clm.c.2pvlg994m58n",
+    "cluster_id": "cl.*",
+    "claim_text": "Компания X выпустила продукт Y 3 января 2026 года по цене 199€.",
+    "type": "fact",
+    "subject": {
+      "org": "Company X",
+      "product": "Product Y"
+    },
+    "params": {
+      "date": "2026-01-03",
+      "price_eur": 199
+    },
+    "source": {
+      "domain": "site1.com",
+      "url": "https://site1.com/a"
+    },
+    "version": "1.0.0"
+  },
+  "evidence": {
+    "evidence_id": "ev.e.b73d3fjdg0zw",
+    "claim_id": "clm.*",
+    "url": "https://site1.com/a",
+    "snippet": "... released Product Y on Jan 3 for €199 ...",
+    "offsets": {
+      "start": 1204,
+      "end": 1242
+    },
+    "raw_hash": "sha256:*",
+    "kind": "secondary",
+    "version": "1.0.0"
+  },
+  "conflict": {
+    "conflict_id": "conf.x.01os3aot6lsh",
+    "cluster_id": "cl.*",
+    "a": {
+      "price_eur": 199,
+      "source": "site1.com"
+    },
+    "b": {
+      "price_eur": 179,
+      "source": "site2.com"
+    },
+    "conflict_type": "number",
+    "suspected_causes": [
+      "исправление цены",
+      "разные регионы",
+      "разные комплектации"
+    ],
+    "checklist": [
+      "проверить официальный релиз",
+      "проверить регион/валюту",
+      "проверить дату обновления"
+    ],
+    "version": "1.0.0"
+  },
+  "verdict": {
+    "verdict_id": "ver.v.kfu6fu4j5ncw",
+    "cluster_id": "cl.*",
+    "known": [
+      "Релиз продукта Y действительно был 3 января 2026 (2 источника)."
+    ],
+    "likely": [
+      "Цена 179–199€ зависит от региона/версии (есть конфликт)."
+    ],
+    "uncertain": [
+      "Не ясно, включает ли цена подписку."
+    ],
+    "actions": [
+      "Найти первоисточник релиза",
+      "Проверить региональные страницы"
+    ],
+    "confidence": "medium",
+    "version": "1.0.0"
+  }
+}

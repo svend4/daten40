@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "JournalEntry",
+  "type": "object",
+  "required": [
+    "journal_entry_id",
+    "workspace_id",
+    "posted_at",
+    "currency",
+    "lines",
+    "source_event_id"
+  ],
+  "properties": {
+    "journal_entry_id": {
+      "type": "string"
+    },
+    "workspace_id": {
+      "type": "string"
+    },
+    "posted_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "currency": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 3
+    },
+    "source_event_id": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "lines": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "account_code",
+          "direction",
+          "amount"
+        ],
+        "properties": {
+          "account_code": {
+            "type": "string"
+          },
+          "direction": {
+            "type": "string",
+            "enum": [
+              "debit",
+              "credit"
+            ]
+          },
+          "amount": {
+            "type": "number",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "tags": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  }
+}

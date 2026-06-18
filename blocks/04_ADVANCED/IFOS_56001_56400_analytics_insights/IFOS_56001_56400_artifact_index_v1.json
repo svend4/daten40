@@ -1,0 +1,122 @@
+{
+  "artifact_set": "IFOS_56001_56400",
+  "entries": [
+    {
+      "name": "IFOS_analytics_insights_os_56001_56400_v1.md",
+      "ref": "file://IFOS_analytics_insights_os_56001_56400_v1.md",
+      "hash": "sha256:09409c4b50212e127287836bec52326f1d94c76b70535ef67814b3909169d0c6"
+    },
+    {
+      "name": "IFOS_analytics_insights_api_v1.yaml",
+      "ref": "file://IFOS_analytics_insights_api_v1.yaml",
+      "hash": "sha256:e759dcb5066fc5b7f3e7873e9eb9b4ba431748e2247dc763b6d2717815cff0da"
+    },
+    {
+      "name": "IFOS_analytics_insights_examples_v1.json",
+      "ref": "file://IFOS_analytics_insights_examples_v1.json",
+      "hash": "sha256:95bea427a22126ee0aeb49a1d59f14a00ab7c14f714d21147a1c1eaf23ed621b"
+    },
+    {
+      "name": "IFOS_dashboards_seed_56001_56400_v1.csv",
+      "ref": "file://IFOS_dashboards_seed_56001_56400_v1.csv",
+      "hash": "sha256:e5dd4c4a62d207a4cb604cfb45733f5a9a2a96b9e460f3b8ad8e27bfed964e44"
+    },
+    {
+      "name": "IFOS_analytics_overview_spec_v1.md",
+      "ref": "file://IFOS_analytics_overview_spec_v1.md",
+      "hash": "sha256:81887ee7b4d86de6fd9baab64ba511c9564263c5590dd83c99f0e436942fa062"
+    },
+    {
+      "name": "IFOS_analytics_event_model_spec_v1.md",
+      "ref": "file://IFOS_analytics_event_model_spec_v1.md",
+      "hash": "sha256:5fbfc01a2cb168783e3cefe173dfb819ecbfb2e2f2faa618fd543133daa70708"
+    },
+    {
+      "name": "IFOS_analytics_dashboards_spec_v1.md",
+      "ref": "file://IFOS_analytics_dashboards_spec_v1.md",
+      "hash": "sha256:f4551554d436608e489fc3630b1e4f573a64035cadb2ff88251293df084c8b59"
+    },
+    {
+      "name": "IFOS_analytics_adoption_kpis_spec_v1.md",
+      "ref": "file://IFOS_analytics_adoption_kpis_spec_v1.md",
+      "hash": "sha256:0bdc5445c06ebf715b20e063d5d1f5a3cdece449b49c91c853a95588b3786cc3"
+    },
+    {
+      "name": "IFOS_analytics_data_quality_signals_spec_v1.md",
+      "ref": "file://IFOS_analytics_data_quality_signals_spec_v1.md",
+      "hash": "sha256:2b6c6bdf682fee9c2a225e45772dffb85bdd4bc22ea270f121087fb1354c6e23"
+    },
+    {
+      "name": "IFOS_analytics_recommendations_spec_v1.md",
+      "ref": "file://IFOS_analytics_recommendations_spec_v1.md",
+      "hash": "sha256:77fd96362f598053099d88815bc82b5f2ada399d373b71f4c54154f8d1bba50f"
+    },
+    {
+      "name": "IFOS_analytics_experiments_ab_spec_v1.md",
+      "ref": "file://IFOS_analytics_experiments_ab_spec_v1.md",
+      "hash": "sha256:0f9b1c41d643d3e7e41a3520a496629c09ab533114fd51bf03c959a04ef2cc60"
+    },
+    {
+      "name": "IFOS_analytics_privacy_controls_spec_v1.md",
+      "ref": "file://IFOS_analytics_privacy_controls_spec_v1.md",
+      "hash": "sha256:f76705e1440e95ddb253d99da58bd96848af85c0d71ce3210fc98be6f8494717"
+    },
+    {
+      "name": "IFOS_analytics_alerting_spec_v1.md",
+      "ref": "file://IFOS_analytics_alerting_spec_v1.md",
+      "hash": "sha256:8d1142cc81faeaa2c6e617e30b4437d1d55d04f04e86d0c02b810251d659e4df"
+    },
+    {
+      "name": "IFOS_analytics_integrations_spec_v1.md",
+      "ref": "file://IFOS_analytics_integrations_spec_v1.md",
+      "hash": "sha256:4afa33578c0947603c66c5d67c544d236563843d710e465f776c1ae08415524a"
+    },
+    {
+      "name": "IFOS_analytics_event_schema_v1.json",
+      "ref": "file://IFOS_analytics_event_schema_v1.json",
+      "hash": "sha256:45a49067779b28b1c0c188ba7aa5bb3c28d68802fe61e87e4da992dce0484936"
+    },
+    {
+      "name": "IFOS_analytics_metric_schema_v1.json",
+      "ref": "file://IFOS_analytics_metric_schema_v1.json",
+      "hash": "sha256:d676fb5de9e1e047be1fa1f4d5eabee86375f464b197b4e80ca3404a7016e0d1"
+    },
+    {
+      "name": "IFOS_analytics_dashboard_schema_v1.json",
+      "ref": "file://IFOS_analytics_dashboard_schema_v1.json",
+      "hash": "sha256:08e9aa0a97247a99012d3a0209aa8d3a8aaf0c62bb25e036af3875b87c37ae0f"
+    },
+    {
+      "name": "IFOS_analytics_recommendation_schema_v1.json",
+      "ref": "file://IFOS_analytics_recommendation_schema_v1.json",
+      "hash": "sha256:a6c4857a746c06128f1f17b85fbc9a10ed5474ec73620897b8517e0695745afb"
+    },
+    {
+      "name": "IFOS_analytics_experiment_schema_v1.json",
+      "ref": "file://IFOS_analytics_experiment_schema_v1.json",
+      "hash": "sha256:146b883aec19e1c83e474392ce155178eca5003388a241749f1857d0d20fb127"
+    },
+    {
+      "name": "IFOS_analytics_alert_schema_v1.json",
+      "ref": "file://IFOS_analytics_alert_schema_v1.json",
+      "hash": "sha256:4513269bc096c6f71e05c8d9a7afd06ea18805a2953030b1522cc7da3bc814ea"
+    },
+    {
+      "name": "ifos_analytics_metrics_calc_stub_v1.py",
+      "ref": "file://ifos_analytics_metrics_calc_stub_v1.py",
+      "hash": "sha256:810352331be4cd0a59d608d3afc15eecc1ad6836b5ba5468e64a099f2325fd25"
+    },
+    {
+      "name": "ifos_analytics_recommendations_stub_v1.py",
+      "ref": "file://ifos_analytics_recommendations_stub_v1.py",
+      "hash": "sha256:ff9fb68d8c509b46614982fe896c6d1e3e85832703d93e2031f3036726e51721"
+    },
+    {
+      "name": "ifos_analytics_event_sink_stub_v1.py",
+      "ref": "file://ifos_analytics_event_sink_stub_v1.py",
+      "hash": "sha256:627364cb55d6bffdbd1b8b7e62d9a4342dc70024f33ec77d21821dbc1f9ad1c5"
+    }
+  ],
+  "created_at": "2026-01-04T20:35:00Z",
+  "version": "1.0.0"
+}

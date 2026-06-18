@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Recipe Schema v1",
+  "type": "object",
+  "required": [
+    "recipe_id",
+    "name",
+    "dependencies",
+    "params",
+    "version"
+  ],
+  "properties": {
+    "recipe_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "params": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

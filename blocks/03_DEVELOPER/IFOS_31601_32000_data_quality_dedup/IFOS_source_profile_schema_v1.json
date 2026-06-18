@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SourceProfile Schema v1",
+  "type": "object",
+  "required": [
+    "source_id",
+    "name",
+    "kind",
+    "base_url",
+    "trust",
+    "formats",
+    "policies",
+    "version"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "rss",
+        "api",
+        "html",
+        "file",
+        "manual"
+      ]
+    },
+    "base_url": {
+      "type": "string"
+    },
+    "trust": {
+      "type": "object",
+      "required": [
+        "score"
+      ],
+      "properties": {
+        "score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "formats": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "policies": {
+      "type": "object",
+      "properties": {
+        "allow_domains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "strip_query_params": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rate_limit_per_min": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

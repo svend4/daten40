@@ -1,0 +1,255 @@
+{
+  "data_classification": {
+    "class_id": "cls.c.vh2cxas39u0t",
+    "name": "PII",
+    "level": 4,
+    "labels": [
+      "pii.email",
+      "pii.phone",
+      "pii.address"
+    ],
+    "handling": {
+      "encrypt_at_rest": true,
+      "mask_in_logs": true,
+      "export_requires_approval": true
+    },
+    "version": "1.0.0"
+  },
+  "retention_policy": {
+    "policy_id": "ret.r.pwuvbfdkk010",
+    "tenant_id": "ten.t.5enz7p6e4vka",
+    "scope": {
+      "applies_to": [
+        "logs",
+        "runs",
+        "artifacts"
+      ]
+    },
+    "rules": [
+      {
+        "data_class": "Public",
+        "ttl_days": 365,
+        "action": "archive"
+      },
+      {
+        "data_class": "PII",
+        "ttl_days": 30,
+        "action": "delete",
+        "exceptions": [
+          "legal_hold"
+        ]
+      },
+      {
+        "data_class": "Secrets",
+        "ttl_days": 0,
+        "action": "delete"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "dlp_policy": {
+    "dlp_id": "dlp.d.6s496ww9qp60",
+    "tenant_id": "ten.t.5enz7p6e4vka",
+    "matchers": [
+      {
+        "type": "regex",
+        "label": "pii.email",
+        "pattern": "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+      },
+      {
+        "type": "regex",
+        "label": "secret.api_key",
+        "pattern": "sk-[A-Za-z0-9]{20,}"
+      }
+    ],
+    "actions": [
+      {
+        "on": "pii.email",
+        "do": "mask"
+      },
+      {
+        "on": "secret.api_key",
+        "do": "redact"
+      },
+      {
+        "on": "special_category",
+        "do": "block"
+      }
+    ],
+    "targets": [
+      "logs",
+      "exports"
+    ],
+    "version": "1.0.0"
+  },
+  "processing_purpose": {
+    "purpose_id": "pur.p.cxpygvee9vpq",
+    "tenant_id": "ten.t.5enz7p6e4vka",
+    "name": "support",
+    "description": "Support and troubleshooting for customer requests",
+    "legal_basis": "contract",
+    "version": "1.0.0"
+  },
+  "consent_record": {
+    "consent_id": "con.c.bvy48uf8fayq",
+    "tenant_id": "ten.t.5enz7p6e4vka",
+    "subject": {
+      "email": "user@example.com",
+      "subject_id": "sub.123"
+    },
+    "purpose_id": "pur.p.cxpygvee9vpq",
+    "status": "granted",
+    "ts": "2026-01-03T14:05:00Z",
+    "meta": {
+      "channel": "web_form"
+    },
+    "version": "1.0.0"
+  },
+  "dsar_request": {
+    "dsar_id": "dsar.d.d8k1sd2lcz4n",
+    "tenant_id": "ten.t.5enz7p6e4vka",
+    "type": "export",
+    "subject": {
+      "email": "user@example.com",
+      "subject_id": "sub.123"
+    },
+    "status": "new",
+    "created_at": "2026-01-03T14:05:00Z",
+    "due_at": "2026-02-02T00:00:00Z",
+    "result_refs": null,
+    "version": "1.0.0"
+  },
+  "legal_hold": {
+    "hold_id": "hold.h.vkxfv6qcx6a2",
+    "tenant_id": "ten.t.5enz7p6e4vka",
+    "reason": "incident-2026-001",
+    "scope": {
+      "run_ids": [
+        "run.abc123"
+      ],
+      "data_classes": [
+        "PII",
+        "Confidential"
+      ]
+    },
+    "status": "active",
+    "created_at": "2026-01-03T14:05:00Z",
+    "expires_at": null,
+    "created_by": "u.security",
+    "version": "1.0.0"
+  },
+  "ropa_entry": {
+    "ropa_id": "ropa.r.hi1jzxg5q4aa",
+    "tenant_id": "ten.t.5enz7p6e4vka",
+    "activity_name": "Automated invoice emailing",
+    "purposes": [
+      "pur.p.cxpygvee9vpq"
+    ],
+    "data_categories": [
+      "PII",
+      "invoice_data"
+    ],
+    "subjects": [
+      "customers"
+    ],
+    "recipients": [
+      "email_provider"
+    ],
+    "transfers": {
+      "outside_eu": false
+    },
+    "retention": {
+      "pii_days": 30,
+      "audit_years": 5
+    },
+    "security_measures": [
+      "encryption_at_rest",
+      "access_control",
+      "audit_logging"
+    ],
+    "version": "1.0.0"
+  },
+  "dpia_record": {
+    "dpia_id": "dpia.d.02soyz8iojxa",
+    "tenant_id": "ten.t.5enz7p6e4vka",
+    "activity_ref": "ropa.r.hi1jzxg5q4aa",
+    "risk_level": "medium",
+    "threats": [
+      "data_leakage",
+      "misdelivery"
+    ],
+    "measures": [
+      "dlp_scanning",
+      "double_opt_in",
+      "access_reviews"
+    ],
+    "residual_risk": "low",
+    "status": "approved",
+    "approved_by": "u.dpo",
+    "version": "1.0.0"
+  },
+  "data_lineage_event": {
+    "lineage_id": "lin.l.m3i2p4ooustr",
+    "tenant_id": "ten.t.5enz7p6e4vka",
+    "ts": "2026-01-03T14:05:00Z",
+    "source": {
+      "type": "connector",
+      "id": "gmail",
+      "resource": "inbox"
+    },
+    "target": {
+      "type": "storage",
+      "id": "object_store",
+      "resource": "exports/"
+    },
+    "transform": {
+      "bundle_id": "canon.bundle.exporter_v1",
+      "steps": [
+        "filter",
+        "redact",
+        "zip"
+      ]
+    },
+    "actor": {
+      "user_id": "u.ops",
+      "run_id": "run.abc123"
+    },
+    "version": "1.0.0"
+  },
+  "data_export_job": {
+    "export_id": "exp.e.er9hmpjidpa8",
+    "tenant_id": "ten.t.5enz7p6e4vka",
+    "request_ref": "dsar.d.d8k1sd2lcz4n",
+    "scope": {
+      "subject_id": "sub.123"
+    },
+    "format": "zip",
+    "status": "queued",
+    "created_at": "2026-01-03T14:05:00Z",
+    "result_ref": null,
+    "version": "1.0.0"
+  },
+  "erasure_job": {
+    "erasure_id": "era.e.mjbvgl44da61",
+    "tenant_id": "ten.t.5enz7p6e4vka",
+    "request_ref": "dsar.erase.001",
+    "scope": {
+      "subject_id": "sub.123"
+    },
+    "status": "queued",
+    "created_at": "2026-01-03T14:05:00Z",
+    "report_ref": null,
+    "version": "1.0.0"
+  },
+  "governance_rule": {
+    "rule_id": "rule.g.6c46awle8nms",
+    "tenant_id": "ten.t.5enz7p6e4vka",
+    "phase": "logging",
+    "condition": {
+      "data_class": "PII"
+    },
+    "effect": "mask",
+    "priority": 5,
+    "version": "1.0.0"
+  }
+}

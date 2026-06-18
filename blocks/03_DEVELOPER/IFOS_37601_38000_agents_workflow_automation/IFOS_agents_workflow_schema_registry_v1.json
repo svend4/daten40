@@ -1,0 +1,67 @@
+{
+  "registry_id": "reg.agent.xerf7tga1hff",
+  "entries": [
+    {
+      "name": "IFOS_agent_profile_schema_v1.json",
+      "ref": "file://IFOS_agent_profile_schema_v1.json",
+      "hash": "sha256:068af3b2f0e27e8de724a552372cea579e79fa37428a686e4f61549367345623"
+    },
+    {
+      "name": "IFOS_tool_descriptor_schema_v1.json",
+      "ref": "file://IFOS_tool_descriptor_schema_v1.json",
+      "hash": "sha256:d79b555eaf944bcc72dd3f9e0965af17d360bf1bd4d6e893335beb6f4fafcef9"
+    },
+    {
+      "name": "IFOS_tool_registry_schema_v1.json",
+      "ref": "file://IFOS_tool_registry_schema_v1.json",
+      "hash": "sha256:de032ca471a6b8494ab8b78df524dd30f57b51820d51be860f1745443034c5fb"
+    },
+    {
+      "name": "IFOS_action_policy_schema_v1.json",
+      "ref": "file://IFOS_action_policy_schema_v1.json",
+      "hash": "sha256:ed57733e02462bbb5af3372deee536858c12a724d512c8db391cb8201b3f24bb"
+    },
+    {
+      "name": "IFOS_workflow_spec_schema_v1.json",
+      "ref": "file://IFOS_workflow_spec_schema_v1.json",
+      "hash": "sha256:f5ab4c7e002ab72cd105c55693115c55dc4460934b6ab6f12ad11c97c82945e2"
+    },
+    {
+      "name": "IFOS_task_item_schema_v1.json",
+      "ref": "file://IFOS_task_item_schema_v1.json",
+      "hash": "sha256:a6fc7bef9c9d539b79a35c77a18cfec3c8205431f295bae5b416c8a1f91ee914"
+    },
+    {
+      "name": "IFOS_plan_spec_schema_v1.json",
+      "ref": "file://IFOS_plan_spec_schema_v1.json",
+      "hash": "sha256:24afcf4d452c89a8b4141f37dd12c2ea829978fe5ab8d7dbd185d947af56d5c9"
+    },
+    {
+      "name": "IFOS_execution_run_schema_v1.json",
+      "ref": "file://IFOS_execution_run_schema_v1.json",
+      "hash": "sha256:c3933cf45789c08e7edea0016208c3664d58d69a5514c2e4364728e447fdb63f"
+    },
+    {
+      "name": "IFOS_approval_request_schema_v1.json",
+      "ref": "file://IFOS_approval_request_schema_v1.json",
+      "hash": "sha256:18013cf654fa81f310d97657ce803c59bc005b863efc2c1f8fec2aba7a0905d9"
+    },
+    {
+      "name": "IFOS_audit_event_schema_v1.json",
+      "ref": "file://IFOS_audit_event_schema_v1.json",
+      "hash": "sha256:41a1f5e2d82aeb9f66a25c348cb18b5a99641db6869ba7926ce8b9c1f2404e46"
+    },
+    {
+      "name": "IFOS_connector_bridge_schema_v1.json",
+      "ref": "file://IFOS_connector_bridge_schema_v1.json",
+      "hash": "sha256:ecd49bb85e024e6d9847db6525a21a830338213c329efae77f5c4e522b94bdf0"
+    },
+    {
+      "name": "IFOS_schedule_spec_schema_v1.json",
+      "ref": "file://IFOS_schedule_spec_schema_v1.json",
+      "hash": "sha256:0e8156d46a5eb2f98546ed0efe206c76db6e0855ed6c7688118ddabb5f25e037"
+    }
+  ],
+  "updated_at": "2026-01-03T16:10:00Z",
+  "version": "1.0.0"
+}

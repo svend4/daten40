@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS FunctionMapping Schema v1",
+  "type": "object",
+  "required": [
+    "map_id",
+    "term_id",
+    "capabilities",
+    "candidate_items",
+    "version"
+  ],
+  "properties": {
+    "map_id": {
+      "type": "string"
+    },
+    "term_id": {
+      "type": "string"
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "candidate_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

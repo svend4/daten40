@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Collection Schema v1",
+  "type": "object",
+  "required": [
+    "collection_id",
+    "title",
+    "owner",
+    "items",
+    "visibility",
+    "version"
+  ],
+  "properties": {
+    "collection_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "visibility": {
+      "type": "string",
+      "enum": [
+        "private",
+        "team",
+        "public"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "intent_query": {
+    "text": "Сделай ежедневный дайджест новостей и отправь в телеграм",
+    "domain_hint": "news",
+    "constraints": {
+      "platform": "server",
+      "privacy": "low",
+      "offline": false,
+      "keys_available": true
+    }
+  },
+  "solution_plan": {
+    "capability_graph": {
+      "nodes": [
+        {
+          "id": "n1",
+          "capability_id": "cap:news.digest_pipeline",
+          "confidence": 0.86,
+          "evidence": [
+            "phrase:дайджест новостей"
+          ]
+        },
+        {
+          "id": "n2",
+          "capability_id": "cap:news.fetch_rss",
+          "confidence": 0.72,
+          "evidence": [
+            "domain:news"
+          ]
+        },
+        {
+          "id": "n3",
+          "capability_id": "cap:news.dedup_items",
+          "confidence": 0.64,
+          "evidence": [
+            "default pipeline"
+          ]
+        },
+        {
+          "id": "n4",
+          "capability_id": "cap:news.rank_items",
+          "confidence": 0.62,
+          "evidence": [
+            "default pipeline"
+          ]
+        },
+        {
+          "id": "n5",
+          "capability_id": "cap:notify.telegram",
+          "confidence": 0.7,
+          "evidence": [
+            "target:telegram"
+          ]
+        }
+      ],
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n2",
+          "type": "part_of"
+        },
+        {
+          "from": "n1",
+          "to": "n3",
+          "type": "part_of"
+        },
+        {
+          "from": "n1",
+          "to": "n4",
+          "type": "part_of"
+        },
+        {
+          "from": "n1",
+          "to": "n5",
+          "type": "sequence"
+        }
+      ]
+    },
+    "bundle_manifest": {
+      "bundle_id": "bundle.news_digest_telegram.v1",
+      "requires": [
+        "knowledge_registry_os",
+        "search_ranking_vitrines_os",
+        "notifications_activity_feed_os"
+      ],
+      "blueprints": [
+        "bp.news_digest_to_telegram.v1"
+      ]
+    },
+    "gaps": []
+  }
+}

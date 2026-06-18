@@ -1,0 +1,12 @@
+{
+  "contract_id": "collector_plugin.v1",
+  "fields": {
+    "name": "string",
+    "version": "string",
+    "capabilities": "array[string]",
+    "supported_formats": "array[string]",
+    "required_scopes": "array[string]"
+  },
+  "privacy_level": "internal",
+  "retention_policy": "security_default"
+}

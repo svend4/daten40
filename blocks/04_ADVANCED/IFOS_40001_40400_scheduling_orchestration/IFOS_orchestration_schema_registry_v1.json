@@ -1,0 +1,57 @@
+{
+  "registry_id": "reg.orch.7e857s675l59",
+  "entries": [
+    {
+      "name": "IFOS_queue_schema_v1.json",
+      "ref": "file://IFOS_queue_schema_v1.json",
+      "hash": "sha256:1c9eb0c16e7fb1748e663fd178dc19739c2cc9ef6f593ca2ba4760544c2e1399"
+    },
+    {
+      "name": "IFOS_job_schema_v1.json",
+      "ref": "file://IFOS_job_schema_v1.json",
+      "hash": "sha256:9129d38922bb97fab20878863d079551b564880997a1293852bb0530cb962b44"
+    },
+    {
+      "name": "IFOS_dag_schema_v1.json",
+      "ref": "file://IFOS_dag_schema_v1.json",
+      "hash": "sha256:ee7687e60ddd34bab0c553bc2c4328a436d5159bbda024e4ffb457e0981151b4"
+    },
+    {
+      "name": "IFOS_task_schema_v1.json",
+      "ref": "file://IFOS_task_schema_v1.json",
+      "hash": "sha256:b925666db4716aedb3ad73f909b210d9fae977a6610b24c30f344126d039dbb3"
+    },
+    {
+      "name": "IFOS_retry_policy_schema_v1.json",
+      "ref": "file://IFOS_retry_policy_schema_v1.json",
+      "hash": "sha256:a45660e3fbbc11a46afd2ab3dc23ed8ee34e43d5928f8150d9812e4ea690ea6d"
+    },
+    {
+      "name": "IFOS_priority_policy_schema_v1.json",
+      "ref": "file://IFOS_priority_policy_schema_v1.json",
+      "hash": "sha256:66812c10de083bfc8464953b684b13aca7ee62911c1518aa4989ca4a2db593ec"
+    },
+    {
+      "name": "IFOS_backpressure_policy_schema_v1.json",
+      "ref": "file://IFOS_backpressure_policy_schema_v1.json",
+      "hash": "sha256:517098dfeb93db2e3b26d1e69f9135dd75d138e4c80ba3c973449da099ac110b"
+    },
+    {
+      "name": "IFOS_schedule_trigger_schema_v1.json",
+      "ref": "file://IFOS_schedule_trigger_schema_v1.json",
+      "hash": "sha256:43833d4a0a435927f7810bf42b81af608f51bcbb753fea5132f7230c7d11b371"
+    },
+    {
+      "name": "IFOS_execution_record_schema_v1.json",
+      "ref": "file://IFOS_execution_record_schema_v1.json",
+      "hash": "sha256:2d87dc360c5d404b4739f20f513d9375865ddea2bc2ae5f9bfd8504d45b85bcd"
+    },
+    {
+      "name": "IFOS_dead_letter_schema_v1.json",
+      "ref": "file://IFOS_dead_letter_schema_v1.json",
+      "hash": "sha256:dfbd0aba62f49ea092cedcf3484f28d868b40f218db07818300e15328ed28e42"
+    }
+  ],
+  "updated_at": "2026-01-03T21:40:00Z",
+  "version": "1.0.0"
+}

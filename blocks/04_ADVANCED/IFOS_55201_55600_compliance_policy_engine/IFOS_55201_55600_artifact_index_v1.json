@@ -1,0 +1,132 @@
+{
+  "artifact_set": "IFOS_55201_55600",
+  "entries": [
+    {
+      "name": "IFOS_compliance_policy_engine_os_55201_55600_v1.md",
+      "ref": "file://IFOS_compliance_policy_engine_os_55201_55600_v1.md",
+      "hash": "sha256:79ef9f20bfc3aef5c6e9bbab23c4804fec67bd6ad7fb822dc8a29fb31537e149"
+    },
+    {
+      "name": "IFOS_compliance_policy_engine_api_v1.yaml",
+      "ref": "file://IFOS_compliance_policy_engine_api_v1.yaml",
+      "hash": "sha256:aae70e4a7f3efa3be795d9b31562dab0e79bed57518a79669e1b50c4fdb34c8c"
+    },
+    {
+      "name": "IFOS_compliance_policy_engine_examples_v1.json",
+      "ref": "file://IFOS_compliance_policy_engine_examples_v1.json",
+      "hash": "sha256:e56c15e21a66484d633a4d4abfb4d382479d7d8777ba94d48dcbdfedb3e4d63b"
+    },
+    {
+      "name": "IFOS_policy_pack_seed_55201_55600_v1.csv",
+      "ref": "file://IFOS_policy_pack_seed_55201_55600_v1.csv",
+      "hash": "sha256:f4579f1d408bd7169df21b3fcba94bfc8a558265b83a62260da1346e8babf70e"
+    },
+    {
+      "name": "IFOS_policy_overview_spec_v1.md",
+      "ref": "file://IFOS_policy_overview_spec_v1.md",
+      "hash": "sha256:3afd44bc4e561dc1a9e17351c9d51781ac3e9da3dc299d26dcb7eeb2b6f15868"
+    },
+    {
+      "name": "IFOS_policy_objects_spec_v1.md",
+      "ref": "file://IFOS_policy_objects_spec_v1.md",
+      "hash": "sha256:0ae8ae7cb4709dd0bc8364bad7304aae4949fb9522db5c0e63890c3e10f9026d"
+    },
+    {
+      "name": "IFOS_policy_rule_language_spec_v1.md",
+      "ref": "file://IFOS_policy_rule_language_spec_v1.md",
+      "hash": "sha256:62516e94af72b87b0f14ce4241f158015d4682f2e07215646c59d287dbb5dbb5"
+    },
+    {
+      "name": "IFOS_policy_enforcement_spec_v1.md",
+      "ref": "file://IFOS_policy_enforcement_spec_v1.md",
+      "hash": "sha256:1e03bf27d29e5b05325ab656487e5b4a65608ce8a164827de82bf3b3e0dc29c7"
+    },
+    {
+      "name": "IFOS_policy_pii_masking_spec_v1.md",
+      "ref": "file://IFOS_policy_pii_masking_spec_v1.md",
+      "hash": "sha256:b722c4819a67510f40d561bb52329348f53f82efcd073274c644e0fb4e7d72ad"
+    },
+    {
+      "name": "IFOS_policy_secrets_handling_spec_v1.md",
+      "ref": "file://IFOS_policy_secrets_handling_spec_v1.md",
+      "hash": "sha256:feed607d3aa300e3a0299370e00fe346b008a84fdcc8a51c4bf81a99b77d058a"
+    },
+    {
+      "name": "IFOS_policy_data_contracts_spec_v1.md",
+      "ref": "file://IFOS_policy_data_contracts_spec_v1.md",
+      "hash": "sha256:128c7bc2d40e80d28e369e0acda9b730e7473f09968dbd5bf373cd3264e490c5"
+    },
+    {
+      "name": "IFOS_policy_audit_trails_spec_v1.md",
+      "ref": "file://IFOS_policy_audit_trails_spec_v1.md",
+      "hash": "sha256:06c1560a060277851b16980f43b96ec30c7ea117a8c5ee516e081e91cbce63df"
+    },
+    {
+      "name": "IFOS_policy_exceptions_waivers_spec_v1.md",
+      "ref": "file://IFOS_policy_exceptions_waivers_spec_v1.md",
+      "hash": "sha256:27f66dda404897610b849e8e94a876fdb3cdea485e72e666f2cded964081ff05"
+    },
+    {
+      "name": "IFOS_policy_risk_scoring_spec_v1.md",
+      "ref": "file://IFOS_policy_risk_scoring_spec_v1.md",
+      "hash": "sha256:0f773b3492448394d0a16dd72012a1c33ca8e733b98ecd14ff257d049e20d024"
+    },
+    {
+      "name": "IFOS_policy_integrations_spec_v1.md",
+      "ref": "file://IFOS_policy_integrations_spec_v1.md",
+      "hash": "sha256:df9b3535d51e586046559ca6cc34b903638d2de3287ec77d013975ff1386432f"
+    },
+    {
+      "name": "IFOS_policy_schema_v1.json",
+      "ref": "file://IFOS_policy_schema_v1.json",
+      "hash": "sha256:6ce7039c991292ed46e8a1dc32f40cf45a8d9ffc586cde569e5ae3e6b0aa9338"
+    },
+    {
+      "name": "IFOS_policy_rule_schema_v1.json",
+      "ref": "file://IFOS_policy_rule_schema_v1.json",
+      "hash": "sha256:4a65411ee272352d2c693c9e989d469b4f837576e93611532d9eb776db0ac5ee"
+    },
+    {
+      "name": "IFOS_policy_decision_schema_v1.json",
+      "ref": "file://IFOS_policy_decision_schema_v1.json",
+      "hash": "sha256:8af6c38d6ae82eabf1ec5851d1ec4ced8d071f28b960d6aaf849fec06027ba7b"
+    },
+    {
+      "name": "IFOS_policy_waiver_schema_v1.json",
+      "ref": "file://IFOS_policy_waiver_schema_v1.json",
+      "hash": "sha256:ca0734d46116e8d6e685764e2621b4ebffedce1f2a6331e2906f899b93f142d1"
+    },
+    {
+      "name": "IFOS_policy_audit_event_schema_v1.json",
+      "ref": "file://IFOS_policy_audit_event_schema_v1.json",
+      "hash": "sha256:7481c89b2629e3146e37b79f815e87ea4defcb6156749452d00279061ec1c4d8"
+    },
+    {
+      "name": "IFOS_policy_data_contract_schema_v1.json",
+      "ref": "file://IFOS_policy_data_contract_schema_v1.json",
+      "hash": "sha256:559d929f1fe1a2bcd3da84be4b9d4f6ae4bb8ccc78b3fcbde2838414b9fd3bec"
+    },
+    {
+      "name": "IFOS_policy_secret_ref_schema_v1.json",
+      "ref": "file://IFOS_policy_secret_ref_schema_v1.json",
+      "hash": "sha256:e432a55c0b31b965300a1d2c45e12bbeb178f2e9767dd2d164ef87081f0143b4"
+    },
+    {
+      "name": "ifos_policy_dsl_parser_stub_v1.py",
+      "ref": "file://ifos_policy_dsl_parser_stub_v1.py",
+      "hash": "sha256:3fc49968a44cd1642c45052e0b7204bab11bf4eee18760b3c8ff5e2d69a804eb"
+    },
+    {
+      "name": "ifos_policy_evaluator_stub_v1.py",
+      "ref": "file://ifos_policy_evaluator_stub_v1.py",
+      "hash": "sha256:683e828ed6d880226372cec4957d2428cc7dc78f524febc055545d76ae0fb1a5"
+    },
+    {
+      "name": "ifos_policy_masking_stub_v1.py",
+      "ref": "file://ifos_policy_masking_stub_v1.py",
+      "hash": "sha256:c111f1b7281a8ff216c5ae4681aaa899544333d259ea036482f6d10255bda3d6"
+    }
+  ],
+  "created_at": "2026-01-04T19:40:00Z",
+  "version": "1.0.0"
+}

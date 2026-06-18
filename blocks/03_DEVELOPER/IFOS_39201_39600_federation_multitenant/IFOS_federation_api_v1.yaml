@@ -1,0 +1,38 @@
+openapi: 3.0.3
+info:
+  title: IFOS Federation & Multi‑Tenant API
+  version: "1.0.0"
+servers:
+  - url: https://federation.ifos.local/v1
+tags:
+  - name: Orgs
+  - name: Tenants
+  - name: Namespaces
+  - name: Trust
+  - name: Peers
+  - name: Sharing
+  - name: Requests
+  - name: Sync
+  - name: Conflicts
+  - name: Sharding
+paths:
+  /orgs:
+    post: {tags:[Orgs], summary: Upsert org, responses: {"200": {description: OK}}}
+  /tenants:
+    post: {tags:[Tenants], summary: Upsert tenant, responses: {"200": {description: OK}}}
+  /namespaces:
+    post: {tags:[Namespaces], summary: Upsert namespace, responses: {"200": {description: OK}}}
+  /trust/boundaries:
+    post: {tags:[Trust], summary: Upsert trust boundary, responses: {"200": {description: OK}}}
+  /peers:
+    post: {tags:[Peers], summary: Upsert federation peer, responses: {"200": {description: OK}}}
+  /sharing/grants:
+    post: {tags:[Sharing], summary: Create share grant, responses: {"201": {description: Created}}}
+  /requests:
+    post: {tags:[Requests], summary: Create cross-tenant request, responses: {"201": {description: Created}}}
+  /sync/jobs:
+    post: {tags:[Sync], summary: Create sync job, responses: {"201": {description: Created}}}
+  /conflicts:
+    post: {tags:[Conflicts], summary: Record conflict, responses: {"201": {description: Created}}}
+  /sharding/maps:
+    post: {tags:[Sharding], summary: Upsert shard map, responses: {"200": {description: OK}}}

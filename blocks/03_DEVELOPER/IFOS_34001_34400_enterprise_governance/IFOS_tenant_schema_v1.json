@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Tenant Schema v1",
+  "type": "object",
+  "required": [
+    "tenant_id",
+    "name",
+    "region",
+    "data_residency",
+    "policy_packs",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "tenant_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "region": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "data_residency": {
+      "type": "string",
+      "enum": [
+        "eu",
+        "us",
+        "global",
+        "custom"
+      ]
+    },
+    "domains": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "policy_packs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

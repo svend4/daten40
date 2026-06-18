@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ConnectorScaffoldRequest Schema v1",
+  "type": "object",
+  "required": [
+    "request_id",
+    "provider_id",
+    "project_template_id",
+    "connector_template_id",
+    "ops",
+    "auth_overrides",
+    "version"
+  ],
+  "properties": {
+    "request_id": {
+      "type": "string"
+    },
+    "provider_id": {
+      "type": "string"
+    },
+    "project_template_id": {
+      "type": "string"
+    },
+    "connector_template_id": {
+      "type": "string"
+    },
+    "ops": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "auth_overrides": {
+      "type": "object",
+      "properties": {
+        "callback_urls": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "scopes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "output_path": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

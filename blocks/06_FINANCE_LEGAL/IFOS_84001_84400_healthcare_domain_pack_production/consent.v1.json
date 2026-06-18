@@ -1,0 +1,10 @@
+{
+  "contract_id": "consent.v1",
+  "fields": {
+    "patient_id": "string",
+    "consent_type": "string",
+    "granted_at": "datetime"
+  },
+  "privacy_level": "restricted",
+  "audit": "required"
+}

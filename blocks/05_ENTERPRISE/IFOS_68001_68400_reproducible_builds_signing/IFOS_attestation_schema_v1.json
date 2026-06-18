@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Attestation Schema v1",
+  "type": "object",
+  "required": [
+    "attest_id",
+    "artifact_sha256",
+    "claims",
+    "created_at",
+    "signatures",
+    "version_schema"
+  ],
+  "properties": {
+    "attest_id": {
+      "type": "string"
+    },
+    "artifact_sha256": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "status"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "tests_passed",
+              "sandbox_smoke_ok",
+              "sbom_matches",
+              "reproducible_build",
+              "policy_passed"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "PASS",
+              "FAIL",
+              "SKIP"
+            ]
+          },
+          "details": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "signatures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "key_id",
+          "sig"
+        ],
+        "properties": {
+          "key_id": {
+            "type": "string"
+          },
+          "sig": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "version_schema": {
+      "type": "string",
+      "const": "1.0.0"
+    }
+  }
+}

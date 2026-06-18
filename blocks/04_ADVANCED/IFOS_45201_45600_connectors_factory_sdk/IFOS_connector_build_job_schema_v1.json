@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ConnectorBuildJob Schema v1",
+  "type": "object",
+  "required": [
+    "build_id",
+    "source_id",
+    "target",
+    "state",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "build_id": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "target": {
+      "type": "string",
+      "enum": [
+        "python",
+        "node",
+        "go",
+        "java",
+        "dotnet"
+      ]
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "queued",
+        "running",
+        "done",
+        "error"
+      ]
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "outputs": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

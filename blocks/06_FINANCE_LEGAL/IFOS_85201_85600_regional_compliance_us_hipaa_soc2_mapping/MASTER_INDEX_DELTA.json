@@ -1,0 +1,23 @@
+{
+  "apply_to": ">= v30",
+  "delta": {
+    "section": "COMPLIANCE",
+    "add": [
+      {
+        "id_range": "IFOS_85201_85600",
+        "name": "Regional Compliance Extensions (US HIPAA + SOC2 mapping pack)",
+        "slug": "regional_compliance_us_hipaa_soc2_mapping",
+        "type": "CompliancePack",
+        "layer": "Compliance",
+        "status": "Production",
+        "dependencies": [
+          "IFOS_00001_00400"
+        ],
+        "artifacts": [
+          "IFOS_85201_85600_regional_compliance_us_hipaa_soc2_mapping_os_pack.zip"
+        ],
+        "notes": "US baseline compliance: HIPAA operational safeguards + SOC2 evidence mapping"
+      }
+    ]
+  }
+}

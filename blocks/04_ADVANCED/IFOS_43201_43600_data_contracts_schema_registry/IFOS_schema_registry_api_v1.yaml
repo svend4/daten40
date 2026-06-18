@@ -1,0 +1,31 @@
+openapi: 3.0.3
+info:
+  title: IFOS Data Contracts & Schema Registry API
+  version: "1.0.0"
+servers:
+  - url: https://schemas.ifos.local/v1
+tags:
+  - name: Registry
+  - name: Contracts
+  - name: Compatibility
+  - name: Migrations
+  - name: Validation
+  - name: Enforcement
+  - name: Tests
+paths:
+  /registry/records:
+    post: {tags:[Registry], summary: Upsert schema record, responses: {"200": {description: OK}}}
+  /registry/export:
+    get: {tags:[Registry], summary: Export registry index, responses: {"200": {description: OK}}}
+  /contracts:
+    post: {tags:[Contracts], summary: Upsert data contract, responses: {"200": {description: OK}}}
+  /compat/check:
+    post: {tags:[Compatibility], summary: Compare two versions and return CompatReport, responses: {"200": {description: OK}}}
+  /migrations/plans:
+    post: {tags:[Migrations], summary: Create migration plan, responses: {"201": {description: Created}}}
+  /validate:
+    post: {tags:[Validation], summary: Validate payload against schema_id@version, responses: {"200": {description: OK}}}
+  /enforcement/policies:
+    post: {tags:[Enforcement], summary: Upsert runtime enforcement policy, responses: {"200": {description: OK}}}
+  /tests/suites:
+    post: {tags:[Tests], summary: Upsert contract test suite, responses: {"200": {description: OK}}}

@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS AccessReceipt Schema v1",
+  "type": "object",
+  "required": [
+    "receipt_id",
+    "created_at",
+    "principal_id",
+    "dataset_id",
+    "action",
+    "controls",
+    "correlation",
+    "version"
+  ],
+  "properties": {
+    "receipt_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "principal_id": {
+      "type": "string"
+    },
+    "dataset_id": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "VIEW_SCHEMA",
+        "DOWNLOAD_SAMPLE",
+        "DOWNLOAD_DEID",
+        "DOWNLOAD_SYNTHETIC",
+        "EXPORT_TRANSFORMED"
+      ]
+    },
+    "controls": {
+      "type": "object",
+      "properties": {
+        "grant_id": {
+          "type": "string"
+        },
+        "deid_profile_id": {
+          "type": "string"
+        },
+        "synthetic_profile_id": {
+          "type": "string"
+        },
+        "sample_policy_id": {
+          "type": "string"
+        },
+        "watermark_token": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "correlation": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

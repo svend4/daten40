@@ -1,0 +1,8 @@
+{
+  "source": "gitops",
+  "repo": "infra-config",
+  "paths": [
+    "rbac/",
+    "security/"
+  ]
+}

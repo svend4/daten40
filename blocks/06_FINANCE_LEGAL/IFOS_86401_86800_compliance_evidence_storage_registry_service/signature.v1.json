@@ -1,0 +1,12 @@
+{
+  "contract_id": "signature.v1",
+  "fields": {
+    "scheme": "string",
+    "signer": "string",
+    "signature": "string",
+    "signed_at": "datetime",
+    "attestation_uri": "string"
+  },
+  "privacy_level": "internal",
+  "retention_policy": "security_default"
+}

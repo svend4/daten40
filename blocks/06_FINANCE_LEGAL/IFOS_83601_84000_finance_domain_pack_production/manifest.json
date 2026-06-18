@@ -1,0 +1,89 @@
+{
+  "pack_id": "dp_finance_prod",
+  "domain": {
+    "slug": "finance_ops",
+    "name": "Finance Operations",
+    "industry": "Finance",
+    "keywords": [
+      "invoicing",
+      "vat",
+      "ar",
+      "ap",
+      "treasury",
+      "ledger",
+      "reconciliation",
+      "audit"
+    ]
+  },
+  "version": "1.0.0",
+  "status": "production",
+  "compatibility": {
+    "ifos_min_version": "v30",
+    "required_blocks": [
+      "IFOS_00001_00400",
+      "IFOS_82801_83200"
+    ]
+  },
+  "connectors": {
+    "allow": [
+      "email",
+      "doc_storage",
+      "payment_gateway",
+      "bank_feed",
+      "accounting_ledger",
+      "google_sheets",
+      "webhook",
+      "notification"
+    ],
+    "deny": [
+      "ads",
+      "public_social",
+      "tracking"
+    ]
+  },
+  "policies": [
+    "audit.logging",
+    "privacy.confidential",
+    "retention.finance_default",
+    "tax.vat_baseline"
+  ],
+  "data_contracts": [
+    "invoice.v1",
+    "payment.v1",
+    "ledger_entry.v1",
+    "reconciliation_exception.v1"
+  ],
+  "kpis": [
+    "dso_days",
+    "collection_rate",
+    "cash_balance",
+    "invoice_cycle_time",
+    "recon_exception_rate"
+  ],
+  "bundles": [
+    {
+      "bundle_id": "invoice_to_cash_reconcile",
+      "manifest_path": "bundles/invoice_to_cash_reconcile.json",
+      "description": "Generate invoice → send → collect payment → reconcile & post"
+    },
+    {
+      "bundle_id": "daily_bank_recon_post_ledger",
+      "manifest_path": "bundles/daily_bank_recon_post_ledger.json",
+      "description": "Ingest bank feed → match payments → post ledger → notify exceptions"
+    }
+  ],
+  "examples": [
+    {
+      "name": "Sample invoice",
+      "path": "examples/invoice.json"
+    },
+    {
+      "name": "Sample payment",
+      "path": "examples/payment.json"
+    },
+    {
+      "name": "Sample ledger entry",
+      "path": "examples/ledger_entry.json"
+    }
+  ]
+}

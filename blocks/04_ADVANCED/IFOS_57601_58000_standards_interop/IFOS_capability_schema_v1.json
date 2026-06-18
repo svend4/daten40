@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Capability Schema v1",
+  "type": "object",
+  "required": [
+    "capability_id",
+    "name",
+    "description",
+    "version"
+  ],
+  "properties": {
+    "capability_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

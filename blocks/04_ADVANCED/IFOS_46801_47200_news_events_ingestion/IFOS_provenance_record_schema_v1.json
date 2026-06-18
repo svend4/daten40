@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ProvenanceRecord Schema v1",
+  "type": "object",
+  "required": [
+    "prov_id",
+    "raw_id",
+    "url",
+    "fetched_at",
+    "hash",
+    "snippets",
+    "version"
+  ],
+  "properties": {
+    "prov_id": {
+      "type": "string"
+    },
+    "raw_id": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "fetched_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "hash": {
+      "type": "string"
+    },
+    "snippets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

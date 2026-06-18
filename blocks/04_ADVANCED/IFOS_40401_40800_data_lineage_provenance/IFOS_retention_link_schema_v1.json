@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RetentionLink Schema v1",
+  "type": "object",
+  "required": [
+    "link_id",
+    "object",
+    "policy_ref",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "link_id": {
+      "type": "string"
+    },
+    "object": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "policy_ref": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "legal_hold",
+        "expired"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "registry_id": "reg.exp.ay34mm8f5ad0",
+  "entries": [
+    {
+      "name": "IFOS_experiment_schema_v1.json",
+      "ref": "file://IFOS_experiment_schema_v1.json",
+      "hash": "sha256:ab212e9f7c9d3839d8c98e8ec5ad7f595f527b51fd45a5d0b997ec28e94ceef2"
+    },
+    {
+      "name": "IFOS_experiment_variant_schema_v1.json",
+      "ref": "file://IFOS_experiment_variant_schema_v1.json",
+      "hash": "sha256:2a6fb7ae1095d41eb2e3a296674d2713adbc85be40cdd7f16a2b2021db09b1e6"
+    },
+    {
+      "name": "IFOS_experiment_assignment_schema_v1.json",
+      "ref": "file://IFOS_experiment_assignment_schema_v1.json",
+      "hash": "sha256:daa20f713ccef994dff8c9facad8cbe49320bb3813c9a0b8a3fcd65752df49d3"
+    },
+    {
+      "name": "IFOS_metric_definition_schema_v1.json",
+      "ref": "file://IFOS_metric_definition_schema_v1.json",
+      "hash": "sha256:4a79ca2a697821041889eb1a4e5e8383729c2f1f6590bad724b473f8f64e794d"
+    },
+    {
+      "name": "IFOS_evaluation_event_schema_v1.json",
+      "ref": "file://IFOS_evaluation_event_schema_v1.json",
+      "hash": "sha256:223b05c0fde7d17c42374e24f08aeb471f7da37e29a051e0eab620020c2a9d2e"
+    },
+    {
+      "name": "IFOS_scorecard_schema_v1.json",
+      "ref": "file://IFOS_scorecard_schema_v1.json",
+      "hash": "sha256:0c8f9f68efb20e3aa0edb0cf948cc28b73fad4404e93989b5560e305e4203d6e"
+    },
+    {
+      "name": "IFOS_benchmark_suite_schema_v1.json",
+      "ref": "file://IFOS_benchmark_suite_schema_v1.json",
+      "hash": "sha256:59e7dc6b60164016d5e99d330fdeeccfc3946efbe0c727706e0ec27af24ca0bb"
+    },
+    {
+      "name": "IFOS_human_review_schema_v1.json",
+      "ref": "file://IFOS_human_review_schema_v1.json",
+      "hash": "sha256:10d9429e33b2a9e52ba28a1d4b64cb4c4a2d24b1302b9ef5ab80b9bb9d11f822"
+    },
+    {
+      "name": "IFOS_feedback_item_schema_v1.json",
+      "ref": "file://IFOS_feedback_item_schema_v1.json",
+      "hash": "sha256:4d0a64a8ca69c3662d06aac77ceb0c834b0d4dc5b1131dc2d808d2a85e99d794"
+    },
+    {
+      "name": "IFOS_release_gate_schema_v1.json",
+      "ref": "file://IFOS_release_gate_schema_v1.json",
+      "hash": "sha256:c29c4db70e037b6afb71eec6a231420c6908c06ee72613146b7f87d2e78c178c"
+    }
+  ],
+  "updated_at": "2026-01-03T23:00:00Z",
+  "version": "1.0.0"
+}

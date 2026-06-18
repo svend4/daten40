@@ -1,0 +1,87 @@
+{
+  "metric": {
+    "metric_id": "met.m.nn3vkn1orlhf",
+    "name": "dedup_precision",
+    "type": "quality",
+    "direction": "higher_is_better",
+    "unit": "ratio",
+    "version": "1.0.0"
+  },
+  "dataset": {
+    "dataset_id": "ds.d.kskjhac4zau5",
+    "name": "RSS Snapshot 2000",
+    "category": "news",
+    "version": "2026.01",
+    "license": "CC-BY (curated snippets)",
+    "fixtures": [
+      "fx.rss.2000"
+    ]
+  },
+  "benchmark_run": {
+    "run_id": "run.r.zr00x5y2x0z1",
+    "artifact_ref": "bundle.news_conference_pack@1.0.0",
+    "dataset_ref": "ds.d.kskjhac4zau5",
+    "metrics": {
+      "success_rate": 0.98,
+      "dedup_precision": 0.92,
+      "dedup_recall": 0.88,
+      "mean_time_to_result_ms": 4200,
+      "cost_units_per_output": 3.1
+    },
+    "started_at": "2026-01-05T00:05:00Z",
+    "finished_at": "2026-01-05T00:05:00Z",
+    "logs_ref": "bench://logs/run123",
+    "version": "1.0.0"
+  },
+  "scorecard": {
+    "scorecard_id": "sc.s.ycf38spvikqm",
+    "artifact_ref": "bundle.news_conference_pack@1.0.0",
+    "scores": {
+      "correctness": 0.9,
+      "completeness": 0.82,
+      "reliability": 0.95,
+      "cost_efficiency": 0.8,
+      "security_privacy": 0.88,
+      "usability_docs": 0.86
+    },
+    "overall": 0.87,
+    "badges": [
+      "Benchmarked",
+      "Docs-A",
+      "Interop-C2"
+    ],
+    "version": "1.0.0"
+  },
+  "leaderboard": {
+    "leaderboard_id": "lb.l.ne02rpzrfoso",
+    "scope": "news_conference/global",
+    "rows": [
+      {
+        "artifact_ref": "bundle.news_conference_pack@1.0.0",
+        "overall": 0.87,
+        "breakdown": {
+          "reliability": 0.95
+        }
+      },
+      {
+        "artifact_ref": "bundle.news_conference_alt@1.1.0",
+        "overall": 0.84,
+        "breakdown": {
+          "cost_efficiency": 0.9
+        }
+      }
+    ],
+    "generated_at": "2026-01-05T00:05:00Z",
+    "version": "1.0.0"
+  },
+  "badge": {
+    "badge_id": "bdg.b.sctu01vr6hhx",
+    "name": "Production-ready",
+    "criteria": [
+      "passed_conformance_suite",
+      "monitoring_enabled",
+      "security_reviewed"
+    ],
+    "version": "1.0.0"
+  }
+}

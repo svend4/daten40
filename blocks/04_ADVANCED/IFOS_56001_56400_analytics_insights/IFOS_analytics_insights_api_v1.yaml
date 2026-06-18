@@ -1,0 +1,20 @@
+openapi: 3.0.3
+info:
+  title: IFOS Analytics & Insights API
+  version: "1.0.0"
+servers:
+  - url: https://analytics.ifos.local/v1
+tags:
+  - name: Events
+  - name: Dashboards
+  - name: Recommendations
+  - name: Alerts
+paths:
+  /events:
+    post: {tags:[Events], summary: Ingest analytics event, responses: {"200": {description: OK}}}
+  /dashboards:
+    get: {tags:[Dashboards], summary: List dashboards, responses: {"200": {description: OK}}}
+  /recommendations:
+    get: {tags:[Recommendations], summary: List recommendations, responses: {"200": {description: OK}}}
+  /alerts:
+    get: {tags:[Alerts], summary: List fired alerts, responses: {"200": {description: OK}}}

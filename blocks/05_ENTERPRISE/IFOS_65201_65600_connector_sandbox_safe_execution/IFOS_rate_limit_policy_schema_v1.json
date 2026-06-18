@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RateLimitPolicy Schema v1",
+  "type": "object",
+  "required": [
+    "rate_limit_policy_id",
+    "rules",
+    "circuit_breaker",
+    "version"
+  ],
+  "properties": {
+    "rate_limit_policy_id": {
+      "type": "string"
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "circuit_breaker": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

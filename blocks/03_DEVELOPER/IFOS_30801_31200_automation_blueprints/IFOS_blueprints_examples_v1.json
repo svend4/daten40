@@ -1,0 +1,238 @@
+{
+  "pipeline_graph": {
+    "graph_id": "g.g.zqa3noualg",
+    "nodes": [
+      {
+        "id": "n1",
+        "kind": "trigger",
+        "config": {
+          "type": "rss",
+          "feeds": [
+            "https://example.com/rss"
+          ]
+        }
+      },
+      {
+        "id": "n2",
+        "kind": "transform",
+        "config": {
+          "op": "dedupe",
+          "window_hours": 24
+        }
+      },
+      {
+        "id": "n3",
+        "kind": "transform",
+        "config": {
+          "op": "summarize",
+          "model": "local"
+        }
+      },
+      {
+        "id": "n4",
+        "kind": "notify",
+        "config": {
+          "channel": "telegram",
+          "secret_ref": "secretref.telegram.bot"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "from": "n1",
+        "to": "n2",
+        "type": "data"
+      },
+      {
+        "from": "n2",
+        "to": "n3",
+        "type": "data"
+      },
+      {
+        "from": "n3",
+        "to": "n4",
+        "type": "data"
+      }
+    ],
+    "error_policy": {
+      "retry": {
+        "max": 3,
+        "backoff_sec": 5
+      }
+    },
+    "observability": {
+      "metrics": [
+        "run_time",
+        "failures"
+      ],
+      "logs": true
+    },
+    "version": "1.0.0"
+  },
+  "params": [
+    {
+      "param_id": "p1",
+      "key": "secretref.telegram.bot",
+      "kind": "secret_ref",
+      "required": true,
+      "default": null,
+      "validation": {},
+      "ui": {
+        "label": "Telegram Bot Token",
+        "help": "Создайте бота у @BotFather и вставьте токен.",
+        "group": "Secrets",
+        "order": 1
+      },
+      "version": "1.0.0"
+    },
+    {
+      "param_id": "p2",
+      "key": "feeds",
+      "kind": "json",
+      "required": true,
+      "default": [
+        "https://example.com/rss"
+      ],
+      "validation": {
+        "max_items": 50
+      },
+      "ui": {
+        "label": "RSS источники",
+        "help": "Ссылки на RSS/Atom ленты.",
+        "group": "Sources",
+        "order": 2
+      },
+      "version": "1.0.0"
+    },
+    {
+      "param_id": "p3",
+      "key": "schedule",
+      "kind": "schedule",
+      "required": true,
+      "default": "daily@08:00",
+      "validation": {},
+      "ui": {
+        "label": "Расписание",
+        "help": "Например daily@08:00.",
+        "group": "Schedule",
+        "order": 3
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "blueprint": {
+    "blueprint_id": "bp.b.fu8fs93uy5",
+    "name": "Daily Digest: RSS → Dedupe → Summarize → Telegram",
+    "intention": "Ежедневно собирает новости, убирает дубли, делает короткое резюме и отправляет в Telegram.",
+    "graph": "graph://g.g.zqa3noualg",
+    "params": [
+      "param://p1",
+      "param://p2",
+      "param://p3"
+    ],
+    "requirements": {
+      "permissions": [
+        "network:api.telegram.org"
+      ],
+      "secrets": [
+        "secretref.telegram.bot"
+      ],
+      "capabilities": [
+        "rss",
+        "telegram"
+      ],
+      "dependencies": []
+    },
+    "tests": [
+      "suite://suite.s.uybpvr5y1q"
+    ],
+    "docs": {
+      "quickstart": "Install → set params → run test → enable schedule",
+      "notes": "Для первых запусков используйте sandbox."
+    },
+    "version": "1.0.0"
+  },
+  "test_suite": {
+    "suite_id": "suite.s.uybpvr5y1q",
+    "blueprint_id": "bp.b.fu8fs93uy5",
+    "tests": [
+      "test.t.1f1wluhzhn",
+      "test.t.evrbemapfw"
+    ],
+    "version": "1.0.0"
+  },
+  "test_cases": [
+    {
+      "test_id": "test.t.1f1wluhzhn",
+      "kind": "schema",
+      "inputs": {
+        "params": {
+          "schedule": "daily@08:00"
+        }
+      },
+      "expected": {
+        "valid": true
+      },
+      "version": "1.0.0"
+    },
+    {
+      "test_id": "test.t.evrbemapfw",
+      "kind": "dry_run",
+      "inputs": {
+        "check_secrets": [
+          "secretref.telegram.bot"
+        ]
+      },
+      "expected": {
+        "ok": true
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "ui_form": {
+    "form_id": "form.f.m9uzdov7up",
+    "blueprint_id": "bp.b.fu8fs93uy5",
+    "fields": [
+      {
+        "param_key": "secretref.telegram.bot",
+        "widget": "password",
+        "required": true
+      },
+      {
+        "param_key": "feeds",
+        "widget": "textarea",
+        "required": true
+      },
+      {
+        "param_key": "schedule",
+        "widget": "schedule",
+        "required": true
+      }
+    ],
+    "layout": {
+      "groups": [
+        "Secrets",
+        "Sources",
+        "Schedule"
+      ]
+    },
+    "version": "1.0.0"
+  },
+  "export_bundle": {
+    "bundle_id": "bundle.b.5spbrpge3g",
+    "blueprint_id": "bp.b.fu8fs93uy5",
+    "files": [
+      {
+        "name": "blueprint.json",
+        "hash": "sha256:..."
+      },
+      {
+        "name": "pipeline_graph.json",
+        "hash": "sha256:..."
+      }
+    ],
+    "signature": "sig:...",
+    "attestation": "att:...",
+    "version": "1.0.0"
+  }
+}

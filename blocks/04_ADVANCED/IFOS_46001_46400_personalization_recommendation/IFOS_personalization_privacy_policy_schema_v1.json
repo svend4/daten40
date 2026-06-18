@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS PersonalizationPrivacyPolicy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "signals",
+    "storage",
+    "retention_days",
+    "opt_out_default",
+    "version"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "signals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "storage": {
+      "type": "string",
+      "enum": [
+        "device",
+        "tenant",
+        "cloud"
+      ]
+    },
+    "retention_days": {
+      "type": "integer"
+    },
+    "opt_out_default": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

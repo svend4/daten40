@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Job Schema v1",
+  "type": "object",
+  "required": [
+    "job_id",
+    "queue_id",
+    "tenant_id",
+    "asset",
+    "inputs",
+    "status",
+    "idempotency_key",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "job_id": {
+      "type": "string"
+    },
+    "queue_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "asset": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "inputs": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "queued",
+        "running",
+        "failed",
+        "succeeded",
+        "canceled"
+      ]
+    },
+    "idempotency_key": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

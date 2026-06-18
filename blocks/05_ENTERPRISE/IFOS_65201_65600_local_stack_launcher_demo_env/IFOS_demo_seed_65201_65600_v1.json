@@ -1,0 +1,51 @@
+{
+  "workspace": {
+    "workspace_id": "ws_demo",
+    "name": "IFOS Demo Workspace"
+  },
+  "vitrines": [
+    {
+      "vitrine_id": "vit_001",
+      "title": "One‑Click: News Digest",
+      "tags": [
+        "news",
+        "digest",
+        "demo"
+      ]
+    },
+    {
+      "vitrine_id": "vit_002",
+      "title": "One‑Click: Compare Services",
+      "tags": [
+        "compare",
+        "portal",
+        "demo"
+      ]
+    }
+  ],
+  "macros": [
+    {
+      "macro_id": "mac_001",
+      "name": "Import → Normalize → Publish",
+      "steps": [
+        "import",
+        "normalize",
+        "publish"
+      ]
+    },
+    {
+      "macro_id": "mac_002",
+      "name": "Webhook → Ticket → Notify",
+      "steps": [
+        "webhook",
+        "ticket",
+        "notify"
+      ]
+    }
+  ],
+  "course": {
+    "course_id": "course_101",
+    "title": "IFOS за 20 минут",
+    "lessons": 6
+  }
+}

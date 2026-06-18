@@ -1,0 +1,20 @@
+openapi: 3.0.3
+info:
+  title: IFOS Ingestion API
+  version: "1.0.0"
+servers:
+  - url: https://ingest.ifos.local/v1
+tags:
+  - name: Sources
+  - name: Fetch
+  - name: Normalize
+  - name: Events
+paths:
+  /sources:
+    post: {tags:[Sources], summary: Register source, responses: {"200": {description: OK}}}
+  /fetch/run:
+    post: {tags:[Fetch], summary: Run fetch job now, responses: {"202": {description: Accepted}}}
+  /normalize:
+    post: {tags:[Normalize], summary: Normalize raw item, responses: {"200": {description: OK}}}
+  /events/timeline:
+    post: {tags:[Events], summary: Build timeline for cluster, responses: {"200": {description: OK}}}

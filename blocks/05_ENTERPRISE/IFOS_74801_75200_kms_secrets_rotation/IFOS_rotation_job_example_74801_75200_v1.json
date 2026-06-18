@@ -1,0 +1,44 @@
+{
+  "job_id": "job_rot_api_key_example",
+  "secret_id": "sec_gdrive_api_key_prod",
+  "planned_at": "2026-01-03T12:00:00+01:00",
+  "mode": "guided",
+  "steps": [
+    {
+      "id": "s1",
+      "title": "Создать новый ключ в провайдере",
+      "kind": "manual",
+      "result": "new_key_value"
+    },
+    {
+      "id": "s2",
+      "title": "Записать новый ключ в Vault через IFOS adapter",
+      "kind": "auto",
+      "action": "secret.store"
+    },
+    {
+      "id": "s3",
+      "title": "Запустить smoke-test коннектора",
+      "kind": "auto",
+      "action": "connector.test"
+    },
+    {
+      "id": "s4",
+      "title": "Переключить active secret pointer на новый ключ",
+      "kind": "auto",
+      "action": "secret.activate"
+    },
+    {
+      "id": "s5",
+      "title": "Отозвать старый ключ",
+      "kind": "manual_or_auto",
+      "action": "connector.revoke"
+    },
+    {
+      "id": "s6",
+      "title": "Сохранить Evidence Pack",
+      "kind": "auto",
+      "action": "evidence.write"
+    }
+  ]
+}

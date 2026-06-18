@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS VitrineLocaleConfig Schema v1",
+  "type": "object",
+  "required": [
+    "config_id",
+    "vitrine_id",
+    "locale_id",
+    "catalog_rules",
+    "sources",
+    "version"
+  ],
+  "properties": {
+    "config_id": {
+      "type": "string"
+    },
+    "vitrine_id": {
+      "type": "string"
+    },
+    "locale_id": {
+      "type": "string"
+    },
+    "catalog_rules": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "seo_terms": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "evidence_id": "access_review_records",
+  "artifact_sha256": "abababababababababababababababababababababababababababababababab",
+  "artifact_uri": "s3://ifos-evidence-prod/artifacts/sha256/ab/ab/abababababababababababababababababababababababababababababababab.csv",
+  "collected_at": "2026-01-05T12:00:00Z",
+  "collector": "governance_exporter",
+  "environment": "prod",
+  "policy_packs": [
+    "cp_us_hipaa_soc2_baseline"
+  ],
+  "controls": [
+    "soc2.CC6.1"
+  ],
+  "cadence": "quarterly",
+  "expires_at": "2027-01-05T12:00:00Z",
+  "signature": {
+    "scheme": "sigstore",
+    "signer": "fulcio/oidc",
+    "signature": "...",
+    "signed_at": "2026-01-05T12:01:00Z",
+    "attestation_uri": "s3://.../attest.json"
+  },
+  "provenance": {
+    "source_system": "iam",
+    "source_version": "okta",
+    "collector_runtime": "exporter@0.9.1",
+    "config_snapshot_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "region": "us-west-2"
+  },
+  "tags": {
+    "team": "security",
+    "review_period": "2025-Q4"
+  }
+}

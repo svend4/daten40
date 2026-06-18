@@ -1,0 +1,34 @@
+openapi: 3.0.3
+info:
+  title: IFOS Knowledge Products & Vitrines API
+  version: "1.0.0"
+servers:
+  - url: https://products.ifos.local/v1
+tags:
+  - name: Cards
+  - name: Products
+  - name: Vitrines
+  - name: Compare
+  - name: Bundles
+  - name: Macros
+  - name: Publish
+  - name: Ratings
+paths:
+  /cards:
+    post: {tags:[Cards], summary: Create/Update card, responses: {"200": {description: OK}}}
+  /products:
+    post: {tags:[Products], summary: Create/Update knowledge product, responses: {"200": {description: OK}}}
+  /vitrines:
+    post: {tags:[Vitrines], summary: Create/Update vitrine, responses: {"200": {description: OK}}}
+  /compare:
+    post: {tags:[Compare], summary: Create comparison object, responses: {"201": {description: Created}}}
+  /bundles:
+    post: {tags:[Bundles], summary: Create bundle, responses: {"201": {description: Created}}}
+  /macros:
+    post: {tags:[Macros], summary: Create macro, responses: {"201": {description: Created}}}
+  /publish:
+    post: {tags:[Publish], summary: Publish vitrine/bundle/landing, responses: {"202": {description: Accepted}}}
+  /ratings/model:
+    post: {tags:[Ratings], summary: Upsert rating model, responses: {"200": {description: OK}}}
+  /ratings/summary:
+    post: {tags:[Ratings], summary: Create review summary, responses: {"200": {description: OK}}}

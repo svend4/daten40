@@ -1,0 +1,286 @@
+{
+  "case_example": {
+    "case_id": "case_c_DOvwcjGcNrBC",
+    "tenant_id": "t_demo",
+    "status": "investigating",
+    "opened_at": "2026-01-02T10:20:00Z",
+    "owner": {
+      "team": "security-oncall",
+      "user": "analyst1"
+    },
+    "title": "Possible data exfiltration via connector update",
+    "description": "Alert NEW_DOMAIN_SEEN triggered after connector version bump.",
+    "event_refs": [
+      "evt_e_ExATI0i0r-3E",
+      "evt_e_fVbhn_W5KCUK",
+      "evt_e_O0Gd1k9V0LqW"
+    ],
+    "evidence_refs": [],
+    "decisions": [
+      {
+        "ts": "2026-01-02T10:22:00Z",
+        "action": "quarantine_connector",
+        "why": "new domain observed"
+      }
+    ],
+    "tags": [
+      "exfil",
+      "supply-chain"
+    ],
+    "version": "1.0.0"
+  },
+  "events_example": [
+    {
+      "event_id": "evt_e_ExATI0i0r-3E",
+      "event_ts": "2026-01-02T10:18:05Z",
+      "ingest_ts": "2026-01-02T10:18:06Z",
+      "category": "anomaly",
+      "severity": "high",
+      "correlation": {
+        "tenant_id": "t_demo",
+        "workflow_id": "wf_123",
+        "connector_id": "crm_sync",
+        "route_id": "rt.core.allow",
+        "sandbox_run_id": "run_987",
+        "trace_id": "tr_1"
+      },
+      "source": {
+        "system": "gateway",
+        "signal": "NEW_DOMAIN_SEEN"
+      },
+      "summary": "Outbound to new domain api.bad-example.com detected",
+      "details": {
+        "domain": "api.bad-example.com",
+        "port": 443,
+        "path": "/v1/upload",
+        "decision": "deny",
+        "rule_id": "er.core.allow"
+      },
+      "version": "1.0.0"
+    },
+    {
+      "event_id": "evt_e_fVbhn_W5KCUK",
+      "event_ts": "2026-01-02T10:18:40Z",
+      "ingest_ts": "2026-01-02T10:18:41Z",
+      "category": "policy",
+      "severity": "medium",
+      "correlation": {
+        "tenant_id": "t_demo",
+        "workflow_id": "wf_123",
+        "connector_id": "crm_sync",
+        "route_id": "rt.core.allow",
+        "sandbox_run_id": "run_987",
+        "trace_id": "tr_2"
+      },
+      "source": {
+        "system": "gateway"
+      },
+      "summary": "Deny spike detected for connector crm_sync",
+      "details": {
+        "deny_count": 63,
+        "window_s": 300
+      },
+      "version": "1.0.0"
+    },
+    {
+      "event_id": "evt_e_O0Gd1k9V0LqW",
+      "event_ts": "2026-01-02T10:19:10Z",
+      "ingest_ts": "2026-01-02T10:19:12Z",
+      "category": "secrets",
+      "severity": "high",
+      "correlation": {
+        "tenant_id": "t_demo",
+        "workflow_id": "wf_123",
+        "connector_id": "crm_sync",
+        "route_id": "rt.core.allow",
+        "sandbox_run_id": "run_987",
+        "trace_id": "tr_3"
+      },
+      "source": {
+        "system": "secrets_vault"
+      },
+      "summary": "Unexpected token access pattern for crm_sync",
+      "details": {
+        "secret_id": "sec_crm_api",
+        "access_count": 25,
+        "window_s": 60
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "receipt_bundle_example": {
+    "bundle_id": "rb_b_DoGBGduDGuhd",
+    "case_id": "case_c_DOvwcjGcNrBC",
+    "generated_at": "2026-01-02T10:30:00Z",
+    "receipts": [
+      {
+        "receipt_hash": "sha256:d46ead1133586e4b282efded2e749c7a19aa60b85966e44e5cd721186c9b3942",
+        "signature": "sig_gw_OacCqfzWILM1"
+      },
+      {
+        "receipt_hash": "sha256:16791ba7eae9d2286505da8e34e5aaae79df7c7894b827f6ce546513a4a49e94",
+        "signature": "sig_gw_AVWN58-uKzwi"
+      }
+    ],
+    "hash": "sha256:1e6ed65d77d6364eeaed5a745ba5c4985ae2b700dd85d7cf7f027bdf294a33fc",
+    "signature": "sig_gw_QqR1tx-sct0q",
+    "version": "1.0.0"
+  },
+  "correlation_graph_example": {
+    "graph_id": "g_g_O4BYOhJv7a1x",
+    "case_id": "case_c_DOvwcjGcNrBC",
+    "nodes": [
+      {
+        "id": "actor:dev1",
+        "type": "Actor",
+        "label": "Developer dev1",
+        "attrs": {
+          "role": "maintainer"
+        }
+      },
+      {
+        "id": "cred:sec_crm_api",
+        "type": "Credential",
+        "label": "CRM API token",
+        "attrs": {
+          "secret_id": "sec_crm_api"
+        }
+      },
+      {
+        "id": "connector:crm_sync@1.4.2",
+        "type": "Connector",
+        "label": "crm_sync v1.4.2",
+        "attrs": {
+          "sha256": "..."
+        }
+      },
+      {
+        "id": "workflow:wf_123",
+        "type": "Workflow",
+        "label": "CRM Sync Workflow",
+        "attrs": {}
+      },
+      {
+        "id": "route:rt.core.allow",
+        "type": "Route",
+        "label": "Gateway Route rt.core.allow",
+        "attrs": {}
+      },
+      {
+        "id": "dest:api.bad-example.com",
+        "type": "Destination",
+        "label": "api.bad-example.com",
+        "attrs": {
+          "port": 443
+        }
+      },
+      {
+        "id": "event:evt_e_ExATI0i0r-3E",
+        "type": "Event",
+        "label": "NEW_DOMAIN_SEEN",
+        "attrs": {
+          "severity": "high"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "from": "actor:dev1",
+        "to": "connector:crm_sync@1.4.2",
+        "type": "DEPLOYED",
+        "attrs": {
+          "ts": "2026-01-02T10:10:00Z"
+        }
+      },
+      {
+        "from": "cred:sec_crm_api",
+        "to": "connector:crm_sync@1.4.2",
+        "type": "USED",
+        "attrs": {}
+      },
+      {
+        "from": "connector:crm_sync@1.4.2",
+        "to": "workflow:wf_123",
+        "type": "CALLED",
+        "attrs": {}
+      },
+      {
+        "from": "workflow:wf_123",
+        "to": "route:rt.core.allow",
+        "type": "CALLED",
+        "attrs": {}
+      },
+      {
+        "from": "route:rt.core.allow",
+        "to": "dest:api.bad-example.com",
+        "type": "EXFILTRATED_TO",
+        "attrs": {
+          "attempted": "true",
+          "blocked": "true"
+        }
+      },
+      {
+        "from": "event:evt_e_ExATI0i0r-3E",
+        "to": "dest:api.bad-example.com",
+        "type": "TRIGGERED",
+        "attrs": {}
+      }
+    ],
+    "generated_at": "2026-01-02T10:31:00Z",
+    "version": "1.0.0"
+  },
+  "forensic_report_example": {
+    "report_id": "rep_r_eUQxgGwbmuwK",
+    "case_id": "case_c_DOvwcjGcNrBC",
+    "created_at": "2026-01-02T12:10:00Z",
+    "summary": "Connector update introduced attempt to send data to unapproved domain; blocked by gateway allowlist; no confirmed data loss.",
+    "timeline": [
+      {
+        "ts": "2026-01-02T10:10:00Z",
+        "what": "Connector crm_sync updated to v1.4.2"
+      },
+      {
+        "ts": "2026-01-02T10:18:05Z",
+        "what": "NEW_DOMAIN_SEEN detected; denies logged"
+      },
+      {
+        "ts": "2026-01-02T10:22:00Z",
+        "what": "Connector quarantined; egress sessions revoked"
+      },
+      {
+        "ts": "2026-01-02T10:30:00Z",
+        "what": "Receipts bundled; evidence sealed"
+      }
+    ],
+    "impact": {
+      "confirmed_exfil": "no",
+      "attempted_destinations": [
+        "api.bad-example.com"
+      ],
+      "affected_workflows": [
+        "wf_123"
+      ]
+    },
+    "root_cause": "Supply-chain behavior change in connector dependency; outbound endpoint hardcoded in new version.",
+    "containment": [
+      "quarantine connector version",
+      "revoke egress sessions",
+      "keep gateway allowlist strict"
+    ],
+    "remediation": [
+      "add connector requirement tests for destinations",
+      "enable record_only in dev then strict in prod",
+      "add rule for NEW_DOMAIN_SEEN enforced for all tenants"
+    ],
+    "evidence_refs": [
+      "receipt_bundle:rb_xxx",
+      "policy_snapshot:ps_xxx",
+      "attestation_report:att_xxx"
+    ],
+    "annex": {
+      "graph_ref": "g_xxx",
+      "receipts": "included"
+    },
+    "version": "1.0.0"
+  }
+}

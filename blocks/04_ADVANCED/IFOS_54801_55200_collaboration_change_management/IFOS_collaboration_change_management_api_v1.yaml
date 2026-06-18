@@ -1,0 +1,23 @@
+openapi: 3.0.3
+info:
+  title: IFOS Collaboration & Change Management API
+  version: "1.0.0"
+servers:
+  - url: https://change.ifos.local/v1
+tags:
+  - name: Tasks
+  - name: RFC
+  - name: Approvals
+  - name: Releases
+  - name: Incidents
+paths:
+  /tasks:
+    post: {tags:[Tasks], summary: Create task, responses: {"200": {description: OK}}}
+  /rfc:
+    post: {tags:[RFC], summary: Create RFC, responses: {"200": {description: OK}}}
+  /approvals:
+    post: {tags:[Approvals], summary: Record approval decision, responses: {"200": {description: OK}}}
+  /releases:
+    post: {tags:[Releases], summary: Create release, responses: {"200": {description: OK}}}
+  /incidents:
+    post: {tags:[Incidents], summary: Create incident, responses: {"200": {description: OK}}}

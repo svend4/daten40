@@ -1,0 +1,26 @@
+openapi: 3.0.3
+info:
+  title: IFOS Searchable Knowledge Vault API
+  version: "1.0.0"
+servers:
+  - url: https://search.ifos.local/v1
+tags:
+  - name: Index
+  - name: Query
+  - name: Citations
+  - name: Exports
+paths:
+  /index/sources:
+    post: {tags:[Index], summary: Upsert index source, responses: {"200": {description: OK}}}
+  /index/chunk:
+    post: {tags:[Index], summary: Chunk normalized item, responses: {"200": {description: OK}}}
+  /index/embed:
+    post: {tags:[Index], summary: Create embeddings for chunks, responses: {"202": {description: Accepted}}}
+  /query:
+    post: {tags:[Query], summary: Run search query, responses: {"200": {description: OK}}}
+  /query/plan:
+    post: {tags:[Query], summary: Build query plan for search query, responses: {"200": {description: OK}}}
+  /citations:
+    post: {tags:[Citations], summary: Create citation for hit/chunk, responses: {"201": {description: Created}}}
+  /exports:
+    post: {tags:[Exports], summary: Create export job, responses: {"202": {description: Accepted}}}

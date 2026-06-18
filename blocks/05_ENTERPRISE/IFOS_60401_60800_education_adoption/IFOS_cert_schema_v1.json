@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Certification Schema v1",
+  "type": "object",
+  "required": [
+    "cert_id",
+    "name",
+    "requirements",
+    "exam",
+    "version"
+  ],
+  "properties": {
+    "cert_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "exam": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

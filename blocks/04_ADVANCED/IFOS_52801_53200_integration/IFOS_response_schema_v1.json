@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Response Schema v1",
+  "type": "object",
+  "required": [
+    "status",
+    "body",
+    "version"
+  ],
+  "properties": {
+    "status": {
+      "type": "integer"
+    },
+    "body": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "pagination": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "ratelimit": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+openapi: 3.0.3
+info:
+  title: IFOS Compliance API
+  version: "1.0.0"
+servers:
+  - url: https://compliance.ifos.local/v1
+tags:
+  - name: Classification
+  - name: Consent
+  - name: Retention
+  - name: DLP
+  - name: Licensing
+  - name: Export
+  - name: Audit
+  - name: LegalHold
+  - name: PolicyPacks
+paths:
+  /classification:
+    post: {tags:[Classification], summary: Upsert data classification, responses: {"200": {description: OK}}}
+  /consent:
+    post: {tags:[Consent], summary: Upsert consent record, responses: {"200": {description: OK}}}
+  /retention/policies:
+    post: {tags:[Retention], summary: Upsert retention policy, responses: {"200": {description: OK}}}
+  /retention/delete:
+    post: {tags:[Retention], summary: Create deletion job, responses: {"201": {description: Created}}}
+  /dlp/policies:
+    post: {tags:[DLP], summary: Upsert DLP policy, responses: {"200": {description: OK}}}
+  /licensing:
+    post: {tags:[Licensing], summary: Upsert license record, responses: {"200": {description: OK}}}
+  /export:
+    post: {tags:[Export], summary: Create export request, responses: {"201": {description: Created}}}
+  /audit/events:
+    post: {tags:[Audit], summary: Append audit event, responses: {"201": {description: Created}}}
+  /legal-hold:
+    post: {tags:[LegalHold], summary: Upsert legal hold, responses: {"200": {description: OK}}}
+  /policy-packs:
+    post: {tags:[PolicyPacks], summary: Upsert compliance policy pack, responses: {"200": {description: OK}}}

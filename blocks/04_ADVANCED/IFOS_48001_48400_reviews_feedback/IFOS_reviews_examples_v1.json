@@ -1,0 +1,66 @@
+{
+  "review": {
+    "review_id": "rev.r.dhucqpr6bcyo",
+    "target": {
+      "type": "plugin",
+      "id": "wp.plugin.x",
+      "name": "SEO Plugin X"
+    },
+    "author_id": "usr.u.4jmot3tenr58",
+    "text": "Плагин хороший, но после обновления 2.1 появились ошибки.",
+    "structured": {
+      "pros": [
+        "Удобный интерфейс"
+      ],
+      "cons": [
+        "Баги после обновления"
+      ],
+      "support": "медленно"
+    },
+    "context": {
+      "use_case": "малый сайт",
+      "env": "WordPress 6.x",
+      "version": "2.1"
+    },
+    "ts": "2026-01-04T10:40:00Z",
+    "status": "pending",
+    "version": "1.0.0"
+  },
+  "rating": {
+    "rating_id": "rat.a.1upilhdj0mnj",
+    "review_id": "rev.*",
+    "overall": 3.0,
+    "subscores": {
+      "quality": 3,
+      "price": 4,
+      "support": 2
+    },
+    "weight": 0.6,
+    "version": "1.0.0"
+  },
+  "proof": {
+    "proof_id": "proof.p.behd0m6w3pht",
+    "author_id": "usr.*",
+    "target_id": "wp.plugin.x",
+    "method": "verified_usage",
+    "evidence_hash": "sha256:*",
+    "redactions": [
+      "email",
+      "name",
+      "address"
+    ],
+    "ts": "2026-01-04T10:40:00Z",
+    "version": "1.0.0"
+  },
+  "moderation": {
+    "mod_id": "mod.m.2bw8k2cwrdi7",
+    "review_id": "rev.*",
+    "decision": "publish",
+    "reasons": [
+      "ok"
+    ],
+    "redactions": [],
+    "ts": "2026-01-04T10:40:00Z",
+    "version": "1.0.0"
+  }
+}

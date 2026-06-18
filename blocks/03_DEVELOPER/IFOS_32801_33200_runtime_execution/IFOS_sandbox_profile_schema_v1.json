@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SandboxProfile Schema v1",
+  "type": "object",
+  "required": [
+    "sandbox_id",
+    "mode",
+    "network",
+    "filesystem",
+    "process",
+    "timeouts",
+    "version"
+  ],
+  "properties": {
+    "sandbox_id": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "permissive",
+        "balanced",
+        "strict"
+      ]
+    },
+    "network": {
+      "type": "object",
+      "properties": {
+        "allow_network": {
+          "type": "boolean"
+        },
+        "allowlist_domains": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "ports": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "integer"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "filesystem": {
+      "type": "object",
+      "properties": {
+        "read_only": {
+          "type": "boolean"
+        },
+        "allow_write_paths": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "max_tmp_mb": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "process": {
+      "type": "object",
+      "properties": {
+        "allow_shell": {
+          "type": "boolean"
+        },
+        "allow_spawn": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "timeouts": {
+      "type": "object",
+      "properties": {
+        "max_runtime_sec": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "max_idle_sec": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

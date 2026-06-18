@@ -1,0 +1,147 @@
+{
+  "artifact_set": "IFOS_47601_48000",
+  "entries": [
+    {
+      "name": "IFOS_comparison_portal_vitrines_os_47601_48000_v1.md",
+      "ref": "file://IFOS_comparison_portal_vitrines_os_47601_48000_v1.md",
+      "hash": "sha256:5eac5f429aab547ec431ffdae4128907d6b8bcfe5edfa3d476df836730dd0809"
+    },
+    {
+      "name": "IFOS_comparison_portal_api_v1.yaml",
+      "ref": "file://IFOS_comparison_portal_api_v1.yaml",
+      "hash": "sha256:c12c57b8be07f1c8c1415f8ef43f7258a2524ade6998781a779a8e0159225fb8"
+    },
+    {
+      "name": "IFOS_comparison_portal_examples_v1.json",
+      "ref": "file://IFOS_comparison_portal_examples_v1.json",
+      "hash": "sha256:d14de356529727310ac1d03478954b6da49dad623f81f10ad46e4b647a89bb3e"
+    },
+    {
+      "name": "IFOS_comparison_product_card_schema_v1.json",
+      "ref": "file://IFOS_comparison_product_card_schema_v1.json",
+      "hash": "sha256:69ce9e5ab1c66ea938b1405b50ef246d7c0bdf466392f743f0b252d3308252c5"
+    },
+    {
+      "name": "IFOS_offer_schema_v1.json",
+      "ref": "file://IFOS_offer_schema_v1.json",
+      "hash": "sha256:c189b13082b64a5df71e8fe8836d129996d6bb1d2fbc83e8e4b9cc834f290f3d"
+    },
+    {
+      "name": "IFOS_comparison_criteria_schema_v1.json",
+      "ref": "file://IFOS_comparison_criteria_schema_v1.json",
+      "hash": "sha256:5d4215d14cc88de4476a17b29106deb3a4879066579190759bb0ee1620f48eec"
+    },
+    {
+      "name": "IFOS_scoring_model_schema_v1.json",
+      "ref": "file://IFOS_scoring_model_schema_v1.json",
+      "hash": "sha256:f748e86864be5fa3fc836b1c7003748ffc4b3c7af393a045c0cf491fb1bebff9"
+    },
+    {
+      "name": "IFOS_pricing_terms_schema_v1.json",
+      "ref": "file://IFOS_pricing_terms_schema_v1.json",
+      "hash": "sha256:2571fe45b5553560e86bea57e860de0365d23a1b88ef9248f028e533bb536dcc"
+    },
+    {
+      "name": "IFOS_affiliate_disclosure_schema_v1.json",
+      "ref": "file://IFOS_affiliate_disclosure_schema_v1.json",
+      "hash": "sha256:dadabd39934a9c6e8551b83199ac97eb54d413d96514ed92665768d1da2a3a90"
+    },
+    {
+      "name": "IFOS_pros_cons_schema_v1.json",
+      "ref": "file://IFOS_pros_cons_schema_v1.json",
+      "hash": "sha256:7de9482870e02d5bb6a57a48f25ea5110b1ae8da1724adac87fb61d69beced56"
+    },
+    {
+      "name": "IFOS_comparison_faq_schema_v1.json",
+      "ref": "file://IFOS_comparison_faq_schema_v1.json",
+      "hash": "sha256:ab65b29178a0343385b743509097bf67e887cfda6315c3eb641e10cb97efa7dd"
+    },
+    {
+      "name": "IFOS_comparison_policy_schema_v1.json",
+      "ref": "file://IFOS_comparison_policy_schema_v1.json",
+      "hash": "sha256:6ca88517e28094e4b663708761ec71f7c063dd5eeebe9a4f0ae96c122061b7df"
+    },
+    {
+      "name": "IFOS_comparison_experiment_schema_v1.json",
+      "ref": "file://IFOS_comparison_experiment_schema_v1.json",
+      "hash": "sha256:a2f030b9e3fe3217567479a1f741a02484b82c2d70ec37485fe069cf54c11965"
+    },
+    {
+      "name": "IFOS_comparison_audit_log_schema_v1.json",
+      "ref": "file://IFOS_comparison_audit_log_schema_v1.json",
+      "hash": "sha256:96cf1d94ec0a1388d8b5d6cdf1f1e5c974f8818e5d07c0707b00a1e35898486c"
+    },
+    {
+      "name": "IFOS_vertical_taxonomy_schema_v1.json",
+      "ref": "file://IFOS_vertical_taxonomy_schema_v1.json",
+      "hash": "sha256:2de99dcc062328e585b8ada654c8a05b8cfdb4154cabd10ffd9e08a2d4bc7896"
+    },
+    {
+      "name": "IFOS_comparison_portal_vitrine_schema_v1.json",
+      "ref": "file://IFOS_comparison_portal_vitrine_schema_v1.json",
+      "hash": "sha256:e90a308f5f50a1197fb53da7699fdbf93ffd58928967d3379c76bd4c08d38092"
+    },
+    {
+      "name": "IFOS_publisher_profile_schema_v1.json",
+      "ref": "file://IFOS_publisher_profile_schema_v1.json",
+      "hash": "sha256:672ca3b93f6ba2b0349d21003124a612529f4ff7b93ee367e0b7bd9ffc248658"
+    },
+    {
+      "name": "IFOS_verticals_portals_spec_v1.md",
+      "ref": "file://IFOS_verticals_portals_spec_v1.md",
+      "hash": "sha256:45d067f9e734dbec299f9735ee722a29ac3c89e51ee0c368de6a2a269165793c"
+    },
+    {
+      "name": "IFOS_criteria_scoring_spec_v1.md",
+      "ref": "file://IFOS_criteria_scoring_spec_v1.md",
+      "hash": "sha256:1620b9525e217cc4fd1e28a20985ed8b804079cb6851d81347760126bebba3aa"
+    },
+    {
+      "name": "IFOS_offers_pricing_spec_v1.md",
+      "ref": "file://IFOS_offers_pricing_spec_v1.md",
+      "hash": "sha256:3ecfb6919b1337938ff22b6015deed1bcb3442fa44f432b941465c0e49324c52"
+    },
+    {
+      "name": "IFOS_affiliate_transparency_spec_v1.md",
+      "ref": "file://IFOS_affiliate_transparency_spec_v1.md",
+      "hash": "sha256:11ceb5c5b776bdc426d1ce36c6a33410240c326e181a9efd9780b96439aae524"
+    },
+    {
+      "name": "IFOS_portal_ux_conversion_spec_v1.md",
+      "ref": "file://IFOS_portal_ux_conversion_spec_v1.md",
+      "hash": "sha256:ae3147365770e1941036c7c3d62440fbf0afe2852adb482bd272f2c462181eca"
+    },
+    {
+      "name": "IFOS_portal_ops_update_cycle_spec_v1.md",
+      "ref": "file://IFOS_portal_ops_update_cycle_spec_v1.md",
+      "hash": "sha256:6e1674437753dc3d083d1ad37a8ad4b024fafa0b2f489b564ec3ce3ca5295d7f"
+    },
+    {
+      "name": "IFOS_portal_legal_compliance_notes_v1.md",
+      "ref": "file://IFOS_portal_legal_compliance_notes_v1.md",
+      "hash": "sha256:4a58ed96283a8e8c180e9eaec8c5a9c717a214fa8f00d564fbc5912a80fcf928"
+    },
+    {
+      "name": "ifos_scoring_engine_stub_v1.py",
+      "ref": "file://ifos_scoring_engine_stub_v1.py",
+      "hash": "sha256:d1d8048c6c7c8ac1dc5bec73a9442aeb42137239f6cdbdd98aa8c37d39d897fb"
+    },
+    {
+      "name": "ifos_portal_ranking_stub_v1.py",
+      "ref": "file://ifos_portal_ranking_stub_v1.py",
+      "hash": "sha256:37de376d55881c798f147e0e20f3512558591675de7f8407bfbc1f2776a29d19"
+    },
+    {
+      "name": "ifos_disclosure_injector_stub_v1.py",
+      "ref": "file://ifos_disclosure_injector_stub_v1.py",
+      "hash": "sha256:bf2c230bca820f262112754d841f9918e4e7c78e7c6fdadeca7d4164f4dbc3a4"
+    },
+    {
+      "name": "ifos_audit_logger_stub_v1.py",
+      "ref": "file://ifos_audit_logger_stub_v1.py",
+      "hash": "sha256:df906d22a87d1967fa0f34228dfa7d01d07073f7ab887e01a9df7193dfb61ed2"
+    }
+  ],
+  "created_at": "2026-01-04T10:05:00Z",
+  "version": "1.0.0"
+}

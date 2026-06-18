@@ -1,0 +1,59 @@
+openapi: 3.0.3
+info:
+  title: IFOS Data Quality & Dedup API
+  version: "1.0.0"
+servers:
+  - url: https://dq.ifos.local/v1
+tags:
+  - name: Sources
+  - name: Import
+  - name: Normalize
+  - name: Dedup
+  - name: Merge
+  - name: TruthPolicy
+  - name: Audit
+paths:
+  /sources:
+    post:
+      tags: [Sources]
+      summary: Register DQ source
+      responses: {"200": {description: OK}}
+    get:
+      tags: [Sources]
+      summary: List sources
+      responses: {"200": {description: OK}}
+  /import/run:
+    post:
+      tags: [Import]
+      summary: Run import job (async)
+      responses: {"202": {description: Accepted}}
+  /normalize/rules:
+    post:
+      tags: [Normalize]
+      summary: Upsert normalization rule
+      responses: {"200": {description: OK}}
+  /dedup/candidates:
+    get:
+      tags: [Dedup]
+      summary: List dedup candidates
+      responses: {"200": {description: OK}}
+  /merge/proposals:
+    post:
+      tags: [Merge]
+      summary: Create merge proposal
+      responses: {"201": {description: Created}}
+  /merge/decisions:
+    post:
+      tags: [Merge]
+      summary: Record merge decision
+      responses: {"201": {description: Created}}
+  /truth/policies:
+    post:
+      tags: [TruthPolicy]
+      summary: Upsert truth policy
+      responses: {"200": {description: OK}}
+  /audit:
+    post:
+      tags: [Audit]
+      summary: Append DQ audit record
+      responses: {"201": {description: Created}}

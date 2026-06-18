@@ -1,0 +1,25 @@
+
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: ifos-evidence-phi-access-logs
+spec:
+  schedule: "5 0 * * *" # daily at 00:05
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: runner
+              image: ifos/evidence-runner:1.0.0
+              args:
+                - --config=/etc/ifos/runner_config.json
+                - --job=/etc/ifos/jobs/job_phi_access_logs.json
+              volumeMounts:
+                - name: config
+                  mountPath: /etc/ifos
+          volumes:
+            - name: config
+              configMap:
+                name: ifos-evidence-runner-config

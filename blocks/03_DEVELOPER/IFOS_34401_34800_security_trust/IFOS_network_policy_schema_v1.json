@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS NetworkPolicy Schema v1",
+  "type": "object",
+  "required": [
+    "netpol_id",
+    "tenant_id",
+    "mode",
+    "allow",
+    "deny",
+    "version"
+  ],
+  "properties": {
+    "netpol_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "deny_all_by_default",
+        "allow_all",
+        "custom"
+      ]
+    },
+    "allow": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "deny": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "dns_allow": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

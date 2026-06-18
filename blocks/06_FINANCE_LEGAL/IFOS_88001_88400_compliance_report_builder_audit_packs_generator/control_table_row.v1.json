@@ -1,0 +1,18 @@
+{
+  "contract_id": "control_table_row.v1",
+  "fields": {
+    "policy_pack": "string",
+    "control": "string",
+    "evidence_id": "string",
+    "status": "string",
+    "collected_at": "datetime",
+    "expires_at": "datetime",
+    "artifact_sha256": "string",
+    "artifact_uri": "string",
+    "registry_event_id": "string",
+    "scope_tags": "object",
+    "notes": "string"
+  },
+  "privacy_level": "internal",
+  "retention_policy": "security_default"
+}

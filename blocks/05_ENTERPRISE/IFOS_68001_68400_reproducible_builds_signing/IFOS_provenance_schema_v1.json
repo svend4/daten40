@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Provenance Schema v1",
+  "type": "object",
+  "required": [
+    "prov_id",
+    "artifact_sha256",
+    "source_ref",
+    "actor",
+    "runner",
+    "timestamps",
+    "steps_hash",
+    "version_schema"
+  ],
+  "properties": {
+    "prov_id": {
+      "type": "string"
+    },
+    "artifact_sha256": {
+      "type": "string"
+    },
+    "source_ref": {
+      "type": "string"
+    },
+    "actor": {
+      "type": "object",
+      "required": [
+        "org",
+        "user"
+      ],
+      "properties": {
+        "org": {
+          "type": "string"
+        },
+        "user": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "runner": {
+      "type": "object",
+      "required": [
+        "system",
+        "runner_id"
+      ],
+      "properties": {
+        "system": {
+          "type": "string"
+        },
+        "runner_id": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "timestamps": {
+      "type": "object",
+      "required": [
+        "started_at",
+        "finished_at"
+      ],
+      "properties": {
+        "started_at": {
+          "type": "string"
+        },
+        "finished_at": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "steps_hash": {
+      "type": "string",
+      "description": "hash of build steps/recipe"
+    },
+    "version_schema": {
+      "type": "string",
+      "const": "1.0.0"
+    }
+  }
+}

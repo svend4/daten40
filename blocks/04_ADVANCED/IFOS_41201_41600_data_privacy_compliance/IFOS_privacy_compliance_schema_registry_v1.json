@@ -1,0 +1,57 @@
+{
+  "registry_id": "reg.privacy.ti8y5qew5bs4",
+  "entries": [
+    {
+      "name": "IFOS_data_classification_schema_v1.json",
+      "ref": "file://IFOS_data_classification_schema_v1.json",
+      "hash": "sha256:0f43e5ec8622d7e68a044d9e0c60cbc6ebfa4e8a1cff2eca25f2269ea0fcdd8d"
+    },
+    {
+      "name": "IFOS_pii_policy_schema_v1.json",
+      "ref": "file://IFOS_pii_policy_schema_v1.json",
+      "hash": "sha256:ea3ec0595b3832eaefbb889de9a266cb6553f54248518652f658e4475660d3fa"
+    },
+    {
+      "name": "IFOS_consent_record_schema_v1.json",
+      "ref": "file://IFOS_consent_record_schema_v1.json",
+      "hash": "sha256:c51a3959115d6e9a4f3abad8044867b56bb20f65f7551e354c1f6deb4e5ad570"
+    },
+    {
+      "name": "IFOS_processing_activity_schema_v1.json",
+      "ref": "file://IFOS_processing_activity_schema_v1.json",
+      "hash": "sha256:59fe564e1fef965505e3abf985aca0b2718fb15bdd538bdf274866ec571a943c"
+    },
+    {
+      "name": "IFOS_dsar_request_schema_v1.json",
+      "ref": "file://IFOS_dsar_request_schema_v1.json",
+      "hash": "sha256:5803977dfeb4ea523a0ad74062cc11354c40c004b75a0d18f8b0d4d5cf3e3aa4"
+    },
+    {
+      "name": "IFOS_redaction_job_schema_v1.json",
+      "ref": "file://IFOS_redaction_job_schema_v1.json",
+      "hash": "sha256:d517294d077fc9edd2963cfd4e9a56ba895657ae7e7eb8f5dda167927a3ee4b5"
+    },
+    {
+      "name": "IFOS_anonymization_job_schema_v1.json",
+      "ref": "file://IFOS_anonymization_job_schema_v1.json",
+      "hash": "sha256:39ff599372b309ee300faa2f228a1c633e1676be86349fb6e5cf8db99d726e70"
+    },
+    {
+      "name": "IFOS_retention_policy_schema_v1.json",
+      "ref": "file://IFOS_retention_policy_schema_v1.json",
+      "hash": "sha256:d557e519d462a00b4aaa4a702a9b9f630144399f5518ad39e5e6b3390a0a2cef"
+    },
+    {
+      "name": "IFOS_legal_hold_schema_v1.json",
+      "ref": "file://IFOS_legal_hold_schema_v1.json",
+      "hash": "sha256:d0feb9d30fac9e6caef58167a1440c89e29325d7aa8e0b86ef9fa0e9717fea63"
+    },
+    {
+      "name": "IFOS_compliance_evidence_pack_schema_v1.json",
+      "ref": "file://IFOS_compliance_evidence_pack_schema_v1.json",
+      "hash": "sha256:7aeae87d0d215a0621fcf1c8f02e016ba90ca8d6d21795d6375a811468b02816"
+    }
+  ],
+  "updated_at": "2026-01-04T00:05:00Z",
+  "version": "1.0.0"
+}

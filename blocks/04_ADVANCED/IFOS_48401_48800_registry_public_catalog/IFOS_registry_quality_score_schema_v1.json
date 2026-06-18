@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RegistryQualityScore Schema v1",
+  "type": "object",
+  "required": [
+    "qs_id",
+    "item_id",
+    "scores",
+    "total",
+    "explain",
+    "version"
+  ],
+  "properties": {
+    "qs_id": {
+      "type": "string"
+    },
+    "item_id": {
+      "type": "string"
+    },
+    "scores": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "total": {
+      "type": "number"
+    },
+    "explain": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ABTest Schema v1",
+  "type": "object",
+  "required": [
+    "test_id",
+    "name",
+    "variants",
+    "metrics",
+    "start",
+    "end",
+    "version"
+  ],
+  "properties": {
+    "test_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "variants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "start": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "end": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

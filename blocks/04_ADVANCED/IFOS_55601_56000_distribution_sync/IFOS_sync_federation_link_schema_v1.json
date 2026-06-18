@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Federation Link Schema v1",
+  "type": "object",
+  "required": [
+    "link_id",
+    "org_a",
+    "org_b",
+    "domains",
+    "filters",
+    "frequency",
+    "version"
+  ],
+  "properties": {
+    "link_id": {
+      "type": "string"
+    },
+    "org_a": {
+      "type": "string"
+    },
+    "org_b": {
+      "type": "string"
+    },
+    "domains": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "filters": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "frequency": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UIState Schema v1",
+  "type": "object",
+  "required": [
+    "user",
+    "mode",
+    "context",
+    "panels",
+    "version"
+  ],
+  "properties": {
+    "user": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "reader",
+        "compare",
+        "compose",
+        "install",
+        "run",
+        "troubleshoot",
+        "publish"
+      ]
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "panels": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

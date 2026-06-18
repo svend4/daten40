@@ -1,0 +1,161 @@
+{
+  "locale_profile": {
+    "locale_id": "de-DE",
+    "language": "de",
+    "region": "DE",
+    "timezone": "Europe/Berlin",
+    "currency": "EUR",
+    "direction": "LTR",
+    "units": "metric",
+    "date_format": "DD.MM.YYYY",
+    "number_format": "1.234,56",
+    "version": "1.0.0"
+  },
+  "translation_key": {
+    "key": "ui.install.button",
+    "description": "Install button label",
+    "context": "Marketplace card",
+    "placeholders": [
+      "product"
+    ],
+    "version": "1.0.0"
+  },
+  "translation_bundle_de": {
+    "bundle_id": "tb.b.2snbyl55dmau",
+    "locale_id": "de-DE",
+    "strings": {
+      "ui.install.button": "Installieren",
+      "ui.run.button": "Starten"
+    },
+    "source": "human",
+    "updated_at": "2026-01-04T00:45:00Z",
+    "version": "1.0.0"
+  },
+  "formatting_rules": {
+    "rules_id": "fmt.f.com5vz8zsn1p",
+    "locale_id": "de-DE",
+    "date": {
+      "short": "DD.MM.YYYY",
+      "time": "HH:mm"
+    },
+    "number": {
+      "decimal": ",",
+      "thousand": "."
+    },
+    "address": {
+      "order": [
+        "street",
+        "postcode",
+        "city",
+        "country"
+      ]
+    },
+    "units": {
+      "distance": "km",
+      "weight": "kg"
+    },
+    "version": "1.0.0"
+  },
+  "fx_rates": {
+    "fx_id": "fx.x.nsyx8j2dwxcr",
+    "base": "EUR",
+    "rates": {
+      "USD": 1.08,
+      "GBP": 0.86,
+      "PLN": 4.3
+    },
+    "ts": "2026-01-04T00:45:00Z",
+    "source": "ecb_snapshot",
+    "version": "1.0.0"
+  },
+  "legal_zone": {
+    "zone_id": "EU",
+    "regions": [
+      "DE",
+      "FR",
+      "PL"
+    ],
+    "requirements": [
+      "GDPR",
+      "cookie_consent",
+      "data_residency_eu"
+    ],
+    "data_residency": "EU_ONLY",
+    "version": "1.0.0"
+  },
+  "content_policy_zone": {
+    "zone_id": "EU_CONTENT",
+    "regions": [
+      "DE",
+      "FR",
+      "PL"
+    ],
+    "rules": [
+      {
+        "category": "adult",
+        "action": "block"
+      },
+      {
+        "category": "gambling",
+        "action": "restrict"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "vitrine_locale_config": {
+    "config_id": "vlc.v.auy7wgbq1n0g",
+    "vitrine_id": "vitrine.marketplace",
+    "locale_id": "de-DE",
+    "catalog_rules": {
+      "categories": [
+        "automation",
+        "wordpress",
+        "crm"
+      ],
+      "exclude": [
+        "restricted"
+      ]
+    },
+    "sources": [
+      "source://make",
+      "source://wordpress",
+      "source://github"
+    ],
+    "seo_terms": [
+      "Vergleich",
+      "Automatisierung",
+      "Workflow"
+    ],
+    "version": "1.0.0"
+  },
+  "locale_ranking_policy": {
+    "policy_id": "lrp.p.wj6he29fu3gi",
+    "locale_id": "de-DE",
+    "signals": [
+      {
+        "name": "local_source_boost",
+        "weight": 0.2
+      },
+      {
+        "name": "german_docs_bonus",
+        "weight": 0.15
+      },
+      {
+        "name": "currency_match_bonus",
+        "weight": 0.1
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "fallbacks": {
+    "locale_id": "de-DE",
+    "chain": [
+      "de-DE",
+      "de",
+      "en"
+    ],
+    "legal_strings_must_translate": true,
+    "mark_machine_translated": true,
+    "version": "1.0.0"
+  }
+}

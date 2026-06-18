@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS LicenseRecord Schema v1",
+  "type": "object",
+  "required": [
+    "license_id",
+    "source",
+    "license",
+    "constraints",
+    "version"
+  ],
+  "properties": {
+    "license_id": {
+      "type": "string"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "license": {
+      "type": "string"
+    },
+    "constraints": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "attribution": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "compatibility": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

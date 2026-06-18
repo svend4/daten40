@@ -1,0 +1,43 @@
+openapi: 3.0.3
+info:
+  title: IFOS Knowledge Base & RAG API
+  version: "1.0.0"
+servers:
+  - url: https://kb.ifos.local/v1
+tags:
+  - name: Sources
+  - name: Docs
+  - name: Parsing
+  - name: Chunking
+  - name: Embeddings
+  - name: Indexes
+  - name: Retrieval
+  - name: Citations
+  - name: Bundles
+  - name: Snapshots
+  - name: Eval
+paths:
+  /sources:
+    post: {tags:[Sources], summary: Upsert DocSource, responses: {"200": {description: OK}}}
+  /docs:
+    post: {tags:[Docs], summary: Upsert DocItem, responses: {"200": {description: OK}}}
+  /parse:
+    post: {tags:[Parsing], summary: Parse DocItem into normalized text+structure, responses: {"201": {description: Created}}}
+  /chunk/specs:
+    post: {tags:[Chunking], summary: Upsert ChunkSpec, responses: {"200": {description: OK}}}
+  /chunk/run:
+    post: {tags:[Chunking], summary: Chunk parsed doc into ChunkItems, responses: {"201": {description: Created}}}
+  /embeddings/models:
+    post: {tags:[Embeddings], summary: Upsert EmbeddingModel, responses: {"200": {description: OK}}}
+  /indexes:
+    post: {tags:[Indexes], summary: Upsert VectorIndex, responses: {"200": {description: OK}}}
+  /retrieve:
+    post: {tags:[Retrieval], summary: Run retrieval query (optionally rerank), responses: {"200": {description: OK}}}
+  /citations:
+    post: {tags:[Citations], summary: Create citations for an answer, responses: {"201": {description: Created}}}
+  /bundles:
+    post: {tags:[Bundles], summary: Upsert KBBundle, responses: {"200": {description: OK}}}
+  /snapshots:
+    post: {tags:[Snapshots], summary: Create offline KB snapshot, responses: {"201": {description: Created}}}
+  /eval:
+    post: {tags:[Eval], summary: Run RAG evaluation, responses: {"201": {description: Created}}}

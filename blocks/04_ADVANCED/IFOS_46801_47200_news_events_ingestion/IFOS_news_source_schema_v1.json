@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS NewsSource Schema v1",
+  "type": "object",
+  "required": [
+    "source_id",
+    "type",
+    "name",
+    "endpoint",
+    "refresh",
+    "lang",
+    "region",
+    "rules",
+    "version"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "rss",
+        "web",
+        "api"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "endpoint": {
+      "type": "string"
+    },
+    "refresh": {
+      "type": "string"
+    },
+    "lang": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "region": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "rules": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

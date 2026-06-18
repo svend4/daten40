@@ -1,0 +1,20 @@
+openapi: 3.0.3
+info:
+  title: IFOS Learning API
+  version: "1.0.0"
+servers:
+  - url: https://learn.ifos.local/v1
+tags:
+  - name: Courses
+  - name: Labs
+  - name: Certificates
+  - name: Progress
+paths:
+  /courses/list:
+    get: {tags:[Courses], summary: List courses, responses: {"200": {description: OK}}}
+  /labs/run:
+    post: {tags:[Labs], summary: Run lab in sandbox, responses: {"200": {description: OK}}}
+  /cert/exam/start:
+    post: {tags:[Certificates], summary: Start exam, responses: {"200": {description: OK}}}
+  /progress/update:
+    post: {tags:[Progress], summary: Update progress, responses: {"200": {description: OK}}}

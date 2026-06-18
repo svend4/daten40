@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RegistryBundle Schema v1",
+  "type": "object",
+  "required": [
+    "bundle_id",
+    "name",
+    "goal",
+    "items",
+    "install",
+    "run",
+    "exports",
+    "version"
+  ],
+  "properties": {
+    "bundle_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "goal": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "install": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "run": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "exports": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

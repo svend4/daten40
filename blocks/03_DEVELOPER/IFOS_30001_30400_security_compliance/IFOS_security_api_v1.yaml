@@ -1,0 +1,43 @@
+openapi: 3.0.3
+info:
+  title: IFOS Security & Compliance API
+  version: "1.0.0"
+servers:
+  - url: https://sec.ifos.local/v1
+tags:
+  - name: Secrets
+  - name: RBAC
+  - name: Policies
+  - name: Audit
+  - name: Signing
+  - name: Sandbox
+  - name: Permissions
+paths:
+  /secrets/refs:
+    post:
+      tags: [Secrets]
+      summary: Create secret reference (no value)
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"201": {description: Created}}
+  /policies/evaluate:
+    post:
+      tags: [Policies]
+      summary: Evaluate policy for action
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"200": {description: OK}}
+  /audit:
+    post:
+      tags: [Audit]
+      summary: Append audit event
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"202": {description: Accepted}}
+  /packages/verify:
+    post:
+      tags: [Signing]
+      summary: Verify package signature and attestations
+      responses: {"200": {description: OK}}
+  /sandbox/run:
+    post:
+      tags: [Sandbox]
+      summary: Run in sandbox
+      responses: {"200": {description: OK}}

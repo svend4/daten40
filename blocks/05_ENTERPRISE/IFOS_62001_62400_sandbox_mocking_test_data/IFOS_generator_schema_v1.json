@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Generator Schema v1",
+  "type": "object",
+  "required": [
+    "generator_id",
+    "name",
+    "outputs",
+    "params",
+    "version"
+  ],
+  "properties": {
+    "generator_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "params": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "deterministic": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "org_profile": {
+    "org_id": "org.acme",
+    "size": "smb",
+    "industry": "services",
+    "constraints": [
+      "gdpr",
+      "self_hosted_preferred"
+    ],
+    "targets": [
+      "docker",
+      "google_workspace"
+    ],
+    "version": "1.0.0"
+  },
+  "template_pack": {
+    "pack_id": "pack.inbox_to_ticket",
+    "name": "Email→Ticket (Support)",
+    "goal": "Автоматизировать обработку входящих писем в тикеты",
+    "roles": [
+      "support_agent",
+      "support_lead"
+    ],
+    "terms": [
+      "term.data.fetch.email",
+      "term.data.classify",
+      "term.ticket.create",
+      "term.notify.slack.send"
+    ],
+    "bundle_id": "bun.email.ticket",
+    "dashboards": [
+      "dash.support.inbox",
+      "dash.support.sla"
+    ],
+    "kpis": [
+      "ttfv",
+      "sla_breach_rate",
+      "automation_coverage"
+    ],
+    "version": "1.0.0"
+  },
+  "roi_model": {
+    "roi_id": "roi.x.fiwz2k8g8fnu",
+    "baseline": {
+      "minutes_per_ticket": 8,
+      "tickets_per_week": 200
+    },
+    "after": {
+      "minutes_per_ticket": 5
+    },
+    "costs": {
+      "licenses_month": 50,
+      "ops_hours_month": 2
+    },
+    "savings": {
+      "hours_week": 10
+    },
+    "payback_months": 1.2,
+    "version": "1.0.0"
+  },
+  "change_ticket": {
+    "ticket_id": "chg.c.k2s29x9tqk50",
+    "subject": "Update bundle bun.email.ticket to v1.1",
+    "risk": "medium",
+    "window": "Sun 02:00-03:00",
+    "rollback": "restore bundle v1.0",
+    "checks": [
+      "smoke_tests",
+      "kpi_watch_24h"
+    ],
+    "version": "1.0.0"
+  }
+}

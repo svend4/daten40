@@ -1,0 +1,36 @@
+openapi: 3.0.3
+info:
+  title: IFOS Security & Trust API
+  version: "1.0.0"
+servers:
+  - url: https://security.ifos.local/v1
+tags:
+  - name: Signing
+  - name: SBOM
+  - name: Vulnerabilities
+  - name: Secrets
+  - name: Network
+  - name: Sandbox
+  - name: Trust
+  - name: Incidents
+paths:
+  /signing/keys:
+    post: {tags:[Signing], summary: Register signing key, responses: {"201": {description: Created}}}
+  /signatures:
+    post: {tags:[Signing], summary: Submit signature, responses: {"201": {description: Created}}}
+  /sbom:
+    post: {tags:[SBOM], summary: Upload SBOM, responses: {"201": {description: Created}}}
+  /attestations:
+    post: {tags:[SBOM], summary: Upload attestation, responses: {"201": {description: Created}}}
+  /vuln/reports:
+    post: {tags:[Vulnerabilities], summary: Submit vuln report, responses: {"201": {description: Created}}}
+  /secrets:
+    post: {tags:[Secrets], summary: Create secret reference, responses: {"201": {description: Created}}}
+  /network/policies:
+    post: {tags:[Network], summary: Upsert egress policy, responses: {"200": {description: OK}}}
+  /sandbox/profiles:
+    post: {tags:[Sandbox], summary: Upsert sandbox profile, responses: {"200": {description: OK}}}
+  /trust/scores:
+    post: {tags:[Trust], summary: Upsert trust score, responses: {"200": {description: OK}}}
+  /incidents:
+    post: {tags:[Incidents], summary: Create incident, responses: {"201": {description: Created}}}

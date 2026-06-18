@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS PromptPack Schema v1",
+  "type": "object",
+  "required": [
+    "promptpack_id",
+    "purpose",
+    "system",
+    "templates",
+    "constraints",
+    "evals",
+    "version"
+  ],
+  "properties": {
+    "promptpack_id": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "system": {
+      "type": "string"
+    },
+    "templates": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

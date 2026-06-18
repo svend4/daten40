@@ -1,0 +1,24 @@
+{
+  "event_type": "web_vitals",
+  "project_id": "rumproj_ifos_web",
+  "session_id": "sess_abc",
+  "anon_user_id": "u_anon_123",
+  "route": "/admin/settings/security",
+  "release_version": "2026.01.09-rc3",
+  "feature_flag_snapshot": {
+    "new_admin_nav": true,
+    "mtls_banner": false
+  },
+  "metrics": {
+    "LCP_ms": 1800,
+    "INP_ms": 140,
+    "CLS": 0.03,
+    "TTFB_ms": 220
+  },
+  "context": {
+    "device": "desktop",
+    "browser": "chrome",
+    "os": "windows",
+    "network": "4g"
+  }
+}

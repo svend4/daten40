@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Comparison Policy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "vertical",
+    "rules",
+    "disclosure_required",
+    "audit_required",
+    "version"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "vertical": {
+      "type": "string"
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "disclosure_required": {
+      "type": "boolean"
+    },
+    "audit_required": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

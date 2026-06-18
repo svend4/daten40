@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Source Record Schema v1",
+  "type": "object",
+  "required": [
+    "source_id",
+    "entity_ref",
+    "url",
+    "captured_at",
+    "fields",
+    "version"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string"
+    },
+    "entity_ref": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "captured_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "trust_score": {
+      "type": "number"
+    },
+    "fields": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

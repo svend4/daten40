@@ -1,0 +1,127 @@
+{
+  "artifact_set": "IFOS_55601_56000",
+  "entries": [
+    {
+      "name": "IFOS_distribution_sync_os_55601_56000_v1.md",
+      "ref": "file://IFOS_distribution_sync_os_55601_56000_v1.md",
+      "hash": "sha256:0bbc3b5ae04f7eb1308ceb4cc11e17ee10849d160f45a51bbf6310c5603ba3b8"
+    },
+    {
+      "name": "IFOS_distribution_sync_api_v1.yaml",
+      "ref": "file://IFOS_distribution_sync_api_v1.yaml",
+      "hash": "sha256:3884f6228223a38c31652292e0e8563c07d6bc30514cca1828f8e226ed2fa635"
+    },
+    {
+      "name": "IFOS_distribution_sync_examples_v1.json",
+      "ref": "file://IFOS_distribution_sync_examples_v1.json",
+      "hash": "sha256:5826775104974b2036ad978831697b880b6ac50faf6a970bd75e00253cc66adb"
+    },
+    {
+      "name": "IFOS_sync_profiles_seed_55601_56000_v1.csv",
+      "ref": "file://IFOS_sync_profiles_seed_55601_56000_v1.csv",
+      "hash": "sha256:bb9c13ee2dd4989ed482d6523895a51e384e30e095d696e3146df9921df44684"
+    },
+    {
+      "name": "IFOS_sync_overview_spec_v1.md",
+      "ref": "file://IFOS_sync_overview_spec_v1.md",
+      "hash": "sha256:5aa6f92c65d6bd445ab9e444d61eb6490bc9935e6a3a54eafb75b429b39fe734"
+    },
+    {
+      "name": "IFOS_sync_local_vault_spec_v1.md",
+      "ref": "file://IFOS_sync_local_vault_spec_v1.md",
+      "hash": "sha256:b85e4ed0b1d59e143a6f18eee8e98431af665bd48619ad77d4990b8f3c6a456c"
+    },
+    {
+      "name": "IFOS_sync_replication_protocol_spec_v1.md",
+      "ref": "file://IFOS_sync_replication_protocol_spec_v1.md",
+      "hash": "sha256:ec156e1eec0280cadab6fafa9ea7d9d15f9b5d77bc60d72f715d8783d3572066"
+    },
+    {
+      "name": "IFOS_sync_conflict_resolution_spec_v1.md",
+      "ref": "file://IFOS_sync_conflict_resolution_spec_v1.md",
+      "hash": "sha256:098068a243c8ff4272e7e35fcb23893d95498e984dd22d942b92af6f7c50bdc8"
+    },
+    {
+      "name": "IFOS_sync_federation_spec_v1.md",
+      "ref": "file://IFOS_sync_federation_spec_v1.md",
+      "hash": "sha256:4b444dc0f07bc844858c16c2393a462206f4642b9bb25ac01acdf10d1796f819"
+    },
+    {
+      "name": "IFOS_sync_bundle_distribution_spec_v1.md",
+      "ref": "file://IFOS_sync_bundle_distribution_spec_v1.md",
+      "hash": "sha256:f19707eba2a6ab1881ee15f38d83d90d9024c5491e7081b6f27548b1b4c4d0c9"
+    },
+    {
+      "name": "IFOS_sync_offline_mode_spec_v1.md",
+      "ref": "file://IFOS_sync_offline_mode_spec_v1.md",
+      "hash": "sha256:93d4dff1936257232d4036bb499a87f208c362fc4bfb8c6ab2e409397cb2e516"
+    },
+    {
+      "name": "IFOS_sync_security_signatures_spec_v1.md",
+      "ref": "file://IFOS_sync_security_signatures_spec_v1.md",
+      "hash": "sha256:643e14f0cadcec0d803813ec54407786823edcc7925c4c347f888fea179d3a16"
+    },
+    {
+      "name": "IFOS_sync_observability_spec_v1.md",
+      "ref": "file://IFOS_sync_observability_spec_v1.md",
+      "hash": "sha256:d6c784b783fa2474a844305d3e03c364afc45ac5165a02a193b80cc1f3e545fc"
+    },
+    {
+      "name": "IFOS_sync_migration_backup_restore_spec_v1.md",
+      "ref": "file://IFOS_sync_migration_backup_restore_spec_v1.md",
+      "hash": "sha256:3668d6e68c5c7b7619113861b714d06bf1ebc5f6fb7e2944471e5df20a0d0aa4"
+    },
+    {
+      "name": "IFOS_sync_integrations_spec_v1.md",
+      "ref": "file://IFOS_sync_integrations_spec_v1.md",
+      "hash": "sha256:a88cb09cb9a267dc6316358563d1b2a0cb643090d923a74f1db892f69ca379d2"
+    },
+    {
+      "name": "IFOS_sync_replica_schema_v1.json",
+      "ref": "file://IFOS_sync_replica_schema_v1.json",
+      "hash": "sha256:044c5305fec2808e802933a0a49fa40694372d589381a629fa684c4b22fd2c1e"
+    },
+    {
+      "name": "IFOS_sync_job_schema_v1.json",
+      "ref": "file://IFOS_sync_job_schema_v1.json",
+      "hash": "sha256:5545873d15272a217d695d7fda61933bb7cf247d81bf572025df3538235150e2"
+    },
+    {
+      "name": "IFOS_sync_change_log_schema_v1.json",
+      "ref": "file://IFOS_sync_change_log_schema_v1.json",
+      "hash": "sha256:a092f3fef95ed4437b88b23e7cb684b2aa1d2cdf0c82138ae10eada2ed12544e"
+    },
+    {
+      "name": "IFOS_sync_conflict_schema_v1.json",
+      "ref": "file://IFOS_sync_conflict_schema_v1.json",
+      "hash": "sha256:d4c236886a7f80cd5209b518fa3bdd6f10137b1364129f89c40514d193ab9b04"
+    },
+    {
+      "name": "IFOS_sync_federation_link_schema_v1.json",
+      "ref": "file://IFOS_sync_federation_link_schema_v1.json",
+      "hash": "sha256:c989ca9feff7541f4dbd1ac0776fb8656f0ca93f221e4c8ec1add8966b89f6d0"
+    },
+    {
+      "name": "IFOS_sync_bundle_delta_schema_v1.json",
+      "ref": "file://IFOS_sync_bundle_delta_schema_v1.json",
+      "hash": "sha256:2d4e5a3bd54dfea82f6d9ca1308a6350cd6f927d93e9d1a4e513a6ab46f5490e"
+    },
+    {
+      "name": "ifos_sync_delta_builder_stub_v1.py",
+      "ref": "file://ifos_sync_delta_builder_stub_v1.py",
+      "hash": "sha256:2a49ca448cca29db7c026b7259b101ab5a296740e5b34d2e728dc891588aa111"
+    },
+    {
+      "name": "ifos_sync_conflict_resolver_stub_v1.py",
+      "ref": "file://ifos_sync_conflict_resolver_stub_v1.py",
+      "hash": "sha256:ee65b91ac801e03f0ae7a9b1a5852993514fd12ba3f313f841871f9a37662c24"
+    },
+    {
+      "name": "ifos_sync_transport_stub_v1.py",
+      "ref": "file://ifos_sync_transport_stub_v1.py",
+      "hash": "sha256:371002b8b19135e8c4f2e54a587adcb7264cbafc0e3febe82f5a91c80803ec01"
+    }
+  ],
+  "created_at": "2026-01-04T20:10:00Z",
+  "version": "1.0.0"
+}

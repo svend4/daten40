@@ -1,0 +1,74 @@
+{
+  "key_request_example": {
+    "request_id": "kr_req_tzgRV1blPsT5",
+    "created_at": "2026-01-02T14:10:00Z",
+    "requestor": {
+      "principal_id": "u_321",
+      "tenant_id": "t_demo",
+      "role": "developer"
+    },
+    "provider_id": "sb.pay",
+    "key_id": "key.pay.test",
+    "purpose": "QA connector integration in sandbox",
+    "requested_scopes": [
+      "read",
+      "write:demo"
+    ],
+    "ttl_days": 14,
+    "callback_urls": [],
+    "version": "1.0.0"
+  },
+  "key_grant_example": {
+    "grant_id": "kg_gr__XLaMpQ3Ym3a",
+    "created_at": "2026-01-02T14:12:00Z",
+    "request_id": "kr_req_tzgRV1blPsT5",
+    "decision": "ALLOW",
+    "expires_at": "2026-01-16T14:12:00Z",
+    "policy_id": "pol.sandbox.strict",
+    "controls": {
+      "sandbox_only": true,
+      "endpoint_allowlist": [
+        "*.sandbox.example",
+        "*.sandbox.local"
+      ],
+      "canary_tag": "canary_tb_pay_20260102",
+      "rotation_job_id": "rot.pay.14d",
+      "rate_limit_per_min": 60
+    },
+    "reason_code": "ALLOW_SANDBOX_ONLY",
+    "human_reason": "Sandbox-only policy applied; minimal scopes; rotation enabled.",
+    "version": "1.0.0"
+  },
+  "trial_bundle_example": {
+    "bundle_id": "tb.pay_invoices.1",
+    "name": "Payments + Invoices (sandbox)",
+    "connectors": [
+      "conn.pay",
+      "conn.storage"
+    ],
+    "demo_assets": [
+      "da.pay.webhook_fixtures",
+      "da.invoice.mock_pdfs"
+    ],
+    "steps": [
+      "Enable test mode and obtain sandbox key",
+      "Trigger payment event fixture",
+      "Generate mock invoice PDF (no PII)",
+      "Upload to sandbox storage"
+    ],
+    "checks": [
+      "event_ok",
+      "pdf_generated",
+      "storage_put_ok",
+      "no_pii_detected",
+      "no_prod_endpoints"
+    ],
+    "policies": {
+      "credential_policy_id": "pol.sandbox.strict",
+      "dlp_required": true,
+      "endpoint_allowlist_required": true
+    },
+    "estimated_minutes": 20,
+    "version": "1.0.0"
+  }
+}

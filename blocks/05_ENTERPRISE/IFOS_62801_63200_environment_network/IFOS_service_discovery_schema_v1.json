@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Service Discovery Schema v1",
+  "type": "object",
+  "required": [
+    "service_id",
+    "name",
+    "internal_host",
+    "ports",
+    "version"
+  ],
+  "properties": {
+    "service_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "internal_host": {
+      "type": "string"
+    },
+    "ports": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

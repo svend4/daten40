@@ -1,0 +1,147 @@
+{
+  "artifact_set": "IFOS_45201_45600",
+  "entries": [
+    {
+      "name": "IFOS_connectors_factory_sdk_os_45201_45600_v1.md",
+      "ref": "file://IFOS_connectors_factory_sdk_os_45201_45600_v1.md",
+      "hash": "sha256:1fb1f61275021827eeb11ece5aef9256329f06a103b8b9a050fb428d3611cf2c"
+    },
+    {
+      "name": "IFOS_connectors_factory_api_v1.yaml",
+      "ref": "file://IFOS_connectors_factory_api_v1.yaml",
+      "hash": "sha256:863359d33515e2419277f6e7a6ad22b33d9b4c9fe8182764d842f9b74a22fa56"
+    },
+    {
+      "name": "IFOS_connectors_factory_examples_v1.json",
+      "ref": "file://IFOS_connectors_factory_examples_v1.json",
+      "hash": "sha256:3616e8fe6bb70f0386f9e68f2f944501414ca66cfbfc00ecee2ecfe26c4160fb"
+    },
+    {
+      "name": "IFOS_connector_source_schema_v1.json",
+      "ref": "file://IFOS_connector_source_schema_v1.json",
+      "hash": "sha256:bb538c841358a63848ce9cde8f944a0172218f526adb60d09d98227e8efbf54d"
+    },
+    {
+      "name": "IFOS_openapi_source_schema_v1.json",
+      "ref": "file://IFOS_openapi_source_schema_v1.json",
+      "hash": "sha256:ecf09f771c5c0507bb448b80300ca8038f815eaa0bbf26b5aad910ec8c0de9cf"
+    },
+    {
+      "name": "IFOS_connector_build_job_schema_v1.json",
+      "ref": "file://IFOS_connector_build_job_schema_v1.json",
+      "hash": "sha256:018fbeedd572b2577113a784fa85fc1a78822a73f4ee14bb0826fdbd21c8e9e3"
+    },
+    {
+      "name": "IFOS_connector_package_schema_v1.json",
+      "ref": "file://IFOS_connector_package_schema_v1.json",
+      "hash": "sha256:fb46e384e89a823aac297f3928da89784672fe35ac843fa2d58d1159c9891edc"
+    },
+    {
+      "name": "IFOS_connector_test_suite_schema_v1.json",
+      "ref": "file://IFOS_connector_test_suite_schema_v1.json",
+      "hash": "sha256:766aeb0787b1ccf0484c56ec58e30b3c3addb2d0bc04c23e164c7eac1b6c24e2"
+    },
+    {
+      "name": "IFOS_mock_server_schema_v1.json",
+      "ref": "file://IFOS_mock_server_schema_v1.json",
+      "hash": "sha256:6191ee8e1ed3db80f40acda281f0b6a9402e38334bf25b8daccd4d36f6b0ef7e"
+    },
+    {
+      "name": "IFOS_doc_bundle_schema_v1.json",
+      "ref": "file://IFOS_doc_bundle_schema_v1.json",
+      "hash": "sha256:03c5d5143c7d2a695eea0725a3d381db430822130ba906cca86e3ce31158a777"
+    },
+    {
+      "name": "IFOS_sdk_manifest_schema_v1.json",
+      "ref": "file://IFOS_sdk_manifest_schema_v1.json",
+      "hash": "sha256:41f9de6c08a9f812d88d65b2a4a1d0ade57e14aad12e739c923213e9535f971a"
+    },
+    {
+      "name": "IFOS_artifact_signing_schema_v1.json",
+      "ref": "file://IFOS_artifact_signing_schema_v1.json",
+      "hash": "sha256:ed41a273c1a6b44d553890f64e5dfe26917c5bcb12c059100a93bfeffbcb4391"
+    },
+    {
+      "name": "IFOS_connector_publish_job_schema_v1.json",
+      "ref": "file://IFOS_connector_publish_job_schema_v1.json",
+      "hash": "sha256:07c15e4f835c656d563fa151790f30d0de38d6b59e00e5fde3205d6d5270b788"
+    },
+    {
+      "name": "IFOS_compat_matrix_schema_v1.json",
+      "ref": "file://IFOS_compat_matrix_schema_v1.json",
+      "hash": "sha256:1ab9919fc0e3388b692b5e7ab476323043579e6f60485551683a0cd88f242c73"
+    },
+    {
+      "name": "IFOS_connector_telemetry_schema_v1.json",
+      "ref": "file://IFOS_connector_telemetry_schema_v1.json",
+      "hash": "sha256:5e3e37760e0b396e7a60e6d116af84e072cf5231506bd68947842842e3e8186f"
+    },
+    {
+      "name": "IFOS_connector_security_scan_schema_v1.json",
+      "ref": "file://IFOS_connector_security_scan_schema_v1.json",
+      "hash": "sha256:7cc791300d05e28a2454e8c5a1045636b1756d64676d88634bc286d83b026784"
+    },
+    {
+      "name": "IFOS_connectors_factory_spec_v1.md",
+      "ref": "file://IFOS_connectors_factory_spec_v1.md",
+      "hash": "sha256:808cec43c25a1f64fecd4e1bbd84cb1cde82d1fd04e2d2f9853428bb935c156a"
+    },
+    {
+      "name": "IFOS_openapi_to_connector_spec_v1.md",
+      "ref": "file://IFOS_openapi_to_connector_spec_v1.md",
+      "hash": "sha256:91a6c794b6ae0b70abe1845b59cc3398a9861f68c06634e291151a2a88780dc6"
+    },
+    {
+      "name": "IFOS_connector_testing_mocks_spec_v1.md",
+      "ref": "file://IFOS_connector_testing_mocks_spec_v1.md",
+      "hash": "sha256:6b7141e81ca3220796f0132443d6b4ce6a2b5ed276b8e1726bfa3fe8e3c7f4b4"
+    },
+    {
+      "name": "IFOS_connector_docs_generation_spec_v1.md",
+      "ref": "file://IFOS_connector_docs_generation_spec_v1.md",
+      "hash": "sha256:3a01325bfbbf8102ba03d6d9b7be67636e2167af083dba4ee455130ec14546d0"
+    },
+    {
+      "name": "IFOS_connector_sdk_spec_v1.md",
+      "ref": "file://IFOS_connector_sdk_spec_v1.md",
+      "hash": "sha256:daaf05a871008c6295c0f1bb62e20e731cc76c0210eff24ab8d35a7c5ec08f25"
+    },
+    {
+      "name": "IFOS_connector_publishing_spec_v1.md",
+      "ref": "file://IFOS_connector_publishing_spec_v1.md",
+      "hash": "sha256:aa322d9c3e68800c332301335dad5cce0f810153a99def37c547c56fefa154c1"
+    },
+    {
+      "name": "IFOS_connector_supply_chain_security_spec_v1.md",
+      "ref": "file://IFOS_connector_supply_chain_security_spec_v1.md",
+      "hash": "sha256:23588a143110f57452bdb379ec39960a34988d7b369254c19134f5236ef59129"
+    },
+    {
+      "name": "ifos_openapi_connector_generator_stub_v1.py",
+      "ref": "file://ifos_openapi_connector_generator_stub_v1.py",
+      "hash": "sha256:1035914e14c4b152f1339470d45936583ca9faf71aec84457d5f4e07f67e009a"
+    },
+    {
+      "name": "ifos_mock_server_stub_v1.py",
+      "ref": "file://ifos_mock_server_stub_v1.py",
+      "hash": "sha256:dd386a756125191d641ac1e7eb1c42e18ea1e7c34f44b7c17cddb63f1d2a03f8"
+    },
+    {
+      "name": "ifos_connector_tests_runner_stub_v1.py",
+      "ref": "file://ifos_connector_tests_runner_stub_v1.py",
+      "hash": "sha256:29ce2e103ad4f7c4e33a22af206503f2f36e0f4d2dfb202216bfb196b044167c"
+    },
+    {
+      "name": "ifos_connector_packager_stub_v1.py",
+      "ref": "file://ifos_connector_packager_stub_v1.py",
+      "hash": "sha256:5c1ac9987a419184a3e3ea3d569102f1582239971e7f61f07c4e9b894c283be9"
+    },
+    {
+      "name": "ifos_signing_stub_v1.py",
+      "ref": "file://ifos_signing_stub_v1.py",
+      "hash": "sha256:4474a8a3118b55baa403a75e90c83d1b6900cfceef20da0b3ee17b6de0d7ef31"
+    }
+  ],
+  "created_at": "2026-01-04T06:45:00Z",
+  "version": "1.0.0"
+}

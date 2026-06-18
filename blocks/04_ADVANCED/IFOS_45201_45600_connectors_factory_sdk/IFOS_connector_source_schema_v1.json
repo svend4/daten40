@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ConnectorSource Schema v1",
+  "type": "object",
+  "required": [
+    "source_id",
+    "kind",
+    "location",
+    "owner",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "openapi",
+        "postman",
+        "graphql",
+        "manual",
+        "sdk_code"
+      ]
+    },
+    "location": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

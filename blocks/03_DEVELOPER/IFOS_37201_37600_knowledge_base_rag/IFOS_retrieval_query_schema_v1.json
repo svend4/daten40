@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RetrievalQuery Schema v1",
+  "type": "object",
+  "required": [
+    "query_id",
+    "tenant_id",
+    "text",
+    "scope",
+    "top_k",
+    "version"
+  ],
+  "properties": {
+    "query_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "filters": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "top_k": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 200
+    },
+    "must_cite": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

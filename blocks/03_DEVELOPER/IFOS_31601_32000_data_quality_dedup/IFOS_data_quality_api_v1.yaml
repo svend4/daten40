@@ -1,0 +1,70 @@
+openapi: 3.0.3
+info:
+  title: IFOS Data Quality & Dedup API
+  version: "1.0.0"
+servers:
+  - url: https://dq.ifos.local/v1
+tags:
+  - name: Ingest
+  - name: Normalize
+  - name: Validate
+  - name: Dedup
+  - name: Identity
+  - name: Facts
+  - name: Evidence
+  - name: Reconcile
+paths:
+  /ingest/raw:
+    post:
+      tags: [Ingest]
+      summary: Ingest raw record (rss/api/html)
+      responses:
+        "202": {description: Accepted}
+  /normalize:
+    post:
+      tags: [Normalize]
+      summary: Normalize raw record into NormalizedRecord + fingerprints
+      responses:
+        "200": {description: OK}
+  /validate:
+    post:
+      tags: [Validate]
+      summary: Validate normalized record against contracts and quality gates
+      responses:
+        "200": {description: OK}
+  /dedup/candidates:
+    post:
+      tags: [Dedup]
+      summary: Generate dedup candidates for a record
+      responses:
+        "200": {description: OK}
+  /dedup/decide:
+    post:
+      tags: [Dedup]
+      summary: Decide whether two records are same/different/unsure
+      responses:
+        "200": {description: OK}
+  /identity/resolve:
+    post:
+      tags: [Identity]
+      summary: Resolve entities from normalized records
+      responses:
+        "200": {description: OK}
+  /facts/upsert:
+    post:
+      tags: [Facts]
+      summary: Create or update fact version
+      responses:
+        "200": {description: OK}
+  /evidence/capture:
+    post:
+      tags: [Evidence]
+      summary: Store provenance evidence (hash/screenshot/snippet)
+      responses:
+        "201": {description: Created}
+  /reconcile/run:
+    post:
+      tags: [Reconcile]
+      summary: Run reconciliation job over scope
+      responses:
+        "202": {description: Accepted}

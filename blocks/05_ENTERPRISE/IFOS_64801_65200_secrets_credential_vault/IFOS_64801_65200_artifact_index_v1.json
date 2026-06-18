@@ -1,0 +1,87 @@
+{
+  "artifact_set": "IFOS_64801_65200",
+  "created_at": "2026-01-02T16:43:53Z",
+  "entries": [
+    {
+      "name": "IFOS_secrets_credential_vault_os_64801_65200_v1.md",
+      "hash": "sha256:c8eb80740b6f55bfeccab542231f1d0c15a34bab735cf42e2b850d211c798ffe"
+    },
+    {
+      "name": "IFOS_vault_ops_runbook_64801_65200_v1.md",
+      "hash": "sha256:86c9b64885f7e71d4821538f757ad3f5eff27f2892ba4a230ea3f98dea837ebc"
+    },
+    {
+      "name": "IFOS_vault_threat_model_64801_65200_v1.md",
+      "hash": "sha256:b42b617e107b4396d4d7c6b1169e0e8a781b2898f72273681176bbdc15c9dbec"
+    },
+    {
+      "name": "IFOS_vault_control_plane_api_v1.yaml",
+      "hash": "sha256:dbee1fe569be614ab2715fe3ab3a7ef6d3fc49bfd352fb97ed421b68ab1ddb31"
+    },
+    {
+      "name": "IFOS_vault_examples_64801_65200_v1.json",
+      "hash": "sha256:ff7a49972f0fddf61b993431e1d9fa4cd5dcbe416f1d0113ba23361b2694ade9"
+    },
+    {
+      "name": "IFOS_secret_schema_v1.json",
+      "hash": "sha256:9ccedb8df5193574d9e8cb2c9365c9d42378f3ec848d8f7c1b2f61e0c5d7e40f"
+    },
+    {
+      "name": "IFOS_secret_ref_schema_v1.json",
+      "hash": "sha256:d55b2a61c0f5bb93b332ecabb1282cf1ae38575b20d6c3c4cfdae0bec6632486"
+    },
+    {
+      "name": "IFOS_vault_policy_schema_v1.json",
+      "hash": "sha256:0b5965c93d79338c7138aeac17e3359a0e0c8612c7735d58ed96c6bc94bbf796"
+    },
+    {
+      "name": "IFOS_rotation_policy_schema_v1.json",
+      "hash": "sha256:acaa3e17e2f4f303a0d8d1de5fbcb796f98b2e932a5d3b85bbc3b7848ab1b69b"
+    },
+    {
+      "name": "IFOS_secret_access_grant_schema_v1.json",
+      "hash": "sha256:c5d97982d9aedc458dac9c83c663e1e953fea751be1f8c2f443a87f3fb742509"
+    },
+    {
+      "name": "IFOS_secret_audit_event_schema_v1.json",
+      "hash": "sha256:883976358e475eb4deaba742f21c2f67cf252e1b25e5a6912f7add328ef3f0d3"
+    },
+    {
+      "name": "IFOS_connector_credential_requirement_schema_v1.json",
+      "hash": "sha256:703c8fbf15807ac75c4d1a3a10a72883c30d3d51e3ae0148b73a8681a5624c95"
+    },
+    {
+      "name": "IFOS_test_key_schema_v1.json",
+      "hash": "sha256:1429e1de9ed8e98895a624a2bcf4587555034cbbbd0ab71eac2f957f43d5aa02"
+    },
+    {
+      "name": "IFOS_vault_profiles_seed_64801_65200_v1.csv",
+      "hash": "sha256:75703247e05e9ed268b40acbfe8aca951028416d1f7f172d04e81baaecb9e124"
+    },
+    {
+      "name": "IFOS_secret_types_seed_64801_65200_v1.csv",
+      "hash": "sha256:61426f508409c172075f67aa0374c27d8410b6120524de57f1bc54a38b8ccd7f"
+    },
+    {
+      "name": "IFOS_rotation_policies_seed_64801_65200_v1.csv",
+      "hash": "sha256:9cd91a84c7f1005f48f1b6fc809339ee416a3246a2ec59158333cf894f64cedd"
+    },
+    {
+      "name": "IFOS_vault_policies_seed_64801_65200_v1.csv",
+      "hash": "sha256:ebac31eaa17fb1881f85fa7a6f781dec574af972470e9bbe89526e9d13023b11"
+    },
+    {
+      "name": "IFOS_connector_credential_requirements_seed_64801_65200_v1.csv",
+      "hash": "sha256:80a0a9bb20b23981c99250adbe8439d4e562fbeda7b98a0218c752190000365b"
+    },
+    {
+      "name": "IFOS_test_keys_catalog_seed_64801_65200_v1.csv",
+      "hash": "sha256:8cf1e128fe55e6a8e06e7a4cf5dacd59eb75b2958e3f5d9834b31c845cd73ce7"
+    },
+    {
+      "name": "IFOS_vault_debug_playbook_seed_64801_65200_v1.csv",
+      "hash": "sha256:6c6b716a893a643cd2c1ae664a8fde1e954f81d228ccd4afcc58aa610a469ed8"
+    }
+  ],
+  "version": "1.0.0"
+}

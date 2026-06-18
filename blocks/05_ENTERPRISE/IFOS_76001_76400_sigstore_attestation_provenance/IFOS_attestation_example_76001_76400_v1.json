@@ -1,0 +1,53 @@
+{
+  "attestation_id": "ATT-2026-01-09-0001",
+  "artifact_ref": {
+    "artifact_type": "bundle",
+    "artifact_digest": "sha256:0123456789abcdefsha256:0123456789abcdefsha256:0123456789abcdefsha256:0123456789abcdef",
+    "artifact_uri": "ifos://registry/bundles/ifos.bundle.p0p1@sha256:...",
+    "producer": "workspace:acme-platform"
+  },
+  "predicate_type": "provenance",
+  "predicate_format": "slsa-provenance-v1",
+  "payload_ref": {
+    "kind": "inline",
+    "ref": {
+      "buildType": "https://github.com/actions/runner",
+      "builder": {
+        "id": "github-actions"
+      },
+      "invocation": {
+        "configSource": {
+          "uri": "git+https://github.com/acme/ifos-bundles",
+          "digest": {
+            "sha1": "deadbeef"
+          }
+        }
+      },
+      "metadata": {
+        "buildStartedOn": "2026-01-08T10:22:10Z",
+        "buildFinishedOn": "2026-01-08T10:30:42Z"
+      },
+      "materials": [
+        {
+          "uri": "git+https://github.com/acme/ifos-bundles",
+          "digest": {
+            "sha1": "deadbeef"
+          }
+        }
+      ]
+    }
+  },
+  "subject_identity": {
+    "mode": "keyless_oidc",
+    "issuer": "https://token.actions.githubusercontent.com",
+    "subject": "repo:acme/ifos-bundles:ref:refs/heads/main"
+  },
+  "transparency_log_entry": {
+    "log_id": "rekor-like",
+    "entry_index": 123456,
+    "entry_hash": "abc123"
+  },
+  "timestamp": "2026-01-08T10:31:10Z",
+  "verification_status": "verified",
+  "verification_reason": "Signature valid; provenance predicate present; policy POL-SC-001 satisfied."
+}

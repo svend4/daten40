@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ProcessingActivity Schema v1",
+  "type": "object",
+  "required": [
+    "activity_id",
+    "process",
+    "data_categories",
+    "purposes",
+    "retention",
+    "security_measures",
+    "lawful_basis",
+    "version"
+  ],
+  "properties": {
+    "activity_id": {
+      "type": "string"
+    },
+    "process": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "data_categories": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "purposes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "recipients": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "retention": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "security_measures": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "lawful_basis": {
+      "type": "string",
+      "enum": [
+        "consent",
+        "contract",
+        "legal_obligation",
+        "vital_interests",
+        "public_task",
+        "legitimate_interest"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

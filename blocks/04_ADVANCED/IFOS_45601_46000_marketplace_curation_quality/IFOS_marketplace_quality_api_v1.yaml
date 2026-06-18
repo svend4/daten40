@@ -1,0 +1,26 @@
+openapi: 3.0.3
+info:
+  title: IFOS Marketplace Quality API
+  version: "1.0.0"
+servers:
+  - url: https://marketplace.ifos.local/v1
+tags:
+  - name: Listings
+  - name: Badges
+  - name: Reviews
+  - name: Curation
+  - name: Moderation
+  - name: Scans
+paths:
+  /listings:
+    post: {tags:[Listings], summary: Create/update listing, responses: {"200": {description: OK}}}
+  /badges/assign:
+    post: {tags:[Badges], summary: Assign quality badges, responses: {"200": {description: OK}}}
+  /reviews:
+    post: {tags:[Reviews], summary: Create review, responses: {"201": {description: Created}}}
+  /curation/policy:
+    post: {tags:[Curation], summary: Upsert curation policy, responses: {"200": {description: OK}}}
+  /moderation/report:
+    post: {tags:[Moderation], summary: File abuse report, responses: {"201": {description: Created}}}
+  /scans/quality:
+    post: {tags:[Scans], summary: Trigger quality scan, responses: {"202": {description: Accepted}}}

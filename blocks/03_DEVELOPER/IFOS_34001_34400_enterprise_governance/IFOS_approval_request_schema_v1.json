@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ApprovalRequest Schema v1",
+  "type": "object",
+  "required": [
+    "request_id",
+    "tenant_id",
+    "requester",
+    "action",
+    "target",
+    "status",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "request_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "requester": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "install",
+        "run",
+        "publish",
+        "policy_exception"
+      ]
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "denied",
+        "changes_requested",
+        "expired"
+      ]
+    },
+    "flow_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "decisions": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expires_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

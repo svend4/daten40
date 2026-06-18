@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ChargebackRecord Schema v1",
+  "type": "object",
+  "required": [
+    "record_id",
+    "period",
+    "payer",
+    "asset",
+    "resources",
+    "total",
+    "currency",
+    "mode",
+    "version"
+  ],
+  "properties": {
+    "record_id": {
+      "type": "string"
+    },
+    "period": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "payer": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "asset": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "total": {
+      "type": "number",
+      "minimum": 0
+    },
+    "currency": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "showback",
+        "chargeback"
+      ]
+    },
+    "links": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

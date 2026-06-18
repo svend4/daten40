@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DigestJob Schema v1",
+  "type": "object",
+  "required": [
+    "job_id",
+    "recipe_id",
+    "period",
+    "format",
+    "schedule",
+    "exports",
+    "version"
+  ],
+  "properties": {
+    "job_id": {
+      "type": "string"
+    },
+    "recipe_id": {
+      "type": "string"
+    },
+    "period": {
+      "type": "string",
+      "enum": [
+        "daily",
+        "weekly",
+        "monthly"
+      ]
+    },
+    "format": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "schedule": {
+      "type": "string"
+    },
+    "exports": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

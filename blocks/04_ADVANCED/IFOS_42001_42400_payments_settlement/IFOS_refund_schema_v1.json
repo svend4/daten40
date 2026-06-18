@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Refund Schema v1",
+  "type": "object",
+  "required": [
+    "refund_id",
+    "intent_id",
+    "amount",
+    "currency",
+    "reason",
+    "status",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "refund_id": {
+      "type": "string"
+    },
+    "intent_id": {
+      "type": "string"
+    },
+    "invoice_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "amount": {
+      "type": "number"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string",
+      "enum": [
+        "service_issue",
+        "duplicate",
+        "policy",
+        "fraud_suspected",
+        "other"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "requested",
+        "approved",
+        "declined",
+        "processed",
+        "failed"
+      ]
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS AttestationRecord",
+  "type": "object",
+  "required": [
+    "attestation_id",
+    "artifact_ref",
+    "predicate_type",
+    "payload_ref",
+    "subject_identity",
+    "timestamp"
+  ],
+  "properties": {
+    "attestation_id": {
+      "type": "string"
+    },
+    "artifact_ref": {
+      "type": "object",
+      "required": [
+        "artifact_type",
+        "artifact_digest"
+      ],
+      "properties": {
+        "artifact_type": {
+          "type": "string",
+          "enum": [
+            "oci_image",
+            "bundle",
+            "connector",
+            "template",
+            "doc_pack"
+          ]
+        },
+        "artifact_digest": {
+          "type": "string"
+        },
+        "artifact_uri": {
+          "type": "string"
+        },
+        "producer": {
+          "type": "string"
+        }
+      }
+    },
+    "predicate_type": {
+      "type": "string",
+      "enum": [
+        "provenance",
+        "sbom",
+        "test_results",
+        "vuln_scan",
+        "license_report",
+        "custom"
+      ]
+    },
+    "predicate_format": {
+      "type": "string"
+    },
+    "payload_ref": {
+      "type": "object",
+      "required": [
+        "kind",
+        "ref"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "inline",
+            "object_store",
+            "registry",
+            "url"
+          ]
+        },
+        "ref": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string"
+        }
+      }
+    },
+    "subject_identity": {
+      "type": "object",
+      "required": [
+        "mode"
+      ],
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": [
+            "keyless_oidc",
+            "x509_cert",
+            "kms_key",
+            "pgp_key"
+          ]
+        },
+        "issuer": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "key_id": {
+          "type": "string"
+        },
+        "cert_fingerprint": {
+          "type": "string"
+        }
+      }
+    },
+    "transparency_log_entry": {
+      "type": "object",
+      "properties": {
+        "log_id": {
+          "type": "string"
+        },
+        "entry_index": {
+          "type": "integer"
+        },
+        "entry_hash": {
+          "type": "string"
+        }
+      }
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "verification_status": {
+      "type": "string",
+      "enum": [
+        "verified",
+        "failed",
+        "unknown"
+      ]
+    },
+    "verification_reason": {
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

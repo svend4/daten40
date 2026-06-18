@@ -1,0 +1,20 @@
+openapi: 3.0.3
+info:
+  title: IFOS Gateway & Egress Control Plane API
+  version: "1.0.0"
+servers:
+  - url: https://gateway.ifos.local/v1
+paths:
+  /routes:
+    get: {summary: List gateway routes, responses: {"200": {description: OK}}}
+    post: {summary: Create/update route, responses: {"200": {description: OK}}}
+  /sessions:
+    post: {summary: Issue short egress session (bound to sandbox attestation), responses: {"200": {description: OK}}}
+  /tickets:
+    post: {summary: Submit change ticket (add domain/raise quota), responses: {"200": {description: OK}}}
+  /logs/outbound:
+    get: {summary: Query outbound logs and receipts, responses: {"200": {description: OK}}}
+  /policies/dlp:
+    get: {summary: List DLP policies, responses: {"200": {description: OK}}}
+  /policies/tls:
+    get: {summary: List TLS policies, responses: {"200": {description: OK}}}

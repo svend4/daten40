@@ -1,0 +1,20 @@
+openapi: 3.0.3
+info:
+  title: IFOS Master Data API
+  version: "1.0.0"
+servers:
+  - url: https://mdm.ifos.local/v1
+tags:
+  - name: Entities
+  - name: Matching
+  - name: Stewardship
+  - name: ReferenceData
+paths:
+  /entities:
+    post: {tags:[Entities], summary: Upsert entity, responses: {"200": {description: OK}}}
+  /matching/link-candidates:
+    post: {tags:[Matching], summary: Generate link candidates, responses: {"200": {description: OK}}}
+  /steward/queue:
+    get: {tags:[Stewardship], summary: Get stewardship tasks, responses: {"200": {description: OK}}}
+  /reference-data/sets:
+    post: {tags:[ReferenceData], summary: Create reference set, responses: {"200": {description: OK}}}

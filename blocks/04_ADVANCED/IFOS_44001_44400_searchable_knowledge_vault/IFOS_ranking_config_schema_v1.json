@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RankingConfig Schema v1",
+  "type": "object",
+  "required": [
+    "config_id",
+    "weights",
+    "rules",
+    "version"
+  ],
+  "properties": {
+    "config_id": {
+      "type": "string"
+    },
+    "weights": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "rules": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "ab": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

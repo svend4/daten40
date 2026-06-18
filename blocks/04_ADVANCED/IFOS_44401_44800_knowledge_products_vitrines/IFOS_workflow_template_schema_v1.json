@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS WorkflowTemplate Schema v1",
+  "type": "object",
+  "required": [
+    "template_id",
+    "engine",
+    "title",
+    "io",
+    "nodes",
+    "edges",
+    "requirements",
+    "version"
+  ],
+  "properties": {
+    "template_id": {
+      "type": "string"
+    },
+    "engine": {
+      "type": "string",
+      "enum": [
+        "make",
+        "n8n",
+        "node_red",
+        "custom"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "io": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "requirements": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

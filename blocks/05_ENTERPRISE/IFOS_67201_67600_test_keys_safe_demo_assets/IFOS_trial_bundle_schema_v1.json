@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS TrialBundle Schema v1",
+  "type": "object",
+  "required": [
+    "bundle_id",
+    "name",
+    "connectors",
+    "demo_assets",
+    "steps",
+    "checks",
+    "policies",
+    "version"
+  ],
+  "properties": {
+    "bundle_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "connectors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "demo_assets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "policies": {
+      "type": "object",
+      "properties": {
+        "credential_policy_id": {
+          "type": "string"
+        },
+        "dlp_required": {
+          "type": "boolean"
+        },
+        "endpoint_allowlist_required": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "estimated_minutes": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 180
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

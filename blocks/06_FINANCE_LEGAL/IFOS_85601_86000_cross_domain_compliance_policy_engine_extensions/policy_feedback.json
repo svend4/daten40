@@ -1,0 +1,7 @@
+{
+  "ui_components": [
+    "PolicyViolationBanner",
+    "ExplainDecisionPanel",
+    "RequiredActionsChecklist"
+  ]
+}

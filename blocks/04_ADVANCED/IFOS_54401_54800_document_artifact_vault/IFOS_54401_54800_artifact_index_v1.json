@@ -1,0 +1,152 @@
+{
+  "artifact_set": "IFOS_54401_54800",
+  "entries": [
+    {
+      "name": "IFOS_document_artifact_vault_os_54401_54800_v1.md",
+      "ref": "file://IFOS_document_artifact_vault_os_54401_54800_v1.md",
+      "hash": "sha256:c7f1619de47207f19e64699b113116f22f0211903db2201f464f2bcc1ce67745"
+    },
+    {
+      "name": "IFOS_document_artifact_vault_api_v1.yaml",
+      "ref": "file://IFOS_document_artifact_vault_api_v1.yaml",
+      "hash": "sha256:b051eb120390fa08da982658aa65326df396dce8520d9cd9a717aadd02314c62"
+    },
+    {
+      "name": "IFOS_document_artifact_vault_examples_v1.json",
+      "ref": "file://IFOS_document_artifact_vault_examples_v1.json",
+      "hash": "sha256:3a8037bb21c52ad0679528c5729bcef3a8065513b0996101e7070fda2a8638a3"
+    },
+    {
+      "name": "IFOS_vault_retention_policies_seed_54401_54800_v1.csv",
+      "ref": "file://IFOS_vault_retention_policies_seed_54401_54800_v1.csv",
+      "hash": "sha256:c8f78a2d98a8c15ca4451a0d4cffd57bd7dbb212ca85b2eb0ecd047d6e4bfae9"
+    },
+    {
+      "name": "IFOS_vault_overview_spec_v1.md",
+      "ref": "file://IFOS_vault_overview_spec_v1.md",
+      "hash": "sha256:969892b08afad02bce0513a3b85b329b46ebe4f1bdbf0c6c38eb899a1d2f07eb"
+    },
+    {
+      "name": "IFOS_vault_object_model_spec_v1.md",
+      "ref": "file://IFOS_vault_object_model_spec_v1.md",
+      "hash": "sha256:2d01117a2df07ed74d138e22c7f6f7bdd1f0d8c6e8884dc3bf9fc63b1c4919d6"
+    },
+    {
+      "name": "IFOS_vault_storage_dedup_spec_v1.md",
+      "ref": "file://IFOS_vault_storage_dedup_spec_v1.md",
+      "hash": "sha256:cb0429d0170cd41701cc8d5b39b890dc30835e6bd17148e6633521dc9a1a0a80"
+    },
+    {
+      "name": "IFOS_vault_versioning_snapshots_spec_v1.md",
+      "ref": "file://IFOS_vault_versioning_snapshots_spec_v1.md",
+      "hash": "sha256:c49e0dd17e1d4994eeb06022a8298fe5904a76a55b5ed42db30a6710d9688ce1"
+    },
+    {
+      "name": "IFOS_vault_provenance_signatures_spec_v1.md",
+      "ref": "file://IFOS_vault_provenance_signatures_spec_v1.md",
+      "hash": "sha256:f1fb5becf17c694cb2bfc036bb7201608e256aecbaf82fc5cc468ff3f1b2a375"
+    },
+    {
+      "name": "IFOS_vault_access_sharing_spec_v1.md",
+      "ref": "file://IFOS_vault_access_sharing_spec_v1.md",
+      "hash": "sha256:d7a2ffbc09fdc661a901679d72e77bca5e910a94381c47153ff7db2b722e726c"
+    },
+    {
+      "name": "IFOS_vault_security_spec_v1.md",
+      "ref": "file://IFOS_vault_security_spec_v1.md",
+      "hash": "sha256:721c8906410e9faf87b35a06c845bfe684ce7f54f480a4fce527aeb2c0e9add9"
+    },
+    {
+      "name": "IFOS_vault_imports_spec_v1.md",
+      "ref": "file://IFOS_vault_imports_spec_v1.md",
+      "hash": "sha256:1559a176412bc6ba77d5400413512e38b0b02d897a09146ece876c39052a7265"
+    },
+    {
+      "name": "IFOS_vault_exports_packs_spec_v1.md",
+      "ref": "file://IFOS_vault_exports_packs_spec_v1.md",
+      "hash": "sha256:bfb3f809aa9f1a6f1d2f2fb13e40ed57dbd52124e5172aeb684ba500a25402d0"
+    },
+    {
+      "name": "IFOS_vault_retention_legal_hold_spec_v1.md",
+      "ref": "file://IFOS_vault_retention_legal_hold_spec_v1.md",
+      "hash": "sha256:ff42dde5d223230dabe6bd68c4e59a1ea716ac7cc54c8417a02fbd293e91f66f"
+    },
+    {
+      "name": "IFOS_vault_integrations_spec_v1.md",
+      "ref": "file://IFOS_vault_integrations_spec_v1.md",
+      "hash": "sha256:381dbe11177ea702fb9e7765b71b0efe638250b77315fe2cc6e0095b2f52ecfb"
+    },
+    {
+      "name": "IFOS_vault_perf_scaling_spec_v1.md",
+      "ref": "file://IFOS_vault_perf_scaling_spec_v1.md",
+      "hash": "sha256:0e2629a3466aa1800797c88293f037e50a48f8337e1b1271f20906a4edbd6294"
+    },
+    {
+      "name": "IFOS_vault_blob_schema_v1.json",
+      "ref": "file://IFOS_vault_blob_schema_v1.json",
+      "hash": "sha256:4752579055cbb965ddfeb733d0ad45034d6f1206f012aa1fbc868a3e27c7730e"
+    },
+    {
+      "name": "IFOS_vault_artifact_schema_v1.json",
+      "ref": "file://IFOS_vault_artifact_schema_v1.json",
+      "hash": "sha256:3702e12ea4a48f6cdb0d144276dbb3f39917dcfb84765fa8c6efc79d9e337d92"
+    },
+    {
+      "name": "IFOS_vault_bundle_pack_schema_v1.json",
+      "ref": "file://IFOS_vault_bundle_pack_schema_v1.json",
+      "hash": "sha256:5620df678f3aff26fed7bdd92fb6847b100dc0cbea54ecdd677f9c5c4d92ec7a"
+    },
+    {
+      "name": "IFOS_vault_snapshot_schema_v1.json",
+      "ref": "file://IFOS_vault_snapshot_schema_v1.json",
+      "hash": "sha256:f7b4515ceaa735738ac77d91ff5ba25ec111e5a6d8ec1b269a8a6637ccf7e49b"
+    },
+    {
+      "name": "IFOS_vault_provenance_record_schema_v1.json",
+      "ref": "file://IFOS_vault_provenance_record_schema_v1.json",
+      "hash": "sha256:2faf2581e191ee46d57ced62b1a1a0acc263e8770443f71ba3039bcb0cfbb50d"
+    },
+    {
+      "name": "IFOS_vault_signature_schema_v1.json",
+      "ref": "file://IFOS_vault_signature_schema_v1.json",
+      "hash": "sha256:9879e522c94c3a6cf58cc2fdaf76f90c0e5c4eff66850e2199d4849a5aa2e586"
+    },
+    {
+      "name": "IFOS_vault_share_link_schema_v1.json",
+      "ref": "file://IFOS_vault_share_link_schema_v1.json",
+      "hash": "sha256:870ecc3ffb6463df6dd01349f61bc1b339c452954eacde67fa65344e961e7799"
+    },
+    {
+      "name": "IFOS_vault_export_job_schema_v1.json",
+      "ref": "file://IFOS_vault_export_job_schema_v1.json",
+      "hash": "sha256:417d5ea10ae57794d4627c356917b1660c1051962d8f38391745ae5034eed902"
+    },
+    {
+      "name": "IFOS_vault_ingest_job_schema_v1.json",
+      "ref": "file://IFOS_vault_ingest_job_schema_v1.json",
+      "hash": "sha256:fd8cd319a44dd4770560f302e7eb4ff1246b99b3387b04345e0265dd94d4e8c3"
+    },
+    {
+      "name": "ifos_vault_content_hash_stub_v1.py",
+      "ref": "file://ifos_vault_content_hash_stub_v1.py",
+      "hash": "sha256:9df904bb07e980d753558071e520218c7f2a81529cc5792b5c606da32c9e775d"
+    },
+    {
+      "name": "ifos_vault_dedup_index_stub_v1.py",
+      "ref": "file://ifos_vault_dedup_index_stub_v1.py",
+      "hash": "sha256:545973c362ff49321f50a5f5225538b6ea7077d22fbc193b0d0caf143db844cb"
+    },
+    {
+      "name": "ifos_vault_signature_stub_v1.py",
+      "ref": "file://ifos_vault_signature_stub_v1.py",
+      "hash": "sha256:30a72dc40d53e61f7a1b1907cdfb3083ce0d4d733531ac7bc4449688753db031"
+    },
+    {
+      "name": "ifos_vault_packager_stub_v1.py",
+      "ref": "file://ifos_vault_packager_stub_v1.py",
+      "hash": "sha256:8a30268f4d880a32badafa539831bfc500b1063496d05c97e9959d104168afd4"
+    }
+  ],
+  "created_at": "2026-01-04T18:35:00Z",
+  "version": "1.0.0"
+}

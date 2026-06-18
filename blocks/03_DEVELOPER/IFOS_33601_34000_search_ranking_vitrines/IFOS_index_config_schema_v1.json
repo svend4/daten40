@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS IndexConfig Schema v1",
+  "type": "object",
+  "required": [
+    "index_id",
+    "fields",
+    "facets",
+    "weights",
+    "language",
+    "version"
+  ],
+  "properties": {
+    "index_id": {
+      "type": "string"
+    },
+    "fields": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "facets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "weights": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "language": {
+      "type": "object",
+      "properties": {
+        "supported": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+openapi: 3.0.3
+info:
+  title: IFOS Network Control Plane API
+  version: "1.0.0"
+servers:
+  - url: https://net.ifos.local/v1
+paths:
+  /envs:
+    get: {summary: List env profiles, responses: {"200": {description: OK}}}
+  /dns/plan:
+    post: {summary: Create DNS plan, responses: {"200": {description: OK}}}
+  /cert/plan:
+    post: {summary: Create certificate plan, responses: {"200": {description: OK}}}
+  /egress/policies:
+    get: {summary: List egress policies, responses: {"200": {description: OK}}}
+  /gateway/routes:
+    get: {summary: List gateway routes, responses: {"200": {description: OK}}}
+  /trace/report:
+    post: {summary: Submit network trace report, responses: {"200": {description: OK}}}

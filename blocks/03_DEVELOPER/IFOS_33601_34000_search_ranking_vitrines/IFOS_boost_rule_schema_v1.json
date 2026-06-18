@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS BoostRule Schema v1",
+  "type": "object",
+  "required": [
+    "boost_id",
+    "when",
+    "effect",
+    "version"
+  ],
+  "properties": {
+    "boost_id": {
+      "type": "string"
+    },
+    "when": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "effect": {
+      "type": "object",
+      "properties": {
+        "boost": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "penalty": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "pin": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SearchHit Schema v1",
+  "type": "object",
+  "required": [
+    "id",
+    "kind",
+    "title",
+    "score",
+    "highlights",
+    "signals",
+    "explain",
+    "version"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "score": {
+      "type": "number"
+    },
+    "highlights": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "signals": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "explain": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

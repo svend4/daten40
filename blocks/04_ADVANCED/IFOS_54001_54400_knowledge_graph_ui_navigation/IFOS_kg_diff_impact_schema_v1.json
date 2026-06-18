@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Diff Impact Schema v1",
+  "type": "object",
+  "required": [
+    "diff_id",
+    "node_id",
+    "diff",
+    "impact_report_id",
+    "version"
+  ],
+  "properties": {
+    "diff_id": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "diff": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "impact_report_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

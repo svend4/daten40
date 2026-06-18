@@ -1,0 +1,22 @@
+{
+  "pack_id": "cp_evidence_storage_registry_service",
+  "name": "Compliance Evidence Storage + Evidence Registry Service",
+  "version": "1.0.0",
+  "status": "production",
+  "layer": "ComplianceEvidence",
+  "compatibility": {
+    "ifos_min_version": "v30",
+    "required_blocks": [
+      "IFOS_00001_00400",
+      "IFOS_85601_86000",
+      "IFOS_86001_86400"
+    ]
+  },
+  "exports": [
+    "evidence.register.append",
+    "evidence.register.query",
+    "evidence.artifact.store",
+    "evidence.artifact.verify",
+    "evidence.export.audit_pack"
+  ]
+}

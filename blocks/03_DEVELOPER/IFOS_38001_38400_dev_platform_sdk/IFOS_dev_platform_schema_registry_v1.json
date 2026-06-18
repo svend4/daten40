@@ -1,0 +1,57 @@
+{
+  "registry_id": "reg.dev.kn4gg9hyae1l",
+  "entries": [
+    {
+      "name": "IFOS_plugin_manifest_schema_v1.json",
+      "ref": "file://IFOS_plugin_manifest_schema_v1.json",
+      "hash": "sha256:58357096f956b924b3fb1d4f73573e50fdd8a9022d8c039af2947aacd2e1b36a"
+    },
+    {
+      "name": "IFOS_sdk_profile_schema_v1.json",
+      "ref": "file://IFOS_sdk_profile_schema_v1.json",
+      "hash": "sha256:69cbabff77f97a4fd174aa14416b9efc85fd7c148c5461c2637d182b4755ce70"
+    },
+    {
+      "name": "IFOS_sdk_package_schema_v1.json",
+      "ref": "file://IFOS_sdk_package_schema_v1.json",
+      "hash": "sha256:b021e47e7e28b84544ac354a4c5500e9355e52a38b533d7cc5f5ad30dc86341a"
+    },
+    {
+      "name": "IFOS_template_pack_schema_v1.json",
+      "ref": "file://IFOS_template_pack_schema_v1.json",
+      "hash": "sha256:cc557df843019b22dbbeaaa280a18885910a7e709e26589e96c30cc880b5572f"
+    },
+    {
+      "name": "IFOS_scaffold_request_schema_v1.json",
+      "ref": "file://IFOS_scaffold_request_schema_v1.json",
+      "hash": "sha256:1326db977de15f57ea6c68ae7757b131474d36a398e4e464092e0e9042f12583"
+    },
+    {
+      "name": "IFOS_scaffold_result_schema_v1.json",
+      "ref": "file://IFOS_scaffold_result_schema_v1.json",
+      "hash": "sha256:1aefb2e7e9822a0bed142d613318f4dce6835b56e250ee1a7841b8feb6282be9"
+    },
+    {
+      "name": "IFOS_sandbox_env_schema_v1.json",
+      "ref": "file://IFOS_sandbox_env_schema_v1.json",
+      "hash": "sha256:4e5f08743de08bea31a2768fb3e89ad54f2451a1d2bf79c67346e09ef879fa43"
+    },
+    {
+      "name": "IFOS_contract_test_schema_v1.json",
+      "ref": "file://IFOS_contract_test_schema_v1.json",
+      "hash": "sha256:b4da6d9cefce14879cf5aebb78c669059acd5877c701bc938f570e8c8ecf1bc9"
+    },
+    {
+      "name": "IFOS_marketplace_publishing_job_schema_v1.json",
+      "ref": "file://IFOS_marketplace_publishing_job_schema_v1.json",
+      "hash": "sha256:9a3a8a9f25f0fbff109f0d3b8b5e171467982d91ab3f1a673f28e2846c3798fe"
+    },
+    {
+      "name": "IFOS_compatibility_matrix_schema_v1.json",
+      "ref": "file://IFOS_compatibility_matrix_schema_v1.json",
+      "hash": "sha256:6d7a3277a1717814a1566262081af742455257bb33040e49b99db1aca81f7d4d"
+    }
+  ],
+  "updated_at": "2026-01-03T17:05:00Z",
+  "version": "1.0.0"
+}

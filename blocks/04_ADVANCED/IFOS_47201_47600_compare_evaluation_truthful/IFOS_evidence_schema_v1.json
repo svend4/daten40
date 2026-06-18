@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Evidence Schema v1",
+  "type": "object",
+  "required": [
+    "evidence_id",
+    "claim_id",
+    "url",
+    "snippet",
+    "offsets",
+    "raw_hash",
+    "kind",
+    "version"
+  ],
+  "properties": {
+    "evidence_id": {
+      "type": "string"
+    },
+    "claim_id": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "snippet": {
+      "type": "string"
+    },
+    "offsets": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "raw_hash": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "primary",
+        "secondary",
+        "pr",
+        "unknown"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

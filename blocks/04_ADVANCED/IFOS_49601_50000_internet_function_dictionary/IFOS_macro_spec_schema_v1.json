@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS MacroSpec Schema v1",
+  "type": "object",
+  "required": [
+    "macro_id",
+    "name",
+    "steps",
+    "gates",
+    "exports",
+    "version"
+  ],
+  "properties": {
+    "macro_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "gates": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "exports": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

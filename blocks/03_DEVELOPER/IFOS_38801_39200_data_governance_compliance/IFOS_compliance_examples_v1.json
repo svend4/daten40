@@ -1,0 +1,207 @@
+{
+  "data_classification": {
+    "classification_id": "cls.c.9unmzufzh72z",
+    "resource": {
+      "type": "dataset",
+      "id": "ds.leads"
+    },
+    "level": "CONFIDENTIAL",
+    "tags": [
+      "PII",
+      "CRM"
+    ],
+    "pii": true,
+    "special_category": false,
+    "version": "1.0.0"
+  },
+  "consent_record": {
+    "consent_id": "cons.c.8gp02xkwf070",
+    "subject_id": "person.p.qeigf0ghq1e0",
+    "purpose": [
+      "support",
+      "service_delivery"
+    ],
+    "processors": [
+      "ifos.core",
+      "crm.external"
+    ],
+    "granted_at": "2026-01-03T19:15:00Z",
+    "expires_at": null,
+    "withdrawn_at": null,
+    "evidence": {
+      "form_id": "form.consent.v1",
+      "snapshot_hash": "sha256:..."
+    },
+    "status": "granted",
+    "version": "1.0.0"
+  },
+  "retention_policy": {
+    "policy_id": "ret.r.1bdod5rsvoso",
+    "scope": {
+      "tenant_id": "ten.t.k6e9xsu8d3e3"
+    },
+    "rules": [
+      {
+        "match": {
+          "tag": "PII"
+        },
+        "retain_for_days": 365,
+        "action": "anonymize",
+        "exceptions": {
+          "if_legal_hold": true
+        }
+      },
+      {
+        "match": {
+          "type": "audit_log"
+        },
+        "retain_for_days": 730,
+        "action": "archive",
+        "exceptions": {
+          "if_legal_hold": true
+        }
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "deletion_job": {
+    "job_id": "del.d.m1kuceghi3wj",
+    "scope": {
+      "dataset": "ds.leads",
+      "where": {
+        "older_than_days": 730
+      }
+    },
+    "requested_by": "user.admin",
+    "requested_at": "2026-01-03T19:15:00Z",
+    "approvals": [
+      {
+        "by": "dpo",
+        "ts": "2026-01-03T19:15:00Z"
+      }
+    ],
+    "status": "queued",
+    "report": null,
+    "version": "1.0.0"
+  },
+  "dlp_policy": {
+    "dlp_policy_id": "dlp.d.i52biwuya0pa",
+    "mode": "block",
+    "rules": [
+      {
+        "pattern": "IBAN",
+        "action": "redact",
+        "severity": "high",
+        "scope": {
+          "egress": "webhook"
+        }
+      },
+      {
+        "pattern": "EMAIL",
+        "action": "allow",
+        "severity": "low",
+        "scope": {
+          "egress": "report"
+        }
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "license_record": {
+    "license_id": "lic.l.88jwb83oxiak",
+    "source": {
+      "type": "repo",
+      "url": "https://example/repo"
+    },
+    "license": "Apache-2.0",
+    "constraints": {
+      "attribution_required": true
+    },
+    "attribution": {
+      "notice_file": "NOTICE"
+    },
+    "compatibility": {
+      "ok_with": [
+        "Apache-2.0",
+        "MIT"
+      ]
+    },
+    "version": "1.0.0"
+  },
+  "export_request": {
+    "export_id": "exp.e.36tq6fgq9rpv",
+    "scope": {
+      "project": "Office2",
+      "include": [
+        "registry",
+        "runs"
+      ]
+    },
+    "format": "bundle",
+    "options": {
+      "mask_pii": true,
+      "sign": true
+    },
+    "requested_by": "user.owner",
+    "requested_at": "2026-01-03T19:15:00Z",
+    "status": "queued",
+    "artifact": null,
+    "version": "1.0.0"
+  },
+  "audit_event": {
+    "audit_id": "aud.a.rcm30tfjseqh",
+    "ts": "2026-01-03T19:15:00Z",
+    "actor": {
+      "user": "user.owner",
+      "role": "admin"
+    },
+    "action": "workflow.run",
+    "resource": {
+      "type": "workflow",
+      "id": "wf.import_csv_dedup"
+    },
+    "context": {
+      "ip": "127.0.0.1",
+      "device": "web"
+    },
+    "result": "success",
+    "version": "1.0.0"
+  },
+  "legal_hold": {
+    "hold_id": "hold.h.xje23qvn0uhv",
+    "reason": "Dispute case #2026-001",
+    "scope": {
+      "datasets": [
+        "ds.leads"
+      ],
+      "projects": [
+        "Office2"
+      ]
+    },
+    "status": "active",
+    "created_at": "2026-01-03T19:15:00Z",
+    "released_at": null,
+    "owner": "dpo",
+    "version": "1.0.0"
+  },
+  "policy_pack": {
+    "pack_id": "pack.p.5sveu5amn4md",
+    "name": "GDPR Default Pack",
+    "defaults": {
+      "dlp_mode": "block",
+      "pii_mask_exports": true,
+      "retention_default_days": 365
+    },
+    "checklists": [
+      {
+        "name": "Subject Access Request",
+        "steps": [
+          "export",
+          "redact",
+          "audit"
+        ]
+      }
+    ],
+    "version": "1.0.0"
+  }
+}

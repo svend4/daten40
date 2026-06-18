@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Alert Schema v1",
+  "type": "object",
+  "required": [
+    "alert_id",
+    "severity",
+    "signal",
+    "group",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "alert_id": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "signal": {
+      "type": "string"
+    },
+    "group": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "ack",
+        "resolved",
+        "suppressed"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

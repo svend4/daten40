@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS TrustSignal Schema v1",
+  "type": "object",
+  "required": [
+    "signal_id",
+    "item_id",
+    "kind",
+    "value",
+    "weight",
+    "observed_at",
+    "version"
+  ],
+  "properties": {
+    "signal_id": {
+      "type": "string"
+    },
+    "item_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "maintainer_verified",
+        "signed_build",
+        "known_vulns",
+        "popularity",
+        "review_quality",
+        "doc_completeness",
+        "support_responsiveness",
+        "license_clarity",
+        "supply_chain_risk"
+      ]
+    },
+    "value": {},
+    "weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

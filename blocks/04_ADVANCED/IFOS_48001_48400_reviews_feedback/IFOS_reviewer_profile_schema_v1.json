@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ReviewerProfile Schema v1",
+  "type": "object",
+  "required": [
+    "author_id",
+    "created_at",
+    "verification_level",
+    "stats",
+    "version"
+  ],
+  "properties": {
+    "author_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "verification_level": {
+      "type": "string",
+      "enum": [
+        "unverified",
+        "verified_usage",
+        "verified_purchase"
+      ]
+    },
+    "stats": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

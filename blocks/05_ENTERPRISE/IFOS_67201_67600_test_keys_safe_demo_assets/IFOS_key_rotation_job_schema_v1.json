@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS KeyRotationJob Schema v1",
+  "type": "object",
+  "required": [
+    "job_id",
+    "policy_id",
+    "provider_id",
+    "schedule",
+    "actions",
+    "version"
+  ],
+  "properties": {
+    "job_id": {
+      "type": "string"
+    },
+    "policy_id": {
+      "type": "string"
+    },
+    "provider_id": {
+      "type": "string"
+    },
+    "schedule": {
+      "type": "string"
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "reissue_key",
+          "reissue_oauth_client_secret",
+          "rotate_webhook_secret",
+          "invalidate_old",
+          "notify_owner"
+        ]
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

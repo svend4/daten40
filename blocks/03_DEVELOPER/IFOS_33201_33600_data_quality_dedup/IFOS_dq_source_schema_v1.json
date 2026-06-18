@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DQSource Schema v1",
+  "type": "object",
+  "required": [
+    "source_id",
+    "kind",
+    "mode",
+    "priority",
+    "base_url",
+    "version"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "github_repo",
+        "wp_directory",
+        "make_templates",
+        "app_store",
+        "custom_feed",
+        "manual_upload"
+      ]
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "full_scan",
+        "incremental"
+      ]
+    },
+    "priority": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "base_url": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "auth": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

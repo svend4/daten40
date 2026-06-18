@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS VerificationPolicy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "channel",
+    "requirements",
+    "denylists",
+    "min_trust_score",
+    "version_schema"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "channel": {
+      "type": "string",
+      "enum": [
+        "private",
+        "public",
+        "partner"
+      ]
+    },
+    "requirements": {
+      "type": "object",
+      "properties": {
+        "manifest_required": {
+          "type": "boolean"
+        },
+        "sbom_required": {
+          "type": "boolean"
+        },
+        "provenance_required": {
+          "type": "boolean"
+        },
+        "signature_required": {
+          "type": "boolean"
+        },
+        "reproducible_required": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "denylists": {
+      "type": "object",
+      "properties": {
+        "licenses": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "packages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "domains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "min_trust_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "version_schema": {
+      "type": "string",
+      "const": "1.0.0"
+    }
+  }
+}

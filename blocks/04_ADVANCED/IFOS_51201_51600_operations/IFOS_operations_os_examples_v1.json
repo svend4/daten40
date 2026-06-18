@@ -1,0 +1,75 @@
+{
+  "slo": {
+    "slo_id": "slo.s.dwgnv8r7b70r",
+    "service_id": "svc.news_pipeline",
+    "slis": [
+      "run_success_rate",
+      "p95_latency_sec"
+    ],
+    "slo_targets": {
+      "run_success_rate": 0.99,
+      "p95_latency_sec": 30
+    },
+    "error_budget": {
+      "window_days": 28,
+      "burn_alerts": [
+        0.5,
+        1.0
+      ]
+    },
+    "version": "1.0.0"
+  },
+  "alert": {
+    "alert_id": "al.a.11rmfcpcww2b",
+    "severity": "high",
+    "signal": "run_success_rate_below_slo",
+    "group": "svc.news_pipeline",
+    "status": "open",
+    "version": "1.0.0"
+  },
+  "runbook": {
+    "runbook_id": "rb.rss.telegram.auth",
+    "symptoms": [
+      "401 from Telegram API",
+      "messages not delivered"
+    ],
+    "checks": [
+      "verify token present",
+      "check rate limits",
+      "check network"
+    ],
+    "fixes": [
+      "re-auth connector",
+      "rotate token",
+      "reduce send rate"
+    ],
+    "verify": [
+      "send test message",
+      "monitor success rate 10min"
+    ],
+    "rollback": "restore previous connector credentials",
+    "version": "1.0.0"
+  },
+  "cost_budget": {
+    "budget_id": "bud.b.vqouhl3o3a5s",
+    "scope": "project.news",
+    "limit": 30,
+    "period": "monthly",
+    "actions": [
+      "alert",
+      "safe_mode"
+    ],
+    "version": "1.0.0"
+  },
+  "backup_plan": {
+    "backup_id": "bak.k.uhvsi0sqoo9k",
+    "scope": "project.news",
+    "destinations": [
+      "s3://backup-bucket/news",
+      "gdrive://folder/ifos_backups"
+    ],
+    "frequency": "daily@02:00",
+    "restore_test": "weekly",
+    "version": "1.0.0"
+  }
+}

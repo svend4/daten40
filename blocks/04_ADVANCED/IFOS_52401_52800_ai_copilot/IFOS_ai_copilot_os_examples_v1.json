@@ -1,0 +1,66 @@
+{
+  "intent": {
+    "intent_id": "int.i.a0zo6ohzl6zi",
+    "goal": "News ingestion → clustering → summary → editor approval → publish",
+    "inputs": [
+      "rss",
+      "web"
+    ],
+    "constraints": {
+      "lang": "ru",
+      "budget_monthly_eur": 20,
+      "privacy": "no_pii_external"
+    },
+    "version": "1.0.0"
+  },
+  "plan": {
+    "plan_id": "plan.p.gd3jzv1uuker",
+    "intent_id": "int.example",
+    "level": "medium",
+    "bundles": [
+      "bun.rss_ingest",
+      "bun.cluster",
+      "bun.summarize",
+      "bun.publish_wp"
+    ],
+    "processes": [
+      "proc.news_review_publish"
+    ],
+    "policies": [
+      "pol.no_pii_external_llm",
+      "pol.factcheck_required"
+    ],
+    "estimates": {
+      "runs_per_day": 20,
+      "cost_est_eur_month": 12
+    },
+    "version": "1.0.0"
+  },
+  "lint": {
+    "lint_id": "lint.l.c2m36yz8l2r4",
+    "severity": "warn",
+    "message": "No rollback step defined for publish_wp bundle",
+    "autofix": {
+      "add_step": "bun.publish_wp.rollback"
+    },
+    "version": "1.0.0"
+  },
+  "explain": {
+    "explain_id": "why.w.63bzjkkj9qn2",
+    "plan_id": "plan.example",
+    "why": [
+      "Selected RSS ingest because inputs include rss and provides stable IDs"
+    ],
+    "alternatives": [
+      "Use web scraping ingest (higher maintenance)"
+    ],
+    "risks": [
+      "Publisher rate limits"
+    ],
+    "actions": [
+      "Configure backoff=exponential",
+      "Set budget cap=20€/month"
+    ],
+    "version": "1.0.0"
+  }
+}

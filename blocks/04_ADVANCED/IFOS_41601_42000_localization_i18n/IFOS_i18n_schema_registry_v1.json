@@ -1,0 +1,57 @@
+{
+  "registry_id": "reg.i18n.fsnjiubgndz4",
+  "entries": [
+    {
+      "name": "IFOS_locale_profile_schema_v1.json",
+      "ref": "file://IFOS_locale_profile_schema_v1.json",
+      "hash": "sha256:145497fb781e6c23858771e29b0503ceaa8d74b31fe66643eb3f28a7efc3d92a"
+    },
+    {
+      "name": "IFOS_translation_key_schema_v1.json",
+      "ref": "file://IFOS_translation_key_schema_v1.json",
+      "hash": "sha256:8c69e3d09f63060520756b3110cae2b1afa3f15f8f3bdae8eb9ab86f066536a9"
+    },
+    {
+      "name": "IFOS_translation_bundle_schema_v1.json",
+      "ref": "file://IFOS_translation_bundle_schema_v1.json",
+      "hash": "sha256:2125d76f0edbdf5f21cbde50ee4269334ac8bfdade80e2db597f7e1616813a90"
+    },
+    {
+      "name": "IFOS_formatting_rules_schema_v1.json",
+      "ref": "file://IFOS_formatting_rules_schema_v1.json",
+      "hash": "sha256:9f92b1accbc083f7e74210fc00865e766c09aedf059eea4317fb6dda1911bf5e"
+    },
+    {
+      "name": "IFOS_currency_fx_schema_v1.json",
+      "ref": "file://IFOS_currency_fx_schema_v1.json",
+      "hash": "sha256:65defb6b53a05f058bb5983fd7334c50fbef4a970cd0201216bc000fcbf77ef2"
+    },
+    {
+      "name": "IFOS_legal_zone_schema_v1.json",
+      "ref": "file://IFOS_legal_zone_schema_v1.json",
+      "hash": "sha256:a3ff9f3c420499fa900a67be366758ec09edbb1ed2a6f7b7f7de8488b554df33"
+    },
+    {
+      "name": "IFOS_content_policy_zone_schema_v1.json",
+      "ref": "file://IFOS_content_policy_zone_schema_v1.json",
+      "hash": "sha256:4972f653e11641c2dd34d320e72456a25b7427fca4b53497832e450891571822"
+    },
+    {
+      "name": "IFOS_vitrine_locale_config_schema_v1.json",
+      "ref": "file://IFOS_vitrine_locale_config_schema_v1.json",
+      "hash": "sha256:1b11f0bf29ee80a324504d39866499824e2aef40131dca402cbd2d082d15090f"
+    },
+    {
+      "name": "IFOS_locale_ranking_policy_schema_v1.json",
+      "ref": "file://IFOS_locale_ranking_policy_schema_v1.json",
+      "hash": "sha256:d68a2355e8efdec0ee8dc3ed71308bbe054b820287d9ebd360a391a1930dac1c"
+    },
+    {
+      "name": "IFOS_locale_fallbacks_schema_v1.json",
+      "ref": "file://IFOS_locale_fallbacks_schema_v1.json",
+      "hash": "sha256:0569982fd77b6a37b000c9c5db302cbb915b0cfdda1c4d806acb9a8d6be9b5d6"
+    }
+  ],
+  "updated_at": "2026-01-04T00:45:00Z",
+  "version": "1.0.0"
+}

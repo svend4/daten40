@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Entity Link Schema v1",
+  "type": "object",
+  "required": [
+    "link_id",
+    "a",
+    "b",
+    "score",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "link_id": {
+      "type": "string"
+    },
+    "a": {
+      "type": "string"
+    },
+    "b": {
+      "type": "string"
+    },
+    "score": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "candidate",
+        "confirmed",
+        "rejected"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

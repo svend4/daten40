@@ -1,0 +1,23 @@
+openapi: 3.0.3
+info:
+  title: IFOS Adoption OS API
+  version: "1.0.0"
+servers:
+  - url: https://adoption.ifos.local/v1
+tags:
+  - name: Plans
+  - name: Templates
+  - name: ROI
+  - name: Training
+  - name: Migration
+paths:
+  /plans:
+    post: {tags:[Plans], summary: Create adoption plan, responses: {"200": {description: OK}}}
+  /template-packs:
+    get: {tags:[Templates], summary: List template packs, responses: {"200": {description: OK}}}
+  /roi/compute:
+    post: {tags:[ROI], summary: Compute ROI, responses: {"200": {description: OK}}}
+  /training/schedule:
+    post: {tags:[Training], summary: Schedule training, responses: {"200": {description: OK}}}
+  /migration/run:
+    post: {tags:[Migration], summary: Run migration job, responses: {"200": {description: OK}}}

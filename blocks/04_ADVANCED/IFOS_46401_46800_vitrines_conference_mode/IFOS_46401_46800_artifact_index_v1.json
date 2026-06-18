@@ -1,0 +1,142 @@
+{
+  "artifact_set": "IFOS_46401_46800",
+  "entries": [
+    {
+      "name": "IFOS_vitrines_conference_mode_os_46401_46800_v1.md",
+      "ref": "file://IFOS_vitrines_conference_mode_os_46401_46800_v1.md",
+      "hash": "sha256:5fdb9102f033f6f64bfb54f298bfbf05bc9e682131f7ed78eb2fd94e442ace8c"
+    },
+    {
+      "name": "IFOS_vitrines_conference_api_v1.yaml",
+      "ref": "file://IFOS_vitrines_conference_api_v1.yaml",
+      "hash": "sha256:582f843b51c15b7dc599dd8eaaced8826d1a3f20c49be4e6a3c7b15590f912ee"
+    },
+    {
+      "name": "IFOS_vitrines_conference_examples_v1.json",
+      "ref": "file://IFOS_vitrines_conference_examples_v1.json",
+      "hash": "sha256:00dc34e37c03d59065faebb2cdc9b6e5be8d7eda1f3c66ad6a981bae424b048d"
+    },
+    {
+      "name": "IFOS_vitrine_schema_v1.json",
+      "ref": "file://IFOS_vitrine_schema_v1.json",
+      "hash": "sha256:a81d06155d1490aa2550b155846910851b01c191cde767ed1c69efee296da831"
+    },
+    {
+      "name": "IFOS_vitrine_block_schema_v1.json",
+      "ref": "file://IFOS_vitrine_block_schema_v1.json",
+      "hash": "sha256:3488ea12bde88bb0c3a8bf5ea261777f6e760478b8d01a156de7ec9af180476b"
+    },
+    {
+      "name": "IFOS_query_recipe_schema_v1.json",
+      "ref": "file://IFOS_query_recipe_schema_v1.json",
+      "hash": "sha256:4f1d8166f105bc5b86b5e3220a7c0b2c439bf4ed06f777b4dd25282205a72fbf"
+    },
+    {
+      "name": "IFOS_comparison_panel_schema_v1.json",
+      "ref": "file://IFOS_comparison_panel_schema_v1.json",
+      "hash": "sha256:7755e4de823005298b30d30c72374195c4a80b4d4729132f53a5ec4298e23ab1"
+    },
+    {
+      "name": "IFOS_conference_agenda_schema_v1.json",
+      "ref": "file://IFOS_conference_agenda_schema_v1.json",
+      "hash": "sha256:34ea31a5a10919b7a145f66b36e84c07e28c91aad256fbbc114eec4a20229772"
+    },
+    {
+      "name": "IFOS_digest_job_schema_v1.json",
+      "ref": "file://IFOS_digest_job_schema_v1.json",
+      "hash": "sha256:27ed66ee7632ab3d61137ad7f60124fcbf0ff80fae1e3a4501f6b59e8380949a"
+    },
+    {
+      "name": "IFOS_story_cluster_schema_v1.json",
+      "ref": "file://IFOS_story_cluster_schema_v1.json",
+      "hash": "sha256:b8922a9626c8780d28febb24c703b45a01051e5ea97765a93ea30be849d53382"
+    },
+    {
+      "name": "IFOS_source_credibility_schema_v1.json",
+      "ref": "file://IFOS_source_credibility_schema_v1.json",
+      "hash": "sha256:5f42aeb2010ea1032f43a2d4eae8465f56e305966a89932bf60f9afae3a86482"
+    },
+    {
+      "name": "IFOS_editor_annotation_schema_v1.json",
+      "ref": "file://IFOS_editor_annotation_schema_v1.json",
+      "hash": "sha256:663d2dde86abc142ec6fc2cc5bb2d9b1e44ae8f1ea4cdb726e37d76108875be5"
+    },
+    {
+      "name": "IFOS_item_update_event_schema_v1.json",
+      "ref": "file://IFOS_item_update_event_schema_v1.json",
+      "hash": "sha256:163f92b2f7135d280da8a84bcd23f8be2f3b0cd9e839d78832df6f8765b957c1"
+    },
+    {
+      "name": "IFOS_fact_pack_schema_v1.json",
+      "ref": "file://IFOS_fact_pack_schema_v1.json",
+      "hash": "sha256:ea20d606c987d4d637c8f34cd6e77c26d2b4fbb544b31d99d6bc58f0250491a9"
+    },
+    {
+      "name": "IFOS_news_quality_guardrails_schema_v1.json",
+      "ref": "file://IFOS_news_quality_guardrails_schema_v1.json",
+      "hash": "sha256:16cb633226d930b7bea0a35b018c4957102f8c49e9d4d81b4d26d7b9f6f2c829"
+    },
+    {
+      "name": "IFOS_vitrine_export_schema_v1.json",
+      "ref": "file://IFOS_vitrine_export_schema_v1.json",
+      "hash": "sha256:cd8481a8a837f160c187dad62839679fc430f6f19a26fe540eff0c3aba95eee4"
+    },
+    {
+      "name": "IFOS_vitrine_composer_spec_v1.md",
+      "ref": "file://IFOS_vitrine_composer_spec_v1.md",
+      "hash": "sha256:cf7ed119f6bc0d3647111e4c262f4af5c3d155c9653072154a3da79626491841"
+    },
+    {
+      "name": "IFOS_conference_mode_spec_v1.md",
+      "ref": "file://IFOS_conference_mode_spec_v1.md",
+      "hash": "sha256:7c098db90a62613187106c2627e839a81f9ff23ed48d88390f8a2892e488ba9d"
+    },
+    {
+      "name": "IFOS_digest_pipeline_spec_v1.md",
+      "ref": "file://IFOS_digest_pipeline_spec_v1.md",
+      "hash": "sha256:6372b097e492f3eedf47e35a1dc9ab0e02e62465b641d6619f50bb2862b3e168"
+    },
+    {
+      "name": "IFOS_compare_panels_spec_v1.md",
+      "ref": "file://IFOS_compare_panels_spec_v1.md",
+      "hash": "sha256:af35f26d465d6cb1673c105e465d113ec07b24087b03d2ee9b06f760e4dffab4"
+    },
+    {
+      "name": "IFOS_story_clustering_dedup_spec_v1.md",
+      "ref": "file://IFOS_story_clustering_dedup_spec_v1.md",
+      "hash": "sha256:a5840ded16ba1a90e0394e1c19e40bd6fc83f5d5a9167359f351af25dc6afa21"
+    },
+    {
+      "name": "IFOS_source_credibility_spec_v1.md",
+      "ref": "file://IFOS_source_credibility_spec_v1.md",
+      "hash": "sha256:fe31a315fe12db222a4fdaec4b04bfdd525b972cd288cc4a4f03cb9e7849c2f7"
+    },
+    {
+      "name": "IFOS_vitrine_exports_spec_v1.md",
+      "ref": "file://IFOS_vitrine_exports_spec_v1.md",
+      "hash": "sha256:b9fd395b44e30b460f4fa9b892534d27521b80336548ca4947616a86c5d4a2cd"
+    },
+    {
+      "name": "ifos_story_clusterer_stub_v1.py",
+      "ref": "file://ifos_story_clusterer_stub_v1.py",
+      "hash": "sha256:388829c6b51d2c8e5e2627a4161dc175b65c584f389c6015b6dceddba627d8fd"
+    },
+    {
+      "name": "ifos_digest_builder_stub_v1.py",
+      "ref": "file://ifos_digest_builder_stub_v1.py",
+      "hash": "sha256:99dd0ef5bed90049bc88f71f5fae795f4a4e1d66a719b3d1e2ee67033e7209c2"
+    },
+    {
+      "name": "ifos_compare_panel_stub_v1.py",
+      "ref": "file://ifos_compare_panel_stub_v1.py",
+      "hash": "sha256:00e66c375a97fd1d403844613f8e78d38f5ec4c1ebeb65fe40cdd3759b86fc31"
+    },
+    {
+      "name": "ifos_conference_agenda_stub_v1.py",
+      "ref": "file://ifos_conference_agenda_stub_v1.py",
+      "hash": "sha256:1196142ccdc03e377f2480ee1ff4f603b64805a7f00ce57848d2e02f2400bad1"
+    }
+  ],
+  "created_at": "2026-01-04T08:20:00Z",
+  "version": "1.0.0"
+}

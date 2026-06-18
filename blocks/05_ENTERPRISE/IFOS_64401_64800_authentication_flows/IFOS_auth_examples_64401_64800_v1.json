@@ -1,0 +1,25 @@
+{
+  "pkce_notes": {
+    "client_generates": [
+      "code_verifier",
+      "code_challenge"
+    ],
+    "requires": [
+      "nonce",
+      "state"
+    ],
+    "exchange": "authorization_code -> access+refresh",
+    "store": "refresh in httpOnly cookie (web) or secure storage (mobile)"
+  },
+  "device_code_notes": {
+    "device_code": "opaque",
+    "user_code": "short",
+    "verification_uri": "https://auth.ifos.local/device",
+    "client_polls": "token endpoint until approved"
+  },
+  "refresh_rotation_notes": {
+    "rotate_on_use": true,
+    "reuse_detected": "revoke family and require re-auth",
+    "access_ttl_s": 900
+  }
+}

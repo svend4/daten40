@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Lesson Schema v1",
+  "type": "object",
+  "required": [
+    "lesson_id",
+    "title",
+    "content",
+    "quiz",
+    "version"
+  ],
+  "properties": {
+    "lesson_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    },
+    "quiz": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

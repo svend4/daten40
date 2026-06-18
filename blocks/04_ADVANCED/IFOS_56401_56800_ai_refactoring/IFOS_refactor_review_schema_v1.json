@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Refactor Review Schema v1",
+  "type": "object",
+  "required": [
+    "review_id",
+    "plan_ref",
+    "status",
+    "comments",
+    "version"
+  ],
+  "properties": {
+    "review_id": {
+      "type": "string"
+    },
+    "plan_ref": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected"
+      ]
+    },
+    "comments": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "approvers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

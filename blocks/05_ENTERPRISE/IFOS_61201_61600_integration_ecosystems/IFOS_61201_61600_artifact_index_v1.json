@@ -1,0 +1,157 @@
+{
+  "artifact_set": "IFOS_61201_61600",
+  "entries": [
+    {
+      "name": "IFOS_integration_ecosystems_os_61201_61600_v1.md",
+      "ref": "file://IFOS_integration_ecosystems_os_61201_61600_v1.md",
+      "hash": "sha256:8d66a45638489783090f51dc9236b69c68eda5f8e1362bd8a4694d3cc1157ccc"
+    },
+    {
+      "name": "IFOS_import_api_v1.yaml",
+      "ref": "file://IFOS_import_api_v1.yaml",
+      "hash": "sha256:546572aa5b1684f919f5c7b27195ddfa2e0b4d31902ebd6f56842bc311d60bed"
+    },
+    {
+      "name": "IFOS_import_examples_v1.json",
+      "ref": "file://IFOS_import_examples_v1.json",
+      "hash": "sha256:e82b93b0f5e4fb7286857a496060e88a3ba9423221e72ca844fca8b08f21c14c"
+    },
+    {
+      "name": "IFOS_import_converters_seed_61201_61600_v1.csv",
+      "ref": "file://IFOS_import_converters_seed_61201_61600_v1.csv",
+      "hash": "sha256:9bb9b0f800552eab50aa45ea17ef5cff8e96f392c5064fa1d26ae0bb233ebe09"
+    },
+    {
+      "name": "IFOS_import_mapping_seed_61201_61600_v1.csv",
+      "ref": "file://IFOS_import_mapping_seed_61201_61600_v1.csv",
+      "hash": "sha256:c298e986ae2c6a20c3657010c84bab7534ced7f5e2bf2f7ca87f97977fa7686b"
+    },
+    {
+      "name": "IFOS_import_assets_seed_61201_61600_v1.csv",
+      "ref": "file://IFOS_import_assets_seed_61201_61600_v1.csv",
+      "hash": "sha256:dd7896d75621c50df4e605745ba788dca18150ba74f0467679b53a9458042fa6"
+    },
+    {
+      "name": "IFOS_import_framework_overview_spec_v1.md",
+      "ref": "file://IFOS_import_framework_overview_spec_v1.md",
+      "hash": "sha256:a35189233074e11e087b55a7f37c61b482401d87878760d49dcec679475367b6"
+    },
+    {
+      "name": "IFOS_import_wordpress_plugins_spec_v1.md",
+      "ref": "file://IFOS_import_wordpress_plugins_spec_v1.md",
+      "hash": "sha256:a8fed1f590cbcc57c96d868f954a2d1965da56a1189586ee2788dc62096111c0"
+    },
+    {
+      "name": "IFOS_import_make_scenarios_spec_v1.md",
+      "ref": "file://IFOS_import_make_scenarios_spec_v1.md",
+      "hash": "sha256:3dd48cc7e2b18bbe1c07c453156fa1c8a5c263cb365c8947a1df1896d0d6dc02"
+    },
+    {
+      "name": "IFOS_import_n8n_workflows_spec_v1.md",
+      "ref": "file://IFOS_import_n8n_workflows_spec_v1.md",
+      "hash": "sha256:9356c56e17000fe716b9fe9df093581c800ef9075cd326bbb2123a3ab6e4dd40"
+    },
+    {
+      "name": "IFOS_import_zapier_zaps_spec_v1.md",
+      "ref": "file://IFOS_import_zapier_zaps_spec_v1.md",
+      "hash": "sha256:71a684173248cc08ee04904454ff73d740e9a967b00f15d2664847bcf6af137f"
+    },
+    {
+      "name": "IFOS_import_github_repos_spec_v1.md",
+      "ref": "file://IFOS_import_github_repos_spec_v1.md",
+      "hash": "sha256:119ad88fa269e3bf78f727e371ee73304cfb6f7581f2699cffc19c30ea7bbcf3"
+    },
+    {
+      "name": "IFOS_import_play_store_apps_spec_v1.md",
+      "ref": "file://IFOS_import_play_store_apps_spec_v1.md",
+      "hash": "sha256:8e639065fa3adf299bef0bc14b1b2c609e6eb6c53b49003c1b9f725004b87dba"
+    },
+    {
+      "name": "IFOS_import_mapping_rules_spec_v1.md",
+      "ref": "file://IFOS_import_mapping_rules_spec_v1.md",
+      "hash": "sha256:1eed764dc39c28dbe25779e226cf25df5e99d0b3e709c4554440e32f929271fc"
+    },
+    {
+      "name": "IFOS_import_normalization_spec_v1.md",
+      "ref": "file://IFOS_import_normalization_spec_v1.md",
+      "hash": "sha256:47874360933bb8c602ebc202b5ffeef5facfc11e120b63085b61ecd475998efa"
+    },
+    {
+      "name": "IFOS_import_licensing_compliance_spec_v1.md",
+      "ref": "file://IFOS_import_licensing_compliance_spec_v1.md",
+      "hash": "sha256:88f64a95d66b3530a5b81fdb2e94c5ae8515a79cbd4cb8da845fe4a451c854d5"
+    },
+    {
+      "name": "IFOS_import_quality_scoring_spec_v1.md",
+      "ref": "file://IFOS_import_quality_scoring_spec_v1.md",
+      "hash": "sha256:94897a575f4213899e7f585c25bc55b26a92dcfea3c8d29ed13bacc4b103a7c9"
+    },
+    {
+      "name": "IFOS_import_security_scanning_spec_v1.md",
+      "ref": "file://IFOS_import_security_scanning_spec_v1.md",
+      "hash": "sha256:0fc06a0ed2e2790e6d543cb281713263982dd2a286e01e7203f417963efaacc8"
+    },
+    {
+      "name": "IFOS_import_dedup_clustering_spec_v1.md",
+      "ref": "file://IFOS_import_dedup_clustering_spec_v1.md",
+      "hash": "sha256:a600180b6831129871f2c811dff8b7d67536549ec491446b40d994337c37cc38"
+    },
+    {
+      "name": "IFOS_import_packaging_bundles_spec_v1.md",
+      "ref": "file://IFOS_import_packaging_bundles_spec_v1.md",
+      "hash": "sha256:ca6051775d6a0ca1c512f88e688e8ff66ade1b0e3842651b92b37f806d5bad54"
+    },
+    {
+      "name": "IFOS_import_converters_catalog_spec_v1.md",
+      "ref": "file://IFOS_import_converters_catalog_spec_v1.md",
+      "hash": "sha256:4f0971ce7e287fda4dc5b0750c1948a523fa655403d01e7eca541618837f8c01"
+    },
+    {
+      "name": "IFOS_import_ux_flow_spec_v1.md",
+      "ref": "file://IFOS_import_ux_flow_spec_v1.md",
+      "hash": "sha256:528b01fc0f6585aa348bf6b8460c7f31315ab48ccf96e96394a8ac12de70d572"
+    },
+    {
+      "name": "IFOS_source_descriptor_schema_v1.json",
+      "ref": "file://IFOS_source_descriptor_schema_v1.json",
+      "hash": "sha256:8780ad0666beed878cc7fcb6c3b27494007292f7f734e8f3c3aa63f3854af7c2"
+    },
+    {
+      "name": "IFOS_import_job_schema_v1.json",
+      "ref": "file://IFOS_import_job_schema_v1.json",
+      "hash": "sha256:dece73182e79a8146b915facc256a2d4cd56bd4bb367522edc8e717f1761caa0"
+    },
+    {
+      "name": "IFOS_import_result_schema_v1.json",
+      "ref": "file://IFOS_import_result_schema_v1.json",
+      "hash": "sha256:933ffc549bbde0f3480d76cff2f721f04468ea531b6bd7c2a5242e745c092588"
+    },
+    {
+      "name": "IFOS_mapping_rule_schema_v1.json",
+      "ref": "file://IFOS_mapping_rule_schema_v1.json",
+      "hash": "sha256:50712e02841ddae8c19441cd7ad8795dcc16f801199270f5e93cad924793d749"
+    },
+    {
+      "name": "IFOS_ecosystem_asset_schema_v1.json",
+      "ref": "file://IFOS_ecosystem_asset_schema_v1.json",
+      "hash": "sha256:4944a226038afbc7045456ef0c8817821783097b17a7db4c9dd5c0a12ec28dbf"
+    },
+    {
+      "name": "ifos_import_mapping_engine_stub_v1.py",
+      "ref": "file://ifos_import_mapping_engine_stub_v1.py",
+      "hash": "sha256:2bd5d376ff95f38b2ca1c65178936e706a0ecd9139776785aeee3c6017abd78a"
+    },
+    {
+      "name": "ifos_import_normalizer_stub_v1.py",
+      "ref": "file://ifos_import_normalizer_stub_v1.py",
+      "hash": "sha256:5dc62bd3797dc2421919d99cd1f19aa6cb23ec0a55e79a3f9e15e18c03aabf25"
+    },
+    {
+      "name": "ifos_import_dedup_stub_v1.py",
+      "ref": "file://ifos_import_dedup_stub_v1.py",
+      "hash": "sha256:266c0ea213585ac6a99237a12e24b12960b7dcac0550da02ae10b90a0a4f8d7f"
+    }
+  ],
+  "created_at": "2026-01-05T01:45:00Z",
+  "version": "1.0.0"
+}

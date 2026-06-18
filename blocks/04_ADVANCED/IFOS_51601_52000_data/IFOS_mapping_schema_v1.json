@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Mapping Schema v1",
+  "type": "object",
+  "required": [
+    "mapping_id",
+    "source_system",
+    "entity_type",
+    "field_map",
+    "version"
+  ],
+  "properties": {
+    "mapping_id": {
+      "type": "string"
+    },
+    "source_system": {
+      "type": "string"
+    },
+    "entity_type": {
+      "type": "string"
+    },
+    "field_map": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

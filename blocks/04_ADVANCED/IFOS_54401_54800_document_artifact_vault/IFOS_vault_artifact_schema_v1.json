@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Vault Artifact Schema v1",
+  "type": "object",
+  "required": [
+    "artifact_id",
+    "type",
+    "metadata",
+    "blob_refs",
+    "version"
+  ],
+  "properties": {
+    "artifact_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "document",
+        "dataset",
+        "bundle_pack",
+        "run_report",
+        "share_pack"
+      ]
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "blob_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

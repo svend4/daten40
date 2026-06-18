@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS FetchJob Schema v1",
+  "type": "object",
+  "required": [
+    "job_id",
+    "source_id",
+    "ref",
+    "ts",
+    "status",
+    "checksums",
+    "version"
+  ],
+  "properties": {
+    "job_id": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "ref": {
+      "type": "string"
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ok",
+        "error",
+        "retrying"
+      ]
+    },
+    "http": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "checksums": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "raw_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

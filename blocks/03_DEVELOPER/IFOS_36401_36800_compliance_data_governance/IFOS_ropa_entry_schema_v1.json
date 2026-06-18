@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RoPA Entry Schema v1",
+  "type": "object",
+  "required": [
+    "ropa_id",
+    "tenant_id",
+    "activity_name",
+    "purposes",
+    "data_categories",
+    "subjects",
+    "retention",
+    "security_measures",
+    "version"
+  ],
+  "properties": {
+    "ropa_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "activity_name": {
+      "type": "string"
+    },
+    "purposes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "data_categories": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "subjects": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "recipients": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "transfers": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "retention": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "security_measures": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

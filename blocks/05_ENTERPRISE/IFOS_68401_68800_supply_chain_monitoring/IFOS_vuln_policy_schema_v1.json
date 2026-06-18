@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Vulnerability Policy",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "rules"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/rule"
+      }
+    },
+    "defaults": {
+      "type": [
+        "object",
+        "null"
+      ]
+    }
+  },
+  "definitions": {
+    "rule": {
+      "type": "object",
+      "required": [
+        "when",
+        "then"
+      ],
+      "properties": {
+        "rule_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "when": {
+          "type": "object"
+        },
+        "then": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

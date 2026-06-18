@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Chargeback Schema v1",
+  "type": "object",
+  "required": [
+    "chargeback_id",
+    "order_id",
+    "amount",
+    "currency",
+    "status",
+    "opened_at",
+    "version"
+  ],
+  "properties": {
+    "chargeback_id": {
+      "type": "string"
+    },
+    "order_id": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "number",
+      "minimum": 0
+    },
+    "currency": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "opened",
+        "won",
+        "lost",
+        "closed"
+      ]
+    },
+    "opened_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "evidence": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

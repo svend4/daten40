@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS AutofixRule Schema v1",
+  "type": "object",
+  "required": [
+    "fix_id",
+    "tenant_id",
+    "trigger",
+    "action",
+    "max_frequency",
+    "enabled",
+    "version"
+  ],
+  "properties": {
+    "fix_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "trigger": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "action": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "max_frequency": {
+      "type": "string"
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

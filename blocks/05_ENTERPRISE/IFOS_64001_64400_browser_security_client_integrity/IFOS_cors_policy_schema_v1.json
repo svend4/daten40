@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS CORS Policy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "allow_origins",
+    "allow_methods",
+    "allow_headers",
+    "credentials",
+    "version"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "allow_origins": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allow_methods": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allow_headers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "credentials": {
+      "type": "boolean"
+    },
+    "max_age_s": {
+      "type": "integer"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

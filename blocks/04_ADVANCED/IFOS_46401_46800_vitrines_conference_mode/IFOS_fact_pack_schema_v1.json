@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS FactPack Schema v1",
+  "type": "object",
+  "required": [
+    "fact_id",
+    "cluster_id",
+    "claims",
+    "citations",
+    "uncertainty",
+    "version"
+  ],
+  "properties": {
+    "fact_id": {
+      "type": "string"
+    },
+    "cluster_id": {
+      "type": "string"
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "citations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "uncertainty": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

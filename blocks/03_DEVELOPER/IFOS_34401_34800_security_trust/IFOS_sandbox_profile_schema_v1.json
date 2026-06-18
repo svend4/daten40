@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SandboxProfile Schema v1",
+  "type": "object",
+  "required": [
+    "sandbox_id",
+    "tenant_id",
+    "limits",
+    "filesystem",
+    "network",
+    "version"
+  ],
+  "properties": {
+    "sandbox_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "limits": {
+      "type": "object",
+      "properties": {
+        "cpu": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "mem_mb": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "time_sec": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "filesystem": {
+      "type": "object",
+      "properties": {
+        "readonly": {
+          "type": "boolean"
+        },
+        "tmp_mb": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "network": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

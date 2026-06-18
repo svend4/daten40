@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Comparison AuditLog Schema v1",
+  "type": "object",
+  "required": [
+    "audit_id",
+    "actor",
+    "action",
+    "target",
+    "ts",
+    "reason",
+    "version"
+  ],
+  "properties": {
+    "audit_id": {
+      "type": "string"
+    },
+    "actor": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "action": {
+      "type": "string"
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

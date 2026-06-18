@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS CoverageMatrix",
+  "type": "object",
+  "required": [
+    "generated_at",
+    "rows"
+  ],
+  "properties": {
+    "generated_at": {
+      "type": "string"
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "connector_id",
+          "domain",
+          "coverage_L0",
+          "coverage_L1",
+          "coverage_L2"
+        ],
+        "properties": {
+          "connector_id": {
+            "type": "string"
+          },
+          "domain": {
+            "type": "string"
+          },
+          "coverage_L0": {
+            "type": "number"
+          },
+          "coverage_L1": {
+            "type": "number"
+          },
+          "coverage_L2": {
+            "type": "number"
+          },
+          "coverage_total": {
+            "type": "number"
+          },
+          "confidence_avg": {
+            "type": "number"
+          },
+          "freshness_avg_days": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}

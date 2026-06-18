@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS IntentQuery",
+  "type": "object",
+  "required": [
+    "text"
+  ],
+  "properties": {
+    "text": {
+      "type": "string"
+    },
+    "domain_hint": {
+      "type": "string"
+    },
+    "constraints": {
+      "type": "object",
+      "properties": {
+        "platform": {
+          "type": "string",
+          "enum": [
+            "web",
+            "mobile",
+            "desktop",
+            "server",
+            "any"
+          ]
+        },
+        "privacy": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "offline": {
+          "type": "boolean"
+        },
+        "budget": {
+          "type": "string",
+          "enum": [
+            "free",
+            "low",
+            "medium",
+            "enterprise"
+          ]
+        },
+        "requires_open_source": {
+          "type": "boolean"
+        },
+        "keys_available": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

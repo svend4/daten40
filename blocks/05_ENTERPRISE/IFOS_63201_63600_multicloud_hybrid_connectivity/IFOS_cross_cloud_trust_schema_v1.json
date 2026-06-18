@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Cross-Cloud Trust Schema v1",
+  "type": "object",
+  "required": [
+    "trust_id",
+    "issuer",
+    "audiences",
+    "mechanisms",
+    "version"
+  ],
+  "properties": {
+    "trust_id": {
+      "type": "string"
+    },
+    "issuer": {
+      "type": "string"
+    },
+    "audiences": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "mechanisms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rotation_days": {
+      "type": "integer"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

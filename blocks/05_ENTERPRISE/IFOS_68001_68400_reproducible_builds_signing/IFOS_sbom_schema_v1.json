@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SBOM Schema v1",
+  "type": "object",
+  "required": [
+    "sbom_id",
+    "artifact_sha256",
+    "components",
+    "licenses",
+    "generated_at",
+    "version_schema"
+  ],
+  "properties": {
+    "sbom_id": {
+      "type": "string"
+    },
+    "artifact_sha256": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "version",
+          "type"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "direct",
+              "transitive",
+              "base_image",
+              "tooling"
+            ]
+          },
+          "purl": {
+            "type": "string"
+          },
+          "hash": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "licenses": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "vuln_summary": {
+      "type": "object",
+      "properties": {
+        "critical": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "high": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "medium": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "low": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "version_schema": {
+      "type": "string",
+      "const": "1.0.0"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+openapi: 3.0.3
+info:
+  title: IFOS Learning & Certification API
+  version: "1.0.0"
+servers:
+  - url: https://learn.ifos.local/v1
+tags:
+  - name: Courses
+  - name: Lessons
+  - name: Labs
+  - name: Badges
+paths:
+  /courses:
+    get: {tags:[Courses], summary: List courses, responses: {"200": {description: OK}}}
+  /lessons/{lessonId}:
+    get: {tags:[Lessons], summary: Read lesson, responses: {"200": {description: OK}}}
+  /labs/run:
+    post: {tags:[Labs], summary: Run lab in sandbox, responses: {"200": {description: OK}}}
+  /badges/issue:
+    post: {tags:[Badges], summary: Issue badge after passing assessment, responses: {"200": {description: OK}}}

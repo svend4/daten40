@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UXPolicy Schema v1",
+  "type": "object",
+  "required": [
+    "ux_policy_id",
+    "tenant_id",
+    "rules",
+    "version"
+  ],
+  "properties": {
+    "ux_policy_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

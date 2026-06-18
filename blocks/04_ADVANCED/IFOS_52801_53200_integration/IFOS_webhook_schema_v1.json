@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Webhook Schema v1",
+  "type": "object",
+  "required": [
+    "webhook_id",
+    "provider",
+    "event_types",
+    "verify",
+    "version"
+  ],
+  "properties": {
+    "webhook_id": {
+      "type": "string"
+    },
+    "provider": {
+      "type": "string"
+    },
+    "event_types": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "verify": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

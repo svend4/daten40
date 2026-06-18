@@ -1,0 +1,14 @@
+{
+  "contract_id": "audit_pack_manifest.v1",
+  "fields": {
+    "pack_id": "string",
+    "created_at": "datetime",
+    "scope": "object",
+    "evidence_items": "array[evidence_item.v1]",
+    "export_uri": "string",
+    "hash": "string"
+  },
+  "privacy_level": "internal",
+  "retention_policy": "security_default",
+  "audit": "required"
+}

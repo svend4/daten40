@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DPIA Record Schema v1",
+  "type": "object",
+  "required": [
+    "dpia_id",
+    "tenant_id",
+    "activity_ref",
+    "risk_level",
+    "measures",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "dpia_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "activity_ref": {
+      "type": "string"
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "threats": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "measures": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "residual_risk": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "approved",
+        "rejected",
+        "review_needed"
+      ]
+    },
+    "approved_by": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

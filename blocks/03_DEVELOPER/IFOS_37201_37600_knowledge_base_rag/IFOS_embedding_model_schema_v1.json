@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS EmbeddingModel Schema v1",
+  "type": "object",
+  "required": [
+    "model_id",
+    "provider",
+    "dimension",
+    "languages",
+    "version"
+  ],
+  "properties": {
+    "model_id": {
+      "type": "string"
+    },
+    "provider": {
+      "type": "string"
+    },
+    "dimension": {
+      "type": "integer",
+      "minimum": 32
+    },
+    "languages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "normalization": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        null,
+        "l2",
+        "unit"
+      ]
+    },
+    "cost": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

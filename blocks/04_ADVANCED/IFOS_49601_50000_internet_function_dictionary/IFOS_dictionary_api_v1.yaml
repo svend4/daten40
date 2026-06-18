@@ -1,0 +1,21 @@
+openapi: 3.0.3
+info:
+  title: IFOS Internet Function Dictionary API
+  version: "1.0.0"
+servers:
+  - url: https://dictionary.ifos.local/v1
+tags:
+  - name: Terms
+  - name: Parse
+  - name: Map
+  - name: Compose
+paths:
+  /terms:
+    get: {tags:[Terms], summary: List terms, responses: {"200": {description: OK}}}
+    post: {tags:[Terms], summary: Create/update term, responses: {"200": {description: OK}}}
+  /parse:
+    post: {tags:[Parse], summary: Parse query to intent + actions, responses: {"200": {description: OK}}}
+  /map:
+    post: {tags:[Map], summary: Map terms/intents to capabilities/items, responses: {"200": {description: OK}}}
+  /compose/macro:
+    post: {tags:[Compose], summary: Compose macro spec into bundle, responses: {"200": {description: OK}}}

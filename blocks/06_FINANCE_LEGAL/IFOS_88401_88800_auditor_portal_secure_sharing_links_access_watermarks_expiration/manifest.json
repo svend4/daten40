@@ -1,0 +1,23 @@
+{
+  "pack_id": "cp_auditor_portal_secure_sharing",
+  "name": "Auditor Portal + Secure Sharing (links/access/watermarks/expiration)",
+  "version": "1.0.0",
+  "status": "production",
+  "layer": "ComplianceSharing",
+  "compatibility": {
+    "ifos_min_version": "v30",
+    "required_blocks": [
+      "IFOS_00001_00400",
+      "IFOS_88001_88400"
+    ]
+  },
+  "exports": [
+    "sharelink.create",
+    "sharelink.revoke",
+    "sharelink.list",
+    "portal.session.start",
+    "portal.artifacts.list",
+    "portal.download",
+    "portal.access_audit.append"
+  ]
+}

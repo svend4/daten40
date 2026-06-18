@@ -1,0 +1,147 @@
+{
+  "artifact_set": "IFOS_44001_44400",
+  "entries": [
+    {
+      "name": "IFOS_searchable_knowledge_vault_os_44001_44400_v1.md",
+      "ref": "file://IFOS_searchable_knowledge_vault_os_44001_44400_v1.md",
+      "hash": "sha256:d7ed8f4c448a61efbe7dc7882b5468b18a4ff182a70b539b0d646d50c375c57e"
+    },
+    {
+      "name": "IFOS_search_vault_api_v1.yaml",
+      "ref": "file://IFOS_search_vault_api_v1.yaml",
+      "hash": "sha256:210e88b82eae34885fc6e2b54d3cdd0e39e273c86b7d598cf8ad263f8698799c"
+    },
+    {
+      "name": "IFOS_search_vault_examples_v1.json",
+      "ref": "file://IFOS_search_vault_examples_v1.json",
+      "hash": "sha256:c9b051244e1b03061295da0ede092a0f229aba13d7b2e5937b1345961ff9d251"
+    },
+    {
+      "name": "IFOS_index_source_schema_v1.json",
+      "ref": "file://IFOS_index_source_schema_v1.json",
+      "hash": "sha256:6c10a8e02dbbf781bcdc642df5724d374efae9925a839fe163b40fa7511416ef"
+    },
+    {
+      "name": "IFOS_document_chunk_schema_v1.json",
+      "ref": "file://IFOS_document_chunk_schema_v1.json",
+      "hash": "sha256:5f1c24f685ad53b41618d4ade69780cec092d6ab0ef2f203206bc3ec457d78f0"
+    },
+    {
+      "name": "IFOS_embedding_record_schema_v1.json",
+      "ref": "file://IFOS_embedding_record_schema_v1.json",
+      "hash": "sha256:f6fca4f28ac14d1ced8e63f163276645bda78fb3398d887e1da84e906d8d00c2"
+    },
+    {
+      "name": "IFOS_vector_index_schema_v1.json",
+      "ref": "file://IFOS_vector_index_schema_v1.json",
+      "hash": "sha256:06614b54e42679bb73975e827dcf1b56066df498a4a78ac0668ea27dbd890ab2"
+    },
+    {
+      "name": "IFOS_fulltext_index_schema_v1.json",
+      "ref": "file://IFOS_fulltext_index_schema_v1.json",
+      "hash": "sha256:6abd3e4402a6627253475e0d8cc2ff0fc4d03190495c751ad05820b7ad0eaf5b"
+    },
+    {
+      "name": "IFOS_facet_config_schema_v1.json",
+      "ref": "file://IFOS_facet_config_schema_v1.json",
+      "hash": "sha256:9f695dab021b605010673f90179c5f6be625ffe83ee0e49a18ba18b36edfef4a"
+    },
+    {
+      "name": "IFOS_search_query_schema_v1.json",
+      "ref": "file://IFOS_search_query_schema_v1.json",
+      "hash": "sha256:0943e0d537b51f62845bbf8afc5dd00679012970d0a67238d5708112c5efb716"
+    },
+    {
+      "name": "IFOS_query_plan_schema_v1.json",
+      "ref": "file://IFOS_query_plan_schema_v1.json",
+      "hash": "sha256:ee0696a681d7368e16e92b098327120a50be3a9510b4ed9221c73955ef7ed027"
+    },
+    {
+      "name": "IFOS_search_result_schema_v1.json",
+      "ref": "file://IFOS_search_result_schema_v1.json",
+      "hash": "sha256:4efeb8b9aaa812d209d4966dc35e9f478b40a3b4090a1e2e32c7e6217e364021"
+    },
+    {
+      "name": "IFOS_citation_schema_v1.json",
+      "ref": "file://IFOS_citation_schema_v1.json",
+      "hash": "sha256:58a1bfbcb56e924f97631b8152903577d75f26007c4c34dcb7e8d6c775427029"
+    },
+    {
+      "name": "IFOS_export_job_schema_v1.json",
+      "ref": "file://IFOS_export_job_schema_v1.json",
+      "hash": "sha256:fc7a355764a3443799753923c4e4e3aa26e6fde2b6f3e524f375c2c5e022d4d1"
+    },
+    {
+      "name": "IFOS_relevance_signal_schema_v1.json",
+      "ref": "file://IFOS_relevance_signal_schema_v1.json",
+      "hash": "sha256:8f1472e1b94d183aea1b65688fad3fcf8274a226d6c11e976571d7ac480ea771"
+    },
+    {
+      "name": "IFOS_ranking_config_schema_v1.json",
+      "ref": "file://IFOS_ranking_config_schema_v1.json",
+      "hash": "sha256:a8dbba39aa5366c20acb3fbde9251787130c9dbf94e08fcdd80283c7debed6e4"
+    },
+    {
+      "name": "IFOS_indexing_chunking_spec_v1.md",
+      "ref": "file://IFOS_indexing_chunking_spec_v1.md",
+      "hash": "sha256:49c3844092c948529bb9789470f85774d3b5334f3e072d00345ecae4fe7b4832"
+    },
+    {
+      "name": "IFOS_vector_embeddings_spec_v1.md",
+      "ref": "file://IFOS_vector_embeddings_spec_v1.md",
+      "hash": "sha256:57e006c569ce5d7521c333419069c5d3ed6605d336b6ef0cf08ef1a19e4602cf"
+    },
+    {
+      "name": "IFOS_fulltext_search_spec_v1.md",
+      "ref": "file://IFOS_fulltext_search_spec_v1.md",
+      "hash": "sha256:cdc344ad8cd6830053487c456b4ae2cb3c4a6ae2cbf9c96e7ed96593cc885e69"
+    },
+    {
+      "name": "IFOS_faceted_search_spec_v1.md",
+      "ref": "file://IFOS_faceted_search_spec_v1.md",
+      "hash": "sha256:38003f1b63b36a937ac4c5910d3a92f7d9e7500a174cf192a9b3a9e25b50e8a9"
+    },
+    {
+      "name": "IFOS_ranking_signals_spec_v1.md",
+      "ref": "file://IFOS_ranking_signals_spec_v1.md",
+      "hash": "sha256:be62e2b45d2706e083bb4dfb8c636944d38d385853d812689f0cf475e12e4ea6"
+    },
+    {
+      "name": "IFOS_query_planner_spec_v1.md",
+      "ref": "file://IFOS_query_planner_spec_v1.md",
+      "hash": "sha256:e4858caa018f7d14b8dd2e8e3440df56a18727f79fa0c9679c56fab39108164e"
+    },
+    {
+      "name": "IFOS_citations_provenance_spec_v1.md",
+      "ref": "file://IFOS_citations_provenance_spec_v1.md",
+      "hash": "sha256:19c9bed91d6d1b6fec995e6f66c630a99c197cef5d567a67c744fd8455f1ef3f"
+    },
+    {
+      "name": "IFOS_exports_snapshots_spec_v1.md",
+      "ref": "file://IFOS_exports_snapshots_spec_v1.md",
+      "hash": "sha256:c5c04ffb011582d5fd9ebdc2c4fa955499b1a4728fc67e2a68347ca39af0df0e"
+    },
+    {
+      "name": "ifos_chunker_stub_v1.py",
+      "ref": "file://ifos_chunker_stub_v1.py",
+      "hash": "sha256:05c4ad0ac1468eaafb3f7a657c8708835e7b01a783ddb423c1d5f589b0d8dbdc"
+    },
+    {
+      "name": "ifos_embedder_stub_v1.py",
+      "ref": "file://ifos_embedder_stub_v1.py",
+      "hash": "sha256:3c598a86fda3fb668119f41a668ba6a3826e5d28df674d33a42588151fb4c998"
+    },
+    {
+      "name": "ifos_ranker_stub_v1.py",
+      "ref": "file://ifos_ranker_stub_v1.py",
+      "hash": "sha256:002538f3713433bd3a7504ce7d6c09ba82f1d227316c7f6c4426daf2836ed5db"
+    },
+    {
+      "name": "ifos_query_planner_stub_v1.py",
+      "ref": "file://ifos_query_planner_stub_v1.py",
+      "hash": "sha256:dd2fc74eefba621a6167c15ca2e859f82170f69e267fba02b29f1a2e25496f0e"
+    }
+  ],
+  "created_at": "2026-01-04T04:45:00Z",
+  "version": "1.0.0"
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Invoice",
+  "type": "object",
+  "required": [
+    "invoice_id",
+    "type",
+    "issue_date",
+    "seller",
+    "buyer",
+    "lines",
+    "totals",
+    "currency"
+  ],
+  "properties": {
+    "invoice_id": {
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "invoice",
+        "proforma",
+        "credit_note"
+      ]
+    },
+    "issue_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "seller": {
+      "type": "object"
+    },
+    "buyer": {
+      "type": "object"
+    },
+    "lines": {
+      "type": "array"
+    },
+    "totals": {
+      "type": "object"
+    },
+    "vat": {
+      "type": "object"
+    },
+    "references": {
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ComplianceEvidencePack Schema v1",
+  "type": "object",
+  "required": [
+    "pack_id",
+    "subject",
+    "policies",
+    "audit_refs",
+    "actions",
+    "hashes",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "pack_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "policies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "audit_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "hashes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "signature": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

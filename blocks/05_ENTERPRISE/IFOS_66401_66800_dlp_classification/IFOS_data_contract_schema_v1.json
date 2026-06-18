@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DataContract Schema v1",
+  "type": "object",
+  "required": [
+    "contract_id",
+    "scope",
+    "permissions",
+    "allowed_destinations",
+    "required_controls",
+    "version"
+  ],
+  "properties": {
+    "contract_id": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "tenant_id"
+      ],
+      "properties": {
+        "tenant_id": {
+          "type": "string"
+        },
+        "env": {
+          "type": "string"
+        },
+        "workflow_id": {
+          "type": "string"
+        },
+        "connector_id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "permissions": {
+      "type": "object",
+      "required": [
+        "read_classes",
+        "write_classes",
+        "transfer_classes"
+      ],
+      "properties": {
+        "read_classes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "write_classes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "transfer_classes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "allowed_destinations": {
+      "type": "object",
+      "properties": {
+        "routes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "allowlist_sets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "required_controls": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "retention": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "audit": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

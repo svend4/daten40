@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Tag Schema v1",
+  "type": "object",
+  "required": [
+    "tag",
+    "lang",
+    "version"
+  ],
+  "properties": {
+    "tag": {
+      "type": "string"
+    },
+    "lang": {
+      "type": "string",
+      "enum": [
+        "ru",
+        "en",
+        "de",
+        "multi"
+      ]
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+openapi: 3.0.3
+info:
+  title: IFOS UI Builder API
+  version: "1.0.0"
+servers:
+  - url: https://ui.ifos.local/v1
+tags:
+  - name: Views
+  - name: Widgets
+  - name: Shortcuts
+paths:
+  /views/create:
+    post: {tags:[Views], summary: Create view, responses: {"200": {description: OK}}}
+  /widgets/register:
+    post: {tags:[Widgets], summary: Register widget, responses: {"200": {description: OK}}}
+  /shortcuts/set:
+    post: {tags:[Shortcuts], summary: Set shortcut, responses: {"200": {description: OK}}}

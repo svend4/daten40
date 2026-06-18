@@ -1,0 +1,17 @@
+{
+  "contract_id": "evidence_collection_job.v1",
+  "fields": {
+    "job_id": "string",
+    "evidence_id": "string",
+    "collector": "string",
+    "cadence": "string",
+    "format": "string",
+    "time_window": "object",
+    "environment": "string",
+    "credentials_ref": "string",
+    "tags": "object"
+  },
+  "privacy_level": "internal",
+  "retention_policy": "security_default",
+  "audit": "required"
+}

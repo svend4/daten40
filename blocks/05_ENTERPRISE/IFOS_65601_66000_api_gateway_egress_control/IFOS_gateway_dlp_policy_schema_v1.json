@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS GatewayDLPPolicy Schema v1",
+  "type": "object",
+  "required": [
+    "dlp_policy_id",
+    "data_class",
+    "detectors",
+    "actions",
+    "version"
+  ],
+  "properties": {
+    "dlp_policy_id": {
+      "type": "string"
+    },
+    "data_class": {
+      "type": "string",
+      "enum": [
+        "public",
+        "internal",
+        "confidential",
+        "pii"
+      ]
+    },
+    "detectors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "log_redaction": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

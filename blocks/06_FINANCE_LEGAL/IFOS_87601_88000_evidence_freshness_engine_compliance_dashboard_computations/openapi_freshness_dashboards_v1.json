@@ -1,0 +1,225 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "IFOS Evidence Freshness & Dashboards API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/freshness/compute": {
+      "post": {
+        "summary": "Compute freshness status for requirements (sync or enqueue async)",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FreshnessComputeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Compute result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FreshnessComputeResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/freshness/query": {
+      "post": {
+        "summary": "Query current freshness status",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FreshnessQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Freshness statuses",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FreshnessQueryResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/compliance/snapshot": {
+      "post": {
+        "summary": "Compute compliance snapshot (coverage, missing/stale)",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SnapshotRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Snapshot",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComplianceSnapshot"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/dashboards/dataset": {
+      "get": {
+        "summary": "Get precomputed widget dataset",
+        "parameters": [
+          {
+            "name": "widget",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Dataset",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashboardDataset"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "FreshnessComputeRequest": {
+        "type": "object",
+        "properties": {
+          "environment": {
+            "type": "string"
+          },
+          "policy_packs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "requirements_uri": {
+            "type": "string"
+          }
+        }
+      },
+      "FreshnessComputeResult": {
+        "type": "object",
+        "properties": {
+          "computed_at": {
+            "type": "string"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "snapshot_id": {
+            "type": "string"
+          }
+        }
+      },
+      "FreshnessQuery": {
+        "type": "object",
+        "properties": {
+          "filters": {
+            "type": "object"
+          },
+          "limit": {
+            "type": "integer"
+          }
+        }
+      },
+      "FreshnessQueryResult": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "next_cursor": {
+            "type": "string"
+          }
+        }
+      },
+      "SnapshotRequest": {
+        "type": "object",
+        "properties": {
+          "environment": {
+            "type": "string"
+          },
+          "policy_packs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "ComplianceSnapshot": {
+        "type": "object",
+        "properties": {
+          "snapshot_id": {
+            "type": "string"
+          },
+          "coverage_percent": {
+            "type": "number"
+          },
+          "counts": {
+            "type": "object"
+          }
+        }
+      },
+      "DashboardDataset": {
+        "type": "object",
+        "properties": {
+          "dataset_id": {
+            "type": "string"
+          },
+          "widget": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object"
+          },
+          "cache_ttl_seconds": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}

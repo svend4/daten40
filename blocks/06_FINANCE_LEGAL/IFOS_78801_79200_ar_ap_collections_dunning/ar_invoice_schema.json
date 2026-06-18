@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "invoice_id",
+    "customer_id",
+    "amount",
+    "currency",
+    "issue_date",
+    "due_date",
+    "status"
+  ],
+  "properties": {
+    "invoice_id": {
+      "type": "string"
+    },
+    "customer_id": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "number"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "issue_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "due_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "issued",
+        "delivered",
+        "due",
+        "overdue",
+        "paid",
+        "closed",
+        "written_off"
+      ]
+    }
+  }
+}

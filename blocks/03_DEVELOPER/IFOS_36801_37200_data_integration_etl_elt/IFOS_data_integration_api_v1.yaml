@@ -1,0 +1,41 @@
+openapi: 3.0.3
+info:
+  title: IFOS Data Integration API
+  version: "1.0.0"
+servers:
+  - url: https://data.ifos.local/v1
+tags:
+  - name: Sources
+  - name: Sinks
+  - name: Contracts
+  - name: Mappings
+  - name: Pipelines
+  - name: Runs
+  - name: CDC
+  - name: Streams
+  - name: Quality
+  - name: Catalog
+  - name: Lineage
+paths:
+  /sources:
+    post: {tags:[Sources], summary: Upsert data source, responses: {"200": {description: OK}}}
+  /sinks:
+    post: {tags:[Sinks], summary: Upsert data sink, responses: {"200": {description: OK}}}
+  /contracts:
+    post: {tags:[Contracts], summary: Upsert data contract, responses: {"200": {description: OK}}}
+  /mappings:
+    post: {tags:[Mappings], summary: Upsert schema mapping, responses: {"200": {description: OK}}}
+  /pipelines:
+    post: {tags:[Pipelines], summary: Upsert pipeline spec, responses: {"200": {description: OK}}}
+  /runs:
+    post: {tags:[Runs], summary: Create pipeline run, responses: {"201": {description: Created}}}
+  /cdc:
+    post: {tags:[CDC], summary: Upsert CDC spec, responses: {"200": {description: OK}}}
+  /streams:
+    post: {tags:[Streams], summary: Upsert stream spec, responses: {"200": {description: OK}}}
+  /quality/checks:
+    post: {tags:[Quality], summary: Upsert quality check, responses: {"200": {description: OK}}}
+  /catalog:
+    post: {tags:[Catalog], summary: Upsert catalog entry, responses: {"200": {description: OK}}}
+  /lineage:
+    post: {tags:[Lineage], summary: Append lineage event, responses: {"201": {description: Created}}}

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS MarketplaceListing Schema v1",
+  "type": "object",
+  "required": [
+    "listing_id",
+    "item_ref",
+    "title",
+    "pricing",
+    "trust",
+    "badges",
+    "categories",
+    "version"
+  ],
+  "properties": {
+    "listing_id": {
+      "type": "string"
+    },
+    "item_ref": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "pricing": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "trust": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "badges": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "support": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "contract_id": "ledger_entry.v1",
+  "fields": {
+    "entry_id": "string",
+    "posted_at": "datetime",
+    "account": "string",
+    "debit": "number",
+    "credit": "number",
+    "currency": "string",
+    "reference": "string",
+    "memo": "string"
+  },
+  "privacy_level": "confidential",
+  "retention_policy": "finance_default",
+  "audit": "required"
+}

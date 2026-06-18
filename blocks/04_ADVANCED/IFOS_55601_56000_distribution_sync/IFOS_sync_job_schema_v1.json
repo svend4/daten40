@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Sync Job Schema v1",
+  "type": "object",
+  "required": [
+    "sync_id",
+    "from_replica",
+    "to_replica",
+    "status",
+    "started_at",
+    "version"
+  ],
+  "properties": {
+    "sync_id": {
+      "type": "string"
+    },
+    "from_replica": {
+      "type": "string"
+    },
+    "to_replica": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "queued",
+        "running",
+        "done",
+        "failed"
+      ]
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ended_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "stats": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Learning Path Schema v1",
+  "type": "object",
+  "required": [
+    "path_id",
+    "persona",
+    "steps",
+    "version"
+  ],
+  "properties": {
+    "path_id": {
+      "type": "string"
+    },
+    "persona": {
+      "type": "string",
+      "enum": [
+        "user",
+        "builder",
+        "creator",
+        "enterprise_operator"
+      ]
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

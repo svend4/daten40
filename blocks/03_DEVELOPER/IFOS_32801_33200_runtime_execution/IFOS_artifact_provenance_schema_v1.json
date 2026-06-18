@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ArtifactProvenance Schema v1",
+  "type": "object",
+  "required": [
+    "prov_id",
+    "artifact",
+    "source",
+    "hashes",
+    "signed",
+    "built_at",
+    "version"
+  ],
+  "properties": {
+    "prov_id": {
+      "type": "string"
+    },
+    "artifact": {
+      "type": "object",
+      "required": [
+        "kind",
+        "ref"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "container_image",
+            "zip",
+            "wheel",
+            "npm_pkg",
+            "wp_plugin"
+          ]
+        },
+        "ref": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "repo_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "commit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "builder": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "hashes": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "signed": {
+      "type": "boolean"
+    },
+    "signature": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "built_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

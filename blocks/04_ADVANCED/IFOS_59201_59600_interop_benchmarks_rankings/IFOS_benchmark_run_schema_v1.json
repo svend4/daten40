@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Benchmark Run Schema v1",
+  "type": "object",
+  "required": [
+    "run_id",
+    "artifact_ref",
+    "dataset_ref",
+    "metrics",
+    "started_at",
+    "version"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string"
+    },
+    "artifact_ref": {
+      "type": "string"
+    },
+    "dataset_ref": {
+      "type": "string"
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "finished_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "logs_ref": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

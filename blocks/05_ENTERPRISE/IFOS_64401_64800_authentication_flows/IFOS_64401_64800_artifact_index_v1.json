@@ -1,0 +1,182 @@
+{
+  "artifact_set": "IFOS_64401_64800",
+  "entries": [
+    {
+      "name": "IFOS_authentication_flows_os_64401_64800_v1.md",
+      "ref": "file://IFOS_authentication_flows_os_64401_64800_v1.md",
+      "hash": "sha256:f1b01154be3e40ba8cb30f4552b6e23223ba7192724c606d51b847fe7adc7992"
+    },
+    {
+      "name": "IFOS_auth_control_plane_api_v1.yaml",
+      "ref": "file://IFOS_auth_control_plane_api_v1.yaml",
+      "hash": "sha256:9073f11460b4a94e64b8ba46f111c22e9d6e86c38578abb51a06a314049cb96b"
+    },
+    {
+      "name": "IFOS_auth_examples_64401_64800_v1.json",
+      "ref": "file://IFOS_auth_examples_64401_64800_v1.json",
+      "hash": "sha256:3480a19d95fdc631e41247ac69f135a73135a76e87c5132b58e134c3fe861f5e"
+    },
+    {
+      "name": "IFOS_auth_profiles_seed_64401_64800_v1.csv",
+      "ref": "file://IFOS_auth_profiles_seed_64401_64800_v1.csv",
+      "hash": "sha256:e7ede9de82c0eb9deef191ad4862b4136939027494cca609730ebf902e74b654"
+    },
+    {
+      "name": "IFOS_oidc_providers_seed_64401_64800_v1.csv",
+      "ref": "file://IFOS_oidc_providers_seed_64401_64800_v1.csv",
+      "hash": "sha256:bc86b8588648ad0ffa257219b3f4c7982057702eb1c55202052adb1448625dc3"
+    },
+    {
+      "name": "IFOS_oauth_clients_seed_64401_64800_v1.csv",
+      "ref": "file://IFOS_oauth_clients_seed_64401_64800_v1.csv",
+      "hash": "sha256:0e8d90e98d75b1a2554d29ac38fdbd9dea2bbc8a0905412a3de829b042b38e78"
+    },
+    {
+      "name": "IFOS_token_policies_seed_64401_64800_v1.csv",
+      "ref": "file://IFOS_token_policies_seed_64401_64800_v1.csv",
+      "hash": "sha256:34cc3cbd973b719985c86e8012639fc5be183618005b216e0a9a9de3c5e991cd"
+    },
+    {
+      "name": "IFOS_mfa_policies_seed_64401_64800_v1.csv",
+      "ref": "file://IFOS_mfa_policies_seed_64401_64800_v1.csv",
+      "hash": "sha256:a0e7db4de84c26cac3d2bfc2f0fdfa797e1aed059191fa84f30355b9ad1c5c4b"
+    },
+    {
+      "name": "IFOS_scope_policies_seed_64401_64800_v1.csv",
+      "ref": "file://IFOS_scope_policies_seed_64401_64800_v1.csv",
+      "hash": "sha256:f3be0bfbcaad20e5073556bd7ac2022734fe29f190b5a47bc129f11b0cd8ec99"
+    },
+    {
+      "name": "IFOS_session_policies_seed_64401_64800_v1.csv",
+      "ref": "file://IFOS_session_policies_seed_64401_64800_v1.csv",
+      "hash": "sha256:0805f08afd30870e97e68ca3e291b65c05ab823f74eff05ea56f89431a84907f"
+    },
+    {
+      "name": "IFOS_revocation_policies_seed_64401_64800_v1.csv",
+      "ref": "file://IFOS_revocation_policies_seed_64401_64800_v1.csv",
+      "hash": "sha256:010c3b5ab548f6935ac91f0ef8c38c841d0c2d75c6a0d1452b0bc8b1ffe2f1dd"
+    },
+    {
+      "name": "IFOS_auth_debug_playbook_seed_64401_64800_v1.csv",
+      "ref": "file://IFOS_auth_debug_playbook_seed_64401_64800_v1.csv",
+      "hash": "sha256:d74ed99aab5c175d5b6f12ae15482cbdf9e0fc08625d499052ebf851d1fe9bb8"
+    },
+    {
+      "name": "IFOS_auth_flows_overview_spec_v1.md",
+      "ref": "file://IFOS_auth_flows_overview_spec_v1.md",
+      "hash": "sha256:93a7518bfd67637552870ad8a24e8cd038b37019b29f4838cb29353b661052c4"
+    },
+    {
+      "name": "IFOS_oidc_pkce_spec_v1.md",
+      "ref": "file://IFOS_oidc_pkce_spec_v1.md",
+      "hash": "sha256:612d4dd6b7512b2f99326c8308917b52b4cc625bdb0039e419afe7fdd1038788"
+    },
+    {
+      "name": "IFOS_device_code_spec_v1.md",
+      "ref": "file://IFOS_device_code_spec_v1.md",
+      "hash": "sha256:b48ccc4c6929750d0356df1b166d6a6b6d864ed3c53d032bff3c7ed5ffe93f4e"
+    },
+    {
+      "name": "IFOS_sso_enterprise_spec_v1.md",
+      "ref": "file://IFOS_sso_enterprise_spec_v1.md",
+      "hash": "sha256:023865036a42093ec5be5ee99b8966abe39f82a3b5c0aa048f65279cbadc3cd5"
+    },
+    {
+      "name": "IFOS_token_rotation_refresh_spec_v1.md",
+      "ref": "file://IFOS_token_rotation_refresh_spec_v1.md",
+      "hash": "sha256:49d02119165bc0310f14e649e2398951bc0b30b16ee9341c086771c10ebb9f97"
+    },
+    {
+      "name": "IFOS_logout_revocation_spec_v1.md",
+      "ref": "file://IFOS_logout_revocation_spec_v1.md",
+      "hash": "sha256:fd0c4aec147de7bcf8c737e3b9a54eb968ec3bc272dbfb054c0d0a75b78a1b94"
+    },
+    {
+      "name": "IFOS_stepup_mfa_spec_v1.md",
+      "ref": "file://IFOS_stepup_mfa_spec_v1.md",
+      "hash": "sha256:755ce90e4b57b2b16146af074ca0d5505a70fa59764824efdf08ed56a08fd944"
+    },
+    {
+      "name": "IFOS_scopes_roles_permissions_spec_v1.md",
+      "ref": "file://IFOS_scopes_roles_permissions_spec_v1.md",
+      "hash": "sha256:ecdf1f7e37fdeba147702b5c2b26a906ceb3492495b1f9c99b8158ab30f13ccc"
+    },
+    {
+      "name": "IFOS_sessions_cookie_vs_bearer_spec_v1.md",
+      "ref": "file://IFOS_sessions_cookie_vs_bearer_spec_v1.md",
+      "hash": "sha256:8d1bdfbd8dd596f0139d1fbf440366cca9799287943af99dfd1abe29d301dd42"
+    },
+    {
+      "name": "IFOS_auth_threat_model_spec_v1.md",
+      "ref": "file://IFOS_auth_threat_model_spec_v1.md",
+      "hash": "sha256:a6eb7efc48bac9728043873070665adcb781272813050247bdd2700998498269"
+    },
+    {
+      "name": "IFOS_auth_profile_schema_v1.json",
+      "ref": "file://IFOS_auth_profile_schema_v1.json",
+      "hash": "sha256:5270a94e528f2438fe642e761a126388c558b41d589ba27ff148225e97b8e039"
+    },
+    {
+      "name": "IFOS_oidc_provider_schema_v1.json",
+      "ref": "file://IFOS_oidc_provider_schema_v1.json",
+      "hash": "sha256:358d38b127e0b5ab5bd721c2acf4314556da6d5446f612a145b7d148b7744a59"
+    },
+    {
+      "name": "IFOS_oauth_client_app_schema_v1.json",
+      "ref": "file://IFOS_oauth_client_app_schema_v1.json",
+      "hash": "sha256:cd1c00161f5dd744985bbd66720195cb09de0f0b7c0dde6629e0c571e18429d9"
+    },
+    {
+      "name": "IFOS_token_policy_schema_v1.json",
+      "ref": "file://IFOS_token_policy_schema_v1.json",
+      "hash": "sha256:4d00a1a2446dcce381a79d9545527b14fbefdf6c7ea343dff0cba0bb74296ddd"
+    },
+    {
+      "name": "IFOS_mfa_policy_schema_v1.json",
+      "ref": "file://IFOS_mfa_policy_schema_v1.json",
+      "hash": "sha256:70258db5c5df2d6ba5133e1a65d8279fb797c5c63be3f2ce937b5885745c4612"
+    },
+    {
+      "name": "IFOS_scope_policy_schema_v1.json",
+      "ref": "file://IFOS_scope_policy_schema_v1.json",
+      "hash": "sha256:9eae1c6774851e64447b60e241bb1a916e7593809234519f72c97640935845b3"
+    },
+    {
+      "name": "IFOS_session_policy_schema_v1.json",
+      "ref": "file://IFOS_session_policy_schema_v1.json",
+      "hash": "sha256:9520a2c2e0e1704128fe0d175b4a0831ced42018f0275689bb6b7ebb15c73d1e"
+    },
+    {
+      "name": "IFOS_revocation_policy_schema_v1.json",
+      "ref": "file://IFOS_revocation_policy_schema_v1.json",
+      "hash": "sha256:c7a0a692dc43f02d2cb81b23306729e049dbe25d18505d2039e69ecf697618e9"
+    },
+    {
+      "name": "IFOS_auth_event_schema_v1.json",
+      "ref": "file://IFOS_auth_event_schema_v1.json",
+      "hash": "sha256:ba1e33d4562ff3c52186243f0f0c60ee288d57d446d37a6f53e520e7a1d2d7e9"
+    },
+    {
+      "name": "ifos_pkce_flow_notes_v1.txt",
+      "ref": "file://ifos_pkce_flow_notes_v1.txt",
+      "hash": "sha256:c010cc028cc2503c8dd66e8975cfbbb82d4247e6d8b6b11f14db5f0fe73dc6a3"
+    },
+    {
+      "name": "ifos_device_code_flow_notes_v1.txt",
+      "ref": "file://ifos_device_code_flow_notes_v1.txt",
+      "hash": "sha256:e20eb1e8edd945d7b7e37236b3d0b898131ae693f451c942204eb2762ed0d91a"
+    },
+    {
+      "name": "ifos_refresh_rotation_notes_v1.txt",
+      "ref": "file://ifos_refresh_rotation_notes_v1.txt",
+      "hash": "sha256:4e8502ffcf076f18a8a7815a1b9cf148138a4b3acea340eda57db60885668c76"
+    },
+    {
+      "name": "ifos_secure_logout_notes_v1.txt",
+      "ref": "file://ifos_secure_logout_notes_v1.txt",
+      "hash": "sha256:a84dcdd280654ecbdb218d717cf2a06268d41f32acf95e788b937e34f27b2c1f"
+    }
+  ],
+  "created_at": "2026-01-02T16:39:15Z",
+  "version": "1.0.0"
+}

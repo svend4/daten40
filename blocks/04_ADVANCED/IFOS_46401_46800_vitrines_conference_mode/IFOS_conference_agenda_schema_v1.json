@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ConferenceAgenda Schema v1",
+  "type": "object",
+  "required": [
+    "agenda_id",
+    "recipe_id",
+    "sections",
+    "decisions",
+    "actions",
+    "version"
+  ],
+  "properties": {
+    "agenda_id": {
+      "type": "string"
+    },
+    "recipe_id": {
+      "type": "string"
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

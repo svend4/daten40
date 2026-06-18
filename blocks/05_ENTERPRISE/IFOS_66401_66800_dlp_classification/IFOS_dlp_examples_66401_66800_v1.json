@@ -1,0 +1,109 @@
+{
+  "classification_result_example": {
+    "result_id": "res_r_z2CVQRIjsn50",
+    "created_at": "2026-01-02T13:05:00Z",
+    "detected_classes": [
+      "FINANCIAL",
+      "PII"
+    ],
+    "labels": [
+      "REGION:EU",
+      "PURPOSE:Billing",
+      "SOURCE:CRM",
+      "RETENTION:365D"
+    ],
+    "confidence": 0.92,
+    "evidence": [
+      {
+        "rule": "sc.regex.iban",
+        "score": 0.9,
+        "note": "IBAN-like token detected"
+      },
+      {
+        "rule": "sc.regex.email",
+        "score": 0.7,
+        "note": "Email pattern detected"
+      }
+    ],
+    "redaction_suggestions": [
+      "redact.financial"
+    ],
+    "version": "1.0.0"
+  },
+  "data_contract_example": {
+    "contract_id": "con_c_u9FBXCELn8uA",
+    "scope": {
+      "tenant_id": "t_demo",
+      "env": "prod",
+      "workflow_id": "wf_billing",
+      "connector_id": "payments_sync"
+    },
+    "permissions": {
+      "read_classes": [
+        "FINANCIAL",
+        "PII"
+      ],
+      "write_classes": [
+        "FINANCIAL"
+      ],
+      "transfer_classes": [
+        "FINANCIAL"
+      ],
+      "required_labels": [
+        "PURPOSE:Billing",
+        "REGION:EU"
+      ]
+    },
+    "allowed_destinations": {
+      "routes": [
+        "rt.billing.allow"
+      ],
+      "allowlist_sets": [
+        "allow.billing"
+      ]
+    },
+    "required_controls": {
+      "dlp": "enforced",
+      "encryption": "required",
+      "receipts": "required"
+    },
+    "retention": {
+      "days": 365,
+      "tier": "archive"
+    },
+    "audit": {
+      "report": "monthly"
+    },
+    "version": "1.0.0"
+  },
+  "transfer_decision_example": {
+    "decision_id": "dec_d_tRw3prssO3Yc",
+    "created_at": "2026-01-02T13:05:02Z",
+    "decision": "TRANSFORM",
+    "policy_id": "pol.dlp.enforce",
+    "rule_id": "dlp.financial.mask",
+    "classified": {
+      "classes": [
+        "FINANCIAL",
+        "PII"
+      ],
+      "labels": [
+        "REGION:EU",
+        "PURPOSE:Billing"
+      ],
+      "confidence": 0.92
+    },
+    "applied_redaction_profile_id": "redact.financial",
+    "require_receipts": true,
+    "reason_code": "DLP_TRANSFORM_REQUIRED",
+    "human_reason": "Financial data must be masked before external transfer (billing route).",
+    "correlation": {
+      "tenant_id": "t_demo",
+      "workflow_id": "wf_billing",
+      "connector_id": "payments_sync",
+      "route_id": "rt.billing.allow",
+      "trace_id": "tr_556"
+    },
+    "version": "1.0.0"
+  }
+}

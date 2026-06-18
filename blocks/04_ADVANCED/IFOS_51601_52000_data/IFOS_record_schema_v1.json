@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Record Schema v1",
+  "type": "object",
+  "required": [
+    "record_id",
+    "entity_id",
+    "source_system",
+    "payload",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "record_id": {
+      "type": "string"
+    },
+    "entity_id": {
+      "type": "string"
+    },
+    "source_system": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

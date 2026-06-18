@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS PublishReceipt Schema v1",
+  "type": "object",
+  "required": [
+    "receipt_id",
+    "package_id",
+    "package_version",
+    "channel",
+    "artifact_sha256",
+    "checks",
+    "signatures",
+    "created_at",
+    "version_schema"
+  ],
+  "properties": {
+    "receipt_id": {
+      "type": "string"
+    },
+    "package_id": {
+      "type": "string"
+    },
+    "package_version": {
+      "type": "string"
+    },
+    "channel": {
+      "type": "string",
+      "enum": [
+        "private",
+        "public",
+        "partner"
+      ]
+    },
+    "artifact_sha256": {
+      "type": "string"
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "status"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "PASS",
+              "FAIL",
+              "SKIP"
+            ]
+          },
+          "details": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "signatures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "key_id",
+          "sig"
+        ],
+        "properties": {
+          "key_id": {
+            "type": "string"
+          },
+          "sig": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "links": {
+      "type": "object",
+      "properties": {
+        "docs": {
+          "type": "string"
+        },
+        "vitrine": {
+          "type": "string"
+        },
+        "sbom_ref": {
+          "type": "string"
+        },
+        "provenance_ref": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "version_schema": {
+      "type": "string",
+      "const": "1.0.0"
+    }
+  }
+}

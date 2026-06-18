@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RepoScaffoldManifest Schema v1",
+  "type": "object",
+  "required": [
+    "folders",
+    "files",
+    "hooks",
+    "version"
+  ],
+  "properties": {
+    "folders": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "hooks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "ref"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "vault",
+              "sandbox",
+              "demo_assets",
+              "ci",
+              "docs"
+            ]
+          },
+          "ref": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "run_request_example": {
+    "run_id": "run_001",
+    "connector_id": "stripe",
+    "connector_version": "1.2.3",
+    "sandbox_profile_id": "sb.policy.enforced",
+    "vault_secret_refs": [
+      {
+        "secret_id": "sec.stripe.prod.001",
+        "access_mode": "lease",
+        "lease_ttl_s": 600
+      }
+    ],
+    "egress_policy_id": "eg.allow.strict",
+    "resource_limits_id": "rl.std",
+    "rate_limit_policy_id": "rpl.strict",
+    "inputs": {
+      "mode": "sync",
+      "since": "2026-01-01T00:00:00Z"
+    }
+  },
+  "attestation_example": {
+    "attestation_id": "att_x_bN3F3pWgTlae",
+    "ts": "2026-01-02T10:00:00Z",
+    "bundle_digest": "sha256:1e6ed65d77d6364eeaed5a745ba5c4985ae2b700dd85d7cf7f027bdf294a33fc",
+    "sandbox_profile_id": "sb.policy.enforced",
+    "policies": {
+      "egress": "eg.allow.strict@v1",
+      "limits": "rl.std@v1",
+      "ratelimits": "rpl.strict@v1"
+    },
+    "node_id": "node-eu-1",
+    "signature": "sig_s_AKS9RPI572Lq",
+    "version": "1.0.0"
+  }
+}

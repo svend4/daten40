@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS QualityKPI Schema v1",
+  "type": "object",
+  "required": [
+    "kpi_id",
+    "item_id",
+    "window",
+    "metrics",
+    "version"
+  ],
+  "properties": {
+    "kpi_id": {
+      "type": "string"
+    },
+    "item_id": {
+      "type": "string"
+    },
+    "window": {
+      "type": "string"
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

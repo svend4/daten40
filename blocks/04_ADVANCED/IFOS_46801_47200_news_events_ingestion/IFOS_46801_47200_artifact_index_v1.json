@@ -1,0 +1,152 @@
+{
+  "artifact_set": "IFOS_46801_47200",
+  "entries": [
+    {
+      "name": "IFOS_news_events_ingestion_os_46801_47200_v1.md",
+      "ref": "file://IFOS_news_events_ingestion_os_46801_47200_v1.md",
+      "hash": "sha256:a8d201a38c74eed9c81ec85b2ee9a5732456be777d100d33473e5ec43fa7c8e6"
+    },
+    {
+      "name": "IFOS_ingestion_api_v1.yaml",
+      "ref": "file://IFOS_ingestion_api_v1.yaml",
+      "hash": "sha256:2e0ec787ffb6b099a5462707781257b361ab53188231449c71ab98b2161ff9dd"
+    },
+    {
+      "name": "IFOS_ingestion_examples_v1.json",
+      "ref": "file://IFOS_ingestion_examples_v1.json",
+      "hash": "sha256:6f1f6af3f63557bf4b292e3f32e5c2178ec5adcf89bc8779c79ff364013fd2cd"
+    },
+    {
+      "name": "IFOS_news_source_schema_v1.json",
+      "ref": "file://IFOS_news_source_schema_v1.json",
+      "hash": "sha256:ca78c15348bc20710248af9dbdad5c9f8b0be33fd6aa33636276b34defb2d79a"
+    },
+    {
+      "name": "IFOS_fetch_job_schema_v1.json",
+      "ref": "file://IFOS_fetch_job_schema_v1.json",
+      "hash": "sha256:0273d1c8c2fe3997b2774e0dafbfb51a0ba857437f5518253a448f11c7cd36ea"
+    },
+    {
+      "name": "IFOS_raw_item_schema_v1.json",
+      "ref": "file://IFOS_raw_item_schema_v1.json",
+      "hash": "sha256:408125f8606eb1adafe2789a0ba4e6471ed420e932809263eba2fb72f839ecfc"
+    },
+    {
+      "name": "IFOS_normalized_item_schema_v1.json",
+      "ref": "file://IFOS_normalized_item_schema_v1.json",
+      "hash": "sha256:9149b642fb212318d29b0d5133837b0201e074fd8a6576ea780f3ba21a25e292"
+    },
+    {
+      "name": "IFOS_event_entity_schema_v1.json",
+      "ref": "file://IFOS_event_entity_schema_v1.json",
+      "hash": "sha256:2bae5d6ba9dbf15b11f104b2eb65e18a143c3f323e77cd8ea3311f4c654f9a35"
+    },
+    {
+      "name": "IFOS_timeline_event_schema_v1.json",
+      "ref": "file://IFOS_timeline_event_schema_v1.json",
+      "hash": "sha256:ea2ac0101acaaadeda1d6b77b446972be9139a19988e15c1081bc51471cb9f37"
+    },
+    {
+      "name": "IFOS_quote_snippet_schema_v1.json",
+      "ref": "file://IFOS_quote_snippet_schema_v1.json",
+      "hash": "sha256:09eeb37cc76c2449970892e970b67646db8488b5c3f2fb5f03ddb5b7e375b479"
+    },
+    {
+      "name": "IFOS_attachment_schema_v1.json",
+      "ref": "file://IFOS_attachment_schema_v1.json",
+      "hash": "sha256:3e6d28a93c0af91c65ba48c48ef8ca30187dcaf52761691630cc11e70b4c8e83"
+    },
+    {
+      "name": "IFOS_dedup_key_schema_v1.json",
+      "ref": "file://IFOS_dedup_key_schema_v1.json",
+      "hash": "sha256:fae30998e6620d31637a1db9b1adab3616100adcaea54fd156a78ba1419b7177"
+    },
+    {
+      "name": "IFOS_correction_retraction_schema_v1.json",
+      "ref": "file://IFOS_correction_retraction_schema_v1.json",
+      "hash": "sha256:d062d0f1d1f34795b36ba2adc9039dbfffbb3e2b9fbc621adaa38de098eba237"
+    },
+    {
+      "name": "IFOS_language_detection_schema_v1.json",
+      "ref": "file://IFOS_language_detection_schema_v1.json",
+      "hash": "sha256:7341b25a6a6fa892ca5b74f727c0b0532a093fb7409cc75faca2fe554ca6930a"
+    },
+    {
+      "name": "IFOS_extraction_result_schema_v1.json",
+      "ref": "file://IFOS_extraction_result_schema_v1.json",
+      "hash": "sha256:2731a22a5a37f03e2c43eb3e83d695008838a152943f8595178bed6a062cd287"
+    },
+    {
+      "name": "IFOS_enrichment_schema_v1.json",
+      "ref": "file://IFOS_enrichment_schema_v1.json",
+      "hash": "sha256:1771f4e5f91dc56d7b7c576c065c909e0791b8b5df48407ddbe5de8b14d0e1d2"
+    },
+    {
+      "name": "IFOS_provenance_record_schema_v1.json",
+      "ref": "file://IFOS_provenance_record_schema_v1.json",
+      "hash": "sha256:ce02b7de9cf66881c4dc038eacc8491a1415b3e08ff428007fdc91d93046bfd7"
+    },
+    {
+      "name": "IFOS_ingest_policy_schema_v1.json",
+      "ref": "file://IFOS_ingest_policy_schema_v1.json",
+      "hash": "sha256:1abbe565f9ceb40293da07c10ba9d5b760f45612689be4b1a3642b23d8202493"
+    },
+    {
+      "name": "IFOS_sources_catalog_spec_v1.md",
+      "ref": "file://IFOS_sources_catalog_spec_v1.md",
+      "hash": "sha256:26fade1ed3629c004cfddc555b39fa50798a6a93adf434552b81c7b312142add"
+    },
+    {
+      "name": "IFOS_ingestion_pipeline_spec_v1.md",
+      "ref": "file://IFOS_ingestion_pipeline_spec_v1.md",
+      "hash": "sha256:b73d361b9899678d481f8afbe227eb8ddb91c0096ca12ac447e8914e15b54fe4"
+    },
+    {
+      "name": "IFOS_normalization_extraction_spec_v1.md",
+      "ref": "file://IFOS_normalization_extraction_spec_v1.md",
+      "hash": "sha256:b92db39c30aee7a7d87cc62a88290c38c69a85f37b06bc8211bb95b8ae389d51"
+    },
+    {
+      "name": "IFOS_events_timeline_spec_v1.md",
+      "ref": "file://IFOS_events_timeline_spec_v1.md",
+      "hash": "sha256:265938bc5e4f048d86a45c0663d7246e70426b29171ee2820af4d2487db6da24"
+    },
+    {
+      "name": "IFOS_ingest_dedup_versioning_spec_v1.md",
+      "ref": "file://IFOS_ingest_dedup_versioning_spec_v1.md",
+      "hash": "sha256:22be68d4c5fc7e7bf563765ef8c12a8f15c0036880b0be2b93bb2e83dc7b54fc"
+    },
+    {
+      "name": "IFOS_provenance_citations_spec_v1.md",
+      "ref": "file://IFOS_provenance_citations_spec_v1.md",
+      "hash": "sha256:1b05aa1ef0af264e6bd63aacedf5614a24744d39cc1651e700a92404ef81f6b0"
+    },
+    {
+      "name": "IFOS_ingest_ops_retries_rate_limits_spec_v1.md",
+      "ref": "file://IFOS_ingest_ops_retries_rate_limits_spec_v1.md",
+      "hash": "sha256:780a91171fd33304da865674efc1ffa4d36396af0d57cae1e139750860be0837"
+    },
+    {
+      "name": "ifos_rss_ingestor_stub_v1.py",
+      "ref": "file://ifos_rss_ingestor_stub_v1.py",
+      "hash": "sha256:cd1f77131995140e1eefa558ecefdc484dde910662dc553bfc82a3d40e87453b"
+    },
+    {
+      "name": "ifos_web_fetch_stub_v1.py",
+      "ref": "file://ifos_web_fetch_stub_v1.py",
+      "hash": "sha256:d2ce4d824aecad2f96d726d4857681090c9a57ffa203e307765858290591b61f"
+    },
+    {
+      "name": "ifos_normalize_extract_stub_v1.py",
+      "ref": "file://ifos_normalize_extract_stub_v1.py",
+      "hash": "sha256:1dc6206a29a7c4e1b3ceedca6f05d6a61b779ef6354ec56b94071940496f560b"
+    },
+    {
+      "name": "ifos_timeline_builder_stub_v1.py",
+      "ref": "file://ifos_timeline_builder_stub_v1.py",
+      "hash": "sha256:9b951f0c978e15459c5c1530441efb77d6123af1f5466b16c0ace0e9d52dfa6d"
+    }
+  ],
+  "created_at": "2026-01-04T08:55:00Z",
+  "version": "1.0.0"
+}

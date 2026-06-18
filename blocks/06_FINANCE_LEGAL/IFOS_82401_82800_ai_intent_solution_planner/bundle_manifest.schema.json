@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "IFOS Bundle Manifest",
+  "type": "object",
+  "required": [
+    "bundle_id",
+    "connectors",
+    "entrypoint"
+  ],
+  "properties": {
+    "bundle_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "connectors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "secrets_required": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "entrypoint": {
+      "type": "object"
+    },
+    "policies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

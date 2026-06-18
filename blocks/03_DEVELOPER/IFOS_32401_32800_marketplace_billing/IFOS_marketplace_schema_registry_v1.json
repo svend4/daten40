@@ -1,0 +1,102 @@
+{
+  "registry_id": "reg.mp.oxt5dbdoi83l",
+  "entries": [
+    {
+      "name": "IFOS_marketplace_listing_schema_v1.json",
+      "ref": "file://IFOS_marketplace_listing_schema_v1.json",
+      "hash": "sha256:93bcd7a101b6de77d96ec5605455be517fffd7bdd51c5fb2bb508f6f2d7c03a2"
+    },
+    {
+      "name": "IFOS_pricing_model_schema_v1.json",
+      "ref": "file://IFOS_pricing_model_schema_v1.json",
+      "hash": "sha256:161c10ae563b7ce22c6deb26bfd7d469e6fa735e0c7cd7e1ffff8cd179d32f25"
+    },
+    {
+      "name": "IFOS_subscription_plan_schema_v1.json",
+      "ref": "file://IFOS_subscription_plan_schema_v1.json",
+      "hash": "sha256:8ea6a35cc2f97bac3ec61a4d0dc0f086237d4547f6c86566d3bd30ab11524f89"
+    },
+    {
+      "name": "IFOS_trial_policy_schema_v1.json",
+      "ref": "file://IFOS_trial_policy_schema_v1.json",
+      "hash": "sha256:7233f43f29b41b6655a6ed13444ad9ba64634c5de211d72a56fad4f4c2cda088"
+    },
+    {
+      "name": "IFOS_license_entitlement_schema_v1.json",
+      "ref": "file://IFOS_license_entitlement_schema_v1.json",
+      "hash": "sha256:06aab8c7a232bb442c6b53be6686b276a352a812c2083aa31d4904805f57c202"
+    },
+    {
+      "name": "IFOS_usage_meter_schema_v1.json",
+      "ref": "file://IFOS_usage_meter_schema_v1.json",
+      "hash": "sha256:f137d160bc92d3b99d6b5b21b9720fb910779f71c9d63bfc106c0340f2a48602"
+    },
+    {
+      "name": "IFOS_usage_event_schema_v1.json",
+      "ref": "file://IFOS_usage_event_schema_v1.json",
+      "hash": "sha256:5fcb12644c561feaa2243244697f51dec3d1e93bbd955d77c9c15e11a5442c91"
+    },
+    {
+      "name": "IFOS_purchase_order_schema_v1.json",
+      "ref": "file://IFOS_purchase_order_schema_v1.json",
+      "hash": "sha256:82c925f8b21e7e93d30f97f53df86b4e36ef5f998e018653a5b5ea5d86e95d21"
+    },
+    {
+      "name": "IFOS_invoice_schema_v1.json",
+      "ref": "file://IFOS_invoice_schema_v1.json",
+      "hash": "sha256:73a053ea44ec97634c5a5c195a11075294cac941444f7c87f1cbcb2d4eccbdb5"
+    },
+    {
+      "name": "IFOS_payment_provider_schema_v1.json",
+      "ref": "file://IFOS_payment_provider_schema_v1.json",
+      "hash": "sha256:3226f1adcd16370916f8ff0fdded5aac7fb03b9022b496e058e942cc44de2d39"
+    },
+    {
+      "name": "IFOS_payment_webhook_event_schema_v1.json",
+      "ref": "file://IFOS_payment_webhook_event_schema_v1.json",
+      "hash": "sha256:b0f6b0a10e4c8127bdc6d08431c96c658763c31987801ce19e874b9607992389"
+    },
+    {
+      "name": "IFOS_payout_account_schema_v1.json",
+      "ref": "file://IFOS_payout_account_schema_v1.json",
+      "hash": "sha256:df44ed93f7e8e9932443168d1eeea1a5f1095fa7eb8e5d0621b41d9e67f4e65d"
+    },
+    {
+      "name": "IFOS_revenue_share_schema_v1.json",
+      "ref": "file://IFOS_revenue_share_schema_v1.json",
+      "hash": "sha256:52fa283354143d599584bee359b880a650942420e976ebfe887e9d1a32b181dd"
+    },
+    {
+      "name": "IFOS_payout_schema_v1.json",
+      "ref": "file://IFOS_payout_schema_v1.json",
+      "hash": "sha256:a13b820a440fb0bee8816443750f1ededaf7e8b8ba5a940ffeef6556dd02b8db"
+    },
+    {
+      "name": "IFOS_coupon_schema_v1.json",
+      "ref": "file://IFOS_coupon_schema_v1.json",
+      "hash": "sha256:84015d7d5a7d43c86db7d1162e271918bbbde0315e1f8fe86440fba1c03e4a3b"
+    },
+    {
+      "name": "IFOS_tax_profile_schema_v1.json",
+      "ref": "file://IFOS_tax_profile_schema_v1.json",
+      "hash": "sha256:ce47ae062f3146d6680f4133daed1818e1ac5f107692d713eba00b7c0ea071e6"
+    },
+    {
+      "name": "IFOS_refund_schema_v1.json",
+      "ref": "file://IFOS_refund_schema_v1.json",
+      "hash": "sha256:4fde0b6f9307ed6a87afdd6c31dc4c6717ba3d0f4422b21a1d31396fe637f923"
+    },
+    {
+      "name": "IFOS_chargeback_schema_v1.json",
+      "ref": "file://IFOS_chargeback_schema_v1.json",
+      "hash": "sha256:89fae4a694cc0a2542e372819552b60900d284107f8db3b00cf3ef3b4af98b25"
+    },
+    {
+      "name": "IFOS_audit_log_schema_v1.json",
+      "ref": "file://IFOS_audit_log_schema_v1.json",
+      "hash": "sha256:752b16705fde0c9171e3a4e277cc5dc0dbc32e4fa5617777300315ef506e61fe"
+    }
+  ],
+  "updated_at": "2026-01-03T10:32:00Z",
+  "version": "1.0.0"
+}

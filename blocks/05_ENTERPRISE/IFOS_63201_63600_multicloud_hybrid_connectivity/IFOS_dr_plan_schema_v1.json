@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DR Plan Schema v1",
+  "type": "object",
+  "required": [
+    "dr_id",
+    "primary_env",
+    "secondary_env",
+    "rpo",
+    "rto",
+    "version"
+  ],
+  "properties": {
+    "dr_id": {
+      "type": "string"
+    },
+    "primary_env": {
+      "type": "string"
+    },
+    "secondary_env": {
+      "type": "string"
+    },
+    "rpo": {
+      "type": "string"
+    },
+    "rto": {
+      "type": "string"
+    },
+    "failover_steps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "test_schedule": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

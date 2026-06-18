@@ -1,0 +1,12 @@
+{
+  "index_id": "idx.sch.19h156yccdqs",
+  "schemas": [
+    {
+      "schema_id": "ifos.invoice",
+      "latest": "1.0.0",
+      "status": "active"
+    }
+  ],
+  "updated_at": "2026-01-04T03:25:00Z",
+  "version": "1.0.0"
+}

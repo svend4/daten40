@@ -1,0 +1,36 @@
+{
+  "ifos_block": {
+    "range_start": 70001,
+    "range_end": 70400,
+    "slug": "performance_capacity_load_testing",
+    "title": "Performance, Capacity & Load Testing",
+    "category": "Observability & Reliability",
+    "priority": "P1",
+    "created_at": "2026-01-03T15:22:47",
+    "artifacts": [
+      {
+        "type": "spec",
+        "path": "IFOS_performance_capacity_load_testing_os_70001_70400_v1.md"
+      },
+      {
+        "type": "seed_csv",
+        "path": "IFOS_performance_capacity_load_testing_seed_70001_70400_v1.csv"
+      }
+    ],
+    "entities": [
+      "LoadTestTemplate",
+      "LoadTestRun",
+      "CapacitySnapshot",
+      "RegressionFinding"
+    ],
+    "api": [
+      "POST /perf/tests/templates",
+      "GET /perf/tests/templates",
+      "POST /perf/tests/runs",
+      "POST /perf/tests/runs/{id}/start",
+      "POST /perf/tests/runs/{id}/finish",
+      "GET /perf/capacity/snapshots",
+      "GET /perf/regressions"
+    ]
+  }
+}

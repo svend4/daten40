@@ -1,0 +1,28 @@
+{
+  "request_id": "REQ-001",
+  "environment": "prod",
+  "policy_packs": [
+    "cp_us_hipaa_soc2_baseline"
+  ],
+  "time_range": {
+    "start": "2026-01-01",
+    "end": "2026-01-31"
+  },
+  "export_mode": "link-only",
+  "formats": [
+    "md",
+    "zip"
+  ],
+  "branding": {
+    "title": "Example Corp Compliance Report"
+  },
+  "include_sections": {
+    "system_description": true,
+    "controls": true,
+    "exceptions": true
+  },
+  "filters": {
+    "service": "ehr_gateway"
+  },
+  "requested_by": "security@example.com"
+}

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ABTest Schema v1",
+  "type": "object",
+  "required": [
+    "test_id",
+    "name",
+    "variants",
+    "metrics",
+    "guardrails",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "test_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "variants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "ranking_profile_id",
+          "traffic"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "ranking_profile_id": {
+            "type": "string"
+          },
+          "traffic": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "guardrails": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "running",
+        "paused",
+        "ended"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

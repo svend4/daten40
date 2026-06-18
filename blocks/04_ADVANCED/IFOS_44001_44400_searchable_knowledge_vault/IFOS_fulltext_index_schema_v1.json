@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS FulltextIndex Schema v1",
+  "type": "object",
+  "required": [
+    "index_id",
+    "engine",
+    "lang",
+    "schema",
+    "version"
+  ],
+  "properties": {
+    "index_id": {
+      "type": "string"
+    },
+    "engine": {
+      "type": "string",
+      "enum": [
+        "opensearch",
+        "elasticsearch",
+        "postgres_fts",
+        "meilisearch",
+        "other"
+      ]
+    },
+    "lang": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "schema": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DLPPolicy Schema v1",
+  "type": "object",
+  "required": [
+    "dlp_policy_id",
+    "rules",
+    "mode",
+    "version"
+  ],
+  "properties": {
+    "dlp_policy_id": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "warn",
+        "block",
+        "quarantine"
+      ]
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "pattern",
+          "action"
+        ],
+        "properties": {
+          "pattern": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "redact",
+              "block",
+              "allow"
+            ]
+          },
+          "severity": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              null,
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          "scope": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

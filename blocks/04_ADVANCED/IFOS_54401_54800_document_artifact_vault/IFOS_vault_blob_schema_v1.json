@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Vault Blob Schema v1",
+  "type": "object",
+  "required": [
+    "content_hash",
+    "size",
+    "mime_type",
+    "version"
+  ],
+  "properties": {
+    "content_hash": {
+      "type": "string"
+    },
+    "size": {
+      "type": "integer"
+    },
+    "mime_type": {
+      "type": "string"
+    },
+    "encryption_ref": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

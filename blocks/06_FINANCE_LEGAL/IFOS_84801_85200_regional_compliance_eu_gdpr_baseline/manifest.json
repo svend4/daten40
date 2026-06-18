@@ -1,0 +1,35 @@
+{
+  "pack_id": "cp_eu_gdpr_baseline",
+  "name": "EU GDPR Baseline Compliance Pack",
+  "version": "1.0.0",
+  "status": "production",
+  "region": "EU",
+  "applies_to": [
+    "any_domain_pack"
+  ],
+  "compatibility": {
+    "ifos_min_version": "v30",
+    "required_blocks": [
+      "IFOS_00001_00400"
+    ]
+  },
+  "policies": [
+    "gdpr.baseline",
+    "privacy.confidential_or_restricted",
+    "region.eu_residency",
+    "retention.personal_data_default",
+    "audit.gdpr_evidence"
+  ],
+  "artifacts": {
+    "dsar_workflows": [
+      "bundles/dsar_access_export.json",
+      "bundles/dsar_delete_erasure.json"
+    ],
+    "templates": [
+      "templates/ropa_template.csv",
+      "templates/vendor_dpa_checklist.md",
+      "templates/data_mapping_template.csv",
+      "templates/lawful_basis_template.csv"
+    ]
+  }
+}

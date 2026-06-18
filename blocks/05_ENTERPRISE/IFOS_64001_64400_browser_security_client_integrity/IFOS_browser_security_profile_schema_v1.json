@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Browser Security Profile Schema v1",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "headers_policy",
+    "csp_policy",
+    "csrf_policy",
+    "cookie_policy",
+    "cors_policy",
+    "webview_policy",
+    "integrity_policy",
+    "version"
+  ],
+  "properties": {
+    "profile_id": {
+      "type": "string"
+    },
+    "headers_policy": {
+      "type": "string"
+    },
+    "csp_policy": {
+      "type": "string"
+    },
+    "csrf_policy": {
+      "type": "string"
+    },
+    "cookie_policy": {
+      "type": "string"
+    },
+    "cors_policy": {
+      "type": "string"
+    },
+    "webview_policy": {
+      "type": "string"
+    },
+    "integrity_policy": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

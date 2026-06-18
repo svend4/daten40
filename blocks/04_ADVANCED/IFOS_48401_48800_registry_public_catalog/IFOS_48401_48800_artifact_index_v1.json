@@ -1,0 +1,162 @@
+{
+  "artifact_set": "IFOS_48401_48800",
+  "entries": [
+    {
+      "name": "IFOS_registry_public_catalog_os_48401_48800_v1.md",
+      "ref": "file://IFOS_registry_public_catalog_os_48401_48800_v1.md",
+      "hash": "sha256:094c68f611f778b7d8cfee0e9f47e9e472b6668cbfe5ff29fa6f579ee92fdf16"
+    },
+    {
+      "name": "IFOS_registry_public_api_v1.yaml",
+      "ref": "file://IFOS_registry_public_api_v1.yaml",
+      "hash": "sha256:c46cfee9469df5fedd49c5cf908ef5beef18ac5310fbec4e8d240363e192fe89"
+    },
+    {
+      "name": "IFOS_registry_public_examples_v1.json",
+      "ref": "file://IFOS_registry_public_examples_v1.json",
+      "hash": "sha256:4b331d58a7dae6a47c64047b0e5b9f1eff9cdf2105c3181c9a54535994207121"
+    },
+    {
+      "name": "IFOS_registry_seed_48401_48800_v1.csv",
+      "ref": "file://IFOS_registry_seed_48401_48800_v1.csv",
+      "hash": "sha256:531ff0de8f95b0b5a11e80d3d5dc80577a872bf7215683e311bb4d6e76c0122a"
+    },
+    {
+      "name": "IFOS_registry_item_schema_v1.json",
+      "ref": "file://IFOS_registry_item_schema_v1.json",
+      "hash": "sha256:9fd9bef657c17125d01f33eeb687939ca69244d2579b2460c024ce86cb270f34"
+    },
+    {
+      "name": "IFOS_capability_schema_v1.json",
+      "ref": "file://IFOS_capability_schema_v1.json",
+      "hash": "sha256:860fe66ee8257bf16f9d67ff44b0ecf3081e52cab5a6da676b8c4b5745d29ed1"
+    },
+    {
+      "name": "IFOS_compatibility_matrix_schema_v1.json",
+      "ref": "file://IFOS_compatibility_matrix_schema_v1.json",
+      "hash": "sha256:02283b6f4c907985bac594b0eafbb7b18ab83833aff6483a78cdd21af481f2e4"
+    },
+    {
+      "name": "IFOS_dependency_schema_v1.json",
+      "ref": "file://IFOS_dependency_schema_v1.json",
+      "hash": "sha256:eca34febdac718b725ad677e988c4e6c43c6e618cf26c2e01e946ee1f80758fc"
+    },
+    {
+      "name": "IFOS_install_profile_schema_v1.json",
+      "ref": "file://IFOS_install_profile_schema_v1.json",
+      "hash": "sha256:e5d75284176be1652c1c6e8b437ee623e1955603216abcce77ee1beebd9bf106"
+    },
+    {
+      "name": "IFOS_run_profile_schema_v1.json",
+      "ref": "file://IFOS_run_profile_schema_v1.json",
+      "hash": "sha256:56f2bbaa957d5e25b49df43f81317539861eb566a65f4d86e81328e2775b96ff"
+    },
+    {
+      "name": "IFOS_registry_security_profile_schema_v1.json",
+      "ref": "file://IFOS_registry_security_profile_schema_v1.json",
+      "hash": "sha256:ae99e8aac22df8cf68604f6e0ea51ab17feea9d510354a5d1b3a25f33b3fa86b"
+    },
+    {
+      "name": "IFOS_maintenance_profile_schema_v1.json",
+      "ref": "file://IFOS_maintenance_profile_schema_v1.json",
+      "hash": "sha256:a61fc8e35d87bf4b4ea02af6571a30d9bf3d6769ab517c9dcd62dc49ab2468fa"
+    },
+    {
+      "name": "IFOS_docs_pack_schema_v1.json",
+      "ref": "file://IFOS_docs_pack_schema_v1.json",
+      "hash": "sha256:4c1902ece5fa88a7776113c8cfb5bcfdbea695a0a1004f0fde80867e95538517"
+    },
+    {
+      "name": "IFOS_examples_pack_schema_v1.json",
+      "ref": "file://IFOS_examples_pack_schema_v1.json",
+      "hash": "sha256:297ac83e714ec9401fb8fcc9ca43e77ea45c89007e482d0f49153e58009c7345"
+    },
+    {
+      "name": "IFOS_registry_telemetry_schema_v1.json",
+      "ref": "file://IFOS_registry_telemetry_schema_v1.json",
+      "hash": "sha256:73fc46e0c28a1f4d05e3e5fb2997de0334f3857700aa91a4878b0829e5efb31a"
+    },
+    {
+      "name": "IFOS_registry_quality_score_schema_v1.json",
+      "ref": "file://IFOS_registry_quality_score_schema_v1.json",
+      "hash": "sha256:ceaa1ccab97c13e4b26e2265f4a63ff2347a81b16cb255d50091b06866f82e50"
+    },
+    {
+      "name": "IFOS_registry_tagging_schema_v1.json",
+      "ref": "file://IFOS_registry_tagging_schema_v1.json",
+      "hash": "sha256:9961568af7419053377391c05684577a413e2d0330dc05d825d3056998f389b0"
+    },
+    {
+      "name": "IFOS_registry_publisher_schema_v1.json",
+      "ref": "file://IFOS_registry_publisher_schema_v1.json",
+      "hash": "sha256:d54cef322c36008ceb3f31bb3bbd53444fc3df742b88299e9edaf6610c935baf"
+    },
+    {
+      "name": "IFOS_registry_bundle_schema_v1.json",
+      "ref": "file://IFOS_registry_bundle_schema_v1.json",
+      "hash": "sha256:510924a46d6050e605931494b98e7a44128561c1ed8cfb9122ad6b6bd2d82b3c"
+    },
+    {
+      "name": "IFOS_registry_catalog_spec_v1.md",
+      "ref": "file://IFOS_registry_catalog_spec_v1.md",
+      "hash": "sha256:eaab38b21c69c95049c8a1f37e2b84c7db2a1490ef06eb100b74712c76c6b7d8"
+    },
+    {
+      "name": "IFOS_capability_vocab_spec_v1.md",
+      "ref": "file://IFOS_capability_vocab_spec_v1.md",
+      "hash": "sha256:46f716757b41360b88978529d8bee69564a376ee8b651e6fb72d6f2699c6b005"
+    },
+    {
+      "name": "IFOS_compat_matrix_spec_v1.md",
+      "ref": "file://IFOS_compat_matrix_spec_v1.md",
+      "hash": "sha256:0e62307aededd892c21d775c691a4dd3b944254ef576ffbecf800d2198445a0b"
+    },
+    {
+      "name": "IFOS_install_run_profiles_spec_v1.md",
+      "ref": "file://IFOS_install_run_profiles_spec_v1.md",
+      "hash": "sha256:24d7aef2138b6f08844877084f3ef6103150e6c6a56daaf2edf3cd237472fabe"
+    },
+    {
+      "name": "IFOS_registry_quality_spec_v1.md",
+      "ref": "file://IFOS_registry_quality_spec_v1.md",
+      "hash": "sha256:b0820e30893d236184133c061e8e3e15a6d3cef1b395c4f387dc3675e638b772"
+    },
+    {
+      "name": "IFOS_registry_security_spec_v1.md",
+      "ref": "file://IFOS_registry_security_spec_v1.md",
+      "hash": "sha256:297740ce7226a184b73f8560c2e4cf2351cb0d4644341f402f9aced37f819a62"
+    },
+    {
+      "name": "IFOS_docs_examples_pack_spec_v1.md",
+      "ref": "file://IFOS_docs_examples_pack_spec_v1.md",
+      "hash": "sha256:6f9e45e16dd78f3dcac9f84ab35db0717276e3ccc7e14cde2f326e0e0a19d723"
+    },
+    {
+      "name": "IFOS_registry_curation_workflow_spec_v1.md",
+      "ref": "file://IFOS_registry_curation_workflow_spec_v1.md",
+      "hash": "sha256:c5615302a37b2d19f5109c2f5ecde929463b3f060a29e0cf0030f56eaff48f8a"
+    },
+    {
+      "name": "IFOS_registry_migration_import_spec_v1.md",
+      "ref": "file://IFOS_registry_migration_import_spec_v1.md",
+      "hash": "sha256:795218aedf1a4ba7ff36af5eb75b8081a2c6a2d95f0957c6b17324384c39e004"
+    },
+    {
+      "name": "ifos_registry_validator_stub_v1.py",
+      "ref": "file://ifos_registry_validator_stub_v1.py",
+      "hash": "sha256:02e6485b86801302974c15a842ecede98d09b27eb34cbb4cb70c0e3a56dd4a73"
+    },
+    {
+      "name": "ifos_registry_dependency_resolver_stub_v1.py",
+      "ref": "file://ifos_registry_dependency_resolver_stub_v1.py",
+      "hash": "sha256:4409423172c7d4889d1e145cf661cbf6cdb91ba589e25244da6c244d12d96ba9"
+    },
+    {
+      "name": "ifos_registry_exporter_stub_v1.py",
+      "ref": "file://ifos_registry_exporter_stub_v1.py",
+      "hash": "sha256:0010ab9b708683681e0a307ab5b1862dbaff72f1b176d39cc74cfb17a981818d"
+    }
+  ],
+  "created_at": "2026-01-04T11:15:00Z",
+  "version": "1.0.0"
+}

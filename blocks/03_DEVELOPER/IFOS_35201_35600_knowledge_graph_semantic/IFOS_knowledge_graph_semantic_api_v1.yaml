@@ -1,0 +1,33 @@
+openapi: 3.0.3
+info:
+  title: IFOS Knowledge Graph & Semantic API
+  version: "1.0.0"
+servers:
+  - url: https://semantic.ifos.local/v1
+tags:
+  - name: Ontology
+  - name: Embeddings
+  - name: Search
+  - name: Clusters
+  - name: Explain
+  - name: QA
+  - name: Taxonomy
+paths:
+  /taxonomy:
+    post: {tags:[Taxonomy], summary: Upsert taxonomy, responses: {"200": {description: OK}}}
+  /synonyms:
+    post: {tags:[Taxonomy], summary: Upsert synonym set, responses: {"200": {description: OK}}}
+  /ontology/nodes:
+    post: {tags:[Ontology], summary: Upsert ontology node, responses: {"200": {description: OK}}}
+  /ontology/edges:
+    post: {tags:[Ontology], summary: Upsert ontology edge, responses: {"200": {description: OK}}}
+  /embeddings:
+    post: {tags:[Embeddings], summary: Upsert embedding, responses: {"200": {description: OK}}}
+  /search/semantic:
+    post: {tags:[Search], summary: Run semantic query, responses: {"200": {description: OK}}}
+  /clusters:
+    post: {tags:[Clusters], summary: Upsert cluster, responses: {"200": {description: OK}}}
+  /explain:
+    post: {tags:[Explain], summary: Create explanation, responses: {"201": {description: Created}}}
+  /qa/cards:
+    post: {tags:[QA], summary: Upsert QA card, responses: {"200": {description: OK}}}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UI Status Schema v1",
+  "type": "object",
+  "required": [
+    "object_type",
+    "object_id",
+    "status",
+    "meaning",
+    "next_actions",
+    "owner_role",
+    "version"
+  ],
+  "properties": {
+    "object_type": {
+      "type": "string"
+    },
+    "object_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "meaning": {
+      "type": "string"
+    },
+    "next_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "owner_role": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

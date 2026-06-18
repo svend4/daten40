@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Remediation Plan",
+  "type": "object",
+  "required": [
+    "plan_id",
+    "target_type",
+    "target_id",
+    "steps"
+  ],
+  "properties": {
+    "plan_id": {
+      "type": "string"
+    },
+    "target_type": {
+      "type": "string",
+      "enum": [
+        "PACKAGE",
+        "BUNDLE",
+        "TENANT",
+        "CHANNEL"
+      ]
+    },
+    "target_id": {
+      "type": "string"
+    },
+    "advisory_ids": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "created_by": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/step"
+      }
+    },
+    "status": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "DRAFT",
+        "APPROVED",
+        "EXECUTING",
+        "DONE",
+        "FAILED"
+      ]
+    },
+    "receipts": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "definitions": {
+    "step": {
+      "type": "object",
+      "required": [
+        "action"
+      ],
+      "properties": {
+        "step_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "action": {
+          "type": "string",
+          "enum": [
+            "BLOCK_INSTALL",
+            "QUARANTINE",
+            "REBUILD",
+            "UPGRADE",
+            "PATCH",
+            "NOTIFY",
+            "FORCED_ROLLOUT",
+            "OPEN_TICKET"
+          ]
+        },
+        "params": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": true
+        },
+        "requires_approval": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "rollback_action": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

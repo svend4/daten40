@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RunProfile Schema v1",
+  "type": "object",
+  "required": [
+    "run_id",
+    "item_id",
+    "run_cmd",
+    "healthcheck",
+    "smoke_test",
+    "version"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string"
+    },
+    "item_id": {
+      "type": "string"
+    },
+    "run_cmd": {
+      "type": "string"
+    },
+    "healthcheck": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "smoke_test": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

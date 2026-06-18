@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ComplaintCase Schema v1",
+  "type": "object",
+  "required": [
+    "case_id",
+    "review_id",
+    "claimant",
+    "grounds",
+    "evidence",
+    "state",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "case_id": {
+      "type": "string"
+    },
+    "review_id": {
+      "type": "string"
+    },
+    "claimant": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "grounds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "open",
+        "investigating",
+        "resolved",
+        "rejected"
+      ]
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
