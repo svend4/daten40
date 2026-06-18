@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Payout Schema v1",
+  "type": "object",
+  "required": [
+    "payout_id",
+    "publisher_id",
+    "period",
+    "status",
+    "currency",
+    "gross",
+    "fees",
+    "reserves",
+    "net",
+    "ledger_refs",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "payout_id": {
+      "type": "string"
+    },
+    "publisher_id": {
+      "type": "string"
+    },
+    "period": {
+      "type": "object",
+      "properties": {
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "scheduled",
+        "paid",
+        "failed",
+        "held"
+      ]
+    },
+    "currency": {
+      "type": "string"
+    },
+    "gross": {
+      "type": "number"
+    },
+    "fees": {
+      "type": "number"
+    },
+    "reserves": {
+      "type": "number"
+    },
+    "net": {
+      "type": "number"
+    },
+    "ledger_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
