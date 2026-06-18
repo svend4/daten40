@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Recommendation Event Schema v1",
+  "type": "object",
+  "required": [
+    "event_id",
+    "tenant_id",
+    "kind",
+    "context",
+    "recommendations",
+    "ts"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "install",
+        "run_fail",
+        "run_warn",
+        "search",
+        "replace_component",
+        "policy_deny"
+      ]
+    },
+    "context": {
+      "type": "object",
+      "properties": {
+        "domain": {
+          "type": "string"
+        },
+        "job_id": {
+          "type": "string"
+        },
+        "run_id": {
+          "type": "string"
+        },
+        "failed_function_id": {
+          "type": "string"
+        },
+        "flags": {
+          "type": "object"
+        }
+      }
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "id",
+          "reason"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "bundle",
+              "recipe",
+              "adapter",
+              "cluster",
+              "vitrine",
+              "doc"
+            ]
+          },
+          "id": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "constraints": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "ts": {
+      "type": "string"
+    }
+  }
+}
