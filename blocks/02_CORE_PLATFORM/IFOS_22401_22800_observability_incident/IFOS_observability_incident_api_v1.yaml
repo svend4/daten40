@@ -1,0 +1,120 @@
+openapi: 3.0.3
+info:
+  title: IFOS Observability & Incident API
+  version: "1.0.0"
+  description: "Logs, metrics, traces ingest; alert rules; SLO; incidents; postmortems; runbooks; fallback policies."
+servers:
+  - url: https://obs.ifos.local/v1
+tags:
+  - name: Logs
+  - name: Metrics
+  - name: Traces
+  - name: Alerts
+  - name: SLO
+  - name: Incidents
+  - name: Postmortems
+  - name: Runbooks
+  - name: Fallback
+paths:
+  /logs/ingest:
+    post:
+      tags: [Logs]
+      summary: Ingest log events
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
+  /metrics/ingest:
+    post:
+      tags: [Metrics]
+      summary: Ingest metric points
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
+  /traces/ingest:
+    post:
+      tags: [Traces]
+      summary: Ingest trace spans
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
+  /alerts/rules/create:
+    post:
+      tags: [Alerts]
+      summary: Create alert rule
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /alerts/fire:
+    post:
+      tags: [Alerts]
+      summary: Fire alert (internal)
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
+  /slo/create:
+    post:
+      tags: [SLO]
+      summary: Create SLO
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /incidents/create:
+    post:
+      tags: [Incidents]
+      summary: Declare incident
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /incidents/update:
+    post:
+      tags: [Incidents]
+      summary: Update incident status/timeline
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /postmortems/create:
+    post:
+      tags: [Postmortems]
+      summary: Create postmortem for incident
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /runbooks/get:
+    get:
+      tags: [Runbooks]
+      summary: Get runbook
+      responses:
+        "200": {description: OK}
+  /fallback/policies/get:
+    get:
+      tags: [Fallback]
+      summary: Get fallback policy for subject
+      responses:
+        "200": {description: OK}
