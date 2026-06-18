@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Metric Definition Schema v1",
+  "type": "object",
+  "required": [
+    "metric_id",
+    "name",
+    "description",
+    "unit",
+    "type",
+    "source",
+    "aggregation",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "metric_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "unit": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "counter",
+        "gauge",
+        "histogram",
+        "ratio"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "installer",
+            "runner",
+            "synthetic",
+            "user_feedback",
+            "policy",
+            "security"
+          ]
+        },
+        "ref": {
+          "type": "string"
+        }
+      }
+    },
+    "aggregation": {
+      "type": "object",
+      "properties": {
+        "window": {
+          "type": "string",
+          "description": "e.g. 24h, 30d"
+        },
+        "method": {
+          "type": "string",
+          "enum": [
+            "sum",
+            "avg",
+            "p95",
+            "p99",
+            "rate",
+            "ratio"
+          ]
+        }
+      }
+    },
+    "thresholds": {
+      "type": "object",
+      "properties": {
+        "warn": {
+          "type": "number"
+        },
+        "critical": {
+          "type": "number"
+        },
+        "direction": {
+          "type": "string",
+          "enum": [
+            "above_is_bad",
+            "below_is_bad"
+          ]
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
