@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Smoke Check Schema v1",
+  "type": "object",
+  "required": [
+    "smoke_id",
+    "subject",
+    "checks",
+    "status",
+    "report",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "smoke_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pass",
+              "fail",
+              "warn"
+            ]
+          },
+          "details": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pass",
+        "fail",
+        "warn"
+      ]
+    },
+    "report": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
