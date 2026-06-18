@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Purchase Order Schema v1",
+  "type": "object",
+  "required": [
+    "order_id",
+    "buyer",
+    "listing_ref",
+    "plan_ref",
+    "status",
+    "amount",
+    "currency",
+    "created_at",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "order_id": {
+      "type": "string"
+    },
+    "buyer": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "tenant",
+            "user"
+          ]
+        },
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "listing_ref": {
+      "type": "string"
+    },
+    "plan_ref": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "created",
+        "paid",
+        "failed",
+        "refunded",
+        "chargeback"
+      ]
+    },
+    "amount": {
+      "type": "number"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
