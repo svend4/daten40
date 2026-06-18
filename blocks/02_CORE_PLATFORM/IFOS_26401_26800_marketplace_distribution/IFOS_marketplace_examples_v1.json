@@ -1,0 +1,201 @@
+{
+  "marketplace_item": {
+    "item_id": "itm.m.jhl6gjbequ",
+    "name": "RSS→RAG News Brief",
+    "publisher": "IFOS Labs",
+    "category": "news",
+    "tags": [
+      "rss",
+      "rag",
+      "summaries",
+      "citations"
+    ],
+    "short_description": "Import RSS, dedupe, index, and answer with citations.",
+    "pricing": "free",
+    "links": {
+      "docs": "https://example.com/docs",
+      "repo": "https://example.com/repo"
+    },
+    "trust_badges": [
+      "verified_publisher",
+      "medium_trust"
+    ],
+    "supported_runtimes": [
+      "fastapi",
+      "local",
+      "docker"
+    ],
+    "latest_package_id": "pkg.p.dajps1xctn",
+    "updated_at": "2026-01-03T03:35:00Z",
+    "version": "1.0.0"
+  },
+  "compatibility_matrix": {
+    "matrix_id": "cmp.c.hhmec04c81",
+    "supported": [
+      {
+        "runtime": "fastapi",
+        "runtime_version": ">=0.110",
+        "os": [
+          "linux",
+          "windows"
+        ],
+        "notes": "demo"
+      }
+    ],
+    "conflicts": [
+      {
+        "with": "pkg.oldvector",
+        "reason": "incompatible schema"
+      }
+    ],
+    "updated_at": "2026-01-03T03:35:00Z",
+    "version": "1.0.0"
+  },
+  "function_package": {
+    "package_id": "pkg.p.dajps1xctn",
+    "item_id": "itm.m.jhl6gjbequ",
+    "version_tag": "1.2.0",
+    "entrypoints": {
+      "install": "install.py",
+      "run": "run.py",
+      "healthcheck": "health.py"
+    },
+    "assets": [
+      {
+        "ref": "blob://packages/pkg.p.dajps1xctn/bundle.zip",
+        "hash": "sha256:demo"
+      }
+    ],
+    "config_schema_ref": "file://config_schema.json",
+    "permissions": [
+      "net",
+      "secrets_read"
+    ],
+    "dependencies": [
+      {
+        "dep_id": "dep.d.u4tbp449j6",
+        "kind": "service",
+        "name": "vector_store",
+        "version_range": ">=1.0 <2.0",
+        "required": true,
+        "version": "1.0.0"
+      }
+    ],
+    "runtime_requirements": {
+      "runtime": "fastapi",
+      "resources": {
+        "min_ram_mb": 512,
+        "min_cpu_cores": 1,
+        "min_disk_mb": 100
+      },
+      "services": [
+        "db",
+        "vector_store"
+      ],
+      "permissions": [
+        "net",
+        "fs_write",
+        "secrets_read"
+      ],
+      "ports": [
+        8000
+      ],
+      "version": "1.0.0"
+    },
+    "compatibility_matrix_id": "cmp.c.hhmec04c81",
+    "signature": {
+      "signer_id": "signer.demo",
+      "key_id": "k1",
+      "signed_hashes": [
+        "sha256:demo"
+      ],
+      "signature": "BASE64==",
+      "ts": "2026-01-03T03:35:00Z",
+      "version": "1.0.0"
+    },
+    "updated_at": "2026-01-03T03:35:00Z",
+    "version": "1.0.0"
+  },
+  "vitrine_card": {
+    "vitrine_id": "vit.v.2tjhc9yx9u",
+    "title": "Новости дня с цитатами (1 клик)",
+    "goal": "Собрать RSS, убрать дубликаты, сделать краткий бриф и Q&A с цитатами.",
+    "bundle": [
+      "pkg.p.dajps1xctn"
+    ],
+    "install_order": [
+      "pkg.p.dajps1xctn"
+    ],
+    "demo_data_refs": [
+      "demo://rss/tech"
+    ],
+    "quickstart": "1) Нажмите Install 2) Вставьте RSS 3) Запросите: 'Главные новости недели'",
+    "expected_outcome": "Лента + бриф + ответы с источниками.",
+    "updated_at": "2026-01-03T03:35:00Z",
+    "version": "1.0.0"
+  },
+  "install_plan": {
+    "plan_id": "plan.p.3ruk3jwadd",
+    "target_runtime": "fastapi",
+    "steps": [
+      {
+        "kind": "fetch",
+        "ref": "blob://packages/pkg.p.dajps1xctn/bundle.zip"
+      },
+      {
+        "kind": "verify",
+        "ref": "sha256:demo"
+      },
+      {
+        "kind": "configure",
+        "ref": "file://config_schema.json",
+        "params": {
+          "ask": [
+            "RSS_URL",
+            "API_KEY_REF"
+          ]
+        }
+      },
+      {
+        "kind": "install",
+        "ref": "pkg.p.dajps1xctn"
+      },
+      {
+        "kind": "start",
+        "ref": "pkg.p.dajps1xctn"
+      },
+      {
+        "kind": "healthcheck",
+        "ref": "pkg.p.dajps1xctn"
+      }
+    ],
+    "secrets_needed": [
+      "secretref.rss_key"
+    ],
+    "rollback": [
+      "uninstall pkg.p.dajps1xctn",
+      "restore previous version"
+    ],
+    "updated_at": "2026-01-03T03:35:00Z",
+    "version": "1.0.0"
+  },
+  "rating_review": {
+    "review_id": "rev.r.jk78iect8l",
+    "item_id": "itm.m.jhl6gjbequ",
+    "rating": 5,
+    "title": "Работает из коробки",
+    "text": "Поставилось быстро, цитаты корректные.",
+    "pros": [
+      "быстрый старт",
+      "дедупликация"
+    ],
+    "cons": [
+      "хочется больше фильтров"
+    ],
+    "runtime": "fastapi",
+    "runtime_version": "0.111",
+    "verified_install": true,
+    "ts": "2026-01-03T03:35:00Z",
+    "version": "1.0.0"
+  }
+}
