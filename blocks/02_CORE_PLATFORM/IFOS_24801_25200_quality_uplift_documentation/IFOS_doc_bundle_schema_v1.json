@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Doc Bundle Schema v1",
+  "type": "object",
+  "required": [
+    "doc_id",
+    "subject_id",
+    "files",
+    "sections",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "doc_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "format",
+          "ref"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "format": {
+            "type": "string",
+            "enum": [
+              "md",
+              "html",
+              "txt",
+              "pdf"
+            ]
+          },
+          "ref": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "readme",
+          "tutorial",
+          "faq",
+          "changelog",
+          "troubleshooting",
+          "license",
+          "security"
+        ]
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
