@@ -1,0 +1,39 @@
+{
+  "genesis_steps_sample": [
+    {
+      "phase": "PREFACE",
+      "step_num": "1",
+      "action": "Выбрать 1 экосистему (например, _Make_ или _WordPress_)",
+      "consequence": "",
+      "result": ""
+    },
+    {
+      "phase": "Фаза E — Affiliate Hub v1 (сложнее: интеграции и нормализация) [86-105]",
+      "step_num": "100",
+      "action": "_Сделать ротацию ключей (процедура)_",
+      "consequence": "эксплуатация",
+      "result": "есть инструкция"
+    },
+    {
+      "phase": "Фаза W — High Availability, Multi-region, DR (катастрофоустойчивость) [486-500]",
+      "step_num": "500",
+      "action": "_Release: Enterprise Resilience v1.0_",
+      "consequence": "релиз",
+      "result": "DR runbook + отчёт учений"
+    },
+    {
+      "phase": "Фаза AK — FUNC-ID как “DNS для действий” (универсальный язык функций) [981-1010]",
+      "step_num": "1000",
+      "action": "_Сделать “FUNC Governance council”_ (правила принятия изменений)",
+      "consequence": "управление",
+      "result": "изменения стандарта проходят процесс"
+    },
+    {
+      "phase": "Фаза MVP5 — Marketplace v0 + запуск [12631-12650]",
+      "step_num": "12950",
+      "action": "BP-60 “IFOS Starter Pack Builder”",
+      "consequence": "",
+      "result": ""
+    }
+  ]
+}
