@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Vitrine Schema v1",
+  "type": "object",
+  "required": [
+    "vitrine_id",
+    "title",
+    "goal",
+    "layout",
+    "cards",
+    "widgets",
+    "primary_action",
+    "presets",
+    "version"
+  ],
+  "properties": {
+    "vitrine_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "goal": {
+      "type": "string"
+    },
+    "layout": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "grid",
+            "columns",
+            "tabs"
+          ]
+        },
+        "settings": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "cards": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "widgets": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "primary_action": {
+      "type": "object"
+    },
+    "presets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "params"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "params": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "help": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
