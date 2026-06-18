@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS NewsConference Schema v1",
+  "type": "object",
+  "required": [
+    "conf_id",
+    "scope",
+    "sources",
+    "pipeline",
+    "agenda",
+    "outputs",
+    "version"
+  ],
+  "properties": {
+    "conf_id": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "object",
+      "properties": {
+        "time_window": {
+          "type": "string",
+          "enum": [
+            "day",
+            "week",
+            "month"
+          ]
+        },
+        "topics": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "locale": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "pipeline": {
+      "type": "object",
+      "properties": {
+        "dedupe": {
+          "type": "boolean"
+        },
+        "cluster": {
+          "type": "boolean"
+        },
+        "rank": {
+          "type": "boolean"
+        },
+        "narratives_compare": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "agenda": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "topic",
+          "top_n"
+        ],
+        "properties": {
+          "topic": {
+            "type": "string"
+          },
+          "top_n": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "questions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "html",
+              "pdf",
+              "telegram",
+              "email",
+              "json"
+            ]
+          },
+          "target": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
