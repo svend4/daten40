@@ -1,0 +1,217 @@
+{
+  "collection": {
+    "collection_id": "col.news_demo",
+    "name": "News Demo",
+    "description": "Demo collection for news ingestion and RAG",
+    "filters": {
+      "lang": [
+        "ru",
+        "de",
+        "en"
+      ],
+      "topic": [
+        "drones",
+        "ai"
+      ]
+    },
+    "storage_policy_id": "sp.default",
+    "pii_classification_id": "pii.low",
+    "index_ids": [
+      "idx.x.zlq5mkrz2b"
+    ],
+    "updated_at": "2026-01-03T02:40:00Z",
+    "version": "1.0.0"
+  },
+  "source": {
+    "source_id": "src.rss_demo",
+    "type": "rss",
+    "uri": "https://example.com/rss.xml",
+    "auth": {
+      "method": "none"
+    },
+    "enabled": true,
+    "ingest_rules": {
+      "filters": {
+        "include_keywords": [
+          "drone",
+          "AI"
+        ]
+      },
+      "license_notes": "demo only"
+    },
+    "schedule_ref": "sch.daily.9",
+    "created_at": "2026-01-03T02:40:00Z",
+    "updated_at": "2026-01-03T02:40:00Z",
+    "version": "1.0.0"
+  },
+  "ingest_job": {
+    "ingest_id": "ing.g.lj9vpuhlvd",
+    "source_id": "src.rss_demo",
+    "status": "succeeded",
+    "window": {
+      "from": "2026-01-02T00:00:00Z",
+      "to": "2026-01-03T00:00:00Z"
+    },
+    "stats": {
+      "items_created": 1,
+      "errors": 0
+    },
+    "receipt_ref": "rcpt://demo",
+    "created_at": "2026-01-03T02:40:00Z",
+    "updated_at": "2026-01-03T02:40:00Z",
+    "version": "1.0.0"
+  },
+  "data_item": {
+    "item_id": "item.i.ypdv1s27iy",
+    "kind": "html",
+    "status": "raw",
+    "source_id": "src.rss_demo",
+    "payload_ref": "blob://payloads/item.i.ypdv1s27iy.html",
+    "meta": {
+      "title": "Demo news about drones",
+      "lang": "en",
+      "canonical_url": "https://example.com/a",
+      "tags": [
+        "drones",
+        "ai"
+      ]
+    },
+    "policy_ref": "sp.default",
+    "provenance_ref": "prov.demo",
+    "created_at": "2026-01-03T02:40:00Z",
+    "updated_at": "2026-01-03T02:40:00Z",
+    "version": "1.0.0"
+  },
+  "normalized_record": {
+    "record_id": "rec.r.vauypa5zsf",
+    "item_id": "item.i.ypdv1s27iy",
+    "text": "Demo text about a drone release and AI navigation...",
+    "summary": "Drone release; AI navigation; key specs.",
+    "lang": "en",
+    "content_hash": "sha256:demo",
+    "canonical_url": "https://example.com/a",
+    "published_at": "2026-01-02T12:00:00Z",
+    "structure": {
+      "sections": [
+        {
+          "h": "Intro",
+          "t": "..."
+        }
+      ]
+    },
+    "created_at": "2026-01-03T02:40:00Z",
+    "updated_at": "2026-01-03T02:40:00Z",
+    "version": "1.0.0"
+  },
+  "entities": [
+    {
+      "entity_id": "ent.p.yh2q52t25k",
+      "type": "Product",
+      "name": "DemoDrone X",
+      "aliases": [
+        "DDX"
+      ],
+      "evidence_refs": [
+        "rec.r.vauypa5zsf"
+      ],
+      "created_at": "2026-01-03T02:40:00Z",
+      "updated_at": "2026-01-03T02:40:00Z",
+      "version": "1.0.0"
+    },
+    {
+      "entity_id": "ent.o.prs0lk9lad",
+      "type": "Org",
+      "name": "DemoCorp",
+      "aliases": [
+        "Demo Corp"
+      ],
+      "evidence_refs": [
+        "rec.r.vauypa5zsf"
+      ],
+      "created_at": "2026-01-03T02:40:00Z",
+      "updated_at": "2026-01-03T02:40:00Z",
+      "version": "1.0.0"
+    }
+  ],
+  "entity_links": [
+    {
+      "link_id": "lnk.l.5kd4h3bp0q",
+      "from_entity_id": "ent.o.prs0lk9lad",
+      "to_entity_id": "ent.p.yh2q52t25k",
+      "rel": "produced_by",
+      "confidence": 0.72,
+      "evidence_refs": [
+        "rec.r.vauypa5zsf"
+      ],
+      "updated_at": "2026-01-03T02:40:00Z",
+      "version": "1.0.0"
+    }
+  ],
+  "dedupe_cluster": {
+    "cluster_id": "dupe.d.sbcobhtap8",
+    "record_ids": [
+      "rec.r.vauypa5zsf"
+    ],
+    "canonical_record_id": "rec.r.vauypa5zsf",
+    "reasons": [
+      "manual_merge"
+    ],
+    "merge_policy": {
+      "prefer_lang": "en",
+      "prefer_longer_text": true
+    },
+    "updated_at": "2026-01-03T02:40:00Z",
+    "version": "1.0.0"
+  },
+  "embedding_index": {
+    "index_id": "idx.x.zlq5mkrz2b",
+    "collection_id": "col.news_demo",
+    "strategy": "hnsw",
+    "model_id": "emb.demo.384",
+    "update_mode": "batch",
+    "filters": {
+      "lang": "en"
+    },
+    "version_tag": "v1",
+    "updated_at": "2026-01-03T02:40:00Z",
+    "version": "1.0.0"
+  },
+  "rag_query": {
+    "query_id": "q.q.p31eaawjge",
+    "question": "What is new about DemoDrone X?",
+    "collection_id": "col.news_demo",
+    "filters": {
+      "lang": "en",
+      "date_from": "2026-01-01",
+      "date_to": "2026-01-03"
+    },
+    "top_k": 10,
+    "rerank": true,
+    "citations_required": true,
+    "mode": "safe",
+    "updated_at": "2026-01-03T02:40:00Z",
+    "version": "1.0.0"
+  },
+  "rag_result": {
+    "result_id": "res.r.jd8kcx9t72",
+    "query_id": "q.q.p31eaawjge",
+    "answer": "DemoDrone X is described as a new release with AI navigation and updated specs.",
+    "citations": [
+      {
+        "record_id": "rec.r.vauypa5zsf",
+        "span": "summary",
+        "score": 0.91
+      }
+    ],
+    "entities": [
+      "ent.p.yh2q52t25k",
+      "ent.o.prs0lk9lad"
+    ],
+    "confidence": 0.67,
+    "warnings": [
+      "demo data"
+    ],
+    "updated_at": "2026-01-03T02:40:00Z",
+    "version": "1.0.0"
+  }
+}
