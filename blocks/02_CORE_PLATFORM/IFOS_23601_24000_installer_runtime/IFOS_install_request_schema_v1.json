@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Install Request Schema v1",
+  "type": "object",
+  "required": [
+    "request_id",
+    "subject_id",
+    "subject_type",
+    "profile_id",
+    "mode",
+    "constraints",
+    "ts",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "request_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "subject_type": {
+      "type": "string",
+      "enum": [
+        "atom",
+        "bundle",
+        "cluster"
+      ]
+    },
+    "profile_id": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "dry_run",
+        "sandbox",
+        "prod"
+      ]
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version_strategy": {
+      "type": "string",
+      "enum": [
+        "latest",
+        "stable",
+        "pinned"
+      ],
+      "default": "stable"
+    },
+    "pinned_versions": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "ts": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
