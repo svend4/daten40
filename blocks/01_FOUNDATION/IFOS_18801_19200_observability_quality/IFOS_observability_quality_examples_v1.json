@@ -1,0 +1,385 @@
+{
+  "metric_definitions": [
+    {
+      "metric_id": "metric.install_sr.h5r778vskf",
+      "name": "install_success_rate",
+      "description": "Доля успешных установок от всех попыток.",
+      "unit": "ratio",
+      "type": "ratio",
+      "source": {
+        "kind": "installer",
+        "ref": "installer.ifos"
+      },
+      "aggregation": {
+        "window": "30d",
+        "method": "ratio"
+      },
+      "thresholds": {
+        "warn": 0.97,
+        "critical": 0.95,
+        "direction": "below_is_bad"
+      },
+      "version": "1.0.0",
+      "updated_at": "2026-01-02T19:00:00Z"
+    },
+    {
+      "metric_id": "metric.run_pass.4yyeuta7pb",
+      "name": "run_pass_rate",
+      "description": "Доля успешных запусков за окно времени.",
+      "unit": "ratio",
+      "type": "ratio",
+      "source": {
+        "kind": "runner",
+        "ref": "runner.ifos"
+      },
+      "aggregation": {
+        "window": "24h",
+        "method": "ratio"
+      },
+      "thresholds": {
+        "warn": 0.96,
+        "critical": 0.93,
+        "direction": "below_is_bad"
+      },
+      "version": "1.0.0",
+      "updated_at": "2026-01-02T19:00:00Z"
+    }
+  ],
+  "sli": {
+    "sli_id": "sli.run.qdssjz5xk8",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.news_digest.core",
+      "version": "1.0.0"
+    },
+    "metric_ref": "metric.run_pass.4yyeuta7pb",
+    "window": "24h",
+    "calculation": {
+      "method": "ratio",
+      "query": "pass_runs / total_runs"
+    },
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:00:00Z"
+  },
+  "slo": {
+    "slo_id": "slo.run.n9ncbsplp5",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.news_digest.core",
+      "version": "1.0.0"
+    },
+    "sli_ref": "sli.run.qdssjz5xk8",
+    "target": {
+      "operator": ">=",
+      "value": 0.95,
+      "unit": "ratio"
+    },
+    "breach": {
+      "budget": 0.05,
+      "action_on_breach": "block_release"
+    },
+    "policy": {
+      "severity": "high",
+      "notes": "Run stability is critical for marketplace."
+    },
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:00:00Z"
+  },
+  "smoke_test_case": {
+    "test_id": "test.smoke.cxenlw8zao",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.news_digest.core",
+      "version": "1.0.0"
+    },
+    "kind": "smoke",
+    "steps": [
+      {
+        "id": "1",
+        "do": "Test Telegram token (dry)",
+        "ref": "/adapters/telegram/test"
+      },
+      {
+        "id": "2",
+        "do": "Fetch 1 RSS url with timeout 5s",
+        "ref": "/adapters/rss/fetch"
+      },
+      {
+        "id": "3",
+        "do": "Run workflow in safe_mode",
+        "ref": "workflow:n8n.news_digest.123"
+      }
+    ],
+    "assertions": [
+      {
+        "check": "telegram_test_status",
+        "expected": "200 OK"
+      },
+      {
+        "check": "rss_items_count",
+        "expected": ">=1"
+      },
+      {
+        "check": "run_status",
+        "expected": "PASS"
+      }
+    ],
+    "cleanup": [
+      "Disable schedule if enabled during test"
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:00:00Z"
+  },
+  "smoke_plan": {
+    "plan_id": "smokeplan.p.6cv5xmiop8",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.news_digest.core",
+      "version": "1.0.0"
+    },
+    "tests": [
+      "test.smoke.cxenlw8zao"
+    ],
+    "frequency": "on_install",
+    "safe_mode": true,
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:00:00Z"
+  },
+  "synthetic_check": {
+    "check_id": "syn.news.h4un9o4x4y",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.news_digest.core",
+      "version": "1.0.0"
+    },
+    "schedule": "RRULE:FREQ=HOURLY;BYMINUTE=0;BYSECOND=0",
+    "scenario_ref": "workflow:n8n.news_digest.123",
+    "pass_criteria": [
+      "PASS",
+      "latency_p95 < 8s"
+    ],
+    "outputs": {
+      "evidence_run_ref": "evidence.synthetic.news_digest.001",
+      "metrics_emitted": [
+        "run_pass_rate",
+        "p95_latency"
+      ]
+    },
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:00:00Z"
+  },
+  "quality_score": {
+    "score_id": "qscore.news.wdwvdcnzzg",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.news_digest.core",
+      "version": "1.0.0"
+    },
+    "score": 0.82,
+    "components": [
+      {
+        "name": "Stability",
+        "value": 0.92,
+        "weight": 0.3,
+        "notes": "run_pass_rate 24h=0.97"
+      },
+      {
+        "name": "Installability",
+        "value": 0.85,
+        "weight": 0.2,
+        "notes": "install_success_rate 30d=0.98; TTFS=3m"
+      },
+      {
+        "name": "Performance",
+        "value": 0.75,
+        "weight": 0.15,
+        "notes": "p95_latency=6.5s"
+      },
+      {
+        "name": "Docs",
+        "value": 0.8,
+        "weight": 0.15,
+        "notes": "docs+FAQ+case+tutorial present"
+      },
+      {
+        "name": "Trust",
+        "value": 0.78,
+        "weight": 0.15,
+        "notes": "SBOM+sig present; policy ok"
+      },
+      {
+        "name": "Support",
+        "value": 0.6,
+        "weight": 0.05,
+        "notes": "Known issues=2; avg time to fix=3d"
+      }
+    ],
+    "explanation": [
+      "Сильная стабильность и install success.",
+      "Улучшите performance (latency) и support process."
+    ],
+    "inputs": [
+      "sli.run.qdssjz5xk8",
+      "slo.run.n9ncbsplp5",
+      "test.smoke.cxenlw8zao",
+      "docs:page.news_digest.core",
+      "trust:sbom+sig"
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:00:00Z"
+  },
+  "release_gate_decision": {
+    "decision_id": "gate.dec.i7feq7h1pm",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.news_digest.core",
+      "version": "1.0.0"
+    },
+    "release_type": "update",
+    "status": "allow_with_warnings",
+    "checks": [
+      {
+        "name": "Smoke tests",
+        "status": "pass",
+        "ref": "test.smoke.cxenlw8zao",
+        "details": "PASS"
+      },
+      {
+        "name": "SLO run_pass_rate",
+        "status": "pass",
+        "ref": "slo.run.n9ncbsplp5",
+        "details": "0.97 >= 0.95"
+      },
+      {
+        "name": "Synthetic 3x PASS",
+        "status": "warn",
+        "ref": "syn.news.h4un9o4x4y",
+        "details": "2 consecutive PASS; need 3"
+      },
+      {
+        "name": "SBOM+Signature",
+        "status": "pass",
+        "ref": "trust:bundle.news_digest.core@1.0.0",
+        "details": "present"
+      },
+      {
+        "name": "Open incidents (sev1)",
+        "status": "pass",
+        "ref": "incidents:query",
+        "details": "none"
+      }
+    ],
+    "recommendations": [
+      "Подождать 1 синтетический цикл (3x PASS) для полного allow",
+      "Добавить backoff на RSS fetch для latency"
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:00:00Z"
+  },
+  "incident_report": {
+    "incident_id": "inc.rss.rhf5djonie",
+    "title": "RSS timeout spike (news digest)",
+    "status": "resolved",
+    "severity": "sev2",
+    "timeline": [
+      {
+        "at": "2026-01-02T09:00:00Z",
+        "event": "Synthetic check fails: TIMEOUT"
+      },
+      {
+        "at": "2026-01-02T09:20:00Z",
+        "event": "Mitigation: increase timeout + retries"
+      },
+      {
+        "at": "2026-01-02T10:00:00Z",
+        "event": "Resolved: PASS restored"
+      }
+    ],
+    "impact": {
+      "tenants_affected": 14,
+      "segments": [
+        "personal"
+      ],
+      "symptoms": [
+        "TIMEOUT",
+        "no messages delivered"
+      ]
+    },
+    "root_cause": "Upstream RSS provider latency + too strict timeout.",
+    "actions_taken": [
+      "Increase timeout to 8s",
+      "Add retry with exponential backoff",
+      "Add allowlist caching"
+    ],
+    "prevention": [
+      "Add synthetic latency SLO",
+      "Add regression test for slow feed"
+    ],
+    "links": [
+      {
+        "type": "case",
+        "ref": "case.rss.timeout"
+      },
+      {
+        "type": "release",
+        "ref": "release.news_digest.1.0.1"
+      },
+      {
+        "type": "evidence",
+        "ref": "evidence.synthetic.news_digest.001"
+      }
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:00:00Z"
+  },
+  "dashboard_summary": {
+    "dashboard_id": "dash.news.jh5jvlcyii",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.news_digest.core",
+      "version": "1.0.0"
+    },
+    "period": "last_24h",
+    "headline": "News Digest: стабильность хорошая, но нужен 3‑й синтетический PASS",
+    "kpis": [
+      {
+        "name": "run_pass_rate",
+        "value": 0.97,
+        "unit": "ratio",
+        "trend": "flat"
+      },
+      {
+        "name": "p95_latency",
+        "value": 6.5,
+        "unit": "seconds",
+        "trend": "up"
+      },
+      {
+        "name": "install_success_rate",
+        "value": 0.98,
+        "unit": "ratio",
+        "trend": "flat"
+      },
+      {
+        "name": "TTFS",
+        "value": 180,
+        "unit": "seconds",
+        "trend": "down"
+      }
+    ],
+    "alerts": [
+      {
+        "level": "warn",
+        "message": "Synthetic PASS consecutive=2 (need 3 for full allow)",
+        "ref": "syn.news.h4un9o4x4y"
+      },
+      {
+        "level": "info",
+        "message": "No open sev1 incidents",
+        "ref": "incidents:sev1:none"
+      }
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:00:00Z"
+  }
+}
