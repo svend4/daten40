@@ -1,0 +1,97 @@
+openapi: 3.0.3
+info:
+  title: IFOS Security, Trust & Compliance API
+  version: "1.0.0"
+  description: "SBOM, signatures, permissions, sandbox, secrets, policy-as-code, scanning, trust score, audit logging."
+servers:
+  - url: https://security.ifos.local/v1
+tags:
+  - name: SBOM
+  - name: Signatures
+  - name: Permissions
+  - name: Secrets
+  - name: Policy
+  - name: Scanning
+  - name: Trust
+  - name: Audit
+paths:
+  /sbom/upload:
+    post:
+      tags: [SBOM]
+      summary: Upload SBOM for a subject
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /signatures/verify:
+    post:
+      tags: [Signatures]
+      summary: Verify publisher signature for bundle digest
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /permissions/evaluate:
+    post:
+      tags: [Permissions]
+      summary: Evaluate permissions manifest against sandbox profile
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /secrets/resolve:
+    post:
+      tags: [Secrets]
+      summary: Resolve secret reference to time-limited token/handle
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /policy/decide:
+    post:
+      tags: [Policy]
+      summary: Policy-as-code decision (allow/deny/warn)
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /scans/run:
+    post:
+      tags: [Scanning]
+      summary: Run scanning pipeline for a subject (dep/sast/secret/license)
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
+  /trust/score:
+    post:
+      tags: [Trust]
+      summary: Compute trust score for a subject from artifacts
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /audit/append:
+    post:
+      tags: [Audit]
+      summary: Append audit log record
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
