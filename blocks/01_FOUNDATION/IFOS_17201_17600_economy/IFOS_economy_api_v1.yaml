@@ -1,0 +1,137 @@
+openapi: 3.0.3
+info:
+  title: IFOS Economy API
+  version: "1.0.0"
+  description: "Ratings, reviews, evidence scoring, pricing, usage metering, invoices, revenue share, promotion, leaderboards, antifraud."
+servers:
+  - url: https://economy.ifos.local/v1
+tags:
+  - name: Reviews
+  - name: Ratings
+  - name: Evidence
+  - name: Pricing
+  - name: Usage
+  - name: Billing
+  - name: RevenueShare
+  - name: Promotion
+  - name: Leaderboards
+  - name: AntiFraud
+paths:
+  /reviews:
+    post:
+      tags: [Reviews]
+      summary: Create a review
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "201": {description: Created}
+    get:
+      tags: [Reviews]
+      summary: List reviews for an asset
+      parameters:
+        - {name: kind, in: query, schema: {type: string}}
+        - {name: id, in: query, schema: {type: string}}
+      responses:
+        "200": {description: OK}
+  /ratings/recompute:
+    post:
+      tags: [Ratings]
+      summary: Recompute rating for asset (stars + evidence weighting)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "200": {description: OK}
+  /evidence/score:
+    post:
+      tags: [Evidence]
+      summary: Compute evidence score for an asset or review
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "200": {description: OK}
+  /pricing:
+    post:
+      tags: [Pricing]
+      summary: Set pricing plan
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "201": {description: Created}
+  /usage/ingest:
+    post:
+      tags: [Usage]
+      summary: Ingest usage record (from run records aggregation)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "202": {description: Accepted}
+  /billing/invoices/generate:
+    post:
+      tags: [Billing]
+      summary: Generate invoice for tenant & period
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "201": {description: Created}
+  /revenue-share:
+    post:
+      tags: [RevenueShare]
+      summary: Set revenue share split
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "201": {description: Created}
+  /promotion/rules:
+    post:
+      tags: [Promotion]
+      summary: Create/update promotion rule
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "201": {description: Created}
+  /leaderboards/generate:
+    post:
+      tags: [Leaderboards]
+      summary: Generate leaderboard for period/metric
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "200": {description: OK}
+  /antifraud/analyze:
+    post:
+      tags: [AntiFraud]
+      summary: Analyze reviews/usage and emit antifraud signals
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "200": {description: OK}
