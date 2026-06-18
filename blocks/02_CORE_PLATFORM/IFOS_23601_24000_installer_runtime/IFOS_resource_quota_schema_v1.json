@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Resource Quota Schema v1",
+  "type": "object",
+  "required": [
+    "quota_id",
+    "name",
+    "limits",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "quota_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "limits": {
+      "type": "object",
+      "properties": {
+        "max_calls_per_hour": {
+          "type": "integer"
+        },
+        "max_runtime_sec": {
+          "type": "integer"
+        },
+        "max_storage_mb": {
+          "type": "integer"
+        }
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
