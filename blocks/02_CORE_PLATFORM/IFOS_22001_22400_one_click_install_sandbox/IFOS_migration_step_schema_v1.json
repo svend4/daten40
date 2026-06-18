@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Migration Step Schema v1",
+  "type": "object",
+  "required": [
+    "migration_id",
+    "kind",
+    "direction",
+    "target",
+    "status",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "migration_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "db",
+        "config",
+        "workflow",
+        "plugin_option"
+      ]
+    },
+    "direction": {
+      "type": "string",
+      "enum": [
+        "up",
+        "down"
+      ]
+    },
+    "target": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "planned",
+        "applied",
+        "failed",
+        "skipped"
+      ]
+    },
+    "notes": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
