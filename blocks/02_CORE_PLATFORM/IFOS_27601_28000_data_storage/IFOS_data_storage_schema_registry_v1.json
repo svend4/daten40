@@ -1,0 +1,67 @@
+{
+  "registry_id": "reg.r.x92g9l36vt",
+  "entries": [
+    {
+      "name": "IFOS_data_source_schema_v1.json",
+      "ref": "file://IFOS_data_source_schema_v1.json",
+      "hash": "sha256:ed5910d1219a6881ee0b6f0ad27ffb9ef31a428c1e3b587d756d438635e1d91a"
+    },
+    {
+      "name": "IFOS_collection_schema_v1.json",
+      "ref": "file://IFOS_collection_schema_v1.json",
+      "hash": "sha256:5a5e3de51939e0c2a4dd8d4db5a1d78565946d859bc5d71156ad88615f068de2"
+    },
+    {
+      "name": "IFOS_item_record_schema_v1.json",
+      "ref": "file://IFOS_item_record_schema_v1.json",
+      "hash": "sha256:c73e1be09f9ed5ef4770e61230483d37198a1a04b1d34b1f5a1833c1da23f135"
+    },
+    {
+      "name": "IFOS_artifact_schema_v1.json",
+      "ref": "file://IFOS_artifact_schema_v1.json",
+      "hash": "sha256:72743f371834f9cdc8fec852fff2267543a4c8f8679d4a4df213c45f1e372fd2"
+    },
+    {
+      "name": "IFOS_storage_backend_schema_v1.json",
+      "ref": "file://IFOS_storage_backend_schema_v1.json",
+      "hash": "sha256:d2938579e40c688fdfb3dacbc4017487a869c3c561dcfbd10f76e869cb87bca2"
+    },
+    {
+      "name": "IFOS_index_schema_v1.json",
+      "ref": "file://IFOS_index_schema_v1.json",
+      "hash": "sha256:a2dcd9e8e52b0b529751eb2ba9bbec6ca12f25bcb16350c7d9357cec9c598d45"
+    },
+    {
+      "name": "IFOS_cache_policy_schema_v1.json",
+      "ref": "file://IFOS_cache_policy_schema_v1.json",
+      "hash": "sha256:e1982438c71e7fbfd276880c850c1139485fc6752839946183f0b12ccef25a0c"
+    },
+    {
+      "name": "IFOS_retention_policy_schema_v1.json",
+      "ref": "file://IFOS_retention_policy_schema_v1.json",
+      "hash": "sha256:410539a22161f193033cc5190e0f9a56e0995ce89fda296a790332be753aebf3"
+    },
+    {
+      "name": "IFOS_import_job_schema_v1.json",
+      "ref": "file://IFOS_import_job_schema_v1.json",
+      "hash": "sha256:c1da95dfbb5a60edda95d32e7edf591a2d8b1e9737d81f362b795dcc7c04b25f"
+    },
+    {
+      "name": "IFOS_export_job_schema_v1.json",
+      "ref": "file://IFOS_export_job_schema_v1.json",
+      "hash": "sha256:2c3a0bdbfdf796dcd9c59d05a348b42052806dd091a0ae0947e58bd6432c7a66"
+    },
+    {
+      "name": "IFOS_backup_plan_schema_v1.json",
+      "ref": "file://IFOS_backup_plan_schema_v1.json",
+      "hash": "sha256:59333518085a5904dfcba1c44a2b278b3fea9316b4ca715b91e9fea0b009ab3b"
+    },
+    {
+      "name": "IFOS_checksum_manifest_schema_v1.json",
+      "ref": "file://IFOS_checksum_manifest_schema_v1.json",
+      "hash": "sha256:9c07a7a278e85613d6bc1b52c2ca47adfd6cd6e649f7764fbfb810800aee917d"
+    }
+  ],
+  "updated_at": "2026-01-03T05:05:00Z",
+  "version": "1.0.0"
+}
