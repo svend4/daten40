@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS i18nBundle Schema v1",
+  "type": "object",
+  "required": [
+    "bundle_id",
+    "locale",
+    "strings",
+    "version"
+  ],
+  "properties": {
+    "bundle_id": {
+      "type": "string"
+    },
+    "locale": {
+      "type": "string"
+    },
+    "strings": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
