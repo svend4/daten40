@@ -1,0 +1,77 @@
+{
+  "registry_id": "reg.r.88k4carpys",
+  "entries": [
+    {
+      "name": "IFOS_marketplace_item_schema_v1.json",
+      "ref": "file://IFOS_marketplace_item_schema_v1.json",
+      "hash": "sha256:f83d3938514445d043cd1685d606953b6733ce8ee656deb441fd492eb1d2f559"
+    },
+    {
+      "name": "IFOS_function_package_schema_v1.json",
+      "ref": "file://IFOS_function_package_schema_v1.json",
+      "hash": "sha256:9d9ba7a5b1ab24cdbd5fd4a7600e4f43dba9f82e2179e7016326fee808ce6ead"
+    },
+    {
+      "name": "IFOS_dependency_schema_v1.json",
+      "ref": "file://IFOS_dependency_schema_v1.json",
+      "hash": "sha256:4f3466dada07cd28a612fd13ecb27637be80451765eb318e071861bc5abe23e1"
+    },
+    {
+      "name": "IFOS_compatibility_matrix_schema_v1.json",
+      "ref": "file://IFOS_compatibility_matrix_schema_v1.json",
+      "hash": "sha256:b2832c34727a5f0c8ea7bb14d76b5e743abca5cb2943d7a9f5766ce6d67f8187"
+    },
+    {
+      "name": "IFOS_vitrine_card_schema_v1.json",
+      "ref": "file://IFOS_vitrine_card_schema_v1.json",
+      "hash": "sha256:e6585d45b52dfd310d885dcef1c0cf27c59361098cd3b4e057c2c64a16d7bada"
+    },
+    {
+      "name": "IFOS_rating_review_schema_v1.json",
+      "ref": "file://IFOS_rating_review_schema_v1.json",
+      "hash": "sha256:92066a016c8fbe16d642c566c30deb8ea8b759a8f59d8e972fbf498d350fec30"
+    },
+    {
+      "name": "IFOS_install_plan_schema_v1.json",
+      "ref": "file://IFOS_install_plan_schema_v1.json",
+      "hash": "sha256:928089be71f3fb3c9974364e24ac1c3ab05713364782bc920ac8b4a678e60051"
+    },
+    {
+      "name": "IFOS_runtime_requirements_schema_v1.json",
+      "ref": "file://IFOS_runtime_requirements_schema_v1.json",
+      "hash": "sha256:49e584f3f5dced3b0bed1f7d2fc0d3c17da4716a288e57fd39f70fd24515aa51"
+    },
+    {
+      "name": "IFOS_package_signature_schema_v1.json",
+      "ref": "file://IFOS_package_signature_schema_v1.json",
+      "hash": "sha256:95b05e64eaf26a22a7de5112ea2c5efdc557e7e93a9a0cae0c339c8a0840278f"
+    },
+    {
+      "name": "IFOS_release_schema_v1.json",
+      "ref": "file://IFOS_release_schema_v1.json",
+      "hash": "sha256:9a301c6bc5aefd6ab771545dfc184c5b7f988726376b90ff4bf0a2f85138333f"
+    },
+    {
+      "name": "IFOS_update_policy_schema_v1.json",
+      "ref": "file://IFOS_update_policy_schema_v1.json",
+      "hash": "sha256:c5bd0d563d435aa11e1c595e70e52283efc2ad8fd24d9cbf2161b3b73c7179a0"
+    },
+    {
+      "name": "IFOS_telemetry_event_schema_v1.json",
+      "ref": "file://IFOS_telemetry_event_schema_v1.json",
+      "hash": "sha256:9926bb80311cec9f1e271d297d09c120fc3bc7669314d48c8dfeb3824ede10f7"
+    },
+    {
+      "name": "IFOS_sandbox_profile_schema_v1.json",
+      "ref": "file://IFOS_sandbox_profile_schema_v1.json",
+      "hash": "sha256:f32d2655ec8fc743ad0eaf20231f6f51d0240385e9e908f6336e42fa222aa978"
+    },
+    {
+      "name": "IFOS_marketplace_registry_index_schema_v1.json",
+      "ref": "file://IFOS_marketplace_registry_index_schema_v1.json",
+      "hash": "sha256:42904f9d306cf5a320f551cf15c59304efe98ec014e0e4eab80770e8d096b1da"
+    }
+  ],
+  "updated_at": "2026-01-03T03:35:00Z",
+  "version": "1.0.0"
+}
