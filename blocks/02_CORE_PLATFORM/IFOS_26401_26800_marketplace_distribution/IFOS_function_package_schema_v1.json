@@ -1,0 +1,233 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS FunctionPackage Schema v1",
+  "type": "object",
+  "required": [
+    "package_id",
+    "item_id",
+    "version_tag",
+    "entrypoints",
+    "dependencies",
+    "runtime_requirements",
+    "compatibility_matrix_id",
+    "signature",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "package_id": {
+      "type": "string"
+    },
+    "item_id": {
+      "type": "string"
+    },
+    "version_tag": {
+      "type": "string"
+    },
+    "entrypoints": {
+      "type": "object",
+      "required": [
+        "install",
+        "run"
+      ],
+      "properties": {
+        "install": {
+          "type": "string"
+        },
+        "run": {
+          "type": "string"
+        },
+        "uninstall": {
+          "type": "string"
+        },
+        "healthcheck": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "ref",
+          "hash"
+        ],
+        "properties": {
+          "ref": {
+            "type": "string"
+          },
+          "hash": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "config_schema_ref": {
+      "type": "string"
+    },
+    "permissions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/dependency"
+      }
+    },
+    "runtime_requirements": {
+      "$ref": "#/$defs/runtime_requirements"
+    },
+    "compatibility_matrix_id": {
+      "type": "string"
+    },
+    "signature": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "dependency": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "IFOS Dependency Schema v1",
+      "type": "object",
+      "required": [
+        "dep_id",
+        "kind",
+        "name",
+        "version_range",
+        "required",
+        "version"
+      ],
+      "properties": {
+        "dep_id": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "package",
+            "service",
+            "capability"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "version_range": {
+          "type": "string",
+          "description": "semver range e.g. >=1.2 <2.0"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "runtime_requirements": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "IFOS RuntimeRequirements Schema v1",
+      "type": "object",
+      "required": [
+        "runtime",
+        "resources",
+        "services",
+        "permissions",
+        "version"
+      ],
+      "properties": {
+        "runtime": {
+          "type": "string",
+          "enum": [
+            "wordpress",
+            "make",
+            "n8n",
+            "node_red",
+            "fastapi",
+            "local",
+            "docker",
+            "other"
+          ]
+        },
+        "resources": {
+          "type": "object",
+          "required": [
+            "min_ram_mb",
+            "min_cpu_cores"
+          ],
+          "properties": {
+            "min_ram_mb": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "min_cpu_cores": {
+              "type": "number",
+              "minimum": 0
+            },
+            "min_disk_mb": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": true
+        },
+        "services": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "db",
+              "vector_store",
+              "queue",
+              "cache",
+              "object_store",
+              "secrets",
+              "none",
+              "other"
+            ]
+          }
+        },
+        "permissions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "net",
+              "fs_read",
+              "fs_write",
+              "secrets_read",
+              "exec",
+              "none",
+              "other"
+            ]
+          }
+        },
+        "ports": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
