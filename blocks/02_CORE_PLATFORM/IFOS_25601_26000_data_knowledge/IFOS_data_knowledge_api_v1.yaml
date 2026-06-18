@@ -1,0 +1,97 @@
+openapi: 3.0.3
+info:
+  title: IFOS Data & Knowledge API
+  version: "1.0.0"
+  description: "Ingest, normalize, entity graph, dedupe, embeddings, RAG query, collections, retention."
+servers:
+  - url: https://data.ifos.local/v1
+tags:
+  - name: Sources
+  - name: Ingest
+  - name: Records
+  - name: Entities
+  - name: Dedupe
+  - name: Embeddings
+  - name: RAG
+  - name: Collections
+paths:
+  /sources:
+    post:
+      tags: [Sources]
+      summary: Create/update source
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /ingest/run:
+    post:
+      tags: [Ingest]
+      summary: Trigger ingest for a source
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
+  /records/normalize:
+    post:
+      tags: [Records]
+      summary: Normalize a DataItem into NormalizedRecord
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /entities/extract:
+    post:
+      tags: [Entities]
+      summary: Extract entities and links from a record
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /dedupe/run:
+    post:
+      tags: [Dedupe]
+      summary: Run dedupe clustering for a collection
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
+  /embeddings/index:
+    post:
+      tags: [Embeddings]
+      summary: Build/update embedding index for collection
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
+  /rag/query:
+    post:
+      tags: [RAG]
+      summary: Execute RAG query and return answer with citations
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /collections:
+    post:
+      tags: [Collections]
+      summary: Create/update collection
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
