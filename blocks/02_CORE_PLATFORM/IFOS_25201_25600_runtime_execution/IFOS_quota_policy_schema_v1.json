@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Quota Policy Schema v1",
+  "type": "object",
+  "required": [
+    "quota_id",
+    "limits",
+    "retry",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "quota_id": {
+      "type": "string"
+    },
+    "limits": {
+      "type": "object",
+      "properties": {
+        "rps": {
+          "type": "number",
+          "minimum": 0
+        },
+        "per_minute": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "per_day": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "budget_usd_per_day": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "retry": {
+      "type": "object",
+      "properties": {
+        "max_retries": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "backoff_ms": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "jitter": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
