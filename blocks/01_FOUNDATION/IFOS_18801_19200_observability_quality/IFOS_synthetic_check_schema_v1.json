@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Synthetic Check Schema v1",
+  "type": "object",
+  "required": [
+    "check_id",
+    "subject",
+    "schedule",
+    "scenario_ref",
+    "pass_criteria",
+    "outputs",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "check_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "schedule": {
+      "type": "string"
+    },
+    "scenario_ref": {
+      "type": "string",
+      "description": "workflow/scenario id"
+    },
+    "pass_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "outputs": {
+      "type": "object",
+      "properties": {
+        "evidence_run_ref": {
+          "type": "string"
+        },
+        "metrics_emitted": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
