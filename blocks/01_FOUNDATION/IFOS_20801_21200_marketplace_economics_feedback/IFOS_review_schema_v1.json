@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Review Schema v1",
+  "type": "object",
+  "required": [
+    "review_id",
+    "subject_id",
+    "author",
+    "context",
+    "outcome",
+    "rating",
+    "text",
+    "evidence_refs",
+    "moderation",
+    "created_at",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "review_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "author": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string"
+        },
+        "verified_usage": {
+          "type": "boolean"
+        }
+      }
+    },
+    "context": {
+      "type": "object",
+      "properties": {
+        "environment": {
+          "type": "string",
+          "enum": [
+            "local",
+            "cloud",
+            "hybrid"
+          ]
+        },
+        "volume": {
+          "type": "string"
+        },
+        "industry": {
+          "type": "string"
+        }
+      }
+    },
+    "outcome": {
+      "type": "string",
+      "enum": [
+        "success",
+        "partial",
+        "fail"
+      ]
+    },
+    "rating": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "text": {
+      "type": "object",
+      "properties": {
+        "pros": {
+          "type": "string"
+        },
+        "cons": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "moderation": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "pending",
+            "approved",
+            "rejected",
+            "flagged"
+          ]
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
