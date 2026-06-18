@@ -1,0 +1,95 @@
+openapi: 3.0.3
+info:
+  title: IFOS Data & Storage API
+  version: "1.0.0"
+  description: "Sources, collections, records, artifacts, indexes, import/export and backup."
+servers:
+  - url: https://data.ifos.local/v1
+tags:
+  - name: Sources
+  - name: Collections
+  - name: Records
+  - name: Artifacts
+  - name: Indexes
+  - name: ImportExport
+  - name: Backup
+paths:
+  /sources:
+    post:
+      tags: [Sources]
+      summary: Create data source
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"201": {description: Created}}
+    get:
+      tags: [Sources]
+      summary: List sources by workspace
+      parameters:
+        - name: workspace_id
+          in: query
+          required: true
+          schema: {type: string}
+      responses: {"200": {description: OK}}
+  /collections:
+    post:
+      tags: [Collections]
+      summary: Create collection
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"201": {description: Created}}
+    get:
+      tags: [Collections]
+      summary: List collections
+      parameters:
+        - name: workspace_id
+          in: query
+          required: true
+          schema: {type: string}
+      responses: {"200": {description: OK}}
+  /records/ingest:
+    post:
+      tags: [Records]
+      summary: Ingest from a source into a collection
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"202": {description: Accepted}}
+  /artifacts:
+    get:
+      tags: [Artifacts]
+      summary: List artifacts by workspace
+      parameters:
+        - name: workspace_id
+          in: query
+          required: true
+          schema: {type: string}
+      responses: {"200": {description: OK}}
+  /indexes/rebuild:
+    post:
+      tags: [Indexes]
+      summary: Rebuild index
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"202": {description: Accepted}}
+  /export:
+    post:
+      tags: [ImportExport]
+      summary: Start export job
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"202": {description: Accepted}}
+  /import:
+    post:
+      tags: [ImportExport]
+      summary: Start import job
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"202": {description: Accepted}}
+  /backup/plans:
+    post:
+      tags: [Backup]
+      summary: Create backup plan
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"201": {description: Created}}
+    get:
+      tags: [Backup]
+      summary: List backup plans
+      parameters:
+        - name: workspace_id
+          in: query
+          required: true
+          schema: {type: string}
+      responses: {"200": {description: OK}}
