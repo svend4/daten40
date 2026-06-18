@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS CommandPalette Schema v1",
+  "type": "object",
+  "required": [
+    "palette_id",
+    "commands",
+    "version"
+  ],
+  "properties": {
+    "palette_id": {
+      "type": "string"
+    },
+    "commands": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "action"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "open_card",
+              "run_flow",
+              "install_package",
+              "create_from_template",
+              "search",
+              "export"
+            ]
+          },
+          "params": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
