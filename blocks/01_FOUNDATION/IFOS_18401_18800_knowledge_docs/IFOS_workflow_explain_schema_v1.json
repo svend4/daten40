@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Workflow Explain Schema v1",
+  "type": "object",
+  "required": [
+    "explain_id",
+    "workflow_ref",
+    "platform",
+    "summary",
+    "blocks",
+    "dataflow",
+    "risks",
+    "improvements",
+    "refs",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "explain_id": {
+      "type": "string"
+    },
+    "workflow_ref": {
+      "type": "string"
+    },
+    "platform": {
+      "type": "string",
+      "enum": [
+        "make",
+        "n8n",
+        "wordpress",
+        "native"
+      ]
+    },
+    "summary": {
+      "type": "string"
+    },
+    "blocks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "trigger",
+              "transform",
+              "action",
+              "router",
+              "storage",
+              "llm_call",
+              "webhook"
+            ]
+          },
+          "name": {
+            "type": "string"
+          },
+          "inputs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "outputs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "dataflow": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          },
+          "data": {
+            "type": "string"
+          },
+          "redacted": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "risks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "level": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          "risk": {
+            "type": "string"
+          },
+          "mitigation": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "improvements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
