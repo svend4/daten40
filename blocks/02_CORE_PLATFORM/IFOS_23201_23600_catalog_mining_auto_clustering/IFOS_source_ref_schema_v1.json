@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Source Reference Schema v1",
+  "type": "object",
+  "required": [
+    "source_id",
+    "type",
+    "ref",
+    "ts_discovered",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "github_repo",
+        "github_release",
+        "wp_plugin",
+        "make_template",
+        "make_scenario",
+        "n8n_workflow",
+        "npm_package",
+        "pypi_package",
+        "doc"
+      ]
+    },
+    "ref": {
+      "type": "string"
+    },
+    "license": {
+      "type": "string"
+    },
+    "hash": {
+      "type": "string"
+    },
+    "publisher_id": {
+      "type": "string"
+    },
+    "ts_discovered": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
