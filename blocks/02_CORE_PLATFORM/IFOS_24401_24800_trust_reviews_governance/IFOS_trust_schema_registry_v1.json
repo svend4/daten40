@@ -1,0 +1,97 @@
+{
+  "registry_id": "reg.r.uazv6865vt",
+  "entries": [
+    {
+      "name": "IFOS_review_schema_v1.json",
+      "ref": "file://IFOS_review_schema_v1.json",
+      "hash": "sha256:8266e45506bcfa8e503e17cfe7e67e10c86c9587891042e4ee75a3f8ef6db0f2"
+    },
+    {
+      "name": "IFOS_rating_schema_v1.json",
+      "ref": "file://IFOS_rating_schema_v1.json",
+      "hash": "sha256:0248be3efa973f0eeb5667edb1ee14d1ae7e1d3f2a53b3367f20027d4c2254f3"
+    },
+    {
+      "name": "IFOS_reputation_profile_schema_v1.json",
+      "ref": "file://IFOS_reputation_profile_schema_v1.json",
+      "hash": "sha256:6062f1af9feed520df40824dc22acc7208cf73ea6947a705a05e0f056cee58a5"
+    },
+    {
+      "name": "IFOS_publisher_profile_schema_v1.json",
+      "ref": "file://IFOS_publisher_profile_schema_v1.json",
+      "hash": "sha256:1cfb63099a4285700188308e9c3141be2f6cca4fd39c4c7e868113c2366f01b1"
+    },
+    {
+      "name": "IFOS_publisher_verification_schema_v1.json",
+      "ref": "file://IFOS_publisher_verification_schema_v1.json",
+      "hash": "sha256:c81c1a70a0d048a779078c3ca4df16d8d209cd6d5f7a8dc55c0b682c118ae8c7"
+    },
+    {
+      "name": "IFOS_trust_signal_schema_v1.json",
+      "ref": "file://IFOS_trust_signal_schema_v1.json",
+      "hash": "sha256:a0135f72c626044dc111d7c9a16387634d4f22bdb14997d59146b5f8cf393551"
+    },
+    {
+      "name": "IFOS_trust_score_schema_v1.json",
+      "ref": "file://IFOS_trust_score_schema_v1.json",
+      "hash": "sha256:dfa51a469c838ee0d9eadfbf3fd8605df4ac4f04e6fe97656c3fc25ac99e7457"
+    },
+    {
+      "name": "IFOS_spam_score_schema_v1.json",
+      "ref": "file://IFOS_spam_score_schema_v1.json",
+      "hash": "sha256:c4061f01c5b064ce5c8251ce82b5ff62732b0611f45d2fdb3eecff2853c8aef6"
+    },
+    {
+      "name": "IFOS_abuse_report_schema_v1.json",
+      "ref": "file://IFOS_abuse_report_schema_v1.json",
+      "hash": "sha256:e604639b45e15198ef87d440ba0ac2e00b765ca515c47a3df0cc8ada7a05bae8"
+    },
+    {
+      "name": "IFOS_moderation_action_schema_v1.json",
+      "ref": "file://IFOS_moderation_action_schema_v1.json",
+      "hash": "sha256:959b30e5a3cd62721054bd1d0058d27075ebd86dede4344fa02fe0df8b8eedd3"
+    },
+    {
+      "name": "IFOS_policy_rule_schema_v1.json",
+      "ref": "file://IFOS_policy_rule_schema_v1.json",
+      "hash": "sha256:2e51a453ab4e22eca67d694adb6257b8abbe876d92dd29ae58cf7fcfaf983dcf"
+    },
+    {
+      "name": "IFOS_policy_gate_evaluation_schema_v1.json",
+      "ref": "file://IFOS_policy_gate_evaluation_schema_v1.json",
+      "hash": "sha256:0d237ec772edca36340e01b108914c85e1a51115b7a2846ff374b6b11cd64e91"
+    },
+    {
+      "name": "IFOS_audit_event_schema_v1.json",
+      "ref": "file://IFOS_audit_event_schema_v1.json",
+      "hash": "sha256:a4e99e5f93d4a90d05adf8f66933e07d600941e41e6672afcdca1d74c5fc38d1"
+    },
+    {
+      "name": "IFOS_attestation_schema_v1.json",
+      "ref": "file://IFOS_attestation_schema_v1.json",
+      "hash": "sha256:a348b8092a7f49d2dae0bb7ae55c671a2f1834f57c3412d87302b46a83bc4d74"
+    },
+    {
+      "name": "IFOS_provenance_record_schema_v1.json",
+      "ref": "file://IFOS_provenance_record_schema_v1.json",
+      "hash": "sha256:b043bcbb0f59e33be85c3a47cd8fcf270b24f71e22f0cba6a469dbaa14c6ef5d"
+    },
+    {
+      "name": "IFOS_dispute_case_schema_v1.json",
+      "ref": "file://IFOS_dispute_case_schema_v1.json",
+      "hash": "sha256:8d2a7bc451b5c881b23ff88f2fb32f4c674a416e132040103ae3f71abc59d12e"
+    },
+    {
+      "name": "IFOS_quality_badge_schema_v1.json",
+      "ref": "file://IFOS_quality_badge_schema_v1.json",
+      "hash": "sha256:ade2888f22420b2d88b44d0fd7d50d0914f8008b2792288885d1c68d63c5c35e"
+    },
+    {
+      "name": "IFOS_vitrine_trust_card_schema_v1.json",
+      "ref": "file://IFOS_vitrine_trust_card_schema_v1.json",
+      "hash": "sha256:dc9c4e483378429fd97b12d94952ea47d2e67d83d667e65563373afe77253c30"
+    }
+  ],
+  "updated_at": "2026-01-03T01:20:00Z",
+  "version": "1.0.0"
+}
