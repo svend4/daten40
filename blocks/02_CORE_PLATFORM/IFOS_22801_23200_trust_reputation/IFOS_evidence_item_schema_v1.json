@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Evidence Item Schema v1",
+  "type": "object",
+  "required": [
+    "evidence_id",
+    "kind",
+    "ref",
+    "ts",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "evidence_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "install_receipt",
+        "trace_id",
+        "log_query",
+        "sbom",
+        "signature",
+        "audit_report",
+        "screenshot",
+        "link"
+      ]
+    },
+    "ref": {
+      "type": "string"
+    },
+    "ts": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
