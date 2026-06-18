@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Pricing Plan Schema v1",
+  "type": "object",
+  "required": [
+    "plan_id",
+    "subject",
+    "model",
+    "currency",
+    "terms",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "plan_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "model": {
+      "type": "string",
+      "enum": [
+        "free",
+        "subscription",
+        "usage",
+        "revenue_share",
+        "hybrid"
+      ]
+    },
+    "currency": {
+      "type": "string",
+      "default": "EUR"
+    },
+    "terms": {
+      "type": "object",
+      "properties": {
+        "subscription_month": {
+          "type": "number"
+        },
+        "per_run": {
+          "type": "number"
+        },
+        "per_1000_steps": {
+          "type": "number"
+        },
+        "per_gb_transfer": {
+          "type": "number"
+        },
+        "included_quota": {
+          "type": "object"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "trial_days": {
+      "type": "integer"
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
