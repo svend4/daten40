@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS License Policy Schema v1",
+  "type": "object",
+  "required": [
+    "license_id",
+    "name",
+    "spdx_like",
+    "permissions",
+    "obligations",
+    "restrictions",
+    "version"
+  ],
+  "properties": {
+    "license_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "spdx_like": {
+      "type": "string",
+      "description": "e.g. MIT, Apache-2.0, GPL-3.0-only, Proprietary"
+    },
+    "permissions": {
+      "type": "object",
+      "properties": {
+        "commercial_use": {
+          "type": "boolean"
+        },
+        "redistribution": {
+          "type": "boolean"
+        },
+        "modifications": {
+          "type": "boolean"
+        },
+        "private_use": {
+          "type": "boolean",
+          "default": true
+        },
+        "ai_training_allowed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "obligations": {
+      "type": "object",
+      "properties": {
+        "attribution_required": {
+          "type": "boolean"
+        },
+        "notice_required": {
+          "type": "boolean"
+        },
+        "share_alike": {
+          "type": "boolean"
+        },
+        "source_disclosure": {
+          "type": "boolean"
+        }
+      }
+    },
+    "restrictions": {
+      "type": "object",
+      "properties": {
+        "patent_grant": {
+          "type": "boolean"
+        },
+        "no_warranty": {
+          "type": "boolean",
+          "default": true
+        },
+        "export_restrictions": {
+          "type": "string"
+        },
+        "field_of_use_limitations": {
+          "type": "string"
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
