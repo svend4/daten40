@@ -1,0 +1,107 @@
+{
+  "registry_id": "reg.r.x3llp6atmg",
+  "entries": [
+    {
+      "name": "IFOS_runtime_profile_schema_v1.json",
+      "ref": "file://IFOS_runtime_profile_schema_v1.json",
+      "hash": "sha256:1fdbfb34dc99d9cfa7fa80453e8023fc5be683aa972cec0eaa69789c22807a19"
+    },
+    {
+      "name": "IFOS_secret_ref_schema_v1.json",
+      "ref": "file://IFOS_secret_ref_schema_v1.json",
+      "hash": "sha256:55a1192bd3875f42d8642c4c7d199f2f8f02e6d573d4fada39128bdf09c98cf1"
+    },
+    {
+      "name": "IFOS_quota_policy_schema_v1.json",
+      "ref": "file://IFOS_quota_policy_schema_v1.json",
+      "hash": "sha256:c936e23795479800d637daddb3ba7ea921d2769b380b4b1cfef4328ac66ed23a"
+    },
+    {
+      "name": "IFOS_side_effect_declaration_schema_v1.json",
+      "ref": "file://IFOS_side_effect_declaration_schema_v1.json",
+      "hash": "sha256:562dd2ccbf1e4bcce42ec5c9c0d1dd164c47240511f44920812c0dc1d85db144"
+    },
+    {
+      "name": "IFOS_idempotency_policy_schema_v1.json",
+      "ref": "file://IFOS_idempotency_policy_schema_v1.json",
+      "hash": "sha256:f70573193baeb31c092a2e8df7e0d14bac07844a97f8c3f7085ca7b9907ba444"
+    },
+    {
+      "name": "IFOS_execution_plan_schema_v1.json",
+      "ref": "file://IFOS_execution_plan_schema_v1.json",
+      "hash": "sha256:17bb5a703ed5b1be0c29017dfce48020516a85152c95ba234574d885e05cd55f"
+    },
+    {
+      "name": "IFOS_execution_job_schema_v1.json",
+      "ref": "file://IFOS_execution_job_schema_v1.json",
+      "hash": "sha256:957cba1412312d768a503be393c6f607c6d9527e8e69e6b62a95ea7f262993b6"
+    },
+    {
+      "name": "IFOS_sandbox_session_schema_v1.json",
+      "ref": "file://IFOS_sandbox_session_schema_v1.json",
+      "hash": "sha256:3c264f0777af6ff3f1dd14ade15bcd8ce483be6e05d7d89d8057b504bfdf4c7c"
+    },
+    {
+      "name": "IFOS_receipt_schema_v1.json",
+      "ref": "file://IFOS_receipt_schema_v1.json",
+      "hash": "sha256:3fcba2082a66844877fb8f1738a3fd906622271824ad69447a7c73dd09a82b0f"
+    },
+    {
+      "name": "IFOS_execution_report_schema_v1.json",
+      "ref": "file://IFOS_execution_report_schema_v1.json",
+      "hash": "sha256:b5256c80c753dcd68098aea0920b2a33c8d59e94889be3a909706e56cdc57cd5"
+    },
+    {
+      "name": "IFOS_observability_config_schema_v1.json",
+      "ref": "file://IFOS_observability_config_schema_v1.json",
+      "hash": "sha256:d814b95559e85843f6f8e0d162ea23201ed5973a1196a2730d0fbc4bfe85858e"
+    },
+    {
+      "name": "IFOS_log_event_schema_v1.json",
+      "ref": "file://IFOS_log_event_schema_v1.json",
+      "hash": "sha256:6e735f99eaef652c2ec9ce836775bc257451e3f356eadc77c5738a70e3e6b556"
+    },
+    {
+      "name": "IFOS_metric_event_schema_v1.json",
+      "ref": "file://IFOS_metric_event_schema_v1.json",
+      "hash": "sha256:bc39a0ffb62b3310d134d31ee527d3e7279e1be3141ea1b97087a36eead19287"
+    },
+    {
+      "name": "IFOS_trace_span_schema_v1.json",
+      "ref": "file://IFOS_trace_span_schema_v1.json",
+      "hash": "sha256:d93ad7b1e67962bd814e42a739fbf8079b85fc982582cafa5246104fea60cfd9"
+    },
+    {
+      "name": "IFOS_alert_rule_schema_v1.json",
+      "ref": "file://IFOS_alert_rule_schema_v1.json",
+      "hash": "sha256:997eaad70f632ae72137fc1328a55b0cefa63e735afd512a4ad7cc075aa1448b"
+    },
+    {
+      "name": "IFOS_health_check_schema_v1.json",
+      "ref": "file://IFOS_health_check_schema_v1.json",
+      "hash": "sha256:ad274323b97c2023d2c3291f4f0e995191a4fd55a57b7be84ae6106017012cf0"
+    },
+    {
+      "name": "IFOS_state_snapshot_schema_v1.json",
+      "ref": "file://IFOS_state_snapshot_schema_v1.json",
+      "hash": "sha256:d9dc63a7f93addfb120a40f77550a43618bd645f022bac3b97623cceb25af406"
+    },
+    {
+      "name": "IFOS_rollback_plan_schema_v1.json",
+      "ref": "file://IFOS_rollback_plan_schema_v1.json",
+      "hash": "sha256:8785e8425b9d5393eb384638593504fbeea9b3924d856e564d4898850f79b055"
+    },
+    {
+      "name": "IFOS_repair_action_schema_v1.json",
+      "ref": "file://IFOS_repair_action_schema_v1.json",
+      "hash": "sha256:31cafc9050bbe5a18d7d3781ffc2f882248308b039aeb1e48cda1477e89376f9"
+    },
+    {
+      "name": "IFOS_scheduler_job_schema_v1.json",
+      "ref": "file://IFOS_scheduler_job_schema_v1.json",
+      "hash": "sha256:03c690eda15d96063bc16e8a52682be1fa5b0235ed3e20cbf36822887fd7282c"
+    }
+  ],
+  "updated_at": "2026-01-03T02:25:00Z",
+  "version": "1.0.0"
+}
