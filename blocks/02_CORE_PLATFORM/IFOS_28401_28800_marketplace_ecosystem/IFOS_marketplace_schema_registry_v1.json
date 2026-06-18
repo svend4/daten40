@@ -1,0 +1,72 @@
+{
+  "registry_id": "reg.r.612ch2988p",
+  "entries": [
+    {
+      "name": "IFOS_publisher_profile_schema_v1.json",
+      "ref": "file://IFOS_publisher_profile_schema_v1.json",
+      "hash": "sha256:649072ee2d20a7c0eb29ea0d61eec3d10a0cf076fe746aaae4b1ad5dcffe2f99"
+    },
+    {
+      "name": "IFOS_market_package_schema_v1.json",
+      "ref": "file://IFOS_market_package_schema_v1.json",
+      "hash": "sha256:58ee7b82218b90ce4dc243c9020d0b37e59c7fe077a6e17f5718fe259bad6b73"
+    },
+    {
+      "name": "IFOS_market_listing_schema_v1.json",
+      "ref": "file://IFOS_market_listing_schema_v1.json",
+      "hash": "sha256:2f1f40d892744bc6a992f9a342307ea1ba2e1622b693e23cc44b0de5854ddbc4"
+    },
+    {
+      "name": "IFOS_compatibility_matrix_schema_v1.json",
+      "ref": "file://IFOS_compatibility_matrix_schema_v1.json",
+      "hash": "sha256:5e462ca8962666d5689017035fa478e4fde2aea289ee12781f30e1717423a8b2"
+    },
+    {
+      "name": "IFOS_dependency_graph_schema_v1.json",
+      "ref": "file://IFOS_dependency_graph_schema_v1.json",
+      "hash": "sha256:4e2975a7a3643b12d3f7f47cb1c53c6746173c998eeb993d4e0942515be6633b"
+    },
+    {
+      "name": "IFOS_version_migration_schema_v1.json",
+      "ref": "file://IFOS_version_migration_schema_v1.json",
+      "hash": "sha256:96edada1aeaa4ee8d94ab0be6304c1bdb1e2de1bd636f519e59e39419fc16c88"
+    },
+    {
+      "name": "IFOS_license_schema_v1.json",
+      "ref": "file://IFOS_license_schema_v1.json",
+      "hash": "sha256:04b2b34024afdfd4a8e15b2cb6db900b1535e8d5f999e5d0649f267a6624869e"
+    },
+    {
+      "name": "IFOS_pricing_plan_schema_v1.json",
+      "ref": "file://IFOS_pricing_plan_schema_v1.json",
+      "hash": "sha256:40220704ee4b6444b33a695a63335e03368cff9b377fdc774fc421077a99dff4"
+    },
+    {
+      "name": "IFOS_review_schema_v1.json",
+      "ref": "file://IFOS_review_schema_v1.json",
+      "hash": "sha256:5ea7d8b1b61b9c30fbef6f4a8370792207a2c3d32b836fc1c9daa79cc30740eb"
+    },
+    {
+      "name": "IFOS_rating_aggregate_schema_v1.json",
+      "ref": "file://IFOS_rating_aggregate_schema_v1.json",
+      "hash": "sha256:32023dd7357d4a10fd64a2bc8e04767feeb6cd913a966fff5805acbc93f83cc2"
+    },
+    {
+      "name": "IFOS_install_recipe_schema_v1.json",
+      "ref": "file://IFOS_install_recipe_schema_v1.json",
+      "hash": "sha256:e9f6ab300d862391150d4f20af05b686a5269b71e2aea7b0bfb92484467fda65"
+    },
+    {
+      "name": "IFOS_marketplace_policy_schema_v1.json",
+      "ref": "file://IFOS_marketplace_policy_schema_v1.json",
+      "hash": "sha256:4ac2cc8d333f5c59e86eaa25e2c28297e25d5f9aca60a86202bd2035dee0a883"
+    },
+    {
+      "name": "IFOS_marketplace_webhook_event_schema_v1.json",
+      "ref": "file://IFOS_marketplace_webhook_event_schema_v1.json",
+      "hash": "sha256:6f5f34b36ff1d5022435bdcbbda6d4a45be0b2c7c57f134b134f0130e2104943"
+    }
+  ],
+  "updated_at": "2026-01-03T06:05:00Z",
+  "version": "1.0.0"
+}
