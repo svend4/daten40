@@ -1,0 +1,84 @@
+openapi: 3.0.3
+info:
+  title: IFOS Interop & Compatibility API
+  version: "1.0.0"
+  description: "Contracts, adapters, conversion plans, compatibility matrix and scoring."
+servers:
+  - url: https://interop.ifos.local/v1
+tags:
+  - name: Contracts
+  - name: Capabilities
+  - name: Adapters
+  - name: Convert
+  - name: Compat
+paths:
+  /contracts/register:
+    post:
+      tags: [Contracts]
+      summary: Register IO contract
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /contracts/validate:
+    post:
+      tags: [Contracts]
+      summary: Validate contract against type system rules
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /capabilities/register:
+    post:
+      tags: [Capabilities]
+      summary: Register connector capability
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /adapters/register:
+    post:
+      tags: [Adapters]
+      summary: Register adapter spec
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /convert/plan:
+    post:
+      tags: [Convert]
+      summary: Create conversion plan from platform A to B
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /convert/apply:
+    post:
+      tags: [Convert]
+      summary: Apply conversion plan and produce artifacts
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
+  /compat/score:
+    post:
+      tags: [Compat]
+      summary: Compute compatibility score for subject/platform/profile
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
