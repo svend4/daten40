@@ -1,0 +1,67 @@
+openapi: 3.0.3
+info:
+  title: IFOS Observability & Reliability API
+  version: "1.0.0"
+servers:
+  - url: https://obs.ifos.local/v1
+tags:
+  - name: Metrics
+  - name: Logs
+  - name: Traces
+  - name: Health
+  - name: SLO
+  - name: Alerts
+  - name: Incidents
+  - name: Autodiag
+  - name: Autofix
+paths:
+  /metrics:
+    post:
+      tags: [Metrics]
+      summary: Ingest metric point
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"202": {description: Accepted}}
+  /logs:
+    post:
+      tags: [Logs]
+      summary: Ingest log event
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"202": {description: Accepted}}
+  /traces:
+    post:
+      tags: [Traces]
+      summary: Ingest trace span
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"202": {description: Accepted}}
+  /health/checks/{check_id}/run:
+    post:
+      tags: [Health]
+      summary: Run a health check
+      parameters:
+        - name: check_id
+          in: path
+          required: true
+          schema: {type: string}
+      responses: {"200": {description: OK}}
+  /alerts/evaluate:
+    post:
+      tags: [Alerts]
+      summary: Evaluate alert rules
+      responses: {"200": {description: OK}}
+  /incidents:
+    get:
+      tags: [Incidents]
+      summary: List incidents
+      responses: {"200": {description: OK}}
+  /autodiag/run:
+    post:
+      tags: [Autodiag]
+      summary: Run autodiagnostics for a target
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"200": {description: OK}}
+  /autofix/plan:
+    post:
+      tags: [Autofix]
+      summary: Create autofix plan for a finding
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"200": {description: OK}}
