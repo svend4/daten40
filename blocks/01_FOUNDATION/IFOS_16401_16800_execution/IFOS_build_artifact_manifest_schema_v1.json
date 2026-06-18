@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Build Artifact Manifest Schema v1",
+  "type": "object",
+  "required": [
+    "build_id",
+    "source",
+    "locks",
+    "steps",
+    "artifacts",
+    "signatures",
+    "created_at",
+    "method_version"
+  ],
+  "properties": {
+    "build_id": {
+      "type": "string"
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "bundle_id",
+        "bundle_version"
+      ],
+      "properties": {
+        "bundle_id": {
+          "type": "string"
+        },
+        "bundle_version": {
+          "type": "string"
+        },
+        "git_commit": {
+          "type": "string"
+        },
+        "registry_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "locks": {
+      "type": "object",
+      "properties": {
+        "deps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "container_image": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "digest": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "sha256"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "uri": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "signatures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "signer": {
+            "type": "string"
+          },
+          "sig": {
+            "type": "string"
+          },
+          "alg": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "method_version": {
+      "type": "string"
+    }
+  }
+}
