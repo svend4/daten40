@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS CachePolicy Schema v1",
+  "type": "object",
+  "required": [
+    "cache_policy_id",
+    "scope",
+    "ttl_seconds",
+    "max_size_bytes",
+    "invalidation",
+    "version"
+  ],
+  "properties": {
+    "cache_policy_id": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string",
+      "enum": [
+        "source_fetch",
+        "parse",
+        "rag_answer",
+        "dashboard",
+        "other"
+      ]
+    },
+    "ttl_seconds": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "max_size_bytes": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "invalidation": {
+      "type": "object",
+      "properties": {
+        "by_source": {
+          "type": "boolean"
+        },
+        "by_tag": {
+          "type": "boolean"
+        },
+        "by_collection": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
