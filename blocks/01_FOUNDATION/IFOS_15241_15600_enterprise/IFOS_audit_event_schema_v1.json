@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Audit Event Schema v1",
+  "type": "object",
+  "required": [
+    "audit_id",
+    "tenant_id",
+    "actor",
+    "action",
+    "resource",
+    "result",
+    "ts",
+    "trace_id"
+  ],
+  "properties": {
+    "audit_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "workspace_id": {
+      "type": "string"
+    },
+    "actor": {
+      "type": "object",
+      "required": [
+        "type",
+        "id"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "user",
+            "service"
+          ]
+        },
+        "id": {
+          "type": "string"
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ip": {
+          "type": "string"
+        }
+      }
+    },
+    "action": {
+      "type": "string"
+    },
+    "resource": {
+      "type": "object",
+      "required": [
+        "type",
+        "id"
+      ],
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "flags": {
+          "type": "object"
+        }
+      }
+    },
+    "result": {
+      "type": "string",
+      "enum": [
+        "ALLOW",
+        "DENY",
+        "ERROR"
+      ]
+    },
+    "reason": {
+      "type": "string"
+    },
+    "ts": {
+      "type": "string"
+    },
+    "trace_id": {
+      "type": "string"
+    },
+    "hash_chain": {
+      "type": "object",
+      "properties": {
+        "prev_hash": {
+          "type": "string"
+        },
+        "this_hash": {
+          "type": "string"
+        },
+        "alg": {
+          "type": "string",
+          "default": "sha256"
+        }
+      }
+    }
+  }
+}
