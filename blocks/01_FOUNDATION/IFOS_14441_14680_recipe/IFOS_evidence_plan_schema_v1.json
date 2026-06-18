@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Evidence Plan Schema v1",
+  "type": "object",
+  "required": [
+    "level",
+    "checks"
+  ],
+  "properties": {
+    "level": {
+      "type": "string",
+      "enum": [
+        "L0_schema",
+        "L1_dry_run",
+        "L2_integration",
+        "L3_production"
+      ]
+    },
+    "checks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "pass_criteria"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "schema_validate",
+              "dry_run",
+              "integration_test",
+              "security_scan"
+            ]
+          },
+          "pass_criteria": {
+            "type": "string"
+          },
+          "artifacts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "retention_days": {
+      "type": "integer",
+      "default": 30
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
