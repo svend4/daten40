@@ -1,0 +1,107 @@
+openapi: 3.0.3
+info:
+  title: IFOS UX & One-Click API
+  version: "1.0.0"
+  description: "UI cards, installer wizards, auto forms, onboarding flows, explainable actions, undo plans, telemetry, accessibility profiles."
+servers:
+  - url: https://ux.ifos.local/v1
+tags:
+  - name: Cards
+  - name: Wizard
+  - name: Forms
+  - name: Onboarding
+  - name: Explain
+  - name: Undo
+  - name: Telemetry
+  - name: Accessibility
+paths:
+  /cards/render:
+    post:
+      tags: [Cards]
+      summary: Render a UI card for an asset (server-side)
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /wizard/create:
+    post:
+      tags: [Wizard]
+      summary: Create an install wizard instance for asset+mode
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /wizard/step/complete:
+    post:
+      tags: [Wizard]
+      summary: Complete a wizard step
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /forms/generate:
+    post:
+      tags: [Forms]
+      summary: Generate auto-form from requirements/schema
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /onboarding/flows:
+    post:
+      tags: [Onboarding]
+      summary: Create onboarding flow for goal/platform
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /explain/action:
+    post:
+      tags: [Explain]
+      summary: Get explainable model for a button/action
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /undo/plan:
+    post:
+      tags: [Undo]
+      summary: Generate undo plan for an install
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /telemetry/event:
+    post:
+      tags: [Telemetry]
+      summary: Submit UI telemetry event (requires consent ref)
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
+  /accessibility/profile:
+    post:
+      tags: [Accessibility]
+      summary: Create/update accessibility profile
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
