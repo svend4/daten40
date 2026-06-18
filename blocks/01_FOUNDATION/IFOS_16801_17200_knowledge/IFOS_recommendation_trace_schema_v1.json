@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Recommendation Trace Schema v1",
+  "type": "object",
+  "required": [
+    "trace_id",
+    "user_intent",
+    "candidates",
+    "ranking",
+    "chosen",
+    "reasons",
+    "generated_at",
+    "method_version"
+  ],
+  "properties": {
+    "trace_id": {
+      "type": "string"
+    },
+    "user_intent": {
+      "type": "string"
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "score": {
+            "type": "number"
+          },
+          "evidence_level": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ranking": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "chosen": {
+      "type": "string"
+    },
+    "reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "method_version": {
+      "type": "string"
+    }
+  }
+}
