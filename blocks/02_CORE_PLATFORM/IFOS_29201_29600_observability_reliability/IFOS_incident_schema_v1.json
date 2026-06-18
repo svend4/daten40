@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Incident Schema v1",
+  "type": "object",
+  "required": [
+    "incident_id",
+    "target",
+    "started_at",
+    "status",
+    "impact",
+    "timeline",
+    "version"
+  ],
+  "properties": {
+    "incident_id": {
+      "type": "string"
+    },
+    "target": {
+      "type": "object",
+      "required": [
+        "kind",
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "job",
+            "package",
+            "vitrine",
+            "system"
+          ]
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "started_at": {
+      "type": "string"
+    },
+    "resolved_at": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "mitigating",
+        "resolved"
+      ]
+    },
+    "impact": {
+      "type": "object",
+      "properties": {
+        "users_affected": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "runs_failed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "severity": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "timeline": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "ts",
+          "event"
+        ],
+        "properties": {
+          "ts": {
+            "type": "string"
+          },
+          "event": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "rca": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
