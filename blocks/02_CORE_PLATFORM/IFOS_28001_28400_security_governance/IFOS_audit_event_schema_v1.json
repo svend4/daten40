@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS AuditEvent Schema v1",
+  "type": "object",
+  "required": [
+    "event_id",
+    "ts",
+    "workspace_id",
+    "actor",
+    "action",
+    "resource",
+    "outcome",
+    "context",
+    "version"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "ts": {
+      "type": "string"
+    },
+    "workspace_id": {
+      "type": "string"
+    },
+    "actor": {
+      "type": "object",
+      "required": [
+        "kind",
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "user",
+            "service"
+          ]
+        },
+        "id": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "action": {
+      "type": "string"
+    },
+    "resource": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "outcome": {
+      "type": "string",
+      "enum": [
+        "success",
+        "fail"
+      ]
+    },
+    "context": {
+      "type": "object",
+      "properties": {
+        "ip": {
+          "type": "string"
+        },
+        "user_agent": {
+          "type": "string"
+        },
+        "correlation_id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
