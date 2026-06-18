@@ -1,0 +1,76 @@
+openapi: 3.0.3
+info:
+  title: IFOS Trust, Reviews & Governance API
+  version: "1.0.0"
+  description: "Reviews, ratings, abuse reports, moderation, publisher verification, trust score, policy gates."
+servers:
+  - url: https://trust.ifos.local/v1
+tags:
+  - name: Reviews
+  - name: Ratings
+  - name: Abuse
+  - name: Moderation
+  - name: Publishers
+  - name: Trust
+  - name: Policy
+paths:
+  /reviews/submit:
+    post:
+      tags: [Reviews]
+      summary: Submit a review
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /abuse/report:
+    post:
+      tags: [Abuse]
+      summary: Submit abuse report
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /moderation/apply:
+    post:
+      tags: [Moderation]
+      summary: Apply moderation action (audited)
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
+  /publishers/verify:
+    post:
+      tags: [Publishers]
+      summary: Start or update publisher verification
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /trust/score:
+    post:
+      tags: [Trust]
+      summary: Compute trust score for entity
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /policy/evaluate:
+    post:
+      tags: [Policy]
+      summary: Evaluate policy gate for subject in profile
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
