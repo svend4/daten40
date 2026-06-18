@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Retention Policy Schema v1",
+  "type": "object",
+  "required": [
+    "retention_policy_id",
+    "tenant_id",
+    "defaults",
+    "created_at"
+  ],
+  "properties": {
+    "retention_policy_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "defaults": {
+      "type": "object",
+      "required": [
+        "run_logs_days",
+        "artifacts_days",
+        "evidence_days"
+      ],
+      "properties": {
+        "run_logs_days": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "artifacts_days": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "evidence_days": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "mode": {
+          "type": "string",
+          "enum": [
+            "delete",
+            "anonymize",
+            "archive"
+          ],
+          "default": "delete"
+        }
+      }
+    },
+    "overrides": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "when": {
+            "type": "object",
+            "description": "match flags/mode/resource type"
+          },
+          "run_logs_days": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "artifacts_days": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "evidence_days": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "delete",
+              "anonymize",
+              "archive"
+            ]
+          }
+        }
+      }
+    },
+    "encryption": {
+      "type": "object",
+      "properties": {
+        "at_rest": {
+          "type": "boolean"
+        },
+        "key_per_tenant": {
+          "type": "boolean"
+        }
+      }
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
