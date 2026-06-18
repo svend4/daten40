@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Alert Schema v1",
+  "type": "object",
+  "required": [
+    "alert_id",
+    "rule_id",
+    "ts",
+    "severity",
+    "message",
+    "channels",
+    "dedupe_key",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "alert_id": {
+      "type": "string"
+    },
+    "rule_id": {
+      "type": "string"
+    },
+    "ts": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "info",
+        "warning",
+        "critical"
+      ]
+    },
+    "message": {
+      "type": "string"
+    },
+    "channels": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "email",
+          "telegram",
+          "webhook",
+          "ui"
+        ]
+      }
+    },
+    "dedupe_key": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "ack",
+        "resolved"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
