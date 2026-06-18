@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SLO Schema v1",
+  "type": "object",
+  "required": [
+    "slo_id",
+    "target",
+    "window",
+    "objectives",
+    "error_budget",
+    "version"
+  ],
+  "properties": {
+    "slo_id": {
+      "type": "string"
+    },
+    "target": {
+      "type": "object",
+      "required": [
+        "kind",
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "job",
+            "vitrine",
+            "package",
+            "system"
+          ]
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "window": {
+      "type": "string",
+      "enum": [
+        "1h",
+        "24h",
+        "7d",
+        "30d"
+      ]
+    },
+    "objectives": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "threshold"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "enum": [
+              "success_rate",
+              "latency_p95_ms",
+              "delivery_deadline"
+            ]
+          },
+          "threshold": {
+            "type": "number"
+          },
+          "comparison": {
+            "type": "string",
+            "enum": [
+              ">=",
+              "<="
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "error_budget": {
+      "type": "object",
+      "properties": {
+        "remaining_pct": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "burn_rate": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
