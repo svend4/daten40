@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS VersionMigration Schema v1",
+  "type": "object",
+  "required": [
+    "migration_id",
+    "package_id",
+    "from_version",
+    "to_version",
+    "steps",
+    "rollback",
+    "version"
+  ],
+  "properties": {
+    "migration_id": {
+      "type": "string"
+    },
+    "package_id": {
+      "type": "string"
+    },
+    "from_version": {
+      "type": "string"
+    },
+    "to_version": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "description"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "config",
+              "data",
+              "index",
+              "permissions",
+              "other"
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "script_ref": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "rollback": {
+      "type": "object",
+      "properties": {
+        "supported": {
+          "type": "boolean"
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
