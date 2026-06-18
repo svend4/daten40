@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS FlowNode Schema v1",
+  "type": "object",
+  "required": [
+    "node_id",
+    "type",
+    "params",
+    "version"
+  ],
+  "properties": {
+    "node_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "ingest",
+        "normalize",
+        "dedupe",
+        "embed",
+        "rag_query",
+        "export",
+        "notify",
+        "transform",
+        "custom"
+      ]
+    },
+    "params": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "on_error": {
+      "type": "string",
+      "enum": [
+        "stop",
+        "retry",
+        "skip",
+        "fallback"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
