@@ -1,0 +1,217 @@
+[
+  {
+    "recipe_id": "recipe.rss_to_telegram.digest_v1",
+    "version": "1.0.0",
+    "title": "RSS → Telegram дайджест (простая кнопка)",
+    "goal": "Считать новые элементы RSS и отправлять дайджест в Telegram.",
+    "tags": [
+      "rss",
+      "telegram",
+      "digest",
+      "news"
+    ],
+    "inputs": [
+      {
+        "key": "rss_url",
+        "label": "RSS URL",
+        "type": "url",
+        "required": true
+      },
+      {
+        "key": "chat_id",
+        "label": "Telegram chat_id",
+        "type": "string",
+        "required": true
+      },
+      {
+        "key": "max_items",
+        "label": "Max items per run",
+        "type": "number",
+        "required": false,
+        "default": 5
+      }
+    ],
+    "secrets": [
+      {
+        "key": "TELEGRAM_BOT_TOKEN",
+        "kind": "api_key",
+        "required": true,
+        "notes": "Bot token from @BotFather"
+      }
+    ],
+    "policy": {
+      "pii": false,
+      "money": false,
+      "security_sensitive": false
+    },
+    "steps": [
+      {
+        "id": "read_rss",
+        "kind": "action",
+        "uses": "rss.read_feed",
+        "in": {
+          "url": "{{inputs.rss_url}}"
+        },
+        "out": {
+          "items": "$items"
+        },
+        "idempotent": true
+      },
+      {
+        "id": "filter_new",
+        "kind": "filter",
+        "expr": "only items newer than state.last_seen",
+        "notes": "Use store step or platform state"
+      },
+      {
+        "id": "format",
+        "kind": "transform",
+        "expr": "format items into markdown text",
+        "out": {
+          "text": "$text"
+        }
+      },
+      {
+        "id": "send",
+        "kind": "action",
+        "uses": "telegram.send_message",
+        "in": {
+          "chat_id": "{{inputs.chat_id}}",
+          "text": "{{$text}}",
+          "parse_mode": "Markdown"
+        },
+        "on_error": {
+          "strategy": "retry",
+          "max_retries": 3,
+          "backoff_ms": 1500
+        }
+      }
+    ],
+    "targets": [
+      "make_blueprint_json",
+      "n8n_workflow_json",
+      "cli_script_python",
+      "cli_script_bash"
+    ],
+    "evidence_plan": {
+      "level": "L1_dry_run",
+      "checks": [
+        {
+          "kind": "schema_validate",
+          "pass_criteria": "recipe validates against IFOS_recipe_schema_v1.json",
+          "artifacts": [
+            "validation_log"
+          ]
+        },
+        {
+          "kind": "dry_run",
+          "pass_criteria": "format step produces non-empty text and send step passes parameter validation",
+          "artifacts": [
+            "dry_run_log",
+            "rendered_message_preview"
+          ]
+        }
+      ],
+      "retention_days": 30,
+      "notes": "Integration test can be enabled in sandbox Telegram chat."
+    }
+  },
+  {
+    "recipe_id": "recipe.webhook_to_sheets.log_v1",
+    "version": "1.0.0",
+    "title": "Webhook → Google Sheets логирование (безопасный режим)",
+    "goal": "Принять webhook, провалидировать JSON и записать строку в таблицу.",
+    "tags": [
+      "webhook",
+      "sheets",
+      "logging",
+      "validation"
+    ],
+    "inputs": [
+      {
+        "key": "sheet_id",
+        "label": "Spreadsheet ID",
+        "type": "string",
+        "required": true
+      },
+      {
+        "key": "worksheet",
+        "label": "Worksheet name",
+        "type": "string",
+        "required": false,
+        "default": "Events"
+      }
+    ],
+    "secrets": [
+      {
+        "key": "GOOGLE_OAUTH",
+        "kind": "oauth",
+        "required": true,
+        "notes": "OAuth credentials for Sheets API"
+      }
+    ],
+    "policy": {
+      "pii": true,
+      "money": false,
+      "security_sensitive": false
+    },
+    "steps": [
+      {
+        "id": "recv",
+        "kind": "action",
+        "uses": "webhook.receive_event",
+        "out": {
+          "payload": "$payload"
+        },
+        "notes": "Target-specific; CLI uses local HTTP server"
+      },
+      {
+        "id": "validate",
+        "kind": "filter",
+        "expr": "payload matches schema and strips PII fields",
+        "notes": "mask emails/phones in logs"
+      },
+      {
+        "id": "append",
+        "kind": "action",
+        "uses": "sheets.append_row",
+        "in": {
+          "sheet_id": "{{inputs.sheet_id}}",
+          "worksheet": "{{inputs.worksheet}}",
+          "row": "{{$payload}}"
+        }
+      }
+    ],
+    "targets": [
+      "n8n_workflow_json",
+      "cli_script_python"
+    ],
+    "evidence_plan": {
+      "level": "L2_integration",
+      "checks": [
+        {
+          "kind": "schema_validate",
+          "pass_criteria": "recipe validates schema",
+          "artifacts": [
+            "validation_log"
+          ]
+        },
+        {
+          "kind": "integration_test",
+          "pass_criteria": "sandbox webhook posts are written to a test sheet; PII masked",
+          "artifacts": [
+            "integration_log",
+            "sheet_row_screenshot"
+          ]
+        },
+        {
+          "kind": "security_scan",
+          "pass_criteria": "no secrets stored in artifact outputs",
+          "artifacts": [
+            "scan_report"
+          ]
+        }
+      ]
+    }
+  }
+]
