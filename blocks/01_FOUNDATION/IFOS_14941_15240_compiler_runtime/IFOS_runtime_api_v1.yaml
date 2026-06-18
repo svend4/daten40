@@ -1,0 +1,120 @@
+openapi: 3.0.3
+info:
+  title: IFOS Runtime API
+  version: "1.0.0"
+  description: "Runtime execution API for jobs/runs, sandbox, evidence artifacts."
+servers:
+  - url: https://runtime.ifos.local/v1
+tags:
+  - name: Jobs
+  - name: Runs
+  - name: Vault
+  - name: State
+  - name: Sandbox
+paths:
+  /jobs:
+    get:
+      tags: [Jobs]
+      summary: List jobs
+      parameters:
+        - name: status
+          in: query
+          schema: {type: string, enum: [active, paused, deleted]}
+      responses:
+        "200": {description: OK}
+    post:
+      tags: [Jobs]
+      summary: Create job
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "201": {description: Created}
+  /jobs/{job_id}:
+    get:
+      tags: [Jobs]
+      summary: Get job
+      parameters:
+        - name: job_id
+          in: path
+          required: true
+          schema: {type: string}
+      responses:
+        "200": {description: OK}
+    patch:
+      tags: [Jobs]
+      summary: Update job (pause/resume/inputs)
+      parameters:
+        - name: job_id
+          in: path
+          required: true
+          schema: {type: string}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "200": {description: OK}
+  /jobs/{job_id}/run:
+    post:
+      tags: [Runs]
+      summary: Trigger a run (manual)
+      parameters:
+        - name: job_id
+          in: path
+          required: true
+          schema: {type: string}
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema: {type: object, description: "optional event payload for webhook-style jobs"}
+      responses:
+        "202": {description: Accepted}
+  /runs/{run_id}:
+    get:
+      tags: [Runs]
+      summary: Get run record
+      parameters:
+        - name: run_id
+          in: path
+          required: true
+          schema: {type: string}
+      responses:
+        "200": {description: OK}
+  /runs/{run_id}/artifacts:
+    get:
+      tags: [Runs]
+      summary: List artifacts for a run
+      parameters:
+        - name: run_id
+          in: path
+          required: true
+          schema: {type: string}
+      responses:
+        "200": {description: OK}
+  /state/{job_id}/{key}:
+    get:
+      tags: [State]
+      summary: Get state value
+      parameters:
+        - {name: job_id, in: path, required: true, schema: {type: string}}
+        - {name: key, in: path, required: true, schema: {type: string}}
+      responses:
+        "200": {description: OK}
+    put:
+      tags: [State]
+      summary: Set state value
+      parameters:
+        - {name: job_id, in: path, required: true, schema: {type: string}}
+        - {name: key, in: path, required: true, schema: {type: string}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "200": {description: OK}
