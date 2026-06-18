@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Environment Constraint Schema v1",
+  "type": "object",
+  "required": [
+    "constraint_id",
+    "name",
+    "rules",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "constraint_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
