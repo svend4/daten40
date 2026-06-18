@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Schedule Schema v1",
+  "type": "object",
+  "required": [
+    "schedule_id",
+    "kind",
+    "timezone",
+    "spec",
+    "enabled",
+    "version"
+  ],
+  "properties": {
+    "schedule_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "cron",
+        "rrule",
+        "interval",
+        "once"
+      ]
+    },
+    "timezone": {
+      "type": "string"
+    },
+    "spec": {
+      "type": "object",
+      "description": "cron string or rrule fields or interval seconds",
+      "additionalProperties": true
+    },
+    "start_at": {
+      "type": "string"
+    },
+    "end_at": {
+      "type": "string"
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
