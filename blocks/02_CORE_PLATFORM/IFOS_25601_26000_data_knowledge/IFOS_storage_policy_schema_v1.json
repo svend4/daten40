@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS StoragePolicy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "retention_days",
+    "tier",
+    "pii_policy",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "retention_days": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "tier": {
+      "type": "string",
+      "enum": [
+        "hot",
+        "warm",
+        "cold",
+        "archive"
+      ]
+    },
+    "pii_policy": {
+      "type": "string",
+      "enum": [
+        "allow",
+        "redact",
+        "deny"
+      ]
+    },
+    "legal_hold": {
+      "type": "boolean"
+    },
+    "replication": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
