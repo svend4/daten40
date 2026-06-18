@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Notification Channel Schema v1",
+  "type": "object",
+  "required": [
+    "channel_id",
+    "type",
+    "target",
+    "enabled",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "channel_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "telegram",
+        "email",
+        "slack",
+        "webhook",
+        "sms"
+      ]
+    },
+    "target": {
+      "type": "string"
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
