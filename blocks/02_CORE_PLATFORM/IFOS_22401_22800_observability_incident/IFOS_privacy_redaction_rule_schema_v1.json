@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Privacy Redaction Rule Schema v1",
+  "type": "object",
+  "required": [
+    "rule_id",
+    "pattern",
+    "replacement",
+    "scope",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "rule_id": {
+      "type": "string"
+    },
+    "pattern": {
+      "type": "string"
+    },
+    "replacement": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string",
+      "enum": [
+        "logs",
+        "traces",
+        "both"
+      ]
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
