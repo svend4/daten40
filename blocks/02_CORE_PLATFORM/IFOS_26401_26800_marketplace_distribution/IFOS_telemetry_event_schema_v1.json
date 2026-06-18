@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS TelemetryEvent Schema v1",
+  "type": "object",
+  "required": [
+    "event_id",
+    "ts",
+    "kind",
+    "package_id",
+    "runtime",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "ts": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "install",
+        "run",
+        "update",
+        "uninstall",
+        "healthcheck"
+      ]
+    },
+    "package_id": {
+      "type": "string"
+    },
+    "runtime": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "success",
+        "fail",
+        "warning"
+      ]
+    },
+    "duration_ms": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "error_code": {
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
