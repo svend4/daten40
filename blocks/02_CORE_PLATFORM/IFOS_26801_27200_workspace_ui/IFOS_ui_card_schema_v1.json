@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UICard Schema v1",
+  "type": "object",
+  "required": [
+    "card_id",
+    "workspace_id",
+    "title",
+    "kind",
+    "status",
+    "inputs_form_ref",
+    "flow_ref",
+    "layout_ref",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "card_id": {
+      "type": "string"
+    },
+    "workspace_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "action",
+        "dashboard",
+        "report",
+        "data_view",
+        "installer",
+        "rag_qa"
+      ]
+    },
+    "summary": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ready",
+        "needs_config",
+        "running",
+        "error",
+        "warning",
+        "disabled"
+      ]
+    },
+    "inputs_form_ref": {
+      "type": "string"
+    },
+    "flow_ref": {
+      "type": "string"
+    },
+    "layout_ref": {
+      "type": "string"
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "type"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "text",
+              "table",
+              "chart",
+              "file",
+              "links",
+              "logs",
+              "sources"
+            ]
+          },
+          "ref": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "configure",
+          "run",
+          "install",
+          "open_logs",
+          "open_sources",
+          "export"
+        ]
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
