@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Trigger Schema v1",
+  "type": "object",
+  "required": [
+    "trigger_id",
+    "kind",
+    "target_job_id",
+    "filters",
+    "enabled",
+    "version"
+  ],
+  "properties": {
+    "trigger_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "manual",
+        "schedule",
+        "webhook",
+        "event",
+        "file_drop"
+      ]
+    },
+    "target_job_id": {
+      "type": "string"
+    },
+    "schedule_ref": {
+      "type": "string"
+    },
+    "filters": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "webhook": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "secret_ref": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
