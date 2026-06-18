@@ -1,0 +1,168 @@
+openapi: 3.0.3
+info:
+  title: IFOS Enterprise API
+  version: "1.0.0"
+  description: "Multi-tenant, RBAC, billing, retention, audit, SSO, federation."
+servers:
+  - url: https://enterprise.ifos.local/v1
+tags:
+  - name: Tenants
+  - name: Policies
+  - name: Billing
+  - name: Retention
+  - name: Audit
+  - name: SSO
+  - name: Federation
+paths:
+  /tenants:
+    get:
+      tags: [Tenants]
+      summary: List tenants (system admin)
+      responses:
+        "200": {description: OK}
+    post:
+      tags: [Tenants]
+      summary: Create tenant
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "201": {description: Created}
+  /tenants/{tenant_id}:
+    get:
+      tags: [Tenants]
+      summary: Get tenant
+      parameters:
+        - {name: tenant_id, in: path, required: true, schema: {type: string}}
+      responses:
+        "200": {description: OK}
+  /policies/{tenant_id}/rbac:
+    get:
+      tags: [Policies]
+      summary: Get RBAC/ABAC policy for tenant
+      parameters:
+        - {name: tenant_id, in: path, required: true, schema: {type: string}}
+      responses:
+        "200": {description: OK}
+    put:
+      tags: [Policies]
+      summary: Update RBAC/ABAC policy
+      parameters:
+        - {name: tenant_id, in: path, required: true, schema: {type: string}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "200": {description: OK}
+  /billing/{tenant_id}/usage:
+    get:
+      tags: [Billing]
+      summary: List usage events (range)
+      parameters:
+        - {name: tenant_id, in: path, required: true, schema: {type: string}}
+        - {name: from, in: query, schema: {type: string}}
+        - {name: to, in: query, schema: {type: string}}
+      responses:
+        "200": {description: OK}
+  /billing/{tenant_id}/invoices:
+    get:
+      tags: [Billing]
+      summary: List invoices
+      parameters:
+        - {name: tenant_id, in: path, required: true, schema: {type: string}}
+      responses:
+        "200": {description: OK}
+    post:
+      tags: [Billing]
+      summary: Generate invoice for period
+      parameters:
+        - {name: tenant_id, in: path, required: true, schema: {type: string}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "201": {description: Created}
+  /retention/{tenant_id}:
+    get:
+      tags: [Retention]
+      summary: Get retention policy
+      parameters:
+        - {name: tenant_id, in: path, required: true, schema: {type: string}}
+      responses:
+        "200": {description: OK}
+    put:
+      tags: [Retention]
+      summary: Update retention policy
+      parameters:
+        - {name: tenant_id, in: path, required: true, schema: {type: string}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "200": {description: OK}
+  /audit/{tenant_id}/events:
+    get:
+      tags: [Audit]
+      summary: Query audit events
+      parameters:
+        - {name: tenant_id, in: path, required: true, schema: {type: string}}
+        - {name: from, in: query, schema: {type: string}}
+        - {name: to, in: query, schema: {type: string}}
+        - {name: action, in: query, schema: {type: string}}
+      responses:
+        "200": {description: OK}
+  /sso/{tenant_id}:
+    get:
+      tags: [SSO]
+      summary: Get SSO config
+      parameters:
+        - {name: tenant_id, in: path, required: true, schema: {type: string}}
+      responses:
+        "200": {description: OK}
+    put:
+      tags: [SSO]
+      summary: Update SSO config
+      parameters:
+        - {name: tenant_id, in: path, required: true, schema: {type: string}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "200": {description: OK}
+  /federation/nodes:
+    get:
+      tags: [Federation]
+      summary: List federation nodes
+      responses:
+        "200": {description: OK}
+    post:
+      tags: [Federation]
+      summary: Add federation node
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "201": {description: Created}
+  /federation/sync:
+    post:
+      tags: [Federation]
+      summary: Trigger federation sync (manual)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "202": {description: Accepted}
