@@ -1,0 +1,562 @@
+{
+  "doc_card": {
+    "doc_card_id": "dcard.news.ly3xi5mzy7",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.news_digest.core",
+      "version": "1.0.0"
+    },
+    "one_liner": "Собирает новости из RSS, фильтрует и отправляет сводку в Telegram по расписанию.",
+    "inputs": [
+      {
+        "name": "telegram_bot_token",
+        "type": "secret",
+        "required": true,
+        "example": "123:ABC..."
+      },
+      {
+        "name": "chat_id",
+        "type": "text",
+        "required": true,
+        "example": "-1001234567890"
+      },
+      {
+        "name": "rss_urls",
+        "type": "list[url]",
+        "required": true,
+        "example": "https://example.com/rss"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "telegram_message",
+        "type": "text",
+        "example": "Top-5: ..."
+      },
+      {
+        "name": "run_log",
+        "type": "json",
+        "example": "{status:'pass', items: 5}"
+      }
+    ],
+    "requirements": [
+      "Telegram Bot",
+      "Network access to RSS sources"
+    ],
+    "quick_fixes": [
+      {
+        "symptom": "TOKEN_INVALID / 401",
+        "fix": "Проверьте токен BotFather и повторите test connection.",
+        "ref": "case.telegram.401"
+      },
+      {
+        "symptom": "RSS timeout",
+        "fix": "Проверьте URL и включите retry/backoff.",
+        "ref": "case.rss.timeout"
+      }
+    ],
+    "links": [
+      {
+        "type": "page",
+        "ref": "page.news_digest.core"
+      },
+      {
+        "type": "tutorial",
+        "ref": "tut.news_digest.first_run"
+      },
+      {
+        "type": "faq",
+        "ref": "faq.telegram.token_invalid"
+      }
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T18:00:00Z"
+  },
+  "doc_page": {
+    "page_id": "page.news_digest.core",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.news_digest.core",
+      "version": "1.0.0"
+    },
+    "title": "News Digest Cluster — документация",
+    "sections": [
+      {
+        "id": "overview",
+        "title": "Overview",
+        "body": "Кластер собирает RSS и шлёт сводку в Telegram. Поддерживает анти-дубликаты и расписание.",
+        "refs": [
+          "tpl.news_digest.telegram"
+        ]
+      },
+      {
+        "id": "quickstart",
+        "title": "Quickstart (5 шагов)",
+        "body": "1) Создайте Telegram-бота\n2) Введите токен и chat_id\n3) Добавьте 3 RSS\n4) Сделайте dry-run\n5) Включите расписание",
+        "refs": [
+          "wiz.news_digest"
+        ]
+      },
+      {
+        "id": "io",
+        "title": "Inputs/Outputs",
+        "body": "Inputs: token, chat_id, rss_urls. Outputs: telegram_message, run_log.",
+        "refs": [
+          "schema.inputs.news_digest",
+          "schema.outputs.news_digest"
+        ]
+      },
+      {
+        "id": "troubleshooting",
+        "title": "Troubleshooting",
+        "body": "TOKEN_INVALID → см. case.telegram.401. RSS timeout → см. case.rss.timeout.",
+        "refs": [
+          "case.telegram.401",
+          "case.rss.timeout"
+        ]
+      },
+      {
+        "id": "security",
+        "title": "Security/Privacy",
+        "body": "Токены хранятся в secret store. Логи редактируются (redaction). Не пишите токены в debug.",
+        "refs": [
+          "policy.secrets.redaction"
+        ]
+      }
+    ],
+    "render": {
+      "format": "md",
+      "content_ref": "md://docs/page.news_digest.core.md"
+    },
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T18:00:00Z"
+  },
+  "glossary_term": {
+    "term_id": "term.webhook.77xbwhvcdw",
+    "term": "Webhook",
+    "simple_definition": "Способ получить событие “само пришло”: сервис вызывает ваш URL, когда что-то произошло.",
+    "technical_definition": "HTTP callback endpoint invoked by external system on event; requires public endpoint, auth, and idempotency.",
+    "examples": [
+      "Telegram webhook updates",
+      "Stripe payment webhook"
+    ],
+    "related_terms": [
+      "Polling",
+      "Trigger",
+      "Callback",
+      "Idempotency"
+    ],
+    "refs": [
+      "page.news_digest.core",
+      "faq.webhook_vs_polling"
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T18:00:00Z"
+  },
+  "faq_item": {
+    "faq_id": "faq.telegram.token_invalid",
+    "question": "Почему Telegram пишет TOKEN_INVALID?",
+    "answer": "Обычно токен скопирован с пробелом или бот удалён/перегенерирован. Пересоздайте токен в BotFather и выполните test connection.",
+    "actions": [
+      {
+        "label": "Открыть шаг wizard: токены",
+        "type": "open_wizard_step",
+        "ref": "wiz.news_digest:st.req"
+      },
+      {
+        "label": "Проверить соединение",
+        "type": "test_connection",
+        "ref": "/adapters/telegram/test"
+      },
+      {
+        "label": "Открыть troubleshooting case",
+        "type": "open_troubleshooting_case",
+        "ref": "case.telegram.401"
+      }
+    ],
+    "refs": [
+      "case.telegram.401",
+      "term.webhook"
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T18:00:00Z"
+  },
+  "troubleshooting_case": {
+    "case_id": "case.telegram.401",
+    "title": "Telegram 401 TOKEN_INVALID",
+    "symptoms": [
+      "Test connection returns 401",
+      "Messages not delivered"
+    ],
+    "likely_causes": [
+      {
+        "cause": "Токен неверный/устарел",
+        "probability": 0.75,
+        "notes": "Часто пробел/не тот бот."
+      },
+      {
+        "cause": "Бот заблокирован/удалён",
+        "probability": 0.15,
+        "notes": "Проверьте BotFather."
+      },
+      {
+        "cause": "Прокси/фильтр ломает запрос",
+        "probability": 0.1,
+        "notes": "Проверьте сеть и TLS."
+      }
+    ],
+    "checks": [
+      {
+        "check": "Сделать test connection",
+        "how": "Нажать кнопку 'Проверить' в форме",
+        "expected": "HTTP 200 OK + bot username"
+      },
+      {
+        "check": "Сверить токен",
+        "how": "Скопировать заново из BotFather",
+        "expected": "Токен без пробелов"
+      }
+    ],
+    "fix_steps": [
+      "Пересоздайте токен BotFather",
+      "Вставьте токен в secret field",
+      "Повторите test connection",
+      "Сделайте dry-run"
+    ],
+    "prevention": [
+      "Не хранить токен в заметках без контроля",
+      "Включить redaction в логах"
+    ],
+    "affected_versions": [
+      "all"
+    ],
+    "refs": [
+      "faq.telegram.token_invalid",
+      "page.news_digest.core"
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T18:00:00Z"
+  },
+  "tutorial": {
+    "tutorial_id": "tut.news_digest.first_run",
+    "title": "Первый запуск News Digest за 5 минут",
+    "goal": "Получить первое сообщение в Telegram из 2 RSS источников.",
+    "steps": [
+      {
+        "id": "1",
+        "title": "Создайте бота",
+        "do": "BotFather → /newbot → получите token",
+        "check": "У вас есть token",
+        "notes": "Не публикуйте token."
+      },
+      {
+        "id": "2",
+        "title": "Укажите chat_id",
+        "do": "Добавьте бота в чат и узнайте chat_id",
+        "check": "chat_id заполнен",
+        "notes": "Для каналов нужен admin."
+      },
+      {
+        "id": "3",
+        "title": "Добавьте RSS",
+        "do": "Вставьте 2 RSS URL",
+        "check": "Test fetch returns items",
+        "notes": "Если таймаут — см. case.rss.timeout."
+      },
+      {
+        "id": "4",
+        "title": "Dry-run",
+        "do": "Запустите smoke test",
+        "check": "status PASS",
+        "notes": "В sandbox побочных эффектов нет."
+      },
+      {
+        "id": "5",
+        "title": "Запуск",
+        "do": "Нажмите Run Now",
+        "check": "Сообщение пришло в Telegram",
+        "notes": "Если 401 — см. case.telegram.401."
+      }
+    ],
+    "expected_result": "В Telegram пришла сводка с 2–5 пунктами.",
+    "refs": [
+      "page.news_digest.core",
+      "case.telegram.401"
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T18:00:00Z"
+  },
+  "run_to_tutorial": {
+    "map_id": "map.r2t.sec4sgjq9a",
+    "run_id": "run.news_digest.2026-01-02T17:40:00Z",
+    "tutorial_id": "tut.news_digest.first_run",
+    "sanitization": {
+      "pii_redacted": true,
+      "secrets_removed": true,
+      "notes": "Token removed; chat_id hashed."
+    },
+    "evidence_refs": [
+      "evidence.run.pass.001"
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T18:00:00Z"
+  },
+  "workflow_explain": {
+    "explain_id": "exp.wf.hx32ajwdry",
+    "workflow_ref": "n8n.workflow.news_digest.123",
+    "platform": "n8n",
+    "summary": "Триггер по расписанию → fetch RSS → нормализация → дедуп → отправка в Telegram.",
+    "blocks": [
+      {
+        "id": "b1",
+        "type": "trigger",
+        "name": "Cron daily 09:00",
+        "inputs": [],
+        "outputs": [
+          "tick"
+        ],
+        "notes": ""
+      },
+      {
+        "id": "b2",
+        "type": "action",
+        "name": "HTTP Request (RSS)",
+        "inputs": [
+          "tick",
+          "rss_urls"
+        ],
+        "outputs": [
+          "raw_feed"
+        ],
+        "notes": "network access"
+      },
+      {
+        "id": "b3",
+        "type": "transform",
+        "name": "Parse RSS",
+        "inputs": [
+          "raw_feed"
+        ],
+        "outputs": [
+          "items"
+        ],
+        "notes": ""
+      },
+      {
+        "id": "b4",
+        "type": "transform",
+        "name": "Deduplicate",
+        "inputs": [
+          "items"
+        ],
+        "outputs": [
+          "items_unique"
+        ],
+        "notes": "optional"
+      },
+      {
+        "id": "b5",
+        "type": "action",
+        "name": "Telegram SendMessage",
+        "inputs": [
+          "items_unique",
+          "telegram_bot_token",
+          "chat_id"
+        ],
+        "outputs": [
+          "sent"
+        ],
+        "notes": "secret token used"
+      }
+    ],
+    "dataflow": [
+      {
+        "from": "b1",
+        "to": "b2",
+        "data": "tick",
+        "redacted": false
+      },
+      {
+        "from": "b2",
+        "to": "b3",
+        "data": "raw_feed",
+        "redacted": false
+      },
+      {
+        "from": "b3",
+        "to": "b4",
+        "data": "items",
+        "redacted": false
+      },
+      {
+        "from": "b4",
+        "to": "b5",
+        "data": "items_unique",
+        "redacted": false
+      },
+      {
+        "from": "form",
+        "to": "b5",
+        "data": "telegram_bot_token",
+        "redacted": true
+      }
+    ],
+    "risks": [
+      {
+        "level": "medium",
+        "risk": "Network access to RSS sources",
+        "mitigation": "Allowlist domains; retries+timeouts."
+      },
+      {
+        "level": "high",
+        "risk": "Secret token leakage in logs",
+        "mitigation": "Enable redaction; disable debug."
+      }
+    ],
+    "improvements": [
+      "Добавить retry/backoff на HTTP fetch",
+      "Добавить лимит источников и таймаут",
+      "Сохранять hash последних заголовков для дедупа"
+    ],
+    "refs": [
+      "term.webhook",
+      "case.telegram.401",
+      "policy.secrets.redaction"
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T18:00:00Z"
+  },
+  "knowledge_graph": {
+    "graph_id": "graph.g.f3wser48no",
+    "nodes": [
+      {
+        "id": "n.asset.news",
+        "type": "asset",
+        "label": "bundle.news_digest.core",
+        "ref": "registry:bundle.news_digest.core@1.0.0"
+      },
+      {
+        "id": "n.page.news",
+        "type": "page",
+        "label": "News Digest Docs",
+        "ref": "page.news_digest.core"
+      },
+      {
+        "id": "n.term.webhook",
+        "type": "term",
+        "label": "Webhook",
+        "ref": "term.webhook.77xbwhvcdw"
+      },
+      {
+        "id": "n.faq.token",
+        "type": "faq",
+        "label": "TOKEN_INVALID",
+        "ref": "faq.telegram.token_invalid"
+      },
+      {
+        "id": "n.case.401",
+        "type": "case",
+        "label": "Telegram 401",
+        "ref": "case.telegram.401"
+      },
+      {
+        "id": "n.tut.first",
+        "type": "tutorial",
+        "label": "First Run",
+        "ref": "tut.news_digest.first_run"
+      },
+      {
+        "id": "n.evidence.001",
+        "type": "evidence",
+        "label": "Run PASS #001",
+        "ref": "evidence.run.pass.001"
+      }
+    ],
+    "edges": [
+      {
+        "from": "n.asset.news",
+        "to": "n.page.news",
+        "type": "links_to",
+        "weight": 1.0,
+        "note": ""
+      },
+      {
+        "from": "n.page.news",
+        "to": "n.term.webhook",
+        "type": "mentions",
+        "weight": 0.3,
+        "note": ""
+      },
+      {
+        "from": "n.faq.token",
+        "to": "n.case.401",
+        "type": "links_to",
+        "weight": 0.9,
+        "note": ""
+      },
+      {
+        "from": "n.case.401",
+        "to": "n.tut.first",
+        "type": "fixes",
+        "weight": 0.4,
+        "note": "tutorial contains fix path"
+      },
+      {
+        "from": "n.tut.first",
+        "to": "n.evidence.001",
+        "type": "validated_by",
+        "weight": 0.8,
+        "note": ""
+      }
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T18:00:00Z"
+  },
+  "doc_bundle": {
+    "bundle_id": "dbundle.news.1ylvywavem",
+    "title": "Offline Docs: News Digest Cluster",
+    "items": [
+      {
+        "type": "card",
+        "ref": "dcard.news.ly3xi5mzy7"
+      },
+      {
+        "type": "page",
+        "ref": "page.news_digest.core"
+      },
+      {
+        "type": "term",
+        "ref": "term.webhook.77xbwhvcdw"
+      },
+      {
+        "type": "faq",
+        "ref": "faq.telegram.token_invalid"
+      },
+      {
+        "type": "case",
+        "ref": "case.telegram.401"
+      },
+      {
+        "type": "tutorial",
+        "ref": "tut.news_digest.first_run"
+      },
+      {
+        "type": "explain",
+        "ref": "exp.wf.hx32ajwdry"
+      }
+    ],
+    "indexes": [
+      {
+        "type": "toc",
+        "ref": "index.toc.news_digest"
+      },
+      {
+        "type": "search",
+        "ref": "index.search.news_digest"
+      }
+    ],
+    "graph_ref": "graph.g.f3wser48no",
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T18:00:00Z"
+  }
+}
