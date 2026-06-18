@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Tenant Schema v1",
+  "type": "object",
+  "required": [
+    "tenant_id",
+    "name",
+    "status",
+    "created_at",
+    "retention_policy_ref",
+    "default_roles"
+  ],
+  "properties": {
+    "tenant_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "suspended",
+        "deleted"
+      ]
+    },
+    "contact": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "org_url": {
+          "type": "string"
+        }
+      }
+    },
+    "retention_policy_ref": {
+      "type": "string"
+    },
+    "sso_config_ref": {
+      "type": "string"
+    },
+    "default_roles": {
+      "type": "object",
+      "description": "group/role mapping defaults"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
