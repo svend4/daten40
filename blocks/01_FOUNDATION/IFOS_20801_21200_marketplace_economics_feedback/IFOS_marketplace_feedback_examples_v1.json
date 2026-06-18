@@ -1,0 +1,311 @@
+{
+  "reviews": [
+    {
+      "review_id": "rev.r1.ytmln8agl5",
+      "subject_id": "ent.listing.news_digest",
+      "author": {
+        "user_id": "user.001",
+        "verified_usage": true
+      },
+      "context": {
+        "environment": "cloud",
+        "volume": "100 items/day",
+        "industry": "media"
+      },
+      "outcome": "success",
+      "rating": 5,
+      "text": {
+        "pros": "Стабильно, быстро, понятные логи.",
+        "cons": "Нужна тонкая настройка промпта.",
+        "notes": "Делали дайджест 1 раз/день."
+      },
+      "evidence_refs": [
+        "job://job.abc123",
+        "log://corr.123#summarize"
+      ],
+      "moderation": {
+        "status": "approved",
+        "reasons": []
+      },
+      "created_at": "2026-01-02T20:35:00Z",
+      "version": "1.0.0",
+      "updated_at": "2026-01-02T20:35:00Z"
+    },
+    {
+      "review_id": "rev.r2.0h9q8dfdx1",
+      "subject_id": "ent.listing.news_digest",
+      "author": {
+        "user_id": "user.002",
+        "verified_usage": false
+      },
+      "context": {
+        "environment": "local",
+        "volume": "25 items/day",
+        "industry": "personal"
+      },
+      "outcome": "partial",
+      "rating": 3,
+      "text": {
+        "pros": "Легко начать.",
+        "cons": "Telegram иногда rate-limit.",
+        "notes": "Надо ретраи и backoff."
+      },
+      "evidence_refs": [],
+      "moderation": {
+        "status": "approved",
+        "reasons": []
+      },
+      "created_at": "2026-01-02T20:35:00Z",
+      "version": "1.0.0",
+      "updated_at": "2026-01-02T20:35:00Z"
+    }
+  ],
+  "rating_aggregate": {
+    "subject_id": "ent.listing.news_digest",
+    "count": 2,
+    "mean": 4.0,
+    "median": 4.0,
+    "distribution": {
+      "1": 0,
+      "2": 0,
+      "3": 1,
+      "4": 0,
+      "5": 1
+    },
+    "confidence": 0.55,
+    "verified_usage_ratio": 0.5,
+    "decay_model": "exponential_90d",
+    "updated_at": "2026-01-02T20:35:00Z",
+    "version": "1.0.0"
+  },
+  "comparison_result": {
+    "comparison_id": "cmp.c.a20vw58mmo",
+    "intent": "RSS → Digest → Telegram",
+    "candidates": [
+      "ent.listing.news_digest",
+      "ent.listing.news_digest_alt"
+    ],
+    "criteria": [
+      "capability_coverage",
+      "trust",
+      "setup_complexity",
+      "cost_estimate",
+      "incident_risk"
+    ],
+    "table": [
+      {
+        "subject_id": "ent.listing.news_digest",
+        "scores": {
+          "capability_coverage": 1.0,
+          "trust": 0.82,
+          "setup_complexity": 0.65,
+          "cost_estimate": 0.7,
+          "incident_risk": 0.75
+        },
+        "notes": "verified reviews present"
+      },
+      {
+        "subject_id": "ent.listing.news_digest_alt",
+        "scores": {
+          "capability_coverage": 0.9,
+          "trust": 0.6,
+          "setup_complexity": 0.75,
+          "cost_estimate": 0.8,
+          "incident_risk": 0.6
+        },
+        "notes": "new but low evidence"
+      }
+    ],
+    "winner": "ent.listing.news_digest",
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T20:35:00Z"
+  },
+  "recommendation": {
+    "reco_id": "reco.r.b4rxmev9qo",
+    "intent": "RSS → Digest → Telegram",
+    "context": {
+      "priority": "safety_over_cost",
+      "volume": "100/day"
+    },
+    "results": [
+      {
+        "subject_id": "ent.listing.news_digest",
+        "score": 0.86,
+        "why": [
+          "capabilities match",
+          "verified reviews",
+          "L3 reliability"
+        ],
+        "risks": [
+          "telegram rate-limits"
+        ],
+        "cost": {
+          "estimated_usd": 0.03,
+          "estimated_seconds": 5,
+          "notes": "per run"
+        }
+      },
+      {
+        "subject_id": "ent.listing.news_digest_alt",
+        "score": 0.71,
+        "why": [
+          "cheaper plan"
+        ],
+        "risks": [
+          "low trust evidence"
+        ],
+        "cost": {
+          "estimated_usd": 0.01,
+          "estimated_seconds": 5,
+          "notes": "per run"
+        }
+      }
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T20:35:00Z"
+  },
+  "pricing_plan": {
+    "plan_id": "plan.p.7m72652945",
+    "subject_id": "ent.listing.news_digest",
+    "model": "usage_based",
+    "currency": "USD",
+    "prices": {
+      "per_run": 0.02,
+      "per_1k_items": 0.5
+    },
+    "limits": {
+      "max_items_per_run": 200
+    },
+    "trial": {
+      "days": 14,
+      "included_units": 50
+    },
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T20:35:00Z"
+  },
+  "license": {
+    "license_id": "lic.l.ylqk9plb0s",
+    "name": "IFOS Community License",
+    "rules": {
+      "commercial_use": true,
+      "redistribution": false,
+      "modifications": true,
+      "attribution_required": true,
+      "data_restrictions": "No PII export without consent"
+    },
+    "attribution": "© PublisherName — used under IFOS Community License",
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T20:35:00Z"
+  },
+  "affiliate_program": {
+    "affiliate_id": "aff.a.0zbqooubzh",
+    "subject_id": "ent.listing.news_digest",
+    "tracking": {
+      "tracking_id": "trk_987",
+      "cookie_window_days": 30,
+      "allowed_channels": [
+        "blog",
+        "youtube",
+        "newsletter"
+      ]
+    },
+    "payout": {
+      "model": "revshare",
+      "rate": 0.2,
+      "notes": "20% revenue share"
+    },
+    "compliance": {
+      "forbidden_traffic": [
+        "incentivized",
+        "spam"
+      ],
+      "kyc_required": true
+    },
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T20:35:00Z"
+  },
+  "anti_fraud_signal": {
+    "signal_id": "sig.s.24uy8vk2m9",
+    "subject_id": "ent.listing.news_digest",
+    "type": "low_verified_ratio",
+    "severity": "low",
+    "evidence": [
+      "verified_usage_ratio=0.5 < 0.8 threshold for L4"
+    ],
+    "created_at": "2026-01-02T20:35:00Z",
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T20:35:00Z"
+  },
+  "quality_ladder": {
+    "subject_id": "ent.listing.news_digest",
+    "level": "L3_RELIABLE",
+    "badges": [
+      "smoke_pass",
+      "signed",
+      "sbom",
+      "low_incidents"
+    ],
+    "requirements": [
+      "smoke PASS",
+      "scans PASS",
+      "SLO evidence",
+      "incident rate < threshold"
+    ],
+    "updated_at": "2026-01-02T20:35:00Z",
+    "version": "1.0.0"
+  },
+  "vitrine_portfolio": {
+    "vitrine_id": "vit.v.trtt3o2z3g",
+    "name": "Top tools for news aggregation",
+    "intent": "news aggregation",
+    "selection": [
+      {
+        "subject_id": "ent.listing.news_digest",
+        "position": 1,
+        "tag": "reliable"
+      },
+      {
+        "subject_id": "ent.listing.rss_parser",
+        "position": 2,
+        "tag": "utility"
+      }
+    ],
+    "curation_rules": [
+      "min_quality=L2_SAFE",
+      "min_trust=0.7",
+      "diversity=publisher"
+    ],
+    "updated_at": "2026-01-02T20:35:00Z",
+    "version": "1.0.0"
+  },
+  "experiment_ab": {
+    "experiment_id": "exp.e.bvjmte5rz7",
+    "hypothesis": "Boost verified reviews improves conversion without increasing incidents",
+    "variants": [
+      {
+        "id": "A",
+        "description": "baseline ranking",
+        "traffic_split": 0.5
+      },
+      {
+        "id": "B",
+        "description": "boost verified_usage_ratio weight",
+        "traffic_split": 0.5
+      }
+    ],
+    "metrics": [
+      "conversion",
+      "install_success",
+      "job_success_rate",
+      "retention_7d"
+    ],
+    "guardrails": [
+      "incidents_not_increase",
+      "trust_not_decrease"
+    ],
+    "status": "planned",
+    "created_at": "2026-01-02T20:35:00Z",
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T20:35:00Z"
+  }
+}
