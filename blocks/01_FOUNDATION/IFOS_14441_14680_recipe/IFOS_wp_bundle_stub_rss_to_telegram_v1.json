@@ -1,0 +1,24 @@
+{
+  "bundle_id": "bundle.wp_rss_telegram_digest_stub",
+  "version": "1.0.0",
+  "recipe_id": "recipe.rss_to_telegram.digest_v1",
+  "notes": [
+    "WP bundle заглушка: для реального WP нужно выбрать механизм запуска (cron/webhook) и хранение состояния.",
+    "Плагины могут не требоваться; можно сделать как custom plugin."
+  ],
+  "deps": [],
+  "install_plan": [
+    {
+      "step": "Create custom plugin",
+      "how": "register cron event, fetch RSS, send Telegram via Bot API"
+    },
+    {
+      "step": "Configure secrets",
+      "how": "store TELEGRAM_BOT_TOKEN in wp-config or secrets manager"
+    },
+    {
+      "step": "Run evidence",
+      "how": "dry-run preview + send to test chat"
+    }
+  ]
+}
