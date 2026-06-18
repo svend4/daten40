@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Billing Plan Schema v1",
+  "type": "object",
+  "required": [
+    "plan_id",
+    "name",
+    "currency",
+    "rates",
+    "effective_from"
+  ],
+  "properties": {
+    "plan_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "rates": {
+      "type": "object",
+      "required": [
+        "per_run",
+        "per_step",
+        "per_request"
+      ],
+      "properties": {
+        "per_run": {
+          "type": "number",
+          "minimum": 0
+        },
+        "per_step": {
+          "type": "number",
+          "minimum": 0
+        },
+        "per_request": {
+          "type": "number",
+          "minimum": 0
+        },
+        "per_storage_mb_day": {
+          "type": "number",
+          "minimum": 0
+        },
+        "per_verified_evidence": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "free_allowance": {
+      "type": "object",
+      "properties": {
+        "runs": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "requests": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "storage_mb_day": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "effective_from": {
+      "type": "string"
+    },
+    "effective_to": {
+      "type": "string"
+    }
+  }
+}
