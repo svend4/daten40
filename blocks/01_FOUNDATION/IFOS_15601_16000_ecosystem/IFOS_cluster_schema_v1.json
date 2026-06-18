@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Cluster Schema v1",
+  "type": "object",
+  "required": [
+    "cluster_id",
+    "name",
+    "domain",
+    "members",
+    "centroid",
+    "created_at",
+    "method_version"
+  ],
+  "properties": {
+    "cluster_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "domain": {
+      "type": "string",
+      "description": "travel|finance|content|ops|security|..."
+    },
+    "members": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "component_type",
+          "component_id"
+        ],
+        "properties": {
+          "component_type": {
+            "type": "string"
+          },
+          "component_id": {
+            "type": "string"
+          },
+          "weight": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "centroid": {
+      "type": "object",
+      "description": "semantic signature",
+      "properties": {
+        "keywords": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "vector_ref": {
+          "type": "string"
+        }
+      }
+    },
+    "typical_blueprints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "human_labels": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "method_version": {
+      "type": "string"
+    }
+  }
+}
