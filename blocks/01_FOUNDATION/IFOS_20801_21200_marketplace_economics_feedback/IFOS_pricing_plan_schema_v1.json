@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Pricing Plan Schema v1",
+  "type": "object",
+  "required": [
+    "plan_id",
+    "subject_id",
+    "model",
+    "currency",
+    "prices",
+    "limits",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "plan_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string",
+      "enum": [
+        "free",
+        "subscription",
+        "usage_based",
+        "enterprise"
+      ]
+    },
+    "currency": {
+      "type": "string",
+      "default": "USD"
+    },
+    "prices": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "trial": {
+      "type": "object",
+      "properties": {
+        "days": {
+          "type": "integer"
+        },
+        "included_units": {
+          "type": "number"
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
