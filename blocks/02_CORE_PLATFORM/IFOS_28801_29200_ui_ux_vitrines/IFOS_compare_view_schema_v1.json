@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS CompareView Schema v1",
+  "type": "object",
+  "required": [
+    "compare_id",
+    "subject",
+    "columns",
+    "constraints",
+    "scoring",
+    "explain",
+    "version"
+  ],
+  "properties": {
+    "compare_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string",
+      "description": "What is compared: insurance, hosting, connector, package, etc."
+    },
+    "columns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "field"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "field": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "number",
+              "text",
+              "bool",
+              "enum",
+              "rating",
+              "money",
+              "other"
+            ]
+          },
+          "weight": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "scoring": {
+      "type": "object",
+      "properties": {
+        "model": {
+          "type": "string",
+          "enum": [
+            "weighted_sum",
+            "rules",
+            "ml",
+            "hybrid"
+          ]
+        },
+        "params": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "explain": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "template": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
