@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Entitlement Schema v1",
+  "type": "object",
+  "required": [
+    "entitlement_id",
+    "owner",
+    "plan_ref",
+    "status",
+    "limits",
+    "valid_from",
+    "valid_to",
+    "grace",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "entitlement_id": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "tenant",
+            "user"
+          ]
+        },
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "plan_ref": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "past_due",
+        "suspended",
+        "cancelled"
+      ]
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "valid_from": {
+      "type": "string"
+    },
+    "valid_to": {
+      "type": "string"
+    },
+    "grace": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "until": {
+          "type": "string"
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
