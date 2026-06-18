@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UITemplate Schema v1",
+  "type": "object",
+  "required": [
+    "template_id",
+    "name",
+    "goal",
+    "cards",
+    "flows",
+    "forms",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "template_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "goal": {
+      "type": "string"
+    },
+    "cards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "flows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "forms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "requires_packages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
