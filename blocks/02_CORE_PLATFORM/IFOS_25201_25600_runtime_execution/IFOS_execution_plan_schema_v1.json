@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Execution Plan Schema v1",
+  "type": "object",
+  "required": [
+    "plan_id",
+    "subject_id",
+    "profile_id",
+    "steps",
+    "secrets",
+    "quota_id",
+    "idempotency_policy_id",
+    "mode",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "plan_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "profile_id": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "sandbox",
+        "prod"
+      ]
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "n",
+          "adapter_ref",
+          "action",
+          "inputs_map"
+        ],
+        "properties": {
+          "n": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "adapter_ref": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "inputs_map": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "outputs_map": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "allow_external": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "secrets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "quota_id": {
+      "type": "string"
+    },
+    "idempotency_policy_id": {
+      "type": "string"
+    },
+    "expected_outputs": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
