@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Adapter Spec Schema v1",
+  "type": "object",
+  "required": [
+    "adapter_id",
+    "from_contract_id",
+    "to_platform",
+    "connector",
+    "mapping_rules",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "adapter_id": {
+      "type": "string"
+    },
+    "from_contract_id": {
+      "type": "string"
+    },
+    "to_platform": {
+      "type": "string",
+      "enum": [
+        "make",
+        "n8n",
+        "wordpress",
+        "custom"
+      ]
+    },
+    "connector": {
+      "type": "string"
+    },
+    "mapping_rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "error_mapping": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "platform_error",
+          "contract_error"
+        ],
+        "properties": {
+          "platform_error": {
+            "type": "string"
+          },
+          "contract_error": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
