@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Fallback Policy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "subject_id",
+    "strategies",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "strategies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "when",
+          "then"
+        ],
+        "properties": {
+          "when": {
+            "type": "string"
+          },
+          "then": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
