@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Metric Point Schema v1",
+  "type": "object",
+  "required": [
+    "metric_id",
+    "ts",
+    "name",
+    "value",
+    "unit",
+    "labels",
+    "subject_id",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "metric_id": {
+      "type": "string"
+    },
+    "ts": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "value": {
+      "type": "number"
+    },
+    "unit": {
+      "type": "string"
+    },
+    "labels": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
