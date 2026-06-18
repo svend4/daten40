@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Dashboard Schema v1",
+  "type": "object",
+  "required": [
+    "dashboard_id",
+    "name",
+    "widgets",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "dashboard_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "widgets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "query"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "timeseries",
+              "table",
+              "heatmap",
+              "status"
+            ]
+          },
+          "query": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "title": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
