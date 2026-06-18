@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Consent Record Schema v1",
+  "type": "object",
+  "required": [
+    "consent_id",
+    "tenant_id",
+    "user_id",
+    "policy_profile_id",
+    "policy_version",
+    "scope",
+    "accepted_at",
+    "version"
+  ],
+  "properties": {
+    "consent_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "policy_profile_id": {
+      "type": "string"
+    },
+    "policy_version": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "accepted_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
