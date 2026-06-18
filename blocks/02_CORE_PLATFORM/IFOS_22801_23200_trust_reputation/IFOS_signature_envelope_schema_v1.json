@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Signature Envelope Schema v1",
+  "type": "object",
+  "required": [
+    "envelope_id",
+    "subject_id",
+    "hash",
+    "publisher_id",
+    "kid",
+    "signature",
+    "ts",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "envelope_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "hash": {
+      "type": "string"
+    },
+    "publisher_id": {
+      "type": "string"
+    },
+    "kid": {
+      "type": "string"
+    },
+    "signature": {
+      "type": "string"
+    },
+    "ts": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
