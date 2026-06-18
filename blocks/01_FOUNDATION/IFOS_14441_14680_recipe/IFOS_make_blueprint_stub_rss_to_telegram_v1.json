@@ -1,0 +1,48 @@
+{
+  "name": "RSS to Telegram Digest (IFOS stub)",
+  "description": "Generated from recipe.rss_to_telegram.digest_v1",
+  "notes": [
+    "Это заглушка формата. Реальный Make blueprint требует точной структуры modules/links.",
+    "Inputs: rss_url, chat_id, max_items. Secret: TELEGRAM_BOT_TOKEN."
+  ],
+  "recipe_id": "recipe.rss_to_telegram.digest_v1",
+  "modules": [
+    {
+      "id": 1,
+      "type": "http.get",
+      "name": "Read RSS",
+      "params": {
+        "url": "{{rss_url}}",
+        "parse": "rss"
+      }
+    },
+    {
+      "id": 2,
+      "type": "text.template",
+      "name": "Format Digest",
+      "params": {
+        "template": "{{items_markdown}}"
+      }
+    },
+    {
+      "id": 3,
+      "type": "telegram.sendMessage",
+      "name": "Send",
+      "params": {
+        "token": "{{TELEGRAM_BOT_TOKEN}}",
+        "chat_id": "{{chat_id}}",
+        "text": "{{digest_text}}"
+      }
+    }
+  ],
+  "links": [
+    {
+      "from": 1,
+      "to": 2
+    },
+    {
+      "from": 2,
+      "to": 3
+    }
+  ]
+}
