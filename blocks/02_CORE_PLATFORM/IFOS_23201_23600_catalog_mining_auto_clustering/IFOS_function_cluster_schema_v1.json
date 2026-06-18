@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Function Cluster Schema v1",
+  "type": "object",
+  "required": [
+    "cluster_id",
+    "name",
+    "atoms",
+    "variants",
+    "taxonomy",
+    "signals",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "cluster_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "atoms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "variants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "platform",
+          "ref"
+        ],
+        "properties": {
+          "platform": {
+            "type": "string",
+            "enum": [
+              "make",
+              "n8n",
+              "wordpress",
+              "custom"
+            ]
+          },
+          "ref": {
+            "type": "string"
+          },
+          "quality_level": {
+            "type": "string",
+            "enum": [
+              "L0",
+              "L1",
+              "L2",
+              "L3",
+              "L4",
+              "L5"
+            ]
+          }
+        }
+      }
+    },
+    "taxonomy": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "signals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
