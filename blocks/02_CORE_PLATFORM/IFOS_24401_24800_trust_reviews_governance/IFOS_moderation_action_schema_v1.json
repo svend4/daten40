@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Moderation Action Schema v1",
+  "type": "object",
+  "required": [
+    "action_id",
+    "target_id",
+    "target_type",
+    "action",
+    "reason",
+    "actor_id",
+    "status",
+    "created_at",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "action_id": {
+      "type": "string"
+    },
+    "target_id": {
+      "type": "string"
+    },
+    "target_type": {
+      "type": "string",
+      "enum": [
+        "review",
+        "publisher",
+        "subject"
+      ]
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "hide_review",
+        "unhide_review",
+        "quarantine_subject",
+        "unquarantine_subject",
+        "downgrade_badge",
+        "upgrade_badge",
+        "block_publisher",
+        "unblock_publisher",
+        "require_verification",
+        "manual_override"
+      ]
+    },
+    "reason": {
+      "type": "string"
+    },
+    "actor_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "planned",
+        "applied",
+        "reverted",
+        "failed"
+      ]
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
