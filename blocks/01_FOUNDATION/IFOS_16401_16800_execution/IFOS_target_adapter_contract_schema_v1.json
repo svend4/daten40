@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Target Adapter Contract Schema v1",
+  "type": "object",
+  "required": [
+    "adapter_id",
+    "target",
+    "operations",
+    "version"
+  ],
+  "properties": {
+    "adapter_id": {
+      "type": "string"
+    },
+    "target": {
+      "type": "string",
+      "enum": [
+        "make",
+        "n8n",
+        "wp",
+        "native"
+      ]
+    },
+    "operations": {
+      "type": "object",
+      "required": [
+        "install",
+        "run",
+        "get_run",
+        "export",
+        "rollback"
+      ],
+      "properties": {
+        "install": {
+          "type": "string"
+        },
+        "run": {
+          "type": "string"
+        },
+        "get_run": {
+          "type": "string"
+        },
+        "pause": {
+          "type": "string"
+        },
+        "resume": {
+          "type": "string"
+        },
+        "schedule": {
+          "type": "string"
+        },
+        "export": {
+          "type": "string"
+        },
+        "rollback": {
+          "type": "string"
+        }
+      }
+    },
+    "notes": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
