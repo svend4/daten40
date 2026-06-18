@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Tag Normalization Rules Schema v1",
+  "type": "object",
+  "required": [
+    "rules_id",
+    "steps",
+    "alias_map",
+    "stop_tags",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "rules_id": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "lower",
+          "trim",
+          "punctuation_to_space",
+          "collapse_spaces",
+          "alias_to_canonical",
+          "remove_stop_tags"
+        ]
+      }
+    },
+    "alias_map": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "stop_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
