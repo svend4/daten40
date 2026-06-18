@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Trust Signal Schema v1",
+  "type": "object",
+  "required": [
+    "signal_id",
+    "entity_id",
+    "entity_type",
+    "kind",
+    "weight",
+    "created_at",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "signal_id": {
+      "type": "string"
+    },
+    "entity_id": {
+      "type": "string"
+    },
+    "entity_type": {
+      "type": "string",
+      "enum": [
+        "publisher",
+        "subject",
+        "review",
+        "receipt"
+      ]
+    },
+    "kind": {
+      "type": "string"
+    },
+    "weight": {
+      "type": "number"
+    },
+    "evidence_ref": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
