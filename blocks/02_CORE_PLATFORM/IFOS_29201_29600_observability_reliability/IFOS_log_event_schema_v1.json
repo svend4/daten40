@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS LogEvent Schema v1",
+  "type": "object",
+  "required": [
+    "event_id",
+    "ts",
+    "level",
+    "message",
+    "context",
+    "code",
+    "hint",
+    "version"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "ts": {
+      "type": "string"
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "debug",
+        "info",
+        "warn",
+        "error"
+      ]
+    },
+    "message": {
+      "type": "string"
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "code": {
+      "type": "string"
+    },
+    "hint": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
