@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS TraceSpan Schema v1",
+  "type": "object",
+  "required": [
+    "trace_id",
+    "span_id",
+    "parent_span_id",
+    "name",
+    "ts_start",
+    "ts_end",
+    "duration_ms",
+    "attributes",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "trace_id": {
+      "type": "string"
+    },
+    "span_id": {
+      "type": "string"
+    },
+    "parent_span_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "ts_start": {
+      "type": "string"
+    },
+    "ts_end": {
+      "type": "string"
+    },
+    "duration_ms": {
+      "type": "number",
+      "minimum": 0
+    },
+    "attributes": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ok",
+        "error"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
