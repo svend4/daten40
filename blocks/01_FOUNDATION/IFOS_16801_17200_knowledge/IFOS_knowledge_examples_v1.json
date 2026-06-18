@@ -1,0 +1,398 @@
+{
+  "doc_card": {
+    "doc_id": "doc.telegram.tehaijod",
+    "subject": {
+      "kind": "function",
+      "id": "telegram.send_message",
+      "version": "1.0.0"
+    },
+    "title": "Telegram: send_message",
+    "summary": "Отправляет сообщение в Telegram чат/канал с поддержкой rate-limit retries и безопасной маскировкой токена.",
+    "io": {
+      "inputs": [
+        {
+          "name": "chat_id",
+          "type": "string",
+          "required": true,
+          "description": "ID чата/канала"
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "required": true,
+          "description": "Текст сообщения"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "message_id",
+          "type": "string",
+          "description": "ID отправленного сообщения"
+        }
+      ]
+    },
+    "constraints": {
+      "rate_limits": "Telegram Bot API лимитирует частоту запросов; включите retry/backoff.",
+      "regions": "обычно без ограничений",
+      "costs": "бесплатно",
+      "data_retention": "зависит от Telegram"
+    },
+    "examples": [
+      {
+        "name": "simple_send",
+        "input": {
+          "chat_id": "-100...",
+          "text": "Hello"
+        },
+        "output": {
+          "message_id": "123"
+        },
+        "notes": "Используйте SecretRef для токена."
+      }
+    ],
+    "common_errors": [
+      {
+        "symptom": "401 Unauthorized",
+        "likely_cause": "Неверный bot token или токен отозван",
+        "fix": "Пересоздайте токен у BotFather и обновите секрет",
+        "link_tutorial": "tut.telegram.token.setup"
+      },
+      {
+        "symptom": "429 Too Many Requests",
+        "likely_cause": "Слишком частые отправки",
+        "fix": "Включите backoff/retry и батчинг сообщений",
+        "link_tutorial": "tut.telegram.ratelimit"
+      }
+    ],
+    "evidence": {
+      "level": "L2",
+      "refs": [
+        "court.rec.pass.telegram.send_message"
+      ]
+    },
+    "tags": [
+      "telegram",
+      "messaging",
+      "notify"
+    ],
+    "updated_at": "2026-01-02T14:00:00Z",
+    "version": "1.0.0"
+  },
+  "tutorial_module": {
+    "tutorial_id": "tut.rss.9g6pzr8h",
+    "title": "Сделать ежедневный RSS‑дайджест в Telegram",
+    "goal": "Настроить job, который каждый день в 09:00 отправляет дайджест RSS в Telegram.",
+    "prerequisites": [
+      "Создать Telegram бота",
+      "Иметь URL RSS ленты"
+    ],
+    "steps": [
+      {
+        "n": 1,
+        "action": "Создайте SecretRef telegram_bot_token и сохраните токен в vault",
+        "expected": "SecretRef создан, секрет сохранён",
+        "notes": "Токен не хранить в конфиге."
+      },
+      {
+        "n": 2,
+        "action": "Сгенерируйте Install Plan для target=n8n или Make",
+        "expected": "plan создан",
+        "notes": "Выберите runtime где вам удобнее."
+      },
+      {
+        "n": 3,
+        "action": "Install & Run (smoke test)",
+        "expected": "В тестовый чат приходит сообщение",
+        "notes": "Если не пришло — см. диагностику."
+      },
+      {
+        "n": 4,
+        "action": "Включите расписание cron 0 9 * * * Europe/Berlin",
+        "expected": "Job активен по расписанию",
+        "notes": "Проверьте часовой пояс."
+      }
+    ],
+    "checkpoints": [
+      "Сообщение приходит в тестовый чат",
+      "Ежедневный запуск отображается в run history"
+    ],
+    "common_pitfalls": [
+      {
+        "pitfall": "chat_id неправильный",
+        "fix": "Добавьте бота в чат и используйте корректный ID/username."
+      },
+      {
+        "pitfall": "429 rate limit",
+        "fix": "Сделайте батчинг и backoff."
+      }
+    ],
+    "mini_quiz": [
+      {
+        "q": "Почему токен нельзя хранить в конфиге?",
+        "a": "Он попадёт в логи/экспорт и будет утечка; нужен vault/SecretRef."
+      }
+    ],
+    "difficulty": "L1",
+    "estimated_minutes": 20,
+    "links": [
+      "doc.telegram.send_message",
+      "playbook.rss_to_telegram.failures"
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T14:00:00Z"
+  },
+  "skill_graph": {
+    "graph_id": "sg.travel.m08wjoyh",
+    "subject_scope": {
+      "bundle_id": "bundle.travelhub.core",
+      "domain": "travel_digest",
+      "target": "any"
+    },
+    "nodes": [
+      {
+        "skill_id": "skill.install.bundle",
+        "name": "Установить bundle одной кнопкой",
+        "level": "L0",
+        "description": "Выбрать target и установить по plan",
+        "mapped_assets": [
+          "bundle.travelhub.core"
+        ]
+      },
+      {
+        "skill_id": "skill.secrets.vault",
+        "name": "Работа с SecretRef и vault",
+        "level": "L1",
+        "description": "Создать и привязать секреты безопасно",
+        "mapped_assets": [
+          "IFOS_secret_ref_schema_v1.json"
+        ]
+      },
+      {
+        "skill_id": "skill.retries.backoff",
+        "name": "Retry/backoff и rate limits",
+        "level": "L2",
+        "description": "Стабилизировать вызовы API",
+        "mapped_assets": [
+          "doc.telegram.send_message"
+        ]
+      },
+      {
+        "skill_id": "skill.monitoring.runs",
+        "name": "Мониторинг runs и алерты",
+        "level": "L2",
+        "description": "Понимать, что сломалось",
+        "mapped_assets": [
+          "IFOS_run_record_schema_v1.json"
+        ]
+      },
+      {
+        "skill_id": "skill.cluster.vitrine",
+        "name": "Собрать кластер + витрину",
+        "level": "L3",
+        "description": "Несколько jobs + рейтинг + витрина",
+        "mapped_assets": [
+          "IFOS_vitrine_generator_spec_v1.md"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "from": "skill.install.bundle",
+        "to": "skill.secrets.vault",
+        "type": "prereq"
+      },
+      {
+        "from": "skill.secrets.vault",
+        "to": "skill.monitoring.runs",
+        "type": "enables"
+      },
+      {
+        "from": "skill.monitoring.runs",
+        "to": "skill.retries.backoff",
+        "type": "enables"
+      },
+      {
+        "from": "skill.retries.backoff",
+        "to": "skill.cluster.vitrine",
+        "type": "enables"
+      }
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T14:00:00Z"
+  },
+  "diagnostics_report": {
+    "report_id": "diag.r.zda6iurq",
+    "run_id": "run.demo.fail.001",
+    "status": "fail",
+    "signals": [
+      {
+        "name": "http_status",
+        "value": "401",
+        "severity": "high"
+      },
+      {
+        "name": "policy_mode",
+        "value": "sandbox",
+        "severity": "low"
+      }
+    ],
+    "hypotheses": [
+      {
+        "cause": "Неверный или отозванный Telegram bot token",
+        "prob": 0.78,
+        "evidence": [
+          "401 Unauthorized in logs",
+          "token last_rotated_at > 180 days"
+        ]
+      },
+      {
+        "cause": "Бот не добавлен в чат / неверный chat_id",
+        "prob": 0.18,
+        "evidence": [
+          "message not delivered",
+          "chat_id looks invalid"
+        ]
+      }
+    ],
+    "quick_fixes": [
+      "Обновите secret telegram_bot_token и перезапустите smoke test",
+      "Проверьте chat_id: добавьте бота в чат и повторите отправку"
+    ],
+    "deep_fixes": [
+      "Включите rotation: rotate_days=90 и алерт на истечение",
+      "Добавьте playbook шаг 'validate chat access' перед production schedule"
+    ],
+    "links": [
+      "tut.rss_to_telegram.daily",
+      "playbook.rss_to_telegram.failures"
+    ],
+    "generated_at": "2026-01-02T14:00:00Z",
+    "method_version": "diag.v1"
+  },
+  "troubleshooting_playbook": {
+    "playbook_id": "playbook.rss_to_telegram.failures",
+    "subject": {
+      "kind": "recipe",
+      "id": "recipe.rss_to_telegram.digest_v1",
+      "version": "1.2.0"
+    },
+    "symptom_tree": {
+      "symptom": "Сообщение не приходит в Telegram",
+      "checks": [
+        {
+          "check": "Проверить 401/403 в логах",
+          "how": "Посмотреть последние run logs",
+          "if_fail": "Есть 401",
+          "fix": "Обновить bot token в vault и перезапустить"
+        },
+        {
+          "check": "Проверить 429 rate limit",
+          "how": "Ищите 429 в логах",
+          "if_fail": "Есть 429",
+          "fix": "Включить backoff + batched send"
+        },
+        {
+          "check": "Проверить chat_id",
+          "how": "Сделать test send в этот chat_id",
+          "if_fail": "Не доставлено",
+          "fix": "Добавить бота в чат и обновить ID"
+        }
+      ],
+      "next": []
+    },
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T14:00:00Z"
+  },
+  "glossary_entry": {
+    "term": "SecretRef",
+    "definition": "Ссылка на секрет в vault, вместо хранения значения в конфиге/коде. Позволяет переносить jobs между Make/n8n/WP/native без утечек.",
+    "synonyms": [
+      "vault reference",
+      "secret pointer"
+    ],
+    "examples": [
+      "secret://ten/travelhub.001/vault/telegram_bot_token"
+    ],
+    "tags": [
+      "security",
+      "secrets",
+      "portability"
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T14:00:00Z"
+  },
+  "knowledge_pack_manifest": {
+    "pack_id": "kp.travelhub.cdp2fvs3",
+    "subject": {
+      "bundle_id": "bundle.travelhub.core",
+      "bundle_version": "1.0.0",
+      "domain": "travel_digest"
+    },
+    "contents": {
+      "doc_cards": [
+        "doc.telegram.tehaijod"
+      ],
+      "tutorials": [
+        "tut.rss.9g6pzr8h"
+      ],
+      "skill_graph": "sg.travel.m08wjoyh",
+      "playbooks": [
+        "playbook.rss_to_telegram.failures"
+      ],
+      "known_issues": [
+        "issue.telegram.401.token_revoked"
+      ],
+      "glossary": [
+        "SecretRef"
+      ]
+    },
+    "build": {
+      "build_id": "bld.demo.001",
+      "sha256": "(sha256)",
+      "signatures": [
+        "pub.travelhub",
+        "node.builder.01"
+      ]
+    },
+    "license_ref": "lic.mit.v1",
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T14:00:00Z"
+  },
+  "recommendation_trace": {
+    "trace_id": "trace.rec.lqznsnpf",
+    "user_intent": "Хочу портал сравнения как Check24, но для туристических услуг + дайджест новостей",
+    "candidates": [
+      {
+        "id": "bundle.travelhub.core",
+        "kind": "bundle",
+        "score": 0.84,
+        "evidence_level": "L2"
+      },
+      {
+        "id": "bundle.news_digest.core",
+        "kind": "bundle",
+        "score": 0.81,
+        "evidence_level": "L2"
+      },
+      {
+        "id": "bundle.wp.compare_portal",
+        "kind": "bundle",
+        "score": 0.72,
+        "evidence_level": "L1"
+      }
+    ],
+    "ranking": [
+      "bundle.travelhub.core",
+      "bundle.news_digest.core",
+      "bundle.wp.compare_portal"
+    ],
+    "chosen": "bundle.travelhub.core",
+    "reasons": [
+      "Есть готовый install plan + smoke tests",
+      "Есть playbooks и skill graph для масштабирования",
+      "Покрыт evidence court PASS на ключевых функциях"
+    ],
+    "generated_at": "2026-01-02T14:00:00Z",
+    "method_version": "recommend.v1"
+  }
+}
