@@ -1,0 +1,327 @@
+{
+  "quality_assessment": {
+    "assessment_id": "qa.q.echz0qbrrg",
+    "subject_id": "cl.news_digest_demo",
+    "current_level": "L1",
+    "target_level": "L3",
+    "gaps": [
+      "missing IOContract",
+      "missing TestSuite",
+      "missing README bundle",
+      "missing lockfile",
+      "missing rollback plan"
+    ],
+    "recommendations": [
+      "add_contract",
+      "add_tests",
+      "add_docs",
+      "collect_receipts",
+      "add_rollback"
+    ],
+    "computed_at": "2026-01-03T01:55:00Z",
+    "updated_at": "2026-01-03T01:55:00Z",
+    "version": "1.0.0"
+  },
+  "readme_template": {
+    "template_id": "rt.t.uaccg4jaew",
+    "name": "Default IFOS README",
+    "blocks": [
+      {
+        "id": "purpose",
+        "title": "Назначение",
+        "source": "static",
+        "required": true
+      },
+      {
+        "id": "io",
+        "title": "Входы/выходы",
+        "source": "contract",
+        "required": true
+      },
+      {
+        "id": "install",
+        "title": "Установка",
+        "source": "install_plan",
+        "required": true
+      },
+      {
+        "id": "run",
+        "title": "Запуск",
+        "source": "runtime_profile",
+        "required": true
+      },
+      {
+        "id": "tests",
+        "title": "Проверка",
+        "source": "tests",
+        "required": false
+      },
+      {
+        "id": "trust",
+        "title": "Доверие и риски",
+        "source": "trust",
+        "required": false
+      }
+    ],
+    "updated_at": "2026-01-03T01:55:00Z",
+    "version": "1.0.0"
+  },
+  "readme_generation_job": {
+    "job_id": "rj.j.fjhtzwkolq",
+    "subject_id": "cl.news_digest_demo",
+    "template_id": "rt.t.uaccg4jaew",
+    "outputs": [
+      "docs://readme.md",
+      "docs://readme.html",
+      "docs://readme.txt"
+    ],
+    "status": "completed",
+    "updated_at": "2026-01-03T01:55:00Z",
+    "version": "1.0.0"
+  },
+  "doc_bundle": {
+    "doc_id": "doc.d.ywwtqmv8xc",
+    "subject_id": "cl.news_digest_demo",
+    "files": [
+      {
+        "name": "README",
+        "format": "md",
+        "ref": "docs://readme.md"
+      },
+      {
+        "name": "README",
+        "format": "html",
+        "ref": "docs://readme.html"
+      },
+      {
+        "name": "README",
+        "format": "txt",
+        "ref": "docs://readme.txt"
+      }
+    ],
+    "sections": [
+      "readme",
+      "tutorial",
+      "faq",
+      "changelog",
+      "security"
+    ],
+    "updated_at": "2026-01-03T01:55:00Z",
+    "version": "1.0.0"
+  },
+  "tutorial": {
+    "tutorial_id": "tut.t.eeoy5gk3e0",
+    "subject_id": "cl.news_digest_demo",
+    "steps": [
+      {
+        "n": 1,
+        "title": "Импорт шаблона",
+        "do": "Нажмите Import → выберите bundle",
+        "expect": "Появится карточка кластера",
+        "troubleshoot": "Если ошибка лицензии — проверьте источник"
+      },
+      {
+        "n": 2,
+        "title": "Настройка secrets",
+        "do": "Добавьте secret_ref telegram/bot_token",
+        "expect": "Validation PASS",
+        "troubleshoot": "Если FAIL — проверьте права secret store"
+      },
+      {
+        "n": 3,
+        "title": "Sandbox run",
+        "do": "Запустите smoke suite",
+        "expect": "Receipt success",
+        "troubleshoot": "Если 429 — включите backoff"
+      }
+    ],
+    "updated_at": "2026-01-03T01:55:00Z",
+    "version": "1.0.0"
+  },
+  "faq": {
+    "faq_id": "faq.f.0th8hcb70k",
+    "subject_id": "cl.news_digest_demo",
+    "items": [
+      {
+        "q": "Почему нужен sandbox?",
+        "a": "Чтобы проверить без побочных эффектов и собрать receipts."
+      },
+      {
+        "q": "Как скрыть PII?",
+        "a": "Используйте pii types + no_log_fields в policy."
+      }
+    ],
+    "updated_at": "2026-01-03T01:55:00Z",
+    "version": "1.0.0"
+  },
+  "changelog": {
+    "changelog_id": "clg.c.bszl5evfof",
+    "subject_id": "cl.news_digest_demo",
+    "entries": [
+      {
+        "version": "1.0.1",
+        "date": "2026-01-03",
+        "changes": [
+          "Добавлены тесты smoke",
+          "Сгенерирован README bundle"
+        ]
+      }
+    ],
+    "updated_at": "2026-01-03T01:55:00Z",
+    "version": "1.0.0"
+  },
+  "test_case": {
+    "case_id": "tc.t.qn5srqimey",
+    "contract_id": "ctr.send_telegram_message",
+    "inputs": {
+      "chat_id": "-100xxx",
+      "text": "hello"
+    },
+    "assertions": [
+      "output.message_id is string",
+      "no_log_fields enforced"
+    ],
+    "updated_at": "2026-01-03T01:55:00Z",
+    "version": "1.0.0"
+  },
+  "test_suite": {
+    "suite_id": "tsu.s.bp2d9adrw5",
+    "subject_id": "cl.news_digest_demo",
+    "cases": [
+      "tc.t.qn5srqimey"
+    ],
+    "level": "smoke",
+    "environment": "sandbox",
+    "updated_at": "2026-01-03T01:55:00Z",
+    "version": "1.0.0"
+  },
+  "test_result": {
+    "result_id": "tr.t.yhtw2xqhb7",
+    "suite_id": "tsu.s.bp2d9adrw5",
+    "status": "pass",
+    "cases": [
+      {
+        "case_id": "tc.t.qn5srqimey",
+        "status": "pass",
+        "details": "ok"
+      }
+    ],
+    "run_at": "2026-01-03T01:55:00Z",
+    "updated_at": "2026-01-03T01:55:00Z",
+    "version": "1.0.0"
+  },
+  "lint_rule": {
+    "rule_id": "lr.l.f30lizo7j1",
+    "name": "NoSecretsInDocs",
+    "description": "Docs must not contain raw secrets",
+    "severity": "fail",
+    "updated_at": "2026-01-03T01:55:00Z",
+    "version": "1.0.0"
+  },
+  "lint_report": {
+    "report_id": "lrpt.r.o99v45yyjg",
+    "subject_id": "cl.news_digest_demo",
+    "status": "pass",
+    "findings": [],
+    "run_at": "2026-01-03T01:55:00Z",
+    "updated_at": "2026-01-03T01:55:00Z",
+    "version": "1.0.0"
+  },
+  "coverage_report": {
+    "coverage_id": "cov.c.s7uc0y89sx",
+    "subject_id": "cl.news_digest_demo",
+    "metrics": {
+      "contracts_covered": 1,
+      "adapters_covered": 1,
+      "tests": 1
+    },
+    "run_at": "2026-01-03T01:55:00Z",
+    "updated_at": "2026-01-03T01:55:00Z",
+    "version": "1.0.0"
+  },
+  "ci_pipeline": {
+    "ci_id": "ci.c.d039u1vljf",
+    "subject_id": "cl.news_digest_demo",
+    "steps": [
+      {
+        "name": "lint",
+        "kind": "lint",
+        "required": true
+      },
+      {
+        "name": "schema_validate",
+        "kind": "schema_validate",
+        "required": true
+      },
+      {
+        "name": "dry_run_install",
+        "kind": "dry_run_install",
+        "required": true
+      },
+      {
+        "name": "sandbox_run",
+        "kind": "sandbox_run",
+        "required": true
+      },
+      {
+        "name": "coverage",
+        "kind": "coverage",
+        "required": false
+      }
+    ],
+    "updated_at": "2026-01-03T01:55:00Z",
+    "version": "1.0.0"
+  },
+  "quality_uplift_plan": {
+    "plan_id": "up.p.6x0k8uugn8",
+    "subject_id": "cl.news_digest_demo",
+    "from_level": "L1",
+    "to_level": "L3",
+    "tasks": [
+      {
+        "id": "t1",
+        "kind": "add_contract",
+        "status": "done",
+        "notes": "imported from interop registry"
+      },
+      {
+        "id": "t2",
+        "kind": "add_docs",
+        "status": "done",
+        "notes": "generated readme+tutorial+faq"
+      },
+      {
+        "id": "t3",
+        "kind": "add_tests",
+        "status": "done",
+        "notes": "created smoke suite"
+      },
+      {
+        "id": "t4",
+        "kind": "collect_receipts",
+        "status": "done",
+        "notes": "sandbox receipt success"
+      },
+      {
+        "id": "t5",
+        "kind": "add_rollback",
+        "status": "todo",
+        "notes": "needs stateful ops mapping"
+      }
+    ],
+    "updated_at": "2026-01-03T01:55:00Z",
+    "version": "1.0.0"
+  },
+  "quality_uplift_job": {
+    "job_id": "uj.j.6jqce9fc8w",
+    "plan_id": "up.p.6x0k8uugn8",
+    "status": "running",
+    "artifacts": [
+      "docs://bundle",
+      "tests://suite",
+      "ci://pipeline"
+    ],
+    "updated_at": "2026-01-03T01:55:00Z",
+    "version": "1.0.0"
+  }
+}
