@@ -1,0 +1,292 @@
+{
+  "publisher_profile": {
+    "publisher_id": "pub.p.7t4specmzs",
+    "name": "Example Labs",
+    "identifiers": {
+      "domain": "example.org",
+      "github_org": "example-labs",
+      "wp_author": "examplelabs",
+      "email_hash": "sha256:..."
+    },
+    "verification_level": "domain_verified",
+    "signals": [
+      "verified_publisher",
+      "signed_artifact"
+    ],
+    "incident_stats": {
+      "incidents_30d": 0,
+      "abuse_reports_30d": 0
+    },
+    "updated_at": "2026-01-03T01:20:00Z",
+    "version": "1.0.0"
+  },
+  "publisher_verification": {
+    "verification_id": "ver.v.up5mptugwo",
+    "publisher_id": "pub.p.7t4specmzs",
+    "method": "dns_txt",
+    "status": "pass",
+    "evidence": {
+      "txt_record": "ifos-verify=abc123",
+      "checked_at": "2026-01-03T01:20:00Z"
+    },
+    "updated_at": "2026-01-03T01:20:00Z",
+    "version": "1.0.0"
+  },
+  "review": {
+    "review_id": "rev.r.kj539t32vq",
+    "subject_id": "cl.news_digest_demo",
+    "subject_type": "cluster",
+    "author_id": "user.u123",
+    "platform": "make",
+    "profile_id": "profile.sandbox.safe",
+    "text": "В sandbox работает стабильно, но в проде нужно ограничить логирование chat_id.",
+    "ratings": [],
+    "signals": [
+      "recent_sandbox_receipt_ok"
+    ],
+    "spam_score": 0.05,
+    "created_at": "2026-01-03T01:20:00Z",
+    "updated_at": "2026-01-03T01:20:00Z",
+    "version": "1.0.0"
+  },
+  "rating": {
+    "rating_id": "rat.t.wsj410y2hd",
+    "review_id": "rev.r.kj539t32vq",
+    "axis": "reliability",
+    "value": 4,
+    "created_at": "2026-01-03T01:20:00Z",
+    "updated_at": "2026-01-03T01:20:00Z",
+    "version": "1.0.0"
+  },
+  "abuse_report": {
+    "report_id": "ab.a.99bnd5gq3l",
+    "subject_id": "cl.suspicious_cluster_x",
+    "subject_type": "cluster",
+    "reporter_id": "user.u777",
+    "category": "phishing",
+    "details": "Кластер просит лишние scopes и отправляет данные на неизвестный домен.",
+    "status": "open",
+    "attachments": [],
+    "created_at": "2026-01-03T01:20:00Z",
+    "updated_at": "2026-01-03T01:20:00Z",
+    "version": "1.0.0"
+  },
+  "moderation_action": {
+    "action_id": "mod.m.q57bu9c359",
+    "target_id": "cl.suspicious_cluster_x",
+    "target_type": "subject",
+    "action": "quarantine_subject",
+    "reason": "abuse report pending triage",
+    "actor_id": "mod.bot",
+    "status": "applied",
+    "created_at": "2026-01-03T01:20:00Z",
+    "updated_at": "2026-01-03T01:20:00Z",
+    "version": "1.0.0"
+  },
+  "audit_event": {
+    "audit_id": "aud.a.1s5yzjx1hh",
+    "actor_id": "mod.bot",
+    "event": "quarantine_subject",
+    "target_ref": "cl.suspicious_cluster_x",
+    "meta": {
+      "report_id": "ab.a.99bnd5gq3l"
+    },
+    "ts": "2026-01-03T01:20:00Z",
+    "updated_at": "2026-01-03T01:20:00Z",
+    "version": "1.0.0"
+  },
+  "trust_signal": {
+    "signal_id": "sig.s.5r3ujv12l2",
+    "entity_id": "cl.news_digest_demo",
+    "entity_type": "subject",
+    "kind": "recent_sandbox_receipt_ok",
+    "weight": 0.8,
+    "evidence_ref": "rcpt://sandbox/123",
+    "created_at": "2026-01-03T01:20:00Z",
+    "updated_at": "2026-01-03T01:20:00Z",
+    "version": "1.0.0"
+  },
+  "trust_score": {
+    "score_id": "ts.t.trlfmfvq64",
+    "entity_id": "cl.news_digest_demo",
+    "entity_type": "subject",
+    "score": 86.0,
+    "breakdown": {
+      "receipts": 28,
+      "publisher": 18,
+      "reviews": 16,
+      "incidents": 20,
+      "docs_tests": 4
+    },
+    "reasons": [
+      "sandbox receipt ok",
+      "publisher domain_verified",
+      "no incidents 30d",
+      "reviews weighted low spam"
+    ],
+    "computed_at": "2026-01-03T01:20:00Z",
+    "updated_at": "2026-01-03T01:20:00Z",
+    "version": "1.0.0"
+  },
+  "policy_rule": {
+    "policy_id": "policy.prod.default",
+    "name": "Prod Default Gate",
+    "scope": "prod",
+    "rules": [
+      {
+        "kind": "require",
+        "condition": "quality_level>=L3",
+        "effect": "fail",
+        "message": "Нужен уровень качества L3 или выше"
+      },
+      {
+        "kind": "require",
+        "condition": "rollback_plan.present",
+        "effect": "fail",
+        "message": "Нужен rollback plan"
+      },
+      {
+        "kind": "warn_if",
+        "condition": "trust_score<80",
+        "effect": "warn",
+        "message": "Низкий trust score для прод"
+      }
+    ],
+    "updated_at": "2026-01-03T01:20:00Z",
+    "version": "1.0.0"
+  },
+  "policy_gate_evaluation": {
+    "gate_id": "gate.g.ucefo2rsnf",
+    "policy_id": "policy.prod.default",
+    "subject_id": "cl.news_digest_demo",
+    "profile_id": "profile.prod.strict",
+    "status": "warn",
+    "findings": [
+      "trust_score=86 ok",
+      "quality_level=L2 below required L3"
+    ],
+    "suggested_fixes": [
+      "run quality uplift L0→L3",
+      "attach signed artifact attestation"
+    ],
+    "evaluated_at": "2026-01-03T01:20:00Z",
+    "updated_at": "2026-01-03T01:20:00Z",
+    "version": "1.0.0"
+  },
+  "attestation": {
+    "attestation_id": "att.a.p9pbhwjome",
+    "kind": "artifact_signature",
+    "subject_ref": "bundle://news_digest_v1",
+    "hash": "sha256:bundlehash",
+    "issuer": "pub.p.7t4specmzs",
+    "signature": "sig:base64...",
+    "created_at": "2026-01-03T01:20:00Z",
+    "updated_at": "2026-01-03T01:20:00Z",
+    "version": "1.0.0"
+  },
+  "provenance_record": {
+    "prov_id": "prov.p.mhluepw72w",
+    "subject_id": "cl.news_digest_demo",
+    "chain": [
+      {
+        "kind": "source",
+        "ref": "src://catalog/make/template/123",
+        "ts": "2026-01-03T01:20:00Z"
+      },
+      {
+        "kind": "conversion",
+        "ref": "cp://make->n8n/456",
+        "ts": "2026-01-03T01:20:00Z"
+      },
+      {
+        "kind": "install",
+        "ref": "plan://install/789",
+        "ts": "2026-01-03T01:20:00Z"
+      },
+      {
+        "kind": "receipt",
+        "ref": "rcpt://sandbox/123",
+        "ts": "2026-01-03T01:20:00Z"
+      },
+      {
+        "kind": "review",
+        "ref": "rev.r.kj539t32vq",
+        "ts": "2026-01-03T01:20:00Z"
+      },
+      {
+        "kind": "trust_score",
+        "ref": "ts.t.trlfmfvq64",
+        "ts": "2026-01-03T01:20:00Z"
+      }
+    ],
+    "updated_at": "2026-01-03T01:20:00Z",
+    "version": "1.0.0"
+  },
+  "dispute_case": {
+    "case_id": "dc.d.vegjgpo7mz",
+    "opened_by": "pub.p.7t4specmzs",
+    "target_ref": "mod://mod.m.q57bu9c359",
+    "claim": "Кластер не фишинговый, scopes минимальны. Просим снять карантин.",
+    "status": "triage",
+    "timeline": [
+      {
+        "ts": "2026-01-03T01:20:00Z",
+        "event": "opened",
+        "note": "publisher submitted claim"
+      }
+    ],
+    "resolution": "",
+    "updated_at": "2026-01-03T01:20:00Z",
+    "version": "1.0.0"
+  },
+  "quality_badges": [
+    {
+      "badge_id": "bd.b.ctx55bgshc",
+      "name": "Verified Publisher",
+      "criteria": [
+        "publisher.verification_level>=domain_verified"
+      ],
+      "icon": "✅",
+      "updated_at": "2026-01-03T01:20:00Z",
+      "version": "1.0.0"
+    },
+    {
+      "badge_id": "bd.b.fqxmbywdun",
+      "name": "Sandbox‑Proven",
+      "criteria": [
+        "signal.recent_sandbox_receipt_ok"
+      ],
+      "icon": "🧪",
+      "updated_at": "2026-01-03T01:20:00Z",
+      "version": "1.0.0"
+    },
+    {
+      "badge_id": "bd.b.zfyp674uyv",
+      "name": "Rollback‑Ready",
+      "criteria": [
+        "rollback_plan.present"
+      ],
+      "icon": "🔁",
+      "updated_at": "2026-01-03T01:20:00Z",
+      "version": "1.0.0"
+    }
+  ],
+  "vitrine_trust_card": {
+    "subject_id": "cl.news_digest_demo",
+    "trust_score": 86.0,
+    "badges": [
+      "Verified Publisher",
+      "Sandbox‑Proven",
+      "Rollback‑Ready"
+    ],
+    "top_reviews": [
+      "rev.r.kj539t32vq"
+    ],
+    "risks": [
+      "quality L2 not prod-ready yet"
+    ],
+    "policy_status": "warn",
+    "updated_at": "2026-01-03T01:20:00Z",
+    "version": "1.0.0"
+  }
+}
