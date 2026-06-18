@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Quality Badge Schema v1",
+  "type": "object",
+  "required": [
+    "badge_id",
+    "name",
+    "criteria",
+    "icon",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "badge_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "criteria": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "icon": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
