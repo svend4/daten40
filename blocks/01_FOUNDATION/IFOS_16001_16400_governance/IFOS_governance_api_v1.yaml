@@ -1,0 +1,115 @@
+openapi: 3.0.3
+info:
+  title: IFOS Governance API
+  version: "1.0.0"
+  description: "Evidence courts, disputes, sanctions, appeals, licensing, antifraud."
+servers:
+  - url: https://governance.ifos.local/v1
+tags:
+  - name: EvidenceCourt
+  - name: Disputes
+  - name: Sanctions
+  - name: Appeals
+  - name: Licensing
+  - name: AntiFraud
+  - name: Constitution
+paths:
+  /evidence-court/records:
+    post:
+      tags: [EvidenceCourt]
+      summary: Create evidence court record for a claim
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "201": {description: Created}
+  /evidence-court/records/{id}:
+    get:
+      tags: [EvidenceCourt]
+      summary: Get court record
+      parameters:
+        - {name: id, in: path, required: true, schema: {type: string}}
+      responses:
+        "200": {description: OK}
+  /disputes:
+    post:
+      tags: [Disputes]
+      summary: File a dispute case
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "201": {description: Created}
+    get:
+      tags: [Disputes]
+      summary: List disputes (filter by status/subject)
+      parameters:
+        - {name: status, in: query, schema: {type: string}}
+        - {name: subject_id, in: query, schema: {type: string}}
+      responses:
+        "200": {description: OK}
+  /disputes/{case_id}:
+    get:
+      tags: [Disputes]
+      summary: Get dispute case
+      parameters:
+        - {name: case_id, in: path, required: true, schema: {type: string}}
+      responses:
+        "200": {description: OK}
+  /sanctions:
+    post:
+      tags: [Sanctions]
+      summary: Issue a sanction
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "201": {description: Created}
+    get:
+      tags: [Sanctions]
+      summary: List sanctions (by target)
+      parameters:
+        - {name: target_id, in: query, schema: {type: string}}
+      responses:
+        "200": {description: OK}
+  /appeals:
+    post:
+      tags: [Appeals]
+      summary: File an appeal
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "201": {description: Created}
+  /licensing/policies/{license_id}:
+    get:
+      tags: [Licensing]
+      summary: Get license policy
+      parameters:
+        - {name: license_id, in: path, required: true, schema: {type: string}}
+      responses:
+        "200": {description: OK}
+  /antifraud/signals/{listing_id}:
+    get:
+      tags: [AntiFraud]
+      summary: Get antifraud signals for listing
+      parameters:
+        - {name: listing_id, in: path, required: true, schema: {type: string}}
+      responses:
+        "200": {description: OK}
+  /constitution:
+    get:
+      tags: [Constitution]
+      summary: Get registry constitution for jurisdiction
+      parameters:
+        - {name: jurisdiction, in: query, schema: {type: string}}
+      responses:
+        "200": {description: OK}
