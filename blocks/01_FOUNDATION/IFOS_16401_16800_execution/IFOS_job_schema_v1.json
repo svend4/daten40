@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Job Schema v1",
+  "type": "object",
+  "required": [
+    "job_id",
+    "tenant_id",
+    "bundle_id",
+    "target",
+    "config",
+    "secrets",
+    "policy_ref",
+    "schedule",
+    "created_at"
+  ],
+  "properties": {
+    "job_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "bundle_id": {
+      "type": "string"
+    },
+    "bundle_version": {
+      "type": "string"
+    },
+    "target": {
+      "type": "string",
+      "enum": [
+        "make",
+        "n8n",
+        "wp",
+        "native"
+      ]
+    },
+    "config": {
+      "type": "object",
+      "description": "non-secret configuration"
+    },
+    "secrets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/SecretRef"
+      }
+    },
+    "policy_ref": {
+      "type": "string",
+      "description": "sandbox policy id"
+    },
+    "schedule": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "default": true
+        },
+        "cron": {
+          "type": "string"
+        },
+        "timezone": {
+          "type": "string",
+          "default": "Europe/Berlin"
+        }
+      }
+    },
+    "labels": {
+      "type": "object"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "SecretRef": {
+      "type": "object",
+      "required": [
+        "name",
+        "ref",
+        "scopes"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "ref": {
+          "type": "string",
+          "description": "secret://... pointer"
+        },
+        "scopes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rotate_days": {
+          "type": "integer"
+        },
+        "redaction": {
+          "type": "object",
+          "properties": {
+            "mask": {
+              "type": "boolean",
+              "default": true
+            },
+            "patterns": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
