@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Install Plan Schema v1",
+  "type": "object",
+  "required": [
+    "plan_id",
+    "bundle_id",
+    "bundle_version",
+    "target",
+    "steps",
+    "required_secrets",
+    "smoke_tests",
+    "rollback",
+    "generated_at"
+  ],
+  "properties": {
+    "plan_id": {
+      "type": "string"
+    },
+    "bundle_id": {
+      "type": "string"
+    },
+    "bundle_version": {
+      "type": "string"
+    },
+    "target": {
+      "type": "string",
+      "enum": [
+        "make",
+        "n8n",
+        "wp",
+        "native"
+      ]
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "name"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "install",
+              "configure",
+              "provision_secret",
+              "smoke_test",
+              "schedule",
+              "export",
+              "other"
+            ]
+          },
+          "name": {
+            "type": "string"
+          },
+          "details": {
+            "type": "string"
+          },
+          "inputs": {
+            "type": "object"
+          },
+          "outputs": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "required_secrets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/SecretRequirement"
+      }
+    },
+    "smoke_tests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "criteria": {
+            "type": "string"
+          },
+          "timeout_sec": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "rollback": {
+      "$ref": "#/$defs/RollbackPlan"
+    },
+    "generated_at": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "SecretRequirement": {
+      "type": "object",
+      "required": [
+        "name",
+        "type",
+        "scopes"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "api_key",
+            "oauth",
+            "password",
+            "token"
+          ]
+        },
+        "scopes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "how_to_get": {
+          "type": "string"
+        },
+        "test_call": {
+          "type": "string"
+        }
+      }
+    },
+    "RollbackPlan": {
+      "type": "object",
+      "properties": {
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "max_minutes": {
+          "type": "integer",
+          "default": 10
+        }
+      }
+    }
+  }
+}
