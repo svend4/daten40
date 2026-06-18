@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Sandbox Profile Schema v1",
+  "type": "object",
+  "required": [
+    "sandbox_id",
+    "name",
+    "network_mode",
+    "file_mode",
+    "resource_limits",
+    "side_effects",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "sandbox_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "network_mode": {
+      "type": "string",
+      "enum": [
+        "deny_all",
+        "allowlist",
+        "full"
+      ]
+    },
+    "file_mode": {
+      "type": "string",
+      "enum": [
+        "sandbox_only",
+        "restricted",
+        "full"
+      ]
+    },
+    "resource_limits": {
+      "type": "object",
+      "properties": {
+        "cpu_cores": {
+          "type": "number"
+        },
+        "ram_mb": {
+          "type": "integer"
+        },
+        "timeout_seconds": {
+          "type": "integer"
+        }
+      }
+    },
+    "side_effects": {
+      "type": "object",
+      "properties": {
+        "allow_delete": {
+          "type": "boolean"
+        },
+        "allow_external_write": {
+          "type": "boolean"
+        },
+        "allow_schedule_create": {
+          "type": "boolean"
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
