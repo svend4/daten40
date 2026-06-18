@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Knowledge Pack Manifest Schema v1",
+  "type": "object",
+  "required": [
+    "pack_id",
+    "subject",
+    "contents",
+    "build",
+    "license_ref",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "pack_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "object",
+      "properties": {
+        "bundle_id": {
+          "type": "string"
+        },
+        "bundle_version": {
+          "type": "string"
+        },
+        "domain": {
+          "type": "string"
+        }
+      }
+    },
+    "contents": {
+      "type": "object",
+      "properties": {
+        "doc_cards": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "tutorials": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "skill_graph": {
+          "type": "string"
+        },
+        "playbooks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "known_issues": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "glossary": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "build": {
+      "type": "object",
+      "properties": {
+        "build_id": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string"
+        },
+        "signatures": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "license_ref": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
