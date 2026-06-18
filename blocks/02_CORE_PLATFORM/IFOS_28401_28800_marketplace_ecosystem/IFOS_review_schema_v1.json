@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Review Schema v1",
+  "type": "object",
+  "required": [
+    "review_id",
+    "package_id",
+    "user_id",
+    "stars",
+    "text",
+    "signals",
+    "created_at",
+    "verified_install",
+    "version"
+  ],
+  "properties": {
+    "review_id": {
+      "type": "string"
+    },
+    "package_id": {
+      "type": "string"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "stars": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "text": {
+      "type": "string"
+    },
+    "signals": {
+      "type": "object",
+      "properties": {
+        "works_as_expected": {
+          "type": "boolean"
+        },
+        "install_difficulty": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "docs_quality": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "support_quality": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "failure_mode": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "verified_install": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
