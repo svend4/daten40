@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Smoke Test Plan Schema v1",
+  "type": "object",
+  "required": [
+    "plan_id",
+    "subject",
+    "tests",
+    "frequency",
+    "safe_mode",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "plan_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "tests": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "description": "test_id refs"
+      }
+    },
+    "frequency": {
+      "type": "string",
+      "description": "e.g. on_install, daily, weekly"
+    },
+    "safe_mode": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
