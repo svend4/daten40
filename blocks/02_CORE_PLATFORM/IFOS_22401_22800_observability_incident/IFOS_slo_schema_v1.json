@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SLO Schema v1",
+  "type": "object",
+  "required": [
+    "slo_id",
+    "name",
+    "objective",
+    "window_days",
+    "indicator",
+    "error_budget",
+    "alerts",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "slo_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "objective": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "window_days": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 90
+    },
+    "indicator": {
+      "type": "object",
+      "properties": {
+        "metric": {
+          "type": "string"
+        },
+        "good_op": {
+          "type": "string"
+        },
+        "bad_op": {
+          "type": "string"
+        }
+      }
+    },
+    "error_budget": {
+      "type": "object",
+      "properties": {
+        "remaining": {
+          "type": "number"
+        },
+        "burn_rate": {
+          "type": "number"
+        }
+      }
+    },
+    "alerts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
