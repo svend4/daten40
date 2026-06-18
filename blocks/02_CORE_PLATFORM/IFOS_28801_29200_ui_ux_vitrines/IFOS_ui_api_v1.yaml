@@ -1,0 +1,87 @@
+openapi: 3.0.3
+info:
+  title: IFOS UI/UX & Vitrines API
+  version: "1.0.0"
+  description: "Cards, vitrines, dashboards, compare views and news conferences."
+servers:
+  - url: https://ui.ifos.local/v1
+tags:
+  - name: Cards
+  - name: Vitrines
+  - name: Dashboards
+  - name: Compare
+  - name: NewsConference
+  - name: Navigation
+  - name: Preferences
+paths:
+  /cards:
+    get:
+      tags: [Cards]
+      summary: List cards
+      responses: {"200": {description: OK}}
+    post:
+      tags: [Cards]
+      summary: Create card
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"201": {description: Created}}
+  /vitrines:
+    get:
+      tags: [Vitrines]
+      summary: List vitrines
+      responses: {"200": {description: OK}}
+    post:
+      tags: [Vitrines]
+      summary: Create vitrine
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"201": {description: Created}}
+  /dashboards:
+    get:
+      tags: [Dashboards]
+      summary: List dashboards
+      responses: {"200": {description: OK}}
+  /compare/{compare_id}/run:
+    post:
+      tags: [Compare]
+      summary: Compute compare results for a view
+      parameters:
+        - name: compare_id
+          in: path
+          required: true
+          schema: {type: string}
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"200": {description: OK}}
+  /news/conferences/{conf_id}/build:
+    post:
+      tags: [NewsConference]
+      summary: Build a news conference digest
+      parameters:
+        - name: conf_id
+          in: path
+          required: true
+          schema: {type: string}
+      responses: {"202": {description: Accepted}}
+  /navigation/tree:
+    get:
+      tags: [Navigation]
+      summary: Get navigation tree
+      responses: {"200": {description: OK}}
+  /preferences/{user_id}:
+    get:
+      tags: [Preferences]
+      summary: Get user preferences
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema: {type: string}
+      responses: {"200": {description: OK}}
+    put:
+      tags: [Preferences]
+      summary: Update user preferences
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema: {type: string}
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"200": {description: Updated}}
