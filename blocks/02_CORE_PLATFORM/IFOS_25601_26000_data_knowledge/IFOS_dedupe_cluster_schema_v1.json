@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DedupeCluster Schema v1",
+  "type": "object",
+  "required": [
+    "cluster_id",
+    "record_ids",
+    "canonical_record_id",
+    "reasons",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "cluster_id": {
+      "type": "string"
+    },
+    "record_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "canonical_record_id": {
+      "type": "string"
+    },
+    "reasons": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "same_url",
+          "same_hash",
+          "near_duplicate",
+          "same_entity_signature",
+          "manual_merge"
+        ]
+      }
+    },
+    "merge_policy": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
