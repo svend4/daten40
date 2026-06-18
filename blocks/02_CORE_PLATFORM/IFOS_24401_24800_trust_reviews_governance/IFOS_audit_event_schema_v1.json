@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Audit Event Schema v1",
+  "type": "object",
+  "required": [
+    "audit_id",
+    "actor_id",
+    "event",
+    "target_ref",
+    "ts",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "audit_id": {
+      "type": "string"
+    },
+    "actor_id": {
+      "type": "string"
+    },
+    "event": {
+      "type": "string"
+    },
+    "target_ref": {
+      "type": "string"
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "ts": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
