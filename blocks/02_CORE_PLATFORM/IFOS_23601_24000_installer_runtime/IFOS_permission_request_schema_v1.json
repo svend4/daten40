@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Permission Request Schema v1",
+  "type": "object",
+  "required": [
+    "perm_id",
+    "subject_id",
+    "scopes",
+    "endpoints",
+    "webhooks",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "perm_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "scopes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "endpoints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "webhooks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
