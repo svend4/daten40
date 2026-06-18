@@ -1,0 +1,129 @@
+openapi: 3.0.3
+info:
+  title: IFOS Execution API
+  version: "1.0.0"
+  description: "Jobs, runs, sandbox policies, secrets references, builds, install plans, target adapters."
+servers:
+  - url: https://exec.ifos.local/v1
+tags:
+  - name: Jobs
+  - name: Runs
+  - name: Sandbox
+  - name: Secrets
+  - name: Builds
+  - name: InstallPlans
+  - name: Targets
+  - name: Rollback
+paths:
+  /jobs:
+    post:
+      tags: [Jobs]
+      summary: Create a job from bundle + config + SecretRefs
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "201": {description: Created}
+    get:
+      tags: [Jobs]
+      summary: List jobs (by tenant)
+      parameters:
+        - {name: tenant_id, in: query, schema: {type: string}}
+      responses:
+        "200": {description: OK}
+  /jobs/{job_id}:
+    get:
+      tags: [Jobs]
+      summary: Get job
+      parameters:
+        - {name: job_id, in: path, required: true, schema: {type: string}}
+      responses:
+        "200": {description: OK}
+  /jobs/{job_id}/run:
+    post:
+      tags: [Runs]
+      summary: Trigger a run
+      parameters:
+        - {name: job_id, in: path, required: true, schema: {type: string}}
+      responses:
+        "202": {description: Accepted}
+  /runs/{run_id}:
+    get:
+      tags: [Runs]
+      summary: Get run record
+      parameters:
+        - {name: run_id, in: path, required: true, schema: {type: string}}
+      responses:
+        "200": {description: OK}
+  /sandbox/policies:
+    get:
+      tags: [Sandbox]
+      summary: List policies
+      responses:
+        "200": {description: OK}
+    post:
+      tags: [Sandbox]
+      summary: Create/Update a policy
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "201": {description: Created}
+  /secrets/requirements:
+    post:
+      tags: [Secrets]
+      summary: Validate required secrets for a bundle/job
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "200": {description: OK}
+  /builds/{build_id}:
+    get:
+      tags: [Builds]
+      summary: Get build manifest
+      parameters:
+        - {name: build_id, in: path, required: true, schema: {type: string}}
+      responses:
+        "200": {description: OK}
+  /install-plans:
+    post:
+      tags: [InstallPlans]
+      summary: Generate install plan for target
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "201": {description: Created}
+  /targets/{target}/install:
+    post:
+      tags: [Targets]
+      summary: Execute an install plan on target backend
+      parameters:
+        - {name: target, in: path, required: true, schema: {type: string}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "202": {description: Accepted}
+  /rollback:
+    post:
+      tags: [Rollback]
+      summary: Execute rollback plan
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "202": {description: Accepted}
