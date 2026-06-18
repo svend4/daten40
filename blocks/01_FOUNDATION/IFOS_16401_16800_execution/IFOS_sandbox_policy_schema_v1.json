@@ -1,0 +1,171 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Sandbox Policy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "mode",
+    "network",
+    "filesystem",
+    "limits",
+    "redaction",
+    "flags_policy",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "sandbox",
+        "restricted",
+        "trusted"
+      ]
+    },
+    "network": {
+      "type": "object",
+      "properties": {
+        "default": {
+          "type": "string",
+          "enum": [
+            "deny",
+            "allow"
+          ],
+          "default": "deny"
+        },
+        "allow_domains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "deny_domains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "allow_ports": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "deny_ports": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "filesystem": {
+      "type": "object",
+      "properties": {
+        "default": {
+          "type": "string",
+          "enum": [
+            "deny",
+            "allow"
+          ],
+          "default": "deny"
+        },
+        "allow_paths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "deny_paths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "limits": {
+      "type": "object",
+      "properties": {
+        "timeout_sec": {
+          "type": "integer",
+          "default": 60
+        },
+        "memory_mb": {
+          "type": "integer",
+          "default": 512
+        },
+        "concurrency": {
+          "type": "integer",
+          "default": 1
+        }
+      }
+    },
+    "redaction": {
+      "type": "object",
+      "properties": {
+        "mask_secrets": {
+          "type": "boolean",
+          "default": true
+        },
+        "mask_pii": {
+          "type": "boolean",
+          "default": true
+        },
+        "patterns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "flags_policy": {
+      "type": "object",
+      "properties": {
+        "pii": {
+          "type": "object",
+          "properties": {
+            "require_mode": {
+              "type": "string"
+            },
+            "extra_redaction": {
+              "type": "boolean"
+            }
+          }
+        },
+        "money": {
+          "type": "object",
+          "properties": {
+            "require_signed": {
+              "type": "boolean"
+            },
+            "require_mode": {
+              "type": "string"
+            }
+          }
+        },
+        "security_sensitive": {
+          "type": "object",
+          "properties": {
+            "require_signed": {
+              "type": "boolean"
+            },
+            "require_mode": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
