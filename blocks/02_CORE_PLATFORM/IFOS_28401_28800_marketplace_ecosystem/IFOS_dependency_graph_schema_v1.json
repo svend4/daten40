@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DependencyGraph Schema v1",
+  "type": "object",
+  "required": [
+    "graph_id",
+    "root",
+    "nodes",
+    "edges",
+    "strategy",
+    "version"
+  ],
+  "properties": {
+    "graph_id": {
+      "type": "string"
+    },
+    "root": {
+      "type": "string"
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "version"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "package",
+              "module",
+              "connector",
+              "schema",
+              "policy",
+              "runtime"
+            ]
+          },
+          "version": {
+            "type": "string"
+          },
+          "optional": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "from",
+          "to",
+          "type"
+        ],
+        "properties": {
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "requires",
+              "optional",
+              "conflicts"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "strategy": {
+      "type": "string",
+      "enum": [
+        "strict",
+        "relaxed"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
