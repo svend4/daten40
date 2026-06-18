@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DashboardWidget Schema v1",
+  "type": "object",
+  "required": [
+    "widget_id",
+    "kind",
+    "title",
+    "data_ref",
+    "version"
+  ],
+  "properties": {
+    "widget_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "kpi",
+        "table",
+        "chart",
+        "timeline",
+        "activity",
+        "recommendations"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "data_ref": {
+      "type": "string"
+    },
+    "options": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
