@@ -1,0 +1,108 @@
+openapi: 3.0.3
+info:
+  title: IFOS Runtime & Execution API
+  version: "1.0.0"
+  description: "Profiles, plans, jobs, sandbox sessions, receipts, observability, rollback/repair, scheduler."
+servers:
+  - url: https://runtime.ifos.local/v1
+tags:
+  - name: Profiles
+  - name: Plans
+  - name: Jobs
+  - name: Sandbox
+  - name: Receipts
+  - name: Observability
+  - name: Rollback
+  - name: Scheduler
+paths:
+  /profiles:
+    post:
+      tags: [Profiles]
+      summary: Create or update runtime profile
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /plans:
+    post:
+      tags: [Plans]
+      summary: Create execution plan
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /jobs/run:
+    post:
+      tags: [Jobs]
+      summary: Run an execution plan
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
+  /sandbox/start:
+    post:
+      tags: [Sandbox]
+      summary: Start sandbox session for a subject
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /receipts/{receipt_id}:
+    get:
+      tags: [Receipts]
+      summary: Get receipt
+      parameters:
+        - in: path
+          name: receipt_id
+          required: true
+          schema: {type: string}
+      responses:
+        "200": {description: OK}
+  /observability/logs:
+    post:
+      tags: [Observability]
+      summary: Query logs by job_id and filters
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /rollback/apply:
+    post:
+      tags: [Rollback]
+      summary: Apply rollback for a job/subject
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
+  /repair/apply:
+    post:
+      tags: [Rollback]
+      summary: Apply repair action
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
+  /scheduler:
+    post:
+      tags: [Scheduler]
+      summary: Create scheduler job (RRULE)
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
