@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Promotion Rule Schema v1",
+  "type": "object",
+  "required": [
+    "rule_id",
+    "name",
+    "conditions",
+    "actions",
+    "priority",
+    "enabled",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "rule_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "conditions": {
+      "type": "object",
+      "properties": {
+        "min_evidence_score": {
+          "type": "number"
+        },
+        "min_install_success_rate": {
+          "type": "number"
+        },
+        "max_dispute_rate": {
+          "type": "number"
+        },
+        "min_docs_score": {
+          "type": "number"
+        },
+        "targets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "actions": {
+      "type": "object",
+      "properties": {
+        "boost": {
+          "type": "number",
+          "description": "ranking multiplier"
+        },
+        "badge": {
+          "type": "string"
+        },
+        "feature_in": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "suppress": {
+          "type": "boolean"
+        }
+      }
+    },
+    "priority": {
+      "type": "integer"
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
