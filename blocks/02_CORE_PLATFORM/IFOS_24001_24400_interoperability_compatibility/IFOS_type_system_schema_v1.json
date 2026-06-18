@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Type System Schema v1",
+  "type": "object",
+  "required": [
+    "type_system_id",
+    "types",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "type_system_id": {
+      "type": "string"
+    },
+    "types": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "kind"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "primitive",
+              "compound",
+              "special"
+            ]
+          },
+          "definition": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
