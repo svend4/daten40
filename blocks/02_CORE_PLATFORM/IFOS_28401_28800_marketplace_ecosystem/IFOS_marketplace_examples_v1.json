@@ -1,0 +1,345 @@
+{
+  "publisher_profile": {
+    "publisher_id": "pub.p.capcfujuqf",
+    "name": "Example Labs",
+    "website": "https://example.com",
+    "contacts": {
+      "email": "support@example.com"
+    },
+    "verification": "verified",
+    "signing_key_ref": "key.examplelabs",
+    "support": {
+      "sla_hours": 48,
+      "channels": [
+        "email",
+        "chat"
+      ]
+    },
+    "stats": {
+      "installs": 1200,
+      "active_installs": 800,
+      "avg_support_response_hours": 12.5,
+      "reported_issues": 24
+    },
+    "updated_at": "2026-01-03T06:05:00Z",
+    "version": "1.0.0"
+  },
+  "license": {
+    "license_id": "lic.l.usoy455axv",
+    "kind": "commercial",
+    "name": "Commercial Standard",
+    "terms": {
+      "redistribution": false,
+      "commercial_use": true,
+      "attribution_required": false,
+      "support_included": true
+    },
+    "link": "",
+    "version": "1.0.0"
+  },
+  "pricing_plan": {
+    "plan_id": "plan.p.ticu309cwz",
+    "kind": "subscription",
+    "currency": "EUR",
+    "price": 19.0,
+    "billing": {
+      "period": "month",
+      "trial_days": 14
+    },
+    "limits": {
+      "runs_per_day": 500,
+      "records_per_month": 200000
+    },
+    "rev_share": {
+      "marketplace_pct": 15,
+      "publisher_pct": 85
+    },
+    "version": "1.0.0"
+  },
+  "compatibility": {
+    "compat_id": "cmp.c.6jlyh1ei7p",
+    "package_id": "pkg.p.x9sb4yby60",
+    "min_ifos_version": "1.0.0",
+    "modules": [
+      "AutomationOS",
+      "DataOS",
+      "GovernanceOS"
+    ],
+    "connectors": [
+      "Telegram",
+      "RSS"
+    ],
+    "capabilities": [
+      "webhook",
+      "fulltext_index"
+    ],
+    "known_issues": [
+      {
+        "id": "KI-1",
+        "summary": "Некоторые RSS без даты",
+        "workaround": "Fallback to fetch time"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "dependency_graph": {
+    "graph_id": "dep.d.ehja7cytpe",
+    "root": "pkg.p.x9sb4yby60",
+    "nodes": [
+      {
+        "id": "pkg.p.x9sb4yby60",
+        "kind": "package",
+        "version": "1.2.0",
+        "optional": false
+      },
+      {
+        "id": "pkg.rss.parser",
+        "kind": "package",
+        "version": "1.0.0",
+        "optional": false
+      },
+      {
+        "id": "connector.telegram",
+        "kind": "connector",
+        "version": "2.0.0",
+        "optional": true
+      }
+    ],
+    "edges": [
+      {
+        "from": "pkg.p.x9sb4yby60",
+        "to": "pkg.rss.parser",
+        "type": "requires"
+      },
+      {
+        "from": "pkg.p.x9sb4yby60",
+        "to": "connector.telegram",
+        "type": "optional"
+      }
+    ],
+    "strategy": "strict",
+    "version": "1.0.0"
+  },
+  "migration": {
+    "migration_id": "mig.m.scl9nnh9zf",
+    "package_id": "pkg.p.x9sb4yby60",
+    "from_version": "1.1.0",
+    "to_version": "1.2.0",
+    "steps": [
+      {
+        "kind": "config",
+        "description": "Переименовать поле apiKey -> secret_ref",
+        "script_ref": "mig://scripts/rename.json"
+      },
+      {
+        "kind": "index",
+        "description": "Пересобрать fulltext индекс",
+        "script_ref": ""
+      }
+    ],
+    "rollback": {
+      "supported": true,
+      "steps": [
+        "restore previous config",
+        "reinstall old package"
+      ]
+    },
+    "version": "1.0.0"
+  },
+  "install_recipe": {
+    "recipe_id": "rec.r.s7j7qxrng6",
+    "package_id": "pkg.p.x9sb4yby60",
+    "steps": [
+      {
+        "kind": "create_secret_ref",
+        "name": "Telegram bot token ref",
+        "params": {
+          "secret_ref": "secretref.telegram.bot"
+        }
+      },
+      {
+        "kind": "create_collection",
+        "name": "News collection",
+        "params": {
+          "name": "Новости",
+          "retention_policy_ref": "ret.default"
+        }
+      },
+      {
+        "kind": "import_flow",
+        "name": "Daily brief flow",
+        "params": {
+          "flow_ref": "flow.daily_brief"
+        }
+      },
+      {
+        "kind": "create_vitrine",
+        "name": "Brief dashboard",
+        "params": {
+          "vitrine_ref": "ui.brief"
+        }
+      }
+    ],
+    "sanity_check": {
+      "run_flow_ref": "flow.daily_brief",
+      "expected": {
+        "status": "ok"
+      }
+    },
+    "ui_finish": {
+      "show_card_ref": "card.daily_brief",
+      "primary_action": "Run daily brief"
+    },
+    "version": "1.0.0"
+  },
+  "package": {
+    "package_id": "pkg.p.x9sb4yby60",
+    "name": "Daily News Brief (RSS->Summary->Telegram)",
+    "version": "1.2.0",
+    "publisher_id": "pub.p.capcfujuqf",
+    "manifest": {
+      "dependencies": [
+        "pkg.rss.parser"
+      ],
+      "optional_dependencies": [
+        "connector.telegram"
+      ],
+      "conflicts": [],
+      "compatibility": "cmp.c.6jlyh1ei7p"
+    },
+    "assets": {
+      "flows": [
+        "flow.daily_brief"
+      ],
+      "schemas": [],
+      "ui_cards": [
+        "card.daily_brief"
+      ],
+      "docs": [
+        "docs/quickstart.md"
+      ]
+    },
+    "install_recipe_ref": "rec.r.s7j7qxrng6",
+    "license_ref": "lic.l.usoy455axv",
+    "pricing_plan_ref": "plan.p.ticu309cwz",
+    "signing": {
+      "manifest_sha256": "sha256:...",
+      "signature_ref": "sig://examplelabs/entry/1"
+    },
+    "created_at": "2026-01-03T06:05:00Z",
+    "version_schema": "1.0.0"
+  },
+  "listing": {
+    "listing_id": "lst.l.tk10gw6qac",
+    "package_id": "pkg.p.x9sb4yby60",
+    "publisher_id": "pub.p.capcfujuqf",
+    "title": "Ежедневный дайджест новостей (RSS → Telegram)",
+    "summary": "Собирает RSS-источники, убирает дубликаты, делает краткую сводку и отправляет в Telegram.",
+    "categories": [
+      "news",
+      "automation"
+    ],
+    "tags": [
+      "rss",
+      "summary",
+      "telegram",
+      "one-click"
+    ],
+    "media": {
+      "screenshots": [],
+      "video": ""
+    },
+    "requirements": {
+      "needs_secret_refs": [
+        "secretref.telegram.bot"
+      ],
+      "needs_connectors": [
+        "Telegram",
+        "RSS"
+      ],
+      "min_ifos_version": "1.0.0",
+      "data_classification_max": "INTERNAL"
+    },
+    "rating": 4.6,
+    "installs": 842,
+    "updated_at": "2026-01-03T06:05:00Z",
+    "version": "1.0.0"
+  },
+  "review": {
+    "review_id": "rev.r.o8ok1voaov",
+    "package_id": "pkg.p.x9sb4yby60",
+    "user_id": "user.123",
+    "stars": 5,
+    "text": "Поставилось за 2 минуты, сводки хорошие. Хотелось бы больше фильтров.",
+    "signals": {
+      "works_as_expected": true,
+      "install_difficulty": 1,
+      "docs_quality": 4,
+      "support_quality": 4,
+      "failure_mode": ""
+    },
+    "created_at": "2026-01-03T06:05:00Z",
+    "verified_install": true,
+    "version": "1.0.0"
+  },
+  "rating_aggregate": {
+    "package_id": "pkg.p.x9sb4yby60",
+    "avg": 4.6,
+    "count": 120,
+    "distribution": {
+      "1": 2,
+      "2": 3,
+      "3": 10,
+      "4": 40,
+      "5": 65
+    },
+    "confidence": {
+      "low": 4.4,
+      "high": 4.7
+    },
+    "updated_at": "2026-01-03T06:05:00Z",
+    "version": "1.0.0"
+  },
+  "market_policy": {
+    "policy_id": "market.default",
+    "rules": [
+      {
+        "name": "signed_packages_only",
+        "enforced": true,
+        "details": {}
+      },
+      {
+        "name": "verified_publishers_only",
+        "enforced": false,
+        "details": {}
+      },
+      {
+        "name": "review_verification_required",
+        "enforced": true,
+        "details": {}
+      },
+      {
+        "name": "malware_scan_required",
+        "enforced": true,
+        "details": {}
+      },
+      {
+        "name": "data_classification_declared",
+        "enforced": true,
+        "details": {}
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "webhook_event": {
+    "event_id": "evt.e.h08u3xjaa2",
+    "kind": "package.installed",
+    "ts": "2026-01-03T06:05:00Z",
+    "payload": {
+      "package_id": "pkg.p.x9sb4yby60",
+      "workspace_id": "ws.demo",
+      "status": "ok"
+    },
+    "version": "1.0.0"
+  }
+}
