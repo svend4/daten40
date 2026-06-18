@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Usage Event Schema v1",
+  "type": "object",
+  "required": [
+    "usage_id",
+    "tenant_id",
+    "job_id",
+    "run_id",
+    "meters",
+    "ts"
+  ],
+  "properties": {
+    "usage_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "workspace_id": {
+      "type": "string"
+    },
+    "job_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "meters": {
+      "type": "object",
+      "required": [
+        "runs",
+        "steps",
+        "requests"
+      ],
+      "properties": {
+        "runs": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "steps": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "requests": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "storage_mb_day": {
+          "type": "number",
+          "minimum": 0
+        },
+        "verified_evidence": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "flags": {
+      "type": "object",
+      "properties": {
+        "pii": {
+          "type": "boolean"
+        },
+        "money": {
+          "type": "boolean"
+        },
+        "security_sensitive": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ts": {
+      "type": "string"
+    }
+  }
+}
