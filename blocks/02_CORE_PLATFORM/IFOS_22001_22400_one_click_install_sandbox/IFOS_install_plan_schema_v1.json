@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Install Plan Schema v1",
+  "type": "object",
+  "required": [
+    "plan_id",
+    "subject",
+    "target_platform",
+    "mode",
+    "steps",
+    "credential_bindings",
+    "migrations",
+    "rollback_plan_ref",
+    "expected_smoke_tests",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "plan_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "object",
+      "required": [
+        "kind",
+        "id",
+        "version"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "target_platform": {
+      "type": "string",
+      "enum": [
+        "wordpress",
+        "make",
+        "n8n",
+        "node_red",
+        "android",
+        "github"
+      ]
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "sandbox_first",
+        "direct_prod"
+      ]
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "credential_bindings": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "migrations": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "rollback_plan_ref": {
+      "type": "string"
+    },
+    "expected_smoke_tests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
