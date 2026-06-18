@@ -1,0 +1,120 @@
+openapi: 3.0.3
+info:
+  title: IFOS Marketplace & Monetization API
+  version: "1.0.0"
+  description: "Listings, pricing, purchases, entitlements, install transactions, billing events, ledger, revshare, payouts, reputation."
+servers:
+  - url: https://market.ifos.local/v1
+tags:
+  - name: Listings
+  - name: Pricing
+  - name: Purchases
+  - name: Entitlements
+  - name: Install
+  - name: Billing
+  - name: Payouts
+  - name: Reputation
+paths:
+  /listings/search:
+    post:
+      tags: [Listings]
+      summary: Search listings by tags/capabilities/quality
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /listings/{listing_id}:
+    get:
+      tags: [Listings]
+      summary: Get listing
+      parameters:
+        - name: listing_id
+          in: path
+          required: true
+          schema: {type: string}
+      responses:
+        "200": {description: OK}
+  /pricing/{plan_id}:
+    get:
+      tags: [Pricing]
+      summary: Get pricing plan
+      parameters:
+        - name: plan_id
+          in: path
+          required: true
+          schema: {type: string}
+      responses:
+        "200": {description: OK}
+  /purchases/create:
+    post:
+      tags: [Purchases]
+      summary: Create purchase order
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /entitlements/check:
+    post:
+      tags: [Entitlements]
+      summary: Check entitlement for an action
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /install/start:
+    post:
+      tags: [Install]
+      summary: Start install transaction
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
+  /install/{tx_id}:
+    get:
+      tags: [Install]
+      summary: Get install transaction status
+      parameters:
+        - name: tx_id
+          in: path
+          required: true
+          schema: {type: string}
+      responses:
+        "200": {description: OK}
+  /billing/events/append:
+    post:
+      tags: [Billing]
+      summary: Append a billing event
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
+  /payouts/calculate:
+    post:
+      tags: [Payouts]
+      summary: Calculate payouts for a publisher and period
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /reputation/summary:
+    post:
+      tags: [Reputation]
+      summary: Build reputation summary for a listing
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
