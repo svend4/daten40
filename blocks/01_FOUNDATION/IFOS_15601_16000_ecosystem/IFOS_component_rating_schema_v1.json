@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Component Rating Schema v1",
+  "type": "object",
+  "required": [
+    "rating_id",
+    "component_type",
+    "component_id",
+    "score",
+    "breakdown",
+    "evidence_refs",
+    "computed_at",
+    "method_version"
+  ],
+  "properties": {
+    "rating_id": {
+      "type": "string"
+    },
+    "component_type": {
+      "type": "string",
+      "enum": [
+        "function",
+        "adapter",
+        "dependency",
+        "connector",
+        "bundle",
+        "recipe"
+      ]
+    },
+    "component_id": {
+      "type": "string"
+    },
+    "score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "breakdown": {
+      "type": "object",
+      "required": [
+        "reliability",
+        "security",
+        "performance",
+        "interoperability",
+        "maintainability",
+        "freshness"
+      ],
+      "properties": {
+        "reliability": {
+          "type": "number"
+        },
+        "security": {
+          "type": "number"
+        },
+        "performance": {
+          "type": "number"
+        },
+        "interoperability": {
+          "type": "number"
+        },
+        "maintainability": {
+          "type": "number"
+        },
+        "freshness": {
+          "type": "number"
+        },
+        "support": {
+          "type": "number"
+        },
+        "popularity": {
+          "type": "number"
+        }
+      }
+    },
+    "signals": {
+      "type": "object",
+      "properties": {
+        "runs_pass_rate": {
+          "type": "number"
+        },
+        "avg_duration_ms": {
+          "type": "number"
+        },
+        "sandbox_denies": {
+          "type": "integer"
+        },
+        "signed_artifacts_ratio": {
+          "type": "number"
+        },
+        "compatibility_violations": {
+          "type": "integer"
+        },
+        "last_update_days": {
+          "type": "integer"
+        }
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "computed_at": {
+      "type": "string"
+    },
+    "method_version": {
+      "type": "string"
+    }
+  }
+}
