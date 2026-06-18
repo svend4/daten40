@@ -1,0 +1,183 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Marketplace Listing Schema v1",
+  "type": "object",
+  "required": [
+    "listing_id",
+    "subject",
+    "title",
+    "summary",
+    "categories",
+    "tags",
+    "capabilities",
+    "compatibility",
+    "pricing",
+    "license",
+    "quality_refs",
+    "support",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "listing_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "title": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "compatibility": {
+      "type": "object",
+      "properties": {
+        "platforms": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "make",
+              "n8n",
+              "wordpress",
+              "docker",
+              "python",
+              "node"
+            ]
+          }
+        },
+        "min_versions": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string"
+          },
+          "ref": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "install_profile": {
+      "type": "object",
+      "properties": {
+        "requires": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "safe_mode_supported": {
+          "type": "boolean"
+        },
+        "estimated_ttfs_seconds": {
+          "type": "integer"
+        }
+      }
+    },
+    "pricing": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "description": "pricing_plan_id refs"
+      }
+    },
+    "license": {
+      "type": "string",
+      "description": "license_policy_id ref"
+    },
+    "quality_refs": {
+      "type": "object",
+      "properties": {
+        "quality_score_ref": {
+          "type": "string"
+        },
+        "evidence_score_ref": {
+          "type": "string"
+        },
+        "slo_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "smoke_plan_ref": {
+          "type": "string"
+        }
+      }
+    },
+    "support": {
+      "type": "object",
+      "properties": {
+        "publisher_id": {
+          "type": "string"
+        },
+        "contact": {
+          "type": "string"
+        },
+        "sla": {
+          "type": "string"
+        },
+        "docs_ref": {
+          "type": "string"
+        }
+      }
+    },
+    "screenshots": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
