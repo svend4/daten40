@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS TrustList Schema v1",
+  "type": "object",
+  "required": [
+    "trust_list_id",
+    "workspace_id",
+    "name",
+    "entries",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "trust_list_id": {
+      "type": "string"
+    },
+    "workspace_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "value",
+          "trust_score"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "domain",
+              "publisher",
+              "repo",
+              "package",
+              "signer"
+            ]
+          },
+          "value": {
+            "type": "string"
+          },
+          "trust_score": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
