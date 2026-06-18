@@ -1,0 +1,388 @@
+{
+  "runtime_profiles": [
+    {
+      "profile_id": "profile.sandbox.safe",
+      "env": "sandbox",
+      "platform": "n8n",
+      "region": "eu-central",
+      "tenant": "demo",
+      "constraints": {
+        "network_allowlist": [
+          "api.telegram.org",
+          "example.com"
+        ],
+        "max_runtime_seconds": 120,
+        "max_steps": 50,
+        "storage_mb": 100
+      },
+      "logging": {
+        "level": "info",
+        "no_log_fields": [
+          "token",
+          "chat_id"
+        ],
+        "redaction": "mask"
+      },
+      "updated_at": "2026-01-03T02:25:00Z",
+      "version": "1.0.0"
+    },
+    {
+      "profile_id": "profile.prod.strict",
+      "env": "prod",
+      "platform": "n8n",
+      "region": "eu-central",
+      "tenant": "demo",
+      "constraints": {
+        "network_allowlist": [
+          "api.telegram.org",
+          "example.com"
+        ],
+        "max_runtime_seconds": 60,
+        "max_steps": 50,
+        "storage_mb": 100
+      },
+      "logging": {
+        "level": "warn",
+        "no_log_fields": [
+          "token",
+          "chat_id",
+          "text"
+        ],
+        "redaction": "drop"
+      },
+      "updated_at": "2026-01-03T02:25:00Z",
+      "version": "1.0.0"
+    }
+  ],
+  "secret_ref": {
+    "secret_ref": "secret://telegram/bot_token",
+    "kind": "token",
+    "scope": "workspace",
+    "rotation_policy": {
+      "rotate_days": 90,
+      "notify_before_days": 7
+    },
+    "redaction_policy": {
+      "mask_with": "***"
+    },
+    "updated_at": "2026-01-03T02:25:00Z",
+    "version": "1.0.0"
+  },
+  "quota_policy": {
+    "quota_id": "quota.default",
+    "limits": {
+      "rps": 1.0,
+      "per_minute": 30,
+      "per_day": 1000,
+      "budget_usd_per_day": 1.0
+    },
+    "retry": {
+      "max_retries": 3,
+      "backoff_ms": 500,
+      "jitter": true
+    },
+    "updated_at": "2026-01-03T02:25:00Z",
+    "version": "1.0.0"
+  },
+  "side_effect_declaration": {
+    "decl_id": "se.s.aiu8q74bnv",
+    "subject_ref": "cl.news_digest_demo",
+    "effects": [
+      "external_call",
+      "send_message",
+      "pii_processing"
+    ],
+    "pii": {
+      "contains_pii": true,
+      "pii_types": [
+        "chat_id",
+        "message_text"
+      ],
+      "no_log_fields": [
+        "chat_id",
+        "text"
+      ]
+    },
+    "updated_at": "2026-01-03T02:25:00Z",
+    "version": "1.0.0"
+  },
+  "idempotency_policy": {
+    "policy_id": "idem.default",
+    "mode": "best_effort",
+    "key_fields": [
+      "chat_id",
+      "text",
+      "date_bucket"
+    ],
+    "dedupe_window_seconds": 600,
+    "safe_retry_steps": [
+      1,
+      2
+    ],
+    "updated_at": "2026-01-03T02:25:00Z",
+    "version": "1.0.0"
+  },
+  "execution_plan_sandbox": {
+    "plan_id": "plan.p.jz7ji4s76x",
+    "subject_id": "cl.news_digest_demo",
+    "profile_id": "profile.sandbox.safe",
+    "mode": "sandbox",
+    "steps": [
+      {
+        "n": 1,
+        "adapter_ref": "ad.n8n.http",
+        "action": "fetch_news",
+        "inputs_map": {
+          "query": "drones",
+          "days": 1
+        },
+        "allow_external": true
+      },
+      {
+        "n": 2,
+        "adapter_ref": "ad.n8n.telegram",
+        "action": "send_message",
+        "inputs_map": {
+          "chat_id": "{{input.chat_id}}",
+          "text": "{{step1.summary}}"
+        },
+        "allow_external": true
+      }
+    ],
+    "secrets": [
+      "secret://telegram/bot_token"
+    ],
+    "quota_id": "quota.default",
+    "idempotency_policy_id": "idem.default",
+    "expected_outputs": {
+      "message_id": "string"
+    },
+    "updated_at": "2026-01-03T02:25:00Z",
+    "version": "1.0.0"
+  },
+  "execution_job": {
+    "job_id": "job.j.qsfcu21exk",
+    "plan_id": "plan.p.jz7ji4s76x",
+    "status": "succeeded",
+    "started_at": "2026-01-03T02:25:00Z",
+    "ended_at": "2026-01-03T02:25:00Z",
+    "receipt_ref": "rcpt://r.y9zghcyy7h",
+    "logs_ref": "logs://l.5g8zm3uhnk",
+    "metrics_ref": "metrics://m.bvgmzobl8d",
+    "traces_ref": "traces://t.ap0mqfxu9f",
+    "created_at": "2026-01-03T02:25:00Z",
+    "updated_at": "2026-01-03T02:25:00Z",
+    "version": "1.0.0"
+  },
+  "sandbox_session": {
+    "session_id": "ss.s.x429ww18ae",
+    "subject_id": "cl.news_digest_demo",
+    "profile_id": "profile.sandbox.safe",
+    "isolation": {
+      "dry_run": false,
+      "stub_endpoints": [
+        "example.com/mock"
+      ],
+      "domain_allowlist": [
+        "api.telegram.org",
+        "example.com"
+      ]
+    },
+    "test_vectors": [
+      "tv://smoke/1"
+    ],
+    "jobs": [
+      "job.j.qsfcu21exk"
+    ],
+    "updated_at": "2026-01-03T02:25:00Z",
+    "version": "1.0.0"
+  },
+  "receipt": {
+    "receipt_id": "r.y9zghcyy7h",
+    "job_id": "job.j.qsfcu21exk",
+    "subject_id": "cl.news_digest_demo",
+    "mode": "sandbox",
+    "inputs_redacted": {
+      "chat_id": "***",
+      "text": "(dropped)"
+    },
+    "outputs_redacted": {
+      "message_id": "12345"
+    },
+    "steps": [
+      {
+        "n": 1,
+        "status": "pass",
+        "external_calls": [
+          {
+            "domain": "example.com",
+            "path": "/news",
+            "method": "GET",
+            "status_code": 200
+          }
+        ],
+        "retries": 0
+      },
+      {
+        "n": 2,
+        "status": "pass",
+        "external_calls": [
+          {
+            "domain": "api.telegram.org",
+            "path": "/bot.../sendMessage",
+            "method": "POST",
+            "status_code": 200
+          }
+        ],
+        "retries": 1
+      }
+    ],
+    "result": "success",
+    "duration_ms": 2310,
+    "cost_estimate": {
+      "usd": 0.02
+    },
+    "hashes": {
+      "plan_hash": "sha256:...",
+      "inputs_hash": "sha256:...",
+      "outputs_hash": "sha256:..."
+    },
+    "created_at": "2026-01-03T02:25:00Z",
+    "updated_at": "2026-01-03T02:25:00Z",
+    "version": "1.0.0"
+  },
+  "observability_config": {
+    "obs_id": "obs.o.1j9lfbs6cy",
+    "profile_id": "profile.prod.strict",
+    "logging": {
+      "level": "warn",
+      "no_log_fields": [
+        "token",
+        "chat_id",
+        "text"
+      ]
+    },
+    "metrics": {
+      "enabled": true,
+      "names": [
+        "latency_ms",
+        "errors",
+        "throughput",
+        "cost_usd"
+      ]
+    },
+    "tracing": {
+      "sampling_rate": 0.1
+    },
+    "alerts": [
+      "al.a.xbnmzkrs64"
+    ],
+    "updated_at": "2026-01-03T02:25:00Z",
+    "version": "1.0.0"
+  },
+  "alert_rule": {
+    "alert_id": "al.a.xbnmzkrs64",
+    "name": "Telegram rate limit",
+    "condition": "http_status_429_count > 0 over 10m",
+    "severity": "warn",
+    "actions": [
+      "notify:telegram_admin"
+    ],
+    "updated_at": "2026-01-03T02:25:00Z",
+    "version": "1.0.0"
+  },
+  "health_check": {
+    "check_id": "hc.h.tjgt2xfy3x",
+    "subject_id": "cl.news_digest_demo",
+    "checks": [
+      {
+        "name": "telegram token scopes",
+        "kind": "scope_check",
+        "target": "secret://telegram/bot_token",
+        "timeout_ms": 2000
+      },
+      {
+        "name": "news endpoint reachable",
+        "kind": "ping",
+        "target": "https://example.com/news",
+        "timeout_ms": 2000
+      }
+    ],
+    "updated_at": "2026-01-03T02:25:00Z",
+    "version": "1.0.0"
+  },
+  "state_snapshot_before": {
+    "snapshot_id": "snap.s.vfc9vdf5nj",
+    "job_id": "job.j.qsfcu21exk",
+    "when": "before",
+    "resources": [
+      {
+        "kind": "n8n_workflow",
+        "ref": "n8n://workflow/123",
+        "note": "existing"
+      }
+    ],
+    "updated_at": "2026-01-03T02:25:00Z",
+    "version": "1.0.0"
+  },
+  "state_snapshot_after": {
+    "snapshot_id": "snap.s.x0aokpxqpt",
+    "job_id": "job.j.qsfcu21exk",
+    "when": "after",
+    "resources": [
+      {
+        "kind": "n8n_workflow",
+        "ref": "n8n://workflow/123",
+        "note": "updated node config"
+      }
+    ],
+    "updated_at": "2026-01-03T02:25:00Z",
+    "version": "1.0.0"
+  },
+  "rollback_plan": {
+    "rollback_id": "rb.r.4hmrtk4o56",
+    "subject_id": "cl.news_digest_demo",
+    "strategy": "best_effort",
+    "steps": [
+      {
+        "n": 1,
+        "action": "restore_workflow_snapshot",
+        "adapter_ref": "ad.n8n.core",
+        "notes": "restore from snapshot_before"
+      }
+    ],
+    "limitations": [
+      "external messages already sent cannot be unsent"
+    ],
+    "required_permissions": [
+      "n8n:workflow:write"
+    ],
+    "updated_at": "2026-01-03T02:25:00Z",
+    "version": "1.0.0"
+  },
+  "repair_action": {
+    "repair_id": "rep.r.n9mb8r462w",
+    "job_id": "job.j.qsfcu21exk",
+    "kind": "retry_step",
+    "params": {
+      "step": 2,
+      "backoff_ms": 800
+    },
+    "status": "planned",
+    "updated_at": "2026-01-03T02:25:00Z",
+    "version": "1.0.0"
+  },
+  "scheduler_job": {
+    "sched_id": "sch.s.vjwtye0tn4",
+    "plan_id": "plan.p.jz7ji4s76x",
+    "rrule": "RRULE:FREQ=DAILY;BYHOUR=9;BYMINUTE=0;BYSECOND=0",
+    "timezone": "Europe/Berlin",
+    "status": "enabled",
+    "on_fail": {
+      "notify": true,
+      "auto_rollback": false
+    },
+    "updated_at": "2026-01-03T02:25:00Z",
+    "version": "1.0.0"
+  }
+}
