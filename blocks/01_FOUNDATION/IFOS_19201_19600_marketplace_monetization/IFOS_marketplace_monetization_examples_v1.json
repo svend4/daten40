@@ -1,0 +1,372 @@
+{
+  "publisher_id": "pub.acme.jgx14uknc0",
+  "pricing_plans": [
+    {
+      "plan_id": "plan.free.fcces5vks7",
+      "name": "Free",
+      "type": "free",
+      "currency": "EUR",
+      "price": 0.0,
+      "billing_period": "none",
+      "features": [
+        "1 канал доставки (Telegram)",
+        "RSS ingest (до 10 источников)",
+        "базовый шаблон дайджеста"
+      ],
+      "limits": {
+        "runs_per_day": 10,
+        "connectors": 2,
+        "retention_days": 7,
+        "seats": 1
+      },
+      "trial": {
+        "enabled": false,
+        "days": 0
+      },
+      "refund_policy": "n/a",
+      "version": "1.0.0",
+      "updated_at": "2026-01-02T19:15:00Z"
+    },
+    {
+      "plan_id": "plan.pro.vylfjqc0w1",
+      "name": "Pro",
+      "type": "subscription",
+      "currency": "EUR",
+      "price": 9.99,
+      "billing_period": "monthly",
+      "features": [
+        "несколько каналов (Telegram/Email)",
+        "сводка по дням/неделям",
+        "приоритетные шаблоны",
+        "synthetic monitoring включён"
+      ],
+      "limits": {
+        "runs_per_day": 200,
+        "connectors": 10,
+        "retention_days": 30,
+        "seats": 3
+      },
+      "trial": {
+        "enabled": true,
+        "days": 14
+      },
+      "refund_policy": "14 дней, если не было usage > 20 runs",
+      "version": "1.0.0",
+      "updated_at": "2026-01-02T19:15:00Z"
+    }
+  ],
+  "license_policy": {
+    "license_id": "lic.commercial.cpedjkwlte",
+    "name": "Commercial SaaS License",
+    "kind": "commercial",
+    "terms": "Доступ по подписке. Запрещено перепродавать как отдельный продукт без согласия издателя.",
+    "allowed_use": [
+      "личное использование",
+      "малый бизнес",
+      "внутренние отчёты"
+    ],
+    "restrictions": [
+      "no resell",
+      "no public redistribution of bundle contents"
+    ],
+    "attribution": "не требуется",
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:15:00Z"
+  },
+  "listing": {
+    "listing_id": "listing.news_digest",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.news_digest.core",
+      "version": "1.0.0"
+    },
+    "title": "News Digest Cluster — RSS→AI Summary→Telegram/Email",
+    "summary": "Готовый кластер: собирает RSS, фильтрует, делает краткую сводку и доставляет в Telegram/Email. Есть smoke/synthetic.",
+    "categories": [
+      "news",
+      "automation",
+      "productivity"
+    ],
+    "tags": [
+      "rss",
+      "telegram",
+      "email",
+      "digest",
+      "make",
+      "n8n"
+    ],
+    "capabilities": [
+      "ingest.rss",
+      "summarize.llm",
+      "deliver.telegram",
+      "deliver.email",
+      "schedule.daily",
+      "dedupe",
+      "highlight.top"
+    ],
+    "compatibility": {
+      "platforms": [
+        "n8n",
+        "make"
+      ],
+      "min_versions": {
+        "n8n": "1.0.0",
+        "make": "2024.0"
+      }
+    },
+    "assets": [
+      {
+        "kind": "workflow",
+        "ref": "workflow:n8n.news_digest.123",
+        "role": "orchestrator"
+      },
+      {
+        "kind": "template",
+        "ref": "tpl:telegram.digest.v1",
+        "role": "formatter"
+      }
+    ],
+    "install_profile": {
+      "requires": [
+        "telegram.bot_token",
+        "rss.url_list"
+      ],
+      "safe_mode_supported": true,
+      "estimated_ttfs_seconds": 240
+    },
+    "pricing": [
+      "plan.free.fcces5vks7",
+      "plan.pro.vylfjqc0w1"
+    ],
+    "license": "lic.commercial.cpedjkwlte",
+    "quality_refs": {
+      "quality_score_ref": "qscore.news_digest.latest",
+      "evidence_score_ref": "evidence.news_digest.rolling",
+      "slo_refs": [
+        "slo.run_pass_rate.latest"
+      ],
+      "smoke_plan_ref": "smokeplan.news_digest.latest"
+    },
+    "support": {
+      "publisher_id": "pub.acme.jgx14uknc0",
+      "contact": "support@example.invalid",
+      "sla": "best-effort (Pro: 72h)",
+      "docs_ref": "docs:page.news_digest.core"
+    },
+    "screenshots": [
+      "img://news_digest/hero.png",
+      "img://news_digest/flow.png"
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:15:00Z"
+  },
+  "reputation": {
+    "rep_id": "rep.news.xnysvbenmp",
+    "listing_ref": "listing.news_digest",
+    "rating": 4.6,
+    "evidence_score": 0.88,
+    "quality_score": 0.82,
+    "review_counts": {
+      "total": 132,
+      "verified": 91,
+      "with_usecase": 74
+    },
+    "signals": [
+      "SLO:run_pass_rate",
+      "smoke:PASS",
+      "synthetic:hourly"
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:15:00Z"
+  },
+  "purchase_order": {
+    "order_id": "order.o.mx0rgjbl1r",
+    "buyer": {
+      "kind": "tenant",
+      "id": "tenant.demo"
+    },
+    "listing_ref": "listing.news_digest",
+    "plan_ref": "plan.pro.vylfjqc0w1",
+    "status": "paid",
+    "amount": 9.99,
+    "currency": "EUR",
+    "created_at": "2026-01-02T19:15:00Z",
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:15:00Z"
+  },
+  "entitlement": {
+    "entitlement_id": "ent.e.z1vv76bfxe",
+    "owner": {
+      "kind": "tenant",
+      "id": "tenant.demo"
+    },
+    "plan_ref": "plan.pro.vylfjqc0w1",
+    "status": "active",
+    "limits": {
+      "runs_per_day": 200,
+      "connectors": 10,
+      "retention_days": 30,
+      "seats": 3
+    },
+    "valid_from": "2026-01-02T00:00:00Z",
+    "valid_to": "2026-02-02T00:00:00Z",
+    "grace": {
+      "enabled": true,
+      "until": "2026-02-05T00:00:00Z"
+    },
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:15:00Z"
+  },
+  "revshare_policy": {
+    "revshare_id": "rev.r.bdbzdogn0q",
+    "publisher_id": "pub.acme.jgx14uknc0",
+    "base_percent": 0.8,
+    "fees_policy": {
+      "platform_fee_percent": 0.1,
+      "who_pays": "publisher"
+    },
+    "min_payout": 50.0,
+    "reserve_percent": 0.05,
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:15:00Z"
+  },
+  "ledger_entries": [
+    {
+      "entry_id": "led.sale.jg45hawyex",
+      "at": "2026-01-02T19:15:00Z",
+      "party": {
+        "platform": false,
+        "publisher_id": "pub.acme.jgx14uknc0",
+        "buyer_id": "tenant.demo"
+      },
+      "direction": "credit",
+      "amount": 9.99,
+      "currency": "EUR",
+      "reason": "sale",
+      "refs": [
+        "order.o.mx0rgjbl1r"
+      ],
+      "version": "1.0.0",
+      "updated_at": "2026-01-02T19:15:00Z"
+    },
+    {
+      "entry_id": "led.fee.fdtdzlvyf8",
+      "at": "2026-01-02T19:15:00Z",
+      "party": {
+        "platform": true,
+        "publisher_id": "pub.acme.jgx14uknc0",
+        "buyer_id": "tenant.demo"
+      },
+      "direction": "debit",
+      "amount": 0.999,
+      "currency": "EUR",
+      "reason": "platform_fee",
+      "refs": [
+        "order.o.mx0rgjbl1r"
+      ],
+      "version": "1.0.0",
+      "updated_at": "2026-01-02T19:15:00Z"
+    },
+    {
+      "entry_id": "led.res.81vdas4st7",
+      "at": "2026-01-02T19:15:00Z",
+      "party": {
+        "platform": true,
+        "publisher_id": "pub.acme.jgx14uknc0",
+        "buyer_id": "tenant.demo"
+      },
+      "direction": "debit",
+      "amount": 0.4995,
+      "currency": "EUR",
+      "reason": "chargeback_reserve",
+      "refs": [
+        "order.o.mx0rgjbl1r"
+      ],
+      "version": "1.0.0",
+      "updated_at": "2026-01-02T19:15:00Z"
+    }
+  ],
+  "payout": {
+    "payout_id": "pay.p.ws5mjcp88j",
+    "publisher_id": "pub.acme.jgx14uknc0",
+    "period": {
+      "from": "2026-01-01T00:00:00Z",
+      "to": "2026-01-31T23:59:59Z"
+    },
+    "status": "scheduled",
+    "currency": "EUR",
+    "gross": 9.99,
+    "fees": 0.999,
+    "reserves": 0.4995,
+    "net": 8.4915,
+    "ledger_refs": [
+      "led.sale.jg45hawyex",
+      "led.fee.fdtdzlvyf8",
+      "led.res.81vdas4st7"
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:15:00Z"
+  },
+  "promo_pack": {
+    "promo_id": "promo.feat.4ml4xfr84i",
+    "listing_ref": "listing.news_digest",
+    "type": "featured",
+    "rules": {
+      "placement": "home_top",
+      "max_days": 7
+    },
+    "assets": [
+      "img://news_digest/banner.png"
+    ],
+    "period": {
+      "from": "2026-01-02T00:00:00Z",
+      "to": "2026-01-09T00:00:00Z"
+    },
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:15:00Z"
+  },
+  "install_transaction": {
+    "tx_id": "tx.inst.0cq9dt1t89",
+    "subject": {
+      "kind": "tenant",
+      "id": "tenant.demo"
+    },
+    "listing_ref": "listing.news_digest",
+    "plan_ref": "plan.pro.vylfjqc0w1",
+    "status": "committed",
+    "steps": [
+      {
+        "name": "precheck",
+        "status": "pass",
+        "details": "tokens ok"
+      },
+      {
+        "name": "resolve_deps",
+        "status": "pass",
+        "details": "bundle deps ok"
+      },
+      {
+        "name": "apply",
+        "status": "pass",
+        "details": "workflow imported"
+      },
+      {
+        "name": "verify_smoke",
+        "status": "pass",
+        "details": "smoke PASS"
+      },
+      {
+        "name": "commit",
+        "status": "pass",
+        "details": "installed"
+      }
+    ],
+    "rollback": {
+      "available": true,
+      "snapshot_ref": "snap.tenant.demo.before_install"
+    },
+    "evidence_ref": "evidence.install.tx001",
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:15:00Z"
+  }
+}
