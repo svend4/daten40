@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS AutoFixPlan Schema v1",
+  "type": "object",
+  "required": [
+    "plan_id",
+    "target",
+    "risk",
+    "steps",
+    "requires_approval",
+    "rollback",
+    "post_check",
+    "version"
+  ],
+  "properties": {
+    "plan_id": {
+      "type": "string"
+    },
+    "target": {
+      "type": "object",
+      "required": [
+        "kind",
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "job",
+            "connector",
+            "package",
+            "vitrine",
+            "system"
+          ]
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "risk": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "description"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "create_secret_ref",
+              "update_config",
+              "rebuild_index",
+              "restart_connector",
+              "upgrade_package",
+              "downgrade_package",
+              "other"
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "action": {
+            "type": "object"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "requires_approval": {
+      "type": "boolean"
+    },
+    "rollback": {
+      "type": "object",
+      "properties": {
+        "supported": {
+          "type": "boolean"
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "post_check": {
+      "type": "object",
+      "properties": {
+        "health_check_ref": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
