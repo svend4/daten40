@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Incident Timeline Schema v1",
+  "type": "object",
+  "required": [
+    "incident_id",
+    "entries",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "incident_id": {
+      "type": "string"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "ts",
+          "type",
+          "text"
+        ],
+        "properties": {
+          "ts": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "alert",
+              "action",
+              "status",
+              "note",
+              "mitigation",
+              "fallback"
+            ]
+          },
+          "text": {
+            "type": "string"
+          },
+          "ref": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
