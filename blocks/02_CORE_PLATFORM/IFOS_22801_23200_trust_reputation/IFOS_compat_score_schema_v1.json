@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Compatibility Score Schema v1",
+  "type": "object",
+  "required": [
+    "subject_id",
+    "platform",
+    "score",
+    "basis",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "subject_id": {
+      "type": "string"
+    },
+    "platform": {
+      "type": "string"
+    },
+    "score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "basis": {
+      "type": "object",
+      "properties": {
+        "installs": {
+          "type": "integer"
+        },
+        "fail_ratio": {
+          "type": "number"
+        },
+        "last_test": {
+          "type": "string"
+        }
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
