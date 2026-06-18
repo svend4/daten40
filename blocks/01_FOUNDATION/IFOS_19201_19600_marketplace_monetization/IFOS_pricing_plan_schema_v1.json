@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Pricing Plan Schema v1",
+  "type": "object",
+  "required": [
+    "plan_id",
+    "name",
+    "type",
+    "currency",
+    "price",
+    "features",
+    "limits",
+    "trial",
+    "refund_policy",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "plan_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "free",
+        "one_time",
+        "subscription",
+        "usage"
+      ]
+    },
+    "currency": {
+      "type": "string"
+    },
+    "price": {
+      "type": "number"
+    },
+    "billing_period": {
+      "type": "string",
+      "enum": [
+        "none",
+        "monthly",
+        "yearly"
+      ],
+      "default": "none"
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limits": {
+      "type": "object",
+      "properties": {
+        "runs_per_day": {
+          "type": "integer"
+        },
+        "connectors": {
+          "type": "integer"
+        },
+        "retention_days": {
+          "type": "integer"
+        },
+        "seats": {
+          "type": "integer"
+        }
+      }
+    },
+    "trial": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "days": {
+          "type": "integer"
+        }
+      }
+    },
+    "refund_policy": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
