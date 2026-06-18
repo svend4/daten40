@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Dedupe Record Schema v1",
+  "type": "object",
+  "required": [
+    "dedupe_id",
+    "canonical_id",
+    "candidates",
+    "method",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "dedupe_id": {
+      "type": "string"
+    },
+    "canonical_id": {
+      "type": "string"
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "method": {
+      "type": "string",
+      "enum": [
+        "embedding_similarity",
+        "hash_match",
+        "rule_based"
+      ]
+    },
+    "notes": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
