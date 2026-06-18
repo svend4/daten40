@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS TrustScore Schema v1",
+  "type": "object",
+  "required": [
+    "trust_id",
+    "object_ref",
+    "score",
+    "factors",
+    "version"
+  ],
+  "properties": {
+    "trust_id": {
+      "type": "string"
+    },
+    "object_ref": {
+      "type": "string"
+    },
+    "score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "factors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "value",
+          "weight"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "enum": [
+              "source_reputation",
+              "recency",
+              "cross_source_agreement",
+              "spam_risk",
+              "originality"
+            ]
+          },
+          "value": {
+            "type": "number"
+          },
+          "weight": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
