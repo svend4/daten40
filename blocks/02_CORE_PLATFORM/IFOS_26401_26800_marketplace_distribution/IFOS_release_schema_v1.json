@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Release Schema v1",
+  "type": "object",
+  "required": [
+    "release_id",
+    "package_id",
+    "version_tag",
+    "channel",
+    "changelog",
+    "published_at",
+    "version"
+  ],
+  "properties": {
+    "release_id": {
+      "type": "string"
+    },
+    "package_id": {
+      "type": "string"
+    },
+    "version_tag": {
+      "type": "string"
+    },
+    "channel": {
+      "type": "string",
+      "enum": [
+        "stable",
+        "beta",
+        "nightly"
+      ]
+    },
+    "changelog": {
+      "type": "string"
+    },
+    "breaking_changes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "migration_steps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "ref",
+          "hash"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "zip",
+              "tar",
+              "docker_image",
+              "blueprint",
+              "plugin",
+              "script",
+              "other"
+            ]
+          },
+          "ref": {
+            "type": "string"
+          },
+          "hash": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "published_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
