@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Review Schema v1",
+  "type": "object",
+  "required": [
+    "review_id",
+    "subject_id",
+    "author",
+    "context",
+    "scores",
+    "text",
+    "evidence",
+    "ts",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "review_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "author": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string"
+        },
+        "reputation": {
+          "type": "number"
+        }
+      }
+    },
+    "context": {
+      "type": "object",
+      "required": [
+        "platform",
+        "profile"
+      ],
+      "properties": {
+        "platform": {
+          "type": "string"
+        },
+        "platform_version": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string"
+        },
+        "install_receipt_id": {
+          "type": "string"
+        }
+      }
+    },
+    "scores": {
+      "type": "object",
+      "properties": {
+        "reliability": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "docs": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "support": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "value": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "risk": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5
+        }
+      }
+    },
+    "text": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ts": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
