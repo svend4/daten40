@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Entity Schema v1",
+  "type": "object",
+  "required": [
+    "entity_id",
+    "kind",
+    "display",
+    "identifiers",
+    "fingerprints",
+    "tags",
+    "capabilities",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "entity_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "listing",
+        "bundle",
+        "workflow",
+        "connector",
+        "publisher",
+        "plan",
+        "policy",
+        "dataset"
+      ]
+    },
+    "display": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        }
+      }
+    },
+    "identifiers": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "repo": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "string"
+        },
+        "external_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "fingerprints": {
+      "type": "object",
+      "properties": {
+        "content_digest": {
+          "type": "string"
+        },
+        "structure_digest": {
+          "type": "string"
+        },
+        "dependency_digest": {
+          "type": "string"
+        }
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
