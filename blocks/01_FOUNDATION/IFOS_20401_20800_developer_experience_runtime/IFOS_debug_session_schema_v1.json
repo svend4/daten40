@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Debug Session Schema v1",
+  "type": "object",
+  "required": [
+    "debug_id",
+    "job_id",
+    "mode",
+    "breakpoints",
+    "actions",
+    "created_at",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "debug_id": {
+      "type": "string"
+    },
+    "job_id": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "step",
+        "replay",
+        "dry_run"
+      ]
+    },
+    "breakpoints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "at_step": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "pause",
+              "inspect",
+              "modify_input",
+              "continue",
+              "rerun_step"
+            ]
+          },
+          "payload": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
