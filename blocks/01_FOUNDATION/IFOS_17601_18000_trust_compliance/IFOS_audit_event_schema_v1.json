@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Audit Event Schema v1",
+  "type": "object",
+  "required": [
+    "event_id",
+    "actor",
+    "action",
+    "subject",
+    "result",
+    "at",
+    "evidence_refs",
+    "version"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "actor": {
+      "type": "object",
+      "properties": {
+        "tenant_id": {
+          "type": "string"
+        },
+        "user_id": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "ip_hash": {
+          "type": "string"
+        }
+      }
+    },
+    "action": {
+      "type": "string",
+      "description": "e.g. install_bundle, run_job, publish_asset, approve_review, sign_artifact"
+    },
+    "subject": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "ref": {
+          "type": "string"
+        }
+      }
+    },
+    "result": {
+      "type": "string",
+      "enum": [
+        "pass",
+        "fail",
+        "warn"
+      ]
+    },
+    "details": {
+      "type": "object"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
