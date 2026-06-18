@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Publisher Verification Schema v1",
+  "type": "object",
+  "required": [
+    "verification_id",
+    "publisher_id",
+    "method",
+    "status",
+    "evidence",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "verification_id": {
+      "type": "string"
+    },
+    "publisher_id": {
+      "type": "string"
+    },
+    "method": {
+      "type": "string",
+      "enum": [
+        "dns_txt",
+        "github_org",
+        "wp_author",
+        "code_signing",
+        "manual_review"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "pass",
+        "fail"
+      ]
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
