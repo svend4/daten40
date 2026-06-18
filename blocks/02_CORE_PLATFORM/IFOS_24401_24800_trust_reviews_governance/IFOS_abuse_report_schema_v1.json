@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Abuse Report Schema v1",
+  "type": "object",
+  "required": [
+    "report_id",
+    "subject_id",
+    "subject_type",
+    "reporter_id",
+    "category",
+    "details",
+    "status",
+    "created_at",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "report_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "subject_type": {
+      "type": "string",
+      "enum": [
+        "atom",
+        "bundle",
+        "cluster",
+        "publisher",
+        "review"
+      ]
+    },
+    "reporter_id": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "spam",
+        "phishing",
+        "malware",
+        "pii_leak",
+        "fraud",
+        "copyright",
+        "other"
+      ]
+    },
+    "details": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "triaged",
+        "confirmed",
+        "rejected",
+        "resolved"
+      ]
+    },
+    "attachments": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
