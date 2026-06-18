@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Tutorial Schema v1",
+  "type": "object",
+  "required": [
+    "tutorial_id",
+    "subject_id",
+    "steps",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "tutorial_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "n",
+          "title",
+          "do",
+          "expect"
+        ],
+        "properties": {
+          "n": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "title": {
+            "type": "string"
+          },
+          "do": {
+            "type": "string"
+          },
+          "expect": {
+            "type": "string"
+          },
+          "troubleshoot": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
