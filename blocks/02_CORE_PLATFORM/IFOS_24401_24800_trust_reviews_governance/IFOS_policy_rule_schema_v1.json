@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Policy Rule Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "name",
+    "scope",
+    "rules",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string",
+      "enum": [
+        "dev",
+        "sandbox",
+        "staging",
+        "prod",
+        "global"
+      ]
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "condition",
+          "effect"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "require",
+              "forbid",
+              "warn_if"
+            ]
+          },
+          "condition": {
+            "type": "string"
+          },
+          "effect": {
+            "type": "string",
+            "enum": [
+              "pass",
+              "warn",
+              "fail",
+              "manual_override"
+            ]
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
