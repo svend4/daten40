@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Explanation Schema v1",
+  "type": "object",
+  "required": [
+    "explain_id",
+    "object_ref",
+    "why",
+    "factors",
+    "evidence",
+    "alternatives",
+    "version"
+  ],
+  "properties": {
+    "explain_id": {
+      "type": "string"
+    },
+    "object_ref": {
+      "type": "string"
+    },
+    "why": {
+      "type": "string"
+    },
+    "factors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "contribution"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "contribution": {
+            "type": "number"
+          },
+          "details": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "ref"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "source",
+              "rule",
+              "entity",
+              "cluster",
+              "metric"
+            ]
+          },
+          "ref": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "alternatives": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
