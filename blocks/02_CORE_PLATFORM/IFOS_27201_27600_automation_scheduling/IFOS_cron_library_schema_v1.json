@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS CronLibrary Schema v1",
+  "type": "object",
+  "required": [
+    "library_id",
+    "entries",
+    "version"
+  ],
+  "properties": {
+    "library_id": {
+      "type": "string"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "kind",
+          "spec"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "cron",
+              "rrule",
+              "interval"
+            ]
+          },
+          "spec": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
