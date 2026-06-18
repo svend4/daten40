@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RetentionPolicy Schema v1",
+  "type": "object",
+  "required": [
+    "retention_policy_id",
+    "rules",
+    "version"
+  ],
+  "properties": {
+    "retention_policy_id": {
+      "type": "string"
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "scope",
+          "action",
+          "after_days"
+        ],
+        "properties": {
+          "scope": {
+            "type": "string",
+            "enum": [
+              "raw",
+              "normalized",
+              "artifacts",
+              "indexes",
+              "logs",
+              "backups"
+            ]
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "delete",
+              "archive",
+              "keep"
+            ]
+          },
+          "after_days": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "legal_hold": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
