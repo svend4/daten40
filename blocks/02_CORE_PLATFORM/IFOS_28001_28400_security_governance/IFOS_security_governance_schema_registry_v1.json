@@ -1,0 +1,67 @@
+{
+  "registry_id": "reg.r.bu8fsfdgbt",
+  "entries": [
+    {
+      "name": "IFOS_data_classification_schema_v1.json",
+      "ref": "file://IFOS_data_classification_schema_v1.json",
+      "hash": "sha256:481f17b7737eec15d67628866054e6ee83cf2d3d87ce6e95df43afa88868484e"
+    },
+    {
+      "name": "IFOS_secret_ref_schema_v1.json",
+      "ref": "file://IFOS_secret_ref_schema_v1.json",
+      "hash": "sha256:4ebc39138df17b87e894a587e9bcea8cd71d13812706fadd7bfe2b626a59d125"
+    },
+    {
+      "name": "IFOS_secret_store_schema_v1.json",
+      "ref": "file://IFOS_secret_store_schema_v1.json",
+      "hash": "sha256:316c6e20d2e9fd046c0100dda3abdad9dc0a8605aabf1f615d7542e61a0fe256"
+    },
+    {
+      "name": "IFOS_role_schema_v1.json",
+      "ref": "file://IFOS_role_schema_v1.json",
+      "hash": "sha256:baf6f6d27e6be5daff29c48c4a129d06822fac371076fe88b7652899855b72a9"
+    },
+    {
+      "name": "IFOS_policy_schema_v1.json",
+      "ref": "file://IFOS_policy_schema_v1.json",
+      "hash": "sha256:ac91b39299bb134bd210f1c9b17b4d870006e3c4772d17cc617fd5c0be1fdcc7"
+    },
+    {
+      "name": "IFOS_acl_binding_schema_v1.json",
+      "ref": "file://IFOS_acl_binding_schema_v1.json",
+      "hash": "sha256:59a686eb8ee529a65e0e0b55ec4b61ee02d699d558c4b86350111dbbecf9bfc3"
+    },
+    {
+      "name": "IFOS_audit_event_schema_v1.json",
+      "ref": "file://IFOS_audit_event_schema_v1.json",
+      "hash": "sha256:abd7f40655cedc072019ced7e5d2a274c6fa9a06155ce5fe74ffdeb8bce228ab"
+    },
+    {
+      "name": "IFOS_moderation_decision_schema_v1.json",
+      "ref": "file://IFOS_moderation_decision_schema_v1.json",
+      "hash": "sha256:5ecdb4aa11023ba30ac9869bc2cb9316a6e64fab57e34f7b862d4aae861286ba"
+    },
+    {
+      "name": "IFOS_trust_list_schema_v1.json",
+      "ref": "file://IFOS_trust_list_schema_v1.json",
+      "hash": "sha256:2bd87684d60a0ab42dcb5bd8aa3fad07cb0e47c39aa2fbe2bd307c2ecc4de212"
+    },
+    {
+      "name": "IFOS_package_signature_schema_v1.json",
+      "ref": "file://IFOS_package_signature_schema_v1.json",
+      "hash": "sha256:b7b925de65308ddfe456c6c75b896f4f35c67f6f47cc463e2a9c9ec848ad44e9"
+    },
+    {
+      "name": "IFOS_consent_record_schema_v1.json",
+      "ref": "file://IFOS_consent_record_schema_v1.json",
+      "hash": "sha256:b7bbe8322ee9acac0184bf29cdd4b5b06bdf81eb71f1458b82aaf93edaab4193"
+    },
+    {
+      "name": "IFOS_compliance_profile_schema_v1.json",
+      "ref": "file://IFOS_compliance_profile_schema_v1.json",
+      "hash": "sha256:48bdc201be8c5b6d52ea0da348ea1e4631439c3400a700948bab47aee5b441dc"
+    }
+  ],
+  "updated_at": "2026-01-03T05:35:00Z",
+  "version": "1.0.0"
+}
