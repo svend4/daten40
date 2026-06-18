@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Federation Sync Event Schema v1",
+  "type": "object",
+  "required": [
+    "sync_id",
+    "from_node",
+    "to_node",
+    "kind",
+    "items",
+    "ts"
+  ],
+  "properties": {
+    "sync_id": {
+      "type": "string"
+    },
+    "from_node": {
+      "type": "string"
+    },
+    "to_node": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "listings_metadata",
+        "trust_scores",
+        "evidence_summaries",
+        "publisher_lists"
+      ]
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "ts": {
+      "type": "string"
+    },
+    "result": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "WARN",
+        "FAIL"
+      ]
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
