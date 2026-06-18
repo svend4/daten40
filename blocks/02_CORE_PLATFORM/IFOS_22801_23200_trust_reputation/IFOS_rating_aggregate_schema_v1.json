@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Rating Aggregate Schema v1",
+  "type": "object",
+  "required": [
+    "subject_id",
+    "counts",
+    "scores",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "subject_id": {
+      "type": "string"
+    },
+    "counts": {
+      "type": "object",
+      "properties": {
+        "reviews": {
+          "type": "integer"
+        },
+        "installs": {
+          "type": "integer"
+        },
+        "active_instances": {
+          "type": "integer"
+        }
+      }
+    },
+    "scores": {
+      "type": "object",
+      "properties": {
+        "reliability": {
+          "type": "number"
+        },
+        "docs": {
+          "type": "number"
+        },
+        "support": {
+          "type": "number"
+        },
+        "value": {
+          "type": "number"
+        },
+        "risk": {
+          "type": "number"
+        },
+        "trust_overall": {
+          "type": "number"
+        }
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
