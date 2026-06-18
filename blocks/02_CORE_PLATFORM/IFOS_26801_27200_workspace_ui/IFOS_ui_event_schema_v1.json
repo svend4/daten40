@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UIEvent Schema v1",
+  "type": "object",
+  "required": [
+    "event_id",
+    "ts",
+    "workspace_id",
+    "kind",
+    "payload",
+    "version"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "ts": {
+      "type": "string"
+    },
+    "workspace_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "click",
+        "open",
+        "close",
+        "run",
+        "error",
+        "install",
+        "search",
+        "tour_step"
+      ]
+    },
+    "payload": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
