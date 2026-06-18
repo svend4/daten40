@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Knowledge Graph Snapshot Schema v1",
+  "type": "object",
+  "required": [
+    "snapshot_id",
+    "at",
+    "nodes",
+    "edges",
+    "stats",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "snapshot_id": {
+      "type": "string"
+    },
+    "at": {
+      "type": "string"
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "description": "entity_id or term ids"
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "description": "rel_id"
+      }
+    },
+    "stats": {
+      "type": "object",
+      "properties": {
+        "node_count": {
+          "type": "integer"
+        },
+        "edge_count": {
+          "type": "integer"
+        },
+        "dedupe_clusters": {
+          "type": "integer"
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
