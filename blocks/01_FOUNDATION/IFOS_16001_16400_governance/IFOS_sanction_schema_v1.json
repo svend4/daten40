@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Sanction Schema v1",
+  "type": "object",
+  "required": [
+    "sanction_id",
+    "jurisdiction",
+    "target",
+    "type",
+    "status",
+    "issued_at",
+    "reason"
+  ],
+  "properties": {
+    "sanction_id": {
+      "type": "string"
+    },
+    "jurisdiction": {
+      "type": "string"
+    },
+    "target": {
+      "type": "object",
+      "required": [
+        "kind",
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "listing",
+            "publisher",
+            "review",
+            "rating"
+          ]
+        },
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "warning",
+        "delist",
+        "quarantine",
+        "ban_publisher",
+        "federation_ban",
+        "freeze_score",
+        "remove_reviews"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "expired",
+        "revoked"
+      ]
+    },
+    "issued_at": {
+      "type": "string"
+    },
+    "expires_at": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "appeal_ref": {
+      "type": "string"
+    }
+  }
+}
