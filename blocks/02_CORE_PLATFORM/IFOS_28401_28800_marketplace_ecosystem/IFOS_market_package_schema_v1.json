@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Market Package Schema v1",
+  "type": "object",
+  "required": [
+    "package_id",
+    "name",
+    "version",
+    "publisher_id",
+    "manifest",
+    "assets",
+    "install_recipe_ref",
+    "license_ref",
+    "pricing_plan_ref",
+    "signing",
+    "created_at",
+    "version_schema"
+  ],
+  "properties": {
+    "package_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "publisher_id": {
+      "type": "string"
+    },
+    "manifest": {
+      "type": "object",
+      "required": [
+        "dependencies",
+        "compatibility"
+      ],
+      "properties": {
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "optional_dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "conflicts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "compatibility": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "assets": {
+      "type": "object",
+      "properties": {
+        "flows": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "schemas": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ui_cards": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "docs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "install_recipe_ref": {
+      "type": "string"
+    },
+    "license_ref": {
+      "type": "string"
+    },
+    "pricing_plan_ref": {
+      "type": "string"
+    },
+    "signing": {
+      "type": "object",
+      "properties": {
+        "manifest_sha256": {
+          "type": "string"
+        },
+        "signature_ref": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "version_schema": {
+      "type": "string"
+    }
+  }
+}
