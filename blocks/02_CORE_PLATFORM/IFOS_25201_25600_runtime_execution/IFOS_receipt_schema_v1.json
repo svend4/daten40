@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Receipt Schema v1",
+  "type": "object",
+  "required": [
+    "receipt_id",
+    "job_id",
+    "subject_id",
+    "mode",
+    "steps",
+    "result",
+    "duration_ms",
+    "cost_estimate",
+    "hashes",
+    "created_at",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "receipt_id": {
+      "type": "string"
+    },
+    "job_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "sandbox",
+        "prod"
+      ]
+    },
+    "inputs_redacted": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "outputs_redacted": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "n",
+          "status"
+        ],
+        "properties": {
+          "n": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pass",
+              "fail",
+              "skip"
+            ]
+          },
+          "external_calls": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "domain": {
+                  "type": "string"
+                },
+                "path": {
+                  "type": "string"
+                },
+                "method": {
+                  "type": "string"
+                },
+                "status_code": {
+                  "type": "integer"
+                }
+              },
+              "additionalProperties": true
+            }
+          },
+          "retries": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "result": {
+      "type": "string",
+      "enum": [
+        "success",
+        "failure"
+      ]
+    },
+    "duration_ms": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "cost_estimate": {
+      "type": "object",
+      "properties": {
+        "usd": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "hashes": {
+      "type": "object",
+      "properties": {
+        "plan_hash": {
+          "type": "string"
+        },
+        "inputs_hash": {
+          "type": "string"
+        },
+        "outputs_hash": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
