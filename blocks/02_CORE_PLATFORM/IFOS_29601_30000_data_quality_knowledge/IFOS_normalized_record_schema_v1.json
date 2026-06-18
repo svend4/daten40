@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS NormalizedRecord Schema v1",
+  "type": "object",
+  "required": [
+    "norm_id",
+    "source_id",
+    "canonical_url",
+    "title",
+    "summary",
+    "published_at",
+    "language",
+    "region",
+    "tags",
+    "entities",
+    "canonical_id",
+    "version"
+  ],
+  "properties": {
+    "norm_id": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "canonical_url": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "published_at": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "region": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "canonical_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
