@@ -1,0 +1,15 @@
+{
+  "contract_id": "evidence_append_event.v1",
+  "fields": {
+    "event_id": "string",
+    "event_type": "string",
+    "created_at": "datetime",
+    "actor": "string",
+    "evidence_item": "evidence_item.v1",
+    "supersedes_event_id": "string",
+    "reason": "string"
+  },
+  "privacy_level": "internal",
+  "retention_policy": "security_default",
+  "audit": "required"
+}

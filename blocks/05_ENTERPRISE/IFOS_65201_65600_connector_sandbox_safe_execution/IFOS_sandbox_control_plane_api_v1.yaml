@@ -1,0 +1,19 @@
+openapi: 3.0.3
+info:
+  title: IFOS Sandbox Control Plane API
+  version: "1.0.0"
+servers:
+  - url: https://sandbox.ifos.local/v1
+paths:
+  /sandboxes:
+    get: {summary: List sandbox profiles, responses: {"200": {description: OK}}}
+  /runs:
+    post: {summary: Start a sandboxed connector run, responses: {"200": {description: OK}}}
+  /runs/{run_id}:
+    get: {summary: Get run status + attestation, responses: {"200": {description: OK}}}
+  /egress/policies:
+    get: {summary: List egress policies, responses: {"200": {description: OK}}}
+  /limits:
+    get: {summary: List resource limits, responses: {"200": {description: OK}}}
+  /ratelimits:
+    get: {summary: List rate limit policies, responses: {"200": {description: OK}}}

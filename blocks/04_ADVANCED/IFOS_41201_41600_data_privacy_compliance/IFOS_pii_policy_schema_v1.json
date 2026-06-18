@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS PIIPolicy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "applies_to",
+    "controls",
+    "version"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "applies_to": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "controls": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "export_rules": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "encryption": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ConnectorDriver Schema v1",
+  "type": "object",
+  "required": [
+    "driver_id",
+    "name",
+    "capabilities",
+    "auth_schemes",
+    "rate_limits",
+    "test_mode",
+    "version"
+  ],
+  "properties": {
+    "driver_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "auth_schemes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "api_key",
+          "oauth2",
+          "basic",
+          "webhook"
+        ]
+      }
+    },
+    "rate_limits": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "test_mode": {
+      "type": "object",
+      "properties": {
+        "supported": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "docs_url": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

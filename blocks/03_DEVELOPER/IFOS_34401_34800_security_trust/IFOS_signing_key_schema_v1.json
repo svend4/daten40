@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SigningKey Schema v1",
+  "type": "object",
+  "required": [
+    "key_id",
+    "owner",
+    "algo",
+    "status",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "key_id": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "string"
+    },
+    "algo": {
+      "type": "string",
+      "enum": [
+        "ed25519",
+        "rsa-pss",
+        "ecdsa-p256"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "revoked",
+        "rotated",
+        "expired"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "meta": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

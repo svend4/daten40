@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS OnboardingTrack Schema v1",
+  "type": "object",
+  "required": [
+    "track_id",
+    "level",
+    "lessons",
+    "outcomes",
+    "checks",
+    "version"
+  ],
+  "properties": {
+    "track_id": {
+      "type": "string"
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ]
+    },
+    "lessons": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "title",
+          "minutes",
+          "tasks"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "minutes": {
+            "type": "integer",
+            "minimum": 5,
+            "maximum": 120
+          },
+          "tasks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "outcomes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "badge": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

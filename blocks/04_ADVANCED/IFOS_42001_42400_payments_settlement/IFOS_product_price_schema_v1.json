@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ProductPrice Schema v1",
+  "type": "object",
+  "required": [
+    "price_id",
+    "product",
+    "currency",
+    "model",
+    "version"
+  ],
+  "properties": {
+    "price_id": {
+      "type": "string"
+    },
+    "product": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "currency": {
+      "type": "string"
+    },
+    "region": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "model": {
+      "type": "string",
+      "enum": [
+        "fixed",
+        "usage_based",
+        "hybrid"
+      ]
+    },
+    "fixed_amount": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "usage": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "limits": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "discounts": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

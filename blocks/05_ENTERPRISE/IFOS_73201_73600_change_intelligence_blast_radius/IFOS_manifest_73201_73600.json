@@ -1,0 +1,27 @@
+{
+  "pack_type": "ifos_block_pack",
+  "range_start": 73201,
+  "range_end": 73600,
+  "slug": "change_intelligence_blast_radius",
+  "title": "Change Intelligence & Blast Radius (Release/Change Impact Engine)",
+  "version": "0.33.0",
+  "generated_at": "2026-01-03T18:39:25",
+  "files": [
+    {
+      "name": "IFOS_change_intelligence_blast_radius_os_73201_73600_v1.md",
+      "role": "spec_md"
+    },
+    {
+      "name": "IFOS_change_event_types_seed_73201_73600_v1.csv",
+      "role": "seed_csv"
+    },
+    {
+      "name": "IFOS_blast_radius_rules_seed_73201_73600_v1.csv",
+      "role": "seed_csv"
+    },
+    {
+      "name": "IFOS_change_source_connectors_seed_73201_73600_v1.csv",
+      "role": "seed_csv"
+    }
+  ]
+}

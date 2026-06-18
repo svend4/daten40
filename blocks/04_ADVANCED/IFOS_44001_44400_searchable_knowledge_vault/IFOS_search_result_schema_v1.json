@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SearchResult Schema v1",
+  "type": "object",
+  "required": [
+    "result_id",
+    "query_id",
+    "hits",
+    "facets",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "result_id": {
+      "type": "string"
+    },
+    "query_id": {
+      "type": "string"
+    },
+    "hits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "facets": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

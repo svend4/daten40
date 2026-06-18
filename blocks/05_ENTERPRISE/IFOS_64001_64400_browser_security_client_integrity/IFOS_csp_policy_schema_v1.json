@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS CSP Policy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "directives",
+    "mode",
+    "version"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "report_only",
+        "enforce"
+      ]
+    },
+    "directives": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "report_uri": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+openapi: 3.0.3
+info:
+  title: IFOS Recommendation API
+  version: "1.0.0"
+servers:
+  - url: https://rec.ifos.local/v1
+tags:
+  - name: Profile
+  - name: Recommend
+  - name: Feedback
+  - name: Consent
+paths:
+  /profile/{user_id}:
+    get: {tags:[Profile], summary: Get profile, responses: {"200": {description: OK}}}
+    put: {tags:[Profile], summary: Update profile, responses: {"200": {description: OK}}}
+  /recommend:
+    post: {tags:[Recommend], summary: Get recommendations, responses: {"200": {description: OK}}}
+  /feedback:
+    post: {tags:[Feedback], summary: Submit feedback event, responses: {"201": {description: Created}}}
+  /consent:
+    post: {tags:[Consent], summary: Upsert consent record, responses: {"200": {description: OK}}}

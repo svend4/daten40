@@ -1,0 +1,187 @@
+{
+  "tenant": {
+    "tenant_id": "ten.t.idsb4w8y1twz",
+    "name": "Example GmbH",
+    "billing_profile": {
+      "plan": "enterprise",
+      "currency": "EUR"
+    },
+    "security_profile": {
+      "pii_logs": false,
+      "egress_allowlist": [
+        "api.telegram.org",
+        "www.googleapis.com"
+      ]
+    },
+    "data_residency": "EU",
+    "default_policies": [
+      "policy.gdpr_logs_v1",
+      "policy.egress_allowlist_v1"
+    ],
+    "version": "1.0.0"
+  },
+  "org_unit": {
+    "org_unit_id": "ou.o.bm67g4lgllm2",
+    "tenant_id": "ten.t.idsb4w8y1twz",
+    "path": "/HQ/IT",
+    "name": "IT Department",
+    "parent_id": null,
+    "cost_center": "CC-IT-001",
+    "policies": [
+      "policy.safe_only_bundles_v1"
+    ],
+    "version": "1.0.0"
+  },
+  "permission": {
+    "perm_id": "p.p.nsyx04jk532e",
+    "name": "bundle.run",
+    "description": "Run bundles in runtime",
+    "risk": "medium",
+    "version": "1.0.0"
+  },
+  "role": {
+    "role_id": "r.r.668543jegy3w",
+    "tenant_id": "ten.t.idsb4w8y1twz",
+    "name": "Operator",
+    "permissions": [
+      "registry.read",
+      "bundle.install",
+      "bundle.run"
+    ],
+    "description": "Can install and run approved bundles",
+    "version": "1.0.0"
+  },
+  "user": {
+    "user_id": "u.u.ea97nef7p034",
+    "tenant_id": "ten.t.idsb4w8y1twz",
+    "email": "user@example.com",
+    "display_name": "Stefan",
+    "status": "active",
+    "org_unit_id": "ou.o.bm67g4lgllm2",
+    "roles": [
+      "r.r.668543jegy3w"
+    ],
+    "attributes": {
+      "mfa": true
+    },
+    "version": "1.0.0"
+  },
+  "abac_policy": {
+    "policy_id": "abac.a.aw5vxqnvc9e5",
+    "tenant_id": "ten.t.idsb4w8y1twz",
+    "effect": "deny",
+    "rules": [
+      {
+        "if": {
+          "resource.tags": "risky"
+        },
+        "then": "deny"
+      },
+      {
+        "if": {
+          "context.region": "non_eu"
+        },
+        "then": "deny"
+      }
+    ],
+    "priority": 10,
+    "version": "1.0.0"
+  },
+  "api_key": {
+    "key_id": "k.k.hf64hhtrmle2",
+    "tenant_id": "ten.t.idsb4w8y1twz",
+    "name": "CI key",
+    "scopes": [
+      "bundle.install",
+      "bundle.run"
+    ],
+    "expires_at": null,
+    "rate_limits": {
+      "rpm": 120
+    },
+    "last_used_at": null,
+    "rotate_policy": {
+      "every_days": 30
+    },
+    "created_at": "2026-01-03T13:47:00Z",
+    "version": "1.0.0"
+  },
+  "session": {
+    "session_id": "s.s.v21qa7qarufz",
+    "tenant_id": "ten.t.idsb4w8y1twz",
+    "user_id": "u.u.ea97nef7p034",
+    "created_at": "2026-01-03T13:47:00Z",
+    "expires_at": "2026-01-03T21:00:00Z",
+    "scopes": [
+      "ui:access",
+      "registry.read"
+    ],
+    "device": {
+      "ua": "Chrome",
+      "os": "Android"
+    },
+    "ip": "203.0.113.10",
+    "version": "1.0.0"
+  },
+  "sso_config": {
+    "sso_id": "sso.s.twhjzprk4wtc",
+    "tenant_id": "ten.t.idsb4w8y1twz",
+    "type": "oidc",
+    "issuer": "https://accounts.google.com",
+    "client_id": "client-123",
+    "domain_allowlist": [
+      "example.com"
+    ],
+    "group_mapping": {
+      "ifos-admins": "Admin",
+      "ifos-ops": "Operator"
+    },
+    "mfa_required": true,
+    "version": "1.0.0"
+  },
+  "audit_event": {
+    "audit_id": "aud.a.154sd3t6p9iu",
+    "tenant_id": "ten.t.idsb4w8y1twz",
+    "ts": "2026-01-03T13:47:00Z",
+    "actor": {
+      "user_id": "u.u.ea97nef7p034",
+      "role": "Operator"
+    },
+    "action": "bundle.run",
+    "resource": {
+      "canonical_id": "canon.bundle.telegram_notifier_v1"
+    },
+    "result": "ok",
+    "meta": {
+      "run_id": "run.abc123"
+    },
+    "version": "1.0.0"
+  },
+  "byok": {
+    "byok_id": "byok.b.2q8tyixig2a9",
+    "tenant_id": "ten.t.idsb4w8y1twz",
+    "kms_type": "azure_keyvault",
+    "key_ref": "https://vault.example/keys/ifos-master",
+    "rotation": {
+      "every_days": 90
+    },
+    "encryption_context": {
+      "tenant_id": "ten.t.idsb4w8y1twz"
+    },
+    "version": "1.0.0"
+  },
+  "delegation": {
+    "delegation_id": "del.d.t9fueewt167p",
+    "tenant_id": "ten.t.idsb4w8y1twz",
+    "delegator": "u.admin",
+    "delegatee": "u.u.ea97nef7p034",
+    "scopes": [
+      "org.manage",
+      "role.assign"
+    ],
+    "org_unit_scope": "/HQ/IT",
+    "expires_at": "2026-02-01T00:00:00Z",
+    "created_at": "2026-01-03T13:47:00Z",
+    "version": "1.0.0"
+  }
+}

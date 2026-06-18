@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RawItem Schema v1",
+  "type": "object",
+  "required": [
+    "raw_id",
+    "source_id",
+    "url",
+    "fetched_at",
+    "payload",
+    "hash",
+    "meta",
+    "version"
+  ],
+  "properties": {
+    "raw_id": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "fetched_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "payload": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "hash": {
+      "type": "string"
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SyntheticProfile Schema v1",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "name",
+    "generator_kind",
+    "constraints",
+    "leakage_checks",
+    "version"
+  ],
+  "properties": {
+    "profile_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "generator_kind": {
+      "type": "string",
+      "enum": [
+        "stats_based",
+        "rules_based",
+        "tabular_gan",
+        "dp_stats"
+      ]
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "rule"
+        ],
+        "properties": {
+          "rule": {
+            "type": "string"
+          },
+          "params": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    "leakage_checks": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "membership_inference_smoke",
+          "nearest_neighbor_distance",
+          "canary_check"
+        ]
+      }
+    },
+    "quality_metrics": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "marginal_error",
+          "corr_error",
+          "coverage",
+          "edge_case_rate"
+        ]
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS VitrineExport Schema v1",
+  "type": "object",
+  "required": [
+    "export_id",
+    "vitrine_id",
+    "format",
+    "location",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "export_id": {
+      "type": "string"
+    },
+    "vitrine_id": {
+      "type": "string"
+    },
+    "format": {
+      "type": "string",
+      "enum": [
+        "html",
+        "pdf",
+        "csv",
+        "json",
+        "protocol"
+      ]
+    },
+    "location": {
+      "type": "string"
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

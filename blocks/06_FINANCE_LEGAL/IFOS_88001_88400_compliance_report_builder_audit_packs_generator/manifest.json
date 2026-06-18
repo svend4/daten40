@@ -1,0 +1,23 @@
+{
+  "pack_id": "cp_compliance_report_builder",
+  "name": "Compliance Report Builder (SOC2/HIPAA/GDPR Audit Packs Generator)",
+  "version": "1.0.0",
+  "status": "production",
+  "layer": "ComplianceEvidence",
+  "compatibility": {
+    "ifos_min_version": "v30",
+    "required_blocks": [
+      "IFOS_00001_00400",
+      "IFOS_86401_86800",
+      "IFOS_87601_88000"
+    ]
+  },
+  "exports": [
+    "report.build.request",
+    "report.build.render",
+    "report.export.audit_pack",
+    "report.export.pdf",
+    "report.export.html",
+    "report.export.manifest"
+  ]
+}

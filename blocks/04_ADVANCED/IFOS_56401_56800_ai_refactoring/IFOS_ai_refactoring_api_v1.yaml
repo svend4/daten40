@@ -1,0 +1,23 @@
+openapi: 3.0.3
+info:
+  title: IFOS AI Refactoring API
+  version: "1.0.0"
+servers:
+  - url: https://ai-refactor.ifos.local/v1
+tags:
+  - name: Clusters
+  - name: Macros
+  - name: RefactorPlans
+  - name: Patches
+  - name: Reviews
+paths:
+  /clusters/build:
+    post: {tags:[Clusters], summary: Build/update function clusters, responses: {"200": {description: OK}}}
+  /macros/generate:
+    post: {tags:[Macros], summary: Generate macro templates (basic/standard/pro), responses: {"200": {description: OK}}}
+  /refactor/plans:
+    post: {tags:[RefactorPlans], summary: Create refactor plan, responses: {"200": {description: OK}}}
+  /refactor/patches:
+    post: {tags:[Patches], summary: Create patch (diff) for target, responses: {"200": {description: OK}}}
+  /refactor/reviews:
+    post: {tags:[Reviews], summary: Review/approve plan+patch, responses: {"200": {description: OK}}}

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ETL LineageEvent Schema v1",
+  "type": "object",
+  "required": [
+    "lineage_id",
+    "tenant_id",
+    "run_id",
+    "ts",
+    "source",
+    "target",
+    "transform",
+    "version"
+  ],
+  "properties": {
+    "lineage_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source": {
+      "type": "string"
+    },
+    "target": {
+      "type": "string"
+    },
+    "transform": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

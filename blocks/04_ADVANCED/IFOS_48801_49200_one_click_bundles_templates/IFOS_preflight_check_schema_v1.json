@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS PreflightCheck Schema v1",
+  "type": "object",
+  "required": [
+    "check_id",
+    "bundle_id",
+    "checks",
+    "result",
+    "version"
+  ],
+  "properties": {
+    "check_id": {
+      "type": "string"
+    },
+    "bundle_id": {
+      "type": "string"
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "result": {
+      "type": "string",
+      "enum": [
+        "pass",
+        "warn",
+        "fail"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+openapi: 3.0.3
+info:
+  title: IFOS Knowledge Graph UI & Navigation API
+  version: "1.0.0"
+servers:
+  - url: https://kg.ifos.local/v1
+tags:
+  - name: Graph
+  - name: Views
+  - name: Impact
+paths:
+  /graph/subgraph:
+    post: {tags:[Graph], summary: Fetch subgraph by query + limits, responses: {"200": {description: OK}}}
+  /views:
+    post: {tags:[Views], summary: Create saved view, responses: {"200": {description: OK}}}
+  /views/{view_id}:
+    get: {tags:[Views], summary: Get view, parameters: [{name: view_id, in: path, required: true, schema: {type: string}}], responses: {"200": {description: OK}}}
+  /impact/analyze:
+    post: {tags:[Impact], summary: Run impact analysis for a proposed diff, responses: {"200": {description: OK}}}

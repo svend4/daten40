@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS MergeDecision Schema v1",
+  "type": "object",
+  "required": [
+    "merge_id",
+    "entity_ids",
+    "winner",
+    "reason",
+    "version"
+  ],
+  "properties": {
+    "merge_id": {
+      "type": "string"
+    },
+    "entity_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "winner": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

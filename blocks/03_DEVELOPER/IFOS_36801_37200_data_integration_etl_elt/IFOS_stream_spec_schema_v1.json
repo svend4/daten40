@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS StreamSpec Schema v1",
+  "type": "object",
+  "required": [
+    "stream_id",
+    "tenant_id",
+    "broker",
+    "topic",
+    "schema",
+    "delivery",
+    "version"
+  ],
+  "properties": {
+    "stream_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "broker": {
+      "type": "string",
+      "enum": [
+        "kafka",
+        "pubsub",
+        "rabbitmq",
+        "nats"
+      ]
+    },
+    "topic": {
+      "type": "string"
+    },
+    "schema": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "delivery": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

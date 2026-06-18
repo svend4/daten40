@@ -1,0 +1,37 @@
+openapi: 3.0.3
+info:
+  title: IFOS Payments & Settlement API
+  version: "1.0.0"
+servers:
+  - url: https://payments.ifos.local/v1
+tags:
+  - name: Pricing
+  - name: Quotes
+  - name: Invoices
+  - name: Payments
+  - name: Refunds
+  - name: Ledger
+  - name: Payouts
+  - name: Tax
+  - name: Reconciliation
+paths:
+  /pricing:
+    post: {tags:[Pricing], summary: Upsert product price model, responses: {"200": {description: OK}}}
+  /quotes:
+    post: {tags:[Quotes], summary: Create quote, responses: {"201": {description: Created}}}
+  /invoices:
+    post: {tags:[Invoices], summary: Create invoice, responses: {"201": {description: Created}}}
+  /payments/intents:
+    post: {tags:[Payments], summary: Create payment intent, responses: {"201": {description: Created}}}
+  /refunds:
+    post: {tags:[Refunds], summary: Request refund, responses: {"201": {description: Created}}}
+  /chargebacks:
+    post: {tags:[Refunds], summary: Record chargeback, responses: {"201": {description: Created}}}
+  /ledger/vendor:
+    post: {tags:[Ledger], summary: Post ledger entry, responses: {"200": {description: OK}}}
+  /payouts:
+    post: {tags:[Payouts], summary: Create payout, responses: {"201": {description: Created}}}
+  /tax/vat:
+    post: {tags:[Tax], summary: Upsert tax/vat rules, responses: {"200": {description: OK}}}
+  /reconciliation/run:
+    post: {tags:[Reconciliation], summary: Run reconciliation job, responses: {"200": {description: OK}}}

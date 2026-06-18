@@ -1,0 +1,42 @@
+{
+  "registry_id": "reg.dev.m5r43thrd2q7",
+  "entries": [
+    {
+      "name": "IFOS_plugin_manifest_schema_v1.json",
+      "ref": "file://IFOS_plugin_manifest_schema_v1.json",
+      "hash": "sha256:db9b2f961f838302596211abe70c325cdab03b9bca97149d691fe91ec9883b05"
+    },
+    {
+      "name": "IFOS_connector_spec_schema_v1.json",
+      "ref": "file://IFOS_connector_spec_schema_v1.json",
+      "hash": "sha256:3974635906eb1a5c1aa9fc14d32672c26d7be83420b092a62889eb5b93617a1f"
+    },
+    {
+      "name": "IFOS_sdk_config_schema_v1.json",
+      "ref": "file://IFOS_sdk_config_schema_v1.json",
+      "hash": "sha256:aee1a065903c8f1e440b93d1247c8fd02f3ee8f6a77d28ed49f5ad0d4c16e91b"
+    },
+    {
+      "name": "IFOS_test_harness_schema_v1.json",
+      "ref": "file://IFOS_test_harness_schema_v1.json",
+      "hash": "sha256:3adcd892eb05f10a3eb5a16512006a5d8ecad51bb4314254b9108c18769ae438"
+    },
+    {
+      "name": "IFOS_local_runtime_profile_schema_v1.json",
+      "ref": "file://IFOS_local_runtime_profile_schema_v1.json",
+      "hash": "sha256:7d5871d88115dd7801b950264b8d334094782d5405f5d98cf1c341c7a46db724"
+    },
+    {
+      "name": "IFOS_publish_job_schema_v1.json",
+      "ref": "file://IFOS_publish_job_schema_v1.json",
+      "hash": "sha256:fc22efc266288652d3d347bd9cb2bb24532db95174b4f3c6d92d3178b696d026"
+    },
+    {
+      "name": "IFOS_template_pack_schema_v1.json",
+      "ref": "file://IFOS_template_pack_schema_v1.json",
+      "hash": "sha256:8427b8897f1b855282e110f9109325b52ce0206a4d4458f5d03a11f8c306e4b6"
+    }
+  ],
+  "updated_at": "2026-01-03T13:26:00Z",
+  "version": "1.0.0"
+}

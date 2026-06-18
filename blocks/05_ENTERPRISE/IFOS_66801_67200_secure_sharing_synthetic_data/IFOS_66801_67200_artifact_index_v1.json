@@ -1,0 +1,99 @@
+{
+  "artifact_set": "IFOS_66801_67200",
+  "created_at": "2026-01-02T17:18:47Z",
+  "version": "1.0.0",
+  "entries": [
+    {
+      "name": "IFOS_secure_sharing_synthetic_data_os_66801_67200_v1.md",
+      "hash": "sha256:aff7f0b1d3581ca3264cef579ab2819165dae2f65e9fa031639f734d1ca810c2"
+    },
+    {
+      "name": "IFOS_sharing_ops_runbook_66801_67200_v1.md",
+      "hash": "sha256:6306cc57a16e31c06f5201bcbb7de691c289f68171948cb953c70e70088ab95b"
+    },
+    {
+      "name": "IFOS_sharing_threat_model_66801_67200_v1.md",
+      "hash": "sha256:8c074edf21a4d81571c8db5117dba166db63720cd9ad5f834d172dcf778c447d"
+    },
+    {
+      "name": "IFOS_sharing_control_plane_api_v1.yaml",
+      "hash": "sha256:40c8e65cb948bcd9f43291c4f5e0e71a1049d96ae8987ad1b8f4350e2b908ec0"
+    },
+    {
+      "name": "IFOS_sharing_examples_66801_67200_v1.json",
+      "hash": "sha256:237dba2eb0caa9b164a0647f711ba893fa48e3cae02a1f2cc7dc5eddc040e0dc"
+    },
+    {
+      "name": "IFOS_share_request_schema_v1.json",
+      "hash": "sha256:a480697852d3c210ea3ca168d491c44be6e5a9c8f6b460ea2e85f3d1f6a6af00"
+    },
+    {
+      "name": "IFOS_share_grant_schema_v1.json",
+      "hash": "sha256:4c5f210a21742a99837dde68adfc4d76e6ef151b1400f69129cb0a5d0128f44f"
+    },
+    {
+      "name": "IFOS_data_room_schema_v1.json",
+      "hash": "sha256:20d3e83c9b1fcc03684cd07d362726f2c099eef4bec81ccf690b3b10702a5813"
+    },
+    {
+      "name": "IFOS_dataset_asset_schema_v1.json",
+      "hash": "sha256:02bb697390dfb1df5a8190cc547967dbc344de27e59a35819bdd4f47a7d44475"
+    },
+    {
+      "name": "IFOS_synthetic_profile_schema_v1.json",
+      "hash": "sha256:9936e29aaa7ea8aaefa1fb24022c4cfca7914950f6d8b186ec277d9ca5c85621"
+    },
+    {
+      "name": "IFOS_deid_profile_schema_v1.json",
+      "hash": "sha256:097d6d16ae880f046251c28be9b42afa5d0ec68776f93dd7ae919db51302cf7e"
+    },
+    {
+      "name": "IFOS_sample_policy_schema_v1.json",
+      "hash": "sha256:6fa59aaaafdc5b7160f8790ec27b9c24a4f95c75d6a1396b5522f5c1489d38b9"
+    },
+    {
+      "name": "IFOS_access_receipt_schema_v1.json",
+      "hash": "sha256:db5c79086159b792453b2a2967bbd0218d29f6705d865a31d2ebcfc02a1f6e49"
+    },
+    {
+      "name": "IFOS_approval_workflow_schema_v1.json",
+      "hash": "sha256:f1fc99622303ce119132839daf7e2363d2dbb94d6865dcb0b227ff8c9a6f591c"
+    },
+    {
+      "name": "IFOS_sharing_policy_pack_schema_v1.json",
+      "hash": "sha256:1f75bca5364243e6137e3598fdb3435d99e5bec73fd13b19cb5db1e123fc459b"
+    },
+    {
+      "name": "IFOS_data_rooms_seed_66801_67200_v1.csv",
+      "hash": "sha256:ec0a7cbd1f67ded927f2db44b73f50f9201926dc602111f9ae492ae751edcc46"
+    },
+    {
+      "name": "IFOS_sharing_policies_seed_66801_67200_v1.csv",
+      "hash": "sha256:1d21775362b77f7e8222e4deb08d98867a8133d97bb4d53e87ca2e4085c57063"
+    },
+    {
+      "name": "IFOS_approval_flows_seed_66801_67200_v1.csv",
+      "hash": "sha256:92e17d21eafd5fca5aea8648a8c409986d13ee2ae02b616c148c2a0c59dc2cfc"
+    },
+    {
+      "name": "IFOS_synthetic_profiles_seed_66801_67200_v1.csv",
+      "hash": "sha256:bcc21ee429b5ed5fbd02eb45c2262eac1ac10ac53f9597b35387d28cea7bbf4c"
+    },
+    {
+      "name": "IFOS_deid_profiles_seed_66801_67200_v1.csv",
+      "hash": "sha256:0d856bfaa08cc77a023a6174546f526a2f00f07b40655fdbffae094fca442e2d"
+    },
+    {
+      "name": "IFOS_sample_policies_seed_66801_67200_v1.csv",
+      "hash": "sha256:201a608ebe2aa1df06478fc7079e98b97a36db9cab3abdb1ff359bbfe0540258"
+    },
+    {
+      "name": "IFOS_dataset_catalog_seed_66801_67200_v1.csv",
+      "hash": "sha256:4d4d11e13c99045ffce768dc751e32a0be7839fce47efde23fb328428f3e8f0a"
+    },
+    {
+      "name": "IFOS_sharing_policy_packs_seed_66801_67200_v1.csv",
+      "hash": "sha256:7eece122529d3049e44a72e0ecd6b0f7d585bc11b949bf5caabe0db69569f280"
+    }
+  ]
+}

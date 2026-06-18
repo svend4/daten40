@@ -1,0 +1,42 @@
+{
+  "replica": {
+    "replica_id": "rep.r.rz9u26x62uuo",
+    "kind": "local",
+    "storage": "sqlite:///ifos_local.db",
+    "policy_overlay": "pol.default.eu",
+    "version": "1.0.0"
+  },
+  "sync_job": {
+    "sync_id": "sync.s.uejshsvef9uv",
+    "from_replica": "rep.r.rz9u26x62uuo",
+    "to_replica": "rep.team.t.2mgl4yqwr2tc",
+    "status": "running",
+    "started_at": "2026-01-04T20:10:00Z",
+    "stats": {
+      "bytes_sent": 1048576,
+      "bytes_received": 524288,
+      "dedup_saved": 2097152
+    },
+    "version": "1.0.0"
+  },
+  "conflict": {
+    "conflict_id": "cfl.c.1jzaoays38at",
+    "object_ref": "artifact.runbook.md",
+    "type": "document",
+    "strategy": "three_way_merge",
+    "status": "open",
+    "version": "1.0.0"
+  },
+  "bundle_delta": {
+    "delta_id": "dlt.d.efbnv1ciwo9n",
+    "bundle_id": "bundle.telegram.connector",
+    "from_version": "1.4.0",
+    "to_version": "1.4.1",
+    "files": [
+      "manifest.json",
+      "connector.py"
+    ],
+    "signature_ref": "sig.g.pwox74b2kifq",
+    "version": "1.0.0"
+  }
+}

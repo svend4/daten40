@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Graph Query Schema v1",
+  "type": "object",
+  "required": [
+    "query_id",
+    "expression",
+    "params",
+    "version"
+  ],
+  "properties": {
+    "query_id": {
+      "type": "string"
+    },
+    "expression": {
+      "type": "string"
+    },
+    "params": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

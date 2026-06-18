@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SDK Manifest Schema v1",
+  "type": "object",
+  "required": [
+    "sdk_id",
+    "connector_id",
+    "languages",
+    "compat_matrix",
+    "version"
+  ],
+  "properties": {
+    "sdk_id": {
+      "type": "string"
+    },
+    "connector_id": {
+      "type": "string"
+    },
+    "languages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "compat_matrix": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

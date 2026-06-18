@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-01-11T15:19:06",
+  "algorithm": "sha256",
+  "files": {
+    "README.md": "80df15b87dce066498446e36f25336943ff11571e16e6d36908514109fab955c",
+    "MASTER_INDEX_DELTA.json": "5a670158c1054b01ac6d65ad7e6db85c56b010f5d958d80d1f9ecb0f88b7baeb",
+    "SPEC/domain_pack_standard.md": "aaad505274c6ade25b046965dc36b078495beba52e10e7603d9cabfb282524b4",
+    "schemas/domain_pack_manifest.schema.json": "3126f0e42b3e09ed0e1df2128dfa8443eb3689dc5476f6d753268a15def50bfe",
+    "templates/domain-pack-template/README.md": "7ee804eaa8d7bfcad9d8bf386df47becae8cf62ba5d4603e831e5b2348b6cf1a",
+    "templates/domain-pack-template/manifest.json": "9324867c02fc5debb8ccb68e106f98400dba6c8aae2256df3775b78233d61024",
+    "templates/domain-pack-template/bundles/bundle_example.json": "2ca9fb2f176197969c490028797ed0de77234ddf7dc0eca7e82221173f5aee5e",
+    "templates/domain-pack-template/examples/example_input.json": "33edb3d69fb5d4e9419dc4b1b8d43fd4563e1ede06620ab9e960e5992d3b0548",
+    "docs/domain_pack_validation_checklist.md": "0359da3b7c79430edc7d5e86c5dc5ef8e550221a7164c5097faf6d7a9d52d66f",
+    "seed/domain_catalog_seed.csv": "db50195af56b824e41e8890d10cff78cc67068978e8f4822a59319bfe7854f8e",
+    "examples/domain-packs/gov_services/manifest.json": "a31a082fc5f51c5170fd42188c343f6049c2bf49acee8fb823236efb38a728f0",
+    "examples/domain-packs/gov_services/README.md": "e41e0c18968971afa53a33b8c10543d418c1acde5b4473d64f86c2192be07062",
+    "examples/domain-packs/gov_services/bundles/citizen_request_intake.json": "712e33b24e033c0f307e6783d80484718be4381ee4d068dc3f2d98998a8b5bbd",
+    "examples/domain-packs/gov_services/examples/request.json": "19b486121aaa8b80dc024dd0e4ff7a33d4fa2dade3d04a0c1dba71673fd53514"
+  }
+}

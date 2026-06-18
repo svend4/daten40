@@ -1,0 +1,38 @@
+{
+  "asset_id": "gh_001",
+  "name": "Example Automation Repo",
+  "source": {
+    "type": "github",
+    "ref": "owner/repo"
+  },
+  "capabilities": [
+    {
+      "capability_id": "cap:workflow_runner",
+      "confidence": 0.55,
+      "evidence": [
+        "README mentions workflow"
+      ]
+    },
+    {
+      "capability_id": "cap:etl_normalize",
+      "confidence": 0.4,
+      "evidence": [
+        "folder: normalize/"
+      ]
+    }
+  ],
+  "compatibility": [
+    {
+      "profile_id": "p_demo",
+      "status": "OK"
+    }
+  ],
+  "quality": {
+    "activity": 0.7,
+    "docs": 0.6
+  },
+  "provenance": {
+    "ingested_at": "2026-01-03",
+    "method": "inventory_pipeline_v1"
+  }
+}

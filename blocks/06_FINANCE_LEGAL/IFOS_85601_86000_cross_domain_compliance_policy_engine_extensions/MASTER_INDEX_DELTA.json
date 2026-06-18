@@ -1,0 +1,17 @@
+{
+  "delta": {
+    "section": "COMPLIANCE_RUNTIME",
+    "add": [
+      {
+        "id_range": "IFOS_85601_86000",
+        "name": "Cross‑Domain Compliance Policy Engine Extensions",
+        "type": "ComplianceRuntime",
+        "status": "Production",
+        "dependencies": [
+          "IFOS_84801_85200",
+          "IFOS_85201_85600"
+        ]
+      }
+    ]
+  }
+}

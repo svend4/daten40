@@ -1,0 +1,20 @@
+{
+  "bundle_id": "citizen_request_intake",
+  "name": "Citizen request intake",
+  "version": "0.1.0",
+  "connectors": [
+    "webhook",
+    "google_sheets",
+    "email"
+  ],
+  "secrets_required": [],
+  "entrypoint": {
+    "trigger": "webhook.http_post",
+    "plan_id": "plan_gov_intake"
+  },
+  "policies": [
+    "audit.logging",
+    "privacy.confidential",
+    "region.eu"
+  ]
+}

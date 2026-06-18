@@ -1,0 +1,167 @@
+{
+  "artifact_set": "IFOS_49601_50000",
+  "entries": [
+    {
+      "name": "IFOS_internet_function_dictionary_os_49601_50000_v1.md",
+      "ref": "file://IFOS_internet_function_dictionary_os_49601_50000_v1.md",
+      "hash": "sha256:dd0c126de587f472f1ae6abf986d9faa475f67d0e4c52f92c818117570361de8"
+    },
+    {
+      "name": "IFOS_dictionary_api_v1.yaml",
+      "ref": "file://IFOS_dictionary_api_v1.yaml",
+      "hash": "sha256:8c0b674bb6e6487c0e1dedeb0a99e72d05ca54fc81ef2799c4e40b29d34a85d0"
+    },
+    {
+      "name": "IFOS_dictionary_examples_v1.json",
+      "ref": "file://IFOS_dictionary_examples_v1.json",
+      "hash": "sha256:f6ccbc8ade65c5162f5e5e384c750a470b918fed4d8b7d3a3f06f17f836641b4"
+    },
+    {
+      "name": "IFOS_dictionary_seed_49601_50000_v1.csv",
+      "ref": "file://IFOS_dictionary_seed_49601_50000_v1.csv",
+      "hash": "sha256:19a6de6ac70f505d59430c83cf817475fba1bcf81357b36a3e42dbe8cf928a93"
+    },
+    {
+      "name": "IFOS_function_term_schema_v1.json",
+      "ref": "file://IFOS_function_term_schema_v1.json",
+      "hash": "sha256:0d08fd9375138aa15b0f60eb3381cdda653202038eca645baa979a8189d38b59"
+    },
+    {
+      "name": "IFOS_function_ontology_schema_v1.json",
+      "ref": "file://IFOS_function_ontology_schema_v1.json",
+      "hash": "sha256:901ab1be1886c04b1a124d1d882f99ea17bd933ef3b419476bfb381f7ca032bd"
+    },
+    {
+      "name": "IFOS_function_synonyms_schema_v1.json",
+      "ref": "file://IFOS_function_synonyms_schema_v1.json",
+      "hash": "sha256:36e384eaa25a9491090173141822c0f8a1357451b4ee677b4bf3466ae660a943"
+    },
+    {
+      "name": "IFOS_function_grammar_schema_v1.json",
+      "ref": "file://IFOS_function_grammar_schema_v1.json",
+      "hash": "sha256:bf89f94b4106352218647dd8fa21df3c76d6a3113e5c86d9fb7220074c2748f3"
+    },
+    {
+      "name": "IFOS_action_template_schema_v1.json",
+      "ref": "file://IFOS_action_template_schema_v1.json",
+      "hash": "sha256:0c1053f32d5b9d35d7b042fe73ab55ff3a3189f3ac39b06f2a639190cf354ac6"
+    },
+    {
+      "name": "IFOS_macro_spec_schema_v1.json",
+      "ref": "file://IFOS_macro_spec_schema_v1.json",
+      "hash": "sha256:cd52b87009ef84d37efa6cbe4696433dfe16fb417d26e32267495f4e8dc7d570"
+    },
+    {
+      "name": "IFOS_function_mapping_schema_v1.json",
+      "ref": "file://IFOS_function_mapping_schema_v1.json",
+      "hash": "sha256:4241d233c08617de583271a5857e198147eeb65315d2eeee9a7f3e813651ed90"
+    },
+    {
+      "name": "IFOS_function_capability_link_schema_v1.json",
+      "ref": "file://IFOS_function_capability_link_schema_v1.json",
+      "hash": "sha256:57e2c1faa6c8083d0851ee9f48ff924962083b562f32ceaa2c950aa95cdd548b"
+    },
+    {
+      "name": "IFOS_query_intent_schema_v1.json",
+      "ref": "file://IFOS_query_intent_schema_v1.json",
+      "hash": "sha256:fb9dcf0ced80332e87d7a0d46c5930e18092a5e3d9bdfbac24bc81ba94a988bd"
+    },
+    {
+      "name": "IFOS_vertical_taxonomy_schema_v1.json",
+      "ref": "file://IFOS_vertical_taxonomy_schema_v1.json",
+      "hash": "sha256:dda82520bbecf969a26bc7668661672162c6bdd8d658d5d4af92e356d62fdcf7"
+    },
+    {
+      "name": "IFOS_composability_rules_schema_v1.json",
+      "ref": "file://IFOS_composability_rules_schema_v1.json",
+      "hash": "sha256:334eaae7e4c749e6ffd4367e1087acba4faa5a26a7fdef8fb77c7636dfa01973"
+    },
+    {
+      "name": "IFOS_dictionary_eval_schema_v1.json",
+      "ref": "file://IFOS_dictionary_eval_schema_v1.json",
+      "hash": "sha256:8db4f0a904555f5445fc60fb11da6feb4ee211463e7c58701b9b179605800358"
+    },
+    {
+      "name": "IFOS_dictionary_pack_schema_v1.json",
+      "ref": "file://IFOS_dictionary_pack_schema_v1.json",
+      "hash": "sha256:1cc5f89d9c45c8996637f8ad6aa7da9f8ebddbb04da6267e291a047645279b78"
+    },
+    {
+      "name": "IFOS_dictionary_spec_v1.md",
+      "ref": "file://IFOS_dictionary_spec_v1.md",
+      "hash": "sha256:a36ac25029989249d864adf12d077e8196970dab47a48a146d7985ca8a642b8b"
+    },
+    {
+      "name": "IFOS_dictionary_ontology_spec_v1.md",
+      "ref": "file://IFOS_dictionary_ontology_spec_v1.md",
+      "hash": "sha256:dc6ad2d27a50d9e7d52cbd07d1adce11f417985b2067a6d9331d11f08eb4a41a"
+    },
+    {
+      "name": "IFOS_dictionary_synonyms_spec_v1.md",
+      "ref": "file://IFOS_dictionary_synonyms_spec_v1.md",
+      "hash": "sha256:0bfcb38416596d1d5514f03f9bb01585bdc28e215a9c2bdd1ac9999d31054dd7"
+    },
+    {
+      "name": "IFOS_dictionary_grammar_spec_v1.md",
+      "ref": "file://IFOS_dictionary_grammar_spec_v1.md",
+      "hash": "sha256:ebab76d5b1f8afcb77e37d4014d166cbee28a96c0d06dee0a82898f5672128d0"
+    },
+    {
+      "name": "IFOS_dictionary_mapping_spec_v1.md",
+      "ref": "file://IFOS_dictionary_mapping_spec_v1.md",
+      "hash": "sha256:c7e71367ccaf0b10f594c5e2488f5700a8d9262fa3895179622ccfa9a2ac26fb"
+    },
+    {
+      "name": "IFOS_dictionary_macro_spec_v1.md",
+      "ref": "file://IFOS_dictionary_macro_spec_v1.md",
+      "hash": "sha256:b87827bf52102e2142f7e5aad47d2dc3a3478b98a32f3bad453efabbd511513b"
+    },
+    {
+      "name": "IFOS_dictionary_ux_spec_v1.md",
+      "ref": "file://IFOS_dictionary_ux_spec_v1.md",
+      "hash": "sha256:062362b8a68534dfb8ae082ef08ebb1cbd565dcb7a299b2a035f54655d835aa6"
+    },
+    {
+      "name": "IFOS_dictionary_governance_spec_v1.md",
+      "ref": "file://IFOS_dictionary_governance_spec_v1.md",
+      "hash": "sha256:20e7d1392f055e254d910f65ad8c09f223fc953626b6048b282044125ded6706"
+    },
+    {
+      "name": "IFOS_dictionary_i18n_spec_v1.md",
+      "ref": "file://IFOS_dictionary_i18n_spec_v1.md",
+      "hash": "sha256:e01f9a27d6410bcc2c93081794b26dfa4e65285f7c5b67c59f17318bf1726d13"
+    },
+    {
+      "name": "IFOS_dictionary_eval_spec_v1.md",
+      "ref": "file://IFOS_dictionary_eval_spec_v1.md",
+      "hash": "sha256:142836ac8b6afad7069f373407fe0166084a01b4b12eeafa4d1b7a14bda5bcf6"
+    },
+    {
+      "name": "ifos_dictionary_normalizer_stub_v1.py",
+      "ref": "file://ifos_dictionary_normalizer_stub_v1.py",
+      "hash": "sha256:96edfbe0a2905228eeb8e1b00ab9dfa8a6069d43fa996b927334dae88f609b5e"
+    },
+    {
+      "name": "ifos_query_to_intent_stub_v1.py",
+      "ref": "file://ifos_query_to_intent_stub_v1.py",
+      "hash": "sha256:9131e4973aca48ccbd7db2fec21534989af1263e4c2cb7b8c8c468f62c4a9249"
+    },
+    {
+      "name": "ifos_intent_to_capabilities_stub_v1.py",
+      "ref": "file://ifos_intent_to_capabilities_stub_v1.py",
+      "hash": "sha256:1567f789cecfb86728979f2f137b07dc1d377307229b8cc497e8c1b3d3e711cc"
+    },
+    {
+      "name": "ifos_macro_composer_stub_v1.py",
+      "ref": "file://ifos_macro_composer_stub_v1.py",
+      "hash": "sha256:5ea96d59d089f9844cab3b23b7ede4e73907537ef3fe7dd34460388e3105ee76"
+    },
+    {
+      "name": "ifos_dictionary_linter_stub_v1.py",
+      "ref": "file://ifos_dictionary_linter_stub_v1.py",
+      "hash": "sha256:bac4acb2cb590dc854e021791cbf99cd89663be1a34b08137230f88c92944a33"
+    }
+  ],
+  "created_at": "2026-01-04T12:40:00Z",
+  "version": "1.0.0"
+}

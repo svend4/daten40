@@ -1,0 +1,21 @@
+{
+  "contract_id": "evidence_item.v1",
+  "fields": {
+    "evidence_id": "string",
+    "artifact_sha256": "string",
+    "artifact_uri": "string",
+    "collected_at": "datetime",
+    "collector": "string",
+    "environment": "string",
+    "policy_packs": "array[string]",
+    "controls": "array[string]",
+    "cadence": "string",
+    "expires_at": "datetime",
+    "signature": "signature.v1",
+    "provenance": "provenance.v1",
+    "tags": "object"
+  },
+  "privacy_level": "internal",
+  "retention_policy": "security_default",
+  "audit": "required"
+}

@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS PipelineGraph Schema v1",
+  "type": "object",
+  "required": [
+    "graph_id",
+    "nodes",
+    "edges",
+    "error_policy",
+    "observability",
+    "version"
+  ],
+  "properties": {
+    "graph_id": {
+      "type": "string"
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "trigger",
+              "transform",
+              "enrich",
+              "route",
+              "store",
+              "notify",
+              "approval",
+              "batch"
+            ]
+          },
+          "config": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "from",
+          "to"
+        ],
+        "properties": {
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "data",
+              "control"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "error_policy": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "observability": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "apply_to": ">= v30",
+  "delta": {
+    "section": "COMPLIANCE_EVIDENCE",
+    "add": [
+      {
+        "id_range": "IFOS_88001_88400",
+        "name": "Compliance Report Builder (SOC2/HIPAA/GDPR Audit Packs Generator)",
+        "slug": "compliance_report_builder_audit_packs_generator",
+        "type": "Service/Builder",
+        "layer": "ComplianceEvidence",
+        "status": "Production",
+        "dependencies": [
+          "IFOS_86401_86800",
+          "IFOS_87601_88000",
+          "IFOS_86001_86400"
+        ],
+        "artifacts": [
+          "IFOS_88001_88400_compliance_report_builder_audit_packs_generator_os_pack.zip"
+        ],
+        "notes": "Build auditor-ready report + zip audit pack with traceability and hashes"
+      }
+    ]
+  }
+}

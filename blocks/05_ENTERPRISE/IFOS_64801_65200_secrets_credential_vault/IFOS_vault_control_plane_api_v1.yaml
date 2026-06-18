@@ -1,0 +1,18 @@
+openapi: 3.0.3
+info:
+  title: IFOS Vault Control Plane API
+  version: "1.0.0"
+servers:
+  - url: https://vault.ifos.local/v1
+paths:
+  /secrets:
+    get: {summary: List secrets (metadata only), responses: {"200": {description: OK}}}
+    post: {summary: Create secret (value encrypted), responses: {"200": {description: OK}}}
+  /secrets/{secret_id}/lease:
+    post: {summary: Request short lease for runtime, responses: {"200": {description: OK}}}
+  /secrets/{secret_id}/rotate:
+    post: {summary: Trigger rotation job, responses: {"200": {description: OK}}}
+  /policies:
+    get: {summary: List vault policies, responses: {"200": {description: OK}}}
+  /testkeys:
+    get: {summary: List test key catalog, responses: {"200": {description: OK}}}

@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ProjectTemplate Schema v1",
+  "type": "object",
+  "required": [
+    "template_id",
+    "name",
+    "language",
+    "runtime",
+    "repo_manifest",
+    "defaults",
+    "version"
+  ],
+  "properties": {
+    "template_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string",
+      "enum": [
+        "python",
+        "node",
+        "go",
+        "other",
+        "nocode"
+      ]
+    },
+    "runtime": {
+      "type": "string"
+    },
+    "repo_manifest": {
+      "$ref": "#/$defs/repo_manifest"
+    },
+    "defaults": {
+      "type": "object",
+      "properties": {
+        "ci_profile": {
+          "type": "string"
+        },
+        "validation_profile": {
+          "type": "string"
+        },
+        "docs_template_id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "version": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "repo_manifest": {
+      "type": "object",
+      "required": [
+        "folders",
+        "files",
+        "hooks"
+      ],
+      "properties": {
+        "folders": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "files": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "hooks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "vault",
+                  "sandbox",
+                  "demo_assets",
+                  "ci"
+                ]
+              },
+              "ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "ref"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

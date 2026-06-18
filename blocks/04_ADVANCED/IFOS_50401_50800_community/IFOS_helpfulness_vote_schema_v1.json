@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS HelpfulnessVote Schema v1",
+  "type": "object",
+  "required": [
+    "vote_id",
+    "review_id",
+    "value",
+    "reason",
+    "version"
+  ],
+  "properties": {
+    "vote_id": {
+      "type": "string"
+    },
+    "review_id": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string",
+      "enum": [
+        "helpful",
+        "unhelpful"
+      ]
+    },
+    "reason": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

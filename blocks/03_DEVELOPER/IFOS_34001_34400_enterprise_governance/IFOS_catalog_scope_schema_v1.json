@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS CatalogScope Schema v1",
+  "type": "object",
+  "required": [
+    "scope_id",
+    "tenant_id",
+    "scope_type",
+    "include",
+    "exclude",
+    "version"
+  ],
+  "properties": {
+    "scope_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "scope_type": {
+      "type": "string",
+      "enum": [
+        "global",
+        "tenant",
+        "org_unit",
+        "project"
+      ]
+    },
+    "scope_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "include": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "exclude": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

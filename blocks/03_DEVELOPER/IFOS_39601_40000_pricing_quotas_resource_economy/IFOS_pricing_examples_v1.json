@@ -1,0 +1,230 @@
+{
+  "resource_classes": [
+    {
+      "resource_id": "rc.ti.8hjncp5u02c2",
+      "name": "llm_tokens_in",
+      "unit": "token",
+      "description": "Input tokens billed by model provider",
+      "version": "1.0.0"
+    },
+    {
+      "resource_id": "rc.to.wvxu7vmsroo5",
+      "name": "llm_tokens_out",
+      "unit": "token",
+      "description": "Output tokens billed by model provider",
+      "version": "1.0.0"
+    }
+  ],
+  "pricing_plan": {
+    "plan_id": "plan.p.oik9ps21stmh",
+    "name": "Pro PAYG",
+    "currency": "EUR",
+    "prices": [
+      {
+        "resource_id": "rc.ti.8hjncp5u02c2",
+        "price_per_unit": 2e-06,
+        "tier": "base"
+      },
+      {
+        "resource_id": "rc.to.wvxu7vmsroo5",
+        "price_per_unit": 4e-06,
+        "tier": "base"
+      }
+    ],
+    "included": {
+      "monthly_credits_eur": 20.0
+    },
+    "version": "1.0.0"
+  },
+  "meter_event": {
+    "meter_id": "mtr.m.bktzhdkcgari",
+    "ts": "2026-01-03T21:00:00Z",
+    "tenant_id": "ten.t.h95j0wtopbht",
+    "user_id": "user.owner",
+    "project_id": "Office2",
+    "asset": {
+      "type": "workflow",
+      "id": "wf.import_csv_dedup"
+    },
+    "run_id": "run.r.wvbuu2p6bjo5",
+    "resources": [
+      {
+        "resource_id": "rc.ti.8hjncp5u02c2",
+        "quantity": 25000
+      },
+      {
+        "resource_id": "rc.to.wvxu7vmsroo5",
+        "quantity": 6000
+      }
+    ],
+    "status": "succeeded",
+    "version": "1.0.0"
+  },
+  "quota_policy": {
+    "quota_id": "quota.q.gmt36gd5jw39",
+    "scope": {
+      "tenant_id": "ten.t.h95j0wtopbht"
+    },
+    "limits": [
+      {
+        "resource_id": "rc.ti.8hjncp5u02c2",
+        "window": "month",
+        "max": 5000000
+      },
+      {
+        "resource_id": "workflow_steps",
+        "window": "day",
+        "max": 50000
+      }
+    ],
+    "on_exceed": "require_approval",
+    "version": "1.0.0"
+  },
+  "rate_limit": {
+    "ratelimit_id": "rl.r.7fh3ndqwpz43",
+    "scope": {
+      "tenant_id": "ten.t.h95j0wtopbht",
+      "endpoint": "/runs"
+    },
+    "limit": 120,
+    "window_seconds": 60,
+    "burst": 30,
+    "priority": "normal",
+    "version": "1.0.0"
+  },
+  "sla": {
+    "sla_id": "sla.s.24ioj6bpvjzc",
+    "name": "Enterprise 99.9",
+    "targets": {
+      "uptime_percent": 99.9,
+      "latency_p95_ms": 800,
+      "rpo_minutes": 30,
+      "rto_minutes": 60
+    },
+    "support": {
+      "response_p1_minutes": 30,
+      "response_p2_minutes": 240
+    },
+    "applies_to": {
+      "tenant_id": "ten.t.h95j0wtopbht"
+    },
+    "version": "1.0.0"
+  },
+  "cost_model": {
+    "cost_model_id": "cm.c.e645i81f4rf9",
+    "asset": {
+      "type": "workflow",
+      "id": "wf.import_csv_dedup"
+    },
+    "currency": "EUR",
+    "components": [
+      {
+        "type": "fixed",
+        "amount": 0.001,
+        "note": "infra amortized"
+      },
+      {
+        "type": "variable",
+        "amount": 0.012,
+        "note": "LLM tokens + API calls"
+      },
+      {
+        "type": "overhead",
+        "amount": 0.002,
+        "note": "audit + logs"
+      },
+      {
+        "type": "risk",
+        "amount": 0.0,
+        "note": "no human review"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "chargeback_record": {
+    "record_id": "cb.c.5w3dw3ajnfrs",
+    "period": {
+      "year": 2026,
+      "month": 1
+    },
+    "payer": {
+      "tenant_id": "ten.t.h95j0wtopbht",
+      "project": "Office2"
+    },
+    "asset": {
+      "type": "bundle",
+      "id": "bundle.office2"
+    },
+    "resources": [
+      {
+        "resource_id": "rc.ti.8hjncp5u02c2",
+        "quantity": 1200000
+      },
+      {
+        "resource_id": "rc.to.wvxu7vmsroo5",
+        "quantity": 300000
+      }
+    ],
+    "total": 12.3,
+    "currency": "EUR",
+    "mode": "showback",
+    "links": {
+      "drilldown": "kb://pricing/period/2026-01"
+    },
+    "version": "1.0.0"
+  },
+  "invoice": {
+    "invoice_id": "inv.i.67gn649uur82",
+    "tenant_id": "ten.t.h95j0wtopbht",
+    "period": {
+      "year": 2026,
+      "month": 1
+    },
+    "lines": [
+      {
+        "description": "Subscription base",
+        "amount": 29.0,
+        "details": {
+          "plan": "Pro PAYG"
+        }
+      },
+      {
+        "description": "Overage tokens",
+        "amount": 12.3,
+        "details": {
+          "from_showback": "cb.*"
+        }
+      }
+    ],
+    "total": 41.3,
+    "currency": "EUR",
+    "status": "draft",
+    "artifacts": {
+      "json": "invoices/inv.json",
+      "pdf": "invoices/inv.pdf"
+    },
+    "version": "1.0.0"
+  },
+  "budget_alert": {
+    "alert_id": "ba.b.1jbremklcxee",
+    "tenant_id": "ten.t.h95j0wtopbht",
+    "period": "month",
+    "budget": 50.0,
+    "thresholds": [
+      50,
+      80,
+      100,
+      120
+    ],
+    "channels": [
+      "ui",
+      "telegram"
+    ],
+    "actions": [
+      "notify",
+      "require_approval",
+      "enable_degrade"
+    ],
+    "version": "1.0.0"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Network Policy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "ingress",
+    "egress",
+    "version"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "ingress": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "egress": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "notes": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

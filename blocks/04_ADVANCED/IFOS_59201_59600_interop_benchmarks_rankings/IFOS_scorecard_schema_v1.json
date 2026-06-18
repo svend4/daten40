@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Scorecard Schema v1",
+  "type": "object",
+  "required": [
+    "scorecard_id",
+    "artifact_ref",
+    "scores",
+    "overall",
+    "version"
+  ],
+  "properties": {
+    "scorecard_id": {
+      "type": "string"
+    },
+    "artifact_ref": {
+      "type": "string"
+    },
+    "scores": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "overall": {
+      "type": "number"
+    },
+    "badges": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

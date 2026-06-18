@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DocSource Schema v1",
+  "type": "object",
+  "required": [
+    "source_id",
+    "tenant_id",
+    "type",
+    "location",
+    "sync",
+    "version"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "web",
+        "repo",
+        "drive",
+        "api",
+        "marketplace"
+      ]
+    },
+    "location": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "auth_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "filters": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "sync": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

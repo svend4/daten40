@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-01-11T16:25:16",
+  "algorithm": "sha256",
+  "files": {
+    "README.md": "6349621c582a3911be9334fc64b5d07dee7010e07f3b2c354c5cc17bc6d6b72d",
+    "manifest.json": "4299e875d7c5f9fa95c127a82f2206bdab03a995594b527633672628d3fa52e6",
+    "MASTER_INDEX_DELTA.json": "fc380e6194aad8829f4a9182aa57b2b02e59c2d500298b9563efe710840a6b27",
+    "policies/policies.md": "e23b1849e9f3aab584553e156754b4a5be4735963e747e9cc65ce48db9588285",
+    "data-contracts/invoice.v1.json": "b8a0a528e3b96388ee02e6d556562bdd84cffe65e87559045d20cc690f813754",
+    "data-contracts/payment.v1.json": "52943f5108a0d277204595d937f08ca7bd1ca22920df6c54a6b25771dbf7db23",
+    "data-contracts/ledger_entry.v1.json": "b92d68ec4870d0069fdd2910918159cb614753736cddd7eb273678c57c5a9c7c",
+    "data-contracts/reconciliation_exception.v1.json": "e99d051e9958765019b131417b9094f23bd2041a435b50adf40132a435839269",
+    "kpis/kpi_catalog.csv": "2cb340453d4673bb77a79d1e17aef7e788bbed701d5e7c91b0dd2e1af407bf66",
+    "bundles/invoice_to_cash_reconcile.json": "9a73eaeafdb9efd94ca78490d7308dc96ff1d26b649b060eb969b81155eea980",
+    "bundles/daily_bank_recon_post_ledger.json": "42302fc319f9f5175d5acd6fd8f523ae6b07438f36744bdbd734aac77774b2f5",
+    "examples/invoice.json": "e375996061ef53a60600ad4114ef32043bc148ce04a9f60d889f877266f4bd79",
+    "examples/payment.json": "14221bae7f3c97c1526e3db374ce96c4736b3b9a0d013092bc7ed79922f32cff",
+    "examples/ledger_entry.json": "d2791a95a6ba0437236641721a4ac443fa8d532486b7a2f65f25cb6047483fff",
+    "tests/TEST_PLAN.md": "081ef5f6833bd6a6436e080a8da7b6b11a0dc2f4acc95898077f486f280db3ce"
+  }
+}

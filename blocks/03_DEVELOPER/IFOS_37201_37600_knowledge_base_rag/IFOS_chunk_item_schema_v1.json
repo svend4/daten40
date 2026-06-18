@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ChunkItem Schema v1",
+  "type": "object",
+  "required": [
+    "chunk_id",
+    "tenant_id",
+    "doc_id",
+    "text",
+    "offsets",
+    "section_path",
+    "version"
+  ],
+  "properties": {
+    "chunk_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "doc_id": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "offsets": {
+      "type": "object",
+      "required": [
+        "start",
+        "end"
+      ],
+      "properties": {
+        "start": {
+          "type": "integer"
+        },
+        "end": {
+          "type": "integer"
+        }
+      }
+    },
+    "section_path": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "hints": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

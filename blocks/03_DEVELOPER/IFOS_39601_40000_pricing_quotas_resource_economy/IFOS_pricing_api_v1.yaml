@@ -1,0 +1,38 @@
+openapi: 3.0.3
+info:
+  title: IFOS Pricing & Quotas API
+  version: "1.0.0"
+servers:
+  - url: https://pricing.ifos.local/v1
+tags:
+  - name: ResourceClasses
+  - name: Plans
+  - name: Metering
+  - name: Quotas
+  - name: RateLimits
+  - name: SLA
+  - name: CostModels
+  - name: Chargeback
+  - name: Invoices
+  - name: Budgets
+paths:
+  /resources:
+    post: {tags:[ResourceClasses], summary: Upsert resource class, responses: {"200": {description: OK}}}
+  /plans:
+    post: {tags:[Plans], summary: Upsert pricing plan, responses: {"200": {description: OK}}}
+  /meter/events:
+    post: {tags:[Metering], summary: Append usage meter event, responses: {"201": {description: Created}}}
+  /quotas:
+    post: {tags:[Quotas], summary: Upsert quota policy, responses: {"200": {description: OK}}}
+  /ratelimits:
+    post: {tags:[RateLimits], summary: Upsert rate limit, responses: {"200": {description: OK}}}
+  /sla:
+    post: {tags:[SLA], summary: Upsert SLA definition, responses: {"200": {description: OK}}}
+  /cost-models:
+    post: {tags:[CostModels], summary: Upsert cost model, responses: {"200": {description: OK}}}
+  /chargeback:
+    post: {tags:[Chargeback], summary: Record chargeback/showback entry, responses: {"201": {description: Created}}}
+  /invoices:
+    post: {tags:[Invoices], summary: Create or update invoice, responses: {"200": {description: OK}}}
+  /budgets/alerts:
+    post: {tags:[Budgets], summary: Upsert budget alert, responses: {"200": {description: OK}}}

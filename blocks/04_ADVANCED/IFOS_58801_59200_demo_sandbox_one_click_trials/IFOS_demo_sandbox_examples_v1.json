@@ -1,0 +1,81 @@
+{
+  "sandbox_profile": {
+    "profile_id": "sbx.s.bbcj5sb2x0bc",
+    "isolation": "per_run",
+    "permissions": [
+      "read_only_external",
+      "no_payments",
+      "no_mass_email"
+    ],
+    "limits": {
+      "max_requests_per_min": 60,
+      "max_run_seconds": 120,
+      "max_cost_units": 1000
+    },
+    "version": "1.0.0"
+  },
+  "fixture": {
+    "fixture_id": "fx.f.hvvf8z89s6ze",
+    "type": "rss_snapshot",
+    "payload_ref": "fixtures/rss_snapshot_2026_01_04.json",
+    "notes": "Снимок 200 новостей для сравнения дедупа.",
+    "version": "1.0.0"
+  },
+  "guardrails": {
+    "guardrails_id": "gr.g.plmm77mm8nw5",
+    "limits": {
+      "max_requests_per_min": 60,
+      "max_cost_units": 1000,
+      "max_storage_mb": 50
+    },
+    "blocked_actions": [
+      "payments.charge",
+      "crm.write_production",
+      "email.send_bulk"
+    ],
+    "version": "1.0.0"
+  },
+  "trial_token": {
+    "token_id": "tok.k.ipgjmtwdytvv",
+    "scopes": [
+      "rss.read",
+      "http.get",
+      "storage.write_sandbox"
+    ],
+    "ttl_seconds": 3600,
+    "max_cost_units": 1000,
+    "version": "1.0.0"
+  },
+  "trial_bundle": {
+    "trial_id": "trl.t.kyttw7uzde4f",
+    "bundle_ref": "bundle.news_conference_pack",
+    "sandbox_profile": "sbx.s.bbcj5sb2x0bc",
+    "fixtures": [
+      "fx.f.hvvf8z89s6ze"
+    ],
+    "guardrails": "gr.g.plmm77mm8nw5",
+    "compare_mode": true,
+    "version": "1.0.0"
+  },
+  "record_replay": {
+    "session_id": "rr.p.2qeog04bps3i",
+    "records": [
+      {
+        "t_ms": 0,
+        "req": "GET /rss",
+        "status": 200
+      },
+      {
+        "t_ms": 120,
+        "req": "GET /rss?page=2",
+        "status": 429
+      }
+    ],
+    "redaction": [
+      "Authorization",
+      "api_key",
+      "email"
+    ],
+    "version": "1.0.0"
+  }
+}

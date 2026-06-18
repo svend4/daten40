@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS OpenAPISource Schema v1",
+  "type": "object",
+  "required": [
+    "source_id",
+    "openapi_version",
+    "title",
+    "servers",
+    "security",
+    "hash",
+    "version"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string"
+    },
+    "openapi_version": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "servers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "security": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "hash": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

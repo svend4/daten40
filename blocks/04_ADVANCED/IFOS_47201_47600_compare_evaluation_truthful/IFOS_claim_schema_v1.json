@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Claim Schema v1",
+  "type": "object",
+  "required": [
+    "claim_id",
+    "cluster_id",
+    "claim_text",
+    "type",
+    "subject",
+    "params",
+    "source",
+    "version"
+  ],
+  "properties": {
+    "claim_id": {
+      "type": "string"
+    },
+    "cluster_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "claim_text": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "fact",
+        "opinion",
+        "forecast",
+        "marketing",
+        "unknown"
+      ]
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "params": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

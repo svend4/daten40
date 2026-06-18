@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Bundle Delta Schema v1",
+  "type": "object",
+  "required": [
+    "delta_id",
+    "bundle_id",
+    "from_version",
+    "to_version",
+    "files",
+    "signature_ref",
+    "version"
+  ],
+  "properties": {
+    "delta_id": {
+      "type": "string"
+    },
+    "bundle_id": {
+      "type": "string"
+    },
+    "from_version": {
+      "type": "string"
+    },
+    "to_version": {
+      "type": "string"
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "signature_ref": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

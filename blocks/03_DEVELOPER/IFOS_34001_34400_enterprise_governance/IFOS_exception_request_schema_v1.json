@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ExceptionRequest Schema v1",
+  "type": "object",
+  "required": [
+    "ex_id",
+    "tenant_id",
+    "requester",
+    "policy_id",
+    "requested_change",
+    "ttl_hours",
+    "status",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "ex_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "requester": {
+      "type": "string"
+    },
+    "policy_id": {
+      "type": "string"
+    },
+    "requested_change": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "ttl_hours": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 720
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "denied",
+        "expired"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "approved_by": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

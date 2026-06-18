@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ifos.example/schema/evidence-pack.json",
+  "title": "EvidencePack",
+  "type": "object",
+  "required": [
+    "pack_id",
+    "created_at",
+    "scope",
+    "controls",
+    "evidence_items",
+    "hash"
+  ],
+  "properties": {
+    "pack_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "time_from",
+        "time_to",
+        "environments"
+      ],
+      "properties": {
+        "time_from": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "time_to": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "environments": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "controls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Control IDs included"
+    },
+    "evidence_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "evidence_id",
+          "type",
+          "source",
+          "collected_at",
+          "uri",
+          "sha256"
+        ],
+        "properties": {
+          "evidence_id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "log_export",
+              "config_snapshot",
+              "ticket_snapshot",
+              "artifact_attestation",
+              "test_report",
+              "manual_document",
+              "other"
+            ]
+          },
+          "source": {
+            "type": "string"
+          },
+          "collected_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "uri": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "signatures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "by",
+          "at",
+          "sig"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "attestation",
+              "pgp",
+              "kms",
+              "sigstore"
+            ]
+          },
+          "by": {
+            "type": "string"
+          },
+          "at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "sig": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "hash": {
+      "type": "string",
+      "description": "Deterministic hash of pack contents"
+    }
+  }
+}

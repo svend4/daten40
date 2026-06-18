@@ -1,0 +1,8 @@
+{
+  "decision": "block",
+  "reason": "HIPAA baseline requires audit logging for PHI export",
+  "violated_rule": "phi_export_requires_audit",
+  "required_actions": [
+    "enable audit.logging"
+  ]
+}

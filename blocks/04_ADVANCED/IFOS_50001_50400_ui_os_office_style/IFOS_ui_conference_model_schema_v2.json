@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UIConferenceModel Schema v2",
+  "type": "object",
+  "required": [
+    "conf_id",
+    "topic",
+    "inputs",
+    "clusters",
+    "outputs",
+    "version"
+  ],
+  "properties": {
+    "conf_id": {
+      "type": "string"
+    },
+    "topic": {
+      "type": "string"
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "clusters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

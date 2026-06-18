@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SemanticQuery Schema v1",
+  "type": "object",
+  "required": [
+    "query_id",
+    "raw_query",
+    "intents",
+    "constraints",
+    "candidates",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "query_id": {
+      "type": "string"
+    },
+    "raw_query": {
+      "type": "string"
+    },
+    "intents": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "constraints": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

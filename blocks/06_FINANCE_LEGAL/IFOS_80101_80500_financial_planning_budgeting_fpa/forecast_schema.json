@@ -1,0 +1,9 @@
+{
+  "id": "string",
+  "scenario_id": "string",
+  "entity_id": "string",
+  "account": "string",
+  "period": "string",
+  "amount": "number",
+  "method": "enum: rolling|driver|manual"
+}

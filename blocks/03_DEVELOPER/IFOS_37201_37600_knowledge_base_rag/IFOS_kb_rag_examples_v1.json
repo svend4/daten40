@@ -1,0 +1,245 @@
+{
+  "doc_source": {
+    "source_id": "src.kb.08cjn8mkfnnq",
+    "tenant_id": "ten.t.bh8inrbyt8kb",
+    "type": "repo",
+    "location": {
+      "provider": "github",
+      "repo": "example/ifos-docs",
+      "branch": "main"
+    },
+    "auth_ref": "secrets:github_token",
+    "filters": {
+      "include": [
+        "docs/**",
+        "README.md"
+      ],
+      "exclude": [
+        "**/node_modules/**"
+      ]
+    },
+    "sync": {
+      "mode": "poll",
+      "interval_minutes": 60
+    },
+    "version": "1.0.0"
+  },
+  "doc_item": {
+    "doc_id": "doc.d.5gnahownvzkt",
+    "tenant_id": "ten.t.bh8inrbyt8kb",
+    "source_id": "src.kb.08cjn8mkfnnq",
+    "uri": "repo://example/ifos-docs/docs/intro.md",
+    "content_type": "text/markdown",
+    "fingerprint": "sha256:deadbeef",
+    "meta": {
+      "commit": "abc123",
+      "author": "dev",
+      "ts": "2026-01-03T15:05:00Z"
+    },
+    "version": "1.0.0"
+  },
+  "doc_parse_result": {
+    "parse_id": "parse.p.s0bj3jrurud6",
+    "tenant_id": "ten.t.bh8inrbyt8kb",
+    "doc_id": "doc.d.5gnahownvzkt",
+    "status": "ok",
+    "text": "# Intro\\nThis is a KB doc...",
+    "structure": {
+      "headings": [
+        {
+          "level": 1,
+          "title": "Intro",
+          "offset": 0
+        }
+      ]
+    },
+    "provenance": {
+      "uri": "repo://...",
+      "commit": "abc123",
+      "parsed_at": "2026-01-03T15:05:00Z"
+    },
+    "version": "1.0.0"
+  },
+  "chunk_spec": {
+    "chunk_spec_id": "cs.c.0bbxeetzxxs6",
+    "tenant_id": "ten.t.bh8inrbyt8kb",
+    "strategy": "heading_aware",
+    "target_tokens": 350,
+    "overlap_tokens": 50,
+    "boundaries": [
+      "heading",
+      "paragraph",
+      "code_block"
+    ],
+    "rules": {
+      "split_on": "H2",
+      "keep_code_blocks": true
+    },
+    "version": "1.0.0"
+  },
+  "chunk_item": {
+    "chunk_id": "chk.c.xmy0nin89lnx",
+    "tenant_id": "ten.t.bh8inrbyt8kb",
+    "doc_id": "doc.d.5gnahownvzkt",
+    "text": "This is a chunk...",
+    "offsets": {
+      "start": 10,
+      "end": 120
+    },
+    "section_path": [
+      "Intro"
+    ],
+    "hints": {
+      "is_code": false,
+      "lang": "en"
+    },
+    "version": "1.0.0"
+  },
+  "embedding_model": {
+    "model_id": "emb.m.qdnrinvot12i",
+    "provider": "local",
+    "dimension": 768,
+    "languages": [
+      "en",
+      "ru",
+      "de"
+    ],
+    "normalization": "l2",
+    "cost": {
+      "unit": "cpu",
+      "note": "offline"
+    },
+    "version": "1.0.0"
+  },
+  "vector_index": {
+    "index_id": "idx.i.w5osynuiczsd",
+    "tenant_id": "ten.t.bh8inrbyt8kb",
+    "backend": "faiss",
+    "embedding_model": "emb.m.qdnrinvot12i",
+    "namespace": "tenant/ten.t.bh8inrbyt8kb/bundle/kb.b.lj4f724uare4",
+    "filters": {
+      "rbac": true,
+      "abac": true
+    },
+    "sharding": {
+      "strategy": "none"
+    },
+    "version": "1.0.0"
+  },
+  "retrieval_query": {
+    "query_id": "qry.q.3z418pus6sn3",
+    "tenant_id": "ten.t.bh8inrbyt8kb",
+    "text": "How to install a bundle?",
+    "scope": {
+      "bundle_id": "kb.b.lj4f724uare4"
+    },
+    "filters": {
+      "doc_type": [
+        "markdown"
+      ],
+      "tags": [
+        "install"
+      ]
+    },
+    "top_k": 8,
+    "must_cite": true,
+    "version": "1.0.0"
+  },
+  "retrieval_result": {
+    "result_id": "res.r.o48f4javug7y",
+    "tenant_id": "ten.t.bh8inrbyt8kb",
+    "query_id": "qry.q.3z418pus6sn3",
+    "items": [
+      {
+        "chunk_id": "chk.c.xmy0nin89lnx",
+        "score": 0.82,
+        "doc_id": "doc.d.5gnahownvzkt",
+        "reason": "install section"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "rerank_spec": {
+    "rerank_id": "rr.r.endci7fv27eh",
+    "tenant_id": "ten.t.bh8inrbyt8kb",
+    "method": "rule_based",
+    "params": {
+      "prefer_freshness": true,
+      "prefer_authority": true
+    },
+    "version": "1.0.0"
+  },
+  "citation": {
+    "cite_id": "cite.c.vvky84abdzlt",
+    "tenant_id": "ten.t.bh8inrbyt8kb",
+    "doc_id": "doc.d.5gnahownvzkt",
+    "chunk_id": "chk.c.xmy0nin89lnx",
+    "offsets": {
+      "start": 10,
+      "end": 120
+    },
+    "locator": {
+      "uri": "repo://example/ifos-docs/docs/intro.md",
+      "commit": "abc123"
+    },
+    "why": "Explains install procedure",
+    "version": "1.0.0"
+  },
+  "kb_bundle": {
+    "bundle_id": "kb.b.lj4f724uare4",
+    "tenant_id": "ten.t.bh8inrbyt8kb",
+    "name": "IFOS Docs KB",
+    "sources": [
+      "src.kb.08cjn8mkfnnq"
+    ],
+    "policies": {
+      "access": "internal",
+      "pii_redaction": true
+    },
+    "index_id": "idx.i.w5osynuiczsd",
+    "tags": [
+      "docs",
+      "ifos"
+    ],
+    "version": "1.0.0"
+  },
+  "kb_snapshot": {
+    "snapshot_id": "snap.s.4n262794zlwo",
+    "tenant_id": "ten.t.bh8inrbyt8kb",
+    "bundle_id": "kb.b.lj4f724uare4",
+    "created_at": "2026-01-03T15:05:00Z",
+    "artifacts": [
+      {
+        "type": "chunks",
+        "path": "chunks.jsonl"
+      },
+      {
+        "type": "vectors",
+        "path": "vectors.faiss"
+      }
+    ],
+    "hashes": [
+      "sha256:001122"
+    ],
+    "version": "1.0.0"
+  },
+  "rag_eval_run": {
+    "eval_id": "eval.e.eygyzyzdf04c",
+    "tenant_id": "ten.t.bh8inrbyt8kb",
+    "bundle_id": "kb.b.lj4f724uare4",
+    "questions": [
+      {
+        "q": "How to install?",
+        "expected_doc": "doc.d.5gnahownvzkt"
+      }
+    ],
+    "metrics": {
+      "recall_at_5": 0.8,
+      "mrr": 0.6,
+      "citation_coverage": 0.75,
+      "faithfulness": 0.7
+    },
+    "created_at": "2026-01-03T15:05:00Z",
+    "version": "1.0.0"
+  }
+}

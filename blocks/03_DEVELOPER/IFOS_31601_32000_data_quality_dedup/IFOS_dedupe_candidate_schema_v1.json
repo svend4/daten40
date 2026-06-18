@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DedupeCandidate Schema v1",
+  "type": "object",
+  "required": [
+    "pair_id",
+    "a_record_id",
+    "b_record_id",
+    "signals",
+    "version"
+  ],
+  "properties": {
+    "pair_id": {
+      "type": "string"
+    },
+    "a_record_id": {
+      "type": "string"
+    },
+    "b_record_id": {
+      "type": "string"
+    },
+    "signals": {
+      "type": "object",
+      "properties": {
+        "url_equal": {
+          "type": "boolean"
+        },
+        "title_sim": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "text_sim": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "date_delta_hours": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

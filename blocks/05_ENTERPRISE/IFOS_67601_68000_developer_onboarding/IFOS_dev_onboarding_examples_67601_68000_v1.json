@@ -1,0 +1,80 @@
+{
+  "scaffold_request": {
+    "request_id": "scaffold_fY9ufVvLTMu_",
+    "provider_id": "sb.crm",
+    "project_template_id": "pt.py.fastapi",
+    "connector_template_id": "ct.rest.oauth",
+    "ops": [
+      "list",
+      "get",
+      "create"
+    ],
+    "auth_overrides": {
+      "callback_urls": [
+        "https://app.local/callback"
+      ],
+      "scopes": [
+        "openid",
+        "profile"
+      ]
+    },
+    "output_path": "./connectors/crm",
+    "version": "1.0.0"
+  },
+  "scaffold_result": {
+    "result_id": "result_lh75nnKoQD6N",
+    "request_id": "scaffold_fY9ufVvLTMu_",
+    "repo_files": [
+      "connectors/crm/provider.py",
+      "connectors/crm/oauth.py",
+      "tests/test_smoke.py",
+      "docs/quickstart.md"
+    ],
+    "next_steps": [
+      "ifos keys request --provider sb.crm --key key.crm.oauth --ttl 30d",
+      "ifos demo seed --bundle tb.crm_email.1",
+      "ifos validate --profile public-min",
+      "ifos docs build --format md,html --out ./docs"
+    ],
+    "validation_profile": "vp.public_min",
+    "docs_job_hint": {
+      "docs_template_id": "dt.standard",
+      "formats": [
+        "md",
+        "html"
+      ]
+    },
+    "version": "1.0.0"
+  },
+  "docs_build_job": {
+    "job_id": "docsjob_8794LTQqQdad",
+    "created_at": "2026-01-02T15:30:00Z",
+    "repo_ref": "git://example/my-connector@main",
+    "docs_template_id": "dt.standard",
+    "formats": [
+      "md",
+      "html"
+    ],
+    "status": "QUEUED",
+    "output_artifacts": [],
+    "version": "1.0.0"
+  },
+  "publishing_pipeline": {
+    "pipeline_id": "pp.private.basic",
+    "stages": [
+      "build",
+      "validate",
+      "sign",
+      "publish",
+      "notify",
+      "smoke_test"
+    ],
+    "channels": [
+      "private"
+    ],
+    "signing_required": true,
+    "post_publish_smoke": true,
+    "validation_profile": "vp.public_min",
+    "version": "1.0.0"
+  }
+}

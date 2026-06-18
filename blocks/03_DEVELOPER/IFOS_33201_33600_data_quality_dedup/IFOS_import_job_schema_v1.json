@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ImportJob Schema v1",
+  "type": "object",
+  "required": [
+    "job_id",
+    "source_id",
+    "strategy",
+    "stage",
+    "stats",
+    "started_at",
+    "ended_at",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "job_id": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "strategy": {
+      "type": "string",
+      "enum": [
+        "full",
+        "incremental"
+      ]
+    },
+    "stage": {
+      "type": "string",
+      "enum": [
+        "fetch",
+        "parse",
+        "normalize",
+        "dedup",
+        "merge",
+        "publish",
+        "quarantine"
+      ]
+    },
+    "stats": {
+      "type": "object",
+      "properties": {
+        "raw_fetched": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "canonical_created": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "canonical_updated": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "dedup_candidates": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "auto_merged": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "needs_review": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "quarantined": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ended_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "running",
+        "succeeded",
+        "failed"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

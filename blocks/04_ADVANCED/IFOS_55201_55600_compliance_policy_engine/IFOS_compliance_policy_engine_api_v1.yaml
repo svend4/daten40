@@ -1,0 +1,17 @@
+openapi: 3.0.3
+info:
+  title: IFOS Compliance & Policy Engine API
+  version: "1.0.0"
+servers:
+  - url: https://policy.ifos.local/v1
+tags:
+  - name: Policies
+  - name: Decisions
+  - name: Audit
+paths:
+  /policies:
+    post: {tags:[Policies], summary: Create or update policy pack, responses: {"200": {description: OK}}}
+  /evaluate:
+    post: {tags:[Decisions], summary: Evaluate context against policies, responses: {"200": {description: OK}}}
+  /audit/events:
+    post: {tags:[Audit], summary: Append audit event, responses: {"200": {description: OK}}}

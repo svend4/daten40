@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS MFA Policy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "stepup_rules",
+    "methods_allowed",
+    "version"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "stepup_rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "methods_allowed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "remember_device_days": {
+      "type": "integer"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

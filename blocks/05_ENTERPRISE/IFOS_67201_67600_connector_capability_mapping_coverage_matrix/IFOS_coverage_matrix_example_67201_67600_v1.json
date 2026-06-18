@@ -1,0 +1,35 @@
+{
+  "generated_at": "2026-01-03",
+  "rows": [
+    {
+      "connector_id": "make:rss",
+      "domain": "news",
+      "coverage_L0": 0.2,
+      "coverage_L1": 0.6,
+      "coverage_L2": 0.1,
+      "coverage_total": 0.3,
+      "confidence_avg": 0.7,
+      "freshness_avg_days": 30
+    },
+    {
+      "connector_id": "make:telegram",
+      "domain": "notify",
+      "coverage_L0": 0.1,
+      "coverage_L1": 0.5,
+      "coverage_L2": 0.2,
+      "coverage_total": 0.4,
+      "confidence_avg": 0.75,
+      "freshness_avg_days": 30
+    },
+    {
+      "connector_id": "n8n:httpRequest",
+      "domain": "core",
+      "coverage_L0": 0.9,
+      "coverage_L1": 0.1,
+      "coverage_L2": 0.0,
+      "coverage_total": 0.5,
+      "confidence_avg": 0.8,
+      "freshness_avg_days": 20
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "actions": [
+    {
+      "id": "allow",
+      "description": "Proceed normally"
+    },
+    {
+      "id": "warn",
+      "description": "Proceed with warning + log"
+    },
+    {
+      "id": "block",
+      "description": "Stop execution"
+    },
+    {
+      "id": "require_approval",
+      "description": "Pause until approval"
+    },
+    {
+      "id": "mask_data",
+      "description": "Redact sensitive fields"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "license": {
+    "license_id": "lic.l.dg3g5ugw5n0y",
+    "name": "Dual License (Community + Enterprise)",
+    "type": "dual",
+    "terms": [
+      "community edition is open core",
+      "enterprise features require subscription",
+      "redistribution limits apply"
+    ],
+    "version": "1.0.0"
+  },
+  "pricing_plan": {
+    "plan_id": "plan.p.dshesvxrtjpa",
+    "model": "usage",
+    "currency": "EUR",
+    "price": 0.02,
+    "usage_unit": "cost_unit",
+    "version": "1.0.0"
+  },
+  "payout": {
+    "payout_id": "pay.y.09om7f8s26sv",
+    "gross": 1000.0,
+    "currency": "EUR",
+    "splits": [
+      {
+        "party": "creator",
+        "percent": 70
+      },
+      {
+        "party": "platform",
+        "percent": 20
+      },
+      {
+        "party": "maintainers",
+        "percent": 5
+      },
+      {
+        "party": "quality_fund",
+        "percent": 5
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "bounty": {
+    "bounty_id": "bty.b.95qnh20n0b1k",
+    "title": "Add Connector: ExampleCRM OAuth",
+    "criteria": [
+      "passes connector auth benchmark",
+      "docs A or better",
+      "security scan clean"
+    ],
+    "reward": 2500.0,
+    "currency": "EUR",
+    "expires_at": "2026-01-05T00:45:00Z",
+    "version": "1.0.0"
+  },
+  "trust_tier": {
+    "tier_id": "tier.t.no9raw37zyir",
+    "name": "T3 Production-ready",
+    "requirements": [
+      "benchmarked",
+      "security_reviewed",
+      "monitoring_enabled",
+      "change_control_ready"
+    ],
+    "benefits": [
+      "higher search visibility",
+      "lower platform fee",
+      "enterprise clients eligible"
+    ],
+    "version": "1.0.0"
+  },
+  "warranty": {
+    "warranty_id": "war.w.kn5fsc3d75px",
+    "coverage": [
+      "SLA breach compensation",
+      "critical security fix window"
+    ],
+    "limits": {
+      "max_claim_eur": 5000,
+      "window_days": 30
+    },
+    "claims_process": [
+      "open ticket",
+      "provide evidence",
+      "triage",
+      "payout or credits"
+    ],
+    "version": "1.0.0"
+  }
+}

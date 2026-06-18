@@ -1,0 +1,116 @@
+{
+  "cluster": {
+    "cluster_id": "clu.c.j2lkaufkg49r",
+    "name": "News ingest → dedup → ranking → conference",
+    "job_story": "Когда я собираю новости, я хочу автоматически убрать повторы, ранжировать и обсуждать в режиме конференции.",
+    "members": [
+      "connector.rss",
+      "pipeline.dedup",
+      "search.rank",
+      "vitrine.conference_mode"
+    ],
+    "recommended_macros": [
+      "mac.m.qorjl1d4b237"
+    ],
+    "version": "1.0.0"
+  },
+  "evidence": {
+    "evidence_id": "evd.e.w53thfwgtyfn",
+    "type": "analytics",
+    "refs": [
+      "dash.sync",
+      "metric:dropoff.step3",
+      "events:timeout_spike.telegram"
+    ],
+    "summary": "Падение completion rate на шаге 3 из-за таймаутов; пользователи повторяют шаги.",
+    "version": "1.0.0"
+  },
+  "macro": {
+    "macro_id": "mac.m.qorjl1d4b237",
+    "name": "Weekly News Conference Digest",
+    "level": "standard",
+    "intent": "Собрать новости из RSS + dedup + выделить топ + опубликовать в конференц-витрине.",
+    "prerequisites": [
+      "connector.rss",
+      "storage.vault",
+      "vitrine.conference_mode"
+    ],
+    "steps": [
+      {
+        "module": "rss.fetch",
+        "params": {
+          "sources": "list",
+          "window": "7d"
+        }
+      },
+      {
+        "module": "dedup.run",
+        "params": {
+          "key": "url+title"
+        }
+      },
+      {
+        "module": "rank.run",
+        "params": {
+          "signals": "recency+source_trust"
+        }
+      },
+      {
+        "module": "vitrine.publish",
+        "params": {
+          "mode": "conference"
+        }
+      }
+    ],
+    "error_handling": [
+      "retry:3",
+      "timeout:30s",
+      "fallback:store_raw"
+    ],
+    "outputs": [
+      "vitrine:news_conference",
+      "vault:raw_dump"
+    ],
+    "version": "1.0.0"
+  },
+  "refactor_plan": {
+    "plan_id": "plan.p.wmk2xu6bdq4v",
+    "target_ref": "workflow.weekly_news_digest",
+    "changes": [
+      "remove_duplicate_step:dedup",
+      "add_guard:validate_sources",
+      "add_retries:connector.rss"
+    ],
+    "evidence": [
+      "evd.e.w53thfwgtyfn"
+    ],
+    "risk": "medium",
+    "expected_impact": {
+      "completion_rate": "+12%",
+      "error_rate": "-30%"
+    },
+    "version": "1.0.0"
+  },
+  "patch": {
+    "patch_id": "ptc.h.2dimhuaeoj1j",
+    "target_ref": "workflow.weekly_news_digest",
+    "diff": "- step: dedup\\n+ step: dedup (single)\\n+ step: validate_sources\\n+ retries: 3",
+    "applies_to_version": "1.0.2",
+    "rollback": "restore snapshot workflow@1.0.2",
+    "version": "1.0.0"
+  },
+  "review": {
+    "review_id": "rev.r.jg3h3p2s9m0s",
+    "plan_ref": "plan.p.wmk2xu6bdq4v",
+    "status": "pending",
+    "comments": [
+      "Проверьте, что policy позволяет публикацию без PII.",
+      "Добавить runbook на случай пустого RSS."
+    ],
+    "approvers": [
+      "role.owner.workflow",
+      "role.security.reviewer"
+    ],
+    "version": "1.0.0"
+  }
+}

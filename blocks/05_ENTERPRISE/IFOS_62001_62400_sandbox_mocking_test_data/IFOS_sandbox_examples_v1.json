@@ -1,0 +1,60 @@
+{
+  "fixture_health_ok": {
+    "fixture_id": "fix.health.ok",
+    "type": "Health",
+    "payload": {
+      "status": "ok"
+    },
+    "version": "1.0.0"
+  },
+  "dataset_news_example": {
+    "dataset_id": "ds.news.v1",
+    "name": "News Events Demo",
+    "seed": 7,
+    "locale": "en-US",
+    "fixtures": [
+      {
+        "fixture_id": "fix.source.1",
+        "type": "Source",
+        "payload": {
+          "name": "ExampleNews",
+          "url": "https://example.com"
+        },
+        "version": "1.0.0"
+      },
+      {
+        "fixture_id": "fix.event.1",
+        "type": "NewsEvent",
+        "payload": {
+          "title": "Example event",
+          "published_at": "2026-01-01T10:00:00Z"
+        },
+        "version": "1.0.0"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "recording_stub": {
+    "recording_id": "rec.news.v1",
+    "connector_id": "connector.newsapi",
+    "created_at": "2026-01-02T16:01:32Z",
+    "redaction_profile": "pii.strict",
+    "entries": [
+      {
+        "request": {
+          "method": "GET",
+          "url": "/v1/top"
+        },
+        "response": {
+          "status": 200,
+          "body": {
+            "items": []
+          }
+        },
+        "timing_ms": 120
+      }
+    ],
+    "hash": "sha256:...",
+    "version": "1.0.0"
+  }
+}

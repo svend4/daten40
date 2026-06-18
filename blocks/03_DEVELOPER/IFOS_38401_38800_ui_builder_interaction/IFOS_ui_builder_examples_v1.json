@@ -1,0 +1,241 @@
+{
+  "ui_card": {
+    "card_id": "card.c.o7xz62ymhhig",
+    "type": "workflow",
+    "title": "Импорт CSV → Дедуп → Реестр",
+    "description": "Загружает CSV, очищает, убирает дубликаты, добавляет в реестр IFOS.",
+    "tags": [
+      "import",
+      "dedup",
+      "registry",
+      "office2.0"
+    ],
+    "inputs": {
+      "csv_file": {
+        "type": "file"
+      },
+      "dedup_key": {
+        "type": "string",
+        "default": "url"
+      }
+    },
+    "actions": [
+      {
+        "id": "run",
+        "label": "Запустить",
+        "action_type": "run",
+        "payload": {
+          "workflow_id": "wf.import_csv_dedup"
+        }
+      },
+      {
+        "id": "preview",
+        "label": "Пример",
+        "action_type": "preview",
+        "payload": {
+          "example": "examples/import.csv"
+        }
+      }
+    ],
+    "risk": "confirm",
+    "links": {
+      "docs": "kb://ifos/import_csv",
+      "reviews": "market://reviews/wf.import_csv_dedup"
+    },
+    "version": "1.0.0"
+  },
+  "ui_vitrine": {
+    "vitrine_id": "vit.v.958t558le5ly",
+    "title": "Office 2.0 — Базовые макросы",
+    "cards": [
+      "card.c.o7xz62ymhhig"
+    ],
+    "filters": [
+      {
+        "name": "category",
+        "values": [
+          "import",
+          "crm",
+          "docs"
+        ]
+      }
+    ],
+    "onboarding": {
+      "step1": "Выберите карточку",
+      "step2": "Заполните форму",
+      "step3": "Запустите сценарий"
+    },
+    "recommended_bundles": [
+      "bundle.office2"
+    ],
+    "version": "1.0.0"
+  },
+  "ui_form": {
+    "form_id": "form.f.buu0hhw9dooo",
+    "title": "Импорт CSV в реестр",
+    "fields": [
+      {
+        "id": "csv_file",
+        "label": "CSV файл",
+        "type": "file",
+        "required": true,
+        "help": "Загрузите таблицу с функциями"
+      },
+      {
+        "id": "dedup_key",
+        "label": "Ключ дедупликации",
+        "type": "select",
+        "required": true,
+        "options": [
+          {
+            "label": "URL",
+            "value": "url"
+          },
+          {
+            "label": "name+provider",
+            "value": "name_provider"
+          }
+        ]
+      }
+    ],
+    "wizard": {
+      "steps": [
+        {
+          "title": "Файл",
+          "fields": [
+            "csv_file"
+          ]
+        },
+        {
+          "title": "Настройки",
+          "fields": [
+            "dedup_key"
+          ]
+        }
+      ]
+    },
+    "version": "1.0.0"
+  },
+  "ui_state_model": {
+    "state_id": "state.s.uk7lhfyfvidd",
+    "tenant_id": "ten.t.1hoq9vmplboa",
+    "context": {
+      "project": "Office2",
+      "bundle": "bundle.office2",
+      "locale": "ru"
+    },
+    "drafts": {
+      "form:form.f.buu0hhw9dooo": {
+        "dedup_key": "url"
+      }
+    },
+    "history": [
+      {
+        "ts": "2026-01-03T18:20:00Z",
+        "action": "open_vitrine",
+        "id": "vit.v.958t558le5ly"
+      }
+    ],
+    "links": {
+      "last_run": "run.123"
+    },
+    "version": "1.0.0"
+  },
+  "interaction_mode": {
+    "mode_id": "mode.m.pxukaiw2sh1q",
+    "name": "assisted",
+    "level": "intermediate",
+    "rules": {
+      "auto_plan": true,
+      "require_approval_for": "confirm"
+    },
+    "version": "1.0.0"
+  },
+  "explainability_bundle": {
+    "explain_id": "exp.e.wf7hm6plk7c8",
+    "run_id": "run.123",
+    "citations": [
+      {
+        "doc": "kb://ifos/import_csv",
+        "chunk": "chk.1",
+        "offsets": {
+          "start": 0,
+          "end": 120
+        }
+      }
+    ],
+    "policies": [
+      {
+        "policy": "pol.external_write",
+        "decision": "require_approval"
+      }
+    ],
+    "decisions": [
+      {
+        "type": "ranking",
+        "reason": "best match for 'import+dedup'"
+      }
+    ],
+    "risks": [
+      {
+        "category": "external_write",
+        "impact": "medium"
+      }
+    ],
+    "rollback_hint": "Re-run with dry_run=true or restore from snapshot snap.10",
+    "version": "1.0.0"
+  },
+  "ux_policy": {
+    "ux_policy_id": "ux.u.qf40su58ezf4",
+    "tenant_id": "ten.t.1hoq9vmplboa",
+    "rules": [
+      {
+        "if": {
+          "risk": "confirm"
+        },
+        "then": {
+          "double_confirm": true,
+          "show_risk_banner": true
+        }
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "ui_event": {
+    "event_id": "uie.e.9pjlewfv0do9",
+    "tenant_id": "ten.t.1hoq9vmplboa",
+    "ts": "2026-01-03T18:20:00Z",
+    "type": "form.submit",
+    "payload": {
+      "form_id": "form.f.buu0hhw9dooo",
+      "duration_ms": 42000,
+      "errors": 0
+    },
+    "version": "1.0.0"
+  },
+  "accessibility_profile": {
+    "profile_id": "a11y.a.ujo32ai066pw",
+    "name": "LargeTextHighContrast",
+    "settings": {
+      "font_scale": 1.3,
+      "high_contrast": true,
+      "reduced_motion": true
+    },
+    "version": "1.0.0"
+  },
+  "localization_pack": {
+    "pack_id": "i18n.l.ncejvnje5rhg",
+    "locale": "ru-RU",
+    "strings": {
+      "run": "Запустить",
+      "install": "Установить",
+      "risk_confirm": "Требует подтверждения"
+    },
+    "glossary": {
+      "vitrine": "витрина",
+      "bundle": "пакет",
+      "tool": "инструмент"
+    },
+    "version": "1.0.0"
+  }
+}

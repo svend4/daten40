@@ -1,0 +1,9 @@
+{
+  "pack_id": "dp_gov_services_prod",
+  "domain": {
+    "slug": "gov_services",
+    "industry": "public"
+  },
+  "version": "1.0.0",
+  "status": "production"
+}

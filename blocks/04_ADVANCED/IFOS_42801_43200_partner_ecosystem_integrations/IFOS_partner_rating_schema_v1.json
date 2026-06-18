@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS PartnerRating Schema v1",
+  "type": "object",
+  "required": [
+    "rating_id",
+    "target",
+    "score",
+    "verified",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "rating_id": {
+      "type": "string"
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "score": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "reasons": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "text": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "verified": {
+      "type": "boolean"
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

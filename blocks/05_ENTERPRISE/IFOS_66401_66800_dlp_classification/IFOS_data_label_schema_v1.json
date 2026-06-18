@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DataLabel Schema v1",
+  "type": "object",
+  "required": [
+    "label_id",
+    "namespace",
+    "value_pattern",
+    "description",
+    "version"
+  ],
+  "properties": {
+    "label_id": {
+      "type": "string"
+    },
+    "namespace": {
+      "type": "string"
+    },
+    "value_pattern": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "examples": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

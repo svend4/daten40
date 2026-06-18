@@ -1,0 +1,68 @@
+{
+  "plan_id": "plan_20260111_151308",
+  "steps": [
+    {
+      "node_id": "step1",
+      "chosen": {
+        "connector": "wordpress",
+        "operation": "form_submission_webhook",
+        "why": [
+          "native trigger",
+          "high coverage"
+        ]
+      },
+      "rejected_top": [
+        {
+          "connector": "webhook",
+          "operation": "http_post",
+          "why": [
+            "lower coverage"
+          ]
+        }
+      ],
+      "notes": "WordPress trigger best matches 'форма на сайте'."
+    },
+    {
+      "node_id": "step2",
+      "chosen": {
+        "connector": "hubspot",
+        "operation": "contacts.create",
+        "why": [
+          "allowed connector",
+          "good trust score"
+        ]
+      },
+      "rejected_top": [
+        {
+          "connector": "salesforce",
+          "operation": "contacts.create",
+          "why": [
+            "not allowed in allowlist"
+          ]
+        }
+      ],
+      "notes": "HubSpot выбран по allowlist + score."
+    },
+    {
+      "node_id": "step3",
+      "chosen": {
+        "connector": "sendgrid",
+        "operation": "send_email",
+        "why": [
+          "deliverability",
+          "cost within budget"
+        ]
+      },
+      "rejected_top": [
+        {
+          "connector": "gmail",
+          "operation": "send",
+          "why": [
+            "lower deliverability score"
+          ]
+        }
+      ],
+      "notes": "SendGrid выбран по deliverability и бюджету."
+    }
+  ]
+}

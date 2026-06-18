@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Refactor Evidence Schema v1",
+  "type": "object",
+  "required": [
+    "evidence_id",
+    "type",
+    "refs",
+    "summary",
+    "version"
+  ],
+  "properties": {
+    "evidence_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "analytics",
+        "observability",
+        "support",
+        "marketplace",
+        "data_quality",
+        "graph"
+      ]
+    },
+    "refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "summary": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

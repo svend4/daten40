@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS HumanReview Schema v1",
+  "type": "object",
+  "required": [
+    "review_id",
+    "subject",
+    "rubric",
+    "scores",
+    "flags",
+    "reviewer",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "review_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "rubric": {
+      "type": "string"
+    },
+    "scores": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "flags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reviewer": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

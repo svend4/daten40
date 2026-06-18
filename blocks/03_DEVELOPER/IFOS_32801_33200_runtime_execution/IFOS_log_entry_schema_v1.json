@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS LogEntry Schema v1",
+  "type": "object",
+  "required": [
+    "log_id",
+    "run_id",
+    "level",
+    "message",
+    "ts",
+    "trace_id",
+    "version"
+  ],
+  "properties": {
+    "log_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "debug",
+        "info",
+        "warn",
+        "error"
+      ]
+    },
+    "message": {
+      "type": "string"
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "trace_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "fields": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "redacted": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

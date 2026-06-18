@@ -1,0 +1,102 @@
+{
+  "bundle_manifest": {
+    "bundle_id": "bun.b.q6z6nntyvc4g",
+    "name": "News → Dedup → Conference",
+    "goal": "Собрать новости, убрать дубликаты, сделать протокол-конференцию.",
+    "items": [
+      "reg.connector.rss",
+      "reg.dedup.core",
+      "reg.ai.summarizer",
+      "reg.ui.conference"
+    ],
+    "targets": [
+      "docker_compose",
+      "make",
+      "n8n"
+    ],
+    "requirements": {
+      "ram_mb": 1024,
+      "ports": [
+        8080
+      ]
+    },
+    "secrets": [
+      {
+        "name": "OPENAI_API_KEY",
+        "required": false
+      },
+      {
+        "name": "TELEGRAM_BOT_TOKEN",
+        "required": true
+      }
+    ],
+    "tests": [
+      {
+        "type": "healthcheck",
+        "path": "/health"
+      },
+      {
+        "type": "smoke",
+        "name": "fetch_one_feed"
+      }
+    ],
+    "exports": [
+      "zip",
+      "docker_compose"
+    ],
+    "version": "1.0.0"
+  },
+  "preflight": {
+    "check_id": "chk.c.tgphpqxj69xx",
+    "bundle_id": "bun.*",
+    "checks": [
+      {
+        "name": "port_free_8080",
+        "ok": true
+      },
+      {
+        "name": "telegram_token_present",
+        "ok": false,
+        "hint": "set TELEGRAM_BOT_TOKEN"
+      }
+    ],
+    "result": "fail",
+    "version": "1.0.0"
+  },
+  "lockfile": {
+    "lock_id": "lock.l.o3hhbte24m8y",
+    "bundle_id": "bun.*",
+    "items": [
+      {
+        "id": "reg.ai.summarizer",
+        "version": "1.2.3"
+      }
+    ],
+    "hashes": {
+      "reg.ai.summarizer": "sha256:*"
+    },
+    "sources": {
+      "reg.ai.summarizer": "https://github.com/example/summarizer/releases"
+    },
+    "version": "1.0.0"
+  },
+  "receipt": {
+    "receipt_id": "rcp.r.0yjnvpoxqc7l",
+    "bundle_id": "bun.*",
+    "installed": [
+      {
+        "id": "reg.dedup.core",
+        "version": "0.9.0",
+        "target": "docker"
+      }
+    ],
+    "health": {
+      "status": "ok"
+    },
+    "links": [
+      "http://localhost:8080"
+    ],
+    "ts": "2026-01-04T11:45:00Z",
+    "version": "1.0.0"
+  }
+}

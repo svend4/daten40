@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Champion Schema v1",
+  "type": "object",
+  "required": [
+    "champion_id",
+    "org_id",
+    "role",
+    "checklist",
+    "version"
+  ],
+  "properties": {
+    "champion_id": {
+      "type": "string"
+    },
+    "org_id": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "checklist": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

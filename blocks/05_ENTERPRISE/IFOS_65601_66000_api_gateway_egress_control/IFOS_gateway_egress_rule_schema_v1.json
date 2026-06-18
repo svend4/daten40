@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS GatewayEgressRule Schema v1",
+  "type": "object",
+  "required": [
+    "rule_id",
+    "mode",
+    "allowlist_set_id",
+    "methods",
+    "ports",
+    "ssrf_guards",
+    "max_payload_bytes",
+    "version"
+  ],
+  "properties": {
+    "rule_id": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "deny_all",
+        "allowlist",
+        "record_only"
+      ]
+    },
+    "allowlist_set_id": {
+      "type": "string"
+    },
+    "methods": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ports": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "ssrf_guards": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "max_payload_bytes": {
+      "type": "integer"
+    },
+    "max_response_bytes": {
+      "type": "integer"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

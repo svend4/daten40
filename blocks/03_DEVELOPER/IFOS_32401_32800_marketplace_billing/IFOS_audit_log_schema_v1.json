@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS AuditLog Schema v1",
+  "type": "object",
+  "required": [
+    "log_id",
+    "actor_kind",
+    "actor_id",
+    "action",
+    "target",
+    "occurred_at",
+    "meta",
+    "version"
+  ],
+  "properties": {
+    "log_id": {
+      "type": "string"
+    },
+    "actor_kind": {
+      "type": "string",
+      "enum": [
+        "system",
+        "user",
+        "seller",
+        "admin"
+      ]
+    },
+    "actor_id": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string"
+    },
+    "target": {
+      "type": "object",
+      "required": [
+        "kind",
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

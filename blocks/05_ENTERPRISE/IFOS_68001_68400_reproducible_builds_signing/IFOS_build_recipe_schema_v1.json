@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS BuildRecipe Schema v1",
+  "type": "object",
+  "required": [
+    "recipe_id",
+    "source_ref",
+    "environment",
+    "lockfiles",
+    "steps",
+    "outputs",
+    "determinism",
+    "version_schema"
+  ],
+  "properties": {
+    "recipe_id": {
+      "type": "string"
+    },
+    "source_ref": {
+      "type": "string"
+    },
+    "environment": {
+      "type": "object",
+      "required": [
+        "container_image",
+        "toolchain"
+      ],
+      "properties": {
+        "container_image": {
+          "type": "string"
+        },
+        "toolchain": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "os": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "lockfiles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "determinism": {
+      "type": "object",
+      "properties": {
+        "reproducible": {
+          "type": "boolean"
+        },
+        "flags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "version_schema": {
+      "type": "string",
+      "const": "1.0.0"
+    }
+  }
+}

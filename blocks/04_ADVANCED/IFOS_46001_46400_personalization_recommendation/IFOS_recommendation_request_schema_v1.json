@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RecommendationRequest Schema v1",
+  "type": "object",
+  "required": [
+    "request_id",
+    "user_id",
+    "context",
+    "filters",
+    "k",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "request_id": {
+      "type": "string"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "filters": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "k": {
+      "type": "integer"
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

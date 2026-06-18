@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SharingPolicyPack Schema v1",
+  "type": "object",
+  "required": [
+    "pack_id",
+    "rooms",
+    "approval_flows",
+    "sample_policies",
+    "profiles",
+    "version"
+  ],
+  "properties": {
+    "pack_id": {
+      "type": "string"
+    },
+    "rooms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "approval_flows": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sample_policies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "profiles": {
+      "type": "object",
+      "properties": {
+        "deid": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "synthetic": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "notes": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

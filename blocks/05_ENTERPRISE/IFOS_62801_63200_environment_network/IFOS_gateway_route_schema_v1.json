@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Gateway Route Schema v1",
+  "type": "object",
+  "required": [
+    "route_id",
+    "public_path",
+    "target_service",
+    "version"
+  ],
+  "properties": {
+    "route_id": {
+      "type": "string"
+    },
+    "public_path": {
+      "type": "string"
+    },
+    "methods": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "target_service": {
+      "type": "string"
+    },
+    "rewrite": {
+      "type": "string"
+    },
+    "rate_limit": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "auth": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

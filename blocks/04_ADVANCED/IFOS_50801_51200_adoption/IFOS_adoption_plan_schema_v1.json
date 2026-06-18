@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS AdoptionPlan Schema v1",
+  "type": "object",
+  "required": [
+    "plan_id",
+    "org_id",
+    "phases",
+    "template_packs",
+    "champions",
+    "kpis",
+    "version"
+  ],
+  "properties": {
+    "plan_id": {
+      "type": "string"
+    },
+    "org_id": {
+      "type": "string"
+    },
+    "phases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "template_packs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "champions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "kpis": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

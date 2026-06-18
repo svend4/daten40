@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS MaintenanceProfile Schema v1",
+  "type": "object",
+  "required": [
+    "maint_id",
+    "item_id",
+    "release_cadence",
+    "issue_tracker",
+    "sla",
+    "version"
+  ],
+  "properties": {
+    "maint_id": {
+      "type": "string"
+    },
+    "item_id": {
+      "type": "string"
+    },
+    "release_cadence": {
+      "type": "string"
+    },
+    "issue_tracker": {
+      "type": "string"
+    },
+    "sla": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

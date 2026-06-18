@@ -1,0 +1,36 @@
+openapi: 3.0.3
+info:
+  title: IFOS Partner Ecosystem & Integrations API
+  version: "1.0.0"
+servers:
+  - url: https://partners.ifos.local/v1
+tags:
+  - name: Partners
+  - name: Integrations
+  - name: Keys
+  - name: Webhooks
+  - name: Certification
+  - name: Ratings
+  - name: Affiliates
+  - name: Risk
+paths:
+  /partners:
+    post: {tags:[Partners], summary: Upsert partner, responses: {"200": {description: OK}}}
+  /integrations:
+    post: {tags:[Integrations], summary: Upsert integration, responses: {"200": {description: OK}}}
+  /keys:
+    post: {tags:[Keys], summary: Mint API key, responses: {"201": {description: Created}}}
+  /keys/sandbox:
+    post: {tags:[Keys], summary: Mint sandbox key, responses: {"201": {description: Created}}}
+  /webhooks:
+    post: {tags:[Webhooks], summary: Register webhook endpoint, responses: {"201": {description: Created}}}
+  /certifications:
+    post: {tags:[Certification], summary: Record certification result, responses: {"201": {description: Created}}}
+  /ratings:
+    post: {tags:[Ratings], summary: Record rating/review, responses: {"201": {description: Created}}}
+  /affiliates/programs:
+    post: {tags:[Affiliates], summary: Upsert affiliate program, responses: {"200": {description: OK}}}
+  /affiliates/offers:
+    post: {tags:[Affiliates], summary: Upsert offer, responses: {"200": {description: OK}}}
+  /risk/signals:
+    post: {tags:[Risk], summary: Record fraud/risk signal, responses: {"201": {description: Created}}}

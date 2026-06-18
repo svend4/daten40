@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UIWizardModel Schema v1",
+  "type": "object",
+  "required": [
+    "wizard_id",
+    "type",
+    "steps",
+    "bindings",
+    "version"
+  ],
+  "properties": {
+    "wizard_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "install",
+        "compose",
+        "troubleshoot",
+        "publish"
+      ]
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "bindings": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

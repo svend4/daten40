@@ -1,0 +1,22 @@
+{
+  "bundle_id": "bundle_20260111_151308",
+  "name": "Lead capture → CRM → Email",
+  "version": "0.1.0",
+  "connectors": [
+    "wordpress",
+    "hubspot",
+    "sendgrid"
+  ],
+  "secrets_required": [
+    "hubspot_api_key",
+    "sendgrid_api_key"
+  ],
+  "entrypoint": {
+    "plan_id": "plan_20260111_151308",
+    "trigger": "wordpress.form_submission_webhook"
+  },
+  "policies": [
+    "privacy.confidential",
+    "rate_limit.default"
+  ]
+}

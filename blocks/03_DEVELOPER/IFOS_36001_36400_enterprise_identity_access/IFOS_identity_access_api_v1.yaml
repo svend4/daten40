@@ -1,0 +1,41 @@
+openapi: 3.0.3
+info:
+  title: IFOS Identity & Access API
+  version: "1.0.0"
+servers:
+  - url: https://iam.ifos.local/v1
+tags:
+  - name: Tenants
+  - name: Org
+  - name: Users
+  - name: Roles
+  - name: ABAC
+  - name: Keys
+  - name: Sessions
+  - name: SSO
+  - name: Audit
+  - name: BYOK
+  - name: Delegation
+paths:
+  /tenants:
+    post: {tags:[Tenants], summary: Create tenant, responses: {"201": {description: Created}}}
+  /org/units:
+    post: {tags:[Org], summary: Upsert org unit, responses: {"200": {description: OK}}}
+  /users:
+    post: {tags:[Users], summary: Upsert user, responses: {"200": {description: OK}}}
+  /roles:
+    post: {tags:[Roles], summary: Upsert role, responses: {"200": {description: OK}}}
+  /abac/policies:
+    post: {tags:[ABAC], summary: Upsert ABAC policy, responses: {"200": {description: OK}}}
+  /keys:
+    post: {tags:[Keys], summary: Create API key, responses: {"201": {description: Created}}}
+  /sessions:
+    post: {tags:[Sessions], summary: Create session, responses: {"201": {description: Created}}}
+  /sso/config:
+    post: {tags:[SSO], summary: Upsert SSO config, responses: {"200": {description: OK}}}
+  /audit/events:
+    post: {tags:[Audit], summary: Append audit event, responses: {"201": {description: Created}}}
+  /byok:
+    post: {tags:[BYOK], summary: Upsert BYOK config, responses: {"200": {description: OK}}}
+  /delegation:
+    post: {tags:[Delegation], summary: Create delegation, responses: {"201": {description: Created}}}

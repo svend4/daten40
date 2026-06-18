@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS KW Share Policy Schema v1",
+  "type": "object",
+  "required": [
+    "share_id",
+    "object_id",
+    "permissions",
+    "version"
+  ],
+  "properties": {
+    "share_id": {
+      "type": "string"
+    },
+    "object_id": {
+      "type": "string"
+    },
+    "permissions": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

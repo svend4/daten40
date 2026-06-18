@@ -1,0 +1,57 @@
+{
+  "registry_id": "reg.ui.n26yxtujduv8",
+  "entries": [
+    {
+      "name": "IFOS_ui_card_schema_v1.json",
+      "ref": "file://IFOS_ui_card_schema_v1.json",
+      "hash": "sha256:e84cd70aebb3b9e647424109fceca5a29b9e0df3b40da94d187d7e8c1a06d3db"
+    },
+    {
+      "name": "IFOS_ui_vitrine_schema_v1.json",
+      "ref": "file://IFOS_ui_vitrine_schema_v1.json",
+      "hash": "sha256:f4dde2f019659319f5ab8c0dd2e0c72994e1ab8962052e74e14f1e332ad5652c"
+    },
+    {
+      "name": "IFOS_ui_form_schema_v1.json",
+      "ref": "file://IFOS_ui_form_schema_v1.json",
+      "hash": "sha256:49c2be1589b4c5527c42b8cf088729e158e3fb2cd6b4ae61e6581ffc4b50ed58"
+    },
+    {
+      "name": "IFOS_ui_state_model_schema_v1.json",
+      "ref": "file://IFOS_ui_state_model_schema_v1.json",
+      "hash": "sha256:05619b63ad05bea087ba0b0c830c822839881132169b0a0f40e7d0c5989e751a"
+    },
+    {
+      "name": "IFOS_interaction_mode_schema_v1.json",
+      "ref": "file://IFOS_interaction_mode_schema_v1.json",
+      "hash": "sha256:97937c65445020921f208e10a4ff7b8c7f6e45c6c5eada7bfae59fd2c4ea2342"
+    },
+    {
+      "name": "IFOS_explainability_bundle_schema_v1.json",
+      "ref": "file://IFOS_explainability_bundle_schema_v1.json",
+      "hash": "sha256:81bc91a3ad68aa4ac3471738298ea8a18ebed052c6825e51cb23699bbcaab050"
+    },
+    {
+      "name": "IFOS_ux_policy_schema_v1.json",
+      "ref": "file://IFOS_ux_policy_schema_v1.json",
+      "hash": "sha256:dd871c6d7e3478ebc92afd850dc6c28d270e705212fa39a25e623b3d9f16aed1"
+    },
+    {
+      "name": "IFOS_ui_event_schema_v1.json",
+      "ref": "file://IFOS_ui_event_schema_v1.json",
+      "hash": "sha256:8bbe2d77df1a74d8528655ed3b2f984eb4d08f098e749c81506dfa48dc78ad38"
+    },
+    {
+      "name": "IFOS_accessibility_profile_schema_v1.json",
+      "ref": "file://IFOS_accessibility_profile_schema_v1.json",
+      "hash": "sha256:6aeac5cf84839774bc491b3a50503295e24d783b5c43473ea3e8321fdb7e4e2f"
+    },
+    {
+      "name": "IFOS_localization_pack_schema_v1.json",
+      "ref": "file://IFOS_localization_pack_schema_v1.json",
+      "hash": "sha256:9dba0018412d5c14d141049f9e0ff03cf80bb8acf51536845020b28b96b7c0ff"
+    }
+  ],
+  "updated_at": "2026-01-03T18:20:00Z",
+  "version": "1.0.0"
+}

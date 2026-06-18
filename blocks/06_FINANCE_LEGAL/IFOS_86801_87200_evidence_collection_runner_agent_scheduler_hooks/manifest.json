@@ -1,0 +1,21 @@
+{
+  "pack_id": "cp_evidence_collection_runner",
+  "name": "Evidence Collection Runner (Agent + Scheduler + Connector Hooks)",
+  "version": "1.0.0",
+  "status": "production",
+  "layer": "ComplianceEvidence",
+  "compatibility": {
+    "ifos_min_version": "v30",
+    "required_blocks": [
+      "IFOS_00001_00400",
+      "IFOS_86401_86800"
+    ]
+  },
+  "exports": [
+    "runner.job.submit",
+    "runner.job.schedule",
+    "runner.collector.plugin",
+    "runner.artifact.store_cas",
+    "runner.registry.append"
+  ]
+}

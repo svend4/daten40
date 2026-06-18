@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ReviewAppeal Schema v1",
+  "type": "object",
+  "required": [
+    "appeal_id",
+    "case_id",
+    "appellant",
+    "reason",
+    "state",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "appeal_id": {
+      "type": "string"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "appellant": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "reason": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "open",
+        "resolved",
+        "rejected"
+      ]
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

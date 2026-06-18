@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Reputation Schema v1",
+  "type": "object",
+  "required": [
+    "subject_id",
+    "score",
+    "level",
+    "signals",
+    "version"
+  ],
+  "properties": {
+    "subject_id": {
+      "type": "string"
+    },
+    "score": {
+      "type": "number"
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "new",
+        "trusted",
+        "maintainer",
+        "partner"
+      ]
+    },
+    "signals": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

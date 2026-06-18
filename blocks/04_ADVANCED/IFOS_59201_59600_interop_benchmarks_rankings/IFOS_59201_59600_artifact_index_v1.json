@@ -1,0 +1,132 @@
+{
+  "artifact_set": "IFOS_59201_59600",
+  "entries": [
+    {
+      "name": "IFOS_interop_benchmarks_rankings_os_59201_59600_v1.md",
+      "ref": "file://IFOS_interop_benchmarks_rankings_os_59201_59600_v1.md",
+      "hash": "sha256:7d5410b8bea0177a72991458502bc5b6f985870e29e75b02acc539b066d1b283"
+    },
+    {
+      "name": "IFOS_benchmarks_api_v1.yaml",
+      "ref": "file://IFOS_benchmarks_api_v1.yaml",
+      "hash": "sha256:136ebaf68674e13a70c949e575760896c85ef56e23d555b3277ff88b3cb81610"
+    },
+    {
+      "name": "IFOS_benchmarks_examples_v1.json",
+      "ref": "file://IFOS_benchmarks_examples_v1.json",
+      "hash": "sha256:b2388c4d158bb2b22cbf34441731a5790bae1bfc60a069e6ac12ed71ce449312"
+    },
+    {
+      "name": "IFOS_benchmark_catalog_seed_59201_59600_v1.csv",
+      "ref": "file://IFOS_benchmark_catalog_seed_59201_59600_v1.csv",
+      "hash": "sha256:cd0867e0f0edcd0c49859ca873e53cd09448b08db3c0c5ea1727480ed909c5e7"
+    },
+    {
+      "name": "IFOS_benchmarks_overview_spec_v1.md",
+      "ref": "file://IFOS_benchmarks_overview_spec_v1.md",
+      "hash": "sha256:3518a91de1cec1a512d354ed9585b38d4091135a2d55848203bca02f5d3c89b9"
+    },
+    {
+      "name": "IFOS_benchmark_metrics_spec_v1.md",
+      "ref": "file://IFOS_benchmark_metrics_spec_v1.md",
+      "hash": "sha256:d7652fffddf04868d5460fd75f82b43c3201cff6b1b751b262fa4b46d15d71b5"
+    },
+    {
+      "name": "IFOS_benchmark_datasets_spec_v1.md",
+      "ref": "file://IFOS_benchmark_datasets_spec_v1.md",
+      "hash": "sha256:e768103927d2d0f7a6ad5888f67f20a7a503505e50d56b0883334b41465c8d4e"
+    },
+    {
+      "name": "IFOS_leaderboards_spec_v1.md",
+      "ref": "file://IFOS_leaderboards_spec_v1.md",
+      "hash": "sha256:5f5808f250e485008764ff846362a2e37279652acd14552e5f1e87b419d0bcb2"
+    },
+    {
+      "name": "IFOS_ranking_formula_spec_v1.md",
+      "ref": "file://IFOS_ranking_formula_spec_v1.md",
+      "hash": "sha256:ba0d9f1c9afe70d368135ed5a3f0c76771b66a6927b7eb3d3300fe3b30827707"
+    },
+    {
+      "name": "IFOS_benchmark_fairness_spec_v1.md",
+      "ref": "file://IFOS_benchmark_fairness_spec_v1.md",
+      "hash": "sha256:9753bacfeced40034af9ba4a694187cf16e2b09cd27b2f21b79ccc221f46d77e"
+    },
+    {
+      "name": "IFOS_benchmark_reproducibility_spec_v1.md",
+      "ref": "file://IFOS_benchmark_reproducibility_spec_v1.md",
+      "hash": "sha256:b8d69602fa53c111f22ad573948a61f00f02b24e720684e5109ace94d2bcf085"
+    },
+    {
+      "name": "IFOS_category_leaderboards_spec_v1.md",
+      "ref": "file://IFOS_category_leaderboards_spec_v1.md",
+      "hash": "sha256:a4bfad2e4ced942f914225ffa89f8855110045db35956fcf06c4201af273449f"
+    },
+    {
+      "name": "IFOS_compare_reports_spec_v1.md",
+      "ref": "file://IFOS_compare_reports_spec_v1.md",
+      "hash": "sha256:f364dc6241ca2e33372c84f6159b7253deee584f7dba26d285c864f1f1fbb477"
+    },
+    {
+      "name": "IFOS_quality_badges_spec_v1.md",
+      "ref": "file://IFOS_quality_badges_spec_v1.md",
+      "hash": "sha256:b704e246cba68614a7c0045c1062f89bf670f81343e5f4e82bb54219a79565ae"
+    },
+    {
+      "name": "IFOS_anti_gaming_spec_v1.md",
+      "ref": "file://IFOS_anti_gaming_spec_v1.md",
+      "hash": "sha256:c2c014d2c812103368a267741df3f3aa8fb503d0e92f7e147049c389cfc9d123"
+    },
+    {
+      "name": "IFOS_benchmark_community_process_spec_v1.md",
+      "ref": "file://IFOS_benchmark_community_process_spec_v1.md",
+      "hash": "sha256:55805de27c272c313f63526e3a2f9234113e15dc6904822622a3ef5aacc58448"
+    },
+    {
+      "name": "IFOS_benchmark_run_schema_v1.json",
+      "ref": "file://IFOS_benchmark_run_schema_v1.json",
+      "hash": "sha256:17a29a10c0ea52bdb3fb4246cdc7c0f28218634e4b56775a4ed9b60bcea733e5"
+    },
+    {
+      "name": "IFOS_metric_schema_v1.json",
+      "ref": "file://IFOS_metric_schema_v1.json",
+      "hash": "sha256:c035c1eb3b1bd481f14d4b9d25640ec48b2aa9908b162a1544b239ff8079e0be"
+    },
+    {
+      "name": "IFOS_dataset_schema_v1.json",
+      "ref": "file://IFOS_dataset_schema_v1.json",
+      "hash": "sha256:050d58290634a4f755e7a83f92e5db541d06246f22f833155b083495c29aecdc"
+    },
+    {
+      "name": "IFOS_scorecard_schema_v1.json",
+      "ref": "file://IFOS_scorecard_schema_v1.json",
+      "hash": "sha256:ee3f30451bd20fd3abcec474007df4cab99aa6d7720279df1f643bf518e106e2"
+    },
+    {
+      "name": "IFOS_leaderboard_schema_v1.json",
+      "ref": "file://IFOS_leaderboard_schema_v1.json",
+      "hash": "sha256:48b793bb11d231d152db9e28659207b6ef84a83180879390a317fe5a66e5980d"
+    },
+    {
+      "name": "IFOS_badge_schema_v1.json",
+      "ref": "file://IFOS_badge_schema_v1.json",
+      "hash": "sha256:5e3fd6b3cdcd78ef75e2243cdbb40aea04fbf44338630b59ab809826e3e9146f"
+    },
+    {
+      "name": "ifos_benchmark_scorer_stub_v1.py",
+      "ref": "file://ifos_benchmark_scorer_stub_v1.py",
+      "hash": "sha256:a3338157af635c05da8cd1c2708c204d7c6331a998e86a6e7581d4cc03e68980"
+    },
+    {
+      "name": "ifos_compare_report_generator_stub_v1.py",
+      "ref": "file://ifos_compare_report_generator_stub_v1.py",
+      "hash": "sha256:ed693568f05a8b3f600ef53511d8dddc34b32b724813e409566ac54adc05afab"
+    },
+    {
+      "name": "ifos_anti_gaming_checks_stub_v1.py",
+      "ref": "file://ifos_anti_gaming_checks_stub_v1.py",
+      "hash": "sha256:c16b0a1b51efc08d474c7e398a0076e61f93823b35b088f9ab88bb3c8766d2d7"
+    }
+  ],
+  "created_at": "2026-01-05T00:05:00Z",
+  "version": "1.0.0"
+}

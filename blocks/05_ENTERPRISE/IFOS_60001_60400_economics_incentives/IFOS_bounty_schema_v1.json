@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Bounty Schema v1",
+  "type": "object",
+  "required": [
+    "bounty_id",
+    "title",
+    "criteria",
+    "reward",
+    "currency",
+    "version"
+  ],
+  "properties": {
+    "bounty_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "criteria": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reward": {
+      "type": "number"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

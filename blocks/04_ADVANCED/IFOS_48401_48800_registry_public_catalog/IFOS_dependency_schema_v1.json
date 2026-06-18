@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Dependency Schema v1",
+  "type": "object",
+  "required": [
+    "dep_id",
+    "item_id",
+    "requires",
+    "secrets",
+    "datastores",
+    "version"
+  ],
+  "properties": {
+    "dep_id": {
+      "type": "string"
+    },
+    "item_id": {
+      "type": "string"
+    },
+    "requires": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "secrets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "datastores": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

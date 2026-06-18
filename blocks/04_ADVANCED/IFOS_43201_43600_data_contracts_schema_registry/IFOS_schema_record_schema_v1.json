@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SchemaRecord Schema v1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "version",
+    "format",
+    "status",
+    "owner",
+    "created_at",
+    "versioning"
+  ],
+  "properties": {
+    "schema_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "format": {
+      "type": "string",
+      "enum": [
+        "jsonschema",
+        "avro",
+        "protobuf",
+        "other"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "active",
+        "deprecated",
+        "revoked"
+      ]
+    },
+    "owner": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "namespace": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "category": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "schema_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "examples_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "tests_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "versioning": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

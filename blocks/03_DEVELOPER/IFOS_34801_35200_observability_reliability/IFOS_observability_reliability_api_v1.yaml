@@ -1,0 +1,42 @@
+openapi: 3.0.3
+info:
+  title: IFOS Observability & Reliability API
+  version: "1.0.0"
+servers:
+  - url: https://obs.ifos.local/v1
+tags:
+  - name: Logs
+  - name: Metrics
+  - name: Traces
+  - name: Health
+  - name: SLO
+  - name: Alerts
+  - name: Incidents
+  - name: Reliability
+  - name: Releases
+  - name: Autofix
+paths:
+  /logs:
+    post: {tags:[Logs], summary: Ingest log event, responses: {"201": {description: Created}}}
+  /metrics:
+    post: {tags:[Metrics], summary: Ingest metric, responses: {"201": {description: Created}}}
+  /traces/spans:
+    post: {tags:[Traces], summary: Ingest trace span, responses: {"201": {description: Created}}}
+  /health/checks:
+    post: {tags:[Health], summary: Upsert health check, responses: {"200": {description: OK}}}
+  /slo:
+    post: {tags:[SLO], summary: Upsert SLO, responses: {"200": {description: OK}}}
+  /alerts:
+    post: {tags:[Alerts], summary: Upsert alert rule, responses: {"200": {description: OK}}}
+  /incidents:
+    post: {tags:[Incidents], summary: Create incident, responses: {"201": {description: Created}}}
+  /reliability/retry-policies:
+    post: {tags:[Reliability], summary: Upsert retry policy, responses: {"200": {description: OK}}}
+  /reliability/circuit-breakers:
+    post: {tags:[Reliability], summary: Upsert circuit breaker, responses: {"200": {description: OK}}}
+  /releases/canary:
+    post: {tags:[Releases], summary: Create canary release, responses: {"201": {description: Created}}}
+  /releases/rollback:
+    post: {tags:[Releases], summary: Upsert rollback plan, responses: {"200": {description: OK}}}
+  /autofix/rules:
+    post: {tags:[Autofix], summary: Upsert autofix rule, responses: {"200": {description: OK}}}

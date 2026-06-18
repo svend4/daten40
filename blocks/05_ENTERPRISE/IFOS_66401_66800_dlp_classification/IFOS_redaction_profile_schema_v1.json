@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RedactionProfile Schema v1",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "name",
+    "transforms",
+    "deterministic",
+    "version"
+  ],
+  "properties": {
+    "profile_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "deterministic": {
+      "type": "boolean"
+    },
+    "transforms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "op"
+        ],
+        "properties": {
+          "op": {
+            "type": "string",
+            "enum": [
+              "mask_email",
+              "mask_iban",
+              "hash_id",
+              "tokenize",
+              "remove_fields",
+              "aggregate",
+              "truncate",
+              "replace_regex"
+            ]
+          },
+          "params": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Compensation Schema v1",
+  "type": "object",
+  "required": [
+    "comp_id",
+    "exec_id",
+    "actions",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "comp_id": {
+      "type": "string"
+    },
+    "exec_id": {
+      "type": "string"
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "planned",
+        "running",
+        "done",
+        "failed"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

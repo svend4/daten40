@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SDKPackage Schema v1",
+  "type": "object",
+  "required": [
+    "package_id",
+    "sdk_profile_id",
+    "source_api",
+    "artifacts",
+    "version"
+  ],
+  "properties": {
+    "package_id": {
+      "type": "string"
+    },
+    "sdk_profile_id": {
+      "type": "string"
+    },
+    "source_api": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "changelog": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

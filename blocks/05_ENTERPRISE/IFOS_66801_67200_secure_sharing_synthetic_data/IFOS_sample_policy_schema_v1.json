@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SamplePolicy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "mode",
+    "limits",
+    "version"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "schema_only",
+        "random_sample",
+        "stratified",
+        "time_window",
+        "masked_preview"
+      ]
+    },
+    "limits": {
+      "type": "object",
+      "required": [
+        "max_rows",
+        "max_columns"
+      ],
+      "properties": {
+        "max_rows": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max_columns": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "rate_limit_per_min": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "notes": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

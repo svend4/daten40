@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Approval Schema v1",
+  "type": "object",
+  "required": [
+    "approval_id",
+    "who",
+    "deadline",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "approval_id": {
+      "type": "string"
+    },
+    "who": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "deadline": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected",
+        "expired"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

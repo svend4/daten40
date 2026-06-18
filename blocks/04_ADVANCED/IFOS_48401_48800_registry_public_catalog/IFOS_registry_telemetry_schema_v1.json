@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RegistryTelemetry Schema v1",
+  "type": "object",
+  "required": [
+    "tel_id",
+    "item_id",
+    "signals",
+    "privacy",
+    "version"
+  ],
+  "properties": {
+    "tel_id": {
+      "type": "string"
+    },
+    "item_id": {
+      "type": "string"
+    },
+    "signals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "privacy": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

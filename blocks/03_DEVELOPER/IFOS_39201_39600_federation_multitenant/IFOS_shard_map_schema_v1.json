@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ShardMap Schema v1",
+  "type": "object",
+  "required": [
+    "shard_map_id",
+    "shards",
+    "routing",
+    "version"
+  ],
+  "properties": {
+    "shard_map_id": {
+      "type": "string"
+    },
+    "shards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "shard_id",
+          "region",
+          "endpoint"
+        ],
+        "properties": {
+          "shard_id": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "endpoint": {
+            "type": "string"
+          },
+          "role": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              null,
+              "primary",
+              "secondary"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "routing": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "match",
+          "to_shard"
+        ],
+        "properties": {
+          "match": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "to_shard": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

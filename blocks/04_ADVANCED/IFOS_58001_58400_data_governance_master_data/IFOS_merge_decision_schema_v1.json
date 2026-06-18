@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Merge Decision Schema v1",
+  "type": "object",
+  "required": [
+    "decision_id",
+    "target_entity",
+    "merged_entities",
+    "reason",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "decision_id": {
+      "type": "string"
+    },
+    "target_entity": {
+      "type": "string"
+    },
+    "merged_entities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reason": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "steward": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+openapi: 3.0.3
+info:
+  title: IFOS Agents & Workflow API
+  version: "1.0.0"
+servers:
+  - url: https://agents.ifos.local/v1
+tags:
+  - name: Agents
+  - name: Tools
+  - name: Workflows
+  - name: Runs
+  - name: Approvals
+  - name: Policies
+  - name: Bridges
+  - name: Audit
+paths:
+  /agents:
+    post: {tags:[Agents], summary: Upsert agent profile, responses: {"200": {description: OK}}}
+  /tools:
+    post: {tags:[Tools], summary: Upsert tool descriptor, responses: {"200": {description: OK}}}
+  /tools/registry:
+    post: {tags:[Tools], summary: Upsert tool registry, responses: {"200": {description: OK}}}
+  /workflows:
+    post: {tags:[Workflows], summary: Upsert workflow spec, responses: {"200": {description: OK}}}
+  /runs:
+    post: {tags:[Runs], summary: Start execution run, responses: {"201": {description: Created}}}
+  /approvals:
+    post: {tags:[Approvals], summary: Create approval request, responses: {"201": {description: Created}}}
+  /policies:
+    post: {tags:[Policies], summary: Upsert action policy, responses: {"200": {description: OK}}}
+  /bridges:
+    post: {tags:[Bridges], summary: Upsert connector bridge, responses: {"200": {description: OK}}}
+  /audit:
+    post: {tags:[Audit], summary: Append audit event, responses: {"201": {description: Created}}}

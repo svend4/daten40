@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Payout Schema v1",
+  "type": "object",
+  "required": [
+    "payout_id",
+    "seller_id",
+    "period_start",
+    "period_end",
+    "amount",
+    "currency",
+    "status",
+    "details",
+    "version"
+  ],
+  "properties": {
+    "payout_id": {
+      "type": "string"
+    },
+    "seller_id": {
+      "type": "string"
+    },
+    "period_start": {
+      "type": "string",
+      "format": "date"
+    },
+    "period_end": {
+      "type": "string",
+      "format": "date"
+    },
+    "amount": {
+      "type": "number",
+      "minimum": 0
+    },
+    "currency": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "scheduled",
+        "processing",
+        "paid",
+        "failed",
+        "on_hold"
+      ]
+    },
+    "details": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "task": {
+    "task_id": "task.t.4z0q8n00jxk0",
+    "title": "Добавить canary rollout для Telegram connector",
+    "state": "doing",
+    "priority": "high",
+    "links": [
+      "connector.telegram",
+      "rfc.rfc.r.ywqjtwezm60b"
+    ],
+    "version": "1.0.0"
+  },
+  "rfc": {
+    "rfc_id": "rfc.r.ywqjtwezm60b",
+    "title": "Auth scopes change for Telegram connector",
+    "problem": "Новые требования безопасности требуют ограничить scopes.",
+    "proposal": "Ввести минимальные scopes + migrate tokens.",
+    "impact": "Затронет 1 процесс и 1 витрину; риск medium.",
+    "rollout": "Canary 5% tenants, 24h monitoring.",
+    "rollback": "Вернуть старые scopes и токены, если error_rate > 1%.",
+    "test_plan": "auth_smoke, webhook_verify, regression.",
+    "state": "in_review",
+    "version": "1.0.0"
+  },
+  "approval": {
+    "approval_id": "appr.a.lfdgtfi3jiqj",
+    "object_ref": "rfc.r.ywqjtwezm60b",
+    "policy_id": "appr.medium.2reviewers",
+    "actor": "user.alex",
+    "decision": "approved",
+    "ts": "2026-01-04T19:05:00Z",
+    "version": "1.0.0"
+  },
+  "release": {
+    "release_id": "rel.l.6ttxj5ggodrf",
+    "changesets": [
+      "rfc.r.ywqjtwezm60b",
+      "bundle.telegram@1.4.0"
+    ],
+    "snapshot_ref": "snap.release.2026-01-04",
+    "signed_pack_ref": "pack.release.p.ja9bx4oj6nh5",
+    "status": "planned",
+    "version": "1.0.0"
+  },
+  "rollout": {
+    "rollout_id": "roll.o.6b2aduwvug50",
+    "release_id": "rel.l.6ttxj5ggodrf",
+    "strategy": "canary",
+    "canary_pct": 5,
+    "status": "planned",
+    "success_criteria": {
+      "error_rate_lt": 0.01,
+      "latency_p95_lt_ms": 800
+    },
+    "rollback_rules": {
+      "error_rate_gt": 0.02,
+      "latency_p95_gt_ms": 1500
+    },
+    "version": "1.0.0"
+  },
+  "incident": {
+    "incident_id": "inc.i.g1e8yktdtqg7",
+    "severity": "S2",
+    "summary": "Telegram webhook failures after token migration",
+    "affected": [
+      "process.weekly_digest",
+      "connector.telegram"
+    ],
+    "ts_start": "2026-01-04T19:05:00Z",
+    "status": "open",
+    "version": "1.0.0"
+  },
+  "postmortem": {
+    "postmortem_id": "pm.p.be7tb84h2oqx",
+    "incident_id": "inc.i.g1e8yktdtqg7",
+    "root_cause_ref": "path.rootcause.rc.itebs4y1tya4",
+    "lessons": {
+      "what": "Scopes misconfigured for one tenant group",
+      "fix": "Add preflight check + canary gates"
+    },
+    "actions": [
+      "task.add_preflight_check",
+      "task.add_scope_validator"
+    ],
+    "version": "1.0.0"
+  }
+}

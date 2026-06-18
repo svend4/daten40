@@ -1,0 +1,132 @@
+{
+  "artifact_set": "IFOS_45601_46000",
+  "entries": [
+    {
+      "name": "IFOS_marketplace_curation_quality_os_45601_46000_v1.md",
+      "ref": "file://IFOS_marketplace_curation_quality_os_45601_46000_v1.md",
+      "hash": "sha256:a436320314a9c0c6d84913d98ea716bf80aca8abf35ac94b69e5183605b464e2"
+    },
+    {
+      "name": "IFOS_marketplace_quality_api_v1.yaml",
+      "ref": "file://IFOS_marketplace_quality_api_v1.yaml",
+      "hash": "sha256:cf5cc133a064c5eb1d99497d07a4e42d1fbb3d6d36f4b92cd24b867c09b1a4fb"
+    },
+    {
+      "name": "IFOS_marketplace_quality_examples_v1.json",
+      "ref": "file://IFOS_marketplace_quality_examples_v1.json",
+      "hash": "sha256:a9d48e0c8e9a9c0421598db0be2055db0a8fb6a3574ca5d2d7e6ef766d3a0c40"
+    },
+    {
+      "name": "IFOS_quality_badge_schema_v1.json",
+      "ref": "file://IFOS_quality_badge_schema_v1.json",
+      "hash": "sha256:cfd70647fa60dfa78069c03352bd155359ebb037921a44f3b0e89bc1e21c1f8a"
+    },
+    {
+      "name": "IFOS_trust_tier_schema_v1.json",
+      "ref": "file://IFOS_trust_tier_schema_v1.json",
+      "hash": "sha256:aa54f939e0a7ea3e7c1b8fce1431d57398466c5b882d49528536ea5691d4e655"
+    },
+    {
+      "name": "IFOS_curation_policy_schema_v1.json",
+      "ref": "file://IFOS_curation_policy_schema_v1.json",
+      "hash": "sha256:6187502977e4104d5c3bebe4918173ecb57b1087d3e99c3150167aad3eb6e245"
+    },
+    {
+      "name": "IFOS_review_schema_v1.json",
+      "ref": "file://IFOS_review_schema_v1.json",
+      "hash": "sha256:c99e612fb2c37d902c3f12983c4550749054319713de47086629f8931b5e77ef"
+    },
+    {
+      "name": "IFOS_review_incentive_schema_v1.json",
+      "ref": "file://IFOS_review_incentive_schema_v1.json",
+      "hash": "sha256:340376b95e2f69fddc009426fd7fc501f287d38bebeaa3582598927fa4d1fa81"
+    },
+    {
+      "name": "IFOS_rating_event_schema_v1.json",
+      "ref": "file://IFOS_rating_event_schema_v1.json",
+      "hash": "sha256:f46ddacde33ba2882717055ff93d82def327d2cd4825d8bce66e5ce0c2f73925"
+    },
+    {
+      "name": "IFOS_abuse_report_schema_v1.json",
+      "ref": "file://IFOS_abuse_report_schema_v1.json",
+      "hash": "sha256:404e131c06c7fea45bb4771a2cad9766c743dd7816e57ea1f2d6152c1b72ae18"
+    },
+    {
+      "name": "IFOS_moderation_case_schema_v1.json",
+      "ref": "file://IFOS_moderation_case_schema_v1.json",
+      "hash": "sha256:195d17babfe23ce44ba607b56d3508d39103a234121d6c0fc358d3ba8fc7c805"
+    },
+    {
+      "name": "IFOS_quality_scan_schema_v1.json",
+      "ref": "file://IFOS_quality_scan_schema_v1.json",
+      "hash": "sha256:6310380f3cb39f67bc137e85475e356156eaa787efd6f9436719bb585c506305"
+    },
+    {
+      "name": "IFOS_migration_guide_schema_v1.json",
+      "ref": "file://IFOS_migration_guide_schema_v1.json",
+      "hash": "sha256:e69ffd8ac45033f184b0130b45e846ec278593225909efea35aa5a1ae326030f"
+    },
+    {
+      "name": "IFOS_deprecation_notice_schema_v1.json",
+      "ref": "file://IFOS_deprecation_notice_schema_v1.json",
+      "hash": "sha256:7c2503d716df3eb7ba2ed6500532f44c3ab464071041985f2a37e7c93e2bfaba"
+    },
+    {
+      "name": "IFOS_marketplace_listing_schema_v1.json",
+      "ref": "file://IFOS_marketplace_listing_schema_v1.json",
+      "hash": "sha256:0a67b188aa6e62dd2282db3d79078c02447d2f454c0bb7a3ab2ca6355e44f681"
+    },
+    {
+      "name": "IFOS_quality_kpi_schema_v1.json",
+      "ref": "file://IFOS_quality_kpi_schema_v1.json",
+      "hash": "sha256:4c55e7cb10544f679a8d11d0b637325e8de9fb9278a5e488bafb9c325449f30a"
+    },
+    {
+      "name": "IFOS_quality_badges_trust_spec_v1.md",
+      "ref": "file://IFOS_quality_badges_trust_spec_v1.md",
+      "hash": "sha256:be6984c705afcc7f51eee77b164ad9996b6e8185c86b8270e7841dff348e5881"
+    },
+    {
+      "name": "IFOS_marketplace_curation_spec_v1.md",
+      "ref": "file://IFOS_marketplace_curation_spec_v1.md",
+      "hash": "sha256:aa31d43f55a267075c747dcfbf84d99368722d2f89560e517d5d003c78a0794a"
+    },
+    {
+      "name": "IFOS_reviews_incentives_spec_v1.md",
+      "ref": "file://IFOS_reviews_incentives_spec_v1.md",
+      "hash": "sha256:398cf3eed2682cd598dd2bf40dde4f69f523dfafdb2ffdfb48dd817dca9c3708"
+    },
+    {
+      "name": "IFOS_abuse_moderation_spec_v1.md",
+      "ref": "file://IFOS_abuse_moderation_spec_v1.md",
+      "hash": "sha256:0dc057aa25bcb5e72d549b6e44304ad6c742f8e6f15c6dfaddf78ea647ceec2d"
+    },
+    {
+      "name": "IFOS_listing_lifecycle_deprecation_spec_v1.md",
+      "ref": "file://IFOS_listing_lifecycle_deprecation_spec_v1.md",
+      "hash": "sha256:2e67ec1e6a78c250514c45fc06c9c806530809c72f6f4a711304122699450538"
+    },
+    {
+      "name": "IFOS_marketplace_quality_metrics_spec_v1.md",
+      "ref": "file://IFOS_marketplace_quality_metrics_spec_v1.md",
+      "hash": "sha256:17e6557061b60c73ce8c45f9ba596e28125b70cead05d7550298dd6f415bf35a"
+    },
+    {
+      "name": "ifos_quality_scoring_stub_v1.py",
+      "ref": "file://ifos_quality_scoring_stub_v1.py",
+      "hash": "sha256:b99462ab6564f890da4ddee2a2626c883e182d7cfd4fb4f35e7955fdb8ebae5c"
+    },
+    {
+      "name": "ifos_moderation_triage_stub_v1.py",
+      "ref": "file://ifos_moderation_triage_stub_v1.py",
+      "hash": "sha256:e016bbb064c7844f64025327c1f3d669acb35d11126fc90c8bc3ef38d0d2c2a4"
+    },
+    {
+      "name": "ifos_badge_assigner_stub_v1.py",
+      "ref": "file://ifos_badge_assigner_stub_v1.py",
+      "hash": "sha256:4263f3b3efe3d170443348152ba46654a23fdf283da2861e1a9232eb11bcf4bb"
+    }
+  ],
+  "created_at": "2026-01-04T07:20:00Z",
+  "version": "1.0.0"
+}

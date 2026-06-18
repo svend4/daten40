@@ -1,0 +1,77 @@
+{
+  "registry_id": "reg.sec.b7pcnbtivyu4",
+  "entries": [
+    {
+      "name": "IFOS_signing_key_schema_v1.json",
+      "ref": "file://IFOS_signing_key_schema_v1.json",
+      "hash": "sha256:590cd103477eaed1b68088eaa2f28015d5a4e708811389dcc06009ba80b8b92a"
+    },
+    {
+      "name": "IFOS_signature_schema_v1.json",
+      "ref": "file://IFOS_signature_schema_v1.json",
+      "hash": "sha256:bfc5a66d05e34dd32869a55b6ef179e74d15e9d3998643874c12c0b7aa37943b"
+    },
+    {
+      "name": "IFOS_sbom_schema_v1.json",
+      "ref": "file://IFOS_sbom_schema_v1.json",
+      "hash": "sha256:f41434d55b17b8a1bb616c9ba0517c0644a0328ae19f8cb75e60778fd51999ae"
+    },
+    {
+      "name": "IFOS_attestation_schema_v1.json",
+      "ref": "file://IFOS_attestation_schema_v1.json",
+      "hash": "sha256:48d4fd2b4d5d3d598cc3c7e05b9d72aeb142538491a06c1e3304d1468320ba82"
+    },
+    {
+      "name": "IFOS_vulnerability_report_schema_v1.json",
+      "ref": "file://IFOS_vulnerability_report_schema_v1.json",
+      "hash": "sha256:0c0c22c5206c98332b44f90cd99c677efa617b9531442d636048a3ca30be793c"
+    },
+    {
+      "name": "IFOS_secret_schema_v1.json",
+      "ref": "file://IFOS_secret_schema_v1.json",
+      "hash": "sha256:91b8ed0d7b085c181fbf56146e60bc5553da331696e14f58926c57c5cfe4186c"
+    },
+    {
+      "name": "IFOS_secret_policy_schema_v1.json",
+      "ref": "file://IFOS_secret_policy_schema_v1.json",
+      "hash": "sha256:20daeab0b7ffb382f355f3fedff8a02378ae1e45793b3c1bce9c045be649b43e"
+    },
+    {
+      "name": "IFOS_network_policy_schema_v1.json",
+      "ref": "file://IFOS_network_policy_schema_v1.json",
+      "hash": "sha256:bef99c8921d3c28fbb5a28d26966d27b4c49991480dea1df98aef17de841d278"
+    },
+    {
+      "name": "IFOS_sandbox_profile_schema_v1.json",
+      "ref": "file://IFOS_sandbox_profile_schema_v1.json",
+      "hash": "sha256:8072cde9884cc32af4c66d303593aba40129de271ac232b7062825f58a439978"
+    },
+    {
+      "name": "IFOS_runtime_guard_event_schema_v1.json",
+      "ref": "file://IFOS_runtime_guard_event_schema_v1.json",
+      "hash": "sha256:5a760dab95f26817d12cb235cb4d21d447a9118f93f7100ff706f98c7e708283"
+    },
+    {
+      "name": "IFOS_security_incident_schema_v1.json",
+      "ref": "file://IFOS_security_incident_schema_v1.json",
+      "hash": "sha256:22ffafb0d6abb5957e001d4c1ac713d6896db0ae65f80f89992c034fb16df7c9"
+    },
+    {
+      "name": "IFOS_trust_score_schema_v1.json",
+      "ref": "file://IFOS_trust_score_schema_v1.json",
+      "hash": "sha256:ce15efc30ad0cf512f1e2bd1ab73908a5c7044172fc5d1fd87b5e9e3f18fb0f8"
+    },
+    {
+      "name": "IFOS_threat_model_schema_v1.json",
+      "ref": "file://IFOS_threat_model_schema_v1.json",
+      "hash": "sha256:e6793eb109900c6397bfb88f8e63f7a1d7cfbf6043bf8bcbb7d3eb86c488b600"
+    },
+    {
+      "name": "IFOS_security_profile_schema_v1.json",
+      "ref": "file://IFOS_security_profile_schema_v1.json",
+      "hash": "sha256:627e36fb5047b3ee314c51619413a8c994a6d860e0826ba4755b8d8fdd0bf006"
+    }
+  ],
+  "updated_at": "2026-01-03T12:14:00Z",
+  "version": "1.0.0"
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS TriageCase Schema v1",
+  "type": "object",
+  "required": [
+    "case_id",
+    "symptom",
+    "classification",
+    "actions",
+    "diagnostics",
+    "version"
+  ],
+  "properties": {
+    "case_id": {
+      "type": "string"
+    },
+    "symptom": {
+      "type": "string"
+    },
+    "classification": {
+      "type": "string",
+      "enum": [
+        "known_issue",
+        "misconfig",
+        "provider_outage",
+        "bug",
+        "unknown"
+      ]
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "diagnostics": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS IndexSource Schema v1",
+  "type": "object",
+  "required": [
+    "index_source_id",
+    "kinds",
+    "include",
+    "update_mode",
+    "version"
+  ],
+  "properties": {
+    "index_source_id": {
+      "type": "string"
+    },
+    "kinds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "include": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "exclude": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "update_mode": {
+      "type": "string",
+      "enum": [
+        "incremental",
+        "full_rebuild",
+        "hybrid"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

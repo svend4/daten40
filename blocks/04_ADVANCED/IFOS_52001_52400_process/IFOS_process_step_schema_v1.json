@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ProcessStep Schema v1",
+  "type": "object",
+  "required": [
+    "step_id",
+    "type",
+    "action",
+    "on_success",
+    "on_error",
+    "version"
+  ],
+  "properties": {
+    "step_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "auto",
+        "human",
+        "approval",
+        "wait",
+        "branch"
+      ]
+    },
+    "action": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "on_success": {
+      "type": "string"
+    },
+    "on_error": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

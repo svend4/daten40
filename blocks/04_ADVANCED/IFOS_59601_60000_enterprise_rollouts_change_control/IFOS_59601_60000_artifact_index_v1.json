@@ -1,0 +1,132 @@
+{
+  "artifact_set": "IFOS_59601_60000",
+  "entries": [
+    {
+      "name": "IFOS_enterprise_rollouts_change_control_os_59601_60000_v1.md",
+      "ref": "file://IFOS_enterprise_rollouts_change_control_os_59601_60000_v1.md",
+      "hash": "sha256:d30ff34ba1c48589fea904df5626853133526e6c940d016aed5c931afc910e66"
+    },
+    {
+      "name": "IFOS_change_control_api_v1.yaml",
+      "ref": "file://IFOS_change_control_api_v1.yaml",
+      "hash": "sha256:b1a8da9ec7d8c1971f2c25e09c976d199d7d4b829320eeb8fc2ea402419b6787"
+    },
+    {
+      "name": "IFOS_change_control_examples_v1.json",
+      "ref": "file://IFOS_change_control_examples_v1.json",
+      "hash": "sha256:87131f54936fb4ab7888e64c55311a8ffac11cbaadd085a3ef5d4a5862b60cf1"
+    },
+    {
+      "name": "IFOS_rollout_templates_seed_59601_60000_v1.csv",
+      "ref": "file://IFOS_rollout_templates_seed_59601_60000_v1.csv",
+      "hash": "sha256:0ef99cb5818f8fdcb0e117b7a05ebb1598f121a910389af16a69cfd7eeb8a2c2"
+    },
+    {
+      "name": "IFOS_rollouts_overview_spec_v1.md",
+      "ref": "file://IFOS_rollouts_overview_spec_v1.md",
+      "hash": "sha256:099c1a6f7252ae2e794a7e9329f3c2a8795bc1fdc7d007c56ac2eea2216ca1a5"
+    },
+    {
+      "name": "IFOS_release_trains_spec_v1.md",
+      "ref": "file://IFOS_release_trains_spec_v1.md",
+      "hash": "sha256:ba65f80a7e484aab9748eff68654ef4dca74928fd646d4f578c14b1bfb43287f"
+    },
+    {
+      "name": "IFOS_approvals_gates_spec_v1.md",
+      "ref": "file://IFOS_approvals_gates_spec_v1.md",
+      "hash": "sha256:5608a989cdc0396e95d7dda6e69ee48ba3287e12c4f0f4d6e9a83a0f7164e226"
+    },
+    {
+      "name": "IFOS_env_promotion_spec_v1.md",
+      "ref": "file://IFOS_env_promotion_spec_v1.md",
+      "hash": "sha256:86719feeab2fd6a09d815b6447045bd424fa67a05872e821caaac518eb6e21d7"
+    },
+    {
+      "name": "IFOS_migration_playbooks_spec_v1.md",
+      "ref": "file://IFOS_migration_playbooks_spec_v1.md",
+      "hash": "sha256:38d63a01ce0cc2d3cf59431f0e1e27f4581d64c6f95a8ee3c2d385d7329cadf9"
+    },
+    {
+      "name": "IFOS_rollback_strategies_spec_v1.md",
+      "ref": "file://IFOS_rollback_strategies_spec_v1.md",
+      "hash": "sha256:4fa66b0bb1f39ae1e3d6131651a337c702f453a3114bfac34271d71be12f823a"
+    },
+    {
+      "name": "IFOS_feature_flags_spec_v1.md",
+      "ref": "file://IFOS_feature_flags_spec_v1.md",
+      "hash": "sha256:9514a554d66fab6a26325a6f3fe33712316a20a111f4313ea4f95fdb571bcc7b"
+    },
+    {
+      "name": "IFOS_change_management_spec_v1.md",
+      "ref": "file://IFOS_change_management_spec_v1.md",
+      "hash": "sha256:c18dcb9b8c097a28c04933a5761ebf559fc505ef8ebd3566b480d7602d97ca45"
+    },
+    {
+      "name": "IFOS_audit_controls_spec_v1.md",
+      "ref": "file://IFOS_audit_controls_spec_v1.md",
+      "hash": "sha256:fbf5af65e6490170d058d926a014a3f690b168f33fa92c682154aaa2b33960ab"
+    },
+    {
+      "name": "IFOS_slo_sla_spec_v1.md",
+      "ref": "file://IFOS_slo_sla_spec_v1.md",
+      "hash": "sha256:b794d69e05d1e370d57e5f3105892789900b3181561389d0d6bafee5c3523b8c"
+    },
+    {
+      "name": "IFOS_incident_response_spec_v1.md",
+      "ref": "file://IFOS_incident_response_spec_v1.md",
+      "hash": "sha256:1984e5744ccae4a5b5d0563a33a14d5008bf5210cafea075399ac0899c37e8f3"
+    },
+    {
+      "name": "IFOS_enterprise_templates_spec_v1.md",
+      "ref": "file://IFOS_enterprise_templates_spec_v1.md",
+      "hash": "sha256:82f77763ffee6ba476acbb13f8c122fbb2a5b875c0e30533693cf9cc6a5c75e9"
+    },
+    {
+      "name": "IFOS_rollout_plan_schema_v1.json",
+      "ref": "file://IFOS_rollout_plan_schema_v1.json",
+      "hash": "sha256:df4c7af352bd7eb3d9cbfdf50d5dcea5834018530fa53ef469b981ffc3dfe6a4"
+    },
+    {
+      "name": "IFOS_release_train_schema_v1.json",
+      "ref": "file://IFOS_release_train_schema_v1.json",
+      "hash": "sha256:bb137c0df648a2060284085988345931aadf9b7aa26049f690398bea3c3c27af"
+    },
+    {
+      "name": "IFOS_approval_gate_schema_v1.json",
+      "ref": "file://IFOS_approval_gate_schema_v1.json",
+      "hash": "sha256:85d42f099fbd0c8113a20a3ec207893043e41897fa44316e9a83eb40c5b79dd5"
+    },
+    {
+      "name": "IFOS_env_promotion_schema_v1.json",
+      "ref": "file://IFOS_env_promotion_schema_v1.json",
+      "hash": "sha256:3dd67b0694bb45906bcf73a69b0382b8aaa3341788718d52d058e203766a6727"
+    },
+    {
+      "name": "IFOS_migration_plan_schema_v1.json",
+      "ref": "file://IFOS_migration_plan_schema_v1.json",
+      "hash": "sha256:7fbb035bab15a4e70c4d5837f51df684aa96ea7e0bea183abffaa4ee87783c87"
+    },
+    {
+      "name": "IFOS_incident_schema_v1.json",
+      "ref": "file://IFOS_incident_schema_v1.json",
+      "hash": "sha256:009d1517eb67f102c98b40c3159a6944a78cad5f4efbee84f6c41fa463942c8c"
+    },
+    {
+      "name": "ifos_rollout_planner_stub_v1.py",
+      "ref": "file://ifos_rollout_planner_stub_v1.py",
+      "hash": "sha256:a98afac4d9e3a79ced5fec58250ffc1b80902ce416584f8a2fd20388464d0af5"
+    },
+    {
+      "name": "ifos_env_promoter_stub_v1.py",
+      "ref": "file://ifos_env_promoter_stub_v1.py",
+      "hash": "sha256:1e7f1a572d8c19eecb44ca4fc2293d5ade61988ae7f832ce6b4b458e8f54d4f9"
+    },
+    {
+      "name": "ifos_rollback_executor_stub_v1.py",
+      "ref": "file://ifos_rollback_executor_stub_v1.py",
+      "hash": "sha256:45ed269d4cbd7935ed70ba702a34ba3263423d7278c52f57d6f42361b229a5ab"
+    }
+  ],
+  "created_at": "2026-01-05T00:25:00Z",
+  "version": "1.0.0"
+}

@@ -1,0 +1,62 @@
+{
+  "manifest_example": {
+    "app_id": "app.travel_hub",
+    "requires": {
+      "must": [
+        "INBOUND_HTTP",
+        "OUTBOUND_EGRESS"
+      ],
+      "should": [
+        "TLS_CUSTOM_DOMAIN",
+        "SECRETS_MANAGER"
+      ],
+      "optional": [
+        "DATABASE_MANAGED"
+      ]
+    },
+    "runtime": {
+      "type": "node",
+      "port_env": "PORT",
+      "bind": "0.0.0.0",
+      "timeout_sec": 30
+    },
+    "network": {
+      "cors": {
+        "allowed_origins": [
+          "https://app.example.com"
+        ],
+        "allow_credentials": true
+      }
+    },
+    "auth": {
+      "mode": "jwt_or_cookie",
+      "cookie": {
+        "samesite": "None",
+        "secure": true
+      }
+    },
+    "data": {
+      "storage": "object",
+      "db": "postgres_optional"
+    },
+    "observability": {
+      "logs": "structured",
+      "trace_id": true
+    },
+    "version": "1.0.0"
+  },
+  "plan_example": {
+    "selected_profile": "prof.full_stack_managed",
+    "services": [
+      "frontend",
+      "api",
+      "worker",
+      "db",
+      "object_storage"
+    ],
+    "notes": [
+      "Enable CORS allowlist",
+      "Use secrets refs not raw keys"
+    ]
+  }
+}

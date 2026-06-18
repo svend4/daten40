@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS MergeProposal Schema v1",
+  "type": "object",
+  "required": [
+    "proposal_id",
+    "primary_id",
+    "secondary_id",
+    "plan",
+    "conflicts",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "proposal_id": {
+      "type": "string"
+    },
+    "primary_id": {
+      "type": "string"
+    },
+    "secondary_id": {
+      "type": "string"
+    },
+    "plan": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "field",
+          "op"
+        ],
+        "properties": {
+          "field": {
+            "type": "string"
+          },
+          "op": {
+            "type": "string",
+            "enum": [
+              "take_primary",
+              "take_secondary",
+              "merge_list",
+              "merge_map",
+              "create_alias",
+              "redirect"
+            ]
+          },
+          "params": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

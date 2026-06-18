@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DedupKey Schema v1",
+  "type": "object",
+  "required": [
+    "key_id",
+    "fields",
+    "hash",
+    "version"
+  ],
+  "properties": {
+    "key_id": {
+      "type": "string"
+    },
+    "fields": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "hash": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

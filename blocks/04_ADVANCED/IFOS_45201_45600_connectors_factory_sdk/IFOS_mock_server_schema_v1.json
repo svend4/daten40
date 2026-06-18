@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS MockServer Schema v1",
+  "type": "object",
+  "required": [
+    "mock_id",
+    "source_id",
+    "routes",
+    "modes",
+    "version"
+  ],
+  "properties": {
+    "mock_id": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "routes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "modes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

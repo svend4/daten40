@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DocsTemplate Schema v1",
+  "type": "object",
+  "required": [
+    "docs_template_id",
+    "sections",
+    "formats",
+    "version"
+  ],
+  "properties": {
+    "docs_template_id": {
+      "type": "string"
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "formats": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "md",
+          "html",
+          "pdf"
+        ]
+      }
+    },
+    "required_examples": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 50
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

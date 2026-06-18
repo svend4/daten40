@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-01-11T18:57:46",
+  "algorithm": "sha256",
+  "files": {
+    "README.md": "275bb36142e470c22bce6e72e995dc557146d2196994fcb0631e22d01f8ba330",
+    "manifest.json": "a63601b0576cee0da29abec58ffc67e0c741bc1c961896e5413529e7fe652bb3",
+    "MASTER_INDEX_DELTA.json": "122704b7cf17753fdfc53b3e1a8c4eaa2c479dffbf2d230bcd18fe330f829eb7",
+    "docs/THREAT_MODEL.md": "7f3c40632847d924e5a5075c83bb6ee30964b996577634d1becb4031f14d66bd",
+    "docs/SHARE_LINKS.md": "a0155f04ac17c7b8f6fc4d58f18d77f449afe2ea796e677400acaed58f08a8ac",
+    "docs/WATERMARKING.md": "7d8b8afcae0281ae5f620fd521b0fd71fc905a6c558279d021978401cd2522ba",
+    "docs/PORTAL_UI_SPEC.md": "b7b4812420fd40a99582814a9e724ba0ab388a41ef73aa10a9a77d1a5f83fdd6",
+    "data-contracts/share_link.v1.json": "6d5364c00860686d985ac2f24cf0c493b8c375f564282c341ce55b630f3e58f5",
+    "data-contracts/share_link_create_request.v1.json": "714c5a99e5fac067cf546ac0ac74ac3fca8b1e3796e718236870726f6d85a3f3",
+    "data-contracts/download_event.v1.json": "7d5201de5510c56cae7cf43cbb9dd92bb97342cd5e9fead370d1103f09cad47e",
+    "data-contracts/access_attempt_event.v1.json": "20a214b7b758c962acfc749890217f7c43757d36750e8c1f7deb71552e773869",
+    "api/openapi_auditor_portal_v1.json": "e59e64cc31bf8bd8622054dd0fb12ce4d2996c4a961e5bc21ee05b2fa9b1a06c",
+    "service/fastapi_skeleton.py": "3a29e85109999c128ece05733af5c104ba6cf49da0df62937db70b550f70e64e",
+    "db/postgres_schema.sql": "b4ebcc8757cc40cc43a116f66affddfb5dbb2af5f1722bcf709c0f34690b8c62",
+    "examples/sharelink_create_request.json": "03ee936b3a770857013f319204d4c15fff80e296d3076a871a081b4f8fa6f24f",
+    "examples/portal_session_start.json": "f94bd8473fde85adc0571c52419d2e7a3ccfa417c619496f9923f17e18df5e82",
+    "tests/TEST_PLAN.md": "549ebc8451f19359ec7e9d0707e27124fbc69cc5fc25b5f75213369d7ae16b50"
+  }
+}

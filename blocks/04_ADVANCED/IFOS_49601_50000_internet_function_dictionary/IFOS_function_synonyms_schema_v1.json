@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS FunctionSynonyms Schema v1",
+  "type": "object",
+  "required": [
+    "syn_id",
+    "term_id",
+    "synonyms",
+    "locale",
+    "version"
+  ],
+  "properties": {
+    "syn_id": {
+      "type": "string"
+    },
+    "term_id": {
+      "type": "string"
+    },
+    "synonyms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "locale": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

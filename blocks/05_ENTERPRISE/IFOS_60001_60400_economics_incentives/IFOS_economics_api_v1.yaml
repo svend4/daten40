@@ -1,0 +1,20 @@
+openapi: 3.0.3
+info:
+  title: IFOS Economics & Incentives API
+  version: "1.0.0"
+servers:
+  - url: https://econ.ifos.local/v1
+tags:
+  - name: Pricing
+  - name: Payouts
+  - name: Bounties
+  - name: Trust
+paths:
+  /pricing/plans/create:
+    post: {tags:[Pricing], summary: Create pricing plan, responses: {"200": {description: OK}}}
+  /payouts/split:
+    post: {tags:[Payouts], summary: Compute payout splits, responses: {"200": {description: OK}}}
+  /bounties/create:
+    post: {tags:[Bounties], summary: Create bounty, responses: {"200": {description: OK}}}
+  /trust/tiers/set:
+    post: {tags:[Trust], summary: Set trust tier, responses: {"200": {description: OK}}}

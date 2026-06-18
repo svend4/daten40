@@ -1,0 +1,19 @@
+openapi: 3.0.3
+info:
+  title: IFOS Browser Security Control Plane API
+  version: "1.0.0"
+servers:
+  - url: https://security.ifos.local/v1
+paths:
+  /profiles:
+    get: {summary: List browser security profiles, responses: {"200": {description: OK}}}
+  /headers/policies:
+    get: {summary: List headers policies, responses: {"200": {description: OK}}}
+  /csp/policies:
+    get: {summary: List CSP policies, responses: {"200": {description: OK}}}
+  /csrf/policies:
+    get: {summary: List CSRF policies, responses: {"200": {description: OK}}}
+  /cors/policies:
+    get: {summary: List CORS policies, responses: {"200": {description: OK}}}
+  /events:
+    post: {summary: Ingest security event (CSP report, anomaly), responses: {"200": {description: OK}}}

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS StoryCluster Schema v1",
+  "type": "object",
+  "required": [
+    "cluster_id",
+    "canonical_title",
+    "entities",
+    "facts",
+    "sources",
+    "ts_first",
+    "ts_last",
+    "version"
+  ],
+  "properties": {
+    "cluster_id": {
+      "type": "string"
+    },
+    "canonical_title": {
+      "type": "string"
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "facts": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "ts_first": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ts_last": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

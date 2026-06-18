@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ConnectorPermissionModel Schema v1",
+  "type": "object",
+  "required": [
+    "connector_id",
+    "permissions",
+    "usage",
+    "pii_access",
+    "version"
+  ],
+  "properties": {
+    "connector_id": {
+      "type": "string"
+    },
+    "permissions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "usage": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "pii_access": {
+      "type": "string",
+      "enum": [
+        "none",
+        "limited",
+        "full"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

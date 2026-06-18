@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Citation Schema v1",
+  "type": "object",
+  "required": [
+    "citation_id",
+    "item_id",
+    "chunk_id",
+    "source_ref",
+    "offsets",
+    "hash",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "citation_id": {
+      "type": "string"
+    },
+    "item_id": {
+      "type": "string"
+    },
+    "chunk_id": {
+      "type": "string"
+    },
+    "source_ref": {
+      "type": "string"
+    },
+    "offsets": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "hash": {
+      "type": "string"
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

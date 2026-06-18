@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS TaxProfile Schema v1",
+  "type": "object",
+  "required": [
+    "tax_profile_id",
+    "party_kind",
+    "party_id",
+    "country",
+    "vat_id",
+    "b2b",
+    "version"
+  ],
+  "properties": {
+    "tax_profile_id": {
+      "type": "string"
+    },
+    "party_kind": {
+      "type": "string",
+      "enum": [
+        "buyer",
+        "seller",
+        "platform"
+      ]
+    },
+    "party_id": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "vat_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "b2b": {
+      "type": "boolean"
+    },
+    "reverse_charge": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "address": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ReviewConference Schema v1",
+  "type": "object",
+  "required": [
+    "conf_id",
+    "target_id",
+    "agenda",
+    "briefing",
+    "facts",
+    "decisions",
+    "exports",
+    "version"
+  ],
+  "properties": {
+    "conf_id": {
+      "type": "string"
+    },
+    "target_id": {
+      "type": "string"
+    },
+    "agenda": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "briefing": {
+      "type": "string"
+    },
+    "facts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "exports": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Experiment Assignment Schema v1",
+  "type": "object",
+  "required": [
+    "assignment_id",
+    "experiment_id",
+    "subject",
+    "variant_id",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "assignment_id": {
+      "type": "string"
+    },
+    "experiment_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "variant_id": {
+      "type": "string"
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

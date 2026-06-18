@@ -1,0 +1,23 @@
+{
+  "apply_to": ">= v30",
+  "delta": {
+    "section": "ECOSYSTEM",
+    "add": [
+      {
+        "id_range": "IFOS_82001_82400",
+        "name": "Ecosystem / Marketplace Core",
+        "slug": "ecosystem_marketplace_core",
+        "type": "Platform",
+        "layer": "Ecosystem",
+        "status": "Draft",
+        "dependencies": [
+          "IFOS_00001_00400"
+        ],
+        "artifacts": [
+          "IFOS_82001_82400_ecosystem_marketplace_core_pack.zip"
+        ],
+        "notes": "Publisher registry, listings, revenue share"
+      }
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ConnectorContract Schema v1",
+  "type": "object",
+  "required": [
+    "connector_id",
+    "name",
+    "ops",
+    "auth",
+    "schemas",
+    "rate_limits",
+    "errors",
+    "version"
+  ],
+  "properties": {
+    "connector_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "ops": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "auth": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "schemas": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "rate_limits": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "errors": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

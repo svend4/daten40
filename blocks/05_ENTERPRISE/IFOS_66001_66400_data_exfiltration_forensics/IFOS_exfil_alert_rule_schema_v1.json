@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ExfilAlertRule Schema v1",
+  "type": "object",
+  "required": [
+    "rule_id",
+    "signal",
+    "threshold",
+    "window_s",
+    "filters",
+    "actions",
+    "mode",
+    "version"
+  ],
+  "properties": {
+    "rule_id": {
+      "type": "string"
+    },
+    "signal": {
+      "type": "string",
+      "enum": [
+        "EGRESS_MB_PER_MINUTE",
+        "NEW_DOMAIN_SEEN",
+        "DLP_MATCH_COUNT",
+        "DENY_SPIKE",
+        "TOKEN_LEAK_PATTERN",
+        "BEACONING_SCORE"
+      ]
+    },
+    "threshold": {
+      "type": "number"
+    },
+    "window_s": {
+      "type": "integer"
+    },
+    "filters": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "dry_run",
+        "enforced"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

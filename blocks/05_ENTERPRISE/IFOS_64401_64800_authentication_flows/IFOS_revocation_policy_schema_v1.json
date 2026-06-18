@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Revocation Policy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "revoke_refresh_on_logout",
+    "revocation_store",
+    "version"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "revoke_refresh_on_logout": {
+      "type": "boolean"
+    },
+    "revocation_store": {
+      "type": "string",
+      "enum": [
+        "denylist",
+        "allowlist",
+        "session_store"
+      ]
+    },
+    "sso_end_session": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

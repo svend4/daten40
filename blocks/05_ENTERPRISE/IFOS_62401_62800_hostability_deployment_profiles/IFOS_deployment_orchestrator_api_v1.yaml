@@ -1,0 +1,27 @@
+openapi: 3.0.3
+info:
+  title: IFOS Deployment Orchestrator API
+  version: "1.0.0"
+servers:
+  - url: https://deploy.ifos.local/v1
+paths:
+  /plan:
+    post:
+      summary: Create deployment plan from hostability manifest
+      responses:
+        "200": {description: OK}
+  /apply:
+    post:
+      summary: Apply plan (generate configs / run deploy hooks)
+      responses:
+        "200": {description: OK}
+  /probe/run:
+    post:
+      summary: Run hostability probe in target environment
+      responses:
+        "200": {description: OK}
+  /debug/checklist:
+    get:
+      summary: Get debug checklist
+      responses:
+        "200": {description: OK}

@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-01-11T18:10:23",
+  "algorithm": "sha256",
+  "files": {
+    "README.md": "acb7f431e79f07996e43f3e7a061ffea0e8db59d2c4427fb0b401c67a6b61f28",
+    "manifest.json": "fa94379a5ba09758e93e1716744e325effa648df4803591b9ae17e71dd1e1301",
+    "MASTER_INDEX_DELTA.json": "4b41c5546aa535576aa953fdb0fea78003ee977a960841f63f8f12a6944e1ddf",
+    "plugins/registry.json": "daa5d4eb423c2d8fbfa1a9c0db595742c83ea1d59d86f2f6fbe3a66e1c43de76",
+    "plugins/base.py": "e09c32449e32990878bc8dce0797b1836f574cfbc430fc91170f948a058e4d6d",
+    "plugins/utils.py": "d41e27c3eb2fb08217e29f2fb56912d7df3015e9090129c5c3d3fbbe1612452f",
+    "plugins/audit_log_exporter.py": "726398f3c8754e093161964a610b680647275404412e51a75c4906ccc79401be",
+    "plugins/iam_exporter.py": "a1f2eb684b45451b6bbe30f8d70bcd99dcbc9140d3df3eae923cf44bde2d4cea",
+    "plugins/config_snapshotter.py": "4d0e83e4a093ca67c1a078cadf552271ea62ed3887721d177c0c0ca6d09576af",
+    "plugins/backup_restore_test_collector.py": "5740b0aac5aac873213271aaea46248d28befee3abe0c3af4911cfba3872b5f1",
+    "plugins/incident_runbook_snapshot_exporter.py": "a5e3971c771e789db8f9e8c3469737515aa3bd0ce35e856849a4a0da2963b784",
+    "docs/EVIDENCE_ID_TO_PLUGIN_MAP.csv": "7477a980c5486d69601a906f163fdf72f23a8e9a69b71c42257123a1fa6f22ba",
+    "examples/plugin_config_audit_log.json": "64a2b3611c75045da6beb94dcb6e7cd754661ea0a46f565ec64888a1f103b52e",
+    "examples/plugin_config_iam.json": "af03a8a93eadd03e42999f45087006cb77e9a270df976c9f27044a98fedbbcdc",
+    "examples/plugin_config_config_store.json": "cd6480ab62721d56c2073ea4d80d361d1d3aa08ac581d1c8c0e48efdd6b519e5",
+    "tests/TEST_PLAN.md": "d2906d04e08bfa19eace3d5283e2971a96656fe2d282dc8ae6df478e4ec3dcc2"
+  }
+}

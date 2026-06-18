@@ -1,0 +1,19 @@
+{
+  "contract_id": "alert_event.v1",
+  "fields": {
+    "alert_id": "string",
+    "type": "string",
+    "severity": "string",
+    "environment": "string",
+    "policy_pack": "string",
+    "control": "string",
+    "evidence_id": "string",
+    "scope_tags": "object",
+    "created_at": "datetime",
+    "message": "string",
+    "links": "object"
+  },
+  "privacy_level": "internal",
+  "retention_policy": "security_default",
+  "audit": "required"
+}

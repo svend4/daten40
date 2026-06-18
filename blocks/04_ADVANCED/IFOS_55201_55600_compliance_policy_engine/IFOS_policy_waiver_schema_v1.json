@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Policy Waiver Schema v1",
+  "type": "object",
+  "required": [
+    "waiver_id",
+    "scope",
+    "issued_by",
+    "expires_at",
+    "reason",
+    "controls",
+    "version"
+  ],
+  "properties": {
+    "waiver_id": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string"
+    },
+    "issued_by": {
+      "type": "string"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "controls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

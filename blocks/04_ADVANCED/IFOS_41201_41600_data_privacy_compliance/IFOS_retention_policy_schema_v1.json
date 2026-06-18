@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RetentionPolicy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "rules",
+    "version"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "default_action": {
+      "type": "string",
+      "enum": [
+        "delete",
+        "archive",
+        "retain"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

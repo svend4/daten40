@@ -1,0 +1,15 @@
+{
+  "job_id": "job_phi_access_logs",
+  "evidence_id": "phi_access_logs",
+  "collector": "audit_log_exporter",
+  "cadence": "daily",
+  "format": "json",
+  "time_window": {
+    "type": "previous_day"
+  },
+  "environment": "prod",
+  "credentials_ref": "cred://audit_log/prod",
+  "tags": {
+    "policy_pack": "cp_us_hipaa_soc2_baseline"
+  }
+}

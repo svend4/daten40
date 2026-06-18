@@ -1,0 +1,64 @@
+{
+  "submission": {
+    "submission_id": "sub.s.olxag694emgq",
+    "type": "macro",
+    "artifact_ref": "macro.weekly_news_conference",
+    "status": "submitted",
+    "author": "user.stefan",
+    "checks": {
+      "lint": "ok",
+      "policy": "ok",
+      "smoke_test": "ok"
+    },
+    "version": "1.0.0"
+  },
+  "review": {
+    "review_id": "rev.r.4o3mwlsmen28",
+    "submission_ref": "sub.s.olxag694emgq",
+    "status": "request_changes",
+    "comments": [
+      "Добавить runbook для ошибок RSS.",
+      "Указать лицензии источников."
+    ],
+    "reviewer": "role.reviewer.community",
+    "version": "1.0.0"
+  },
+  "rating": {
+    "rating_id": "rat.t.pstci85gr6vy",
+    "target_ref": "bundle.news_conference_pack",
+    "stars": 5,
+    "verified": true,
+    "categories": {
+      "docs": 5,
+      "reliability": 4,
+      "value": 5,
+      "support": 4
+    },
+    "comment": "Очень быстро даёт ценность. Хотелось бы ещё шаблон фильтрации источников.",
+    "created_at": "2026-01-04T22:05:00Z",
+    "version": "1.0.0"
+  },
+  "moderation_case": {
+    "case_id": "cas.c.jrwt5nm5jqkr",
+    "target_ref": "connector.fake_payments",
+    "reason_code": "fraud_suspected",
+    "status": "quarantined",
+    "notes": [
+      "Слишком много жалоб и подозрительные домены."
+    ],
+    "created_at": "2026-01-04T22:05:00Z",
+    "version": "1.0.0"
+  },
+  "bounty": {
+    "bounty_id": "bon.b.astc3vcb3he0",
+    "title": "Connector: Check24 сравнение страховок (DE)",
+    "type": "connector",
+    "reward": {
+      "amount": 600,
+      "currency": "EUR",
+      "condition": "100 verified runs"
+    },
+    "status": "open",
+    "version": "1.0.0"
+  }
+}

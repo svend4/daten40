@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Course Schema v1",
+  "type": "object",
+  "required": [
+    "course_id",
+    "title",
+    "level",
+    "lessons",
+    "version"
+  ],
+  "properties": {
+    "course_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "foundation",
+        "builder",
+        "creator",
+        "enterprise"
+      ]
+    },
+    "lessons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "labs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

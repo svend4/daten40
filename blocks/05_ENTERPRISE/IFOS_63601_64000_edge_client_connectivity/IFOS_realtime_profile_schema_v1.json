@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Realtime Profile Schema v1",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "preferred",
+    "fallbacks",
+    "heartbeat_s",
+    "version"
+  ],
+  "properties": {
+    "profile_id": {
+      "type": "string"
+    },
+    "preferred": {
+      "type": "string",
+      "enum": [
+        "ws",
+        "sse",
+        "long_poll"
+      ]
+    },
+    "fallbacks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "heartbeat_s": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "switch_conditions": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

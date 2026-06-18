@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ConnectorPublishJob Schema v1",
+  "type": "object",
+  "required": [
+    "publish_id",
+    "package_id",
+    "checks",
+    "state",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "publish_id": {
+      "type": "string"
+    },
+    "package_id": {
+      "type": "string"
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "queued",
+        "running",
+        "done",
+        "error"
+      ]
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "request_id": "ENR-2026-0007",
+  "student": {
+    "student_id": "S-2001",
+    "name": "Alex Smith",
+    "dob": "2012-09-12",
+    "guardian_contact": {
+      "email": "parent@example.com"
+    }
+  },
+  "program": "Grade 7",
+  "submitted_at": "2026-01-11T12:00:00Z",
+  "status": "submitted"
+}

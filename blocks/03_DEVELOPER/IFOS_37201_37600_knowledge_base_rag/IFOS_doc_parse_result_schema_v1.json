@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DocParseResult Schema v1",
+  "type": "object",
+  "required": [
+    "parse_id",
+    "tenant_id",
+    "doc_id",
+    "status",
+    "text",
+    "structure",
+    "provenance",
+    "version"
+  ],
+  "properties": {
+    "parse_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "doc_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ok",
+        "failed",
+        "partial"
+      ]
+    },
+    "text": {
+      "type": "string"
+    },
+    "structure": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

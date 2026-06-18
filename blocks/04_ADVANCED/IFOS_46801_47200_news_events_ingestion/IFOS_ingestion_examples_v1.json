@@ -1,0 +1,87 @@
+{
+  "source": {
+    "source_id": "src.s.jk1664lhrgjc",
+    "type": "rss",
+    "name": "Tech News",
+    "endpoint": "https://example.com/rss",
+    "refresh": "PT30M",
+    "lang": "en",
+    "region": "global",
+    "rules": {
+      "robots": "allow",
+      "rate_limit_per_min": 30
+    },
+    "version": "1.0.0"
+  },
+  "fetch_job": {
+    "job_id": "job.j.9kh1tujoqer6",
+    "source_id": "src.*",
+    "state": "queued",
+    "attempt": 0,
+    "scheduled_at": "2026-01-04T08:55:00Z",
+    "version": "1.0.0"
+  },
+  "raw_item": {
+    "raw_id": "raw.r.ogdmp759pick",
+    "source_id": "src.*",
+    "url": "https://example.com/a",
+    "fetched_at": "2026-01-04T08:55:00Z",
+    "payload": {
+      "content_type": "text/html",
+      "body": "<html>...</html>"
+    },
+    "hash": "sha256:placeholder",
+    "meta": {
+      "http_status": 200
+    },
+    "version": "1.0.0"
+  },
+  "normalized_item": {
+    "item_id": "itm.i.jd0caw828uum",
+    "canonical_url": "https://example.com/a",
+    "title": "Example title",
+    "published_at": "2026-01-03T12:00:00Z",
+    "updated_at": null,
+    "language": "en",
+    "body_text": "Clean text ...",
+    "entities": [
+      "Company X",
+      "Product Y"
+    ],
+    "tags": [
+      "tech",
+      "release"
+    ],
+    "provenance": {
+      "raw_id": "raw.*",
+      "hash": "sha256:*"
+    },
+    "version": "1.0.0"
+  },
+  "correction": {
+    "corr_id": "corr.c.ym6xitm3mrtf",
+    "item_id": "itm.*",
+    "type": "correction",
+    "note": "Updated price from 199 to 179",
+    "ts": "2026-01-04T08:55:00Z",
+    "version": "1.0.0"
+  },
+  "timeline_event": {
+    "event_id": "evt.e.4586v2svtu3p",
+    "cluster_id": "cl.*",
+    "kind": "product_release",
+    "start": "2026-01-03T12:00:00Z",
+    "end": null,
+    "entities": [
+      "Company X",
+      "Product Y"
+    ],
+    "citations": [
+      {
+        "url": "https://example.com/a",
+        "raw_id": "raw.*"
+      }
+    ],
+    "version": "1.0.0"
+  }
+}

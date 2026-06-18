@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS EventEntity Schema v1",
+  "type": "object",
+  "required": [
+    "entity_id",
+    "type",
+    "name",
+    "attributes",
+    "version"
+  ],
+  "properties": {
+    "entity_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "person",
+        "org",
+        "product",
+        "location",
+        "other"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "attributes": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

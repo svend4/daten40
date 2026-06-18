@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Sandbox Profile Schema v1",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "isolation",
+    "permissions",
+    "limits",
+    "version"
+  ],
+  "properties": {
+    "profile_id": {
+      "type": "string"
+    },
+    "isolation": {
+      "type": "string",
+      "enum": [
+        "per_run",
+        "per_user",
+        "per_team"
+      ]
+    },
+    "permissions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

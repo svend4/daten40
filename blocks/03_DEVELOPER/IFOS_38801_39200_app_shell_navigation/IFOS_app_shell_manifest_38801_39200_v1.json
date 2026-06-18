@@ -1,0 +1,29 @@
+{
+  "app_shell": {
+    "topbar": [
+      "logo",
+      "search",
+      "workspace_switcher",
+      "notifications",
+      "user_menu"
+    ],
+    "sidenav": {
+      "groups": [
+        "General",
+        "Content",
+        "Automation",
+        "Integration",
+        "Knowledge"
+      ],
+      "collapsed_by_default": false
+    },
+    "content": {
+      "router": "views_catalog"
+    },
+    "features": {
+      "command_palette": true,
+      "deep_links": true,
+      "permission_gates": true
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "bundle_id": "phi_access_request",
+  "name": "HIPAA: PHI Access Request Handling",
+  "version": "1.0.0",
+  "connectors": [
+    "case_management",
+    "notification",
+    "audit_log",
+    "data_export",
+    "doc_storage"
+  ],
+  "secrets_required": [],
+  "entrypoint": {
+    "trigger": "case_management.ticket_created",
+    "plan_id": "plan_phi_access_request"
+  },
+  "policies": [
+    "hipaa.baseline",
+    "privacy.restricted",
+    "audit.logging"
+  ],
+  "steps": [
+    {
+      "id": "validate_identity",
+      "capability": "validate_patient_identity",
+      "outputs": [
+        "phi_access_request.v1"
+      ]
+    },
+    {
+      "id": "collect_phi",
+      "capability": "collect_phi_subject_data",
+      "inputs": [
+        "phi_access_request.v1"
+      ],
+      "outputs": [
+        "phi_export_package.v1"
+      ]
+    },
+    {
+      "id": "store_export",
+      "capability": "store_documents",
+      "inputs": [
+        "phi_export_package.v1"
+      ],
+      "target": "doc_storage"
+    },
+    {
+      "id": "notify_requester",
+      "capability": "notify_requester",
+      "inputs": [
+        "phi_access_request.v1"
+      ],
+      "outputs": [
+        "notification.v1"
+      ]
+    },
+    {
+      "id": "log_evidence",
+      "capability": "append_audit_evidence",
+      "inputs": [
+        "phi_access_request.v1"
+      ],
+      "target": "evidence.phi_access_logs"
+    }
+  ]
+}

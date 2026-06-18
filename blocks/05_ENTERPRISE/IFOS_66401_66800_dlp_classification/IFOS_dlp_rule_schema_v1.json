@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DlpRule Schema v1",
+  "type": "object",
+  "required": [
+    "rule_id",
+    "when",
+    "then",
+    "severity",
+    "version"
+  ],
+  "properties": {
+    "rule_id": {
+      "type": "string"
+    },
+    "when": {
+      "type": "object",
+      "required": [
+        "classes"
+      ],
+      "properties": {
+        "classes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "labels_any": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "labels_all": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "dest_allowlist_set": {
+          "type": "string"
+        },
+        "max_risk": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "then": {
+      "type": "object",
+      "required": [
+        "action"
+      ],
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": [
+            "ALLOW",
+            "TRANSFORM",
+            "DENY"
+          ]
+        },
+        "redaction_profile_id": {
+          "type": "string"
+        },
+        "open_incident": {
+          "type": "boolean"
+        },
+        "notify": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "require_receipts": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "justification": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

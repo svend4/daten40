@@ -1,0 +1,36 @@
+openapi: 3.0.3
+info:
+  title: IFOS Ingest & Normalization API
+  version: "1.0.0"
+servers:
+  - url: https://ingest.ifos.local/v1
+tags:
+  - name: Sources
+  - name: Fetch
+  - name: Extract
+  - name: Normalize
+  - name: Enrich
+  - name: Privacy
+  - name: QA
+  - name: Manifests
+paths:
+  /sources:
+    post: {tags:[Sources], summary: Upsert ingest source, responses: {"200": {description: OK}}}
+  /fetch:
+    post: {tags:[Fetch], summary: Create fetch job, responses: {"201": {description: Created}}}
+  /extract:
+    post: {tags:[Extract], summary: Run extractor on raw payload, responses: {"200": {description: OK}}}
+  /normalize:
+    post: {tags:[Normalize], summary: Normalize raw item into normalized item, responses: {"200": {description: OK}}}
+  /mapping/rules:
+    post: {tags:[Normalize], summary: Upsert mapping rule, responses: {"200": {description: OK}}}
+  /enrich:
+    post: {tags:[Enrich], summary: Run enrichment job, responses: {"202": {description: Accepted}}}
+  /privacy/pii-redact:
+    post: {tags:[Privacy], summary: Run PII redaction job, responses: {"202": {description: Accepted}}}
+  /qa/dedup:
+    post: {tags:[QA], summary: Compute dedup keys, responses: {"200": {description: OK}}}
+  /qa/quarantine:
+    post: {tags:[QA], summary: Create quarantine item, responses: {"201": {description: Created}}}
+  /manifests:
+    post: {tags:[Manifests], summary: Create ingest manifest, responses: {"201": {description: Created}}}

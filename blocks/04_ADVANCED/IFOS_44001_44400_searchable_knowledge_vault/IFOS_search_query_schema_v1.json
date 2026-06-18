@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SearchQuery Schema v1",
+  "type": "object",
+  "required": [
+    "query_id",
+    "text",
+    "mode",
+    "filters",
+    "tenant",
+    "version"
+  ],
+  "properties": {
+    "query_id": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "fulltext",
+        "semantic",
+        "hybrid"
+      ]
+    },
+    "filters": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "tenant": {
+      "type": "string"
+    },
+    "lang": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "top_k": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

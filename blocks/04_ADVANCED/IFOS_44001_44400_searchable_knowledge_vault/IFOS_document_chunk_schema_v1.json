@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DocumentChunk Schema v1",
+  "type": "object",
+  "required": [
+    "chunk_id",
+    "item_id",
+    "chunk_text",
+    "offsets",
+    "hash",
+    "meta",
+    "version"
+  ],
+  "properties": {
+    "chunk_id": {
+      "type": "string"
+    },
+    "item_id": {
+      "type": "string"
+    },
+    "chunk_text": {
+      "type": "string"
+    },
+    "offsets": {
+      "type": "object",
+      "required": [
+        "start",
+        "end"
+      ],
+      "properties": {
+        "start": {
+          "type": "integer"
+        },
+        "end": {
+          "type": "integer"
+        }
+      }
+    },
+    "hash": {
+      "type": "string"
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

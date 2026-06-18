@@ -1,0 +1,49 @@
+{
+  "packs": [
+    {
+      "pack_id": "bp_news_001",
+      "bundle": {
+        "id": "bp_news_001",
+        "version": "1.0.0",
+        "license": "MIT"
+      },
+      "blueprint": {
+        "trigger": "rss.poll",
+        "steps": [
+          {
+            "action": "fetch.rss",
+            "params": {
+              "feeds": [
+                "..."
+              ]
+            }
+          },
+          {
+            "action": "dedup.hash",
+            "params": {
+              "fields": [
+                "title",
+                "url"
+              ]
+            }
+          },
+          {
+            "action": "rank.score",
+            "params": {
+              "signals": [
+                "recency",
+                "source_weight"
+              ]
+            }
+          },
+          {
+            "action": "publish.digest",
+            "params": {
+              "channel": "email"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

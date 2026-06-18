@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Multi-Cloud Cost Model Schema v1",
+  "type": "object",
+  "required": [
+    "model_id",
+    "line_items",
+    "currency",
+    "version"
+  ],
+  "properties": {
+    "model_id": {
+      "type": "string"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "line_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "notes": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

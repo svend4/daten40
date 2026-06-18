@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Extractor Schema v1",
+  "type": "object",
+  "required": [
+    "extractor_id",
+    "name",
+    "input_types",
+    "outputs",
+    "version"
+  ],
+  "properties": {
+    "extractor_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "input_types": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "config": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

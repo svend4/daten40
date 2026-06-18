@@ -1,0 +1,29 @@
+openapi: 3.0.3
+info:
+  title: IFOS Developer Onboarding Control Plane API
+  version: "1.0.0"
+servers:
+  - url: https://devonboard.ifos.local/v1
+paths:
+  /templates/projects:
+    get: {summary: List project templates, responses: {"200": {description: OK}}}
+    post: {summary: Create/update project template, responses: {"200": {description: OK}}}
+  /templates/connectors:
+    get: {summary: List connector templates, responses: {"200": {description: OK}}}
+    post: {summary: Create/update connector template, responses: {"200": {description: OK}}}
+  /scaffold/connectors:
+    post: {summary: Generate connector scaffold, responses: {"200": {description: OK}}}
+  /docs/templates:
+    get: {summary: List docs templates, responses: {"200": {description: OK}}}
+    post: {summary: Create/update docs template, responses: {"200": {description: OK}}}
+  /docs/build:
+    post: {summary: Create docs build job, responses: {"200": {description: OK}}}
+  /validate/rules:
+    get: {summary: List validation rules, responses: {"200": {description: OK}}}
+    post: {summary: Create/update validation rule, responses: {"200": {description: OK}}}
+  /publish/pipelines:
+    get: {summary: List publishing pipelines, responses: {"200": {description: OK}}}
+    post: {summary: Create/update publishing pipeline, responses: {"200": {description: OK}}}
+  /onboarding/tracks:
+    get: {summary: List onboarding tracks, responses: {"200": {description: OK}}}
+    post: {summary: Create/update onboarding track, responses: {"200": {description: OK}}}

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SupportEvidencePackRef Schema v1",
+  "type": "object",
+  "required": [
+    "ref_id",
+    "ticket_or_case",
+    "items",
+    "hashes",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "ref_id": {
+      "type": "string"
+    },
+    "ticket_or_case": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "hashes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

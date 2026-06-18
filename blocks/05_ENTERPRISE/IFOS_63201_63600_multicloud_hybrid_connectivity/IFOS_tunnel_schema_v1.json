@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Tunnel Schema v1",
+  "type": "object",
+  "required": [
+    "tunnel_id",
+    "mode",
+    "source_env",
+    "target_env",
+    "transport",
+    "version"
+  ],
+  "properties": {
+    "tunnel_id": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "outbound_only",
+        "mutual",
+        "hub_spoke"
+      ]
+    },
+    "source_env": {
+      "type": "string"
+    },
+    "target_env": {
+      "type": "string"
+    },
+    "transport": {
+      "type": "string",
+      "enum": [
+        "mtls",
+        "wireguard",
+        "ssh",
+        "custom"
+      ]
+    },
+    "endpoints": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "apply_to": ">= v30",
+  "delta": {
+    "section": "COMPLIANCE_TOOLING",
+    "add": [
+      {
+        "id_range": "IFOS_86001_86400",
+        "name": "Compliance UI & Developer Tooling",
+        "slug": "compliance_ui_dev_tooling",
+        "type": "Tooling",
+        "layer": "ComplianceTooling",
+        "status": "Production",
+        "dependencies": [
+          "IFOS_85601_86000"
+        ],
+        "artifacts": [
+          "IFOS_86001_86400_compliance_ui_dev_tooling_os_pack.zip"
+        ],
+        "notes": "UI specs + API + CLI contract for policy debug/simulate/evidence"
+      }
+    ]
+  }
+}

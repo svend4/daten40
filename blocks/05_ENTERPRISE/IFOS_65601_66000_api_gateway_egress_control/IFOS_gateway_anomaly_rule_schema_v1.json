@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS GatewayAnomalyRule Schema v1",
+  "type": "object",
+  "required": [
+    "anomaly_rule_id",
+    "signal",
+    "threshold",
+    "window_s",
+    "actions",
+    "version"
+  ],
+  "properties": {
+    "anomaly_rule_id": {
+      "type": "string"
+    },
+    "signal": {
+      "type": "string",
+      "enum": [
+        "deny_spike",
+        "egress_spike",
+        "new_domain",
+        "tls_fail_spike",
+        "dlp_match_spike",
+        "beaconing"
+      ]
+    },
+    "threshold": {
+      "type": "number"
+    },
+    "window_s": {
+      "type": "integer"
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

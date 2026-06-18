@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ProviderResponse Schema v1",
+  "type": "object",
+  "required": [
+    "resp_id",
+    "review_id",
+    "provider_id",
+    "text",
+    "status",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "resp_id": {
+      "type": "string"
+    },
+    "review_id": {
+      "type": "string"
+    },
+    "provider_id": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "responded",
+        "resolved",
+        "unresolved"
+      ]
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

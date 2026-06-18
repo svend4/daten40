@@ -1,0 +1,12 @@
+{
+  "invoice_id": "INV-2026-0001",
+  "customer_id": "CUST-100",
+  "customer_email": "customer@example.com",
+  "currency": "EUR",
+  "subtotal": 1000.0,
+  "vat_amount": 200.0,
+  "total": 1200.0,
+  "issue_date": "2026-01-10",
+  "due_date": "2026-02-10",
+  "status": "issued"
+}

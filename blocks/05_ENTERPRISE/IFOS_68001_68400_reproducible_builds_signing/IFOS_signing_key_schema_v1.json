@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SigningKey Metadata Schema v1",
+  "type": "object",
+  "required": [
+    "key_id",
+    "owner",
+    "purpose",
+    "storage",
+    "rotation_policy",
+    "status",
+    "version_schema"
+  ],
+  "properties": {
+    "key_id": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "object",
+      "required": [
+        "org",
+        "team"
+      ],
+      "properties": {
+        "org": {
+          "type": "string"
+        },
+        "team": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "purpose": {
+      "type": "string",
+      "enum": [
+        "package_signing",
+        "attestation_signing",
+        "channel_signing"
+      ]
+    },
+    "storage": {
+      "type": "string",
+      "enum": [
+        "hsm",
+        "vault",
+        "offline",
+        "kms"
+      ]
+    },
+    "rotation_policy": {
+      "type": "object",
+      "required": [
+        "rotate_days"
+      ],
+      "properties": {
+        "rotate_days": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "notify_before_days": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ACTIVE",
+        "REVOKED",
+        "EXPIRED"
+      ]
+    },
+    "revocation_reason": {
+      "type": "string"
+    },
+    "version_schema": {
+      "type": "string",
+      "const": "1.0.0"
+    }
+  }
+}

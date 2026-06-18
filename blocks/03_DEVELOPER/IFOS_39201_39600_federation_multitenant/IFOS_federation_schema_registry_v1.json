@@ -1,0 +1,57 @@
+{
+  "registry_id": "reg.fed.ze064j9m9v6v",
+  "entries": [
+    {
+      "name": "IFOS_org_schema_v1.json",
+      "ref": "file://IFOS_org_schema_v1.json",
+      "hash": "sha256:19b606595e663d688d852961fc04bf90b10f5e8388ca5c832ca78165c7bbb245"
+    },
+    {
+      "name": "IFOS_tenant_schema_v1.json",
+      "ref": "file://IFOS_tenant_schema_v1.json",
+      "hash": "sha256:750e5e0f999563167d520c28dd91b7af4e23e5fa0b22f3dd1750448a7932af79"
+    },
+    {
+      "name": "IFOS_namespace_schema_v1.json",
+      "ref": "file://IFOS_namespace_schema_v1.json",
+      "hash": "sha256:08b71bac588d5ffe3df4ead944702435ebbb9a1af3cee2672f7dc30233b90e54"
+    },
+    {
+      "name": "IFOS_trust_boundary_schema_v1.json",
+      "ref": "file://IFOS_trust_boundary_schema_v1.json",
+      "hash": "sha256:d2c0a111375d278d883ab1abd6ccbe0f7cddce230cec851dee64dcce58587627"
+    },
+    {
+      "name": "IFOS_federation_peer_schema_v1.json",
+      "ref": "file://IFOS_federation_peer_schema_v1.json",
+      "hash": "sha256:9e7bfafcd5b5cb2e4c49934de88e357bf05be34ddcefc410af7536931c0bc092"
+    },
+    {
+      "name": "IFOS_share_grant_schema_v1.json",
+      "ref": "file://IFOS_share_grant_schema_v1.json",
+      "hash": "sha256:d6b79e9e696b02b9e094bffff215c5e22f7444f13dcd1125e660e059b36101e2"
+    },
+    {
+      "name": "IFOS_cross_tenant_request_schema_v1.json",
+      "ref": "file://IFOS_cross_tenant_request_schema_v1.json",
+      "hash": "sha256:28ad4030f3cc68e8340b7bd4fa15a55266c2d1160a345d13516325951d2f2974"
+    },
+    {
+      "name": "IFOS_sync_job_schema_v1.json",
+      "ref": "file://IFOS_sync_job_schema_v1.json",
+      "hash": "sha256:698510b9e827cfe7fccfeb51c443e6cc2dcf03202d0193ed59386730aaa4ad9d"
+    },
+    {
+      "name": "IFOS_conflict_record_schema_v1.json",
+      "ref": "file://IFOS_conflict_record_schema_v1.json",
+      "hash": "sha256:941f69fbb2757edcc9bfc101b637a6dbba7e39f54184160d15b1c060625228ff"
+    },
+    {
+      "name": "IFOS_shard_map_schema_v1.json",
+      "ref": "file://IFOS_shard_map_schema_v1.json",
+      "hash": "sha256:e277261defcf6dd5dd1e66fcf623c90f92d4642db2f74929b5fd5dd3324c827d"
+    }
+  ],
+  "updated_at": "2026-01-03T20:05:00Z",
+  "version": "1.0.0"
+}

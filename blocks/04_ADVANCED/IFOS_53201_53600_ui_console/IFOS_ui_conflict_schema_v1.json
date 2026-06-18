@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UI Conflict Schema v1",
+  "type": "object",
+  "required": [
+    "conflict_id",
+    "kind",
+    "items",
+    "resolution_options",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "conflict_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "schema",
+        "identity",
+        "permission",
+        "version"
+      ]
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "resolution_options": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "resolved",
+        "ignored"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS InstallRecipe Schema v1",
+  "type": "object",
+  "required": [
+    "recipe_id",
+    "item_id",
+    "steps",
+    "health_checks",
+    "rollback",
+    "version"
+  ],
+  "properties": {
+    "recipe_id": {
+      "type": "string"
+    },
+    "item_id": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "op"
+        ],
+        "properties": {
+          "op": {
+            "type": "string",
+            "enum": [
+              "download",
+              "verify_hash",
+              "docker_compose_up",
+              "pip_install",
+              "npm_install",
+              "wp_plugin_install",
+              "make_import",
+              "n8n_import",
+              "set_env",
+              "set_secret",
+              "run_command"
+            ]
+          },
+          "params": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "health_checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "http",
+              "cli",
+              "log_contains",
+              "file_exists"
+            ]
+          },
+          "params": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "rollback": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "op"
+        ],
+        "properties": {
+          "op": {
+            "type": "string",
+            "enum": [
+              "docker_compose_down",
+              "pip_uninstall",
+              "npm_uninstall",
+              "wp_plugin_remove",
+              "delete_files",
+              "run_command"
+            ]
+          },
+          "params": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

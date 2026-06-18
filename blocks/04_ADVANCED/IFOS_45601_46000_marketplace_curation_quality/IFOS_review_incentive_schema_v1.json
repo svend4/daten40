@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ReviewIncentive Schema v1",
+  "type": "object",
+  "required": [
+    "incentive_id",
+    "type",
+    "rules",
+    "budget",
+    "version"
+  ],
+  "properties": {
+    "incentive_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "credits",
+        "badge",
+        "support_priority",
+        "bounty"
+      ]
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "budget": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

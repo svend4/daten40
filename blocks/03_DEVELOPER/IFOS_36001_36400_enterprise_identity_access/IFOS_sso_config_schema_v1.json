@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SSOConfig Schema v1",
+  "type": "object",
+  "required": [
+    "sso_id",
+    "tenant_id",
+    "type",
+    "issuer",
+    "domain_allowlist",
+    "group_mapping",
+    "version"
+  ],
+  "properties": {
+    "sso_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "oidc",
+        "saml"
+      ]
+    },
+    "issuer": {
+      "type": "string"
+    },
+    "client_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "domain_allowlist": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "group_mapping": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "mfa_required": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

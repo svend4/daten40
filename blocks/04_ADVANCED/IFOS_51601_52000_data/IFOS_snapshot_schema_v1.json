@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Snapshot Schema v1",
+  "type": "object",
+  "required": [
+    "snapshot_id",
+    "scope",
+    "entities",
+    "schemas",
+    "hash",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "snapshot_id": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string"
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "schemas": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "hash": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

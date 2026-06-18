@@ -1,0 +1,292 @@
+{
+  "marketplace_listing": {
+    "listing_id": "listing.l.zsqgtv5a1fxc",
+    "target_kind": "item",
+    "target_id": "item.it.rfz939ydwetu",
+    "seller_id": "seller.s.6zpu3uvr4jrg",
+    "pricing_model_id": "pricing.p.1gnrm1o5uozi",
+    "trial_policy_id": "trial.t.8ju28oizqid2",
+    "support": {
+      "sla_hours": 48,
+      "channels": [
+        "email",
+        "github"
+      ],
+      "included_updates_months": 6
+    },
+    "refund_policy": {
+      "days": 14,
+      "conditions": [
+        "no_abuse",
+        "within_period"
+      ]
+    },
+    "regions": [
+      "EU",
+      "US"
+    ],
+    "currency": "EUR",
+    "status": "active",
+    "version": "1.0.0"
+  },
+  "pricing_model": {
+    "pricing_model_id": "pricing.p.1gnrm1o5uozi",
+    "kind": "hybrid",
+    "plans": [
+      "plan.pl.93j69n1q0cxs"
+    ],
+    "usage_meters": [
+      "meter.m.w7qgcw5jhptp"
+    ],
+    "notes": "Subscription includes allowance; overage billed via meter",
+    "version": "1.0.0"
+  },
+  "subscription_plan": {
+    "plan_id": "plan.pl.93j69n1q0cxs",
+    "name": "Pro",
+    "billing_period": "monthly",
+    "price": 19.0,
+    "currency": "EUR",
+    "limits": {
+      "seats": 1,
+      "domains": null,
+      "usage": {
+        "task_run": 1000
+      }
+    },
+    "features": [
+      "one_click_install",
+      "auto_updates",
+      "priority_support"
+    ],
+    "version": "1.0.0"
+  },
+  "trial_policy": {
+    "trial_policy_id": "trial.t.8ju28oizqid2",
+    "kind": "time_based",
+    "duration_days": 14,
+    "usage_allowance": null,
+    "auto_convert": false,
+    "post_trial_behavior": "read_only",
+    "version": "1.0.0"
+  },
+  "usage_meter": {
+    "meter_id": "meter.m.w7qgcw5jhptp",
+    "name": "Extra task runs",
+    "unit": "task_run",
+    "price_per_unit": 0.002,
+    "currency": "EUR",
+    "granularity": "event",
+    "free_allowance": 0,
+    "version": "1.0.0"
+  },
+  "purchase_order": {
+    "order_id": "order.o.rlemog807rpn",
+    "buyer_kind": "user",
+    "buyer_id": "user.u.tptlquoeuwdf",
+    "listing_id": "listing.l.zsqgtv5a1fxc",
+    "plan_id": "plan.pl.93j69n1q0cxs",
+    "qty": 1,
+    "coupon_id": "coupon.c.igvjn5k7mtt1",
+    "amount_subtotal": 19.0,
+    "amount_tax": 3.61,
+    "amount_total": 22.61,
+    "currency": "EUR",
+    "status": "paid",
+    "created_at": "2026-01-03T10:32:00Z",
+    "version": "1.0.0"
+  },
+  "invoice": {
+    "invoice_id": "inv.i.97jdsqokc0zk",
+    "order_id": "order.o.rlemog807rpn",
+    "buyer": {
+      "id": "user.u.tptlquoeuwdf",
+      "country": "DE",
+      "vat_id": null
+    },
+    "seller": {
+      "id": "seller.s.6zpu3uvr4jrg",
+      "country": "DE",
+      "vat_id": "DE123456789"
+    },
+    "lines": [
+      {
+        "description": "Subscription Pro (monthly)",
+        "amount": 19.0,
+        "tax_rate": 0.19,
+        "meta": {
+          "plan_id": "plan.pl.93j69n1q0cxs"
+        }
+      },
+      {
+        "description": "VAT 19%",
+        "amount": 3.61,
+        "tax_rate": null,
+        "meta": {}
+      }
+    ],
+    "amount_subtotal": 19.0,
+    "amount_tax": 3.61,
+    "amount_total": 22.61,
+    "currency": "EUR",
+    "issued_at": "2026-01-03T10:32:00Z",
+    "pdf_url": null,
+    "status": "paid",
+    "version": "1.0.0"
+  },
+  "license_entitlement": {
+    "entitlement_id": "ent.e.rfwa58qzixmv",
+    "owner_kind": "user",
+    "owner_id": "user.u.tptlquoeuwdf",
+    "target_kind": "item",
+    "target_id": "item.it.rfz939ydwetu",
+    "type": "subscription",
+    "status": "active",
+    "issued_at": "2026-01-03T10:32:00Z",
+    "expires_at": "2026-02-03T00:00:00Z",
+    "constraints": {
+      "seats": 1,
+      "domains": null,
+      "usage_limits": {
+        "task_run": 1000
+      }
+    },
+    "token": {
+      "kind": "jwt",
+      "value": "eyJhbGci...",
+      "signature": null
+    },
+    "version": "1.0.0"
+  },
+  "payment_provider": {
+    "provider_id": "prov.pv.21d4mwf1qdv3",
+    "name": "stripe",
+    "capabilities": [
+      "cards",
+      "sepa_debit",
+      "webhooks"
+    ],
+    "webhook_secret_ref": "secrets/stripe_webhook",
+    "version": "1.0.0"
+  },
+  "webhook_event": {
+    "event_id": "wh.evt.rp436369dnnh",
+    "provider_id": "prov.pv.21d4mwf1qdv3",
+    "type": "payment_intent.succeeded",
+    "payload": {
+      "order_id": "order.o.rlemog807rpn",
+      "amount": 2261,
+      "currency": "EUR"
+    },
+    "received_at": "2026-01-03T10:32:00Z",
+    "verified": true,
+    "version": "1.0.0"
+  },
+  "payout_account": {
+    "account_id": "acct.a.gt2u34drr50s",
+    "seller_id": "seller.s.6zpu3uvr4jrg",
+    "kind": "iban",
+    "details": {
+      "iban": "DE00 0000 0000 0000 0000 00"
+    },
+    "verified": false,
+    "version": "1.0.0"
+  },
+  "revenue_share": {
+    "revshare_id": "rev.r.78hivk38a700",
+    "listing_id": "listing.l.zsqgtv5a1fxc",
+    "splits": [
+      {
+        "party_kind": "platform",
+        "party_id": "ifos",
+        "percent": 0.2
+      },
+      {
+        "party_kind": "seller",
+        "party_id": "seller.s.6zpu3uvr4jrg",
+        "percent": 0.8
+      }
+    ],
+    "notes": "Default split",
+    "version": "1.0.0"
+  },
+  "payout": {
+    "payout_id": "payout.p.oncro9x1qhq8",
+    "seller_id": "seller.s.6zpu3uvr4jrg",
+    "period_start": "2026-01-01",
+    "period_end": "2026-01-31",
+    "amount": 18.08,
+    "currency": "EUR",
+    "status": "scheduled",
+    "details": {
+      "orders": [
+        "order.o.rlemog807rpn"
+      ],
+      "adjustments": {
+        "fees": -0.0,
+        "refunds": -0.0
+      }
+    },
+    "version": "1.0.0"
+  },
+  "coupon": {
+    "coupon_id": "coupon.c.igvjn5k7mtt1",
+    "code": "WELCOME10",
+    "kind": "percent",
+    "value": 0.1,
+    "currency": null,
+    "active": true,
+    "max_redemptions": 1000,
+    "valid_from": null,
+    "valid_to": null,
+    "version": "1.0.0"
+  },
+  "tax_profile": {
+    "tax_profile_id": "tax.tp.olicryglf7r9",
+    "party_kind": "buyer",
+    "party_id": "user.u.tptlquoeuwdf",
+    "country": "DE",
+    "vat_id": null,
+    "b2b": false,
+    "reverse_charge": null,
+    "address": {
+      "city": "Chemnitz"
+    },
+    "version": "1.0.0"
+  },
+  "refund": {
+    "refund_id": "refund.rf.49p181f6bav1",
+    "order_id": "order.o.rlemog807rpn",
+    "amount": 22.61,
+    "currency": "EUR",
+    "reason": "Not satisfied",
+    "status": "requested",
+    "created_at": "2026-01-03T10:32:00Z",
+    "version": "1.0.0"
+  },
+  "chargeback": {
+    "chargeback_id": "cb.cb.pq2x2d0kqcki",
+    "order_id": "order.o.rlemog807rpn",
+    "amount": 22.61,
+    "currency": "EUR",
+    "status": "opened",
+    "opened_at": "2026-01-03T10:32:00Z",
+    "evidence": null,
+    "version": "1.0.0"
+  },
+  "audit_log": {
+    "log_id": "audit.ad.7g5c64fcyxi3",
+    "actor_kind": "system",
+    "actor_id": "ifos",
+    "action": "ENTITLEMENT_ISSUED",
+    "target": {
+      "kind": "entitlement",
+      "id": "ent.e.rfwa58qzixmv"
+    },
+    "occurred_at": "2026-01-03T10:32:00Z",
+    "meta": {
+      "order_id": "order.o.rlemog807rpn"
+    },
+    "version": "1.0.0"
+  }
+}

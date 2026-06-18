@@ -1,0 +1,24 @@
+{
+  "apply_to": ">= v30",
+  "delta": {
+    "section": "DOMAIN",
+    "add": [
+      {
+        "id_range": "IFOS_82801_83200",
+        "name": "Domain Packs Framework",
+        "slug": "domain_packs_framework",
+        "type": "Platform",
+        "layer": "Domain",
+        "status": "Draft",
+        "dependencies": [
+          "IFOS_00001_00400",
+          "IFOS_82401_82800"
+        ],
+        "artifacts": [
+          "IFOS_82801_83200_domain_packs_framework_os_pack.zip"
+        ],
+        "notes": "Standard structure + manifest schema + templates + seed domain catalog"
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Sync Change Log Schema v1",
+  "type": "object",
+  "required": [
+    "log_id",
+    "replica_id",
+    "records",
+    "head",
+    "version"
+  ],
+  "properties": {
+    "log_id": {
+      "type": "string"
+    },
+    "replica_id": {
+      "type": "string"
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "head": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

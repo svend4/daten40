@@ -1,0 +1,54 @@
+{
+  "blob": {
+    "content_hash": "sha256:50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c",
+    "size": 7,
+    "mime_type": "text/plain",
+    "encryption_ref": "kms:key:tenantA",
+    "version": "1.0.0"
+  },
+  "artifact": {
+    "artifact_id": "art.a.8mpjdm9xsbpe",
+    "type": "document",
+    "metadata": {
+      "title": "Runbook: Weekly Digest",
+      "project": "NewsOps",
+      "tags": [
+        "ops",
+        "news"
+      ]
+    },
+    "blob_refs": [
+      "sha256:50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c"
+    ],
+    "version": "1.0.0"
+  },
+  "bundle_pack": {
+    "pack_id": "pack.p.edzfg3qwdb9k",
+    "manifest": {
+      "kind": "share_pack",
+      "policy": "no_secrets",
+      "created_at": "2026-01-04T18:35:00Z"
+    },
+    "files": [
+      "manifest.json",
+      "runbook.md"
+    ],
+    "hashes": {
+      "runbook.md": "sha256:50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c"
+    },
+    "version": "1.0.0"
+  },
+  "snapshot": {
+    "snapshot_id": "snap.s.7aqpah2zme7p",
+    "ts": "2026-01-04T18:35:00Z",
+    "objects": [
+      {
+        "type": "bundle",
+        "id": "bun.news_ingest",
+        "version": "1.2.0"
+      }
+    ],
+    "signature_ref": "sig.g.xrb532apmci4",
+    "version": "1.0.0"
+  }
+}

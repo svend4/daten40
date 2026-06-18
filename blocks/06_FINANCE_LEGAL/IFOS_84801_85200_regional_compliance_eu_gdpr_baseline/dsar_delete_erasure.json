@@ -1,0 +1,68 @@
+{
+  "bundle_id": "dsar_delete_erasure",
+  "name": "DSAR: Deletion / Erasure",
+  "version": "1.0.0",
+  "connectors": [
+    "case_management",
+    "notification",
+    "data_deletion",
+    "audit_log"
+  ],
+  "secrets_required": [],
+  "entrypoint": {
+    "trigger": "case_management.ticket_created",
+    "plan_id": "plan_dsar_delete_erasure"
+  },
+  "policies": [
+    "gdpr.baseline",
+    "audit.gdpr_evidence",
+    "retention.personal_data_default"
+  ],
+  "steps": [
+    {
+      "id": "validate_identity",
+      "capability": "dsar_validate_identity",
+      "outputs": [
+        "dsar_request.v1"
+      ]
+    },
+    {
+      "id": "evaluate_exceptions",
+      "capability": "dsar_evaluate_legal_exceptions",
+      "inputs": [
+        "dsar_request.v1"
+      ],
+      "outputs": [
+        "dsar_decision.v1"
+      ]
+    },
+    {
+      "id": "delete_data",
+      "capability": "dsar_execute_deletion",
+      "inputs": [
+        "dsar_decision.v1"
+      ],
+      "outputs": [
+        "deletion_receipt.v1"
+      ]
+    },
+    {
+      "id": "notify_subject",
+      "capability": "notify_requester",
+      "inputs": [
+        "deletion_receipt.v1"
+      ],
+      "outputs": [
+        "notification.v1"
+      ]
+    },
+    {
+      "id": "log_evidence",
+      "capability": "append_audit_evidence",
+      "inputs": [
+        "deletion_receipt.v1"
+      ],
+      "target": "evidence.dsar_deletion_log"
+    }
+  ]
+}

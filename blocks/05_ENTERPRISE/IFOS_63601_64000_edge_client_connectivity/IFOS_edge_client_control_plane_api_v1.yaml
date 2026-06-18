@@ -1,0 +1,19 @@
+openapi: 3.0.3
+info:
+  title: IFOS Edge & Client Control Plane API
+  version: "1.0.0"
+servers:
+  - url: https://edge.ifos.local/v1
+paths:
+  /clients:
+    get: {summary: List client profiles, responses: {"200": {description: OK}}}
+  /offline/policies:
+    get: {summary: List offline policies, responses: {"200": {description: OK}}}
+  /retry/policies:
+    get: {summary: List retry policies, responses: {"200": {description: OK}}}
+  /sync/plans:
+    get: {summary: List sync plans, responses: {"200": {description: OK}}}
+  /cdn/plans:
+    get: {summary: List CDN plans, responses: {"200": {description: OK}}}
+  /rum/events:
+    post: {summary: Ingest RUM event, responses: {"200": {description: OK}}}

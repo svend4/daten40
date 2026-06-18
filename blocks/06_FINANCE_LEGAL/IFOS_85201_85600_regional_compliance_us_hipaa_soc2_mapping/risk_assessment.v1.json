@@ -1,0 +1,13 @@
+{
+  "contract_id": "risk_assessment.v1",
+  "fields": {
+    "assessment_id": "string",
+    "performed_at": "datetime",
+    "scope": "string",
+    "findings": "array[object]",
+    "owner": "string"
+  },
+  "privacy_level": "internal",
+  "retention_policy": "security_default",
+  "audit": "required"
+}

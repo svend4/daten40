@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS HealthCheck Schema v1",
+  "type": "object",
+  "required": [
+    "check_id",
+    "name",
+    "kind",
+    "schedule",
+    "status",
+    "last_run",
+    "tenant_id",
+    "version"
+  ],
+  "properties": {
+    "check_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "connector",
+        "secret",
+        "storage",
+        "runtime",
+        "custom"
+      ]
+    },
+    "schedule": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pass",
+        "warn",
+        "fail",
+        "unknown"
+      ]
+    },
+    "last_run": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "details": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

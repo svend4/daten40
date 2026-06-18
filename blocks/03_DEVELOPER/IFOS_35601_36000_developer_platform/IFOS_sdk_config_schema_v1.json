@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SDKConfig Schema v1",
+  "type": "object",
+  "required": [
+    "sdk_id",
+    "language",
+    "defaults",
+    "version"
+  ],
+  "properties": {
+    "sdk_id": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string",
+      "enum": [
+        "python",
+        "javascript",
+        "typescript"
+      ]
+    },
+    "defaults": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "hooks": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

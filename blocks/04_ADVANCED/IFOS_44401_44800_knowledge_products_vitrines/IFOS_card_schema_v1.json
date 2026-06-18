@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Card Schema v1",
+  "type": "object",
+  "required": [
+    "card_id",
+    "type",
+    "title",
+    "what_it_does",
+    "io",
+    "requirements",
+    "trust",
+    "actions",
+    "version"
+  ],
+  "properties": {
+    "card_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "plugin",
+        "app",
+        "integration",
+        "blueprint",
+        "dataset",
+        "template",
+        "doc",
+        "other"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "what_it_does": {
+      "type": "string"
+    },
+    "io": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "requirements": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "trust": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

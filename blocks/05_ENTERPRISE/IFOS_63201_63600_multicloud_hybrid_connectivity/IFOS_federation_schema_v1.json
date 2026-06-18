@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Federation Schema v1",
+  "type": "object",
+  "required": [
+    "federation_id",
+    "envs",
+    "promotion",
+    "routing_policy",
+    "version"
+  ],
+  "properties": {
+    "federation_id": {
+      "type": "string"
+    },
+    "envs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "promotion": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "routing_policy": {
+      "type": "string"
+    },
+    "trust": {
+      "type": "string"
+    },
+    "data_residency": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

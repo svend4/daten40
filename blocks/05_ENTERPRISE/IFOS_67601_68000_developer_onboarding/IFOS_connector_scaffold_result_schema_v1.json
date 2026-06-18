@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ConnectorScaffoldResult Schema v1",
+  "type": "object",
+  "required": [
+    "result_id",
+    "request_id",
+    "repo_files",
+    "next_steps",
+    "validation_profile",
+    "docs_job_hint",
+    "version"
+  ],
+  "properties": {
+    "result_id": {
+      "type": "string"
+    },
+    "request_id": {
+      "type": "string"
+    },
+    "repo_files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "next_steps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "validation_profile": {
+      "type": "string"
+    },
+    "docs_job_hint": {
+      "type": "object",
+      "properties": {
+        "docs_template_id": {
+          "type": "string"
+        },
+        "formats": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "artifact_set": "IFOS_46001_46400",
+  "entries": [
+    {
+      "name": "IFOS_personalization_recommendation_os_46001_46400_v1.md",
+      "ref": "file://IFOS_personalization_recommendation_os_46001_46400_v1.md",
+      "hash": "sha256:27717a5fb254f297225ee85b7c3a4570f5a973cffae4f45c7529df3778552b2e"
+    },
+    {
+      "name": "IFOS_recommendation_api_v1.yaml",
+      "ref": "file://IFOS_recommendation_api_v1.yaml",
+      "hash": "sha256:fc3655807e2a991a38d36116b334691ebdd328ee787fbc03325ed03f734e8fde"
+    },
+    {
+      "name": "IFOS_recommendation_examples_v1.json",
+      "ref": "file://IFOS_recommendation_examples_v1.json",
+      "hash": "sha256:836e6d1442dfea398c60ad03f277c40c99d52ef5d46ba40db0820a3a69ea7360"
+    },
+    {
+      "name": "IFOS_user_profile_schema_v1.json",
+      "ref": "file://IFOS_user_profile_schema_v1.json",
+      "hash": "sha256:b4e0fb464a53d3dcf3db6c68c7898004bc8b61405533e6514706436461883832"
+    },
+    {
+      "name": "IFOS_context_signal_schema_v1.json",
+      "ref": "file://IFOS_context_signal_schema_v1.json",
+      "hash": "sha256:00e7b720a35c1cff6a1dd97ca01caf01e47a18651ad9060996ec4cb592e254cf"
+    },
+    {
+      "name": "IFOS_preference_schema_v1.json",
+      "ref": "file://IFOS_preference_schema_v1.json",
+      "hash": "sha256:2d071f0c4f5e563d5ddfeedef77bec043945b11442c961076dd3b1af1206c3fd"
+    },
+    {
+      "name": "IFOS_recommendation_request_schema_v1.json",
+      "ref": "file://IFOS_recommendation_request_schema_v1.json",
+      "hash": "sha256:5618780352262b762940400431513a02946d92bdc0a016b8d32f6e630dd64052"
+    },
+    {
+      "name": "IFOS_recommendation_response_schema_v1.json",
+      "ref": "file://IFOS_recommendation_response_schema_v1.json",
+      "hash": "sha256:d647c0476487895328d8d1a9c1e681350d7105a1bdb27fbc9a62787637febc93"
+    },
+    {
+      "name": "IFOS_ranking_feature_schema_v1.json",
+      "ref": "file://IFOS_ranking_feature_schema_v1.json",
+      "hash": "sha256:3ec772f36b99d6093620f32274f2493d72520a98fd2c298b75f1ce7566a60b8a"
+    },
+    {
+      "name": "IFOS_recommendation_explanation_schema_v1.json",
+      "ref": "file://IFOS_recommendation_explanation_schema_v1.json",
+      "hash": "sha256:d4341b3c55e581b12f78dbcc214b409e94ae632bed759b79bb9647ae9034ae01"
+    },
+    {
+      "name": "IFOS_cold_start_policy_schema_v1.json",
+      "ref": "file://IFOS_cold_start_policy_schema_v1.json",
+      "hash": "sha256:843c4297f552c49dfd4afd0ba0f0c2fe14b043f3ba89cf666678a9546bb72f49"
+    },
+    {
+      "name": "IFOS_personalization_privacy_policy_schema_v1.json",
+      "ref": "file://IFOS_personalization_privacy_policy_schema_v1.json",
+      "hash": "sha256:6b2cd64e8fd79410f6a0591f0f140d667675f193610cfed5f8696f03d636aab3"
+    },
+    {
+      "name": "IFOS_consent_record_schema_v1.json",
+      "ref": "file://IFOS_consent_record_schema_v1.json",
+      "hash": "sha256:e37789951946a02efd1de81942ef4a2abcf5ac57bc3f996d62b2258b95f66358"
+    },
+    {
+      "name": "IFOS_audience_segment_schema_v1.json",
+      "ref": "file://IFOS_audience_segment_schema_v1.json",
+      "hash": "sha256:b1724b6d6e806030d24523a4486adfe25fe7c393df3f4f9a2ac53afae586a775"
+    },
+    {
+      "name": "IFOS_feedback_event_schema_v1.json",
+      "ref": "file://IFOS_feedback_event_schema_v1.json",
+      "hash": "sha256:26b5167bb6f23bdd8b960607f249e89ca7ff860aefb9b5fea3d2a3e114722d9a"
+    },
+    {
+      "name": "IFOS_ab_test_schema_v1.json",
+      "ref": "file://IFOS_ab_test_schema_v1.json",
+      "hash": "sha256:84ec390b78534a566b00a08c507e65b07185166feeb96a97fb66f2a89c4c0793"
+    },
+    {
+      "name": "IFOS_fairness_audit_schema_v1.json",
+      "ref": "file://IFOS_fairness_audit_schema_v1.json",
+      "hash": "sha256:e10cf02d861ec346a8857d684b019601450779f93a49033ec6592648e49692c9"
+    },
+    {
+      "name": "IFOS_personalization_spec_v1.md",
+      "ref": "file://IFOS_personalization_spec_v1.md",
+      "hash": "sha256:1f36428bf9bba7afa54b63e6766aef599032cba6556e223c7484fe6f13cd6e9a"
+    },
+    {
+      "name": "IFOS_recommendation_ranking_spec_v1.md",
+      "ref": "file://IFOS_recommendation_ranking_spec_v1.md",
+      "hash": "sha256:b476cda03ca968ac9ff9b3bfb70cff3d71ff155f65444e4195274db0ba901d00"
+    },
+    {
+      "name": "IFOS_cold_start_spec_v1.md",
+      "ref": "file://IFOS_cold_start_spec_v1.md",
+      "hash": "sha256:87d186e749a474d22ff7d87066e83f83ebe58e078520ff2bd925076b950fe99d"
+    },
+    {
+      "name": "IFOS_personalization_privacy_spec_v1.md",
+      "ref": "file://IFOS_personalization_privacy_spec_v1.md",
+      "hash": "sha256:13f63b0c9903d606769b2ce98844ae1273e71ec2805838124e262fa235bbfe50"
+    },
+    {
+      "name": "IFOS_feedback_learning_spec_v1.md",
+      "ref": "file://IFOS_feedback_learning_spec_v1.md",
+      "hash": "sha256:caa2d2ed418f5e91d15e287f1725c25ddb81e06e17bb7aefcbddc8bd754446ea"
+    },
+    {
+      "name": "IFOS_experimentation_abtests_personalization_spec_v1.md",
+      "ref": "file://IFOS_experimentation_abtests_personalization_spec_v1.md",
+      "hash": "sha256:5aacb3dda8595e0dbeee6985cda0255e10aa65a41405a8f3231fda07ee09bda7"
+    },
+    {
+      "name": "IFOS_recommendation_ux_patterns_spec_v1.md",
+      "ref": "file://IFOS_recommendation_ux_patterns_spec_v1.md",
+      "hash": "sha256:e8ea80c940c602801c22de548c26927588944f203858f0c36fc24646a942dd70"
+    },
+    {
+      "name": "ifos_ranker_stub_v1.py",
+      "ref": "file://ifos_ranker_stub_v1.py",
+      "hash": "sha256:ae393c1d0cfa2ef0277c73c7adfba0b5bd26d338c17fbca01e6fafda0458ddf3"
+    },
+    {
+      "name": "ifos_feature_builder_stub_v1.py",
+      "ref": "file://ifos_feature_builder_stub_v1.py",
+      "hash": "sha256:8b21b90a0a9396f10a583cfdcc7c8c46c4f18e80cf99de6b5c531b0c09f62f94"
+    },
+    {
+      "name": "ifos_privacy_filters_stub_v1.py",
+      "ref": "file://ifos_privacy_filters_stub_v1.py",
+      "hash": "sha256:edc87131895afc06508e0fedc002c0777b8934addd9595103e97588e3f61c9c9"
+    },
+    {
+      "name": "ifos_explanations_stub_v1.py",
+      "ref": "file://ifos_explanations_stub_v1.py",
+      "hash": "sha256:a9f88f3be6df8e4fac63f934963f7a87990075f04c87e6cd111c790477e17690"
+    }
+  ],
+  "created_at": "2026-01-04T07:55:00Z",
+  "version": "1.0.0"
+}

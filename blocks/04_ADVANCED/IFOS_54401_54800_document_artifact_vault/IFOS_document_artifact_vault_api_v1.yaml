@@ -1,0 +1,20 @@
+openapi: 3.0.3
+info:
+  title: IFOS Document & Artifact Vault API
+  version: "1.0.0"
+servers:
+  - url: https://vault.ifos.local/v1
+tags:
+  - name: Blobs
+  - name: Artifacts
+  - name: Packs
+  - name: Snapshots
+paths:
+  /blobs:
+    post: {tags:[Blobs], summary: Upload blob (multipart/chunked), responses: {"200": {description: OK}}}
+  /artifacts:
+    post: {tags:[Artifacts], summary: Create artifact metadata, responses: {"200": {description: OK}}}
+  /packs/export:
+    post: {tags:[Packs], summary: Create export pack, responses: {"200": {description: OK}}}
+  /snapshots:
+    post: {tags:[Snapshots], summary: Create snapshot, responses: {"200": {description: OK}}}

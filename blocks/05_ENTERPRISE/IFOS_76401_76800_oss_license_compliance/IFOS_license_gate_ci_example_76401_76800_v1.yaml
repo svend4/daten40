@@ -1,0 +1,29 @@
+# Example: CI/CD gate calling IFOS License Gate before publishing a bundle
+name: license-gate
+on:
+  workflow_dispatch: {}
+jobs:
+  license_gate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Upload SBOM
+        run: |
+          curl -sS -X POST "$IFOS_URL/sboms" \
+            -H "Authorization: Bearer $IFOS_TOKEN" \
+            -F "file=@sbom.spdx.json" \
+            -F "artifact_ref=bundle_P0P1_v3"
+      - name: Evaluate Policy
+        run: |
+          curl -sS -X POST "$IFOS_URL/license/policies/pol_default_marketplace:evaluate" \
+            -H "Authorization: Bearer $IFOS_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{"target_ref":{"type":"bundle","id":"bundle_P0P1_v3"}}' > decision.json
+      - name: Fail if policy fails
+        run: |
+          jq -e '.result == "PASS" or .result == "WARN"' decision.json
+      - name: Generate attribution bundle
+        run: |
+          curl -sS -X POST "$IFOS_URL/attributions:generate" \
+            -H "Authorization: Bearer $IFOS_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{"sbom_id":"sbom_01HXYZ","policy_id":"pol_default_marketplace"}' > attribution.json

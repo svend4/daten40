@@ -1,0 +1,56 @@
+# IFOS Sigstore Verification Pipeline (conceptual)
+# This YAML is a documentation artifact that describes the verification steps and decision points.
+
+pipeline_id: IFOS-SUPPLYCHAIN-VERIFY-001
+description: Verify artifact signature + attestations against PolicyGate at publish/install/run.
+inputs:
+  - artifact_digest
+  - target_scope  # org/workspace/env/service
+  - enforcement_point  # publish|install|run|sync
+steps:
+  - id: resolve_artifact
+    action: registry.resolve_by_digest
+    outputs: [artifact_ref]
+  - id: fetch_signatures
+    action: supplychain.get_signatures
+    inputs: [artifact_ref]
+    outputs: [signatures]
+  - id: fetch_attestations
+    action: supplychain.get_attestations
+    inputs: [artifact_ref]
+    outputs: [attestations]
+  - id: load_policy
+    action: supplychain.policy_select
+    inputs: [target_scope, enforcement_point, artifact_ref.artifact_type]
+    outputs: [policy]
+  - id: verify_signature
+    action: sigstore.verify_signature
+    when: policy.signature_required == true
+    inputs: [signatures, policy.allowed_identities, policy.keyless_allowed]
+    outputs: [signature_verdict]
+  - id: verify_provenance
+    action: sigstore.verify_attestation
+    when: policy.provenance_required == true
+    inputs: [attestations, predicate_type=provenance, policy.provenance_predicate]
+    outputs: [provenance_verdict]
+  - id: verify_sbom
+    action: sbom.check_presence_and_format
+    when: policy.sbom_required == true
+    inputs: [attestations, policy.sbom_format]
+    outputs: [sbom_verdict]
+  - id: vuln_gate
+    action: security.vuln_policy_gate
+    when: policy.vulnerability_gate != null
+    inputs: [artifact_ref, policy.vulnerability_gate]
+    outputs: [vuln_verdict]
+  - id: decide
+    action: supplychain.decision
+    inputs: [signature_verdict, provenance_verdict, sbom_verdict, vuln_verdict]
+    outputs: [pass_fail, reasons, evidence_bundle_ref]
+  - id: audit
+    action: audit.log_trust_decision
+    inputs: [artifact_ref, policy, pass_fail, reasons, evidence_bundle_ref]
+outputs:
+  - pass_fail
+  - reasons
+  - evidence_bundle_ref

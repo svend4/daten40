@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ValidationRule Schema v1",
+  "type": "object",
+  "required": [
+    "rule_id",
+    "name",
+    "category",
+    "severity",
+    "description",
+    "how_to_fix",
+    "version"
+  ],
+  "properties": {
+    "rule_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "security",
+        "quality",
+        "docs",
+        "compatibility",
+        "policy"
+      ]
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "INFO",
+        "WARN",
+        "ERROR",
+        "BLOCK"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "how_to_fix": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

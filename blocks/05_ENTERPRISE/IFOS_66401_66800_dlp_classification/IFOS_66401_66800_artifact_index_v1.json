@@ -1,0 +1,99 @@
+{
+  "artifact_set": "IFOS_66401_66800",
+  "created_at": "2026-01-02T17:10:12Z",
+  "version": "1.0.0",
+  "entries": [
+    {
+      "name": "IFOS_dlp_classification_os_66401_66800_v1.md",
+      "hash": "sha256:04d2d403c6683b5cb55abb88af1e84bf8bc7213eef440c1d0613ec650424e122"
+    },
+    {
+      "name": "IFOS_dlp_ops_runbook_66401_66800_v1.md",
+      "hash": "sha256:07bb1fd99f4b4ce075ffc93c2b8768289637a354919644c9b892af08f1dac59f"
+    },
+    {
+      "name": "IFOS_dlp_threat_model_66401_66800_v1.md",
+      "hash": "sha256:343e18bb09be43a1a91d8f605db71ad032f5a5d3b99759b7ba8b0ac298e5d338"
+    },
+    {
+      "name": "IFOS_dlp_control_plane_api_v1.yaml",
+      "hash": "sha256:6f66cb1707d318e152525a0d86de5f7803c530528be95ee9cf544350c1ec58a9"
+    },
+    {
+      "name": "IFOS_dlp_examples_66401_66800_v1.json",
+      "hash": "sha256:1d287f1d45a0fead0b30d6404bab7fd5708e27b9da0fe376d0e535a14b8349d7"
+    },
+    {
+      "name": "IFOS_data_class_schema_v1.json",
+      "hash": "sha256:75530a64daed8b0904359febc80d04260de9f792a4b43344b8c49859cf11ad18"
+    },
+    {
+      "name": "IFOS_data_label_schema_v1.json",
+      "hash": "sha256:9a6f84e41345cc70844ff3110732170d21cd5a4b6e59631a8dd41c05d856da42"
+    },
+    {
+      "name": "IFOS_classification_result_schema_v1.json",
+      "hash": "sha256:8f3cd7152992af0bf252cf456cbd2bd5423c3a9be6aa5adcbc4f29fd5f712726"
+    },
+    {
+      "name": "IFOS_dlp_rule_schema_v1.json",
+      "hash": "sha256:a6a58175aa34283106662773e760b14d743c188e20ec07d04bd3a4cddb83d655"
+    },
+    {
+      "name": "IFOS_dlp_policy_schema_v1.json",
+      "hash": "sha256:1c5793333865e467ab53e428cd5affd2703b13306400069a33fc1d899c21e329"
+    },
+    {
+      "name": "IFOS_redaction_profile_schema_v1.json",
+      "hash": "sha256:0b0699f5537124488194e353833b53aa2fbd119ec8a8dd597c66a50edbda9d34"
+    },
+    {
+      "name": "IFOS_content_fingerprint_schema_v1.json",
+      "hash": "sha256:1d35304eaae4d2cbe627bc5d117c812e9bdf370a075452163d0d77ae1e12fc91"
+    },
+    {
+      "name": "IFOS_data_contract_schema_v1.json",
+      "hash": "sha256:6a2ca35f296df299c02c841a84f1fa27b13b4153b4cd926dfae5f8cc76e59585"
+    },
+    {
+      "name": "IFOS_transfer_decision_schema_v1.json",
+      "hash": "sha256:2e70a0838ef77295904bb83bc87275fd5026e5ac00c12cfbde71aa10fe2ccda9"
+    },
+    {
+      "name": "IFOS_scanner_catalog_entry_schema_v1.json",
+      "hash": "sha256:f03de8cb65eae263da02d8fbf7dc158f3e4c8461c2fdf63e17172005a958edf9"
+    },
+    {
+      "name": "IFOS_data_taxonomy_seed_66401_66800_v1.csv",
+      "hash": "sha256:9f72827677e07bbdd8af34755d7b04b5da5311c0c36193af10013ee0d0c9e8a6"
+    },
+    {
+      "name": "IFOS_data_labels_seed_66401_66800_v1.csv",
+      "hash": "sha256:bae8a4ba0f440a29cbce0b03c7c93fe54ffd70a633548e2c92459dd769b8f7be"
+    },
+    {
+      "name": "IFOS_dlp_rules_seed_66401_66800_v1.csv",
+      "hash": "sha256:c17a60fdf1abaa2e120a92dabfd9210cd0a6e9ae93e4e2c037437fbb8a40e791"
+    },
+    {
+      "name": "IFOS_dlp_policies_seed_66401_66800_v1.csv",
+      "hash": "sha256:873793625f495a5271f32832cf0bd6ae636fd58c7ecedc397272cb6011e79fb8"
+    },
+    {
+      "name": "IFOS_redaction_profiles_seed_66401_66800_v1.csv",
+      "hash": "sha256:098d177f8b31b2d8af238297439a132a00bba5821ca00844f1bae02bd56578bf"
+    },
+    {
+      "name": "IFOS_data_contract_templates_seed_66401_66800_v1.csv",
+      "hash": "sha256:68bca5dc29d53915eee74a87f381482969943f578ad93b02996c06270f09e221"
+    },
+    {
+      "name": "IFOS_scanner_catalog_seed_66401_66800_v1.csv",
+      "hash": "sha256:776a8387e74d015fd521348c6190fbe981e07a1150eca6f7732888b3403b7038"
+    },
+    {
+      "name": "IFOS_dlp_policy_packs_seed_66401_66800_v1.csv",
+      "hash": "sha256:bc671c6e4f2de97e7b940949c65742a681da7bc2c84c1bfcff72c6b6054f17da"
+    }
+  ]
+}

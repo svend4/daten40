@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS PricingModel Schema v1",
+  "type": "object",
+  "required": [
+    "pricing_model_id",
+    "kind",
+    "plans",
+    "usage_meters",
+    "version"
+  ],
+  "properties": {
+    "pricing_model_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "one_time",
+        "subscription",
+        "usage_based",
+        "hybrid"
+      ]
+    },
+    "plans": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "usage_meters": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

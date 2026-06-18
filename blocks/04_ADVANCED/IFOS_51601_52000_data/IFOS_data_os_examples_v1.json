@@ -1,0 +1,62 @@
+{
+  "entity_type": {
+    "type": "Person",
+    "required_fields": [
+      "name"
+    ],
+    "quality_rules": [
+      "email_format",
+      "phone_format_optional"
+    ],
+    "version": "1.0.0"
+  },
+  "entity": {
+    "entity_id": "ent.p.1yvaua3ejqje",
+    "entity_type": "Person",
+    "created_at": "2026-01-04T15:00:00Z",
+    "version": "1.0.0"
+  },
+  "record": {
+    "record_id": "rec.crm.123",
+    "entity_id": "ent.person.abc",
+    "source_system": "crm",
+    "payload": {
+      "name": "Ivan Petrov",
+      "email": "ivan@example.com"
+    },
+    "ts": "2026-01-04T15:00:00Z",
+    "version": "1.0.0"
+  },
+  "conflict": {
+    "conflict_id": "conf.c.b3xofvlvkkcg",
+    "entity_id": "ent.person.abc",
+    "field": "email",
+    "candidates": [
+      {
+        "source": "crm",
+        "value": "ivan@example.com"
+      },
+      {
+        "source": "email",
+        "value": "ivan.petrov@example.com"
+      }
+    ],
+    "status": "open",
+    "version": "1.0.0"
+  },
+  "snapshot": {
+    "snapshot_id": "snap.s.0yr18z9d8qax",
+    "scope": "org.acme",
+    "entities": [
+      "ent.person.abc",
+      "ent.org.xyz"
+    ],
+    "schemas": [
+      "Person@1.0.0",
+      "Organization@1.0.0"
+    ],
+    "hash": "sha256:...",
+    "created_at": "2026-01-04T15:00:00Z",
+    "version": "1.0.0"
+  }
+}

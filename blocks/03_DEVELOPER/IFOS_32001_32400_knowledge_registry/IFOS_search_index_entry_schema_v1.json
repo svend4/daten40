@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SearchIndexEntry Schema v1",
+  "type": "object",
+  "required": [
+    "entry_id",
+    "item_id",
+    "terms",
+    "taxonomy_paths",
+    "tags",
+    "version"
+  ],
+  "properties": {
+    "entry_id": {
+      "type": "string"
+    },
+    "item_id": {
+      "type": "string"
+    },
+    "terms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "taxonomy_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

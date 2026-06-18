@@ -1,0 +1,16 @@
+{
+  "bundle_id": "bundle_example",
+  "name": "Example Domain Workflow",
+  "version": "0.1.0",
+  "connectors": [
+    "webhook"
+  ],
+  "secrets_required": [],
+  "entrypoint": {
+    "trigger": "webhook.http_post",
+    "plan_id": "plan_example"
+  },
+  "policies": [
+    "privacy.internal"
+  ]
+}

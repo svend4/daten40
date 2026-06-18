@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ConnectorTelemetry Schema v1",
+  "type": "object",
+  "required": [
+    "telemetry_id",
+    "connector_id",
+    "signals",
+    "window",
+    "version"
+  ],
+  "properties": {
+    "telemetry_id": {
+      "type": "string"
+    },
+    "connector_id": {
+      "type": "string"
+    },
+    "signals": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "window": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

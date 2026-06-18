@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Explain Schema v1",
+  "type": "object",
+  "required": [
+    "explain_id",
+    "plan_id",
+    "why",
+    "alternatives",
+    "risks",
+    "actions",
+    "version"
+  ],
+  "properties": {
+    "explain_id": {
+      "type": "string"
+    },
+    "plan_id": {
+      "type": "string"
+    },
+    "why": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "alternatives": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "risks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

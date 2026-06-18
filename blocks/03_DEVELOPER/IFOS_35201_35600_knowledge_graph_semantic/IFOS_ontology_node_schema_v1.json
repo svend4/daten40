@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS OntologyNode Schema v1",
+  "type": "object",
+  "required": [
+    "canonical_id",
+    "type",
+    "title",
+    "description",
+    "tags",
+    "version"
+  ],
+  "properties": {
+    "canonical_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "Function",
+        "Capability",
+        "Connector",
+        "Blueprint",
+        "Bundle",
+        "Dataset",
+        "Policy",
+        "UICard"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "tags": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "examples": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "meta": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

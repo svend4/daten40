@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Entity Schema v2",
+  "type": "object",
+  "required": [
+    "entity_id",
+    "type",
+    "names",
+    "properties",
+    "relations",
+    "sources",
+    "version"
+  ],
+  "properties": {
+    "entity_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "organization",
+        "product",
+        "service",
+        "person",
+        "location",
+        "event",
+        "offer",
+        "document"
+      ]
+    },
+    "names": {
+      "type": "object",
+      "required": [
+        "canonical"
+      ],
+      "properties": {
+        "canonical": {
+          "type": "string"
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "identifiers": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "properties": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "timestamps": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

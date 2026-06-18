@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS KW Tag Schema v1",
+  "type": "object",
+  "required": [
+    "tag",
+    "category",
+    "version"
+  ],
+  "properties": {
+    "tag": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

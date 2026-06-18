@@ -1,0 +1,5 @@
+{
+  "bundle_id": "citizen_request_intake",
+  "trigger": "webhook",
+  "target": "case_management"
+}

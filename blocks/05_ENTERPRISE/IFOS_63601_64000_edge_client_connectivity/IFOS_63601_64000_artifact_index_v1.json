@@ -1,0 +1,172 @@
+{
+  "artifact_set": "IFOS_63601_64000",
+  "entries": [
+    {
+      "name": "IFOS_edge_client_connectivity_os_63601_64000_v1.md",
+      "ref": "file://IFOS_edge_client_connectivity_os_63601_64000_v1.md",
+      "hash": "sha256:f706e64fc9febd3a9309aae92b0c027a75c6357257deb5f56acbd4632d98cdea"
+    },
+    {
+      "name": "IFOS_edge_client_control_plane_api_v1.yaml",
+      "ref": "file://IFOS_edge_client_control_plane_api_v1.yaml",
+      "hash": "sha256:1392e76d362aca119befd7ed1cf633246a0f1d77b2dcfcb095bcc0fb220a0dd1"
+    },
+    {
+      "name": "IFOS_edge_client_examples_63601_64000_v1.json",
+      "ref": "file://IFOS_edge_client_examples_63601_64000_v1.json",
+      "hash": "sha256:ab6989009f033fbc61091650bb49b05f73bb39e7a53c3056a5a5e24f2174e509"
+    },
+    {
+      "name": "IFOS_client_profiles_seed_63601_64000_v1.csv",
+      "ref": "file://IFOS_client_profiles_seed_63601_64000_v1.csv",
+      "hash": "sha256:13dd1d4975dbe8f354e50f4f6edc226123ccfa090317d0f1f8014938366d6949"
+    },
+    {
+      "name": "IFOS_offline_policies_seed_63601_64000_v1.csv",
+      "ref": "file://IFOS_offline_policies_seed_63601_64000_v1.csv",
+      "hash": "sha256:c34871c52746bee0daa46dd0d26cceaebbe0f4399c43a31dd897ad2f29b4f217"
+    },
+    {
+      "name": "IFOS_retry_policies_seed_63601_64000_v1.csv",
+      "ref": "file://IFOS_retry_policies_seed_63601_64000_v1.csv",
+      "hash": "sha256:fa12358fc300adbf1fd167db482581ae549c0a260b59bdc512e43bd6fba26f19"
+    },
+    {
+      "name": "IFOS_sync_plans_seed_63601_64000_v1.csv",
+      "ref": "file://IFOS_sync_plans_seed_63601_64000_v1.csv",
+      "hash": "sha256:d7c5b02989d13237fbfd9dedff7f472397deca87edd8bd6ba22c0ca8b41eb5a3"
+    },
+    {
+      "name": "IFOS_realtime_profiles_seed_63601_64000_v1.csv",
+      "ref": "file://IFOS_realtime_profiles_seed_63601_64000_v1.csv",
+      "hash": "sha256:586c89736edc4047bcac906f18b83fede4d97d6ae7a1f304492315e621813b4e"
+    },
+    {
+      "name": "IFOS_cdn_plans_seed_63601_64000_v1.csv",
+      "ref": "file://IFOS_cdn_plans_seed_63601_64000_v1.csv",
+      "hash": "sha256:7a0001be73c4e4166b4893e9651d40810dc200830bce4a67fa2901d8ae6e9e4b"
+    },
+    {
+      "name": "IFOS_transfer_policies_seed_63601_64000_v1.csv",
+      "ref": "file://IFOS_transfer_policies_seed_63601_64000_v1.csv",
+      "hash": "sha256:2030770ac9afa63be474839e708ff9bb7bf734ae7f3248714a4d6d486609baef"
+    },
+    {
+      "name": "IFOS_edge_debug_playbook_seed_63601_64000_v1.csv",
+      "ref": "file://IFOS_edge_debug_playbook_seed_63601_64000_v1.csv",
+      "hash": "sha256:fe882d699ead905a0a71d3b101d7a2237f3c3f75bc60c41d0177a99cd54cf323"
+    },
+    {
+      "name": "IFOS_pwa_offline_first_spec_v1.md",
+      "ref": "file://IFOS_pwa_offline_first_spec_v1.md",
+      "hash": "sha256:cf3f65d118786a2849375cb2040ef32bdb548e725432fc27552e59b298e47fe9"
+    },
+    {
+      "name": "IFOS_mobile_network_constraints_spec_v1.md",
+      "ref": "file://IFOS_mobile_network_constraints_spec_v1.md",
+      "hash": "sha256:501322a0af5d1d5d4861e72b9fb4d9cd87c04118c5526be888ba907045dfed20"
+    },
+    {
+      "name": "IFOS_retries_backoff_idempotency_spec_v1.md",
+      "ref": "file://IFOS_retries_backoff_idempotency_spec_v1.md",
+      "hash": "sha256:c0b3e8916af38ee42ec247aac7eeebfaad19192e879a3cb63a264bfc22ce8426"
+    },
+    {
+      "name": "IFOS_client_sync_conflict_resolution_spec_v1.md",
+      "ref": "file://IFOS_client_sync_conflict_resolution_spec_v1.md",
+      "hash": "sha256:fa79432303a7463f42a48e88434d35e95886b04f9fd1b2912fc11828d7d9d5ab"
+    },
+    {
+      "name": "IFOS_realtime_ws_sse_fallback_spec_v1.md",
+      "ref": "file://IFOS_realtime_ws_sse_fallback_spec_v1.md",
+      "hash": "sha256:92966880f0ba7e682ee49cb1f5bcc8d006222b2fbffcbd0214982eeafae04081"
+    },
+    {
+      "name": "IFOS_cdn_edge_cache_spec_v1.md",
+      "ref": "file://IFOS_cdn_edge_cache_spec_v1.md",
+      "hash": "sha256:397dd841aba78fdca6ded210250a70f4962a305a6646421bb85e7442627e8277"
+    },
+    {
+      "name": "IFOS_resumable_upload_download_spec_v1.md",
+      "ref": "file://IFOS_resumable_upload_download_spec_v1.md",
+      "hash": "sha256:aa05e6eebba6583ff576009dc5ee525aafcfbab0207ac4a4b2985732c2c37e1a"
+    },
+    {
+      "name": "IFOS_client_auth_tokens_refresh_spec_v1.md",
+      "ref": "file://IFOS_client_auth_tokens_refresh_spec_v1.md",
+      "hash": "sha256:c707cee976db3f7fbbbdad88cd53541b84b917c98edaded1504deeb14f46af7b"
+    },
+    {
+      "name": "IFOS_client_telemetry_rum_spec_v1.md",
+      "ref": "file://IFOS_client_telemetry_rum_spec_v1.md",
+      "hash": "sha256:eb16e1dbcb0f6794bc8abb8dd8dfd418f5820018e7397b55f5ffd390e36beca9"
+    },
+    {
+      "name": "IFOS_client_accessibility_low_end_devices_spec_v1.md",
+      "ref": "file://IFOS_client_accessibility_low_end_devices_spec_v1.md",
+      "hash": "sha256:f5ef622e472878194d1637c62e34dbf90076f0b82c5befab9d83f47b200346a8"
+    },
+    {
+      "name": "IFOS_client_profile_schema_v1.json",
+      "ref": "file://IFOS_client_profile_schema_v1.json",
+      "hash": "sha256:778e3fd8366c1b9513c83cf0385fb20f9456c6d13d59b7f3b1abb408a794a998"
+    },
+    {
+      "name": "IFOS_offline_policy_schema_v1.json",
+      "ref": "file://IFOS_offline_policy_schema_v1.json",
+      "hash": "sha256:574f45fc20b319cb27508e623c7e5f3f8b86d6764fe960c2fc2b8860bf6a12c7"
+    },
+    {
+      "name": "IFOS_retry_policy_schema_v1.json",
+      "ref": "file://IFOS_retry_policy_schema_v1.json",
+      "hash": "sha256:f075a4365ab440031780a8d063727fe1f9799e933603114e2942e7917f8c3dda"
+    },
+    {
+      "name": "IFOS_sync_plan_schema_v1.json",
+      "ref": "file://IFOS_sync_plan_schema_v1.json",
+      "hash": "sha256:86b1e453afd56ad348e974611293dc0f5c74542c716eaf308071d851190374d8"
+    },
+    {
+      "name": "IFOS_realtime_profile_schema_v1.json",
+      "ref": "file://IFOS_realtime_profile_schema_v1.json",
+      "hash": "sha256:77a5d6190288e59992d2c21fe8c76fa82540e3512d0fe114f3a38d10d846411d"
+    },
+    {
+      "name": "IFOS_cdn_plan_schema_v1.json",
+      "ref": "file://IFOS_cdn_plan_schema_v1.json",
+      "hash": "sha256:876cfcf5acf5ffa7656bea3fd43a389075a807e7d2632cfdba200559f7ad603e"
+    },
+    {
+      "name": "IFOS_transfer_policy_schema_v1.json",
+      "ref": "file://IFOS_transfer_policy_schema_v1.json",
+      "hash": "sha256:c18d2d8f541cc77bb4ffc0e461311420a5cbb8410120968ac508fcd750e89bed"
+    },
+    {
+      "name": "IFOS_rum_event_schema_v1.json",
+      "ref": "file://IFOS_rum_event_schema_v1.json",
+      "hash": "sha256:9e1392e8617363d3f80dcc0f2a33a663f8428e7d8d08628ecad553af18f359fe"
+    },
+    {
+      "name": "ifos_service_worker_snippet_v1.js",
+      "ref": "file://ifos_service_worker_snippet_v1.js",
+      "hash": "sha256:19a3a3707d43660f98f9cef9cfcb45d2506b8d2f3659780176b58f0528340b43"
+    },
+    {
+      "name": "ifos_fetch_retry_idempotency_snippet_v1.js",
+      "ref": "file://ifos_fetch_retry_idempotency_snippet_v1.js",
+      "hash": "sha256:9bf9751a0be535186b8b1f6c29f634f0ad49f99e60a6f6b90c88a9f95a4ca2ae"
+    },
+    {
+      "name": "ifos_realtime_fallback_snippet_v1.js",
+      "ref": "file://ifos_realtime_fallback_snippet_v1.js",
+      "hash": "sha256:e2cadfb013cb67425d27c95fdc9b046eba7701259fd90c79606724c273e6e35a"
+    },
+    {
+      "name": "ifos_resumable_upload_snippet_v1.js",
+      "ref": "file://ifos_resumable_upload_snippet_v1.js",
+      "hash": "sha256:9cb4180d202c4d2503cc13f1983d055fd1b8fc5f9e6cb4b03e6f940db6e3d20c"
+    }
+  ],
+  "created_at": "2026-01-02T16:22:18Z",
+  "version": "1.0.0"
+}

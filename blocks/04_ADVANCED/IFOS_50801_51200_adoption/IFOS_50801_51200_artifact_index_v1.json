@@ -1,0 +1,182 @@
+{
+  "artifact_set": "IFOS_50801_51200",
+  "entries": [
+    {
+      "name": "IFOS_adoption_os_50801_51200_v1.md",
+      "ref": "file://IFOS_adoption_os_50801_51200_v1.md",
+      "hash": "sha256:337e0c0e77511c9b06b95139e8fdd530e2ead5aa711781af69e1a6ef15619f74"
+    },
+    {
+      "name": "IFOS_adoption_os_api_v1.yaml",
+      "ref": "file://IFOS_adoption_os_api_v1.yaml",
+      "hash": "sha256:e2950449b420ed73de0a33b1e2f518419d8703c413ea42e9cb76799435c2f248"
+    },
+    {
+      "name": "IFOS_adoption_os_examples_v1.json",
+      "ref": "file://IFOS_adoption_os_examples_v1.json",
+      "hash": "sha256:540da1d7aef3599eb5ffb42863e0aaa8da6b7032fc6b00d22cbf4aa0dfab2fb3"
+    },
+    {
+      "name": "IFOS_adoption_template_catalog_seed_50801_51200_v1.csv",
+      "ref": "file://IFOS_adoption_template_catalog_seed_50801_51200_v1.csv",
+      "hash": "sha256:574f837a7f0c2485adfb332727e0b31a86c1c85b69793053cf9a3824ae380b0b"
+    },
+    {
+      "name": "IFOS_adoption_overview_spec_v1.md",
+      "ref": "file://IFOS_adoption_overview_spec_v1.md",
+      "hash": "sha256:2d38fc55605712174afa199c6b6246e9eec52f025515e0c583eb20d974b492ea"
+    },
+    {
+      "name": "IFOS_onboarding_templates_spec_v1.md",
+      "ref": "file://IFOS_onboarding_templates_spec_v1.md",
+      "hash": "sha256:70c3ba178c8a7cc49c4a4b8dbd003aef5c05a19e04303d0796bb1964819beab5"
+    },
+    {
+      "name": "IFOS_champions_enablement_spec_v1.md",
+      "ref": "file://IFOS_champions_enablement_spec_v1.md",
+      "hash": "sha256:42b6adf19ceb5e24b02b73a0c105e14d7f05000e35a24b3fa32832cf28d0ac42"
+    },
+    {
+      "name": "IFOS_roi_value_tracking_spec_v1.md",
+      "ref": "file://IFOS_roi_value_tracking_spec_v1.md",
+      "hash": "sha256:3df65a297e29b82d80807659f1e5e5481bd9439506551a961cf4d13d89e9adbd"
+    },
+    {
+      "name": "IFOS_migration_connectors_spec_v1.md",
+      "ref": "file://IFOS_migration_connectors_spec_v1.md",
+      "hash": "sha256:22c3130614008af4486706cbf8f51e9b9e03634e48b681da969d83e6dedbedc1"
+    },
+    {
+      "name": "IFOS_training_playbooks_spec_v1.md",
+      "ref": "file://IFOS_training_playbooks_spec_v1.md",
+      "hash": "sha256:017259f0fc0d264ab6d692e08cd6484c686072aad04d3d8782ee1aa523730f5c"
+    },
+    {
+      "name": "IFOS_enterprise_policies_spec_v1.md",
+      "ref": "file://IFOS_enterprise_policies_spec_v1.md",
+      "hash": "sha256:c6d8ee9ac0ec23dabf20c8b67ae901e93dc67f8925376cd7519a2ce3f61227fe"
+    },
+    {
+      "name": "IFOS_enterprise_security_adoption_spec_v1.md",
+      "ref": "file://IFOS_enterprise_security_adoption_spec_v1.md",
+      "hash": "sha256:83da47a8d6fcc747e73f3cc5b52affb3fd1381c15c8fa3c4260992d8e04732da"
+    },
+    {
+      "name": "IFOS_catalog_operations_spec_v1.md",
+      "ref": "file://IFOS_catalog_operations_spec_v1.md",
+      "hash": "sha256:39cd2b5bfc80cd847cd97b1afd8eab5c1fdab915cd672c4a3b384a49ef357a1b"
+    },
+    {
+      "name": "IFOS_procurement_vendor_spec_v1.md",
+      "ref": "file://IFOS_procurement_vendor_spec_v1.md",
+      "hash": "sha256:2617b6b1a80078a277979834ec08b7a3dda2fc16a8a22fa1849912c763949060"
+    },
+    {
+      "name": "IFOS_enterprise_support_spec_v1.md",
+      "ref": "file://IFOS_enterprise_support_spec_v1.md",
+      "hash": "sha256:78e06ef1a1f702596ce5273d49fcc6acbea06a3cf287964aca865f8dc922994c"
+    },
+    {
+      "name": "IFOS_change_management_spec_v1.md",
+      "ref": "file://IFOS_change_management_spec_v1.md",
+      "hash": "sha256:178b6f265b69e99eddc2e19f628628518442b00ed9eb334fbd35ee5053b15f53"
+    },
+    {
+      "name": "IFOS_kpi_adoption_metrics_spec_v1.md",
+      "ref": "file://IFOS_kpi_adoption_metrics_spec_v1.md",
+      "hash": "sha256:3fa87ed7e35eded4a803493de270c6f2d58cfc387781803dc0930f59fb9460ea"
+    },
+    {
+      "name": "IFOS_enterprise_template_packs_spec_v1.md",
+      "ref": "file://IFOS_enterprise_template_packs_spec_v1.md",
+      "hash": "sha256:67107ae125f8a032003c8c707a2cfb22a4da57fbe33c27c9ed7d4701a854b051"
+    },
+    {
+      "name": "IFOS_rollout_phases_spec_v1.md",
+      "ref": "file://IFOS_rollout_phases_spec_v1.md",
+      "hash": "sha256:a702b170c215d0ce0028fce19946c0d6e5b1054f096f739db1985cfff12b7bab"
+    },
+    {
+      "name": "IFOS_org_profile_schema_v1.json",
+      "ref": "file://IFOS_org_profile_schema_v1.json",
+      "hash": "sha256:3cbc5677d35f7e9c7cbd58cbf747c47d28c64d96206220347e9b68771c61c49b"
+    },
+    {
+      "name": "IFOS_adoption_plan_schema_v1.json",
+      "ref": "file://IFOS_adoption_plan_schema_v1.json",
+      "hash": "sha256:90429784c353f3f7e98ff24d47876c776b6e6c73152d2ba129f7a900cd460521"
+    },
+    {
+      "name": "IFOS_enterprise_template_pack_schema_v1.json",
+      "ref": "file://IFOS_enterprise_template_pack_schema_v1.json",
+      "hash": "sha256:bf59a9a0bd1f2ead94e488beab9390c0255702deac9bf806ae5e80cf714f1fce"
+    },
+    {
+      "name": "IFOS_roi_model_schema_v1.json",
+      "ref": "file://IFOS_roi_model_schema_v1.json",
+      "hash": "sha256:37c6c5da81ea3347df7c947d6f0a356996c0e56f157089e78560524665a84416"
+    },
+    {
+      "name": "IFOS_training_module_schema_v1.json",
+      "ref": "file://IFOS_training_module_schema_v1.json",
+      "hash": "sha256:d091a6457c5a4b4f8a988fbc5fdf072d04d5c920ed1c30184ddf6bac81955ab2"
+    },
+    {
+      "name": "IFOS_migration_job_schema_v1.json",
+      "ref": "file://IFOS_migration_job_schema_v1.json",
+      "hash": "sha256:ecc4b8903dd9fcd682219a5a62687ff01515a94558551dfad255f00147d12867"
+    },
+    {
+      "name": "IFOS_policy_pack_schema_v1.json",
+      "ref": "file://IFOS_policy_pack_schema_v1.json",
+      "hash": "sha256:c1fe37ce6f443f7f565504b40cb8ea6beca0db1a7ff799825272671cca5bfa4e"
+    },
+    {
+      "name": "IFOS_change_ticket_schema_v1.json",
+      "ref": "file://IFOS_change_ticket_schema_v1.json",
+      "hash": "sha256:ac42021413e0303e92d777193a50d7ea628a39c7589ae6c63309e4fba11989e5"
+    },
+    {
+      "name": "IFOS_support_case_schema_v1.json",
+      "ref": "file://IFOS_support_case_schema_v1.json",
+      "hash": "sha256:a1315da69764e221aabe14f0a7e7bb2d10c2e2906a0d653548c918251a64b24f"
+    },
+    {
+      "name": "IFOS_kpi_event_schema_v1.json",
+      "ref": "file://IFOS_kpi_event_schema_v1.json",
+      "hash": "sha256:db93fe7755f4e63b36da050b60c517f16b95da6fee875c9a760b581cbc1bedd9"
+    },
+    {
+      "name": "IFOS_champion_schema_v1.json",
+      "ref": "file://IFOS_champion_schema_v1.json",
+      "hash": "sha256:411b364a61255fb7b44e5e68459d28a272c1182fe450215bc89fa746520d96a0"
+    },
+    {
+      "name": "ifos_roi_calculator_stub_v1.py",
+      "ref": "file://ifos_roi_calculator_stub_v1.py",
+      "hash": "sha256:941435a85298986ca84e0ef206fe57e4b8b34bf09985124533bb97d481855977"
+    },
+    {
+      "name": "ifos_adoption_planner_stub_v1.py",
+      "ref": "file://ifos_adoption_planner_stub_v1.py",
+      "hash": "sha256:6ba92997e03f7c91266133f5cf2105dc43d6ef70202a7348280a771847b73c45"
+    },
+    {
+      "name": "ifos_migration_runner_stub_v1.py",
+      "ref": "file://ifos_migration_runner_stub_v1.py",
+      "hash": "sha256:24c9cc5d695f7f461c05e6b1513ec20a624100483bd0b5e54dd02a14c76028bd"
+    },
+    {
+      "name": "ifos_training_scheduler_stub_v1.py",
+      "ref": "file://ifos_training_scheduler_stub_v1.py",
+      "hash": "sha256:5476857393af4a76d0e04aaee02e66c9d699a6467a1c4d8d8cd8d41d577530c1"
+    },
+    {
+      "name": "ifos_change_manager_stub_v1.py",
+      "ref": "file://ifos_change_manager_stub_v1.py",
+      "hash": "sha256:cdb454fed67f9f5acbffdc84256b7956cad6ffc54a28eaf1e95f2a93ec0bdb9b"
+    }
+  ],
+  "created_at": "2026-01-04T14:05:00Z",
+  "version": "1.0.0"
+}

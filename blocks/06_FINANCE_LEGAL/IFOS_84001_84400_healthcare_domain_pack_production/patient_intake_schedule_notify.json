@@ -1,0 +1,7 @@
+{
+  "bundle_id": "patient_intake_schedule_notify",
+  "name": "Patient Intake → Schedule → Notify",
+  "entrypoint": {
+    "trigger": "webhook.http_post"
+  }
+}

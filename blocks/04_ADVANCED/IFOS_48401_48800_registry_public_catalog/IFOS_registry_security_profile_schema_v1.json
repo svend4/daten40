@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RegistrySecurityProfile Schema v1",
+  "type": "object",
+  "required": [
+    "sec_id",
+    "item_id",
+    "trust_level",
+    "permissions",
+    "scans",
+    "secrets_handling",
+    "version"
+  ],
+  "properties": {
+    "sec_id": {
+      "type": "string"
+    },
+    "item_id": {
+      "type": "string"
+    },
+    "trust_level": {
+      "type": "string",
+      "enum": [
+        "community",
+        "verified",
+        "audited"
+      ]
+    },
+    "permissions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "scans": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "secrets_handling": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

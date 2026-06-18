@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Explanation Schema v1",
+  "type": "object",
+  "required": [
+    "explain_id",
+    "context",
+    "decision",
+    "reasons",
+    "confidence",
+    "version"
+  ],
+  "properties": {
+    "explain_id": {
+      "type": "string"
+    },
+    "context": {
+      "type": "string",
+      "enum": [
+        "query",
+        "install",
+        "run",
+        "block",
+        "warn"
+      ]
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "recommend",
+        "allow",
+        "warn",
+        "block",
+        "rank"
+      ]
+    },
+    "reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "next_actions": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

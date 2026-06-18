@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS BudgetRule Schema v1",
+  "type": "object",
+  "required": [
+    "rule_id",
+    "tenant_id",
+    "cc_id",
+    "limits",
+    "window",
+    "version"
+  ],
+  "properties": {
+    "rule_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "cc_id": {
+      "type": "string"
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "window": {
+      "type": "string",
+      "enum": [
+        "daily",
+        "weekly",
+        "monthly"
+      ]
+    },
+    "applies_to": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

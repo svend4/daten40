@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS PurchaseOrder Schema v1",
+  "type": "object",
+  "required": [
+    "order_id",
+    "buyer_kind",
+    "buyer_id",
+    "listing_id",
+    "plan_id",
+    "qty",
+    "amount_total",
+    "currency",
+    "status",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "order_id": {
+      "type": "string"
+    },
+    "buyer_kind": {
+      "type": "string",
+      "enum": [
+        "user",
+        "org"
+      ]
+    },
+    "buyer_id": {
+      "type": "string"
+    },
+    "listing_id": {
+      "type": "string"
+    },
+    "plan_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "qty": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "coupon_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "amount_subtotal": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "amount_tax": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "amount_total": {
+      "type": "number",
+      "minimum": 0
+    },
+    "currency": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "created",
+        "payment_pending",
+        "paid",
+        "failed",
+        "canceled",
+        "refunded",
+        "chargeback"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

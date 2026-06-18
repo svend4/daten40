@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Connector Profile Schema v1",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "connector_ref",
+    "auth",
+    "io_contracts",
+    "capabilities",
+    "error_taxonomy",
+    "version"
+  ],
+  "properties": {
+    "profile_id": {
+      "type": "string"
+    },
+    "connector_ref": {
+      "type": "string"
+    },
+    "auth": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "oauth2",
+          "api_key",
+          "basic",
+          "jwt",
+          "none"
+        ]
+      }
+    },
+    "io_contracts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "error_taxonomy": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "retries_policy": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "privacy_flags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "compliance_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

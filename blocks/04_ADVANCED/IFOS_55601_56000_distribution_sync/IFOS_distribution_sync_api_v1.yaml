@@ -1,0 +1,17 @@
+openapi: 3.0.3
+info:
+  title: IFOS Distribution & Sync API
+  version: "1.0.0"
+servers:
+  - url: https://sync.ifos.local/v1
+tags:
+  - name: Replicas
+  - name: SyncJobs
+  - name: Conflicts
+paths:
+  /replicas:
+    post: {tags:[Replicas], summary: Register replica, responses: {"200": {description: OK}}}
+  /sync:
+    post: {tags:[SyncJobs], summary: Start sync job, responses: {"200": {description: OK}}}
+  /conflicts:
+    get: {tags:[Conflicts], summary: List conflicts, responses: {"200": {description: OK}}}

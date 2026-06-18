@@ -1,0 +1,46 @@
+name: ifos-local
+services:
+  ifos-db:
+    image: postgres:16
+    environment:
+      POSTGRES_PASSWORD: ${IFOS_DB_PASSWORD:-ifos}
+      POSTGRES_USER: ${IFOS_DB_USER:-ifos}
+      POSTGRES_DB: ${IFOS_DB_NAME:-ifos}
+    ports: ["5432:5432"]
+  ifos-queue:
+    image: redis:7
+    ports: ["6379:6379"]
+  ifos-storage:
+    image: minio/minio:RELEASE.2024-12-18T02-25-34Z
+    command: server /data --console-address :9001
+    environment:
+      MINIO_ROOT_USER: ${IFOS_S3_USER:-minio}
+      MINIO_ROOT_PASSWORD: ${IFOS_S3_PASSWORD:-minio12345}
+    ports: ["9000:9000","9001:9001"]
+  ifos-api:
+    image: ghcr.io/ifos/ifos-api:dev
+    environment:
+      IFOS_DB_URL: ${IFOS_DB_URL}
+      IFOS_REDIS_URL: ${IFOS_REDIS_URL}
+      IFOS_S3_ENDPOINT: ${IFOS_S3_ENDPOINT}
+    ports: ["8081:8081"]
+    depends_on: [ifos-db, ifos-queue, ifos-storage]
+  ifos-runner:
+    image: ghcr.io/ifos/ifos-runner:dev
+    environment:
+      IFOS_API_URL: ${IFOS_API_URL}
+      IFOS_REDIS_URL: ${IFOS_REDIS_URL}
+    depends_on: [ifos-api, ifos-queue]
+  ifos-ui:
+    image: ghcr.io/ifos/ifos-ui:dev
+    environment:
+      IFOS_API_URL: ${IFOS_API_URL}
+    ports: ["8080:8080"]
+    depends_on: [ifos-api]
+  ifos-hooks:
+    image: ghcr.io/ifos/ifos-hooks:dev
+    environment:
+      IFOS_API_URL: ${IFOS_API_URL}
+      IFOS_SECRET_VAULT: ${IFOS_SECRET_VAULT}
+    ports: ["8090:8090"]
+    depends_on: [ifos-api]

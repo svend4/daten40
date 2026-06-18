@@ -1,0 +1,36 @@
+{
+  "federation_example": {
+    "federation_id": "fed.main",
+    "envs": [
+      "env.dev.eu",
+      "env.stage.eu",
+      "env.prod.eu",
+      "env.onprem.corp"
+    ],
+    "promotion": {
+      "order": [
+        "dev",
+        "stage",
+        "prod"
+      ],
+      "requires": [
+        "contract_tests",
+        "policy_check"
+      ]
+    },
+    "routing_policy": "route.main",
+    "trust": "trust.main",
+    "data_residency": "EU_strict",
+    "version": "1.0.0"
+  },
+  "routing_rule_example": {
+    "source": "env.onprem.corp",
+    "target": "env.prod.eu",
+    "allow": [
+      "/v1/*"
+    ],
+    "deny": [
+      "/admin/*"
+    ]
+  }
+}

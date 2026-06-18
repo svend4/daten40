@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SSOProvider Schema v1",
+  "type": "object",
+  "required": [
+    "sso_id",
+    "tenant_id",
+    "kind",
+    "config",
+    "version"
+  ],
+  "properties": {
+    "sso_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "oidc",
+        "saml",
+        "ldap",
+        "scim"
+      ]
+    },
+    "config": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

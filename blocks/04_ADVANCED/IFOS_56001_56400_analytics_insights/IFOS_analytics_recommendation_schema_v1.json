@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Recommendation Schema v1",
+  "type": "object",
+  "required": [
+    "recommendation_id",
+    "type",
+    "summary",
+    "evidence",
+    "action",
+    "version"
+  ],
+  "properties": {
+    "recommendation_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "action": {
+      "type": "string"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

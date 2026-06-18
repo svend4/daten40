@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ConnectorTemplate Schema v1",
+  "type": "object",
+  "required": [
+    "connector_template_id",
+    "name",
+    "protocol",
+    "auth",
+    "operations",
+    "fileset",
+    "version"
+  ],
+  "properties": {
+    "connector_template_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "protocol": {
+      "type": "string",
+      "enum": [
+        "rest",
+        "graphql",
+        "webhooks",
+        "grpc",
+        "storage",
+        "smtp_imap",
+        "custom"
+      ]
+    },
+    "auth": {
+      "type": "string",
+      "enum": [
+        "api_key",
+        "oauth",
+        "webhook_secret",
+        "service_account",
+        "none"
+      ]
+    },
+    "operations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "fileset": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "docs_template_id": {
+      "type": "string"
+    },
+    "validation_profile": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "artifact_set": "IFOS_60001_60400",
+  "entries": [
+    {
+      "name": "IFOS_economics_incentives_os_60001_60400_v1.md",
+      "ref": "file://IFOS_economics_incentives_os_60001_60400_v1.md",
+      "hash": "sha256:8a9dde923b1f62658cd22042f2c83d6e14a6cfd33dadc26acbb6865c0bfcfbf9"
+    },
+    {
+      "name": "IFOS_economics_api_v1.yaml",
+      "ref": "file://IFOS_economics_api_v1.yaml",
+      "hash": "sha256:f6d09b28e4b6fbae491a0756c0ba1b8fca811b9a3a78950fb8f373e6c1d0538a"
+    },
+    {
+      "name": "IFOS_economics_examples_v1.json",
+      "ref": "file://IFOS_economics_examples_v1.json",
+      "hash": "sha256:e6b45b42c4dce2193f006da7291d6dfd84a30e1ec3d92dc0e81dec7872b2c1c5"
+    },
+    {
+      "name": "IFOS_pricing_catalog_seed_60001_60400_v1.csv",
+      "ref": "file://IFOS_pricing_catalog_seed_60001_60400_v1.csv",
+      "hash": "sha256:b1e599bf8c58c48624c8a85faa72268b6cc8a908bfccd19eb2b025b7ad14a450"
+    },
+    {
+      "name": "IFOS_econ_overview_spec_v1.md",
+      "ref": "file://IFOS_econ_overview_spec_v1.md",
+      "hash": "sha256:ed5b0d1fb3114bc01992ab5d56adcea5d83753e322915589190c46ddb0c4917a"
+    },
+    {
+      "name": "IFOS_licensing_models_spec_v1.md",
+      "ref": "file://IFOS_licensing_models_spec_v1.md",
+      "hash": "sha256:b14ba829ce8ce4e1325a17336b8f2a3eabca6eba6242b96acb405533f23ee662"
+    },
+    {
+      "name": "IFOS_pricing_models_spec_v1.md",
+      "ref": "file://IFOS_pricing_models_spec_v1.md",
+      "hash": "sha256:e64530b25c40914aa9972bdcf119c0c8c7dda47a284c647249ec215e78bf198c"
+    },
+    {
+      "name": "IFOS_bounty_grants_spec_v1.md",
+      "ref": "file://IFOS_bounty_grants_spec_v1.md",
+      "hash": "sha256:d0b7c7cf317fbd7da133f11608ab6770e8e106a31b98b4a7315884702adacbd8"
+    },
+    {
+      "name": "IFOS_revenue_share_spec_v1.md",
+      "ref": "file://IFOS_revenue_share_spec_v1.md",
+      "hash": "sha256:85752cecfd2c293c5ec586ae7375a70e37ee74931ff6e9bc714b535b1421cf80"
+    },
+    {
+      "name": "IFOS_anti_spam_economics_spec_v1.md",
+      "ref": "file://IFOS_anti_spam_economics_spec_v1.md",
+      "hash": "sha256:f682ea417d950278443c26178a07ddb3d30b9f67b2dd9174c029a59f7490115f"
+    },
+    {
+      "name": "IFOS_risk_pool_warranty_spec_v1.md",
+      "ref": "file://IFOS_risk_pool_warranty_spec_v1.md",
+      "hash": "sha256:9a4c8ee23b2e1afeaa8b2e0e2c2cb148a537a8c64c9ea49e928591f17b1338ad"
+    },
+    {
+      "name": "IFOS_support_sla_economics_spec_v1.md",
+      "ref": "file://IFOS_support_sla_economics_spec_v1.md",
+      "hash": "sha256:41d33c6228afcded70b104b62898c8f0b9867eea1ebe289cee93c933a42ad9c1"
+    },
+    {
+      "name": "IFOS_trust_tiers_econ_spec_v1.md",
+      "ref": "file://IFOS_trust_tiers_econ_spec_v1.md",
+      "hash": "sha256:36c020c68e2a64f00f887087974b3b5eb14005c321a2ef97da92e41394c58df6"
+    },
+    {
+      "name": "IFOS_market_design_spec_v1.md",
+      "ref": "file://IFOS_market_design_spec_v1.md",
+      "hash": "sha256:8ee2d3f85ad0d9918eb87c78a690fd97c4a892a228388462ea2e1699dec98610"
+    },
+    {
+      "name": "IFOS_tax_vat_notes_spec_v1.md",
+      "ref": "file://IFOS_tax_vat_notes_spec_v1.md",
+      "hash": "sha256:b96d23f273d41726cbda624a47d48697b294506022153473f98f784148443442"
+    },
+    {
+      "name": "IFOS_payments_flow_spec_v1.md",
+      "ref": "file://IFOS_payments_flow_spec_v1.md",
+      "hash": "sha256:21421cc597feb8548e162814fce48a73b9427c893a857e088183423521916159"
+    },
+    {
+      "name": "IFOS_license_schema_v1.json",
+      "ref": "file://IFOS_license_schema_v1.json",
+      "hash": "sha256:12bd43f3066f2182caa6d8419006f3c572ac5c29c50d7e9763731b976b481906"
+    },
+    {
+      "name": "IFOS_pricing_plan_schema_v1.json",
+      "ref": "file://IFOS_pricing_plan_schema_v1.json",
+      "hash": "sha256:ffdb8412e3d2aa5b8006d62f83710b0fa978499cbd13a9a9e528c7a935cc8748"
+    },
+    {
+      "name": "IFOS_bounty_schema_v1.json",
+      "ref": "file://IFOS_bounty_schema_v1.json",
+      "hash": "sha256:7ad2c7df0fbc4187d8da4f4b88b72055d9a768bfac2badb160a8f36eaa4b88fd"
+    },
+    {
+      "name": "IFOS_payout_schema_v1.json",
+      "ref": "file://IFOS_payout_schema_v1.json",
+      "hash": "sha256:ba9361b9e82701f8600a8037051db5d92e245362553a44646d8ab7a072e33a60"
+    },
+    {
+      "name": "IFOS_trust_tier_schema_v1.json",
+      "ref": "file://IFOS_trust_tier_schema_v1.json",
+      "hash": "sha256:3921bf17bf1a91368d0e501af6ca61317ce8d4c2a06fe60c8bccfab582a6a753"
+    },
+    {
+      "name": "IFOS_warranty_schema_v1.json",
+      "ref": "file://IFOS_warranty_schema_v1.json",
+      "hash": "sha256:a5045d12d99c94468c55654c1b37d0aa8a61101a964a5da62ed80de9848fc145"
+    },
+    {
+      "name": "ifos_pricing_calculator_stub_v1.py",
+      "ref": "file://ifos_pricing_calculator_stub_v1.py",
+      "hash": "sha256:5d1e69a5a7a1e4f6a35bd6a3d8aa7a39eedab85135b1a69d3d2394343c58d060"
+    },
+    {
+      "name": "ifos_payouts_split_stub_v1.py",
+      "ref": "file://ifos_payouts_split_stub_v1.py",
+      "hash": "sha256:768080d01a34cccae096b426916538bfff5a45e84e12da4fe95f7b5d2143f030"
+    },
+    {
+      "name": "ifos_anti_spam_fee_stub_v1.py",
+      "ref": "file://ifos_anti_spam_fee_stub_v1.py",
+      "hash": "sha256:894f2c94997766ecb05559142700dc77f8a388cb6176dab300379e419e01801a"
+    }
+  ],
+  "created_at": "2026-01-05T00:45:00Z",
+  "version": "1.0.0"
+}

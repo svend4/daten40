@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS TestKeyEntry Schema v1",
+  "type": "object",
+  "required": [
+    "key_id",
+    "provider_id",
+    "key_type",
+    "scopes",
+    "sandbox_only",
+    "ttl_days",
+    "how_to_get",
+    "policy_id",
+    "version"
+  ],
+  "properties": {
+    "key_id": {
+      "type": "string"
+    },
+    "provider_id": {
+      "type": "string"
+    },
+    "product": {
+      "type": "string"
+    },
+    "key_type": {
+      "type": "string",
+      "enum": [
+        "api_key",
+        "oauth_client",
+        "webhook_secret",
+        "bearer_token",
+        "app_password"
+      ]
+    },
+    "scopes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sandbox_only": {
+      "type": "boolean"
+    },
+    "ttl_days": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 365
+    },
+    "how_to_get": {
+      "type": "string",
+      "enum": [
+        "self_service",
+        "request",
+        "auto_generated"
+      ]
+    },
+    "policy_id": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

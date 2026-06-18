@@ -1,0 +1,15 @@
+{
+  "contract_id": "simulation_report.v1",
+  "fields": {
+    "simulation_id": "string",
+    "bundle_id": "string",
+    "context_hash": "string",
+    "decision": "string",
+    "violations": "array[object]",
+    "trace": "array[object]",
+    "generated_at": "datetime"
+  },
+  "privacy_level": "internal",
+  "retention_policy": "security_default",
+  "audit": "required"
+}

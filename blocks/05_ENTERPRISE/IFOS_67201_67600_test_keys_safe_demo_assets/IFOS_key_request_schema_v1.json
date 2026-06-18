@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS KeyRequest Schema v1",
+  "type": "object",
+  "required": [
+    "request_id",
+    "created_at",
+    "requestor",
+    "provider_id",
+    "key_id",
+    "purpose",
+    "requested_scopes",
+    "ttl_days",
+    "version"
+  ],
+  "properties": {
+    "request_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "requestor": {
+      "type": "object",
+      "required": [
+        "principal_id",
+        "tenant_id"
+      ],
+      "properties": {
+        "principal_id": {
+          "type": "string"
+        },
+        "tenant_id": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "provider_id": {
+      "type": "string"
+    },
+    "key_id": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "requested_scopes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ttl_days": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 365
+    },
+    "callback_urls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

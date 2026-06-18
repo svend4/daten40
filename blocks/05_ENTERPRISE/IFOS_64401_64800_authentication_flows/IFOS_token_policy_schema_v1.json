@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Token Policy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "access_ttl_s",
+    "refresh_ttl_s",
+    "refresh_rotation",
+    "detect_reuse",
+    "version"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "access_ttl_s": {
+      "type": "integer"
+    },
+    "refresh_ttl_s": {
+      "type": "integer"
+    },
+    "refresh_rotation": {
+      "type": "boolean"
+    },
+    "detect_reuse": {
+      "type": "boolean"
+    },
+    "audience": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "issuer": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

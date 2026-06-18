@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS FeedbackEvent Schema v1",
+  "type": "object",
+  "required": [
+    "event_id",
+    "user_id",
+    "item_id",
+    "type",
+    "value",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "item_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "like",
+        "dislike",
+        "hide",
+        "save",
+        "install",
+        "uninstall",
+        "success",
+        "failure",
+        "too_hard",
+        "too_expensive"
+      ]
+    },
+    "value": {
+      "type": [
+        "number",
+        "string",
+        "boolean",
+        "null"
+      ]
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

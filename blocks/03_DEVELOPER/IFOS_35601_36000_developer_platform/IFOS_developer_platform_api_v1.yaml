@@ -1,0 +1,28 @@
+openapi: 3.0.3
+info:
+  title: IFOS Developer Platform API
+  version: "1.0.0"
+servers:
+  - url: https://dev.ifos.local/v1
+tags:
+  - name: Templates
+  - name: SDK
+  - name: Plugins
+  - name: Testing
+  - name: Runtime
+  - name: Publishing
+paths:
+  /templates:
+    post: {tags:[Templates], summary: Register template pack, responses: {"201": {description: Created}}}
+  /sdk/config:
+    post: {tags:[SDK], summary: Upsert SDK config, responses: {"200": {description: OK}}}
+  /plugins:
+    post: {tags:[Plugins], summary: Register plugin manifest, responses: {"201": {description: Created}}}
+  /connectors/spec:
+    post: {tags:[Plugins], summary: Upsert connector spec, responses: {"200": {description: OK}}}
+  /tests/harness:
+    post: {tags:[Testing], summary: Register test harness, responses: {"201": {description: Created}}}
+  /runtime/local-profiles:
+    post: {tags:[Runtime], summary: Upsert local runtime profile, responses: {"200": {description: OK}}}
+  /publish/jobs:
+    post: {tags:[Publishing], summary: Create publish job, responses: {"201": {description: Created}}}

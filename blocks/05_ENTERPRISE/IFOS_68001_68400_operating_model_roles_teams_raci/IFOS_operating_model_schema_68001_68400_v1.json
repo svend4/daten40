@@ -1,0 +1,91 @@
+{
+  "teams": [
+    {
+      "name": "Registry & Ontology",
+      "scope": [
+        "registry",
+        "capabilities",
+        "thesaurus"
+      ]
+    },
+    {
+      "name": "Connectors & SDK",
+      "scope": [
+        "connectors",
+        "tests",
+        "sdk"
+      ]
+    },
+    {
+      "name": "Marketplace & Curation",
+      "scope": [
+        "catalog",
+        "quality",
+        "publishing"
+      ]
+    },
+    {
+      "name": "Trust & Safety",
+      "scope": [
+        "policies",
+        "moderation",
+        "appeals"
+      ]
+    },
+    {
+      "name": "Security & Privacy",
+      "scope": [
+        "secrets",
+        "rbac",
+        "gdpr"
+      ]
+    },
+    {
+      "name": "Runtime & Reliability",
+      "scope": [
+        "runner",
+        "observability",
+        "incidents"
+      ]
+    },
+    {
+      "name": "UX & Templates",
+      "scope": [
+        "ui",
+        "wizards",
+        "vitrines"
+      ]
+    },
+    {
+      "name": "Data Quality & Provenance",
+      "scope": [
+        "dedup",
+        "lineage",
+        "quality"
+      ]
+    },
+    {
+      "name": "Enterprise & Support",
+      "scope": [
+        "orgs",
+        "billing",
+        "support"
+      ]
+    }
+  ],
+  "ai_roles": {
+    "operational_agents": [
+      "metadata_extractor",
+      "drift_detector",
+      "dedup_suggester"
+    ],
+    "tactical_agent": [
+      "ticket_triage_manager",
+      "planner_recommender"
+    ],
+    "strategic_agent": [
+      "architecture_mentor",
+      "roadmap_advisor"
+    ]
+  }
+}

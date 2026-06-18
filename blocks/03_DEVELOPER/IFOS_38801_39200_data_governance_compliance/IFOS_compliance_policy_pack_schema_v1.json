@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS CompliancePolicyPack Schema v1",
+  "type": "object",
+  "required": [
+    "pack_id",
+    "name",
+    "defaults",
+    "checklists",
+    "version"
+  ],
+  "properties": {
+    "pack_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "defaults": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "checklists": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

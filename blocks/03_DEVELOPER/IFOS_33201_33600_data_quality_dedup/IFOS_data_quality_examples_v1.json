@@ -1,0 +1,327 @@
+{
+  "dq_source": {
+    "source_id": "src.s.vf2f2ybx11aw",
+    "kind": "wp_directory",
+    "mode": "incremental",
+    "priority": 90,
+    "base_url": "https://wordpress.org/plugins/",
+    "auth": null,
+    "version": "1.0.0"
+  },
+  "raw_item": {
+    "raw_id": "raw.r.oqcuccgo7ksu",
+    "source_id": "src.s.vf2f2ybx11aw",
+    "source_ref": "wp:plugin:contact-form-7",
+    "payload": {
+      "name": "Contact Form 7",
+      "slug": "contact-form-7",
+      "url": "https://wordpress.org/plugins/contact-form-7/"
+    },
+    "fetched_at": "2026-01-03T11:02:00Z",
+    "content_hash": "sha256:...",
+    "version": "1.0.0"
+  },
+  "normalize_rule": {
+    "rule_id": "rule.n.ckix2ik3o0ro",
+    "kind": "title_cleanup",
+    "pattern": "\\s+\\(.*?\\)$",
+    "action": {
+      "replace_with": ""
+    },
+    "enabled": true,
+    "version": "1.0.0"
+  },
+  "canonical_item_a": {
+    "canonical_id": "canon.c.7or4iid065ir",
+    "title": "Contact Form 7",
+    "kind": "wp_plugin",
+    "description": "Forms plugin",
+    "capabilities": [
+      "forms",
+      "email_notifications",
+      "spam_protection"
+    ],
+    "inputs": {
+      "config": {
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "emails": {
+        "type": "array"
+      }
+    },
+    "artifacts": [
+      {
+        "kind": "wp_plugin",
+        "ref": "contact-form-7",
+        "version": "5.9.0"
+      }
+    ],
+    "deps": [],
+    "aliases": null,
+    "attribution": [
+      {
+        "field": "title",
+        "source_id": "src.s.vf2f2ybx11aw",
+        "raw_id": "raw.r.oqcuccgo7ksu",
+        "confidence": 0.95
+      }
+    ],
+    "dq_score": {
+      "overall": 0.82,
+      "completeness": 0.9,
+      "freshness": 0.8,
+      "trust": 0.9,
+      "installability": 0.7,
+      "docs_quality": 0.8
+    },
+    "version": "1.0.0"
+  },
+  "canonical_item_b": {
+    "canonical_id": "canon.c.5immnvb61x9g",
+    "title": "Contact Form7",
+    "kind": "wp_plugin",
+    "description": "Same plugin with slightly different name",
+    "capabilities": [
+      "forms",
+      "email_notifications"
+    ],
+    "inputs": {
+      "config": {
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "emails": {
+        "type": "array"
+      }
+    },
+    "artifacts": [
+      {
+        "kind": "wp_plugin",
+        "ref": "contact-form-7",
+        "version": "5.9.0"
+      }
+    ],
+    "deps": [],
+    "aliases": null,
+    "attribution": [
+      {
+        "field": "title",
+        "source_id": "src.manual",
+        "raw_id": "raw.manual",
+        "confidence": 0.5
+      }
+    ],
+    "dq_score": {
+      "overall": 0.55
+    },
+    "version": "1.0.0"
+  },
+  "fingerprints": [
+    {
+      "fp_id": "fp.f.m8e8wenrc7rm",
+      "canonical_id": "canon.c.7or4iid065ir",
+      "kind": "url",
+      "value": "wordpress.org/plugins/contact-form-7",
+      "strength": "strong",
+      "version": "1.0.0"
+    },
+    {
+      "fp_id": "fp.f.5l5ttjx17bxf",
+      "canonical_id": "canon.c.5immnvb61x9g",
+      "kind": "artifact",
+      "value": "wp:contact-form-7@5.9.0",
+      "strength": "strong",
+      "version": "1.0.0"
+    }
+  ],
+  "dedup_candidate": {
+    "candidate_id": "cand.d.g7n4j46w32bb",
+    "a_id": "canon.c.7or4iid065ir",
+    "b_id": "canon.c.5immnvb61x9g",
+    "score": 0.97,
+    "recommendation": "auto_merge",
+    "evidence": [
+      {
+        "kind": "fingerprint_match",
+        "detail": {
+          "kind": "artifact",
+          "value": "wp:contact-form-7@5.9.0"
+        }
+      },
+      {
+        "kind": "name_similarity",
+        "detail": {
+          "score": 0.92
+        }
+      }
+    ],
+    "created_at": "2026-01-03T11:02:00Z",
+    "version": "1.0.0"
+  },
+  "conflict": {
+    "conflict_id": "cf.c.hqfp9x6ya2xi",
+    "a_id": "canon.c.7or4iid065ir",
+    "b_id": "canon.c.5immnvb61x9g",
+    "kind": "docs",
+    "fields": [
+      "description"
+    ],
+    "severity": "low",
+    "detail": {
+      "a": "Forms plugin",
+      "b": "Same plugin..."
+    },
+    "version": "1.0.0"
+  },
+  "merge_proposal": {
+    "proposal_id": "mp.m.occq1tujnqxh",
+    "primary_id": "canon.c.7or4iid065ir",
+    "secondary_id": "canon.c.5immnvb61x9g",
+    "plan": [
+      {
+        "field": "title",
+        "op": "take_primary",
+        "params": {}
+      },
+      {
+        "field": "description",
+        "op": "take_primary",
+        "params": {}
+      },
+      {
+        "field": "capabilities",
+        "op": "merge_list",
+        "params": {
+          "dedup": true
+        }
+      },
+      {
+        "field": "aliases",
+        "op": "create_alias",
+        "params": {
+          "alias_kind": "name",
+          "alias_value": "Contact Form7"
+        }
+      }
+    ],
+    "conflicts": [
+      "cf.c.hqfp9x6ya2xi"
+    ],
+    "created_at": "2026-01-03T11:02:00Z",
+    "version": "1.0.0"
+  },
+  "merge_decision": {
+    "decision_id": "md.m.jvzd89rx20cj",
+    "proposal_id": "mp.m.occq1tujnqxh",
+    "result": "merged",
+    "decided_by": "auto",
+    "decided_at": "2026-01-03T11:02:00Z",
+    "reason": "score>=0.95 and strong artifact fingerprint match",
+    "effects": {
+      "redirects": [
+        {
+          "from": "canon.c.5immnvb61x9g",
+          "to": "canon.c.7or4iid065ir"
+        }
+      ],
+      "aliases": [
+        "al.a.qdv2tn2vsdij"
+      ]
+    },
+    "version": "1.0.0"
+  },
+  "truth_policy": {
+    "policy_id": "tp.t.xi1tw7s24s5l",
+    "default_priority": 50,
+    "rules": [
+      {
+        "field": "title",
+        "source_kind_order": [
+          "wp_directory",
+          "github_repo",
+          "custom_feed",
+          "manual_upload"
+        ],
+        "tie_breaker": "freshness"
+      },
+      {
+        "field": "license",
+        "source_kind_order": [
+          "github_repo",
+          "wp_directory",
+          "custom_feed"
+        ],
+        "tie_breaker": "signature"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "attribution": {
+    "attr_id": "attr.a.slzc25nudk9q",
+    "canonical_id": "canon.c.7or4iid065ir",
+    "field": "title",
+    "source_id": "src.s.vf2f2ybx11aw",
+    "raw_id": "raw.r.oqcuccgo7ksu",
+    "retrieved_at": "2026-01-03T11:02:00Z",
+    "confidence": 0.95,
+    "notes": null,
+    "version": "1.0.0"
+  },
+  "dq_score": {
+    "dq_id": "dq.q.ztbsbejgojef",
+    "canonical_id": "canon.c.7or4iid065ir",
+    "scores": {
+      "overall": 0.82,
+      "completeness": 0.9,
+      "freshness": 0.8,
+      "trust": 0.9,
+      "installability": 0.7,
+      "docs_quality": 0.8
+    },
+    "computed_at": "2026-01-03T11:02:00Z",
+    "version": "1.0.0"
+  },
+  "dq_audit": {
+    "audit_id": "aud.a.pic7yvnn5ydw",
+    "action": "AUTO_MERGE",
+    "actor": "system",
+    "ts": "2026-01-03T11:02:00Z",
+    "targets": [
+      {
+        "kind": "canonical_item",
+        "id": "canon.c.7or4iid065ir"
+      },
+      {
+        "kind": "canonical_item",
+        "id": "canon.c.5immnvb61x9g"
+      }
+    ],
+    "meta": {
+      "proposal_id": "mp.m.occq1tujnqxh",
+      "decision_id": "md.m.jvzd89rx20cj"
+    },
+    "version": "1.0.0"
+  },
+  "import_job": {
+    "job_id": "job.j.ycy6tl38d1e1",
+    "source_id": "src.s.vf2f2ybx11aw",
+    "strategy": "incremental",
+    "stage": "publish",
+    "stats": {
+      "raw_fetched": 120,
+      "canonical_created": 10,
+      "canonical_updated": 14,
+      "dedup_candidates": 18,
+      "auto_merged": 5,
+      "needs_review": 7,
+      "quarantined": 1
+    },
+    "started_at": "2026-01-03T11:02:00Z",
+    "ended_at": "2026-01-03T11:02:00Z",
+    "status": "succeeded",
+    "version": "1.0.0"
+  }
+}

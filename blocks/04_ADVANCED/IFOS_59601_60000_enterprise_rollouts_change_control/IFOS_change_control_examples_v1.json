@@ -1,0 +1,118 @@
+{
+  "release_train": {
+    "train_id": "rt.t.pkbkh222vima",
+    "cadence": "weekly",
+    "windows": [
+      {
+        "day": "Wed",
+        "start": "20:00",
+        "end": "22:00"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "approval_gate": {
+    "gate_id": "gate.g.9055pwx03xc3",
+    "checks": [
+      "docs_ready",
+      "benchmarks_passed",
+      "security_scan_passed",
+      "conformance_passed",
+      "owner_approval"
+    ],
+    "owners": [
+      "role.platform_admin",
+      "role.security",
+      "role.business_owner"
+    ],
+    "version": "1.0.0"
+  },
+  "rollout_plan": {
+    "plan_id": "rpl.p.ahpan800udqx",
+    "artifact_set": [
+      "bundle.portal_offers_pack@1.2.0",
+      "connector.http@2.0.1"
+    ],
+    "strategy": "canary",
+    "stages": [
+      {
+        "name": "pilot",
+        "percent": 1,
+        "gates": [
+          "docs_ready",
+          "benchmarks_passed",
+          "security_scan_passed"
+        ]
+      },
+      {
+        "name": "canary",
+        "percent": 10,
+        "gates": [
+          "owner_approval"
+        ]
+      },
+      {
+        "name": "full",
+        "percent": 100,
+        "gates": [
+          "slo_ok"
+        ]
+      }
+    ],
+    "rollback": [
+      "instant_rollback",
+      "disable_feature_flag"
+    ],
+    "version": "1.0.0"
+  },
+  "promotion": {
+    "promotion_id": "prm.m.8yg0ablxd97h",
+    "from_env": "staging",
+    "to_env": "prod",
+    "artifact_versions": {
+      "bundle.portal_offers_pack": "1.2.0",
+      "connector.http": "2.0.1",
+      "runtime": "3.4.0"
+    },
+    "created_at": "2026-01-05T00:25:00Z",
+    "version": "1.0.0"
+  },
+  "migration_plan": {
+    "migration_id": "mig.i.tv23nx4s5olj",
+    "from_schema": "offers.v1",
+    "to_schema": "offers.v2",
+    "steps": [
+      "deploy dual-read",
+      "backfill offers.v2",
+      "verify counts",
+      "switch read to v2",
+      "disable v1 writes"
+    ],
+    "verification": [
+      "compare totals",
+      "sample spot-check 100 records"
+    ],
+    "rollback": [
+      "switch read back to v1",
+      "keep v2 writes disabled"
+    ],
+    "version": "1.0.0"
+  },
+  "incident": {
+    "incident_id": "inc.n.qpe117cgaxjz",
+    "severity": "SEV2",
+    "summary": "Rate-limit spike after adding a source",
+    "timeline": [
+      "00:01 alert",
+      "00:05 throttled source",
+      "00:10 recovered"
+    ],
+    "actions": [
+      "reduced polling",
+      "enabled backoff",
+      "updated runbook"
+    ],
+    "postmortem_ref": "docs://postmortems/inc123",
+    "version": "1.0.0"
+  }
+}

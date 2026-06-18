@@ -1,0 +1,15 @@
+{
+  "contract_id": "policy_step_trace.v1",
+  "fields": {
+    "step_id": "string",
+    "capability": "string",
+    "policies": "array[string]",
+    "decision": "string",
+    "violated_rules": "array[string]",
+    "enforcement_actions": "array[string]",
+    "evidence_items": "array[evidence_item.v1]"
+  },
+  "privacy_level": "internal",
+  "retention_policy": "security_default",
+  "audit": "required"
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ReplayProtection Schema v1",
+  "type": "object",
+  "required": [
+    "replay_policy_id",
+    "window_s",
+    "nonce_cache_size",
+    "version"
+  ],
+  "properties": {
+    "replay_policy_id": {
+      "type": "string"
+    },
+    "window_s": {
+      "type": "integer"
+    },
+    "nonce_cache_size": {
+      "type": "integer"
+    },
+    "require_timestamp": {
+      "type": "boolean",
+      "default": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

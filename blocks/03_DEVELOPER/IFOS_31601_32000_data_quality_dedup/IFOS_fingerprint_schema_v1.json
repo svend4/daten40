@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Fingerprint Schema v1",
+  "type": "object",
+  "required": [
+    "fp_id",
+    "kind",
+    "value",
+    "version"
+  ],
+  "properties": {
+    "fp_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "exact_url",
+        "title_day",
+        "simhash_text",
+        "minhash_shingles",
+        "content_tokens"
+      ]
+    },
+    "value": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

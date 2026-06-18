@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS QueryRecipe Schema v1",
+  "type": "object",
+  "required": [
+    "recipe_id",
+    "name",
+    "sources",
+    "dedup",
+    "rank",
+    "refresh",
+    "version"
+  ],
+  "properties": {
+    "recipe_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "dedup": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "rank": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "refresh": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

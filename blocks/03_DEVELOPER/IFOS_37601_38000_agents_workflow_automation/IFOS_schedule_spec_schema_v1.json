@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ScheduleSpec Schema v1",
+  "type": "object",
+  "required": [
+    "schedule_id",
+    "tenant_id",
+    "type",
+    "expr",
+    "timezone",
+    "version"
+  ],
+  "properties": {
+    "schedule_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "cron",
+        "interval",
+        "event"
+      ]
+    },
+    "expr": {
+      "type": "string"
+    },
+    "timezone": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "bundle_id": "phi_access_request",
+  "context": {
+    "region": "US",
+    "contains_phi": true,
+    "audit_logging_enabled": false
+  },
+  "steps": [
+    {
+      "step_id": "collect_phi",
+      "outputs": [
+        "phi_export_package.v1"
+      ]
+    }
+  ]
+}

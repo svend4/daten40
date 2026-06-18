@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Offer Schema v1",
+  "type": "object",
+  "required": [
+    "offer_id",
+    "card_id",
+    "provider",
+    "price",
+    "billing_period",
+    "terms",
+    "availability",
+    "source",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "offer_id": {
+      "type": "string"
+    },
+    "card_id": {
+      "type": "string"
+    },
+    "provider": {
+      "type": "string"
+    },
+    "price": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "billing_period": {
+      "type": "string",
+      "enum": [
+        "monthly",
+        "yearly",
+        "one_time",
+        "other"
+      ]
+    },
+    "terms": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "availability": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

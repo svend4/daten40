@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS BudgetAlert Schema v1",
+  "type": "object",
+  "required": [
+    "alert_id",
+    "tenant_id",
+    "period",
+    "budget",
+    "thresholds",
+    "channels",
+    "actions",
+    "version"
+  ],
+  "properties": {
+    "alert_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "period": {
+      "type": "string",
+      "enum": [
+        "month",
+        "quarter",
+        "year"
+      ]
+    },
+    "budget": {
+      "type": "number",
+      "minimum": 0
+    },
+    "thresholds": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 200
+      }
+    },
+    "channels": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "email",
+          "telegram",
+          "webhook",
+          "ui"
+        ]
+      }
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "notify",
+          "require_approval",
+          "enable_degrade",
+          "block"
+        ]
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+[
+  {
+    "test": "required_fields",
+    "expect_pass": true
+  }
+]

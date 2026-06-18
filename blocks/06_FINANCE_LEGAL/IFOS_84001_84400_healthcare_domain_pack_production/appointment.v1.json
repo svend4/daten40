@@ -1,0 +1,11 @@
+{
+  "contract_id": "appointment.v1",
+  "fields": {
+    "appointment_id": "string",
+    "patient_id": "string",
+    "datetime": "datetime",
+    "provider": "string",
+    "status": "string"
+  },
+  "privacy_level": "restricted"
+}

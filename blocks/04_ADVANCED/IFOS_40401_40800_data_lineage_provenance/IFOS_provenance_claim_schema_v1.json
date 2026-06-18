@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ProvenanceClaim Schema v1",
+  "type": "object",
+  "required": [
+    "claim_id",
+    "subject",
+    "statement",
+    "evidence",
+    "status",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "claim_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "statement": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "asserted",
+        "verified",
+        "revoked"
+      ]
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "signature": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ConnectorSecurityScan Schema v1",
+  "type": "object",
+  "required": [
+    "scan_id",
+    "package_id",
+    "findings",
+    "severity",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "scan_id": {
+      "type": "string"
+    },
+    "package_id": {
+      "type": "string"
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

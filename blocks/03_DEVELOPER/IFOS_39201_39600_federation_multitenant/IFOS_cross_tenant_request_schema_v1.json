@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS CrossTenantRequest Schema v1",
+  "type": "object",
+  "required": [
+    "request_id",
+    "from_tenant",
+    "to_tenant",
+    "requested_assets",
+    "status",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "request_id": {
+      "type": "string"
+    },
+    "from_tenant": {
+      "type": "string"
+    },
+    "to_tenant": {
+      "type": "string"
+    },
+    "requested_assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "message": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "requested",
+        "approved",
+        "denied",
+        "provisioned",
+        "revoked"
+      ]
+    },
+    "approvals": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

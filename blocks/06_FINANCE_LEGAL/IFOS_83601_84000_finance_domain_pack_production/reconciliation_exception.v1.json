@@ -1,0 +1,17 @@
+{
+  "contract_id": "reconciliation_exception.v1",
+  "fields": {
+    "exception_id": "string",
+    "type": "string",
+    "severity": "string",
+    "bank_tx_id": "string",
+    "candidate_invoice_ids": "array[string]",
+    "amount": "number",
+    "currency": "string",
+    "notes": "string",
+    "created_at": "datetime"
+  },
+  "privacy_level": "confidential",
+  "retention_policy": "finance_default",
+  "audit": "required"
+}

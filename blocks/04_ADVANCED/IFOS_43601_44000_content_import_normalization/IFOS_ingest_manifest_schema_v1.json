@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS IngestManifest Schema v1",
+  "type": "object",
+  "required": [
+    "manifest_id",
+    "source_id",
+    "fetch_jobs",
+    "normalized_items",
+    "mapping_rules",
+    "qa",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "manifest_id": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "fetch_jobs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "raw_items": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "normalized_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "mapping_rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "qa": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "registry_export_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

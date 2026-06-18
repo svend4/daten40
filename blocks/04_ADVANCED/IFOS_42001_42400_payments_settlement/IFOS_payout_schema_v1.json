@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Payout Schema v1",
+  "type": "object",
+  "required": [
+    "payout_id",
+    "vendor_id",
+    "amount",
+    "currency",
+    "status",
+    "period",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "payout_id": {
+      "type": "string"
+    },
+    "vendor_id": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "number"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "queued",
+        "sent",
+        "settled",
+        "failed",
+        "cancelled"
+      ]
+    },
+    "period": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "method": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "tx_refs": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

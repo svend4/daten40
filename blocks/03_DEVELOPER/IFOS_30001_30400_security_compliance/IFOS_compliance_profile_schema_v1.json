@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ComplianceProfile Schema v1",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "region",
+    "requirements",
+    "version"
+  ],
+  "properties": {
+    "profile_id": {
+      "type": "string"
+    },
+    "region": {
+      "type": "string",
+      "enum": [
+        "EU",
+        "DE",
+        "US",
+        "GLOBAL"
+      ]
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "controls"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "controls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

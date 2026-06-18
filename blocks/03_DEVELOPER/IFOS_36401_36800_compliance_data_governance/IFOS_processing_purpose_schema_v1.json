@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ProcessingPurpose Schema v1",
+  "type": "object",
+  "required": [
+    "purpose_id",
+    "tenant_id",
+    "name",
+    "legal_basis",
+    "version"
+  ],
+  "properties": {
+    "purpose_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "legal_basis": {
+      "type": "string",
+      "enum": [
+        "contract",
+        "consent",
+        "legitimate_interest",
+        "legal_obligation",
+        "vital_interest",
+        "public_task"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

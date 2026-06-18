@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Intent Schema v1",
+  "type": "object",
+  "required": [
+    "intent_id",
+    "goal",
+    "inputs",
+    "constraints",
+    "version"
+  ],
+  "properties": {
+    "intent_id": {
+      "type": "string"
+    },
+    "goal": {
+      "type": "string"
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Sync Replica Schema v1",
+  "type": "object",
+  "required": [
+    "replica_id",
+    "kind",
+    "storage",
+    "policy_overlay",
+    "version"
+  ],
+  "properties": {
+    "replica_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "local",
+        "team",
+        "enterprise",
+        "federation_peer"
+      ]
+    },
+    "storage": {
+      "type": "string"
+    },
+    "policy_overlay": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

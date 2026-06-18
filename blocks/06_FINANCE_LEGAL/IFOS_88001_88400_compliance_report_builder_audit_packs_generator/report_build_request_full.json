@@ -1,0 +1,29 @@
+{
+  "request_id": "REQ-002",
+  "environment": "prod",
+  "policy_packs": [
+    "cp_us_hipaa_soc2_baseline",
+    "cp_gdpr_baseline"
+  ],
+  "time_range": {
+    "start": "2025-10-01",
+    "end": "2025-12-31"
+  },
+  "export_mode": "include-attestations",
+  "formats": [
+    "md",
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "branding": {
+    "title": "Q4 Compliance Audit Pack"
+  },
+  "include_sections": {
+    "system_description": true,
+    "controls": true,
+    "exceptions": true,
+    "appendices": true
+  },
+  "requested_by": "compliance@example.com"
+}

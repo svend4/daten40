@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Namespace Schema v1",
+  "type": "object",
+  "required": [
+    "namespace_id",
+    "tenant_id",
+    "prefix",
+    "owners",
+    "version"
+  ],
+  "properties": {
+    "namespace_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "prefix": {
+      "type": "string"
+    },
+    "owners": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

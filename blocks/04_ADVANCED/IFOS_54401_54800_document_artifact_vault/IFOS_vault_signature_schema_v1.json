@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Vault Signature Schema v1",
+  "type": "object",
+  "required": [
+    "sig_id",
+    "object_id",
+    "algo",
+    "signature",
+    "public_key_ref",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "sig_id": {
+      "type": "string"
+    },
+    "object_id": {
+      "type": "string"
+    },
+    "algo": {
+      "type": "string",
+      "enum": [
+        "ed25519",
+        "rsa_pss",
+        "hmac_sha256"
+      ]
+    },
+    "signature": {
+      "type": "string"
+    },
+    "public_key_ref": {
+      "type": "string"
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

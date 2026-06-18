@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UI Widget Schema v1",
+  "type": "object",
+  "required": [
+    "widget_id",
+    "name",
+    "kind",
+    "props",
+    "version"
+  ],
+  "properties": {
+    "widget_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "table",
+        "card",
+        "editor",
+        "chart",
+        "log",
+        "form",
+        "graph",
+        "kanban",
+        "diff",
+        "gallery"
+      ]
+    },
+    "props": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

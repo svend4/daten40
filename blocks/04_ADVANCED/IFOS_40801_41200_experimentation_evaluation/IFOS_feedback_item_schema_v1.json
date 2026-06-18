@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS FeedbackItem Schema v1",
+  "type": "object",
+  "required": [
+    "feedback_id",
+    "tenant_id",
+    "subject",
+    "rating",
+    "reason",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "feedback_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "rating": {
+      "type": "string",
+      "enum": [
+        "up",
+        "down"
+      ]
+    },
+    "reason": {
+      "type": "string",
+      "enum": [
+        "wrong",
+        "incomplete",
+        "too_expensive",
+        "too_slow",
+        "hard_to_use",
+        "other"
+      ]
+    },
+    "comment": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS BlueprintImportJob Schema v1",
+  "type": "object",
+  "required": [
+    "job_id",
+    "kind",
+    "source_ref",
+    "status",
+    "output",
+    "logs",
+    "version"
+  ],
+  "properties": {
+    "job_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "make",
+        "n8n",
+        "wordpress"
+      ]
+    },
+    "source_ref": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "queued",
+        "running",
+        "ok",
+        "error"
+      ]
+    },
+    "output": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "logs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

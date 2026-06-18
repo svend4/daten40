@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Source Descriptor Schema v1",
+  "type": "object",
+  "required": [
+    "source_id",
+    "ecosystem",
+    "mode",
+    "ref",
+    "version"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string"
+    },
+    "ecosystem": {
+      "type": "string",
+      "enum": [
+        "wordpress",
+        "make",
+        "n8n",
+        "zapier",
+        "github",
+        "play"
+      ]
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "api_import",
+        "public_scrape",
+        "file_upload"
+      ]
+    },
+    "ref": {
+      "type": "string"
+    },
+    "policy": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "sync_profile": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

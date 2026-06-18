@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RuntimeCapability Schema v1",
+  "type": "object",
+  "required": [
+    "capability",
+    "description",
+    "risk",
+    "version"
+  ],
+  "properties": {
+    "capability": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "risk": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

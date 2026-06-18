@@ -1,0 +1,26 @@
+openapi: 3.0.3
+info:
+  title: IFOS AI Copilot OS API
+  version: "1.0.0"
+servers:
+  - url: https://copilot.ifos.local/v1
+tags:
+  - name: Intent
+  - name: Plans
+  - name: Lints
+  - name: Explain
+  - name: Docs
+  - name: Tests
+paths:
+  /intent:
+    post: {tags:[Intent], summary: Create intent, responses: {"200": {description: OK}}}
+  /plans/generate:
+    post: {tags:[Plans], summary: Generate plan from intent, responses: {"200": {description: OK}}}
+  /lints/run:
+    post: {tags:[Lints], summary: Run lints on plan, responses: {"200": {description: OK}}}
+  /explain:
+    post: {tags:[Explain], summary: Explain plan choices, responses: {"200": {description: OK}}}
+  /docs/generate:
+    post: {tags:[Docs], summary: Generate docs, responses: {"200": {description: OK}}}
+  /tests/run:
+    post: {tags:[Tests], summary: Run sandbox tests, responses: {"200": {description: OK}}}

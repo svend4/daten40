@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ModerationCase Schema v1",
+  "type": "object",
+  "required": [
+    "case_id",
+    "entity",
+    "signals",
+    "action",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "case_id": {
+      "type": "string"
+    },
+    "entity": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "signals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "hide",
+        "downrank",
+        "mask",
+        "warn",
+        "ban",
+        "no_action"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "resolved",
+        "appealed"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

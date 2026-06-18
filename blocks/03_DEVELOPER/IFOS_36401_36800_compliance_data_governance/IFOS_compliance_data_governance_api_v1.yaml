@@ -1,0 +1,47 @@
+openapi: 3.0.3
+info:
+  title: IFOS Compliance & Data Governance API
+  version: "1.0.0"
+servers:
+  - url: https://governance.ifos.local/v1
+tags:
+  - name: Classification
+  - name: Retention
+  - name: DLP
+  - name: Purposes
+  - name: Consent
+  - name: DSAR
+  - name: LegalHold
+  - name: RoPA
+  - name: DPIA
+  - name: Lineage
+  - name: Export
+  - name: Erasure
+  - name: Policy
+paths:
+  /classification:
+    post: {tags:[Classification], summary: Upsert data classification, responses: {"200": {description: OK}}}
+  /retention/policies:
+    post: {tags:[Retention], summary: Upsert retention policy, responses: {"200": {description: OK}}}
+  /dlp/policies:
+    post: {tags:[DLP], summary: Upsert DLP policy, responses: {"200": {description: OK}}}
+  /purposes:
+    post: {tags:[Purposes], summary: Upsert processing purpose, responses: {"200": {description: OK}}}
+  /consent:
+    post: {tags:[Consent], summary: Append consent record, responses: {"201": {description: Created}}}
+  /dsar/requests:
+    post: {tags:[DSAR], summary: Create DSAR request, responses: {"201": {description: Created}}}
+  /legal-hold:
+    post: {tags:[LegalHold], summary: Create or release legal hold, responses: {"200": {description: OK}}}
+  /ropa:
+    post: {tags:[RoPA], summary: Upsert RoPA entry, responses: {"200": {description: OK}}}
+  /dpia:
+    post: {tags:[DPIA], summary: Upsert DPIA record, responses: {"200": {description: OK}}}
+  /lineage/events:
+    post: {tags:[Lineage], summary: Append lineage event, responses: {"201": {description: Created}}}
+  /export/jobs:
+    post: {tags:[Export], summary: Create export job, responses: {"201": {description: Created}}}
+  /erasure/jobs:
+    post: {tags:[Erasure], summary: Create erasure job, responses: {"201": {description: Created}}}
+  /policy/rules:
+    post: {tags:[Policy], summary: Upsert governance rule, responses: {"200": {description: OK}}}

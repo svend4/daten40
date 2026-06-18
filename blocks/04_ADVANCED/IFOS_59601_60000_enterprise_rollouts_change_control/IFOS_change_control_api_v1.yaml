@@ -1,0 +1,20 @@
+openapi: 3.0.3
+info:
+  title: IFOS Change Control API
+  version: "1.0.0"
+servers:
+  - url: https://change.ifos.local/v1
+tags:
+  - name: Rollouts
+  - name: Approvals
+  - name: Promotions
+  - name: Incidents
+paths:
+  /rollouts/plan:
+    post: {tags:[Rollouts], summary: Create rollout plan, responses: {"200": {description: OK}}}
+  /promotions/create:
+    post: {tags:[Promotions], summary: Promote artifacts between envs, responses: {"200": {description: OK}}}
+  /approvals/submit:
+    post: {tags:[Approvals], summary: Submit approvals, responses: {"200": {description: OK}}}
+  /incidents/report:
+    post: {tags:[Incidents], summary: Report incident, responses: {"200": {description: OK}}}

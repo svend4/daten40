@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SDKProfile Schema v1",
+  "type": "object",
+  "required": [
+    "sdk_profile_id",
+    "language",
+    "runtime",
+    "style",
+    "auth",
+    "defaults",
+    "version"
+  ],
+  "properties": {
+    "sdk_profile_id": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string",
+      "enum": [
+        "python",
+        "javascript",
+        "typescript",
+        "go",
+        "java"
+      ]
+    },
+    "runtime": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "style": {
+      "type": "string",
+      "enum": [
+        "sync",
+        "async"
+      ]
+    },
+    "auth": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "defaults": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

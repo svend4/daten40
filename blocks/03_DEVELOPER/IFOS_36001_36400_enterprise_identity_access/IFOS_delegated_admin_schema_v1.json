@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DelegatedAdmin Schema v1",
+  "type": "object",
+  "required": [
+    "delegation_id",
+    "tenant_id",
+    "delegator",
+    "delegatee",
+    "scopes",
+    "expires_at",
+    "version"
+  ],
+  "properties": {
+    "delegation_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "delegator": {
+      "type": "string"
+    },
+    "delegatee": {
+      "type": "string"
+    },
+    "scopes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "org_unit_scope": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "created_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

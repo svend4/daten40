@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UI Layout Schema v1",
+  "type": "object",
+  "required": [
+    "layout_id",
+    "regions",
+    "version"
+  ],
+  "properties": {
+    "layout_id": {
+      "type": "string"
+    },
+    "regions": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

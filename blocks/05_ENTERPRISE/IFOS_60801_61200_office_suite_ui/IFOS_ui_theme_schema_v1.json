@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UI Theme Schema v1",
+  "type": "object",
+  "required": [
+    "theme_id",
+    "name",
+    "tokens",
+    "version"
+  ],
+  "properties": {
+    "theme_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "tokens": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

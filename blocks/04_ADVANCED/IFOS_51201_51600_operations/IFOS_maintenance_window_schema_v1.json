@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS MaintenanceWindow Schema v1",
+  "type": "object",
+  "required": [
+    "mw_id",
+    "window",
+    "targets",
+    "suppression",
+    "version"
+  ],
+  "properties": {
+    "mw_id": {
+      "type": "string"
+    },
+    "window": {
+      "type": "string"
+    },
+    "targets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "suppression": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

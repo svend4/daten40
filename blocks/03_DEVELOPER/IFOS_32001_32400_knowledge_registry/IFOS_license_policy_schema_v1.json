@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS LicensePolicy Schema v1",
+  "type": "object",
+  "required": [
+    "license_policy_id",
+    "kind",
+    "text",
+    "constraints",
+    "version"
+  ],
+  "properties": {
+    "license_policy_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "MIT",
+        "Apache-2.0",
+        "GPL-3.0",
+        "Commercial",
+        "Proprietary",
+        "Custom"
+      ]
+    },
+    "text": {
+      "type": "string"
+    },
+    "constraints": {
+      "type": "object",
+      "properties": {
+        "commercial_use": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "redistribution": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "requires_attribution": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "saas_allowed": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+openapi: 3.0.3
+info:
+  title: IFOS Import API
+  version: "1.0.0"
+servers:
+  - url: https://import.ifos.local/v1
+tags:
+  - name: Sources
+  - name: Jobs
+  - name: Results
+paths:
+  /sources/register:
+    post: {tags:[Sources], summary: Register source, responses: {"200": {description: OK}}}
+  /jobs/start:
+    post: {tags:[Jobs], summary: Start import job, responses: {"200": {description: OK}}}
+  /results/get:
+    get: {tags:[Results], summary: Get import result, responses: {"200": {description: OK}}}

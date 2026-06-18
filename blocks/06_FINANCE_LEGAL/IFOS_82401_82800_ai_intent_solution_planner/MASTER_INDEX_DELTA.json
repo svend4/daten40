@@ -1,0 +1,23 @@
+{
+  "apply_to": ">= v30",
+  "delta": {
+    "section": "AI_NATIVE",
+    "add": [
+      {
+        "id_range": "IFOS_82401_82800",
+        "name": "AI Intent → Solution Planner / Compiler",
+        "slug": "ai_intent_solution_planner",
+        "type": "Platform",
+        "layer": "AI-native",
+        "status": "Draft",
+        "dependencies": [
+          "IFOS_00001_00400"
+        ],
+        "artifacts": [
+          "IFOS_82401_82800_ai_intent_solution_planner_os_pack.zip"
+        ],
+        "notes": "Intent parsing, capability matching, explainable plan + bundle manifest"
+      }
+    ]
+  }
+}

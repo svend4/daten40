@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ScannerCatalogEntry Schema v1",
+  "type": "object",
+  "required": [
+    "scanner_id",
+    "name",
+    "kind",
+    "inputs",
+    "outputs",
+    "cost_level",
+    "version"
+  ],
+  "properties": {
+    "scanner_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "regex",
+        "dictionary",
+        "ml",
+        "structural",
+        "secrets",
+        "ocr"
+      ]
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cost_level": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "notes": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

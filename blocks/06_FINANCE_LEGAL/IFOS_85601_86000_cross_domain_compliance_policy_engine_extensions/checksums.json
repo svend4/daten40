@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-01-11T17:31:32",
+  "algorithm": "sha256",
+  "files": {
+    "README.md": "1b89873a207220b82159b2730f273dd038cd041098cd8a972c32b96ddde4260f",
+    "manifest.json": "a3f68cc1e7537a82478307f891c8d3ea863f9eca32963deae9360c9d10bb6420",
+    "MASTER_INDEX_DELTA.json": "51f2cefd7a61a18f05705da48297ef856371a20bc1de4fd866f1216e457f6b8a",
+    "policy_dsl/README.md": "e5c2f73c466f7564d54263ff43c5d4e67a483e9a50b23f4fb5b4aa7ddd6a95ea",
+    "runtime_hooks/hooks.json": "ec3771d274e11e490cbbc8000e265fbcdda8e2e605eec786afac3e8d02e6fe0b",
+    "enforcement/actions.json": "6640fdbfeb5764ecfb4fc422cfc32d50fa3c26dd508731a3828c9062d0b49a84",
+    "explainability/example.json": "529c3ee643f66f3a3104ae7d329a2573f2b930bce201969c2b71bd631695f8be",
+    "evidence/hooks.md": "d38da7deddf1760e368ec21825a1328c0713139aa775301aa595fb2692fa89a7",
+    "ui/policy_feedback.json": "5545479ee8a8211a5074ce263bfd314d3997ecb2e38dd36621eaf1ac111dad66"
+  }
+}

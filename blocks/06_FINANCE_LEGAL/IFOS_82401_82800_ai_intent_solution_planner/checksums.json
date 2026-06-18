@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-01-11T15:13:08",
+  "algorithm": "sha256",
+  "files": {
+    "README.md": "129e18b233ce46ddc43526760841f455447cd449410eca00b3c92e2d2954679a",
+    "MASTER_INDEX_DELTA.json": "231f7083bae4fc5b497e4f8e8a0f1a58fac6802c63825c558ef16ed873aa3708",
+    "SPEC/planner_compiler_spec.md": "4ee4db501a8f11f6bc67c8be5a5df5b63f43665e9f396f71c0956ff8e1a2eef5",
+    "schemas/intent.schema.json": "8c2fb1dd8b7cde89e2a448e67dab045d2fa202858c6c97c6af362d4585779f87",
+    "schemas/solution_plan.schema.json": "77275300692bca07f9e2dbd02bb72ee0bbd5f4d0bf209e87da2ef75da8175794",
+    "schemas/bundle_manifest.schema.json": "89a6a2194a1bda8218a687b577f0fc07ed252498d8c3da821c906254d37768e5",
+    "schemas/explanation.schema.json": "cfe13a1d19cc78dba8ca547542b14660b01ef22bb4132c85a4d52664c77df4c8",
+    "seed/scoring_weights.csv": "bf95a6b18574e788049bda1903fded6866f364092ccf6739a688f54165789b0d",
+    "examples/intent_examples.json": "29ae10bfabb88a4666fb0d08667247db0f451f0dc86af81559beb150a830f4d0",
+    "examples/compiled_solution_plan.json": "0cf13aa1de190cec525a12fcfa95a2206e904ccb31ca817e9e1b2bc4c95dcb63",
+    "examples/bundle_manifest.json": "35f312e0af48ea0662a3dfed9242b9891757f07d1637cb5301b5db794c298c89",
+    "examples/explanations.json": "ef3392791cbb92d16daee97352cdccf1d799d484863824359fba198d2e8bf4b4",
+    "API/api_sketch.md": "006e4833d8ff94a10e32d6e8f6d06e1f6b0471a91f3a187f7b9fd1ce1264494f"
+  }
+}

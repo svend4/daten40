@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Dataset Schema v1",
+  "type": "object",
+  "required": [
+    "dataset_id",
+    "name",
+    "category",
+    "version",
+    "license"
+  ],
+  "properties": {
+    "dataset_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "license": {
+      "type": "string"
+    },
+    "fixtures": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

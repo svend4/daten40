@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UI View Schema v1",
+  "type": "object",
+  "required": [
+    "view_id",
+    "name",
+    "type",
+    "widgets",
+    "version"
+  ],
+  "properties": {
+    "view_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "registry",
+        "blueprint",
+        "macro",
+        "vitrine",
+        "console"
+      ]
+    },
+    "widgets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

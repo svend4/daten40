@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS FacetDefinition Schema v1",
+  "type": "object",
+  "required": [
+    "facet_id",
+    "field",
+    "type",
+    "label",
+    "version"
+  ],
+  "properties": {
+    "facet_id": {
+      "type": "string"
+    },
+    "field": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "terms",
+        "range",
+        "boolean"
+      ]
+    },
+    "label": {
+      "type": "string"
+    },
+    "options": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Submission Schema v1",
+  "type": "object",
+  "required": [
+    "submission_id",
+    "type",
+    "artifact_ref",
+    "status",
+    "author",
+    "version"
+  ],
+  "properties": {
+    "submission_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "connector",
+        "macro",
+        "lesson",
+        "bundle",
+        "vitrine"
+      ]
+    },
+    "artifact_ref": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "submitted",
+        "in_review",
+        "approved",
+        "published",
+        "rejected",
+        "deprecated"
+      ]
+    },
+    "author": {
+      "type": "string"
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

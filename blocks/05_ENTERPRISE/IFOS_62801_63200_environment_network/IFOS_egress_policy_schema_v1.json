@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Egress Policy Schema v1",
+  "type": "object",
+  "required": [
+    "egress_id",
+    "mode",
+    "allow",
+    "deny",
+    "version"
+  ],
+  "properties": {
+    "egress_id": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "open",
+        "restricted",
+        "proxy",
+        "static_ip"
+      ]
+    },
+    "allow": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "deny": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "static_ip": {
+      "type": "string"
+    },
+    "proxy": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RotationPolicy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "cadence_days",
+    "mode",
+    "grace_window_hours",
+    "checks",
+    "version"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "cadence_days": {
+      "type": "integer"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "manual",
+        "semi_auto",
+        "auto"
+      ]
+    },
+    "grace_window_hours": {
+      "type": "integer"
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "alert_before_days": {
+      "type": "integer"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

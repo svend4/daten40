@@ -1,0 +1,34 @@
+openapi: 3.0.3
+info:
+  title: IFOS Developer Platform API
+  version: "1.0.0"
+servers:
+  - url: https://dev.ifos.local/v1
+tags:
+  - name: Plugins
+  - name: Templates
+  - name: Scaffolding
+  - name: SDK
+  - name: Sandbox
+  - name: Tests
+  - name: Publishing
+  - name: Compatibility
+paths:
+  /plugins:
+    post: {tags:[Plugins], summary: Upsert plugin manifest, responses: {"200": {description: OK}}}
+  /templates:
+    post: {tags:[Templates], summary: Upsert template pack, responses: {"200": {description: OK}}}
+  /scaffold:
+    post: {tags:[Scaffolding], summary: Generate project scaffold, responses: {"201": {description: Created}}}
+  /sdk/profiles:
+    post: {tags:[SDK], summary: Upsert SDK profile, responses: {"200": {description: OK}}}
+  /sdk/generate:
+    post: {tags:[SDK], summary: Generate SDK package, responses: {"201": {description: Created}}}
+  /sandbox:
+    post: {tags:[Sandbox], summary: Create sandbox environment, responses: {"201": {description: Created}}}
+  /tests/contract:
+    post: {tags:[Tests], summary: Run contract tests, responses: {"201": {description: Created}}}
+  /publish:
+    post: {tags:[Publishing], summary: Publish plugin to marketplace, responses: {"201": {description: Created}}}
+  /compat/matrix:
+    post: {tags:[Compatibility], summary: Upsert compatibility matrix, responses: {"200": {description: OK}}}

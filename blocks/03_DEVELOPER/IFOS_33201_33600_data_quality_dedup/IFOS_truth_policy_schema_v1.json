@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS TruthPolicy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "rules",
+    "default_priority",
+    "version"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "default_priority": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "field",
+          "source_kind_order"
+        ],
+        "properties": {
+          "field": {
+            "type": "string"
+          },
+          "source_kind_order": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tie_breaker": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              null,
+              "freshness",
+              "signature",
+              "version_semver"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "artifact_set": "IFOS_54801_55200",
+  "entries": [
+    {
+      "name": "IFOS_collaboration_change_management_os_54801_55200_v1.md",
+      "ref": "file://IFOS_collaboration_change_management_os_54801_55200_v1.md",
+      "hash": "sha256:d2fac22c093e92f59dba7b9d40195c5bafc579986dc23674534ddc176ad11963"
+    },
+    {
+      "name": "IFOS_collaboration_change_management_api_v1.yaml",
+      "ref": "file://IFOS_collaboration_change_management_api_v1.yaml",
+      "hash": "sha256:a4827730a92932f29b2eddc77351266344dbeca836ed5024c3d6a5630bfb6515"
+    },
+    {
+      "name": "IFOS_collaboration_change_management_examples_v1.json",
+      "ref": "file://IFOS_collaboration_change_management_examples_v1.json",
+      "hash": "sha256:d80295d114791a526f842e96121fa92becd29ccae1710ef4ed3a2d31ad312262"
+    },
+    {
+      "name": "IFOS_change_approval_policies_seed_54801_55200_v1.csv",
+      "ref": "file://IFOS_change_approval_policies_seed_54801_55200_v1.csv",
+      "hash": "sha256:f117305fb4e2403767ec4b3defe030c188955f715990b51342f0f2f0d4beb062"
+    },
+    {
+      "name": "IFOS_change_overview_spec_v1.md",
+      "ref": "file://IFOS_change_overview_spec_v1.md",
+      "hash": "sha256:e9a201a70b30e66f11e4dcf4d3bcd4d88acfcbd149470c1e0a87298e7a189955"
+    },
+    {
+      "name": "IFOS_change_objects_spec_v1.md",
+      "ref": "file://IFOS_change_objects_spec_v1.md",
+      "hash": "sha256:88313d7a987ed6f24edcbe3349b3011857d482e8a267787808c2b9393143e2f0"
+    },
+    {
+      "name": "IFOS_change_workflow_states_spec_v1.md",
+      "ref": "file://IFOS_change_workflow_states_spec_v1.md",
+      "hash": "sha256:28202dc02a23e0f8e7cf5ed0eefb4ead764d747a64ed59336bba6f1e651c33d2"
+    },
+    {
+      "name": "IFOS_change_rfc_template_spec_v1.md",
+      "ref": "file://IFOS_change_rfc_template_spec_v1.md",
+      "hash": "sha256:d520289f6f2632f1848989ba24387b10da541f9910d5c7698e4a012abc72767b"
+    },
+    {
+      "name": "IFOS_change_approvals_policies_spec_v1.md",
+      "ref": "file://IFOS_change_approvals_policies_spec_v1.md",
+      "hash": "sha256:8743a1ef821d0ef6b7c7a466e0c75389b83249a985a62780eeb441352642a77a"
+    },
+    {
+      "name": "IFOS_change_review_commenting_spec_v1.md",
+      "ref": "file://IFOS_change_review_commenting_spec_v1.md",
+      "hash": "sha256:89152fc1c2b23e4b956e1c469888f79a933c1d67fa9fda2a9760db0acbab2b17"
+    },
+    {
+      "name": "IFOS_change_release_trains_spec_v1.md",
+      "ref": "file://IFOS_change_release_trains_spec_v1.md",
+      "hash": "sha256:4e8fc384a22bb83f046f127956c766d1b692129da3e9757a407c01b704485c14"
+    },
+    {
+      "name": "IFOS_change_rollout_canary_spec_v1.md",
+      "ref": "file://IFOS_change_rollout_canary_spec_v1.md",
+      "hash": "sha256:60910b5b58ff086bfd9a18243ca0a25300070e16ca86dd471a8cb5c0f1bc5ac4"
+    },
+    {
+      "name": "IFOS_change_incident_postmortem_spec_v1.md",
+      "ref": "file://IFOS_change_incident_postmortem_spec_v1.md",
+      "hash": "sha256:a1f4072b4e93565533a25a6be4358009d00266fb1cb6459f46e4ba445827fa58"
+    },
+    {
+      "name": "IFOS_change_metrics_dora_spec_v1.md",
+      "ref": "file://IFOS_change_metrics_dora_spec_v1.md",
+      "hash": "sha256:6064ce146757cd91afba83f90b992e0848a1b01524f4a0d44c87b2442167d154"
+    },
+    {
+      "name": "IFOS_change_integrations_spec_v1.md",
+      "ref": "file://IFOS_change_integrations_spec_v1.md",
+      "hash": "sha256:5a1194c9250c9336007287fd5ce2ab8ab1f000fc1ae90f48044ff23440b54438"
+    },
+    {
+      "name": "IFOS_change_task_schema_v1.json",
+      "ref": "file://IFOS_change_task_schema_v1.json",
+      "hash": "sha256:0dd53798ab613fba17338ca7de32f08b5aa5053ff1be1896c0ce262a6f56496e"
+    },
+    {
+      "name": "IFOS_change_comment_schema_v1.json",
+      "ref": "file://IFOS_change_comment_schema_v1.json",
+      "hash": "sha256:f3608534b6c3e06b7d5f312a9077c4a4c64b6532dfec3310e12e00bd34a6f21f"
+    },
+    {
+      "name": "IFOS_change_rfc_schema_v1.json",
+      "ref": "file://IFOS_change_rfc_schema_v1.json",
+      "hash": "sha256:f6aa8c820eac80f6a0b2ac6153e29acfc4a84796c79b20dafbd11e558f8dde50"
+    },
+    {
+      "name": "IFOS_change_approval_record_schema_v1.json",
+      "ref": "file://IFOS_change_approval_record_schema_v1.json",
+      "hash": "sha256:05c8fb87665a0339f634aa08ba644f4b97eefe32fc6419953ac79a20e7bdded2"
+    },
+    {
+      "name": "IFOS_change_release_schema_v1.json",
+      "ref": "file://IFOS_change_release_schema_v1.json",
+      "hash": "sha256:445ead9d7600beb1a92240796e1b5e7e85ececf10c1aebab800d2f90859fda1b"
+    },
+    {
+      "name": "IFOS_change_rollout_schema_v1.json",
+      "ref": "file://IFOS_change_rollout_schema_v1.json",
+      "hash": "sha256:4124da7bcd0769ec5f1c49b549b45e57a799652c59b04c83e1de7196998ed9cf"
+    },
+    {
+      "name": "IFOS_change_incident_schema_v1.json",
+      "ref": "file://IFOS_change_incident_schema_v1.json",
+      "hash": "sha256:64c5189601a64fe8f47e46b3c5003144db6cd3acd3dfde453f8f601207b15bff"
+    },
+    {
+      "name": "IFOS_change_postmortem_schema_v1.json",
+      "ref": "file://IFOS_change_postmortem_schema_v1.json",
+      "hash": "sha256:5519f87cea4aec86df58bf00568f565546dd35ee632e005a409b4df08e1daec1"
+    },
+    {
+      "name": "ifos_change_state_machine_stub_v1.py",
+      "ref": "file://ifos_change_state_machine_stub_v1.py",
+      "hash": "sha256:00aa71ef44c592d3d21038fd20f8392732642081c44ab7aa1085aa6ca5034cdb"
+    },
+    {
+      "name": "ifos_change_risk_score_stub_v1.py",
+      "ref": "file://ifos_change_risk_score_stub_v1.py",
+      "hash": "sha256:bc5a07163f4c52147e7cc989ab5089222ce72a59ca327ba068e5220ebcc68825"
+    },
+    {
+      "name": "ifos_change_release_train_stub_v1.py",
+      "ref": "file://ifos_change_release_train_stub_v1.py",
+      "hash": "sha256:e8aebc8ee621a6e673415334131c3ea0cb22613ca845482b0678e70974035660"
+    }
+  ],
+  "created_at": "2026-01-04T19:05:00Z",
+  "version": "1.0.0"
+}

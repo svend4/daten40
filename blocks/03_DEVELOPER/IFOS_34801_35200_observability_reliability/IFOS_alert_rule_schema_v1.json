@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS AlertRule Schema v1",
+  "type": "object",
+  "required": [
+    "alert_id",
+    "tenant_id",
+    "name",
+    "expr",
+    "severity",
+    "routing",
+    "enabled",
+    "version"
+  ],
+  "properties": {
+    "alert_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "expr": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "warn",
+        "high",
+        "critical"
+      ]
+    },
+    "routing": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "suppression": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

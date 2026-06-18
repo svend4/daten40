@@ -1,0 +1,168 @@
+{
+  "recipe": {
+    "recipe_id": "rec.r.iwjwsou2srbp",
+    "name": "Главные новости дня (тех+рынок)",
+    "sources": [
+      {
+        "type": "rss",
+        "url": "https://example.com/rss"
+      },
+      {
+        "type": "web",
+        "url": "https://example.com/tech"
+      }
+    ],
+    "dedup": {
+      "method": "cluster_by_similarity",
+      "threshold": 0.86
+    },
+    "rank": {
+      "signals": [
+        "freshness",
+        "credibility",
+        "engagement"
+      ],
+      "weights": {
+        "freshness": 0.4,
+        "credibility": 0.4,
+        "engagement": 0.2
+      }
+    },
+    "refresh": "PT30M",
+    "version": "1.0.0"
+  },
+  "vitrine": {
+    "vitrine_id": "vit.v.s6kis6v81unm",
+    "title": "Конференция: Главное за день",
+    "goal": "Сжать поток новостей до 10 решений",
+    "audience": [
+      "solo",
+      "team"
+    ],
+    "blocks": [
+      {
+        "block_id": "b1",
+        "type": "feed",
+        "config": {
+          "recipe_id": "rec.*",
+          "limit": 30
+        },
+        "version": "1.0.0"
+      },
+      {
+        "block_id": "b2",
+        "type": "compare",
+        "config": {
+          "mode": "sources_per_cluster",
+          "max_sources": 5
+        },
+        "version": "1.0.0"
+      },
+      {
+        "block_id": "b3",
+        "type": "actions",
+        "config": {
+          "create_tasks": true
+        },
+        "version": "1.0.0"
+      }
+    ],
+    "filters": [
+      {
+        "k": "credibility_min",
+        "v": 0.6
+      },
+      {
+        "k": "language",
+        "v": "ru"
+      }
+    ],
+    "exports": [
+      "html",
+      "protocol",
+      "csv"
+    ],
+    "version": "1.0.0"
+  },
+  "cluster": {
+    "cluster_id": "cl.c.5hu3cfqwsqqa",
+    "canonical_title": "Компания X выпустила новый продукт Y",
+    "entities": [
+      "Company X",
+      "Product Y"
+    ],
+    "facts": {
+      "what": "release",
+      "when": "2026-01-03",
+      "numbers": {
+        "price": 199
+      }
+    },
+    "sources": [
+      {
+        "domain": "site1.com",
+        "url": "https://site1.com/a"
+      },
+      {
+        "domain": "site2.com",
+        "url": "https://site2.com/b"
+      }
+    ],
+    "ts_first": "2026-01-03T08:00:00Z",
+    "ts_last": "2026-01-03T16:00:00Z",
+    "version": "1.0.0"
+  },
+  "conference_agenda": {
+    "agenda_id": "ag.a.adsilifvzqvd",
+    "recipe_id": "rec.*",
+    "sections": [
+      {
+        "title": "Top clusters",
+        "items": [
+          "cl.*"
+        ]
+      },
+      {
+        "title": "Impact",
+        "items": [
+          "impact:market",
+          "impact:tech"
+        ]
+      },
+      {
+        "title": "Decisions",
+        "items": [
+          "decide:watch",
+          "decide:build"
+        ]
+      }
+    ],
+    "decisions": [
+      "Отслеживать Y",
+      "Сделать витрину сравнения для Y"
+    ],
+    "actions": [
+      {
+        "type": "create_task",
+        "title": "Собрать источники по Y",
+        "owner": "u.123"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "digest_job": {
+    "job_id": "dj.d.cqpep8sq9z4q",
+    "recipe_id": "rec.*",
+    "period": "daily",
+    "format": {
+      "style": "conference",
+      "max_clusters": 12
+    },
+    "schedule": "RRULE:FREQ=DAILY;BYHOUR=18;BYMINUTE=0;BYSECOND=0",
+    "exports": [
+      "html",
+      "protocol"
+    ],
+    "version": "1.0.0"
+  }
+}

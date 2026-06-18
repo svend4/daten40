@@ -1,0 +1,135 @@
+{
+  "listing": {
+    "listing_id": "lst.l.zzth4mk9iwkv",
+    "item_ref": "prod.make_sheets_append",
+    "title": "Make → Sheets: Append Row (Verified)",
+    "pricing": {
+      "type": "subscription",
+      "from": "9.00 EUR/mo"
+    },
+    "trust": {
+      "tier": "Tier2",
+      "score": 0.84
+    },
+    "badges": [
+      "badge.verified_run",
+      "badge.signed_sbom",
+      "badge.docs_ok"
+    ],
+    "categories": [
+      "automation",
+      "spreadsheets"
+    ],
+    "support": {
+      "channel": "email",
+      "sla": "best_effort"
+    },
+    "version": "1.0.0"
+  },
+  "badge": {
+    "badge_id": "badge.verified_run",
+    "name": "Verified Run",
+    "criteria": [
+      {
+        "k": "verified_runs_30d",
+        "op": ">=",
+        "v": 10
+      },
+      {
+        "k": "failure_rate",
+        "op": "<=",
+        "v": 0.05
+      }
+    ],
+    "icon": "check",
+    "version": "1.0.0"
+  },
+  "trust_tier": {
+    "tier_id": "tier.2",
+    "name": "Tier 2 — Verified & Signed",
+    "requirements": [
+      {
+        "k": "signed",
+        "v": true
+      },
+      {
+        "k": "sbom",
+        "v": true
+      },
+      {
+        "k": "verified_runs",
+        "v": true
+      },
+      {
+        "k": "tests_passed",
+        "v": true
+      }
+    ],
+    "rank": 2,
+    "version": "1.0.0"
+  },
+  "review": {
+    "review_id": "rev.r.n0mger0aryu5",
+    "item_id": "prod.make_sheets_append",
+    "author": {
+      "user_id": "u.42",
+      "reputation": 0.63
+    },
+    "verified": true,
+    "rating": 5,
+    "pros": [
+      "быстро",
+      "стабильно"
+    ],
+    "cons": [
+      "не хватает сложных примеров"
+    ],
+    "context": {
+      "use_case": "weekly report",
+      "scale": "small_team"
+    },
+    "ts": "2026-01-04T07:20:00Z",
+    "version": "1.0.0"
+  },
+  "abuse_report": {
+    "report_id": "abr.a.3prjylxobdwu",
+    "item_id": "prod.suspicious_plugin",
+    "type": "malware",
+    "details": "Suspicious outbound calls and obfuscated code.",
+    "reporter": {
+      "user_id": "u.99"
+    },
+    "ts": "2026-01-04T07:20:00Z",
+    "version": "1.0.0"
+  },
+  "quality_scan": {
+    "scan_id": "qsc.q.he3tume4fb0x",
+    "item_id": "prod.make_sheets_append",
+    "scores": {
+      "docs": 0.9,
+      "tests": 0.8,
+      "security": 0.95,
+      "reliability": 0.88
+    },
+    "findings": [
+      {
+        "type": "docs",
+        "msg": "Quickstart present"
+      },
+      {
+        "type": "tests",
+        "msg": "Contract tests ok"
+      }
+    ],
+    "ts": "2026-01-04T07:20:00Z",
+    "version": "1.0.0"
+  },
+  "deprecation_notice": {
+    "notice_id": "dep.d.8t62n0jwv1mc",
+    "item_id": "prod.old_connector",
+    "sunset_at": "2026-03-01T00:00:00Z",
+    "reason": "API vendor v1 shut down",
+    "replacement": "prod.new_connector",
+    "version": "1.0.0"
+  }
+}

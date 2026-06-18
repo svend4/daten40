@@ -1,0 +1,38 @@
+{
+  "pack_id": "cp_us_hipaa_soc2_baseline",
+  "name": "US HIPAA + SOC2 Mapping Compliance Pack",
+  "version": "1.0.0",
+  "status": "production",
+  "region": "US",
+  "applies_to": [
+    "healthcare_ops",
+    "any_domain_pack_processing_phi",
+    "enterprise_security_baseline"
+  ],
+  "compatibility": {
+    "ifos_min_version": "v30",
+    "required_blocks": [
+      "IFOS_00001_00400"
+    ]
+  },
+  "policies": [
+    "hipaa.baseline",
+    "privacy.restricted",
+    "audit.logging",
+    "soc2.mapping",
+    "retention.healthcare_default",
+    "breach.notification.us_baseline"
+  ],
+  "artifacts": {
+    "workflow_templates": [
+      "bundles/phi_access_request.json",
+      "bundles/evidence_collection_run.json"
+    ],
+    "templates": [
+      "templates/baa_vendor_checklist.md",
+      "templates/hipaa_safeguards_mapping.csv",
+      "templates/soc2_control_matrix_template.csv",
+      "templates/evidence_register_template.csv"
+    ]
+  }
+}

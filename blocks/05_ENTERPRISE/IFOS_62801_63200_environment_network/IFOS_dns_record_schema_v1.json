@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DNS Record Schema v1",
+  "type": "object",
+  "required": [
+    "record_id",
+    "type",
+    "name",
+    "value",
+    "ttl",
+    "version"
+  ],
+  "properties": {
+    "record_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "A",
+        "AAAA",
+        "CNAME",
+        "TXT",
+        "MX"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    },
+    "ttl": {
+      "type": "integer"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

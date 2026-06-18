@@ -1,0 +1,45 @@
+openapi: 3.0.3
+info:
+  title: IFOS Enterprise & Governance API
+  version: "1.0.0"
+servers:
+  - url: https://enterprise.ifos.local/v1
+tags:
+  - name: Tenants
+  - name: RBAC
+  - name: Policies
+  - name: Approvals
+  - name: Catalog
+  - name: Licenses
+  - name: Audit
+  - name: Compliance
+  - name: Budgets
+  - name: SSO
+paths:
+  /tenants:
+    post: {tags:[Tenants], summary: Create tenant, responses: {"201": {description: Created}}}
+    get: {tags:[Tenants], summary: List tenants, responses: {"200": {description: OK}}}
+  /org-units:
+    post: {tags:[Tenants], summary: Create org unit, responses: {"201": {description: Created}}}
+    get: {tags:[Tenants], summary: List org units, responses: {"200": {description: OK}}}
+  /rbac/roles:
+    post: {tags:[RBAC], summary: Upsert role, responses: {"200": {description: OK}}}
+  /policies:
+    post: {tags:[Policies], summary: Upsert policy, responses: {"200": {description: OK}}}
+  /approvals/requests:
+    post: {tags:[Approvals], summary: Create approval request, responses: {"201": {description: Created}}}
+    get: {tags:[Approvals], summary: List approval requests, responses: {"200": {description: OK}}}
+  /catalog/scopes:
+    post: {tags:[Catalog], summary: Upsert catalog scope, responses: {"200": {description: OK}}}
+  /licenses/entitlements:
+    post: {tags:[Licenses], summary: Upsert entitlement, responses: {"200": {description: OK}}}
+  /audit/events:
+    post: {tags:[Audit], summary: Append audit event, responses: {"201": {description: Created}}}
+  /compliance/reports:
+    post: {tags:[Compliance], summary: Generate report, responses: {"202": {description: Accepted}}}
+  /budgets/rules:
+    post: {tags:[Budgets], summary: Upsert budget rule, responses: {"200": {description: OK}}}
+  /exceptions:
+    post: {tags:[Policies], summary: Request policy exception, responses: {"201": {description: Created}}}
+  /sso/providers:
+    post: {tags:[SSO], summary: Upsert SSO provider, responses: {"200": {description: OK}}}

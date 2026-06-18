@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DataClass Schema v1",
+  "type": "object",
+  "required": [
+    "class_id",
+    "name",
+    "risk_level",
+    "description",
+    "version"
+  ],
+  "properties": {
+    "class_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "default_controls": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

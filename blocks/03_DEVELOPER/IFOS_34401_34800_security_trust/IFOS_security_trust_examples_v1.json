@@ -1,0 +1,186 @@
+{
+  "signing_key": {
+    "key_id": "key.k.pjeukc95a0u7",
+    "owner": "tenant:Example GmbH",
+    "algo": "ed25519",
+    "status": "active",
+    "created_at": "2026-01-03T12:14:00Z",
+    "meta": {
+      "provider": "vault",
+      "rotation_days": 90
+    },
+    "version": "1.0.0"
+  },
+  "signature": {
+    "sig_id": "sig.s.43abdfg658ys",
+    "artifact_ref": "bundle:office_automation_pack@1.2.3",
+    "hash": "sha256:...",
+    "key_id": "key.k.pjeukc95a0u7",
+    "signed_at": "2026-01-03T12:14:00Z",
+    "purpose": "publish",
+    "signature_b64": "BASE64...",
+    "version": "1.0.0"
+  },
+  "sbom": {
+    "sbom_id": "sbom.b.w1w6iwd0yg4y",
+    "artifact_ref": "bundle:office_automation_pack@1.2.3",
+    "format": "cyclonedx",
+    "components": [
+      {
+        "name": "requests",
+        "version": "2.32.0",
+        "purl": "pkg:pypi/requests@2.32.0"
+      }
+    ],
+    "licenses": [
+      "Apache-2.0"
+    ],
+    "generated_at": "2026-01-03T12:14:00Z",
+    "version": "1.0.0"
+  },
+  "attestation": {
+    "attest_id": "att.a.s5mstujptgsg",
+    "artifact_ref": "bundle:office_automation_pack@1.2.3",
+    "provenance": {
+      "repo": "github:org/repo",
+      "commit": "abc123",
+      "ci": "github-actions",
+      "runner": "ubuntu-latest"
+    },
+    "tests": [
+      {
+        "name": "unit",
+        "status": "pass"
+      },
+      {
+        "name": "policy",
+        "status": "pass"
+      }
+    ],
+    "policy_checks": [
+      {
+        "mode": "balanced",
+        "result": "pass"
+      }
+    ],
+    "created_at": "2026-01-03T12:14:00Z",
+    "version": "1.0.0"
+  },
+  "vuln_report": {
+    "report_id": "vuln.v.6yzcu3q013s4",
+    "artifact_ref": "bundle:office_automation_pack@1.2.3",
+    "findings": [
+      {
+        "component": "openssl",
+        "cve": "CVE-2025-XXXX",
+        "severity": "high",
+        "fix_available": true,
+        "fixed_version": "3.0.15"
+      }
+    ],
+    "recommended_action": "warn",
+    "generated_at": "2026-01-03T12:14:00Z",
+    "version": "1.0.0"
+  },
+  "secret": {
+    "secret_id": "sec.s.upyq9wrjfac9",
+    "tenant_id": "ten.example",
+    "type": "api_key",
+    "provider": "vault",
+    "scopes": [
+      "capability:send_email",
+      "connector:smtp"
+    ],
+    "ttl_hours": 720,
+    "rotate_by": "team:secops",
+    "created_at": "2026-01-03T12:14:00Z",
+    "meta": {
+      "name": "SMTP_API_KEY"
+    },
+    "version": "1.0.0"
+  },
+  "network_policy": {
+    "netpol_id": "net.n.42gju2x181o1",
+    "tenant_id": "ten.example",
+    "mode": "deny_all_by_default",
+    "allow": [
+      "api.telegram.org",
+      "smtp.mailprovider.com"
+    ],
+    "deny": [
+      "*"
+    ],
+    "dns_allow": [
+      "*.mailprovider.com"
+    ],
+    "version": "1.0.0"
+  },
+  "sandbox_profile": {
+    "sandbox_id": "sbx.x.c2fyon1835mq",
+    "tenant_id": "ten.example",
+    "limits": {
+      "cpu": 1.0,
+      "mem_mb": 512,
+      "time_sec": 60
+    },
+    "filesystem": {
+      "readonly": true,
+      "tmp_mb": 128
+    },
+    "network": {
+      "egress_profile": "restricted"
+    },
+    "version": "1.0.0"
+  },
+  "runtime_guard_event": {
+    "event_id": "ge.g.eyooc4x5uvnx",
+    "tenant_id": "ten.example",
+    "canonical_id": "canon.some_bundle",
+    "kind": "egress_block",
+    "ts": "2026-01-03T12:14:00Z",
+    "severity": "high",
+    "meta": {
+      "dest": "evil.example.com",
+      "rule": "deny_all_by_default"
+    },
+    "version": "1.0.0"
+  },
+  "trust_score": {
+    "trust_id": "tr.t.nwru435chma6",
+    "canonical_id": "canon.some_bundle",
+    "score": 0.82,
+    "signals": {
+      "signed": true,
+      "sbom": true,
+      "attested": true,
+      "vuln": "warn",
+      "success_rate": 0.91
+    },
+    "computed_at": "2026-01-03T12:14:00Z",
+    "version": "1.0.0"
+  },
+  "incident": {
+    "incident_id": "inc.i.hfvr9ma2s9g6",
+    "tenant_id": "ten.example",
+    "type": "policy_breach",
+    "status": "open",
+    "opened_at": "2026-01-03T12:14:00Z",
+    "impacted": [
+      {
+        "canonical_id": "canon.some_bundle",
+        "version": "1.2.3"
+      }
+    ],
+    "actions": [
+      {
+        "kind": "disable",
+        "target": "canon.some_bundle"
+      },
+      {
+        "kind": "notify",
+        "audience": "admins"
+      }
+    ],
+    "version": "1.0.0"
+  }
+}

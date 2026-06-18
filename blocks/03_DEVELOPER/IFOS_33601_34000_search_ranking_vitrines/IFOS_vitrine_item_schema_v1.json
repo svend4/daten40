@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS VitrineItem Schema v1",
+  "type": "object",
+  "required": [
+    "canonical_id",
+    "position",
+    "reason",
+    "requirements",
+    "one_click_ready",
+    "version"
+  ],
+  "properties": {
+    "canonical_id": {
+      "type": "string"
+    },
+    "position": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "requirements": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "one_click_ready": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

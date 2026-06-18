@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ChangeTicket Schema v1",
+  "type": "object",
+  "required": [
+    "ticket_id",
+    "subject",
+    "risk",
+    "window",
+    "rollback",
+    "checks",
+    "version"
+  ],
+  "properties": {
+    "ticket_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "risk": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "window": {
+      "type": "string"
+    },
+    "rollback": {
+      "type": "string"
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Scorecard Schema v1",
+  "type": "object",
+  "required": [
+    "scorecard_id",
+    "experiment_id",
+    "period",
+    "metrics",
+    "recommendation",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "scorecard_id": {
+      "type": "string"
+    },
+    "experiment_id": {
+      "type": "string"
+    },
+    "period": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "recommendation": {
+      "type": "string",
+      "enum": [
+        "ship",
+        "iterate",
+        "rollback",
+        "pause",
+        "need_more_data"
+      ]
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

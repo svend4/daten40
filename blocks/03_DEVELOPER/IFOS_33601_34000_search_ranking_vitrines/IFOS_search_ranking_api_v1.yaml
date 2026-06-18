@@ -1,0 +1,69 @@
+openapi: 3.0.3
+info:
+  title: IFOS Search, Ranking & Vitrines API
+  version: "1.0.0"
+servers:
+  - url: https://search.ifos.local/v1
+tags:
+  - name: Search
+  - name: Index
+  - name: Ranking
+  - name: Vitrines
+  - name: Personalization
+  - name: Feedback
+  - name: ABTests
+paths:
+  /search:
+    post:
+      tags: [Search]
+      summary: Search items/bundles/vitrines
+      responses: {"200": {description: OK}}
+  /facets:
+    get:
+      tags: [Search]
+      summary: List facet definitions
+      responses: {"200": {description: OK}}
+  /index/reindex:
+    post:
+      tags: [Index]
+      summary: Trigger reindex (async)
+      responses: {"202": {description: Accepted}}
+  /ranking/profiles:
+    post:
+      tags: [Ranking]
+      summary: Upsert ranking profile
+      responses: {"200": {description: OK}}
+  /vitrines:
+    get:
+      tags: [Vitrines]
+      summary: List vitrines
+      responses: {"200": {description: OK}}
+    post:
+      tags: [Vitrines]
+      summary: Create/Update vitrine
+      responses: {"200": {description: OK}}
+  /vitrines/{vitrine_id}:
+    get:
+      tags: [Vitrines]
+      summary: Get vitrine
+      parameters:
+        - in: path
+          name: vitrine_id
+          required: true
+          schema: {type: string}
+      responses: {"200": {description: OK}}
+  /personalization/profiles:
+    post:
+      tags: [Personalization]
+      summary: Upsert personalization profile
+      responses: {"200": {description: OK}}
+  /feedback/events:
+    post:
+      tags: [Feedback]
+      summary: Submit feedback event
+      responses: {"202": {description: Accepted}}
+  /abtests:
+    post:
+      tags: [ABTests]
+      summary: Create/update AB test
+      responses: {"200": {description: OK}}

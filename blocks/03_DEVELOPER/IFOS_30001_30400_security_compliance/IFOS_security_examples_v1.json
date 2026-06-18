@@ -1,0 +1,192 @@
+{
+  "secret_ref": {
+    "secret_id": "sec.s.j77s44obiw",
+    "name": "secretref.telegram.bot",
+    "purpose": "Telegram bot token",
+    "access_policy": {
+      "read_roles": [
+        "Admin"
+      ],
+      "write_roles": [
+        "Admin"
+      ]
+    },
+    "rotation": {
+      "recommended_days": 90,
+      "last_rotated_at": ""
+    },
+    "version": "1.0.0"
+  },
+  "role": {
+    "role_id": "role.admin",
+    "name": "Admin",
+    "permissions": [
+      "*"
+    ],
+    "version": "1.0.0"
+  },
+  "policy": {
+    "policy_id": "pol.p.q21z4qa07l",
+    "scope": {
+      "kind": "org",
+      "id": "org.demo"
+    },
+    "rules": [
+      {
+        "name": "deny_unknown_domains",
+        "effect": "deny",
+        "match": {
+          "network.domains": "*"
+        },
+        "limits": {},
+        "requires_approval": false
+      },
+      {
+        "name": "allow_telegram_api",
+        "effect": "allow",
+        "match": {
+          "network.domains": [
+            "api.telegram.org"
+          ]
+        },
+        "limits": {
+          "rate_limit_rps": 5
+        },
+        "requires_approval": false
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "audit_event": {
+    "audit_id": "aud.a.wu2gkfladn",
+    "ts": "2026-01-03T08:05:00Z",
+    "actor": {
+      "kind": "user",
+      "id": "me"
+    },
+    "action": "install",
+    "object_ref": "package://pkg.daily_news",
+    "result": "ok",
+    "details": {
+      "signature": "verified",
+      "permissions_approved": true
+    },
+    "version": "1.0.0"
+  },
+  "sandbox_profile": {
+    "sandbox_id": "sb.b.zppgkhl4gv",
+    "network": {
+      "mode": "allowlist",
+      "allow_domains": [
+        "api.telegram.org",
+        "example.com"
+      ]
+    },
+    "filesystem": {
+      "mode": "tmp_only",
+      "scopes": [
+        "/tmp"
+      ]
+    },
+    "resources": {
+      "cpu_ms": 2000,
+      "ram_mb": 256,
+      "timeout_sec": 30
+    },
+    "restrictions": [
+      "no_shell",
+      "no_exec"
+    ],
+    "version": "1.0.0"
+  },
+  "permission_request": {
+    "request_id": "perm.r.i23qljcxb7",
+    "package_id": "pkg.daily_news",
+    "permissions": [
+      {
+        "kind": "network",
+        "target": "api.telegram.org"
+      },
+      {
+        "kind": "schedule",
+        "target": "daily@08:00"
+      }
+    ],
+    "reason": "Отправлять ежедневный дайджест в Telegram.",
+    "duration": "permanent",
+    "status": "approved",
+    "approved_by": "me",
+    "version": "1.0.0"
+  },
+  "risk_assessment": {
+    "risk_id": "risk.k.z0puy1j7i2",
+    "package_id": "pkg.daily_news",
+    "risk_level": "low",
+    "findings": [
+      {
+        "code": "OK_SIGNED",
+        "message": "Package signature verified",
+        "severity": "low"
+      }
+    ],
+    "recommendations": [
+      "Keep sandbox on first run",
+      "Enable alerts for failure_rate"
+    ],
+    "version": "1.0.0"
+  },
+  "supply_chain_attestation": {
+    "attestation_id": "att.t.e3otsg1y96",
+    "package_id": "pkg.daily_news",
+    "source": {
+      "repo": "git://repo/example",
+      "commit": "abc123"
+    },
+    "build": {
+      "ci_system": "github_actions",
+      "job_id": "build-42",
+      "runner": "ubuntu-latest"
+    },
+    "sbom": {
+      "format": "spdx",
+      "packages": 12
+    },
+    "vuln_scan": {
+      "tool": "trivy",
+      "summary": "No high/critical vulns",
+      "max_severity": "medium"
+    },
+    "created_at": "2026-01-03T08:05:00Z",
+    "version": "1.0.0"
+  },
+  "package_signature": {
+    "publisher_id": "pub.demo",
+    "package_id": "pkg.daily_news",
+    "package_hash": "sha256:deadbeef",
+    "signature": "base64:...",
+    "algo": "ed25519",
+    "signed_at": "2026-01-03T08:05:00Z",
+    "version": "1.0.0"
+  },
+  "compliance_profile": {
+    "profile_id": "comp.eu.basic",
+    "region": "EU",
+    "requirements": [
+      {
+        "name": "Data minimization",
+        "controls": [
+          "no_secret_in_config",
+          "retention_policy"
+        ]
+      },
+      {
+        "name": "Auditability",
+        "controls": [
+          "audit_events_enabled",
+          "immutable_logs"
+        ]
+      }
+    ],
+    "version": "1.0.0"
+  }
+}

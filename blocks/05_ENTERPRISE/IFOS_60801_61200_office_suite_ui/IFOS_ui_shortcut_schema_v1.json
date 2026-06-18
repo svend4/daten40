@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UI Shortcut Schema v1",
+  "type": "object",
+  "required": [
+    "shortcut_id",
+    "keys",
+    "action",
+    "version"
+  ],
+  "properties": {
+    "shortcut_id": {
+      "type": "string"
+    },
+    "keys": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string",
+      "enum": [
+        "global",
+        "editor",
+        "table",
+        "vitrine",
+        "console"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Quota Schema v1",
+  "type": "object",
+  "required": [
+    "quota_id",
+    "scope",
+    "limits",
+    "window",
+    "version"
+  ],
+  "properties": {
+    "quota_id": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string",
+      "enum": [
+        "user",
+        "team",
+        "tenant"
+      ]
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "window": {
+      "type": "string",
+      "enum": [
+        "minute",
+        "hour",
+        "day",
+        "month"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS BackpressurePolicy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "thresholds",
+    "actions",
+    "version"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "thresholds": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "throttle",
+          "limit_fanout",
+          "degrade",
+          "pause_queue"
+        ]
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

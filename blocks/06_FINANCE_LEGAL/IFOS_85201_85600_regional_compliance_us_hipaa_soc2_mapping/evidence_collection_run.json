@@ -1,0 +1,65 @@
+{
+  "bundle_id": "evidence_collection_run",
+  "name": "SOC2/HIPAA: Evidence Collection Run",
+  "version": "1.0.0",
+  "connectors": [
+    "audit_log",
+    "iam",
+    "config_store",
+    "doc_storage",
+    "notification"
+  ],
+  "secrets_required": [],
+  "entrypoint": {
+    "trigger": "schedule.monthly",
+    "plan_id": "plan_evidence_collection"
+  },
+  "policies": [
+    "soc2.mapping",
+    "audit.logging"
+  ],
+  "steps": [
+    {
+      "id": "export_phi_access_logs",
+      "capability": "export_audit_logs",
+      "outputs": [
+        "evidence_item.v1"
+      ],
+      "target": "evidence.phi_access_logs"
+    },
+    {
+      "id": "export_access_reviews",
+      "capability": "export_access_review_records",
+      "outputs": [
+        "evidence_item.v1"
+      ],
+      "target": "evidence.access_review_records"
+    },
+    {
+      "id": "snapshot_configs",
+      "capability": "capture_config_snapshot",
+      "outputs": [
+        "evidence_item.v1"
+      ],
+      "target": "evidence.config_snapshots"
+    },
+    {
+      "id": "store_evidence",
+      "capability": "store_documents",
+      "inputs": [
+        "evidence_item.v1"
+      ],
+      "target": "doc_storage"
+    },
+    {
+      "id": "notify",
+      "capability": "notify_security_team",
+      "inputs": [
+        "evidence_item.v1"
+      ],
+      "outputs": [
+        "notification.v1"
+      ]
+    }
+  ]
+}

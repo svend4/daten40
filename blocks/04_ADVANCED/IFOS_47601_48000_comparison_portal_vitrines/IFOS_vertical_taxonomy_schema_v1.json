@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS VerticalTaxonomy Schema v1",
+  "type": "object",
+  "required": [
+    "taxonomy_id",
+    "verticals",
+    "version"
+  ],
+  "properties": {
+    "taxonomy_id": {
+      "type": "string"
+    },
+    "verticals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

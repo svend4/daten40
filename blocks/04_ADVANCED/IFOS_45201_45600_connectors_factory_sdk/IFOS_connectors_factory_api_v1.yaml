@@ -1,0 +1,29 @@
+openapi: 3.0.3
+info:
+  title: IFOS Connectors Factory API
+  version: "1.0.0"
+servers:
+  - url: https://factory.ifos.local/v1
+tags:
+  - name: Sources
+  - name: Generate
+  - name: Build
+  - name: Mocks
+  - name: Tests
+  - name: Docs
+  - name: Publish
+paths:
+  /sources:
+    post: {tags:[Sources], summary: Register connector source, responses: {"201": {description: Created}}}
+  /generate/openapi:
+    post: {tags:[Generate], summary: Generate connector contract from OpenAPI, responses: {"200": {description: OK}}}
+  /build:
+    post: {tags:[Build], summary: Build connector package, responses: {"202": {description: Accepted}}}
+  /mocks:
+    post: {tags:[Mocks], summary: Create mock server from source, responses: {"201": {description: Created}}}
+  /tests/run:
+    post: {tags:[Tests], summary: Run connector test suite, responses: {"200": {description: OK}}}
+  /docs/generate:
+    post: {tags:[Docs], summary: Generate docs bundle, responses: {"200": {description: OK}}}
+  /publish:
+    post: {tags:[Publish], summary: Publish connector package, responses: {"202": {description: Accepted}}}

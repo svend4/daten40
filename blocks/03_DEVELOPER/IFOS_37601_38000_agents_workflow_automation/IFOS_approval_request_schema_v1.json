@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ApprovalRequest Schema v1",
+  "type": "object",
+  "required": [
+    "approval_id",
+    "tenant_id",
+    "run_id",
+    "step_id",
+    "action",
+    "risk",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "approval_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "step_id": {
+      "type": "string"
+    },
+    "action": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "risk": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected",
+        "expired"
+      ]
+    },
+    "approver": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

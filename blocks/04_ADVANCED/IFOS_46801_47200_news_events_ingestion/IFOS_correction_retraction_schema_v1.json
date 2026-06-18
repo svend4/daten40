@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS CorrectionRetraction Schema v1",
+  "type": "object",
+  "required": [
+    "corr_id",
+    "item_id",
+    "type",
+    "note",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "corr_id": {
+      "type": "string"
+    },
+    "item_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "correction",
+        "retraction"
+      ]
+    },
+    "note": {
+      "type": "string"
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

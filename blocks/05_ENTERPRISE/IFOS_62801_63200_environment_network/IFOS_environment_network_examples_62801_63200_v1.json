@@ -1,0 +1,37 @@
+{
+  "env_profile_example": {
+    "env_id": "env.stage.eu",
+    "name": "Stage EU",
+    "stage": "stage",
+    "domains": {
+      "app": "stage.app.example.com",
+      "api": "stage.api.example.com",
+      "webhooks": "stage.webhooks.example.com"
+    },
+    "origins": [
+      "https://stage.app.example.com"
+    ],
+    "dependencies": {
+      "db": "postgres",
+      "queue": "redis",
+      "object_storage": "s3"
+    },
+    "policies": {
+      "egress": "eg.restricted.prod",
+      "ingress": {
+        "ip_allowlist": []
+      }
+    },
+    "region": "eu-central",
+    "data_residency": "EU",
+    "version": "1.0.0"
+  },
+  "egress_static_ip_package": {
+    "partner": "api.partner.com",
+    "static_ip": "203.0.113.10",
+    "ports": [
+      443
+    ],
+    "notes": "Add to allowlist on partner side"
+  }
+}

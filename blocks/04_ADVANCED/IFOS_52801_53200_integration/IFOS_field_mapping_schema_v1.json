@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS FieldMapping Schema v1",
+  "type": "object",
+  "required": [
+    "mapping_id",
+    "source_system",
+    "entity_type",
+    "fields",
+    "version"
+  ],
+  "properties": {
+    "mapping_id": {
+      "type": "string"
+    },
+    "source_system": {
+      "type": "string"
+    },
+    "entity_type": {
+      "type": "string"
+    },
+    "fields": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ScheduleTrigger Schema v1",
+  "type": "object",
+  "required": [
+    "trigger_id",
+    "type",
+    "target",
+    "version"
+  ],
+  "properties": {
+    "trigger_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "cron",
+        "interval",
+        "event",
+        "manual",
+        "conditional"
+      ]
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "spec": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

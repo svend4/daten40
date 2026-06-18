@@ -1,0 +1,75 @@
+{
+  "checks": [
+    {
+      "check_id": "chk_api_health",
+      "name": "API /health",
+      "type": "api",
+      "target_url": "https://api.example/health",
+      "schedule": "*/2 * * * *",
+      "regions": [
+        "eu-central",
+        "us-east"
+      ],
+      "timeout_ms": 1500,
+      "retries": 2,
+      "assertions": [
+        {
+          "kind": "status",
+          "op": "eq",
+          "value": 200
+        }
+      ],
+      "tags": [
+        "tier:critical"
+      ],
+      "service_id": "svc_ifos_api"
+    },
+    {
+      "check_id": "chk_tls_cert",
+      "name": "TLS cert validity",
+      "type": "tls",
+      "host": "api.example",
+      "schedule": "0 */6 * * *",
+      "regions": [
+        "eu-central"
+      ],
+      "timeout_ms": 2000,
+      "retries": 1,
+      "assertions": [
+        {
+          "kind": "cert_days_left",
+          "op": "gte",
+          "value": 14
+        }
+      ],
+      "tags": [
+        "security",
+        "tier:critical"
+      ],
+      "service_id": "svc_ifos_api"
+    },
+    {
+      "check_id": "chk_ui_home",
+      "name": "UI home loads",
+      "type": "browser",
+      "target_url": "https://app.example/",
+      "schedule": "*/5 * * * *",
+      "regions": [
+        "eu-central"
+      ],
+      "timeout_ms": 8000,
+      "retries": 1,
+      "assertions": [
+        {
+          "kind": "selector_visible",
+          "value": "#app-root"
+        }
+      ],
+      "tags": [
+        "ui",
+        "tier:high"
+      ],
+      "service_id": "svc_app_shell"
+    }
+  ]
+}

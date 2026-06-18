@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ShareRequest Schema v1",
+  "type": "object",
+  "required": [
+    "request_id",
+    "created_at",
+    "requestor",
+    "dataset_id",
+    "purpose",
+    "scope",
+    "requested_duration_days",
+    "version"
+  ],
+  "properties": {
+    "request_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "requestor": {
+      "type": "object",
+      "required": [
+        "principal_id"
+      ],
+      "properties": {
+        "principal_id": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "tenant_id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "dataset_id": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "object",
+      "properties": {
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "filters": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "export_outside_room": {
+          "type": "boolean"
+        },
+        "destination_route": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "requested_duration_days": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 365
+    },
+    "risk_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "contract_ref": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

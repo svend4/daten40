@@ -1,0 +1,20 @@
+openapi: 3.0.3
+info:
+  title: IFOS Mock Server API
+  version: "1.0.0"
+paths:
+  /health:
+    get:
+      summary: Health
+      responses:
+        "200": {description: OK}
+  /v1/products:
+    get:
+      summary: List products (mock)
+      responses:
+        "200": {description: OK}
+  /v1/orders:
+    post:
+      summary: Create order (mock)
+      responses:
+        "201": {description: Created}

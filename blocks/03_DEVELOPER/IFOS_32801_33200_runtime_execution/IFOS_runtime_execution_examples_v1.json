@@ -1,0 +1,237 @@
+{
+  "runtime_environment": {
+    "env_id": "env.env.xq1t0uvqor5l",
+    "kind": "docker_compose",
+    "resources": {
+      "cpu_cores": 1.0,
+      "ram_mb": 512,
+      "disk_mb": 1024,
+      "timeout_sec": 600
+    },
+    "runtimes": [
+      {
+        "name": "python",
+        "version": "3.11"
+      },
+      {
+        "name": "node",
+        "version": "20"
+      }
+    ],
+    "capabilities": [
+      "network_outbound",
+      "filesystem_tmp",
+      "http_client"
+    ],
+    "network": {
+      "enabled": true,
+      "allowlist_domains": [
+        "api.telegram.org",
+        "www.googleapis.com"
+      ],
+      "denylist_domains": null,
+      "max_bandwidth_kbps": 2000
+    },
+    "filesystem": {
+      "read_only": false,
+      "tmp_mb": 256,
+      "mounts": null
+    },
+    "version": "1.0.0"
+  },
+  "sandbox_profile": {
+    "sandbox_id": "sandbox.sb.s0k2srqyozrj",
+    "mode": "balanced",
+    "network": {
+      "allow_network": true,
+      "allowlist_domains": [
+        "api.telegram.org"
+      ],
+      "ports": [
+        443
+      ]
+    },
+    "filesystem": {
+      "read_only": false,
+      "allow_write_paths": [
+        "/tmp"
+      ],
+      "max_tmp_mb": 256
+    },
+    "process": {
+      "allow_shell": false,
+      "allow_spawn": true
+    },
+    "timeouts": {
+      "max_runtime_sec": 600,
+      "max_idle_sec": 60
+    },
+    "version": "1.0.0"
+  },
+  "execution_policy": {
+    "policy_id": "policy.pl.ec8m21a1bid3",
+    "level": "user",
+    "rules": [
+      {
+        "kind": "network_domain",
+        "action": "allow",
+        "match": {
+          "domain": "api.telegram.org"
+        },
+        "reason": "Messaging driver"
+      },
+      {
+        "kind": "dangerous_op",
+        "action": "deny",
+        "match": {
+          "op": "port_scan"
+        },
+        "reason": "Security"
+      },
+      {
+        "kind": "connector",
+        "action": "require_confirm",
+        "match": {
+          "connector": "mass_email"
+        },
+        "reason": "Anti-spam"
+      }
+    ],
+    "limits": {
+      "max_runs_per_day": 200,
+      "max_cost_per_day": 5.0,
+      "max_usage": {
+        "task_run": 2000
+      }
+    },
+    "version": "1.0.0"
+  },
+  "secret_ref": {
+    "secret_id": "secret.sec.bnrxak2mk2so",
+    "kind": "api_key",
+    "label": "TELEGRAM_BOT_TOKEN",
+    "scope": "user",
+    "provider": "local_encrypted",
+    "metadata": {
+      "rotatable": true
+    },
+    "version": "1.0.0"
+  },
+  "secret_binding": {
+    "binding_id": "bind.b.048p1ndkba11",
+    "secret_id": "secret.sec.bnrxak2mk2so",
+    "inject_as": "env",
+    "target": {
+      "key": "TELEGRAM_TOKEN",
+      "path": null
+    },
+    "redaction": {
+      "mask_in_logs": true,
+      "mask_pattern": null
+    },
+    "version": "1.0.0"
+  },
+  "run_request": {
+    "run_id": "run.r.deajk352bo5h",
+    "target_kind": "item",
+    "target_id": "item.example_send_telegram",
+    "env_id": "env.env.xq1t0uvqor5l",
+    "sandbox_id": "sandbox.sb.s0k2srqyozrj",
+    "policy_id": "policy.pl.ec8m21a1bid3",
+    "inputs": {
+      "chat_id": "123",
+      "text": "hello"
+    },
+    "secrets": [
+      "bind.b.048p1ndkba11"
+    ],
+    "trigger": {
+      "kind": "manual",
+      "meta": {}
+    },
+    "idempotency_key": "manual-123",
+    "created_at": "2026-01-03T10:45:00Z",
+    "version": "1.0.0"
+  },
+  "run_result": {
+    "run_id": "run.r.deajk352bo5h",
+    "status": "succeeded",
+    "started_at": "2026-01-03T10:45:00Z",
+    "ended_at": "2026-01-03T10:45:00Z",
+    "exit_code": 0,
+    "outputs": {
+      "message_id": "42"
+    },
+    "report": {
+      "log_stream_id": "logs.ls.5cn58p9pj62j",
+      "artifacts": null,
+      "cost": 0.001
+    },
+    "health": {
+      "status": "ok"
+    },
+    "version": "1.0.0"
+  },
+  "job_queue": {
+    "queue_id": "queue.q.xnmyd7lkvo5p",
+    "kind": "run",
+    "concurrency": 4,
+    "priorities": [
+      "high",
+      "normal",
+      "low"
+    ],
+    "version": "1.0.0"
+  },
+  "job_event": {
+    "event_id": "evt.e.f48exjsuvps2",
+    "job_id": "job.j.w7w733daaj1e",
+    "queue_id": "queue.q.xnmyd7lkvo5p",
+    "status": "succeeded",
+    "occurred_at": "2026-01-03T10:45:00Z",
+    "meta": {
+      "run_id": "run.r.deajk352bo5h"
+    },
+    "version": "1.0.0"
+  },
+  "connector_driver": {
+    "driver_id": "drv.d.5v2ibsi1gmhq",
+    "name": "Telegram Bot API",
+    "capabilities": [
+      "send_message",
+      "send_file",
+      "edit_message"
+    ],
+    "auth_schemes": [
+      "api_key"
+    ],
+    "rate_limits": {
+      "default_rps": 20
+    },
+    "test_mode": {
+      "supported": true,
+      "notes": "Use a test bot token"
+    },
+    "docs_url": null,
+    "version": "1.0.0"
+  },
+  "artifact_provenance": {
+    "prov_id": "prov.p.menbgqv6dzuo",
+    "artifact": {
+      "kind": "container_image",
+      "ref": "ghcr.io/example/item:1.0.0"
+    },
+    "source": {
+      "repo_url": "https://github.com/example/item",
+      "commit": "abc123",
+      "builder": "ci"
+    },
+    "hashes": {
+      "sha256": "..."
+    },
+    "signed": false,
+    "signature": null,
+    "built_at": "2026-01-03T10:45:00Z",
+    "version": "1.0.0"
+  }
+}

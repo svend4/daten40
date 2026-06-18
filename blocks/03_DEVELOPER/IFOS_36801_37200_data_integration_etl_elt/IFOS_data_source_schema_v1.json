@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DataSource Schema v1",
+  "type": "object",
+  "required": [
+    "source_id",
+    "tenant_id",
+    "type",
+    "connection",
+    "version"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "saas",
+        "database",
+        "files",
+        "api",
+        "stream"
+      ]
+    },
+    "connection": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "data_sets": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

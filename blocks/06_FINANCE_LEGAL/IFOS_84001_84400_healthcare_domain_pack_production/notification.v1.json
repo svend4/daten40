@@ -1,0 +1,10 @@
+{
+  "contract_id": "notification.v1",
+  "fields": {
+    "channel": "string",
+    "recipient": "string",
+    "sent_at": "datetime",
+    "status": "string"
+  },
+  "privacy_level": "restricted"
+}

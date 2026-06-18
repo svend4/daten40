@@ -1,0 +1,40 @@
+{
+  "id": "ifos.block.69201.incident_response_postmortems",
+  "range": {
+    "start": 69201,
+    "end": 69600
+  },
+  "slug": "incident_response_postmortems",
+  "title": "Incident Response & Postmortems",
+  "category": "Observability & Reliability",
+  "version": "0.1.0",
+  "status": "DONE",
+  "depends_on": [
+    "observability_sre",
+    "case_management_ticketing",
+    "notifications_activity_feed",
+    "knowledge_packaging_documentation",
+    "workflow_runner_macro_engine"
+  ],
+  "artifacts": [
+    {
+      "type": "spec_markdown",
+      "filename": "IFOS_incident_response_postmortems_os_69201_69600_v1.md"
+    },
+    {
+      "type": "seed_csv",
+      "filename": "IFOS_incident_response_postmortems_seed_69201_69600_v1.csv"
+    },
+    {
+      "type": "manifest_json",
+      "filename": "IFOS_69201_69600_incident_response_postmortems_manifest_v1.json"
+    }
+  ],
+  "provides": [
+    "incident_api",
+    "postmortem_template",
+    "action_items_tracking",
+    "comms_templates"
+  ],
+  "notes": "Инцидент-менеджмент как продукт: дисциплина, коммуникации, обучение и автоматизация вокруг уже существующих инструментов."
+}

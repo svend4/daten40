@@ -1,0 +1,19 @@
+{
+  "jit_request": {
+    "principal_ref": "user:alice",
+    "role": "org_admin",
+    "duration_minutes": 120,
+    "reason": "Investigate incident INC-2026-0012",
+    "ticket_ref": "incident://INC-2026-0012"
+  },
+  "approval": {
+    "approver": "user:sec_oncall",
+    "result": "approved",
+    "expires_at": "2026-01-09T22:00:00Z"
+  },
+  "grant_result": {
+    "grant_id": "grant_9001",
+    "status": "active",
+    "auto_revoke": true
+  }
+}

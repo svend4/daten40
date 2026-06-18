@@ -1,0 +1,19 @@
+openapi: 3.0.3
+info:
+  title: IFOS Packaging & Documentation API
+  version: "1.0.0"
+servers:
+  - url: https://docs.ifos.local/v1
+tags:
+  - name: Passports
+  - name: Runbooks
+  - name: Docs
+paths:
+  /passports:
+    post: {tags:[Passports], summary: Create/update passport, responses: {"200": {description: OK}}}
+  /runbooks:
+    post: {tags:[Runbooks], summary: Create/update runbook, responses: {"200": {description: OK}}}
+  /docs/autogen:
+    post: {tags:[Docs], summary: Auto-generate docs bundle, responses: {"200": {description: OK}}}
+  /docs/lint:
+    post: {tags:[Docs], summary: Lint docs against rubric, responses: {"200": {description: OK}}}

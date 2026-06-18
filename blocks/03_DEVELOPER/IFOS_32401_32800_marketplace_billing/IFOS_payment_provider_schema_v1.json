@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS PaymentProvider Schema v1",
+  "type": "object",
+  "required": [
+    "provider_id",
+    "name",
+    "capabilities",
+    "webhook_secret_ref",
+    "version"
+  ],
+  "properties": {
+    "provider_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "enum": [
+        "stripe",
+        "paypal",
+        "sepa",
+        "bank_transfer",
+        "manual"
+      ]
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "webhook_secret_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "offline_policy_example": {
+    "policy_id": "off.vitrines",
+    "cache_strategies": [
+      {
+        "path": "/vitrines/*",
+        "strategy": "stale_while_revalidate",
+        "ttl_s": 300
+      }
+    ],
+    "queue_ops": [
+      "view_card"
+    ],
+    "forbidden_ops": [
+      "payments"
+    ],
+    "version": "1.0.0"
+  },
+  "idempotency_example": {
+    "method": "POST",
+    "header": "Idempotency-Key",
+    "server_behavior": "store result for key (TTL 24h) and return same response on repeats"
+  },
+  "realtime_fallback_example": {
+    "preferred": "ws",
+    "fallbacks": [
+      "sse",
+      "long_poll"
+    ],
+    "switch": "if ws_failures>=2 then use sse for 10 minutes"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS TrustScore Schema v1",
+  "type": "object",
+  "required": [
+    "score_id",
+    "package_id",
+    "package_version",
+    "score",
+    "explanations",
+    "computed_at",
+    "version_schema"
+  ],
+  "properties": {
+    "score_id": {
+      "type": "string"
+    },
+    "package_id": {
+      "type": "string"
+    },
+    "package_version": {
+      "type": "string"
+    },
+    "score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "signals": {
+      "type": "object",
+      "properties": {
+        "has_manifest": {
+          "type": "boolean"
+        },
+        "has_sbom": {
+          "type": "boolean"
+        },
+        "has_provenance": {
+          "type": "boolean"
+        },
+        "has_signature": {
+          "type": "boolean"
+        },
+        "validation_passed": {
+          "type": "boolean"
+        },
+        "sandbox_smoke_ok": {
+          "type": "boolean"
+        },
+        "vuln_critical": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "incident_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "explanations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "computed_at": {
+      "type": "string"
+    },
+    "version_schema": {
+      "type": "string",
+      "const": "1.0.0"
+    }
+  }
+}

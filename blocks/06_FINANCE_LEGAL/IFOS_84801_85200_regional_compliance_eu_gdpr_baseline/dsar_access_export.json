@@ -1,0 +1,66 @@
+{
+  "bundle_id": "dsar_access_export",
+  "name": "DSAR: Access / Export",
+  "version": "1.0.0",
+  "connectors": [
+    "case_management",
+    "doc_storage",
+    "notification",
+    "data_export"
+  ],
+  "secrets_required": [],
+  "entrypoint": {
+    "trigger": "case_management.ticket_created",
+    "plan_id": "plan_dsar_access_export"
+  },
+  "policies": [
+    "gdpr.baseline",
+    "audit.gdpr_evidence",
+    "region.eu_residency"
+  ],
+  "steps": [
+    {
+      "id": "validate_identity",
+      "capability": "dsar_validate_identity",
+      "outputs": [
+        "dsar_request.v1"
+      ]
+    },
+    {
+      "id": "collect_data",
+      "capability": "dsar_collect_subject_data",
+      "inputs": [
+        "dsar_request.v1"
+      ],
+      "outputs": [
+        "dsar_export_package.v1"
+      ]
+    },
+    {
+      "id": "store_export",
+      "capability": "store_documents",
+      "inputs": [
+        "dsar_export_package.v1"
+      ],
+      "target": "doc_storage"
+    },
+    {
+      "id": "notify_subject",
+      "capability": "notify_requester",
+      "inputs": [
+        "dsar_request.v1"
+      ],
+      "outputs": [
+        "notification.v1"
+      ]
+    },
+    {
+      "id": "log_evidence",
+      "capability": "append_audit_evidence",
+      "inputs": [
+        "dsar_request.v1"
+      ],
+      "target": "evidence.dsar_access_log"
+    }
+  ]
+}

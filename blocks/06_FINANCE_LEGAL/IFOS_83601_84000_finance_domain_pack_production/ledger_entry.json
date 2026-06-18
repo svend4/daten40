@@ -1,0 +1,10 @@
+{
+  "entry_id": "LED-555",
+  "posted_at": "2026-01-12T09:30:00Z",
+  "account": "Accounts Receivable",
+  "debit": 0.0,
+  "credit": 1200.0,
+  "currency": "EUR",
+  "reference": "INV-2026-0001",
+  "memo": "Invoice paid"
+}

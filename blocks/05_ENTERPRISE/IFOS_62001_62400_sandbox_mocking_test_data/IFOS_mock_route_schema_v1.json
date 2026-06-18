@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Mock Route Schema v1",
+  "type": "object",
+  "required": [
+    "route_id",
+    "method",
+    "path",
+    "response_mode",
+    "version"
+  ],
+  "properties": {
+    "route_id": {
+      "type": "string"
+    },
+    "method": {
+      "type": "string",
+      "enum": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+      ]
+    },
+    "path": {
+      "type": "string"
+    },
+    "response_mode": {
+      "type": "string",
+      "enum": [
+        "static_fixture",
+        "generator",
+        "state_machine"
+      ]
+    },
+    "fixture_ref": {
+      "type": "string"
+    },
+    "generator_ref": {
+      "type": "string"
+    },
+    "latency_ms": {
+      "type": "integer"
+    },
+    "error_profile": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

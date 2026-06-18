@@ -1,0 +1,41 @@
+{
+  "ifos_bundle_version": "1.0",
+  "block": {
+    "range_start": 71201,
+    "range_end": 71600,
+    "slug": "chaos_engineering_resilience_testing",
+    "title": "Chaos Engineering & Resilience Testing",
+    "category": "Delivery & Reliability",
+    "priority": "P2",
+    "status": "DONE",
+    "version": "0.23.0"
+  },
+  "artifacts": [
+    {
+      "type": "spec_markdown",
+      "file": "IFOS_chaos_engineering_resilience_testing_os_71201_71600_v1.md"
+    },
+    {
+      "type": "seed_csv",
+      "file": "IFOS_chaos_seed_71201_71600_v1.csv"
+    }
+  ],
+  "interfaces": {
+    "write_api": [
+      "POST /chaos/experiments",
+      "POST /chaos/experiments/{id}/approve",
+      "POST /chaos/experiments/{id}/schedule",
+      "POST /chaos/experiments/{id}/start",
+      "POST /chaos/runs/{run_id}/abort",
+      "GET /chaos/experiments/{id}",
+      "GET /chaos/runs/{run_id}",
+      "GET /chaos/runs?service=...&from=...&to=..."
+    ]
+  },
+  "depends_on": [
+    "observability_reliability",
+    "incident_response_postmortems",
+    "slo_sli_error_budgets",
+    "progressive_delivery_rollbacks"
+  ]
+}

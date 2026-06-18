@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS FormattingRules Schema v1",
+  "type": "object",
+  "required": [
+    "rules_id",
+    "locale_id",
+    "date",
+    "number",
+    "address",
+    "units",
+    "version"
+  ],
+  "properties": {
+    "rules_id": {
+      "type": "string"
+    },
+    "locale_id": {
+      "type": "string"
+    },
+    "date": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "number": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "address": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "units": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

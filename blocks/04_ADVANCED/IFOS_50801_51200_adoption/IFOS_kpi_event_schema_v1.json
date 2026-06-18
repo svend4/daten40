@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS KPIEvent Schema v1",
+  "type": "object",
+  "required": [
+    "event_id",
+    "kpi",
+    "value",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "kpi": {
+      "type": "string"
+    },
+    "value": {
+      "type": "number"
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

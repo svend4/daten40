@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS CSRF Policy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "method",
+    "protected_paths",
+    "token_header",
+    "version"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "method": {
+      "type": "string",
+      "enum": [
+        "double_submit",
+        "server_token"
+      ]
+    },
+    "protected_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "token_header": {
+      "type": "string"
+    },
+    "same_site_required": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

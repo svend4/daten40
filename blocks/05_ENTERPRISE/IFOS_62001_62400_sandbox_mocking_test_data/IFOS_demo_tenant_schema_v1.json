@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Demo Tenant Schema v1",
+  "type": "object",
+  "required": [
+    "tenant_id",
+    "provider",
+    "env",
+    "reset_policy",
+    "version"
+  ],
+  "properties": {
+    "tenant_id": {
+      "type": "string"
+    },
+    "provider": {
+      "type": "string"
+    },
+    "env": {
+      "type": "string",
+      "enum": [
+        "sandbox",
+        "demo"
+      ]
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "reset_policy": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "notes": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,226 @@
+openapi: 3.1.0
+info:
+  title: IFOS Supply-chain Monitoring Control Plane API
+  version: "1.0"
+servers:
+  - url: https://ifos.example/api
+paths:
+  /advisories/ingest:
+    post:
+      summary: Ingest (or upsert) a normalized security advisory
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/Advisory' }
+      responses:
+        '200': { description: Ingested }
+  /scans/trigger:
+    post:
+      summary: Trigger a scan for a target (package/bundle/tenant/channel)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ScanRequest' }
+      responses:
+        '202': { description: Accepted }
+  /scans/{scan_id}:
+    get:
+      summary: Get scan result
+      parameters:
+        - in: path
+          name: scan_id
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Scan result
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ScanResult' }
+  /affected/query:
+    post:
+      summary: Query affected graph for an advisory or package
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/AffectedQuery' }
+      responses:
+        '200':
+          description: Affected graph
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AffectedGraph' }
+  /alerts:
+    post:
+      summary: Create an alert (manual or automated)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/Alert' }
+      responses:
+        '201': { description: Created }
+    get:
+      summary: List alerts
+      responses:
+        '200': { description: List }
+  /alerts/{alert_id}/ack:
+    post:
+      summary: Acknowledge an alert
+      parameters:
+        - in: path
+          name: alert_id
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Acked }
+  /remediation/plans:
+    post:
+      summary: Create a remediation plan
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/RemediationPlan' }
+      responses:
+        '201': { description: Created }
+  /remediation/plans/{plan_id}/execute:
+    post:
+      summary: Execute a remediation plan
+      parameters:
+        - in: path
+          name: plan_id
+          required: true
+          schema: { type: string }
+      responses:
+        '202': { description: Execution started }
+  /reports/compliance:
+    post:
+      summary: Generate a compliance report
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ComplianceReportRequest' }
+      responses:
+        '200':
+          description: Report
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ComplianceReport' }
+components:
+  schemas:
+    Advisory:
+      type: object
+      required: [advisory_id, source, title, published_at, affected]
+      properties:
+        advisory_id: { type: string }
+        source: { type: string, enum: [NVD, OSV, GHSA, VENDOR, CERT, OTHER] }
+        title: { type: string }
+        published_at: { type: string, format: date-time }
+        updated_at: { type: string, format: date-time }
+        severity: { type: string, enum: [LOW, MEDIUM, HIGH, CRITICAL, UNKNOWN] }
+        cvss: { type: number }
+        references: { type: array, items: { type: string } }
+        affected:
+          type: array
+          items: { $ref: '#/components/schemas/AffectedComponent' }
+    AffectedComponent:
+      type: object
+      required: [purl, ranges]
+      properties:
+        purl: { type: string }
+        ranges:
+          type: array
+          items: { $ref: '#/components/schemas/VersionRange' }
+        fixed_versions: { type: array, items: { type: string } }
+    VersionRange:
+      type: object
+      properties:
+        introduced: { type: string }
+        fixed: { type: string }
+        last_affected: { type: string }
+    ScanRequest:
+      type: object
+      required: [target_type, target_id]
+      properties:
+        target_type: { type: string, enum: [PACKAGE, BUNDLE, TENANT, CHANNEL] }
+        target_id: { type: string }
+        advisory_ids: { type: array, items: { type: string } }
+        policy_id: { type: string }
+    ScanResult:
+      type: object
+      required: [scan_id, target_type, target_id, findings]
+      properties:
+        scan_id: { type: string }
+        target_type: { type: string }
+        target_id: { type: string }
+        findings: { type: array, items: { $ref: '#/components/schemas/Finding' } }
+        risk_score: { type: number }
+        decision: { type: string, enum: [OK, WARN, BLOCK, QUARANTINE] }
+    Finding:
+      type: object
+      required: [advisory_id, purl, match_confidence]
+      properties:
+        advisory_id: { type: string }
+        purl: { type: string }
+        installed_version: { type: string }
+        match_confidence: { type: number }
+        severity: { type: string }
+        recommended_action: { type: string }
+        suppressed: { type: boolean }
+    AffectedQuery:
+      type: object
+      properties:
+        advisory_id: { type: string }
+        purl: { type: string }
+        tenant_id: { type: string }
+    AffectedGraph:
+      type: object
+      properties:
+        nodes: { type: array, items: { type: object } }
+        edges: { type: array, items: { type: object } }
+        summary:
+          type: object
+          properties:
+            affected_packages: { type: integer }
+            affected_tenants: { type: integer }
+            affected_instances: { type: integer }
+    Alert:
+      type: object
+      required: [alert_id, severity, subject, recipients]
+      properties:
+        alert_id: { type: string }
+        severity: { type: string }
+        subject: { type: string }
+        message: { type: string }
+        recipients: { type: array, items: { type: string } }
+        status: { type: string, enum: [OPEN, ACKED, CLOSED] }
+    RemediationPlan:
+      type: object
+      required: [plan_id, target_type, target_id, steps]
+      properties:
+        plan_id: { type: string }
+        target_type: { type: string }
+        target_id: { type: string }
+        steps: { type: array, items: { $ref: '#/components/schemas/RemediationStep' } }
+    RemediationStep:
+      type: object
+      required: [action]
+      properties:
+        action: { type: string }
+        params: { type: object }
+    ComplianceReportRequest:
+      type: object
+      properties:
+        time_from: { type: string, format: date-time }
+        time_to: { type: string, format: date-time }
+        tenant_id: { type: string }
+    ComplianceReport:
+      type: object
+      properties:
+        generated_at: { type: string, format: date-time }
+        totals: { type: object }

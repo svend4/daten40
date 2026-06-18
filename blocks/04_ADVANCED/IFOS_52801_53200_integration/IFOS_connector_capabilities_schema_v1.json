@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Connector Capabilities Schema v1",
+  "type": "object",
+  "required": [
+    "read",
+    "write",
+    "webhook",
+    "version"
+  ],
+  "properties": {
+    "read": {
+      "type": "boolean"
+    },
+    "write": {
+      "type": "boolean"
+    },
+    "webhook": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

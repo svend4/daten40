@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS GatewayInspectionProfile Schema v1",
+  "type": "object",
+  "required": [
+    "inspection_profile_id",
+    "level",
+    "inspect_headers",
+    "sample_body_hash",
+    "version"
+  ],
+  "properties": {
+    "inspection_profile_id": {
+      "type": "string"
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "L0_metadata",
+        "L1_headers",
+        "L2_structured",
+        "L3_proxy"
+      ]
+    },
+    "inspect_headers": {
+      "type": "boolean"
+    },
+    "sample_body_hash": {
+      "type": "boolean"
+    },
+    "structured_schemas": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "proxy_mode": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

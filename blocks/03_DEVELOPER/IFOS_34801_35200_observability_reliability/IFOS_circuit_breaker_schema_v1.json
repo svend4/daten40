@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS CircuitBreaker Schema v1",
+  "type": "object",
+  "required": [
+    "cb_id",
+    "name",
+    "threshold",
+    "cooldown_sec",
+    "state",
+    "version"
+  ],
+  "properties": {
+    "cb_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "threshold": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "cooldown_sec": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "closed",
+        "open",
+        "half_open"
+      ]
+    },
+    "fallback": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

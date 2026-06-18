@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS GatewayEgressSession Schema v1",
+  "type": "object",
+  "required": [
+    "session_id",
+    "tenant_id",
+    "route_id",
+    "issued_at",
+    "expires_at",
+    "subject",
+    "version"
+  ],
+  "properties": {
+    "session_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "route_id": {
+      "type": "string"
+    },
+    "issued_at": {
+      "type": "string"
+    },
+    "expires_at": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "bound_attestation_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

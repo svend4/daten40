@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS CostBudget Schema v1",
+  "type": "object",
+  "required": [
+    "budget_id",
+    "scope",
+    "limit",
+    "period",
+    "actions",
+    "version"
+  ],
+  "properties": {
+    "budget_id": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string"
+    },
+    "limit": {
+      "type": "number",
+      "minimum": 0
+    },
+    "period": {
+      "type": "string",
+      "enum": [
+        "daily",
+        "weekly",
+        "monthly"
+      ]
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

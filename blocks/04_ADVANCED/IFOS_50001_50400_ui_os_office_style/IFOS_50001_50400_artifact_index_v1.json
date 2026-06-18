@@ -1,0 +1,172 @@
+{
+  "artifact_set": "IFOS_50001_50400",
+  "entries": [
+    {
+      "name": "IFOS_ui_os_office_style_50001_50400_v1.md",
+      "ref": "file://IFOS_ui_os_office_style_50001_50400_v1.md",
+      "hash": "sha256:aeedb065166216206ecf46cd1e19abf7527afba79c227ed2a1bc9365e3b2a9ef"
+    },
+    {
+      "name": "IFOS_ui_os_api_v1.yaml",
+      "ref": "file://IFOS_ui_os_api_v1.yaml",
+      "hash": "sha256:f2b0840697de78c062dba50e4b3dc8456726ff86549cfa4414a4f016011f9adc"
+    },
+    {
+      "name": "IFOS_ui_os_examples_v1.json",
+      "ref": "file://IFOS_ui_os_examples_v1.json",
+      "hash": "sha256:9ee4925b1922c1ee6578452d7e353b2fd69dd27f6505f8e3c666cbcf587e0911"
+    },
+    {
+      "name": "IFOS_ui_ux_overview_spec_v1.md",
+      "ref": "file://IFOS_ui_ux_overview_spec_v1.md",
+      "hash": "sha256:26969bd516b2cafb5736d3f4e9e154b8fb7ce1749fb5567148de35a4b61a10d8"
+    },
+    {
+      "name": "IFOS_ui_modes_spec_v1.md",
+      "ref": "file://IFOS_ui_modes_spec_v1.md",
+      "hash": "sha256:9912f15afe4914800f9c7fc53a08cf7db84746240c756db6be069cb024976325"
+    },
+    {
+      "name": "IFOS_ui_cards_spec_v1.md",
+      "ref": "file://IFOS_ui_cards_spec_v1.md",
+      "hash": "sha256:342ce9eccf0ddef646fc6dafbd90803c2ed318d8ed3f3806478847e8ad09ba3f"
+    },
+    {
+      "name": "IFOS_ui_wizards_spec_v1.md",
+      "ref": "file://IFOS_ui_wizards_spec_v1.md",
+      "hash": "sha256:d7d95c7634dbb0f0beec8b572f4b0ee188f3d7c707ed146164800b429d00cac0"
+    },
+    {
+      "name": "IFOS_ui_conference_mode_spec_v2.md",
+      "ref": "file://IFOS_ui_conference_mode_spec_v2.md",
+      "hash": "sha256:d0d3c71efaf77470c948adc7bbaae9e31d779955e1875e45a20555365a1174fc"
+    },
+    {
+      "name": "IFOS_ui_action_journal_spec_v1.md",
+      "ref": "file://IFOS_ui_action_journal_spec_v1.md",
+      "hash": "sha256:7da92130766b7d26b411dcd964323bb7db3ca78b8d7beb0d5ebffd12e20da08e"
+    },
+    {
+      "name": "IFOS_ui_quality_trust_panels_spec_v1.md",
+      "ref": "file://IFOS_ui_quality_trust_panels_spec_v1.md",
+      "hash": "sha256:0b9891fbf7b635e0b135b9d0fdae85d2c99a7c553d8b224ffd0a9951263107d6"
+    },
+    {
+      "name": "IFOS_ui_search_filters_spec_v1.md",
+      "ref": "file://IFOS_ui_search_filters_spec_v1.md",
+      "hash": "sha256:ecc0bd74378788b084d314bea94d403495c2a824dce174be29c707d027a9e71f"
+    },
+    {
+      "name": "IFOS_ui_kb_viewer_spec_v1.md",
+      "ref": "file://IFOS_ui_kb_viewer_spec_v1.md",
+      "hash": "sha256:54cc66880f208fdff7c33e37319baeb6e0d512e203ffb83eb293a222434b0c4f"
+    },
+    {
+      "name": "IFOS_ui_bundle_runner_spec_v1.md",
+      "ref": "file://IFOS_ui_bundle_runner_spec_v1.md",
+      "hash": "sha256:85b88ca6c82017476af71da6d121d63c72a45a8de9728b9d4c7425322a554b7c"
+    },
+    {
+      "name": "IFOS_ui_compare_portal_spec_v1.md",
+      "ref": "file://IFOS_ui_compare_portal_spec_v1.md",
+      "hash": "sha256:4ab3a91356f2ff3608f3875e294adfa5da6bb2b182443dbf7763fbaf73c4083c"
+    },
+    {
+      "name": "IFOS_ui_reviews_system_spec_v1.md",
+      "ref": "file://IFOS_ui_reviews_system_spec_v1.md",
+      "hash": "sha256:eef84dcecdfe264e449643f8339665d60852cdd3a0c9d14fbc8053271d60b857"
+    },
+    {
+      "name": "IFOS_ui_i18n_accessibility_spec_v1.md",
+      "ref": "file://IFOS_ui_i18n_accessibility_spec_v1.md",
+      "hash": "sha256:43c9bbcc4a37b96892abb42f4b6569587a5add53060e865d9197c8e286a1ec0b"
+    },
+    {
+      "name": "IFOS_ui_permissions_roles_spec_v1.md",
+      "ref": "file://IFOS_ui_permissions_roles_spec_v1.md",
+      "hash": "sha256:b3abd91888c19cf69779ba4fb4870ea3e459224107b6a580a7154d57a8fef6ee"
+    },
+    {
+      "name": "IFOS_ui_layout_navigation_spec_v1.md",
+      "ref": "file://IFOS_ui_layout_navigation_spec_v1.md",
+      "hash": "sha256:7668ecfd4c4a5cf7986d343b40759383e0c5329d7c1491e45eb67c92d152b24d"
+    },
+    {
+      "name": "IFOS_ui_state_schema_v1.json",
+      "ref": "file://IFOS_ui_state_schema_v1.json",
+      "hash": "sha256:3a3407e2fae25f098575d35251c146ac3bf20f70ea8918d7c86ec1b3c10c2bf4"
+    },
+    {
+      "name": "IFOS_ui_card_model_schema_v1.json",
+      "ref": "file://IFOS_ui_card_model_schema_v1.json",
+      "hash": "sha256:f59561e0557e0b271bb7a954ec3d3501f2c6732eb8a7a0673cfcadd21517e00e"
+    },
+    {
+      "name": "IFOS_ui_wizard_model_schema_v1.json",
+      "ref": "file://IFOS_ui_wizard_model_schema_v1.json",
+      "hash": "sha256:b1034d158bcdc23996272f57d8b0a171c811203c5ffdb11d94853a6996400e99"
+    },
+    {
+      "name": "IFOS_ui_conference_model_schema_v2.json",
+      "ref": "file://IFOS_ui_conference_model_schema_v2.json",
+      "hash": "sha256:fbe6773d903937a427b7f3d718a91daa270e2d95112cdb99f17399740e029da0"
+    },
+    {
+      "name": "IFOS_ui_journal_model_schema_v1.json",
+      "ref": "file://IFOS_ui_journal_model_schema_v1.json",
+      "hash": "sha256:507b67efdaebeaa56f9d6fa33193c533256950a7935c886ab6f1ca8aa6a33d24"
+    },
+    {
+      "name": "IFOS_ui_filter_model_schema_v1.json",
+      "ref": "file://IFOS_ui_filter_model_schema_v1.json",
+      "hash": "sha256:55b8b92548ac1880ac1f2476f14af5f7cb3f4d9febe379e46d231bc6ae3f64ee"
+    },
+    {
+      "name": "IFOS_ui_panel_model_schema_v1.json",
+      "ref": "file://IFOS_ui_panel_model_schema_v1.json",
+      "hash": "sha256:7dae6af8a3dbaa0fce19e3a748ceb56c13a6c379a478c8f27f2ff038609fba77"
+    },
+    {
+      "name": "IFOS_ui_command_model_schema_v1.json",
+      "ref": "file://IFOS_ui_command_model_schema_v1.json",
+      "hash": "sha256:ab4c72c107ed290b7ba414c2ec2a2bb03aef9057582fe61a4fc77ee59f30cece"
+    },
+    {
+      "name": "IFOS_ui_navigation_model_schema_v1.json",
+      "ref": "file://IFOS_ui_navigation_model_schema_v1.json",
+      "hash": "sha256:7af1a9351712bf22be742670bf0e1bd5d009bd8afc7600f808e2fc32670c77d6"
+    },
+    {
+      "name": "IFOS_ui_telemetry_event_schema_v1.json",
+      "ref": "file://IFOS_ui_telemetry_event_schema_v1.json",
+      "hash": "sha256:d32b037a410cfae39fb612eebce7c8219c00bb879c023f6d34a0f2d4f0437153"
+    },
+    {
+      "name": "ifos_ui_router_stub_v1.py",
+      "ref": "file://ifos_ui_router_stub_v1.py",
+      "hash": "sha256:e4ecd30e98206ab8727d20686610cd700925218174e3d45b9064e2eb2fa3308d"
+    },
+    {
+      "name": "ifos_ui_command_builder_stub_v1.py",
+      "ref": "file://ifos_ui_command_builder_stub_v1.py",
+      "hash": "sha256:038b93c467b0516cf6a2c5f7caa12073b8fcc9127920a1446ff4ed17c5e3e743"
+    },
+    {
+      "name": "ifos_ui_wizard_engine_stub_v1.py",
+      "ref": "file://ifos_ui_wizard_engine_stub_v1.py",
+      "hash": "sha256:83f0daad8045cb7a4db511f317a2a071fd1e120f356d3876765e744a659d7b26"
+    },
+    {
+      "name": "ifos_ui_conference_engine_stub_v1.py",
+      "ref": "file://ifos_ui_conference_engine_stub_v1.py",
+      "hash": "sha256:dd8dbd33de269216a40adf15b41e5362a6534714929e2d5ed43d6e347bf63a3d"
+    },
+    {
+      "name": "ifos_ui_journal_engine_stub_v1.py",
+      "ref": "file://ifos_ui_journal_engine_stub_v1.py",
+      "hash": "sha256:531529b924ae1aafe4fce2f53eec653eb43656542e3e6a3263a943ef0f02b9e7"
+    }
+  ],
+  "created_at": "2026-01-04T13:05:00Z",
+  "version": "1.0.0"
+}

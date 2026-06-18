@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ConnectorBridge Schema v1",
+  "type": "object",
+  "required": [
+    "bridge_id",
+    "tenant_id",
+    "type",
+    "endpoint",
+    "mappings",
+    "version"
+  ],
+  "properties": {
+    "bridge_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "make",
+        "n8n",
+        "node_red",
+        "zapier",
+        "pipedream"
+      ]
+    },
+    "endpoint": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "mappings": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "auth_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

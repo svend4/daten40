@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Artifact Schema v1",
+  "type": "object",
+  "required": [
+    "artifact_id",
+    "tenant_id",
+    "type",
+    "location",
+    "content_hash",
+    "classification",
+    "version"
+  ],
+  "properties": {
+    "artifact_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "file",
+        "report",
+        "vitrine",
+        "index",
+        "export",
+        "model_response",
+        "bundle"
+      ]
+    },
+    "location": {
+      "type": "string"
+    },
+    "content_hash": {
+      "type": "string"
+    },
+    "classification": {
+      "type": "string",
+      "enum": [
+        "PUBLIC",
+        "INTERNAL",
+        "CONFIDENTIAL",
+        "RESTRICTED",
+        "PII"
+      ]
+    },
+    "metadata": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "created_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

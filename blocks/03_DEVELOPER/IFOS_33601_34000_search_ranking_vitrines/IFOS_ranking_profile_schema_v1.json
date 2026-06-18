@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RankingProfile Schema v1",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "weights",
+    "rules",
+    "version"
+  ],
+  "properties": {
+    "profile_id": {
+      "type": "string"
+    },
+    "weights": {
+      "type": "object",
+      "properties": {
+        "text_relevance": {
+          "type": "number"
+        },
+        "dq_overall": {
+          "type": "number"
+        },
+        "trust": {
+          "type": "number"
+        },
+        "installability": {
+          "type": "number"
+        },
+        "success_rate": {
+          "type": "number"
+        },
+        "freshness": {
+          "type": "number"
+        },
+        "popularity": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": true
+    },
+    "rules": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

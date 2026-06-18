@@ -1,0 +1,111 @@
+{
+  "artifact_set": "IFOS_67601_68000",
+  "created_at": "2026-01-02T17:32:30Z",
+  "version": "1.0.0",
+  "entries": [
+    {
+      "name": "IFOS_developer_onboarding_os_67601_68000_v1.md",
+      "hash": "sha256:22866437f81b9b51963c158a21f469d2456f0fd7ada9d621d97feffe04b1cdc0"
+    },
+    {
+      "name": "IFOS_ifos_cli_spec_67601_68000_v1.md",
+      "hash": "sha256:bfae4361e0bf1f7c8419fea97486662a460842f1453a7d03536fc3318b89bf68"
+    },
+    {
+      "name": "IFOS_repo_manifest_examples_67601_68000_v1.txt",
+      "hash": "sha256:a8d9283e60baaf8176a60e099a0917114d1d7051fc03a2135d26cc2842ed88c1"
+    },
+    {
+      "name": "IFOS_dev_onboarding_ops_runbook_67601_68000_v1.md",
+      "hash": "sha256:6144c3087f1469f0709728c36547c91eade354bc132186ea8db8f1e33cfafb89"
+    },
+    {
+      "name": "IFOS_dev_onboarding_threat_model_67601_68000_v1.md",
+      "hash": "sha256:da8584595de802ef55b85a0ee77dc5c0afabe0607d15604647e3db2cdd15e48d"
+    },
+    {
+      "name": "IFOS_dev_onboarding_control_plane_api_v1.yaml",
+      "hash": "sha256:f7f739a1d93d0c1df923c292f93c26081aa9a4d255a8564e9deef8a4049bfb60"
+    },
+    {
+      "name": "IFOS_dev_onboarding_examples_67601_68000_v1.json",
+      "hash": "sha256:ec3e8a99cc9fb080d6f2abb539bc6b8a5578890a5532401c18f1b6b1169a3e2b"
+    },
+    {
+      "name": "IFOS_project_template_schema_v1.json",
+      "hash": "sha256:aa07b4c3a2499443a0638a42f9f3492ac47e0db194b7517c1ac3635d26ae774b"
+    },
+    {
+      "name": "IFOS_connector_template_schema_v1.json",
+      "hash": "sha256:6e3f9ecff9216a53fa8c4fb5b6baf29ec5925ca62e591b706b77fa97605ba26a"
+    },
+    {
+      "name": "IFOS_connector_scaffold_request_schema_v1.json",
+      "hash": "sha256:293647c23efa93f372e85e692bf7b6d3aa2810f88acc29b1ca1c681502c33251"
+    },
+    {
+      "name": "IFOS_connector_scaffold_result_schema_v1.json",
+      "hash": "sha256:99d923669db9b96be57f757bdf81fb314f49e9ad1049dcce6c268a5a526b3664"
+    },
+    {
+      "name": "IFOS_docs_template_schema_v1.json",
+      "hash": "sha256:1378a2d65f8acbdfbb396d9e81d57a11b01e7e2590659cc6f7a4210ee4e0e488"
+    },
+    {
+      "name": "IFOS_docs_build_job_schema_v1.json",
+      "hash": "sha256:da817795c67f6340ee10a9b399921d57d08ac08bbbcecd8fd5659bbfe01b8c5e"
+    },
+    {
+      "name": "IFOS_publishing_pipeline_schema_v1.json",
+      "hash": "sha256:938a156a507768e25c96f6ecef959719c203cd6b35484ee113466fef0218dad7"
+    },
+    {
+      "name": "IFOS_validation_rule_schema_v1.json",
+      "hash": "sha256:65cc39a30a55bec08d5ce5fa7978224bc2593d7ab22af447a05544e8ff17aa88"
+    },
+    {
+      "name": "IFOS_sdk_profile_schema_v1.json",
+      "hash": "sha256:47749d874da9f462dc990b77b2f5e3aac4474c26c00107ff22faa020dde73e80"
+    },
+    {
+      "name": "IFOS_onboarding_track_schema_v1.json",
+      "hash": "sha256:eff30ef1d6faef8170bd2ae1c87648bc47df4185f7f7f01c4f8b39b3858e914c"
+    },
+    {
+      "name": "IFOS_repo_scaffold_manifest_schema_v1.json",
+      "hash": "sha256:6d7382c9d6398b2fb7868826aa7edb09ba2caf907457b2b0573ce9c66744907d"
+    },
+    {
+      "name": "IFOS_project_templates_seed_67601_68000_v1.csv",
+      "hash": "sha256:b2e19af88e62e1ff4649c8abcd5d672be3dc9577a4c73c10662b8668c6e1590d"
+    },
+    {
+      "name": "IFOS_connector_templates_seed_67601_68000_v1.csv",
+      "hash": "sha256:510caed48728ffc3c490c1050e58d4458c4c44d8786658c6f976f4ae1aa0c436"
+    },
+    {
+      "name": "IFOS_validation_rules_seed_67601_68000_v1.csv",
+      "hash": "sha256:8eab8e9a38b0585d077cb27a63c3c511411aff24227bc8d8100e3c788d334893"
+    },
+    {
+      "name": "IFOS_sdk_profiles_seed_67601_68000_v1.csv",
+      "hash": "sha256:111395f95fff7cf1e96670fc206b827135ac5b753e225aea62914bc918c20492"
+    },
+    {
+      "name": "IFOS_onboarding_tracks_seed_67601_68000_v1.csv",
+      "hash": "sha256:2a71257434350ee62abb1603f7bc798a701606e8244ccd49f5d6af7ebae07b17"
+    },
+    {
+      "name": "IFOS_docs_templates_seed_67601_68000_v1.csv",
+      "hash": "sha256:89e3e64d09221d696271609f929b02c5f358b7dcddfe7ee699d117117535471a"
+    },
+    {
+      "name": "IFOS_publishing_profiles_seed_67601_68000_v1.csv",
+      "hash": "sha256:5c18443bd333076d6d877bf09d1f74bfe2161803490a7c47031ba99ee34ad6a1"
+    },
+    {
+      "name": "IFOS_example_repos_seed_67601_68000_v1.csv",
+      "hash": "sha256:a592e54effe0e3650a746bf39f8f7b8e3be2adba21760395fdfab53ed136a382"
+    }
+  ]
+}

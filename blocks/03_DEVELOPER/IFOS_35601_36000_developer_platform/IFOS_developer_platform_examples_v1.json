@@ -1,0 +1,134 @@
+{
+  "template_pack": {
+    "template_id": "tpl.t.7u934tn25c2v",
+    "name": "connector-template-python",
+    "kind": "connector",
+    "files": [
+      "manifest.json",
+      "connector.py",
+      "tests/test_contract.py",
+      "README.md"
+    ],
+    "version": "1.0.0"
+  },
+  "sdk_config": {
+    "sdk_id": "sdk.s.xx9uyo6keus3",
+    "language": "python",
+    "defaults": {
+      "timeout_ms": 15000,
+      "retry_max": 5,
+      "log_level": "info"
+    },
+    "hooks": {
+      "on_log": "stdout",
+      "on_trace": "json"
+    },
+    "version": "1.0.0"
+  },
+  "plugin_manifest": {
+    "plugin_id": "plg.p.5gyp071jpcuz",
+    "name": "Telegram Connector",
+    "version": "0.1.0",
+    "author": "IFOS Labs",
+    "entrypoints": {
+      "python": "telegram_connector:main"
+    },
+    "capabilities": [
+      "can_send_message",
+      "can_upload_file"
+    ],
+    "permissions": [
+      "network:telegram.org",
+      "secrets:telegram_bot_token"
+    ],
+    "runtimes": [
+      "python3.11"
+    ],
+    "description": "Connector for Telegram Bot API",
+    "license": "Apache-2.0"
+  },
+  "connector_spec": {
+    "connector_id": "con.c.p3eg02hyy011",
+    "protocol": "http",
+    "auth": {
+      "type": "token",
+      "secret_ref": "secrets:telegram_bot_token"
+    },
+    "endpoints": [
+      "https://api.telegram.org"
+    ],
+    "rate_limits": {
+      "requests_per_min": 60
+    },
+    "timeouts": {
+      "connect_ms": 2000,
+      "read_ms": 15000
+    },
+    "version": "1.0.0"
+  },
+  "test_harness": {
+    "harness_id": "th.h.hk5gnes5121q",
+    "suite": "telegram_connector_contract",
+    "scenarios": [
+      {
+        "name": "send_message_ok",
+        "expect_status": 200
+      },
+      {
+        "name": "rate_limit_429",
+        "expect_retry": true
+      }
+    ],
+    "mocks": {
+      "telegram_bot_token": "***"
+    },
+    "version": "1.0.0"
+  },
+  "local_runtime_profile": {
+    "profile_id": "lr.l.9vhyl1awxteb",
+    "name": "local-dev",
+    "storage": {
+      "type": "sqlite",
+      "path": "./ifos.db"
+    },
+    "queue": {
+      "type": "in_memory"
+    },
+    "secrets_mode": "dev_stub",
+    "observability": {
+      "logs": "stdout",
+      "traces": "json"
+    },
+    "version": "1.0.0"
+  },
+  "publish_job": {
+    "job_id": "job.j.gox8w8vvven8",
+    "plugin_or_bundle_id": "plg.p.5gyp071jpcuz",
+    "steps": [
+      {
+        "name": "validate",
+        "status": "queued"
+      },
+      {
+        "name": "test",
+        "status": "queued"
+      },
+      {
+        "name": "security_scan",
+        "status": "queued"
+      },
+      {
+        "name": "sign",
+        "status": "queued"
+      },
+      {
+        "name": "upload",
+        "status": "queued"
+      }
+    ],
+    "status": "queued",
+    "created_at": "2026-01-03T13:26:00Z",
+    "logs_ref": null,
+    "version": "1.0.0"
+  }
+}

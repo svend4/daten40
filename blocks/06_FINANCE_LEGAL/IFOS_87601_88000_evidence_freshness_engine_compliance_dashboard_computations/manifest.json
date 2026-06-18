@@ -1,0 +1,22 @@
+{
+  "pack_id": "cp_evidence_freshness_engine_dashboards",
+  "name": "Evidence Freshness Engine + Compliance Dashboard Computations",
+  "version": "1.0.0",
+  "status": "production",
+  "layer": "ComplianceEvidence",
+  "compatibility": {
+    "ifos_min_version": "v30",
+    "required_blocks": [
+      "IFOS_00001_00400",
+      "IFOS_86401_86800",
+      "IFOS_86001_86400"
+    ]
+  },
+  "exports": [
+    "freshness.compute",
+    "freshness.query",
+    "compliance.snapshot.compute",
+    "dashboard.datasets.generate",
+    "alerts.stale_missing.emit"
+  ]
+}

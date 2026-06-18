@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ApprovalFlow Schema v1",
+  "type": "object",
+  "required": [
+    "flow_id",
+    "tenant_id",
+    "name",
+    "steps",
+    "version"
+  ],
+  "properties": {
+    "flow_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "trigger": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "assignee"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "auto",
+              "role",
+              "user",
+              "group"
+            ]
+          },
+          "assignee": {
+            "type": "string"
+          },
+          "conditions": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

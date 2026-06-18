@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SandboxEnv Schema v1",
+  "type": "object",
+  "required": [
+    "sandbox_id",
+    "tenant_id",
+    "isolation",
+    "fixtures",
+    "endpoints",
+    "version"
+  ],
+  "properties": {
+    "sandbox_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "isolation": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "fixtures": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "endpoints": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

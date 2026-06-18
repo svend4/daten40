@@ -1,0 +1,182 @@
+{
+  "artifact_set": "IFOS_51601_52000",
+  "entries": [
+    {
+      "name": "IFOS_data_os_51601_52000_v1.md",
+      "ref": "file://IFOS_data_os_51601_52000_v1.md",
+      "hash": "sha256:3fded842c4e46e1cfb6a42b457d151092313a2bca6f0aa75e4c5b484a64d1c50"
+    },
+    {
+      "name": "IFOS_data_os_api_v1.yaml",
+      "ref": "file://IFOS_data_os_api_v1.yaml",
+      "hash": "sha256:f82a0b74a7a4413a33fe9aaae623c56b3bd43e9ae6179e513fae3b67777ae5f9"
+    },
+    {
+      "name": "IFOS_data_os_examples_v1.json",
+      "ref": "file://IFOS_data_os_examples_v1.json",
+      "hash": "sha256:d8f1b85f72a1665f3c7126d59c5eeba259a582079430ef30614ddbbfb495bfc2"
+    },
+    {
+      "name": "IFOS_entity_types_seed_51601_52000_v1.csv",
+      "ref": "file://IFOS_entity_types_seed_51601_52000_v1.csv",
+      "hash": "sha256:5526a99418d1e73c19b64f59f7324668bb099bd8950e911af9ac08cc99d876d7"
+    },
+    {
+      "name": "IFOS_data_os_overview_spec_v1.md",
+      "ref": "file://IFOS_data_os_overview_spec_v1.md",
+      "hash": "sha256:b4fb223ebb1a0018d8a2ebc93b1d0bd78873cf34964a47b52a1d66bbb7a776dc"
+    },
+    {
+      "name": "IFOS_entities_models_spec_v1.md",
+      "ref": "file://IFOS_entities_models_spec_v1.md",
+      "hash": "sha256:98889310463e774db315a04dccb0e032b2f96c55447b11d6e3d1f1df4a8c2161"
+    },
+    {
+      "name": "IFOS_mdm_source_of_truth_spec_v1.md",
+      "ref": "file://IFOS_mdm_source_of_truth_spec_v1.md",
+      "hash": "sha256:d85d050571609e17748f520ea3992869ea8fb80b3115fc23162202b0b336634a"
+    },
+    {
+      "name": "IFOS_sync_conflict_resolution_spec_v1.md",
+      "ref": "file://IFOS_sync_conflict_resolution_spec_v1.md",
+      "hash": "sha256:817f2b95d938f971efc87fb4b90f60ecdbea106aff1b9fdf162cabc021763363"
+    },
+    {
+      "name": "IFOS_data_versioning_lineage_spec_v1.md",
+      "ref": "file://IFOS_data_versioning_lineage_spec_v1.md",
+      "hash": "sha256:e0fd7fcc79ac40b9887c42bec6695772386b755164575f7709b4b42ea20a84a6"
+    },
+    {
+      "name": "IFOS_schema_evolution_contracts_spec_v1.md",
+      "ref": "file://IFOS_schema_evolution_contracts_spec_v1.md",
+      "hash": "sha256:6af0b3505365c812085e4fa98b14abc7b668e86109c728dafcfc3c743c38bbb7"
+    },
+    {
+      "name": "IFOS_identity_dedup_linking_spec_v1.md",
+      "ref": "file://IFOS_identity_dedup_linking_spec_v1.md",
+      "hash": "sha256:fba4e730a8e8c760267dbade6e4e5161406cbffef435e302619bf6cc4f32c555"
+    },
+    {
+      "name": "IFOS_data_quality_rules_spec_v1.md",
+      "ref": "file://IFOS_data_quality_rules_spec_v1.md",
+      "hash": "sha256:938bfc8dca6f25376414b018f4968954c559b7cf212465901695d1fa37abe935"
+    },
+    {
+      "name": "IFOS_data_governance_roles_spec_v1.md",
+      "ref": "file://IFOS_data_governance_roles_spec_v1.md",
+      "hash": "sha256:b36e8d298948271205347137aee64e50350a4e30ecf284a4486fb45ca078f9e7"
+    },
+    {
+      "name": "IFOS_data_privacy_minimization_spec_v1.md",
+      "ref": "file://IFOS_data_privacy_minimization_spec_v1.md",
+      "hash": "sha256:f6f8e1d56ed4755cc09057e3e2e7aaa5ce23e5632b782928750884b3618dd75d"
+    },
+    {
+      "name": "IFOS_data_connectors_patterns_spec_v1.md",
+      "ref": "file://IFOS_data_connectors_patterns_spec_v1.md",
+      "hash": "sha256:f6a3097c429bb9e88bcf1f7e0957a586eacb8ecd670692e10b3496096da12545"
+    },
+    {
+      "name": "IFOS_event_sourcing_outbox_spec_v1.md",
+      "ref": "file://IFOS_event_sourcing_outbox_spec_v1.md",
+      "hash": "sha256:c161752fd68250cfcb9eab1ac333d2553cbde96e51bbef5e50cb68e45b84c37a"
+    },
+    {
+      "name": "IFOS_exports_snapshots_spec_v1.md",
+      "ref": "file://IFOS_exports_snapshots_spec_v1.md",
+      "hash": "sha256:e13be737e62285b77097b2b5ec71130f96174fef33679aa9d4a8eb53d64ad361"
+    },
+    {
+      "name": "IFOS_interchange_formats_spec_v1.md",
+      "ref": "file://IFOS_interchange_formats_spec_v1.md",
+      "hash": "sha256:04266c3ed354d8c8e042bebe9e2e86e38d99b0adcd08eb3e9c2f920f76651aea"
+    },
+    {
+      "name": "IFOS_entity_schema_v1.json",
+      "ref": "file://IFOS_entity_schema_v1.json",
+      "hash": "sha256:85df57eb0ddbc18ef8c27b26a4c002bcef0a283c8441d86848d29f2538069885"
+    },
+    {
+      "name": "IFOS_entity_type_schema_v1.json",
+      "ref": "file://IFOS_entity_type_schema_v1.json",
+      "hash": "sha256:ee55dc23607ce97039fd29654dfb45d0665fb28bbf97b605398d5ba88ad55622"
+    },
+    {
+      "name": "IFOS_record_schema_v1.json",
+      "ref": "file://IFOS_record_schema_v1.json",
+      "hash": "sha256:246edd8915fc4154a0f70d1afe7cdbaeedf35b78ea80beb892b85133e1c246ff"
+    },
+    {
+      "name": "IFOS_canonical_record_schema_v1.json",
+      "ref": "file://IFOS_canonical_record_schema_v1.json",
+      "hash": "sha256:debff2d81eb2d0056bf39c219299ce8f013b42a1105db01bb5d1be3937bd1ef7"
+    },
+    {
+      "name": "IFOS_mapping_schema_v1.json",
+      "ref": "file://IFOS_mapping_schema_v1.json",
+      "hash": "sha256:53b2454982b49f4b0bb9e662e6e8d49ebc38f1756c65f216d3d7c9d79ebc0d8c"
+    },
+    {
+      "name": "IFOS_conflict_schema_v1.json",
+      "ref": "file://IFOS_conflict_schema_v1.json",
+      "hash": "sha256:015d2356a44d32a37b9102ab943337dbd0a57f9dbee6fafaddc5813831a97f5c"
+    },
+    {
+      "name": "IFOS_merge_decision_schema_v1.json",
+      "ref": "file://IFOS_merge_decision_schema_v1.json",
+      "hash": "sha256:90662d6f82186a46f250fe8487c640fbe4c4f057399185b38db311d5c6dacba4"
+    },
+    {
+      "name": "IFOS_quality_rule_schema_v1.json",
+      "ref": "file://IFOS_quality_rule_schema_v1.json",
+      "hash": "sha256:c2915a21a25cce384f9ecd17c52c48faa38608a5abe48ca8b919876088b71619"
+    },
+    {
+      "name": "IFOS_schema_contract_schema_v1.json",
+      "ref": "file://IFOS_schema_contract_schema_v1.json",
+      "hash": "sha256:059e2df59bf67b0be5228b07c6b5790e8c5b470875353777cd1995341eed484b"
+    },
+    {
+      "name": "IFOS_snapshot_schema_v1.json",
+      "ref": "file://IFOS_snapshot_schema_v1.json",
+      "hash": "sha256:c88c6bb2a3ee0be63c1bbb3a92af2a626cade86572f44aa16d67d16e165608b3"
+    },
+    {
+      "name": "IFOS_event_schema_v1.json",
+      "ref": "file://IFOS_event_schema_v1.json",
+      "hash": "sha256:1b1dfbecc46a8535d0107142adefab481fde90b33201c30b432425394af88173"
+    },
+    {
+      "name": "IFOS_lineage_schema_v1.json",
+      "ref": "file://IFOS_lineage_schema_v1.json",
+      "hash": "sha256:5cf1e059a714bd45f548654e4e5cd21acc7ac24d2c6f7344396893253cecef21"
+    },
+    {
+      "name": "ifos_entity_linker_stub_v1.py",
+      "ref": "file://ifos_entity_linker_stub_v1.py",
+      "hash": "sha256:8d49b9f626d81df96bc2d194c0ed576ad5fc17d1577d9ab1f9f965e6ec66d7e9"
+    },
+    {
+      "name": "ifos_conflict_resolver_stub_v1.py",
+      "ref": "file://ifos_conflict_resolver_stub_v1.py",
+      "hash": "sha256:a47c705593bb08e306df41f5f1bf5878e72c1cb66c17e9cb7c73ae4c2414e2f8"
+    },
+    {
+      "name": "ifos_schema_validator_stub_v1.py",
+      "ref": "file://ifos_schema_validator_stub_v1.py",
+      "hash": "sha256:189c8a907e9fe67e4e739b3bae82897cd0b289304af971d5d54cd4ea2ce42d09"
+    },
+    {
+      "name": "ifos_quality_engine_stub_v1.py",
+      "ref": "file://ifos_quality_engine_stub_v1.py",
+      "hash": "sha256:22cd533c89431834e2d6b656800bca99c7b9dc7bf4b3902ac90efa06cc9e5bf4"
+    },
+    {
+      "name": "ifos_snapshotter_stub_v1.py",
+      "ref": "file://ifos_snapshotter_stub_v1.py",
+      "hash": "sha256:c6386cd488d540a59894744a48cfa74b4016f514eaeff7d07d092348b8c041a2"
+    }
+  ],
+  "created_at": "2026-01-04T15:05:00Z",
+  "version": "1.0.0"
+}

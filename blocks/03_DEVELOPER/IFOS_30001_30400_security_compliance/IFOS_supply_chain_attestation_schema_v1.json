@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SupplyChainAttestation Schema v1",
+  "type": "object",
+  "required": [
+    "attestation_id",
+    "package_id",
+    "source",
+    "build",
+    "sbom",
+    "vuln_scan",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "attestation_id": {
+      "type": "string"
+    },
+    "package_id": {
+      "type": "string"
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "repo": {
+          "type": "string"
+        },
+        "commit": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "build": {
+      "type": "object",
+      "properties": {
+        "ci_system": {
+          "type": "string"
+        },
+        "job_id": {
+          "type": "string"
+        },
+        "runner": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "sbom": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "vuln_scan": {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "max_severity": {
+          "type": "string",
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

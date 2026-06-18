@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SynonymDictionary Schema v1",
+  "type": "object",
+  "required": [
+    "syn_id",
+    "lang",
+    "pairs",
+    "version"
+  ],
+  "properties": {
+    "syn_id": {
+      "type": "string"
+    },
+    "lang": {
+      "type": "string"
+    },
+    "pairs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "from",
+          "to"
+        ],
+        "properties": {
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "apply_to": ">= v30",
+  "delta": {
+    "section": "COMPLIANCE_EVIDENCE",
+    "add": [
+      {
+        "id_range": "IFOS_86801_87200",
+        "name": "Evidence Collection Runner (Agent + Scheduler + Connector Hooks)",
+        "slug": "evidence_collection_runner_agent_scheduler_hooks",
+        "type": "Service/Agent",
+        "layer": "ComplianceEvidence",
+        "status": "Production",
+        "dependencies": [
+          "IFOS_86401_86800"
+        ],
+        "artifacts": [
+          "IFOS_86801_87200_evidence_collection_runner_agent_scheduler_hooks_os_pack.zip"
+        ],
+        "notes": "Runner agent + schedulers + plugin interface for evidence collection"
+      }
+    ]
+  }
+}

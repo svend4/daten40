@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Conformance Result Schema v1",
+  "type": "object",
+  "required": [
+    "result_id",
+    "connector_ref",
+    "runtime_ref",
+    "suite",
+    "status",
+    "details",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "result_id": {
+      "type": "string"
+    },
+    "connector_ref": {
+      "type": "string"
+    },
+    "runtime_ref": {
+      "type": "string"
+    },
+    "suite": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "FAIL",
+        "WARN"
+      ]
+    },
+    "details": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

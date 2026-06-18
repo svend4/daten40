@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ContextSignal Schema v1",
+  "type": "object",
+  "required": [
+    "context_id",
+    "intent",
+    "platform",
+    "constraints",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "context_id": {
+      "type": "string"
+    },
+    "intent": {
+      "type": "string"
+    },
+    "platform": {
+      "type": "string",
+      "enum": [
+        "web",
+        "mobile",
+        "api",
+        "desktop"
+      ]
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

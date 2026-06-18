@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS BlueprintParam Schema v1",
+  "type": "object",
+  "required": [
+    "param_id",
+    "key",
+    "kind",
+    "required",
+    "default",
+    "validation",
+    "ui",
+    "version"
+  ],
+  "properties": {
+    "param_id": {
+      "type": "string"
+    },
+    "key": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "secret_ref",
+        "string",
+        "number",
+        "boolean",
+        "enum",
+        "schedule",
+        "url",
+        "selector",
+        "json"
+      ]
+    },
+    "required": {
+      "type": "boolean"
+    },
+    "default": {},
+    "validation": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "ui": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "help": {
+          "type": "string"
+        },
+        "group": {
+          "type": "string"
+        },
+        "order": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

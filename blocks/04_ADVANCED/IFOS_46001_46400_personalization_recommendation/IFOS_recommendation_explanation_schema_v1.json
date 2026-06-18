@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RecommendationExplanation Schema v1",
+  "type": "object",
+  "required": [
+    "explain_id",
+    "item_id",
+    "reasons",
+    "version"
+  ],
+  "properties": {
+    "explain_id": {
+      "type": "string"
+    },
+    "item_id": {
+      "type": "string"
+    },
+    "reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

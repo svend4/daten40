@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Guardrails Schema v1",
+  "type": "object",
+  "required": [
+    "guardrails_id",
+    "limits",
+    "blocked_actions",
+    "version"
+  ],
+  "properties": {
+    "guardrails_id": {
+      "type": "string"
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "blocked_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

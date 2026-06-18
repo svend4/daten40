@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Match Rule Schema v1",
+  "type": "object",
+  "required": [
+    "rule_id",
+    "applies_to",
+    "signals",
+    "threshold",
+    "version"
+  ],
+  "properties": {
+    "rule_id": {
+      "type": "string"
+    },
+    "applies_to": {
+      "type": "string"
+    },
+    "signals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "threshold": {
+      "type": "number"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Signature Schema v1",
+  "type": "object",
+  "required": [
+    "sig_id",
+    "alg",
+    "key_ref",
+    "payload_hash",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "sig_id": {
+      "type": "string"
+    },
+    "alg": {
+      "type": "string",
+      "enum": [
+        "ed25519",
+        "rsa-pss",
+        "hmac-sha256"
+      ]
+    },
+    "key_ref": {
+      "type": "string"
+    },
+    "payload_hash": {
+      "type": "string"
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

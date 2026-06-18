@@ -1,0 +1,182 @@
+{
+  "artifact_set": "IFOS_51201_51600",
+  "entries": [
+    {
+      "name": "IFOS_operations_os_51201_51600_v1.md",
+      "ref": "file://IFOS_operations_os_51201_51600_v1.md",
+      "hash": "sha256:6550ac58094b38836af859c0a0ea3a666874fd684d9fbecae531309ce5f65f20"
+    },
+    {
+      "name": "IFOS_operations_os_api_v1.yaml",
+      "ref": "file://IFOS_operations_os_api_v1.yaml",
+      "hash": "sha256:5303645f4a16620a46c1fdd154841f1e7ab8be801858f4ed840b84f69a99f33e"
+    },
+    {
+      "name": "IFOS_operations_os_examples_v1.json",
+      "ref": "file://IFOS_operations_os_examples_v1.json",
+      "hash": "sha256:be11f6915f3ee930e435c0c3d1d3bd6a3933b9b65fe81e50b430afa0e246826d"
+    },
+    {
+      "name": "IFOS_runbooks_seed_51201_51600_v1.csv",
+      "ref": "file://IFOS_runbooks_seed_51201_51600_v1.csv",
+      "hash": "sha256:58b6a2d3aefdc9b80f43a17e2f948943637804fb7479294160e8c4053eebdae4"
+    },
+    {
+      "name": "IFOS_ops_overview_spec_v1.md",
+      "ref": "file://IFOS_ops_overview_spec_v1.md",
+      "hash": "sha256:12a157913de99c1e8504db6c1ec4e28fb5c9029d00a65f737d3cb8a6f698f49c"
+    },
+    {
+      "name": "IFOS_sre_reliability_spec_v1.md",
+      "ref": "file://IFOS_sre_reliability_spec_v1.md",
+      "hash": "sha256:7773e9b419fd19c993e893af41443a7ec76f83a8de9f32ddba789f4e164ae99e"
+    },
+    {
+      "name": "IFOS_runbooks_incidents_spec_v1.md",
+      "ref": "file://IFOS_runbooks_incidents_spec_v1.md",
+      "hash": "sha256:aad0584ccb83fbc5f0e5b245d0a139af85a43cf4754bc344d42f6f8deb28915f"
+    },
+    {
+      "name": "IFOS_alerting_oncall_spec_v1.md",
+      "ref": "file://IFOS_alerting_oncall_spec_v1.md",
+      "hash": "sha256:5d13810bb71294163f41e2bb08bbd7d02582eb3078f81d863330727b5b2e30f8"
+    },
+    {
+      "name": "IFOS_cost_control_spec_v1.md",
+      "ref": "file://IFOS_cost_control_spec_v1.md",
+      "hash": "sha256:ac0a97cae495e4256baaf6a1f882a5c0d31a6dd9efdcccceb77ca773ffeee4b4"
+    },
+    {
+      "name": "IFOS_backup_restore_spec_v1.md",
+      "ref": "file://IFOS_backup_restore_spec_v1.md",
+      "hash": "sha256:d449debb0ec61abcfd9cf3d228a8e4528b6cc55c48a3f9839de3345c9649ca14"
+    },
+    {
+      "name": "IFOS_deploy_strategies_spec_v1.md",
+      "ref": "file://IFOS_deploy_strategies_spec_v1.md",
+      "hash": "sha256:e5adeda78dc9fefac6ce8744e39d80650b6452cfc7a6d123d1c9d75070fec5da"
+    },
+    {
+      "name": "IFOS_observability_ops_spec_v1.md",
+      "ref": "file://IFOS_observability_ops_spec_v1.md",
+      "hash": "sha256:e814adb6617dd70dfaa35f9b9cdf6ad7fdb11682dc4a253d915fbbde496a9b34"
+    },
+    {
+      "name": "IFOS_autosupport_triage_spec_v1.md",
+      "ref": "file://IFOS_autosupport_triage_spec_v1.md",
+      "hash": "sha256:6402122d1f63cdce9a85f089d348ee762640d87eedfd8787e15d35b4ecc320b8"
+    },
+    {
+      "name": "IFOS_capacity_planning_spec_v1.md",
+      "ref": "file://IFOS_capacity_planning_spec_v1.md",
+      "hash": "sha256:e4ae70475f5f925f81735a2b6b538589a7dcd3445353f44f9676ef52bde1ee15"
+    },
+    {
+      "name": "IFOS_ops_compliance_audit_spec_v1.md",
+      "ref": "file://IFOS_ops_compliance_audit_spec_v1.md",
+      "hash": "sha256:fb3fe1db91d117e2d0978efd60cf5c1c893b937be5334923281944c7596c3b76"
+    },
+    {
+      "name": "IFOS_vendor_sla_spec_v1.md",
+      "ref": "file://IFOS_vendor_sla_spec_v1.md",
+      "hash": "sha256:d69617c0e227977cc89e0ff446de8790de2e670cc8b9d8838945b37d353b430b"
+    },
+    {
+      "name": "IFOS_disaster_recovery_spec_v1.md",
+      "ref": "file://IFOS_disaster_recovery_spec_v1.md",
+      "hash": "sha256:799dd1127e85e911e7959f6e25b0c6ec2e3e4c82150670a7afd09780702d9884"
+    },
+    {
+      "name": "IFOS_maintenance_windows_spec_v1.md",
+      "ref": "file://IFOS_maintenance_windows_spec_v1.md",
+      "hash": "sha256:f35a708c0565c6c2009d0436d5cbd609ea0367c8c346ffc6ca0f08a5a957d6a3"
+    },
+    {
+      "name": "IFOS_service_schema_v1.json",
+      "ref": "file://IFOS_service_schema_v1.json",
+      "hash": "sha256:9cfb9b6707032d582ece3c77b0eab80b2cf8e83cdc94ff936cb1f51513fbeaa2"
+    },
+    {
+      "name": "IFOS_slo_schema_v1.json",
+      "ref": "file://IFOS_slo_schema_v1.json",
+      "hash": "sha256:07a306cb717db69aac21f498fc6834dc96c9b234259222574103e391e629019b"
+    },
+    {
+      "name": "IFOS_alert_schema_v1.json",
+      "ref": "file://IFOS_alert_schema_v1.json",
+      "hash": "sha256:dbfc6540bd62fe22edabf4ed46546ad3430eb70bfb419585286372bda8ba078e"
+    },
+    {
+      "name": "IFOS_incident_schema_v1.json",
+      "ref": "file://IFOS_incident_schema_v1.json",
+      "hash": "sha256:e52b04e08c23680d5947f5fadc5974c3a4af595bbdd5919c991b33bf13d6d6f4"
+    },
+    {
+      "name": "IFOS_runbook_schema_v1.json",
+      "ref": "file://IFOS_runbook_schema_v1.json",
+      "hash": "sha256:253df7e6f6b5cdab895c288df52937cfc5f8ca598b430aefd0922fff22a6f13a"
+    },
+    {
+      "name": "IFOS_cost_budget_schema_v1.json",
+      "ref": "file://IFOS_cost_budget_schema_v1.json",
+      "hash": "sha256:1ffbfe9d5f633b6fd2a7120b5d2a9dd0d3467abb38595a42ac022202d1768a90"
+    },
+    {
+      "name": "IFOS_backup_plan_schema_v1.json",
+      "ref": "file://IFOS_backup_plan_schema_v1.json",
+      "hash": "sha256:6c91a53e3b8929cd2ed4f89a5e77a36d2b541c86fe6c3f5e09bcf551b1057f5b"
+    },
+    {
+      "name": "IFOS_deploy_plan_schema_v1.json",
+      "ref": "file://IFOS_deploy_plan_schema_v1.json",
+      "hash": "sha256:65e1901c21f221f2762928365032240344e7b7524e778403add99fbaf5a79042"
+    },
+    {
+      "name": "IFOS_maintenance_window_schema_v1.json",
+      "ref": "file://IFOS_maintenance_window_schema_v1.json",
+      "hash": "sha256:281a47501d6bf7472c48d8725493ae41beea8dd3b18ded4f3f4822bc311845da"
+    },
+    {
+      "name": "IFOS_triage_case_schema_v1.json",
+      "ref": "file://IFOS_triage_case_schema_v1.json",
+      "hash": "sha256:705b99bb46ffcf32b88099cd2ef877eaa276df4fa8743e94237b5f65dc83e023"
+    },
+    {
+      "name": "IFOS_capacity_plan_schema_v1.json",
+      "ref": "file://IFOS_capacity_plan_schema_v1.json",
+      "hash": "sha256:a745c5262dafadf1e012215a46f4215da870ba7b2fe98d8586951c25b07c08e4"
+    },
+    {
+      "name": "ifos_slo_calculator_stub_v1.py",
+      "ref": "file://ifos_slo_calculator_stub_v1.py",
+      "hash": "sha256:1c82348040a792ba15869f03bef1ae58160d4a4176e1a43e85691e4bd2dc5ebd"
+    },
+    {
+      "name": "ifos_alert_router_stub_v1.py",
+      "ref": "file://ifos_alert_router_stub_v1.py",
+      "hash": "sha256:7c69aeb1f2d036647dcc692aeec2044484a944d51b8d4aeedff292734aebfb0b"
+    },
+    {
+      "name": "ifos_incident_manager_stub_v1.py",
+      "ref": "file://ifos_incident_manager_stub_v1.py",
+      "hash": "sha256:0aeb68adee62de537e56c2080776379099ceba69308ed5efe1bece7670483296"
+    },
+    {
+      "name": "ifos_cost_guard_stub_v1.py",
+      "ref": "file://ifos_cost_guard_stub_v1.py",
+      "hash": "sha256:ab07cd4f7288b953205c1b8f71f9deda33235d2d5cbf7f489ae916522a6a670e"
+    },
+    {
+      "name": "ifos_backup_runner_stub_v1.py",
+      "ref": "file://ifos_backup_runner_stub_v1.py",
+      "hash": "sha256:39d10abcb1ac96fdf6c61d5bb8cb57045782190f356a99a4c79531727a610bd0"
+    },
+    {
+      "name": "ifos_triage_bot_stub_v1.py",
+      "ref": "file://ifos_triage_bot_stub_v1.py",
+      "hash": "sha256:460f1c8564921cfd9068e70521f90a154bc11bd5f494f1ba439947972a161e15"
+    }
+  ],
+  "created_at": "2026-01-04T14:35:00Z",
+  "version": "1.0.0"
+}

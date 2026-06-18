@@ -1,0 +1,92 @@
+{
+  "macro_run": {
+    "run_id": "run.r.0snzv4h48m7m",
+    "macro_id": "mac.m.ju8tdk4zcwdc",
+    "params": {
+      "topic": "plugins wordpress forms",
+      "lang": "ru",
+      "limit": 50
+    },
+    "state": "queued",
+    "ts": "2026-01-04T06:05:00Z",
+    "tenant": "public",
+    "logs_ref": null,
+    "artifacts": [],
+    "quota_ref": "q.q.0rady7qjq6ic",
+    "version": "1.0.0"
+  },
+  "dag": {
+    "dag_id": "dag.d.lju907m0b3dk",
+    "nodes": [
+      {
+        "id": "t1",
+        "op": "fetch"
+      },
+      {
+        "id": "t2",
+        "op": "normalize"
+      },
+      {
+        "id": "t3",
+        "op": "build_vitrine"
+      }
+    ],
+    "edges": [
+      {
+        "from": "t1",
+        "to": "t2"
+      },
+      {
+        "from": "t2",
+        "to": "t3"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "retry_policy": {
+    "policy_id": "rp.p.vt1jjr3f6ulk",
+    "max_attempts": 5,
+    "backoff": {
+      "type": "exponential",
+      "base_ms": 500,
+      "max_ms": 10000,
+      "jitter": true
+    },
+    "retry_on": [
+      "timeout",
+      "429",
+      "5xx"
+    ],
+    "version": "1.0.0"
+  },
+  "schedule": {
+    "schedule_id": "sch.s.2vk495dwvvv9",
+    "type": "cron",
+    "expr": "0 9 * * 1",
+    "timezone": "Europe/Berlin",
+    "enabled": true,
+    "version": "1.0.0"
+  },
+  "approval_gate": {
+    "gate_id": "ag.g.rpufsdu1dpwp",
+    "rules": [
+      {
+        "if": {
+          "contains": "payments"
+        },
+        "then": {
+          "require": "finance_approver"
+        }
+      }
+    ],
+    "roles": [
+      "user",
+      "team_admin",
+      "finance_approver"
+    ],
+    "audit": {
+      "enabled": true
+    },
+    "version": "1.0.0"
+  }
+}

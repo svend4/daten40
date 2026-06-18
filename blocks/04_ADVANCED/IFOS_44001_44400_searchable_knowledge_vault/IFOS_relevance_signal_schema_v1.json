@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RelevanceSignal Schema v1",
+  "type": "object",
+  "required": [
+    "signal_id",
+    "name",
+    "definition",
+    "range",
+    "version"
+  ],
+  "properties": {
+    "signal_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "definition": {
+      "type": "string"
+    },
+    "range": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

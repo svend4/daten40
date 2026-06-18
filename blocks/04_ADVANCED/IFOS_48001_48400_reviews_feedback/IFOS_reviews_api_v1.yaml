@@ -1,0 +1,20 @@
+openapi: 3.0.3
+info:
+  title: IFOS Reviews API
+  version: "1.0.0"
+servers:
+  - url: https://reviews.ifos.local/v1
+tags:
+  - name: Reviews
+  - name: Moderation
+  - name: Reputation
+  - name: Conferences
+paths:
+  /reviews:
+    post: {tags:[Reviews], summary: Submit review, responses: {"200": {description: OK}}}
+  /reviews/moderate:
+    post: {tags:[Moderation], summary: Moderate review, responses: {"200": {description: OK}}}
+  /reputation/recalc:
+    post: {tags:[Reputation], summary: Recalculate reputation scores, responses: {"200": {description: OK}}}
+  /conferences/build:
+    post: {tags:[Conferences], summary: Build review conference protocol, responses: {"200": {description: OK}}}

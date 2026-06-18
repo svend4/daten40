@@ -1,0 +1,16 @@
+{
+  "block": {
+    "range_start": 72801,
+    "range_end": 73200,
+    "slug": "service_catalog_topology_ownership",
+    "title": "Service Catalog, Topology Graph & Ownership (Owner Routing)",
+    "version": "0.32.0"
+  },
+  "files": [
+    "IFOS_service_catalog_topology_ownership_os_72801_73200_v1.md",
+    "IFOS_service_catalog_seed_72801_73200_v1.csv",
+    "IFOS_topology_edges_seed_72801_73200_v1.csv"
+  ],
+  "generated_at": "2026-01-03T18:26:52.084894",
+  "intended_use": "Seed registry + minimal spec for building Service Catalog/Topology/Ownership module."
+}

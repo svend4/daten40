@@ -1,0 +1,29 @@
+{
+  "contract_id": "share_link.v1",
+  "fields": {
+    "share_id": "string",
+    "report_id": "string",
+    "created_at": "datetime",
+    "created_by": "string",
+    "expires_at": "datetime",
+    "status": "string",
+    "scope": {
+      "allowed_files": "array[string]"
+    },
+    "constraints": {
+      "ip_allowlist": "array[string]",
+      "max_downloads": "integer",
+      "require_email_verification": "boolean"
+    },
+    "auditor_identity": {
+      "email": "string",
+      "external_id": "string"
+    },
+    "token_hash": "string",
+    "watermark_enabled": "boolean",
+    "notes": "string"
+  },
+  "privacy_level": "restricted",
+  "retention_policy": "security_default",
+  "audit": "required"
+}

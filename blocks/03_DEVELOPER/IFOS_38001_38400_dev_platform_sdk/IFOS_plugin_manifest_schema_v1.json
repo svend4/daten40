@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS PluginManifest Schema v1",
+  "type": "object",
+  "required": [
+    "plugin_id",
+    "name",
+    "version",
+    "author",
+    "license",
+    "capabilities",
+    "dependencies",
+    "security",
+    "docs"
+  ],
+  "properties": {
+    "plugin_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "author": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "license": {
+      "type": "string"
+    },
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "security": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "docs": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

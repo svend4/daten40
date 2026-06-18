@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Experiment Variant Schema v1",
+  "type": "object",
+  "required": [
+    "variant_id",
+    "name",
+    "artifact",
+    "params",
+    "weight",
+    "version"
+  ],
+  "properties": {
+    "variant_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "params": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "changelog": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

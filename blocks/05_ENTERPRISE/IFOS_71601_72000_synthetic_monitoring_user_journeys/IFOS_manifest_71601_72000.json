@@ -1,0 +1,28 @@
+{
+  "package_type": "ifos_block_pack",
+  "block": {
+    "block_no": 71,
+    "range_start": 71601,
+    "range_end": 72000,
+    "slug": "synthetic_monitoring_user_journeys",
+    "title": "Synthetic Monitoring & User Journeys (Synthetics, Probes, Journeys)",
+    "category": "Observability & Reliability",
+    "priority": "P2",
+    "version": "0.29.0",
+    "status": "DONE"
+  },
+  "files": [
+    {
+      "path": "IFOS_synthetic_monitoring_user_journeys_os_71601_72000_v1.md",
+      "role": "spec_md"
+    },
+    {
+      "path": "IFOS_synthetic_journeys_seed_71601_72000_v1.csv",
+      "role": "seed_csv"
+    },
+    {
+      "path": "IFOS_synthetics_checks_seed_71601_72000_v1.json",
+      "role": "seed_json"
+    }
+  ]
+}

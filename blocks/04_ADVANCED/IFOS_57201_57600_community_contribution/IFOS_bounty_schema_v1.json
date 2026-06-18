@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Bounty Schema v1",
+  "type": "object",
+  "required": [
+    "bounty_id",
+    "title",
+    "type",
+    "reward",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "bounty_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "connector",
+        "macro",
+        "docs",
+        "lesson",
+        "bundle"
+      ]
+    },
+    "reward": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "assigned",
+        "done",
+        "paid",
+        "cancelled"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

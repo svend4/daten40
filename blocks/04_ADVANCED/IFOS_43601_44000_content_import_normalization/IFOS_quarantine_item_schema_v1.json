@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS QuarantineItem Schema v1",
+  "type": "object",
+  "required": [
+    "q_id",
+    "item_id",
+    "reason",
+    "actions",
+    "status",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "q_id": {
+      "type": "string"
+    },
+    "item_id": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "fixed",
+        "dismissed"
+      ]
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

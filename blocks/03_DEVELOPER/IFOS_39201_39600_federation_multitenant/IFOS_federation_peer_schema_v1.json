@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS FederationPeer Schema v1",
+  "type": "object",
+  "required": [
+    "peer_id",
+    "name",
+    "endpoint",
+    "auth",
+    "protocol_version",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "peer_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "endpoint": {
+      "type": "string"
+    },
+    "auth": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "protocol_version": {
+      "type": "string"
+    },
+    "capabilities": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "healthy",
+        "degraded",
+        "offline"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

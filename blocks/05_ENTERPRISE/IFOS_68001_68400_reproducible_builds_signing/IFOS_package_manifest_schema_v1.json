@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS PackageManifest Schema v1",
+  "type": "object",
+  "required": [
+    "package_id",
+    "version",
+    "type",
+    "vendor",
+    "license",
+    "source_ref",
+    "hashes",
+    "requirements",
+    "version_schema"
+  ],
+  "properties": {
+    "package_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "connector",
+        "workflow_pack",
+        "ui_widget",
+        "trial_bundle",
+        "dataset_asset",
+        "doc_pack"
+      ]
+    },
+    "vendor": {
+      "type": "string"
+    },
+    "license": {
+      "type": "string"
+    },
+    "source_ref": {
+      "type": "string",
+      "description": "git ref/commit used for build"
+    },
+    "hashes": {
+      "type": "object",
+      "required": [
+        "artifact_sha256"
+      ],
+      "properties": {
+        "artifact_sha256": {
+          "type": "string"
+        },
+        "manifest_sha256": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "requirements": {
+      "type": "object",
+      "properties": {
+        "runtime": {
+          "type": "string"
+        },
+        "permissions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "scopes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "network": {
+          "type": "object",
+          "properties": {
+            "allowed_domains": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "denied_domains": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "version_schema": {
+      "type": "string",
+      "const": "1.0.0"
+    }
+  }
+}

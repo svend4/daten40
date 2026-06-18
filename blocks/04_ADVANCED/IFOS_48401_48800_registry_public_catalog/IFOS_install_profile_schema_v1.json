@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS InstallProfile Schema v1",
+  "type": "object",
+  "required": [
+    "install_id",
+    "item_id",
+    "method",
+    "steps",
+    "env",
+    "version"
+  ],
+  "properties": {
+    "install_id": {
+      "type": "string"
+    },
+    "item_id": {
+      "type": "string"
+    },
+    "method": {
+      "type": "string",
+      "enum": [
+        "docker",
+        "npm",
+        "pip",
+        "wp_cli",
+        "manual",
+        "cloud_marketplace"
+      ]
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "env": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

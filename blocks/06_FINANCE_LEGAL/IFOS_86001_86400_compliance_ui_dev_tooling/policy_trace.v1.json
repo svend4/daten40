@@ -1,0 +1,13 @@
+{
+  "contract_id": "policy_trace.v1",
+  "fields": {
+    "run_id": "string",
+    "bundle_id": "string",
+    "executed_at": "datetime",
+    "steps": "array[policy_step_trace.v1]",
+    "decision": "string"
+  },
+  "privacy_level": "internal",
+  "retention_policy": "security_default",
+  "audit": "required"
+}

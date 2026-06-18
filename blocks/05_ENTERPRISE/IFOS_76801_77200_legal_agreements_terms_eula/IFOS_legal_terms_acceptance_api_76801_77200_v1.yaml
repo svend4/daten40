@@ -1,0 +1,77 @@
+openapi: 3.0.3
+info:
+  title: IFOS Legal Terms & Acceptance API
+  version: "1.0"
+servers:
+  - url: https://api.ifos.local
+paths:
+  /terms/current:
+    get:
+      summary: Get currently applicable legal documents for a subject and scope
+      parameters:
+        - in: query
+          name: scope
+          required: true
+          schema: { type: string }
+          description: product/package scope (e.g. IFOS_CORE, IFOS_MARKETPLACE, bundle_id)
+        - in: query
+          name: subject_type
+          required: true
+          schema: { type: string, enum: [user, org, workspace, api_client] }
+        - in: query
+          name: subject_id
+          required: true
+          schema: { type: string }
+        - in: query
+          name: country
+          required: false
+          schema: { type: string }
+        - in: query
+          name: language
+          required: false
+          schema: { type: string }
+      responses:
+        "200":
+          description: List of applicable docs and versions
+  /terms/accept:
+    post:
+      summary: Record acceptance of a specific doc version
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [subject_type, subject_id, doc_id, version_id, method]
+              properties:
+                subject_type: { type: string }
+                subject_id: { type: string }
+                doc_id: { type: string }
+                version_id: { type: string }
+                method: { type: string, enum: [clickwrap, checkbox, signature, api_token_ack] }
+                locale: { type: string }
+                evidence_hash_sha256: { type: string }
+      responses:
+        "201":
+          description: Acceptance recorded
+  /terms/admin/docs:
+    post:
+      summary: Create or update LegalDoc metadata (admin)
+  /terms/admin/versions/publish:
+    post:
+      summary: Publish a LegalDocVersion (admin)
+  /terms/acceptance/export:
+    get:
+      summary: Export acceptance evidence package (admin/support)
+      parameters:
+        - in: query
+          name: subject_id
+          required: true
+          schema: { type: string }
+        - in: query
+          name: doc_id
+          required: false
+          schema: { type: string }
+      responses:
+        "200":
+          description: Signed export artifact reference

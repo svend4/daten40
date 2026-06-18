@@ -1,0 +1,32 @@
+{
+  "case_id": "hold_2026_001",
+  "title": "Incident IR-2026-01: data integrity investigation",
+  "reason": "Preserve evidence related to incident timeline",
+  "status": "ACTIVE",
+  "created_at": "2026-01-10T19:30:00+01:00",
+  "criteria": {
+    "time_range": {
+      "from": "2026-01-08T00:00:00Z",
+      "to": "2026-01-10T00:00:00Z"
+    },
+    "entity_types": [
+      "audit_log",
+      "workflow_run",
+      "change_event",
+      "acceptance_event"
+    ],
+    "service": "connector_runtime",
+    "workspace_id": "ws_abc"
+  },
+  "bindings": [
+    {
+      "entity_type": "audit_log",
+      "selector": "query://audit?workspace=ws_abc&from=...&to=..."
+    },
+    {
+      "entity_type": "workflow_run",
+      "selector": "query://workflows?workspace=ws_abc&incident=IR-2026-01"
+    }
+  ],
+  "export_history": []
+}

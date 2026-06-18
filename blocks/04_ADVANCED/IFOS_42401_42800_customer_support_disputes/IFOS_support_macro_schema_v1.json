@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SupportMacro Schema v1",
+  "type": "object",
+  "required": [
+    "macro_id",
+    "name",
+    "template",
+    "actions",
+    "version"
+  ],
+  "properties": {
+    "macro_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "template": {
+      "type": "string"
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

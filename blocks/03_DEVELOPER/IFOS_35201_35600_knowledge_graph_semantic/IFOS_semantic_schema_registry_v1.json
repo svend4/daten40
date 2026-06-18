@@ -1,0 +1,57 @@
+{
+  "registry_id": "reg.sem.sf7c82djn22u",
+  "entries": [
+    {
+      "name": "IFOS_ontology_node_schema_v1.json",
+      "ref": "file://IFOS_ontology_node_schema_v1.json",
+      "hash": "sha256:abff9f8f1e3c2848b50016c2d3c8c52e1ada3f933f4dcafec064be414076f1c8"
+    },
+    {
+      "name": "IFOS_ontology_edge_schema_v1.json",
+      "ref": "file://IFOS_ontology_edge_schema_v1.json",
+      "hash": "sha256:9d4264cec890d984e96db0bc16b158365981eef285981b1a01aa587c0f10643a"
+    },
+    {
+      "name": "IFOS_embedding_schema_v1.json",
+      "ref": "file://IFOS_embedding_schema_v1.json",
+      "hash": "sha256:d472c1a28e6306d78b1602c8a67950475b37e181d3b2d93ba5a2bc424ea5e8c8"
+    },
+    {
+      "name": "IFOS_semantic_query_schema_v1.json",
+      "ref": "file://IFOS_semantic_query_schema_v1.json",
+      "hash": "sha256:eef3f7e966dddbd3cc3a89c48e31e69ac9979968a6d297002c28292e432663ba"
+    },
+    {
+      "name": "IFOS_cluster_schema_v1.json",
+      "ref": "file://IFOS_cluster_schema_v1.json",
+      "hash": "sha256:d4af9eff7b55dc3493839d675411b41213d6a47ccaab8060fc15bcb3932d7075"
+    },
+    {
+      "name": "IFOS_explanation_schema_v1.json",
+      "ref": "file://IFOS_explanation_schema_v1.json",
+      "hash": "sha256:ad9f050a12f2ee634008152c1a25f5f81a5f7d120892d3ea9266d03e42775c66"
+    },
+    {
+      "name": "IFOS_qa_card_schema_v1.json",
+      "ref": "file://IFOS_qa_card_schema_v1.json",
+      "hash": "sha256:b8b45cb810c3471dcfb2dbbcdd048e0b6b71f0b03830eb59422df8a5b59c10c7"
+    },
+    {
+      "name": "IFOS_synonym_schema_v1.json",
+      "ref": "file://IFOS_synonym_schema_v1.json",
+      "hash": "sha256:533186055709516243ccab18505b882ea48e622f7547d8848dee8fd18a16c62f"
+    },
+    {
+      "name": "IFOS_tag_schema_v1.json",
+      "ref": "file://IFOS_tag_schema_v1.json",
+      "hash": "sha256:28b97c62c44c905eccb4599ee8f994d5a47b31dc0e1c7c39045d633f0ab411f9"
+    },
+    {
+      "name": "IFOS_taxonomy_schema_v1.json",
+      "ref": "file://IFOS_taxonomy_schema_v1.json",
+      "hash": "sha256:9a1dfad88d230aba576d2dbfe2a663bef143861b1eab126bac977e44fe348e5b"
+    }
+  ],
+  "updated_at": "2026-01-03T13:01:00Z",
+  "version": "1.0.0"
+}

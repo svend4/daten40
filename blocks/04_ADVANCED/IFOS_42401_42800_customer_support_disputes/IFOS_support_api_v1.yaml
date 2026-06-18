@@ -1,0 +1,37 @@
+openapi: 3.0.3
+info:
+  title: IFOS Support & Disputes API
+  version: "1.0.0"
+servers:
+  - url: https://support.ifos.local/v1
+tags:
+  - name: Tickets
+  - name: Queues
+  - name: SLA
+  - name: Escalations
+  - name: Refunds
+  - name: Disputes
+  - name: Evidence
+  - name: KB
+  - name: CSAT
+paths:
+  /tickets:
+    post: {tags:[Tickets], summary: Create ticket, responses: {"201": {description: Created}}}
+  /queues:
+    post: {tags:[Queues], summary: Upsert queue, responses: {"200": {description: OK}}}
+  /sla/policies:
+    post: {tags:[SLA], summary: Upsert SLA policy, responses: {"200": {description: OK}}}
+  /escalations:
+    post: {tags:[Escalations], summary: Create escalation rule, responses: {"201": {description: Created}}}
+  /refund/policies:
+    post: {tags:[Refunds], summary: Upsert refund policy, responses: {"200": {description: OK}}}
+  /disputes:
+    post: {tags:[Disputes], summary: Create dispute case, responses: {"201": {description: Created}}}
+  /evidence/packs:
+    post: {tags:[Evidence], summary: Create evidence pack ref, responses: {"201": {description: Created}}}
+  /kb/articles:
+    post: {tags:[KB], summary: Upsert KB article, responses: {"200": {description: OK}}}
+  /macros:
+    post: {tags:[KB], summary: Upsert support macro, responses: {"200": {description: OK}}}
+  /csat:
+    post: {tags:[CSAT], summary: Record CSAT survey result, responses: {"201": {description: Created}}}

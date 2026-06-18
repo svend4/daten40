@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS IncidentCase Schema v1",
+  "type": "object",
+  "required": [
+    "case_id",
+    "tenant_id",
+    "status",
+    "opened_at",
+    "owner",
+    "title",
+    "event_refs",
+    "evidence_refs",
+    "version"
+  ],
+  "properties": {
+    "case_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "opened",
+        "triage",
+        "investigating",
+        "contained",
+        "resolved",
+        "postmortem"
+      ]
+    },
+    "opened_at": {
+      "type": "string"
+    },
+    "closed_at": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "event_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

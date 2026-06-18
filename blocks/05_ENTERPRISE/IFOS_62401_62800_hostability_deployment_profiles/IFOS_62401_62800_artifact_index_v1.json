@@ -1,0 +1,112 @@
+{
+  "artifact_set": "IFOS_62401_62800",
+  "entries": [
+    {
+      "name": "IFOS_hostability_deployment_profiles_os_62401_62800_v1.md",
+      "ref": "file://IFOS_hostability_deployment_profiles_os_62401_62800_v1.md",
+      "hash": "sha256:146b66d5474eda1e97bddf881bac4c3fe30cb943d1eaa5902b3a4e131c4a89ff"
+    },
+    {
+      "name": "IFOS_deployment_orchestrator_api_v1.yaml",
+      "ref": "file://IFOS_deployment_orchestrator_api_v1.yaml",
+      "hash": "sha256:491ddd5b3e1c9004625041c670c89da8eefa085b93a8ae63dd4b3ed98299e09c"
+    },
+    {
+      "name": "IFOS_hostability_examples_62401_62800_v1.json",
+      "ref": "file://IFOS_hostability_examples_62401_62800_v1.json",
+      "hash": "sha256:0a9e1ff92a1ddc3b1807ad73eac424c1ad9c20d3870100e1b070ee29bc7512f1"
+    },
+    {
+      "name": "IFOS_deployment_profiles_seed_62401_62800_v1.csv",
+      "ref": "file://IFOS_deployment_profiles_seed_62401_62800_v1.csv",
+      "hash": "sha256:abec5cea138eaadeff86c8d846bfc139ea60bb3429935ec2b5491b679d407e9d"
+    },
+    {
+      "name": "IFOS_hostability_capability_matrix_seed_62401_62800_v1.csv",
+      "ref": "file://IFOS_hostability_capability_matrix_seed_62401_62800_v1.csv",
+      "hash": "sha256:f58e7dca7ac5fa2a8e5608e7de0d456a6313b2a6366b9389ee361ed841673866"
+    },
+    {
+      "name": "IFOS_deployment_debug_checklist_seed_62401_62800_v1.csv",
+      "ref": "file://IFOS_deployment_debug_checklist_seed_62401_62800_v1.csv",
+      "hash": "sha256:31bcbc495f9cdcbf8f082e3606146e5aabb98cd0cfd47cdea5d41fc0cdfe014e"
+    },
+    {
+      "name": "IFOS_app_needs_seed_62401_62800_v1.csv",
+      "ref": "file://IFOS_app_needs_seed_62401_62800_v1.csv",
+      "hash": "sha256:2376e02b5df68d03798b861413b407a67e8ac1990bad2cd3c12204f05cda937e"
+    },
+    {
+      "name": "IFOS_hostability_capabilities_spec_v1.md",
+      "ref": "file://IFOS_hostability_capabilities_spec_v1.md",
+      "hash": "sha256:fc2f53fe411b2da65d69d29f547a2374aefe6cb4bbca29710d59e07d6ef7ee93"
+    },
+    {
+      "name": "IFOS_deployment_profiles_spec_v1.md",
+      "ref": "file://IFOS_deployment_profiles_spec_v1.md",
+      "hash": "sha256:47d21fa1f0cab29a13c333f668a597510e54a7f254e1ba5980d677df01f00393"
+    },
+    {
+      "name": "IFOS_app_hostability_manifest_spec_v1.md",
+      "ref": "file://IFOS_app_hostability_manifest_spec_v1.md",
+      "hash": "sha256:67bf2abf28e1b48a37c05eb6e51a16ae234a5a0a309f705d97f869d59338f377"
+    },
+    {
+      "name": "IFOS_cicd_release_spec_v1.md",
+      "ref": "file://IFOS_cicd_release_spec_v1.md",
+      "hash": "sha256:3b04b4cfdeff18c5f58de7e65edc599f2b657aea10f641a02cd7697432525aff"
+    },
+    {
+      "name": "IFOS_deployment_debug_playbook_spec_v1.md",
+      "ref": "file://IFOS_deployment_debug_playbook_spec_v1.md",
+      "hash": "sha256:9e32f639f0138b072585c0cb9b8cd56cea2f745defbd2bde178a3847e5dcd2ca"
+    },
+    {
+      "name": "IFOS_webhooks_cors_network_spec_v1.md",
+      "ref": "file://IFOS_webhooks_cors_network_spec_v1.md",
+      "hash": "sha256:47c247ac7915161c14c7495bd6029123ceed0a89ad2d452d43240d5036a70c27"
+    },
+    {
+      "name": "IFOS_background_jobs_queues_cron_spec_v1.md",
+      "ref": "file://IFOS_background_jobs_queues_cron_spec_v1.md",
+      "hash": "sha256:1b9640bbf7f3a6a34973dfb594b9a25cce6dc52502042b7c1dc7320d18375c44"
+    },
+    {
+      "name": "IFOS_hostability_manifest_schema_v1.json",
+      "ref": "file://IFOS_hostability_manifest_schema_v1.json",
+      "hash": "sha256:31372f1ae1549effe62dc1fc7205a3e660b696cca80c215b8808d88fb57f4044"
+    },
+    {
+      "name": "IFOS_hostability_capability_schema_v1.json",
+      "ref": "file://IFOS_hostability_capability_schema_v1.json",
+      "hash": "sha256:f2204c440735ce68d4df8af415fc9709388cd346319e01f521093ffc42566c00"
+    },
+    {
+      "name": "IFOS_deployment_profile_schema_v1.json",
+      "ref": "file://IFOS_deployment_profile_schema_v1.json",
+      "hash": "sha256:ba7aa3a22f9d024bb14e949776fcb540fa7fdda196dcc4caa771d2661901383e"
+    },
+    {
+      "name": "IFOS_hostability_probe_report_schema_v1.json",
+      "ref": "file://IFOS_hostability_probe_report_schema_v1.json",
+      "hash": "sha256:1c344bee0e186bfee81a597b059d5bd7d239146bb6f6f234484a0a94a81c2cc5"
+    },
+    {
+      "name": "ifos_hostability_probe_fastapi_stub_v1.py",
+      "ref": "file://ifos_hostability_probe_fastapi_stub_v1.py",
+      "hash": "sha256:4b5494ac3bdfabd3abda42e7a9ec384208a01e3de417047e83a034d1b83f7dd7"
+    },
+    {
+      "name": "ifos_env_checklist_stub_v1.py",
+      "ref": "file://ifos_env_checklist_stub_v1.py",
+      "hash": "sha256:94d61890641427a719c76da538fbe51209436b51029c3e8aa3b147291ea06d01"
+    },
+    {
+      "name": "ifos_cors_config_snippets_v1.py",
+      "ref": "file://ifos_cors_config_snippets_v1.py",
+      "hash": "sha256:6d10cb1524c284d1ea52712b0c7f3025fbbc63910786553cdd68516119ddbec1"
+    }
+  ],
+  "created_at": "2026-01-02T16:07:28Z",
+  "version": "1.0.0"
+}

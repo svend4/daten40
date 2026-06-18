@@ -1,0 +1,147 @@
+{
+  "artifact_set": "IFOS_47201_47600",
+  "entries": [
+    {
+      "name": "IFOS_compare_evaluation_truthful_os_47201_47600_v1.md",
+      "ref": "file://IFOS_compare_evaluation_truthful_os_47201_47600_v1.md",
+      "hash": "sha256:fa6e07e9119db982b9208710c6da1a58374205a9e089082a98337c85d67b5750"
+    },
+    {
+      "name": "IFOS_compare_evaluate_api_v1.yaml",
+      "ref": "file://IFOS_compare_evaluate_api_v1.yaml",
+      "hash": "sha256:d5c57ec2f39d05526e0c1d32166d63335d28fbb5558ba728a521f53c98025314"
+    },
+    {
+      "name": "IFOS_compare_evaluate_examples_v1.json",
+      "ref": "file://IFOS_compare_evaluate_examples_v1.json",
+      "hash": "sha256:a33c1e3d64423f1bb3391b661659acbb84fa566cc9332522239053715e6ecd6f"
+    },
+    {
+      "name": "IFOS_claim_schema_v1.json",
+      "ref": "file://IFOS_claim_schema_v1.json",
+      "hash": "sha256:3772323c8b3b145f1e10107dec2ed7e51167978571683c1b1d78dbbf8aef8fc6"
+    },
+    {
+      "name": "IFOS_evidence_schema_v1.json",
+      "ref": "file://IFOS_evidence_schema_v1.json",
+      "hash": "sha256:71bb4b29dc57d62da4e2e6d8df53564cdbe56cdbe3e6287785d40418a5303076"
+    },
+    {
+      "name": "IFOS_conflict_record_schema_v1.json",
+      "ref": "file://IFOS_conflict_record_schema_v1.json",
+      "hash": "sha256:5108aac685f0ba3d9cbc7dde1eff4e3a45aa2f9fdb90692655b966a012dbc7d9"
+    },
+    {
+      "name": "IFOS_source_comparison_schema_v1.json",
+      "ref": "file://IFOS_source_comparison_schema_v1.json",
+      "hash": "sha256:3fe96205d0444594d58ca0bc3773001f9541cb61e2440c57adbf16caae15bc5b"
+    },
+    {
+      "name": "IFOS_confidence_model_schema_v1.json",
+      "ref": "file://IFOS_confidence_model_schema_v1.json",
+      "hash": "sha256:d0ca40e8cbd275e97e3c88b6410b85b5bbd44cb4b3c0f7413d2d5eb3f6072544"
+    },
+    {
+      "name": "IFOS_verdict_schema_v1.json",
+      "ref": "file://IFOS_verdict_schema_v1.json",
+      "hash": "sha256:658c734b00b0732a82a4496ced255db9058e61a67a68047cd74fd2109657332d"
+    },
+    {
+      "name": "IFOS_fact_check_checklist_schema_v1.json",
+      "ref": "file://IFOS_fact_check_checklist_schema_v1.json",
+      "hash": "sha256:3fc4d0ecbab5492fdf472655118013153183c54fe2fdefeab311658c0840feb2"
+    },
+    {
+      "name": "IFOS_quality_assurance_run_schema_v1.json",
+      "ref": "file://IFOS_quality_assurance_run_schema_v1.json",
+      "hash": "sha256:9db6d417f7fd41aa0e2d6af1e5c51e330ab5431ae0e0275cb8e2459a39801361"
+    },
+    {
+      "name": "IFOS_bias_risk_note_schema_v1.json",
+      "ref": "file://IFOS_bias_risk_note_schema_v1.json",
+      "hash": "sha256:d8be9961b0fd85503a754d3668f2f22900386c90180e0c41e40651fbc806b3f5"
+    },
+    {
+      "name": "IFOS_attribution_schema_v1.json",
+      "ref": "file://IFOS_attribution_schema_v1.json",
+      "hash": "sha256:3244ef56ad2f59f4b2c055fae2e394dd7b526c99d762486794c2f5b4f4e5136c"
+    },
+    {
+      "name": "IFOS_citation_schema_v1.json",
+      "ref": "file://IFOS_citation_schema_v1.json",
+      "hash": "sha256:54e6d1776097a95491609e04982140e86439ed4ab7887caa7ac7cfbd5ca700e8"
+    },
+    {
+      "name": "IFOS_debate_map_schema_v1.json",
+      "ref": "file://IFOS_debate_map_schema_v1.json",
+      "hash": "sha256:31d8c14b323ae73814b2a59237a170b925e3b0bfa136c6724ef87e4419ebbf89"
+    },
+    {
+      "name": "IFOS_evaluation_policy_schema_v1.json",
+      "ref": "file://IFOS_evaluation_policy_schema_v1.json",
+      "hash": "sha256:2543862bb2df912b92acef7f1937dbc59dab50f7fe3df35b8a820c9f9d038341"
+    },
+    {
+      "name": "IFOS_claims_evidence_spec_v1.md",
+      "ref": "file://IFOS_claims_evidence_spec_v1.md",
+      "hash": "sha256:b33d01e20a4d03e19df3d8aaa9be3002228c12958648b912402e1ecf98579f03"
+    },
+    {
+      "name": "IFOS_source_compare_spec_v1.md",
+      "ref": "file://IFOS_source_compare_spec_v1.md",
+      "hash": "sha256:3f550fa7badf2598f9d9cb076d05bb3539a23add75be6096fc0ea48ffb747648"
+    },
+    {
+      "name": "IFOS_conflict_resolution_spec_v1.md",
+      "ref": "file://IFOS_conflict_resolution_spec_v1.md",
+      "hash": "sha256:adbb0e5a57ac650869f9e682d194cb8db5494712e4dc04322d822420544defb6"
+    },
+    {
+      "name": "IFOS_confidence_calibration_spec_v1.md",
+      "ref": "file://IFOS_confidence_calibration_spec_v1.md",
+      "hash": "sha256:6ca1f186b5c910d6397b315ce8413544dbcd9145648aa54928fd72c39511ffb7"
+    },
+    {
+      "name": "IFOS_verdicts_explanations_spec_v1.md",
+      "ref": "file://IFOS_verdicts_explanations_spec_v1.md",
+      "hash": "sha256:3dad0f2f1e5c6fca8fd51cdfd3a33d8d746a7dbe223183cca739f9eed5a9b839"
+    },
+    {
+      "name": "IFOS_truthfulness_guardrails_spec_v1.md",
+      "ref": "file://IFOS_truthfulness_guardrails_spec_v1.md",
+      "hash": "sha256:01dca2d34b4f98109223da676337e2ca4de6938fd12f189bc251f4421f5e73e2"
+    },
+    {
+      "name": "IFOS_compare_ux_patterns_spec_v1.md",
+      "ref": "file://IFOS_compare_ux_patterns_spec_v1.md",
+      "hash": "sha256:800acf252a5731c74ede43c9ed5cc4ad1ddb022b9f4845c9108f831c50e786da"
+    },
+    {
+      "name": "ifos_claim_extractor_stub_v1.py",
+      "ref": "file://ifos_claim_extractor_stub_v1.py",
+      "hash": "sha256:0b7e504a6cffbf487db31db89f17f9391feffc1749ae989d0505a8359a939c5c"
+    },
+    {
+      "name": "ifos_evidence_matcher_stub_v1.py",
+      "ref": "file://ifos_evidence_matcher_stub_v1.py",
+      "hash": "sha256:8f9da1a79c7333fe9df89fcfc349505c5fe5114dc8537188e70eb235c07abff1"
+    },
+    {
+      "name": "ifos_conflict_detector_stub_v1.py",
+      "ref": "file://ifos_conflict_detector_stub_v1.py",
+      "hash": "sha256:3298c2a46da118f46bfc31673df653e96fbf6be3886b25b07140c26fcb8f196d"
+    },
+    {
+      "name": "ifos_confidence_scorer_stub_v1.py",
+      "ref": "file://ifos_confidence_scorer_stub_v1.py",
+      "hash": "sha256:d963fffe2c5eef6697b37c65205b9102dc3ac1e3fa8b2075e3b7ea5ebfb4c235"
+    },
+    {
+      "name": "ifos_verdict_builder_stub_v1.py",
+      "ref": "file://ifos_verdict_builder_stub_v1.py",
+      "hash": "sha256:91d85cbd44f3f4b161db10bfa3ea8f9305078ec435136efacddec0274d249ba6"
+    }
+  ],
+  "created_at": "2026-01-04T09:25:00Z",
+  "version": "1.0.0"
+}

@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RollbackPlan Schema v1",
+  "type": "object",
+  "required": [
+    "rollback_id",
+    "target_kind",
+    "target_id",
+    "steps",
+    "verification",
+    "version"
+  ],
+  "properties": {
+    "rollback_id": {
+      "type": "string"
+    },
+    "target_kind": {
+      "type": "string",
+      "enum": [
+        "item",
+        "bundle"
+      ]
+    },
+    "target_id": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "op"
+        ],
+        "properties": {
+          "op": {
+            "type": "string",
+            "enum": [
+              "stop",
+              "restore_config",
+              "restore_data",
+              "uninstall",
+              "pin_version",
+              "run_command"
+            ]
+          },
+          "params": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "verification": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "health_check",
+              "log_contains",
+              "http"
+            ]
+          },
+          "params": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

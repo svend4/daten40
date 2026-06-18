@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS MetricDefinition Schema v1",
+  "type": "object",
+  "required": [
+    "metric_id",
+    "name",
+    "type",
+    "formula",
+    "window",
+    "version"
+  ],
+  "properties": {
+    "metric_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "primary",
+        "secondary",
+        "guardrail"
+      ]
+    },
+    "formula": {
+      "type": "string"
+    },
+    "window": {
+      "type": "string",
+      "enum": [
+        "minute",
+        "hour",
+        "day",
+        "week",
+        "month"
+      ]
+    },
+    "segments": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+openapi: 3.0.3
+info:
+  title: IFOS Reproducible Builds & Signing Control Plane API
+  version: "1.0.0"
+servers:
+  - url: https://reprosign.ifos.local/v1
+paths:
+  /packages/manifests:
+    post: {summary: Upload package manifest, responses: {"200": {description: OK}}}
+    get: {summary: List manifests, responses: {"200": {description: OK}}}
+  /build/recipes:
+    post: {summary: Register build recipe, responses: {"200": {description: OK}}}
+    get: {summary: List build recipes, responses: {"200": {description: OK}}}
+  /sbom/generate:
+    post: {summary: Generate SBOM for artifact, responses: {"200": {description: OK}}}
+  /provenance/attest:
+    post: {summary: Create provenance + attestations, responses: {"200": {description: OK}}}
+  /signing/keys:
+    get: {summary: List signing keys metadata, responses: {"200": {description: OK}}}
+    post: {summary: Register signing key metadata, responses: {"200": {description: OK}}}
+  /verify/policies:
+    get: {summary: List verification policies, responses: {"200": {description: OK}}}
+    post: {summary: Create/update verification policy, responses: {"200": {description: OK}}}
+  /publish:
+    post: {summary: Publish artifact to channel (creates receipt), responses: {"200": {description: OK}}}
+  /trust/score:
+    post: {summary: Compute trust score, responses: {"200": {description: OK}}}

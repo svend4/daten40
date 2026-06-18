@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ConnectorCapabilityMap",
+  "type": "object",
+  "required": [
+    "connector_id",
+    "capability_id",
+    "coverage",
+    "confidence",
+    "last_verified_at"
+  ],
+  "properties": {
+    "connector_id": {
+      "type": "string"
+    },
+    "capability_id": {
+      "type": "string"
+    },
+    "coverage": {
+      "type": "string",
+      "enum": [
+        "OK",
+        "PARTIAL",
+        "BLOCKED",
+        "UNKNOWN"
+      ]
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "ref",
+          "weight"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "openapi",
+              "readme",
+              "docs_url",
+              "screenshot",
+              "smoke_test",
+              "user_report"
+            ]
+          },
+          "ref": {
+            "type": "string"
+          },
+          "weight": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "properties": {
+        "auth_methods": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "keys_required": {
+          "type": "boolean"
+        },
+        "plan_required": {
+          "type": "string"
+        },
+        "regions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "limitations": {
+      "type": "object",
+      "properties": {
+        "rate_limit_per_min": {
+          "type": "number"
+        },
+        "quota_per_day": {
+          "type": "number"
+        },
+        "payload_max_kb": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": true
+    },
+    "last_verified_at": {
+      "type": "string"
+    },
+    "freshness_days": {
+      "type": "number"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

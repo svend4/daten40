@@ -1,0 +1,230 @@
+{
+  "log_event": {
+    "event_id": "log.l.qn6r1jd4cm1c",
+    "ts": "2026-01-03T12:33:00Z",
+    "level": "info",
+    "message": "Run started",
+    "tenant_id": "ten.example",
+    "org_unit_id": "/HQ/IT",
+    "project_id": "proj:automation",
+    "run_id": "run.r.mjqu04qesbdi",
+    "canonical_id": "canon.some_bundle",
+    "trace_id": "tr.t.gw61tckfb8y4",
+    "span_id": "sp.s.kfd7ecplh4uf",
+    "meta": {
+      "step": "ingest",
+      "user": "stefan"
+    },
+    "version": "1.0.0"
+  },
+  "metric": {
+    "metric_id": "m.m.jp190qk5lz4f",
+    "name": "run.success_rate",
+    "kind": "gauge",
+    "value": 0.97,
+    "ts": "2026-01-03T12:33:00Z",
+    "tags": {
+      "tenant_id": "ten.example",
+      "canonical_id": "canon.some_bundle"
+    },
+    "version": "1.0.0"
+  },
+  "trace_span": {
+    "span_id": "sp.s.kfd7ecplh4uf",
+    "trace_id": "tr.t.gw61tckfb8y4",
+    "parent_span_id": null,
+    "name": "connector.http_call",
+    "start_ts": "2026-01-03T12:33:00Z",
+    "end_ts": "2026-01-03T12:33:00.250Z",
+    "status": "ok",
+    "tenant_id": "ten.example",
+    "attributes": {
+      "dest": "api.telegram.org",
+      "http.status_code": "200"
+    },
+    "version": "1.0.0"
+  },
+  "health_check": {
+    "check_id": "hc.h.93ssl3fl29zh",
+    "name": "Telegram API auth",
+    "kind": "connector",
+    "schedule": "*/10 * * * *",
+    "status": "pass",
+    "last_run": "2026-01-03T12:33:00Z",
+    "details": {
+      "latency_ms": 180
+    },
+    "tenant_id": "ten.example",
+    "version": "1.0.0"
+  },
+  "slo": {
+    "slo_id": "slo.s.doj9f4nbar3a",
+    "tenant_id": "ten.example",
+    "name": "Automation SLO",
+    "objective": {
+      "success_rate_min": 0.99,
+      "p95_latency_ms_max": 2000
+    },
+    "window": "28d",
+    "metric": "run.success_rate",
+    "version": "1.0.0"
+  },
+  "sla": {
+    "sla_id": "sla.s.o5d3yv72g2w3",
+    "tenant_id": "ten.example",
+    "name": "SLA Gold",
+    "commitments": [
+      {
+        "uptime": 0.999
+      },
+      {
+        "response_time_minutes": 30
+      }
+    ],
+    "penalties": [
+      {
+        "credit_percent": 10,
+        "condition": "uptime<0.999"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "alert_rule": {
+    "alert_id": "al.a.t58w45u7uzo1",
+    "tenant_id": "ten.example",
+    "name": "High error rate",
+    "expr": "run.success_rate < 0.95 for 10m",
+    "severity": "high",
+    "routing": {
+      "channel": "slack:#oncall",
+      "ticket": "jira"
+    },
+    "suppression": {
+      "cooldown": "15m"
+    },
+    "enabled": true,
+    "version": "1.0.0"
+  },
+  "incident": {
+    "incident_id": "inc.i.mg5daj4s1do6",
+    "tenant_id": "ten.example",
+    "status": "open",
+    "opened_at": "2026-01-03T12:33:00Z",
+    "closed_at": null,
+    "title": "Run failures increased",
+    "timeline": [
+      {
+        "ts": "2026-01-03T12:33:00Z",
+        "event": "alert_triggered",
+        "alert_id": "al.a.t58w45u7uzo1"
+      }
+    ],
+    "actions": [
+      {
+        "kind": "rollback",
+        "target": "canon.some_bundle"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "run_record": {
+    "run_id": "run.r.mjqu04qesbdi",
+    "tenant_id": "ten.example",
+    "canonical_id": "canon.some_bundle",
+    "status": "success",
+    "started_at": "2026-01-03T12:33:00Z",
+    "ended_at": "2026-01-03T12:33:02Z",
+    "cost_eur": 0.02,
+    "meta": {
+      "cost_center": "cc:automation"
+    },
+    "version": "1.0.0"
+  },
+  "retry_policy": {
+    "retry_id": "rt.r.0oyxyiovpr8s",
+    "name": "HTTP retry",
+    "max_attempts": 5,
+    "backoff": {
+      "type": "exp",
+      "base_ms": 200,
+      "max_ms": 8000,
+      "jitter": true
+    },
+    "retry_on": [
+      "timeout",
+      "502",
+      "503",
+      "429"
+    ],
+    "idempotency": {
+      "header": "Idempotency-Key"
+    },
+    "version": "1.0.0"
+  },
+  "circuit_breaker": {
+    "cb_id": "cb.c.knxayh2fx3qd",
+    "name": "Telegram breaker",
+    "threshold": {
+      "errors": 10,
+      "window_sec": 60
+    },
+    "cooldown_sec": 120,
+    "state": "closed",
+    "fallback": {
+      "mode": "queue",
+      "ttl_sec": 600
+    },
+    "version": "1.0.0"
+  },
+  "rollback_plan": {
+    "rb_id": "rb.r.54e6nlglg3fr",
+    "canonical_id": "canon.some_bundle",
+    "stable_version": "1.2.2",
+    "steps": [
+      "disable 1.2.3",
+      "enable 1.2.2",
+      "replay queued jobs"
+    ],
+    "data_migrations": [],
+    "version": "1.0.0"
+  },
+  "canary_release": {
+    "canary_id": "can.c.rce8gdqy9e90",
+    "canonical_id": "canon.some_bundle",
+    "from_version": "1.2.2",
+    "to_version": "1.2.3",
+    "plan": {
+      "step_percent": [
+        5,
+        25,
+        50,
+        100
+      ],
+      "step_minutes": [
+        10,
+        20,
+        30,
+        60
+      ],
+      "rollback_on": "SLO_violation"
+    },
+    "status": "running",
+    "started_at": "2026-01-03T12:33:00Z",
+    "ended_at": null,
+    "version": "1.0.0"
+  },
+  "autofix_rule": {
+    "fix_id": "fx.f.ikubn0riogl1",
+    "tenant_id": "ten.example",
+    "trigger": {
+      "alert_id": "al.a.t58w45u7uzo1"
+    },
+    "action": {
+      "kind": "restart_worker",
+      "max_restarts": 2
+    },
+    "max_frequency": "1h",
+    "enabled": true,
+    "version": "1.0.0"
+  }
+}

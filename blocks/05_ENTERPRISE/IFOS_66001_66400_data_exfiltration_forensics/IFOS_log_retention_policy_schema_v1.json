@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS LogRetentionPolicy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "scope",
+    "retention_days",
+    "storage_tier",
+    "immutable",
+    "version"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "retention_days": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "storage_tier": {
+      "type": "string",
+      "enum": [
+        "hot",
+        "warm",
+        "cold",
+        "archive"
+      ]
+    },
+    "immutable": {
+      "type": "boolean"
+    },
+    "legal_hold_supported": {
+      "type": "boolean",
+      "default": true
+    },
+    "redaction_level": {
+      "type": "string",
+      "enum": [
+        "strict",
+        "balanced",
+        "minimal"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

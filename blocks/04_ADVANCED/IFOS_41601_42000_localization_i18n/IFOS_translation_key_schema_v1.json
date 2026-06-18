@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS TranslationKey Schema v1",
+  "type": "object",
+  "required": [
+    "key",
+    "description",
+    "version"
+  ],
+  "properties": {
+    "key": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "context": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "placeholders": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

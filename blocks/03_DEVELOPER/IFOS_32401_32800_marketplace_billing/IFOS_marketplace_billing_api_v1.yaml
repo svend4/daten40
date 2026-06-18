@@ -1,0 +1,86 @@
+openapi: 3.0.3
+info:
+  title: IFOS Marketplace & Billing API
+  version: "1.0.0"
+servers:
+  - url: https://market.ifos.local/v1
+tags:
+  - name: Listings
+  - name: Checkout
+  - name: Entitlements
+  - name: Usage
+  - name: Invoices
+  - name: Payments
+  - name: Payouts
+  - name: Refunds
+  - name: Tax
+  - name: Audit
+paths:
+  /listings:
+    post:
+      tags: [Listings]
+      summary: Create/update listing
+      responses: {"200": {description: OK}}
+    get:
+      tags: [Listings]
+      summary: List listings
+      responses: {"200": {description: OK}}
+  /checkout/start:
+    post:
+      tags: [Checkout]
+      summary: Start checkout for listing + plan
+      responses: {"200": {description: OK}}
+  /payments/webhook:
+    post:
+      tags: [Payments]
+      summary: Receive provider webhook and verify signature
+      responses: {"200": {description: OK}}
+  /entitlements/{owner_kind}/{owner_id}:
+    get:
+      tags: [Entitlements]
+      summary: List entitlements for owner
+      parameters:
+        - in: path
+          name: owner_kind
+          required: true
+          schema: {type: string}
+        - in: path
+          name: owner_id
+          required: true
+          schema: {type: string}
+      responses: {"200": {description: OK}}
+  /usage/events:
+    post:
+      tags: [Usage]
+      summary: Submit usage event (idempotent)
+      responses: {"201": {description: Created}}
+  /invoices/{order_id}:
+    get:
+      tags: [Invoices]
+      summary: Get invoice for order
+      parameters:
+        - in: path
+          name: order_id
+          required: true
+          schema: {type: string}
+      responses: {"200": {description: OK}}
+  /payouts/run:
+    post:
+      tags: [Payouts]
+      summary: Run payout computation for period (admin)
+      responses: {"202": {description: Accepted}}
+  /refunds/request:
+    post:
+      tags: [Refunds]
+      summary: Request refund for order
+      responses: {"201": {description: Created}}
+  /tax/profile:
+    post:
+      tags: [Tax]
+      summary: Upsert tax profile
+      responses: {"200": {description: OK}}
+  /audit/logs:
+    post:
+      tags: [Audit]
+      summary: Append audit log entry
+      responses: {"201": {description: Created}}

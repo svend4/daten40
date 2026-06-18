@@ -1,0 +1,17 @@
+openapi: 3.0.3
+info:
+  title: IFOS Federation Control Plane API
+  version: "1.0.0"
+servers:
+  - url: https://federation.ifos.local/v1
+paths:
+  /federations:
+    get: {summary: List federations, responses: {"200": {description: OK}}}
+  /tunnels:
+    get: {summary: List tunnels, responses: {"200": {description: OK}}}
+  /sync/jobs:
+    post: {summary: Create sync/promotion job, responses: {"200": {description: OK}}}
+  /routing/policies:
+    get: {summary: List routing policies, responses: {"200": {description: OK}}}
+  /dr/plans:
+    get: {summary: List DR plans, responses: {"200": {description: OK}}}

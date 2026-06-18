@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SafeDatasetAsset Schema v1",
+  "type": "object",
+  "required": [
+    "safe_dataset_id",
+    "name",
+    "source",
+    "classes",
+    "format",
+    "intended_use",
+    "version"
+  ],
+  "properties": {
+    "safe_dataset_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "synthetic",
+        "deid",
+        "public_open_data",
+        "generated_fixtures"
+      ]
+    },
+    "classes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "format": {
+      "type": "string",
+      "enum": [
+        "csv",
+        "json",
+        "parquet",
+        "sql_seed",
+        "api_fixture"
+      ]
+    },
+    "intended_use": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "demo",
+          "education",
+          "qa",
+          "benchmark",
+          "docs_examples"
+        ]
+      }
+    },
+    "notes": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

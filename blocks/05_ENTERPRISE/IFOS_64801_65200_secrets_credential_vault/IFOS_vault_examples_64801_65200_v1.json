@@ -1,0 +1,45 @@
+{
+  "secret_create_example": {
+    "secret_id": "sec.stripe.prod.001",
+    "type": "api_key",
+    "tenant_id": "t_demo",
+    "environment": "prod",
+    "purpose": "stripe payments connector",
+    "rotation_policy_id": "rot.standard.90d",
+    "labels": {
+      "connector": "stripe",
+      "owner_team": "payments"
+    },
+    "value_example": "sk_live_Znqhlk_eEvRxSmPzNLrX9DZPWzCt7PV-"
+  },
+  "secret_ref_example": {
+    "secret_id": "sec.stripe.prod.001",
+    "access_mode": "lease",
+    "lease_ttl_s": 600,
+    "mask_rules": [
+      "show_last_4"
+    ]
+  },
+  "lease_grant_example": {
+    "grant_id": "lease_001",
+    "secret_id": "sec.stripe.prod.001",
+    "mode": "lease",
+    "issued_at": "2026-01-02T10:00:00Z",
+    "expires_at": "2026-01-02T10:10:00Z",
+    "usage_limit": 50
+  },
+  "policy_decision_trace_example": {
+    "policy_id": "pol.prod.allow_runtime_lease",
+    "subject": {
+      "type": "service",
+      "name": "runtime"
+    },
+    "resource": {
+      "secret_id": "sec.stripe.prod.001",
+      "env": "prod"
+    },
+    "action": "lease",
+    "decision": "allow_with_lease",
+    "lease_ttl_s": 600
+  }
+}

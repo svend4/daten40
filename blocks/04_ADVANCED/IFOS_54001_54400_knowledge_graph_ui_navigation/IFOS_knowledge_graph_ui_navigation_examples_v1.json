@@ -1,0 +1,84 @@
+{
+  "nodes": [
+    {
+      "node_id": "node.n.zw37mlr8p9su",
+      "node_type": "Connector",
+      "title": "Telegram Bot API",
+      "meta": {
+        "provider": "telegram",
+        "capabilities": "read|write|webhook"
+      },
+      "version": "1.0.0"
+    },
+    {
+      "node_id": "node.n.bqa5tm9iqa7l",
+      "node_type": "Process",
+      "title": "Weekly News Digest",
+      "meta": {
+        "project": "NewsOps"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "edge.e.qkx47f9oko19",
+      "from": "node.n.bqa5tm9iqa7l",
+      "to": "node.n.zw37mlr8p9su",
+      "kind": "uses",
+      "directed": true,
+      "evidence": "manifest",
+      "confidence": 0.95,
+      "version": "1.0.0"
+    }
+  ],
+  "query": {
+    "query_id": "q.q.nmqb1n1ov1l9",
+    "expression": "DEPENDS_ON(target=$node_id, depth=$depth)",
+    "params": {
+      "node_id": "node.n.zw37mlr8p9su",
+      "depth": 3
+    },
+    "version": "1.0.0"
+  },
+  "view": {
+    "view_id": "view.v.3nb5eip78gfg",
+    "name": "Что зависит от Telegram",
+    "mode": "map",
+    "filters": {
+      "node_type": [
+        "Process",
+        "Bundle",
+        "Run"
+      ],
+      "risk": [
+        "*"
+      ]
+    },
+    "query_id": "q.q.nmqb1n1ov1l9",
+    "layout": {
+      "engine": "force",
+      "group_by": "project"
+    },
+    "version": "1.0.0"
+  },
+  "impact_report": {
+    "report_id": "imp.r.yg9mr7z2vh21",
+    "target": "connector.telegram",
+    "summary": "Изменение auth scopes может затронуть публикацию дайджеста и webhooks.",
+    "impacted": [
+      {
+        "object": "process.weekly_digest",
+        "kind": "uses",
+        "risk": "high"
+      }
+    ],
+    "risk": "high",
+    "required_tests": [
+      "auth_smoke",
+      "webhook_verify",
+      "write_idempotent"
+    ],
+    "version": "1.0.0"
+  }
+}

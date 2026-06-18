@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS MarketplacePublishingJob Schema v1",
+  "type": "object",
+  "required": [
+    "job_id",
+    "plugin_id",
+    "target_channel",
+    "stages",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "job_id": {
+      "type": "string"
+    },
+    "plugin_id": {
+      "type": "string"
+    },
+    "target_channel": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "review",
+        "release"
+      ]
+    },
+    "stages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "queued",
+        "running",
+        "failed",
+        "succeeded"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

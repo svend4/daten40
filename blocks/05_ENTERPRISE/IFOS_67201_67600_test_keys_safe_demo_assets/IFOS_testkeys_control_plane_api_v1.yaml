@@ -1,0 +1,31 @@
+openapi: 3.0.3
+info:
+  title: IFOS Test Keys & Safe Demo Assets Control Plane API
+  version: "1.0.0"
+servers:
+  - url: https://testkeys.ifos.local/v1
+paths:
+  /sandbox/providers:
+    get: {summary: List sandbox providers, responses: {"200": {description: OK}}}
+    post: {summary: Create/update sandbox provider, responses: {"200": {description: OK}}}
+  /keys/catalog:
+    get: {summary: List test key catalog entries, responses: {"200": {description: OK}}}
+    post: {summary: Create/update test key entry, responses: {"200": {description: OK}}}
+  /keys/policies:
+    get: {summary: List credential policies, responses: {"200": {description: OK}}}
+    post: {summary: Create/update credential policy, responses: {"200": {description: OK}}}
+  /keys/requests:
+    get: {summary: List key requests, responses: {"200": {description: OK}}}
+    post: {summary: Create key request, responses: {"200": {description: OK}}}
+  /keys/grants:
+    get: {summary: List key grants, responses: {"200": {description: OK}}}
+    post: {summary: Issue key grant, responses: {"200": {description: OK}}}
+  /keys/rotation/jobs:
+    get: {summary: List rotation jobs, responses: {"200": {description: OK}}}
+    post: {summary: Create/update rotation job, responses: {"200": {description: OK}}}
+  /demo/assets:
+    get: {summary: List demo assets, responses: {"200": {description: OK}}}
+    post: {summary: Create/update demo asset, responses: {"200": {description: OK}}}
+  /trial/bundles:
+    get: {summary: List trial bundles, responses: {"200": {description: OK}}}
+    post: {summary: Create/update trial bundle, responses: {"200": {description: OK}}}

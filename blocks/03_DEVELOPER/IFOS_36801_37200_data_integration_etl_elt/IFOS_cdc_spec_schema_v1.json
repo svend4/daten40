@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS CDCSpec Schema v1",
+  "type": "object",
+  "required": [
+    "cdc_id",
+    "tenant_id",
+    "db_type",
+    "capture",
+    "decode",
+    "deliver",
+    "version"
+  ],
+  "properties": {
+    "cdc_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "db_type": {
+      "type": "string",
+      "enum": [
+        "postgres",
+        "mysql",
+        "mssql",
+        "mongodb"
+      ]
+    },
+    "capture": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "decode": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "deliver": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

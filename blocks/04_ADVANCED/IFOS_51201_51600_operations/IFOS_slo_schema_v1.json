@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SLO Schema v1",
+  "type": "object",
+  "required": [
+    "slo_id",
+    "service_id",
+    "slis",
+    "slo_targets",
+    "error_budget",
+    "version"
+  ],
+  "properties": {
+    "slo_id": {
+      "type": "string"
+    },
+    "service_id": {
+      "type": "string"
+    },
+    "slis": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "slo_targets": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "error_budget": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

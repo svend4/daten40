@@ -1,0 +1,22 @@
+openapi: 3.0.3
+info:
+  title: IFOS Process OS API
+  version: "1.0.0"
+servers:
+  - url: https://process.ifos.local/v1
+tags:
+  - name: Processes
+  - name: Policies
+  - name: Approvals
+  - name: Executions
+paths:
+  /processes:
+    post: {tags:[Processes], summary: Create process, responses: {"200": {description: OK}}}
+  /processes/compile:
+    post: {tags:[Processes], summary: Compile DSL to graph, responses: {"200": {description: OK}}}
+  /policies/evaluate:
+    post: {tags:[Policies], summary: Evaluate policy, responses: {"200": {description: OK}}}
+  /approvals:
+    post: {tags:[Approvals], summary: Create approval, responses: {"200": {description: OK}}}
+  /executions/start:
+    post: {tags:[Executions], summary: Start execution, responses: {"200": {description: OK}}}

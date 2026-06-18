@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RegistryExportRef Schema v1",
+  "type": "object",
+  "required": [
+    "ref_id",
+    "registry_id",
+    "ts",
+    "uri",
+    "hash",
+    "version"
+  ],
+  "properties": {
+    "ref_id": {
+      "type": "string"
+    },
+    "registry_id": {
+      "type": "string"
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "uri": {
+      "type": "string"
+    },
+    "hash": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "ifos_pack_version": "1.0",
+  "block": {
+    "range_start": 68801,
+    "range_end": 69200,
+    "slug": "observability_sre",
+    "title": "Observability & SRE",
+    "version": "0.85.1"
+  },
+  "files": {
+    "main_doc": "IFOS_observability_sre_os_68801_69200_v1.md",
+    "seeds": [
+      "IFOS_obs_signal_types_seed_68801_69200_v1.csv",
+      "IFOS_obs_slo_templates_seed_68801_69200_v1.csv",
+      "IFOS_obs_alert_rules_seed_68801_69200_v1.csv",
+      "IFOS_obs_dashboards_seed_68801_69200_v1.csv",
+      "IFOS_obs_runbooks_seed_68801_69200_v1.csv"
+    ]
+  },
+  "recommended_depends_on_blocks": [
+    "observability_reliability",
+    "runtime_execution",
+    "workflow_runner_macro_engine",
+    "feature_flags_remote_config",
+    "case_management_ticketing",
+    "analytics_insights"
+  ]
+}

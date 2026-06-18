@@ -1,0 +1,15 @@
+{
+  "contract_id": "payment.v1",
+  "fields": {
+    "payment_id": "string",
+    "invoice_id": "string",
+    "amount": "number",
+    "currency": "string",
+    "paid_at": "datetime",
+    "method": "string",
+    "provider": "string",
+    "status": "string"
+  },
+  "privacy_level": "confidential",
+  "retention_policy": "finance_default"
+}

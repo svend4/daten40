@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS EntityType Schema v1",
+  "type": "object",
+  "required": [
+    "type",
+    "required_fields",
+    "quality_rules",
+    "version"
+  ],
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "required_fields": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "quality_rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

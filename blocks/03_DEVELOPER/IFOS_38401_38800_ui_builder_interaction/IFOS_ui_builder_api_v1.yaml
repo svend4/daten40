@@ -1,0 +1,32 @@
+openapi: 3.0.3
+info:
+  title: IFOS UI Builder API
+  version: "1.0.0"
+servers:
+  - url: https://ui.ifos.local/v1
+tags:
+  - name: Cards
+  - name: Vitrines
+  - name: Forms
+  - name: Modes
+  - name: Explain
+  - name: A11y
+  - name: I18n
+  - name: Telemetry
+paths:
+  /cards:
+    post: {tags:[Cards], summary: Upsert UI card, responses: {"200": {description: OK}}}
+  /vitrines:
+    post: {tags:[Vitrines], summary: Upsert vitrine, responses: {"200": {description: OK}}}
+  /forms:
+    post: {tags:[Forms], summary: Upsert form, responses: {"200": {description: OK}}}
+  /modes:
+    post: {tags:[Modes], summary: Upsert interaction mode, responses: {"200": {description: OK}}}
+  /explain:
+    post: {tags:[Explain], summary: Create explainability bundle for run, responses: {"201": {description: Created}}}
+  /a11y/profiles:
+    post: {tags:[A11y], summary: Upsert accessibility profile, responses: {"200": {description: OK}}}
+  /i18n/packs:
+    post: {tags:[I18n], summary: Upsert localization pack, responses: {"200": {description: OK}}}
+  /telemetry/events:
+    post: {tags:[Telemetry], summary: Record UI event, responses: {"201": {description: Created}}}

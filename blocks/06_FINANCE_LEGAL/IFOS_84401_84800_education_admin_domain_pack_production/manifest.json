@@ -1,0 +1,67 @@
+{
+  "pack_id": "dp_education_admin_prod",
+  "domain": {
+    "slug": "education_admin",
+    "name": "Education Administration",
+    "industry": "Education",
+    "keywords": [
+      "enrollment",
+      "students",
+      "documents",
+      "notifications",
+      "privacy"
+    ]
+  },
+  "version": "1.0.0",
+  "status": "production",
+  "compatibility": {
+    "ifos_min_version": "v30",
+    "required_blocks": [
+      "IFOS_00001_00400",
+      "IFOS_82801_83200"
+    ]
+  },
+  "connectors": {
+    "allow": [
+      "webhook",
+      "email",
+      "doc_storage",
+      "doc_generator",
+      "notification",
+      "google_sheets"
+    ],
+    "deny": [
+      "public_social",
+      "ads",
+      "tracking"
+    ]
+  },
+  "policies": [
+    "privacy.internal",
+    "audit.logging",
+    "retention.edu_default"
+  ],
+  "data_contracts": [
+    "student.v1",
+    "enrollment_request.v1",
+    "document.v1",
+    "notification.v1"
+  ],
+  "kpis": [
+    "enrollment_cycle_time",
+    "enrollment_completion_rate"
+  ],
+  "bundles": [
+    {
+      "bundle_id": "enrollment_docs_notify",
+      "manifest_path": "bundles/enrollment_docs_notify.json",
+      "description": "Enrollment intake → generate documents → send notifications"
+    }
+  ],
+  "examples": [
+    {
+      "name": "Sample enrollment request",
+      "path": "examples/enrollment_request.json"
+    }
+  ]
+}

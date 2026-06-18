@@ -1,0 +1,20 @@
+openapi: 3.0.3
+info:
+  title: IFOS Compare & Evaluate API
+  version: "1.0.0"
+servers:
+  - url: https://eval.ifos.local/v1
+tags:
+  - name: Claims
+  - name: Evidence
+  - name: Compare
+  - name: Verdict
+paths:
+  /claims/extract:
+    post: {tags:[Claims], summary: Extract claims from normalized item, responses: {"200": {description: OK}}}
+  /evidence/match:
+    post: {tags:[Evidence], summary: Bind evidence to claims, responses: {"200": {description: OK}}}
+  /compare/sources:
+    post: {tags:[Compare], summary: Compare sources for cluster, responses: {"200": {description: OK}}}
+  /verdict/build:
+    post: {tags:[Verdict], summary: Build verdict with confidence, responses: {"200": {description: OK}}}

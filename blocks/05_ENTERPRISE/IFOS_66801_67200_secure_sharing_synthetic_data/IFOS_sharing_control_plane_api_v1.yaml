@@ -1,0 +1,33 @@
+openapi: 3.0.3
+info:
+  title: IFOS Secure Sharing & Synthetic Data Control Plane API
+  version: "1.0.0"
+servers:
+  - url: https://sharing.ifos.local/v1
+paths:
+  /rooms:
+    get: {summary: List data rooms, responses: {"200": {description: OK}}}
+    post: {summary: Create/update data room, responses: {"200": {description: OK}}}
+  /datasets:
+    get: {summary: List dataset assets, responses: {"200": {description: OK}}}
+    post: {summary: Publish a dataset asset into a room, responses: {"200": {description: OK}}}
+  /share/requests:
+    get: {summary: List share requests, responses: {"200": {description: OK}}}
+    post: {summary: Create share request, responses: {"200": {description: OK}}}
+  /share/grants:
+    get: {summary: List share grants, responses: {"200": {description: OK}}}
+    post: {summary: Issue share grant, responses: {"200": {description: OK}}}
+  /approval/flows:
+    get: {summary: List approval workflows, responses: {"200": {description: OK}}}
+    post: {summary: Create/update approval workflow, responses: {"200": {description: OK}}}
+  /profiles/deid:
+    get: {summary: List de-id profiles, responses: {"200": {description: OK}}}
+    post: {summary: Create/update de-id profile, responses: {"200": {description: OK}}}
+  /profiles/synthetic:
+    get: {summary: List synthetic profiles, responses: {"200": {description: OK}}}
+    post: {summary: Create/update synthetic profile, responses: {"200": {description: OK}}}
+  /sample/policies:
+    get: {summary: List sample policies, responses: {"200": {description: OK}}}
+    post: {summary: Create/update sample policy, responses: {"200": {description: OK}}}
+  /receipts/access:
+    post: {summary: Record access receipt, responses: {"200": {description: OK}}}

@@ -1,0 +1,13 @@
+{
+  "contract_id": "phi_access_request.v1",
+  "fields": {
+    "request_id": "string",
+    "patient_id": "string",
+    "received_at": "datetime",
+    "status": "string",
+    "request_type": "string"
+  },
+  "privacy_level": "restricted",
+  "retention_policy": "healthcare_default",
+  "audit": "required"
+}

@@ -1,0 +1,13 @@
+{
+  "contract_id": "phi_export_package.v1",
+  "fields": {
+    "package_id": "string",
+    "patient_id": "string",
+    "format": "string",
+    "storage_uri": "string",
+    "generated_at": "datetime"
+  },
+  "privacy_level": "restricted",
+  "retention_policy": "healthcare_default",
+  "audit": "required"
+}

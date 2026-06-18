@@ -1,0 +1,187 @@
+{
+  "artifact_set": "IFOS_64001_64400",
+  "entries": [
+    {
+      "name": "IFOS_browser_security_client_integrity_os_64001_64400_v1.md",
+      "ref": "file://IFOS_browser_security_client_integrity_os_64001_64400_v1.md",
+      "hash": "sha256:cb4af84da5cd7d6fe0d17d493bf632225c4769dc03eb723d7445c89c8675d647"
+    },
+    {
+      "name": "IFOS_browser_security_control_plane_api_v1.yaml",
+      "ref": "file://IFOS_browser_security_control_plane_api_v1.yaml",
+      "hash": "sha256:7c4c44cba4f4bdc11902f43c5084a115fa38dcae10d7edfdb841f58725c6694a"
+    },
+    {
+      "name": "IFOS_browser_security_examples_64001_64400_v1.json",
+      "ref": "file://IFOS_browser_security_examples_64001_64400_v1.json",
+      "hash": "sha256:23ac8aedd21a7bc471826453cfc3a4d0249e8d9a7bdedc4bf40c5270d99bd470"
+    },
+    {
+      "name": "IFOS_browser_security_profiles_seed_64001_64400_v1.csv",
+      "ref": "file://IFOS_browser_security_profiles_seed_64001_64400_v1.csv",
+      "hash": "sha256:893c24d5bf779bff3bda31f87d8257b70ef652c8cf1ee02a6f0206e6d07fea88"
+    },
+    {
+      "name": "IFOS_headers_policies_seed_64001_64400_v1.csv",
+      "ref": "file://IFOS_headers_policies_seed_64001_64400_v1.csv",
+      "hash": "sha256:9c6a4e8eab417d7c82a7f54bf829be2a016c7686fa16fd54310ae028f1cc7ce7"
+    },
+    {
+      "name": "IFOS_csp_policies_seed_64001_64400_v1.csv",
+      "ref": "file://IFOS_csp_policies_seed_64001_64400_v1.csv",
+      "hash": "sha256:1ae093f9641b26bc7ad856616d1ca4d4d4d881a0e143fd848593baf79d811320"
+    },
+    {
+      "name": "IFOS_csrf_policies_seed_64001_64400_v1.csv",
+      "ref": "file://IFOS_csrf_policies_seed_64001_64400_v1.csv",
+      "hash": "sha256:4dcebb68d1f50d6c700430f16efc06d9c3476ecfec77078282500c7476f4426a"
+    },
+    {
+      "name": "IFOS_cookie_policies_seed_64001_64400_v1.csv",
+      "ref": "file://IFOS_cookie_policies_seed_64001_64400_v1.csv",
+      "hash": "sha256:110dd479f0493498ac7a0b4274ae28a3328666ff9a8250867ad3a67715745e7b"
+    },
+    {
+      "name": "IFOS_cors_policies_seed_64001_64400_v1.csv",
+      "ref": "file://IFOS_cors_policies_seed_64001_64400_v1.csv",
+      "hash": "sha256:39d6d21096392b85a23230801c37341b02d264275a4bb3afd74171ac8e650198"
+    },
+    {
+      "name": "IFOS_webview_policies_seed_64001_64400_v1.csv",
+      "ref": "file://IFOS_webview_policies_seed_64001_64400_v1.csv",
+      "hash": "sha256:b87a77ca04dda7485437b705bf03806720243a5db55f1d9fe799bff73ae7c2dc"
+    },
+    {
+      "name": "IFOS_client_integrity_policies_seed_64001_64400_v1.csv",
+      "ref": "file://IFOS_client_integrity_policies_seed_64001_64400_v1.csv",
+      "hash": "sha256:7bdf35e09ba11b66603331b45fbe4708e1396376641f42e95d473eb7326beec7"
+    },
+    {
+      "name": "IFOS_security_debug_playbook_seed_64001_64400_v1.csv",
+      "ref": "file://IFOS_security_debug_playbook_seed_64001_64400_v1.csv",
+      "hash": "sha256:30d948726e9740fa49cd42e30724837b362f0d5fe2be32aa97dfef34bf8b5d37"
+    },
+    {
+      "name": "IFOS_security_headers_spec_v1.md",
+      "ref": "file://IFOS_security_headers_spec_v1.md",
+      "hash": "sha256:c673231c8389649ecb3d1f767dbbf4f4e4ce2cb6d88d3dda31e6483248030c12"
+    },
+    {
+      "name": "IFOS_csp_sri_spec_v1.md",
+      "ref": "file://IFOS_csp_sri_spec_v1.md",
+      "hash": "sha256:1ce8e08448907329f452ad9572951305d92016dcd0d27d1c0d230c3aed694171"
+    },
+    {
+      "name": "IFOS_csrf_session_spec_v1.md",
+      "ref": "file://IFOS_csrf_session_spec_v1.md",
+      "hash": "sha256:1fe233a67b38fed91c3131adb19ce2ed82bee0bc47e1653fce32a63798f7b9e7"
+    },
+    {
+      "name": "IFOS_cookies_storage_auth_spec_v1.md",
+      "ref": "file://IFOS_cookies_storage_auth_spec_v1.md",
+      "hash": "sha256:f128fed5c4895619222ca81a7091895fd6190ab3644aa1600f98a2ac41e3d58a"
+    },
+    {
+      "name": "IFOS_cors_isolation_spec_v1.md",
+      "ref": "file://IFOS_cors_isolation_spec_v1.md",
+      "hash": "sha256:7ed64ff3477ee1914ab9391287c37b9fbbe81d5b3cbf3eda32a0f508c816a44a"
+    },
+    {
+      "name": "IFOS_clickjacking_iframe_spec_v1.md",
+      "ref": "file://IFOS_clickjacking_iframe_spec_v1.md",
+      "hash": "sha256:ad71472ee03d654629b8de98a30a36af3f02401f43fe5278b3e5ea49dc0251cf"
+    },
+    {
+      "name": "IFOS_mobile_webview_pitfalls_spec_v1.md",
+      "ref": "file://IFOS_mobile_webview_pitfalls_spec_v1.md",
+      "hash": "sha256:bbe7766b7cdeb00fdc1508e3a35f1d6de930ef6504d1c3c88de38b82fc34e42d"
+    },
+    {
+      "name": "IFOS_dependency_supply_chain_spec_v1.md",
+      "ref": "file://IFOS_dependency_supply_chain_spec_v1.md",
+      "hash": "sha256:2aa280aba1989640a9a4c05aab03b9211f605c9ce856a802213ea2ae5e1b2819"
+    },
+    {
+      "name": "IFOS_client_integrity_abuse_spec_v1.md",
+      "ref": "file://IFOS_client_integrity_abuse_spec_v1.md",
+      "hash": "sha256:3fc89f984c84b5a7f381b757603c081d0653f262da858019fcc466618081cd86"
+    },
+    {
+      "name": "IFOS_security_logging_audit_spec_v1.md",
+      "ref": "file://IFOS_security_logging_audit_spec_v1.md",
+      "hash": "sha256:d57e2536c437f360299c42c5a36b3ce0b4c8e376112396451daa6b567871f102"
+    },
+    {
+      "name": "IFOS_browser_security_profile_schema_v1.json",
+      "ref": "file://IFOS_browser_security_profile_schema_v1.json",
+      "hash": "sha256:de406a57432061c4155abbc1f4f6ed473c66b24cee1c974bf7773893276c55d3"
+    },
+    {
+      "name": "IFOS_headers_policy_schema_v1.json",
+      "ref": "file://IFOS_headers_policy_schema_v1.json",
+      "hash": "sha256:d5b5556cb7db610cbdf89eee697429ef7ee16a35b6cadf5e30b91b7d85916c1a"
+    },
+    {
+      "name": "IFOS_csp_policy_schema_v1.json",
+      "ref": "file://IFOS_csp_policy_schema_v1.json",
+      "hash": "sha256:007de33f3e9ba9dc5a10ebc73874ddaab478352a722940b23f5095887ab7d93b"
+    },
+    {
+      "name": "IFOS_csrf_policy_schema_v1.json",
+      "ref": "file://IFOS_csrf_policy_schema_v1.json",
+      "hash": "sha256:3a9bb02ae2082dc8390b6988dd0b9301f469c23fd825e0823dd41a3d04c4cca2"
+    },
+    {
+      "name": "IFOS_cookie_policy_schema_v1.json",
+      "ref": "file://IFOS_cookie_policy_schema_v1.json",
+      "hash": "sha256:016d68ea34cba4528f2502a38e764999245327e6fed47d11039e97a88f522935"
+    },
+    {
+      "name": "IFOS_cors_policy_schema_v1.json",
+      "ref": "file://IFOS_cors_policy_schema_v1.json",
+      "hash": "sha256:bbb215895e45ff0d88fa7f1a52d550deda480a112a120c110ec4df86547f5fed"
+    },
+    {
+      "name": "IFOS_webview_policy_schema_v1.json",
+      "ref": "file://IFOS_webview_policy_schema_v1.json",
+      "hash": "sha256:b8d1ad93ecd9b2beae5db12f8730ed304868acae978c7772c2ad42f95bb0e85d"
+    },
+    {
+      "name": "IFOS_client_integrity_policy_schema_v1.json",
+      "ref": "file://IFOS_client_integrity_policy_schema_v1.json",
+      "hash": "sha256:a1fc667689458e2eff5a3778f1ac6c31bc01620cd454214b0da4b5ce5bec63ba"
+    },
+    {
+      "name": "IFOS_security_event_schema_v1.json",
+      "ref": "file://IFOS_security_event_schema_v1.json",
+      "hash": "sha256:3ae9b1c819724f910864de85f6d2bec9fbdf5f785e549a1e05ee47526d1b66c6"
+    },
+    {
+      "name": "ifos_security_headers_snippet_v1.txt",
+      "ref": "file://ifos_security_headers_snippet_v1.txt",
+      "hash": "sha256:521a9852b5a589b33b7e17841b33595f5cdbcc56018b70692faa6f938df46948"
+    },
+    {
+      "name": "ifos_csp_header_snippet_v1.txt",
+      "ref": "file://ifos_csp_header_snippet_v1.txt",
+      "hash": "sha256:86a583af7b66c56d1135db941b9019540caa83b4e49547f48f10a50b90db04dc"
+    },
+    {
+      "name": "ifos_csrf_double_submit_snippet_v1.js",
+      "ref": "file://ifos_csrf_double_submit_snippet_v1.js",
+      "hash": "sha256:d2575bcb936b2e4d5de22f45cfe43d83fccc6669437ebccbfa4673ebd26117b5"
+    },
+    {
+      "name": "ifos_sri_example_snippet_v1.html",
+      "ref": "file://ifos_sri_example_snippet_v1.html",
+      "hash": "sha256:a8a72a7eaec3db7a9d4a3394b91242942246d28d2b5891abf7cc7a7a02241db3"
+    },
+    {
+      "name": "ifos_webview_detection_snippet_v1.js",
+      "ref": "file://ifos_webview_detection_snippet_v1.js",
+      "hash": "sha256:e96e56e74be40130989f3e87618658a0522b92a0c65b48e625a7767af41d1f46"
+    }
+  ],
+  "created_at": "2026-01-02T16:33:07Z",
+  "version": "1.0.0"
+}

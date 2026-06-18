@@ -1,0 +1,21 @@
+{
+  "pack_id": "cp_cross_domain_policy_engine_ext",
+  "name": "Cross‑Domain Compliance Policy Engine Extensions",
+  "version": "1.0.0",
+  "status": "production",
+  "layer": "ComplianceRuntime",
+  "compatibility": {
+    "ifos_min_version": "v30",
+    "required_blocks": [
+      "IFOS_00001_00400",
+      "IFOS_84801_85200",
+      "IFOS_85201_85600"
+    ]
+  },
+  "exports": [
+    "policy.evaluate",
+    "policy.enforce",
+    "policy.explain",
+    "policy.evidence_hook"
+  ]
+}

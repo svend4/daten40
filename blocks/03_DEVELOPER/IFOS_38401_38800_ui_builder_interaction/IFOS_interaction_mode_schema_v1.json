@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS InteractionMode Schema v1",
+  "type": "object",
+  "required": [
+    "mode_id",
+    "name",
+    "level",
+    "rules",
+    "version"
+  ],
+  "properties": {
+    "mode_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "enum": [
+        "manual",
+        "assisted",
+        "auto"
+      ]
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ]
+    },
+    "rules": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

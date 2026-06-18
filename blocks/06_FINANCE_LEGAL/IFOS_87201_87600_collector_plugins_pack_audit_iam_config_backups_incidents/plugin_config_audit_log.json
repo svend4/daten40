@@ -1,0 +1,12 @@
+{
+  "endpoint": "https://audit.example.com",
+  "export_path": "/exports",
+  "filters": {
+    "event_types": [
+      "access"
+    ],
+    "resource_types": [
+      "phi_record"
+    ]
+  }
+}

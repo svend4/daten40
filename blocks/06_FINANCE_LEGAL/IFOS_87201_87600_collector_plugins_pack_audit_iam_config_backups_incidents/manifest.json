@@ -1,0 +1,22 @@
+{
+  "pack_id": "cp_collector_plugins_pack_v1",
+  "name": "Collector Plugins Pack (Audit/IAM/Config/Backups/Incidents)",
+  "version": "1.0.0",
+  "status": "production",
+  "layer": "ComplianceEvidence",
+  "compatibility": {
+    "ifos_min_version": "v30",
+    "required_blocks": [
+      "IFOS_00001_00400",
+      "IFOS_86801_87200",
+      "IFOS_86401_86800"
+    ]
+  },
+  "exports": [
+    "collector.audit_log_exporter",
+    "collector.iam_exporter",
+    "collector.config_snapshotter",
+    "collector.backup_restore_test_collector",
+    "collector.incident_runbook_snapshot_exporter"
+  ]
+}

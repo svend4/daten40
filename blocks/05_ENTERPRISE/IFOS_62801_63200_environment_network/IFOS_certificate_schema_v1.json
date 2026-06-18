@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Certificate Schema v1",
+  "type": "object",
+  "required": [
+    "cert_id",
+    "domains",
+    "issuer",
+    "auto_renew",
+    "version"
+  ],
+  "properties": {
+    "cert_id": {
+      "type": "string"
+    },
+    "domains": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "issuer": {
+      "type": "string"
+    },
+    "auto_renew": {
+      "type": "boolean"
+    },
+    "valid_until": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

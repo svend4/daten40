@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS BlueprintUIForm Schema v1",
+  "type": "object",
+  "required": [
+    "form_id",
+    "blueprint_id",
+    "fields",
+    "layout",
+    "version"
+  ],
+  "properties": {
+    "form_id": {
+      "type": "string"
+    },
+    "blueprint_id": {
+      "type": "string"
+    },
+    "fields": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "param_key",
+          "widget"
+        ],
+        "properties": {
+          "param_key": {
+            "type": "string"
+          },
+          "widget": {
+            "type": "string",
+            "enum": [
+              "text",
+              "password",
+              "number",
+              "toggle",
+              "select",
+              "schedule",
+              "url",
+              "textarea"
+            ]
+          },
+          "required": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "layout": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

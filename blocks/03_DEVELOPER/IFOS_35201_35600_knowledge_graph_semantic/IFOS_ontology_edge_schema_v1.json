@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS OntologyEdge Schema v1",
+  "type": "object",
+  "required": [
+    "edge_id",
+    "src",
+    "dst",
+    "kind",
+    "version"
+  ],
+  "properties": {
+    "edge_id": {
+      "type": "string"
+    },
+    "src": {
+      "type": "string"
+    },
+    "dst": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "depends_on",
+        "requires_capability",
+        "uses_connector",
+        "produces_output",
+        "consumes_input",
+        "similar_to",
+        "replaces",
+        "conflicts_with",
+        "compliant_with"
+      ]
+    },
+    "weight": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "meta": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

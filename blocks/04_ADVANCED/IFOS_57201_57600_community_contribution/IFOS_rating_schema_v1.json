@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Rating Schema v1",
+  "type": "object",
+  "required": [
+    "rating_id",
+    "target_ref",
+    "stars",
+    "verified",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "rating_id": {
+      "type": "string"
+    },
+    "target_ref": {
+      "type": "string"
+    },
+    "stars": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "verified": {
+      "type": "boolean"
+    },
+    "categories": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer"
+      }
+    },
+    "comment": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

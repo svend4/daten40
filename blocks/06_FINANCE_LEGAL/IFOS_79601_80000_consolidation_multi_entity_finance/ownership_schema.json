@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "parent_entity",
+    "child_entity",
+    "ownership_pct"
+  ],
+  "properties": {
+    "parent_entity": {
+      "type": "string"
+    },
+    "child_entity": {
+      "type": "string"
+    },
+    "ownership_pct": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    }
+  }
+}

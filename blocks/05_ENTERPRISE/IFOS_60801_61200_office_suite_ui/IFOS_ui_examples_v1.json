@@ -1,0 +1,38 @@
+{
+  "ui_view": {
+    "view_id": "view.v.gih2antf4zjy",
+    "name": "Registry: Connectors",
+    "type": "registry",
+    "widgets": [
+      "widget.table.connectors",
+      "widget.inspector"
+    ],
+    "version": "1.0.0"
+  },
+  "ui_widget": {
+    "widget_id": "wgt.w.zvri43kzbmt2",
+    "name": "Connectors Table",
+    "kind": "table",
+    "props": {
+      "columns": [
+        "name",
+        "trust_tier",
+        "docs_score",
+        "license",
+        "price_plan"
+      ],
+      "filters": [
+        "category",
+        "connector"
+      ]
+    },
+    "version": "1.0.0"
+  },
+  "ui_shortcut": {
+    "shortcut_id": "sh.s.5zbh5euveebt",
+    "keys": "Ctrl+K",
+    "action": "open_command_palette",
+    "scope": "global",
+    "version": "1.0.0"
+  }
+}

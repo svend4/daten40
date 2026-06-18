@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS BlueprintTestSuite Schema v1",
+  "type": "object",
+  "required": [
+    "suite_id",
+    "blueprint_id",
+    "tests",
+    "version"
+  ],
+  "properties": {
+    "suite_id": {
+      "type": "string"
+    },
+    "blueprint_id": {
+      "type": "string"
+    },
+    "tests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

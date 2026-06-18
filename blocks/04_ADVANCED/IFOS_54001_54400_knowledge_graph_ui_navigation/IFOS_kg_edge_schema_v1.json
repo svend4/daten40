@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Knowledge Graph Edge Schema v1",
+  "type": "object",
+  "required": [
+    "edge_id",
+    "from",
+    "to",
+    "kind",
+    "directed",
+    "evidence",
+    "confidence",
+    "version"
+  ],
+  "properties": {
+    "edge_id": {
+      "type": "string"
+    },
+    "from": {
+      "type": "string"
+    },
+    "to": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string"
+    },
+    "directed": {
+      "type": "boolean"
+    },
+    "evidence": {
+      "type": "string",
+      "enum": [
+        "manifest",
+        "runtime_log",
+        "user_link",
+        "ai_inferred"
+      ]
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

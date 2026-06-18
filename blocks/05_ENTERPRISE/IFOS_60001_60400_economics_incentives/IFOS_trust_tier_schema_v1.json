@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Trust Tier Schema v1",
+  "type": "object",
+  "required": [
+    "tier_id",
+    "name",
+    "requirements",
+    "benefits",
+    "version"
+  ],
+  "properties": {
+    "tier_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "benefits": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

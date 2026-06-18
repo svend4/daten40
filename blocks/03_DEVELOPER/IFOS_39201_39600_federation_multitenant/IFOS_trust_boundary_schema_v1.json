@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS TrustBoundary Schema v1",
+  "type": "object",
+  "required": [
+    "boundary_id",
+    "from_tenant",
+    "to_tenant",
+    "capabilities",
+    "constraints",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "boundary_id": {
+      "type": "string"
+    },
+    "from_tenant": {
+      "type": "string"
+    },
+    "to_tenant": {
+      "type": "string"
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "read",
+          "run",
+          "install",
+          "export",
+          "share"
+        ]
+      }
+    },
+    "constraints": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "disabled"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

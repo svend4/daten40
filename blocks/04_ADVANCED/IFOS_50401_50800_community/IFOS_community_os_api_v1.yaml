@@ -1,0 +1,24 @@
+openapi: 3.0.3
+info:
+  title: IFOS Community OS API
+  version: "1.0.0"
+servers:
+  - url: https://community.ifos.local/v1
+tags:
+  - name: Reviews
+  - name: Ratings
+  - name: Reputation
+  - name: Moderation
+  - name: Curation
+paths:
+  /reviews:
+    post: {tags:[Reviews], summary: Create review, responses: {"200": {description: OK}}}
+    get: {tags:[Reviews], summary: List reviews, responses: {"200": {description: OK}}}
+  /ratings/recompute:
+    post: {tags:[Ratings], summary: Recompute ranking for entity, responses: {"200": {description: OK}}}
+  /reputation/update:
+    post: {tags:[Reputation], summary: Update reputation signals, responses: {"200": {description: OK}}}
+  /moderation/cases:
+    post: {tags:[Moderation], summary: Open moderation case, responses: {"200": {description: OK}}}
+  /curation/picks:
+    post: {tags:[Curation], summary: Create editorial pick, responses: {"200": {description: OK}}}

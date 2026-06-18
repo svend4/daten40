@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS BackupPlan Schema v1",
+  "type": "object",
+  "required": [
+    "backup_id",
+    "scope",
+    "destinations",
+    "frequency",
+    "restore_test",
+    "version"
+  ],
+  "properties": {
+    "backup_id": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string"
+    },
+    "destinations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "frequency": {
+      "type": "string"
+    },
+    "restore_test": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

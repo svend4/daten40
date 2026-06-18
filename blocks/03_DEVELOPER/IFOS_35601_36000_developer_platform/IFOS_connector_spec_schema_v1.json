@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ConnectorSpec Schema v1",
+  "type": "object",
+  "required": [
+    "connector_id",
+    "protocol",
+    "auth",
+    "endpoints",
+    "rate_limits",
+    "version"
+  ],
+  "properties": {
+    "connector_id": {
+      "type": "string"
+    },
+    "protocol": {
+      "type": "string",
+      "enum": [
+        "http",
+        "grpc",
+        "smtp",
+        "imap",
+        "webhook"
+      ]
+    },
+    "auth": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "endpoints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rate_limits": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "timeouts": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

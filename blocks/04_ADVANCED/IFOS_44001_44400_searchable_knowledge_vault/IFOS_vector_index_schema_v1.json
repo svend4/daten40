@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS VectorIndex Schema v1",
+  "type": "object",
+  "required": [
+    "index_id",
+    "engine",
+    "collection",
+    "schema",
+    "version"
+  ],
+  "properties": {
+    "index_id": {
+      "type": "string"
+    },
+    "engine": {
+      "type": "string",
+      "enum": [
+        "qdrant",
+        "faiss",
+        "pgvector",
+        "weaviate",
+        "other"
+      ]
+    },
+    "collection": {
+      "type": "string"
+    },
+    "schema": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

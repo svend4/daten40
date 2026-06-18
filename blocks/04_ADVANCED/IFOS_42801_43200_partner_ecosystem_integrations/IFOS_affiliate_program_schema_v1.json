@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS AffiliateProgram Schema v1",
+  "type": "object",
+  "required": [
+    "program_id",
+    "partner_id",
+    "model",
+    "terms",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "program_id": {
+      "type": "string"
+    },
+    "partner_id": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string",
+      "enum": [
+        "CPS",
+        "CPA",
+        "RevShare",
+        "Hybrid"
+      ]
+    },
+    "terms": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "attribution": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "active",
+        "paused",
+        "ended"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+openapi: 3.0.3
+info:
+  title: IFOS UI Console OS API
+  version: "1.0.0"
+servers:
+  - url: https://console.ifos.local/v1
+tags:
+  - name: Dashboards
+  - name: Runs
+  - name: Approvals
+  - name: Conflicts
+  - name: Alerts
+  - name: Budgets
+  - name: Audit
+paths:
+  /dashboards/home:
+    get: {tags:[Dashboards], summary: Get home dashboard, responses: {"200": {description: OK}}}
+  /runs:
+    get: {tags:[Runs], summary: List runs, responses: {"200": {description: OK}}}
+  /approvals:
+    get: {tags:[Approvals], summary: List approvals, responses: {"200": {description: OK}}}
+  /conflicts:
+    get: {tags:[Conflicts], summary: List conflicts, responses: {"200": {description: OK}}}
+  /alerts:
+    get: {tags:[Alerts], summary: List alerts, responses: {"200": {description: OK}}}
+  /budgets:
+    get: {tags:[Budgets], summary: Budgets and spend, responses: {"200": {description: OK}}}
+  /audit:
+    get: {tags:[Audit], summary: Audit events, responses: {"200": {description: OK}}}

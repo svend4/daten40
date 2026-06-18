@@ -1,0 +1,24 @@
+{
+  "apply_to": ">= v30",
+  "delta": {
+    "section": "COMPLIANCE_EVIDENCE",
+    "add": [
+      {
+        "id_range": "IFOS_86401_86800",
+        "name": "Compliance Evidence Storage + Evidence Registry Service",
+        "slug": "compliance_evidence_storage_registry_service",
+        "type": "Service",
+        "layer": "ComplianceEvidence",
+        "status": "Production",
+        "dependencies": [
+          "IFOS_85601_86000",
+          "IFOS_86001_86400"
+        ],
+        "artifacts": [
+          "IFOS_86401_86800_compliance_evidence_storage_registry_service_os_pack.zip"
+        ],
+        "notes": "Append-only registry + CAS storage + verification + audit pack exports"
+      }
+    ]
+  }
+}

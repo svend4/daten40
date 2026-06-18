@@ -1,0 +1,423 @@
+{
+  "card": {
+    "card_id": "card.c.ajpeovvw0zld",
+    "type": "integration",
+    "title": "Make.com → Google Sheets: append row",
+    "what_it_does": "Добавляет строку в таблицу по входным данным (schema: ifos.row).",
+    "io": {
+      "inputs": [
+        "ifos.row"
+      ],
+      "outputs": [
+        "ifos.result"
+      ]
+    },
+    "requirements": {
+      "auth": [
+        "oauth"
+      ],
+      "rate_limits": "depends",
+      "price": "subscription"
+    },
+    "trust": {
+      "source": "verified_partner",
+      "score": 0.82
+    },
+    "actions": [
+      {
+        "type": "install"
+      },
+      {
+        "type": "run"
+      },
+      {
+        "type": "compare"
+      },
+      {
+        "type": "save"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "product": {
+    "product_id": "prod.p.2b2i4vchklua",
+    "card_id": "card.*",
+    "schema_links": {
+      "input": "ifos.row@1.x",
+      "output": "ifos.result@1.x"
+    },
+    "docs": {
+      "quickstart": "file://docs/quickstart.md"
+    },
+    "versions": [
+      {
+        "v": "1.0.0",
+        "status": "active"
+      }
+    ],
+    "licenses": {
+      "type": "commercial",
+      "terms": "provider_terms"
+    },
+    "constraints": {
+      "pii": "allowed_with_redaction"
+    },
+    "status": "active",
+    "version": "1.0.0"
+  },
+  "vitrine": {
+    "vitrine_id": "vit.v.odxsjnfa2kaw",
+    "title": "Топ макросы для офиса (одной кнопкой)",
+    "description": "Подборка автоматизаций: письма, таблицы, отчёты, бэкапы.",
+    "rules": {
+      "filters": {
+        "category": "automation",
+        "lang": "ru"
+      },
+      "sort": "trust:desc"
+    },
+    "cards": [
+      "card.*"
+    ],
+    "layout": {
+      "type": "grid",
+      "columns": 2
+    },
+    "actions": [
+      {
+        "type": "export_pdf"
+      },
+      {
+        "type": "install_bundle"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "comparison": {
+    "comparison_id": "cmp.m.o59ulhueasse",
+    "title": "Сравнение: формы WordPress",
+    "items": [
+      "prod.wpforms",
+      "prod.gravityforms",
+      "prod.contactform7"
+    ],
+    "criteria": [
+      {
+        "name": "price",
+        "type": "number"
+      },
+      {
+        "name": "spam_protection",
+        "type": "bool"
+      },
+      {
+        "name": "integrations",
+        "type": "number"
+      }
+    ],
+    "matrix": [
+      {
+        "item": "prod.wpforms",
+        "price": 79,
+        "spam_protection": true,
+        "integrations": 50
+      },
+      {
+        "item": "prod.gravityforms",
+        "price": 59,
+        "spam_protection": true,
+        "integrations": 40
+      },
+      {
+        "item": "prod.contactform7",
+        "price": 0,
+        "spam_protection": false,
+        "integrations": 10
+      }
+    ],
+    "recommendations": [
+      {
+        "persona": "SMB",
+        "pick": "prod.wpforms",
+        "why": "баланс простоты и интеграций"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "collection": {
+    "collection_id": "col.l.0bsb4bic277v",
+    "title": "Мои лучшие интеграции",
+    "owner": {
+      "user_id": "u.123",
+      "team": "personal"
+    },
+    "items": [
+      "prod.*",
+      "prod.*"
+    ],
+    "visibility": "private",
+    "version": "1.0.0"
+  },
+  "bundle": {
+    "bundle_id": "bun.b.wl9u7h7b7fdh",
+    "title": "Офис: отчёт за неделю (one-click)",
+    "items": [
+      "prod.make_sheets_append",
+      "prod.make_gmail_send",
+      "prod.export_pdf"
+    ],
+    "dependencies": [
+      {
+        "type": "secret",
+        "name": "GOOGLE_OAUTH"
+      },
+      {
+        "type": "runtime",
+        "name": "ifos-runner>=1.0"
+      }
+    ],
+    "recipes": [
+      "rec.*"
+    ],
+    "artifacts": [
+      {
+        "type": "template",
+        "ref": "file://templates/report.md"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "macro": {
+    "macro_id": "mac.a.k4ogpiizuohu",
+    "title": "Собрать новости → сравнить → сделать витрину",
+    "inputs": [
+      {
+        "name": "source_ids",
+        "type": "array"
+      },
+      {
+        "name": "topic",
+        "type": "string"
+      }
+    ],
+    "steps": [
+      {
+        "op": "fetch",
+        "params": {
+          "sources": "${source_ids}"
+        }
+      },
+      {
+        "op": "normalize",
+        "params": {}
+      },
+      {
+        "op": "cluster",
+        "params": {
+          "topic": "${topic}"
+        }
+      },
+      {
+        "op": "build_vitrine",
+        "params": {
+          "layout": "grid"
+        }
+      }
+    ],
+    "outputs": [
+      {
+        "name": "vitrine_id",
+        "type": "string"
+      }
+    ],
+    "safety": {
+      "requires_review": true,
+      "sandbox_first": true
+    },
+    "version": "1.0.0"
+  },
+  "workflow_template": {
+    "template_id": "tpl.t.5z57ghbcstx0",
+    "engine": "make",
+    "title": "CRM → Invoice → Send email",
+    "io": {
+      "inputs": [
+        "ifos.lead"
+      ],
+      "outputs": [
+        "ifos.invoice"
+      ]
+    },
+    "nodes": [
+      {
+        "id": "n1",
+        "type": "crm.get_lead"
+      },
+      {
+        "id": "n2",
+        "type": "billing.create_invoice"
+      }
+    ],
+    "edges": [
+      {
+        "from": "n1",
+        "to": "n2"
+      }
+    ],
+    "requirements": {
+      "auth": [
+        "crm_api_key",
+        "billing_oauth"
+      ]
+    },
+    "version": "1.0.0"
+  },
+  "install_recipe": {
+    "recipe_id": "rec.r.tgmb15v5yo0q",
+    "title": "Подключить Google OAuth и проверить доступ",
+    "steps": [
+      {
+        "do": "open_oauth_flow"
+      },
+      {
+        "do": "store_secret",
+        "name": "GOOGLE_OAUTH"
+      },
+      {
+        "do": "test_call",
+        "endpoint": "sheets.list"
+      }
+    ],
+    "checks": [
+      {
+        "name": "health",
+        "expect": "200"
+      }
+    ],
+    "rollback": [
+      {
+        "do": "delete_secret",
+        "name": "GOOGLE_OAUTH"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "one_click": {
+    "run_id": "run.u.re8bygu3x2g0",
+    "bundle_id": "bun.*",
+    "target": "cloud",
+    "params": {
+      "week": "2026-W01"
+    },
+    "sandbox": true,
+    "status": "queued",
+    "ts": "2026-01-04T05:25:00Z",
+    "logs_ref": null,
+    "version": "1.0.0"
+  },
+  "rating_model": {
+    "model_id": "rm.r.5heszkz6tx5b",
+    "signals": [
+      {
+        "name": "verified_run",
+        "weight": 0.35
+      },
+      {
+        "name": "doc_quality",
+        "weight": 0.15
+      },
+      {
+        "name": "crash_rate",
+        "weight": -0.25
+      },
+      {
+        "name": "user_rating",
+        "weight": 0.25
+      }
+    ],
+    "anti_fraud": {
+      "requires_verified": true,
+      "rate_limit_reviews": true,
+      "anomaly_detection": true
+    },
+    "weights": {
+      "verified_run": 0.35,
+      "doc_quality": 0.15,
+      "crash_rate": -0.25,
+      "user_rating": 0.25
+    },
+    "version": "1.0.0"
+  },
+  "review_summary": {
+    "summary_id": "rs.s.91d02c7tixjz",
+    "item_id": "prod.make_sheets_append",
+    "pros": [
+      "быстро настраивается",
+      "работает стабильно"
+    ],
+    "cons": [
+      "мало примеров для сложных случаев"
+    ],
+    "facts": [
+      {
+        "k": "avg_setup_time_min",
+        "v": 12
+      },
+      {
+        "k": "verified_runs_30d",
+        "v": 340
+      }
+    ],
+    "confidence": 0.74,
+    "version": "1.0.0"
+  },
+  "landing": {
+    "landing_id": "lp.p.2ttjrzudmxmd",
+    "title": "Офис одной кнопкой: недельный отчёт",
+    "blocks": [
+      {
+        "type": "hero",
+        "text": "Собери отчёт за минуту"
+      },
+      {
+        "type": "steps",
+        "items": [
+          "Подключи Google",
+          "Выбери период",
+          "Нажми Run"
+        ]
+      }
+    ],
+    "cta": {
+      "primary": "Run one-click",
+      "bundle_id": "bun.*"
+    },
+    "seo": {
+      "slug": "weekly-report-oneclick",
+      "lang": "ru"
+    },
+    "version": "1.0.0"
+  },
+  "publish_job": {
+    "publish_id": "pub.p.37hhcp3e2s58",
+    "targets": [
+      {
+        "type": "web",
+        "path": "/vitrines/vit.*"
+      },
+      {
+        "type": "zip",
+        "path": "/downloads/bun.*.zip"
+      }
+    ],
+    "inputs": {
+      "vitrine_id": "vit.*",
+      "bundle_id": "bun.*",
+      "landing_id": "lp.*"
+    },
+    "status": "queued",
+    "ts": "2026-01-04T05:25:00Z",
+    "outputs": null,
+    "version": "1.0.0"
+  }
+}

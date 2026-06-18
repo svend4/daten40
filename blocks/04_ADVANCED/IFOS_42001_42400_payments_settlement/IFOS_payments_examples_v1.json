@@ -1,0 +1,188 @@
+{
+  "product_price": {
+    "price_id": "price.p.m10coyk3a7qj",
+    "product": {
+      "id": "ifos.marketplace_pro",
+      "name": "Marketplace Pro",
+      "tier": "pro"
+    },
+    "currency": "EUR",
+    "region": "EU",
+    "model": "hybrid",
+    "fixed_amount": 19.0,
+    "usage": {
+      "unit": "run",
+      "rate": 0.002,
+      "free_units": 5000
+    },
+    "limits": {
+      "max_runs_per_day": 20000
+    },
+    "discounts": [
+      {
+        "type": "coupon",
+        "code": "WELCOME10",
+        "percent": 10
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "quote": {
+    "quote_id": "q.q.9s2x343tqg23",
+    "tenant_id": "ten.t.qrsd6rf6mxyd",
+    "items": [
+      {
+        "sku": "ifos.marketplace_pro",
+        "qty": 1
+      },
+      {
+        "sku": "addon.audit_pack",
+        "qty": 1
+      }
+    ],
+    "amounts": {
+      "subtotal": 19.0,
+      "tax": 3.61,
+      "total": 22.61
+    },
+    "status": "sent",
+    "expires_at": "2026-01-04T01:20:00Z",
+    "ts": "2026-01-04T01:20:00Z",
+    "version": "1.0.0"
+  },
+  "invoice": {
+    "invoice_id": "inv.i.73wkz9zj77ot",
+    "number": "2026-000123",
+    "seller": {
+      "name": "IFOS GmbH",
+      "vat_id": "DE123456789"
+    },
+    "buyer": {
+      "name": "ACME GmbH",
+      "vat_id": "DE987654321"
+    },
+    "items": [
+      {
+        "desc": "Marketplace Pro",
+        "qty": 1,
+        "unit_price": 19.0
+      }
+    ],
+    "totals": {
+      "subtotal": 19.0,
+      "tax": 3.61,
+      "total": 22.61
+    },
+    "tax": {
+      "type": "VAT",
+      "rate": 0.19
+    },
+    "status": "issued",
+    "issued_at": "2026-01-04T01:20:00Z",
+    "due_at": "2026-01-04T01:20:00Z",
+    "pdf_ref": "file://invoices/2026-000123.pdf",
+    "version": "1.0.0"
+  },
+  "payment_intent": {
+    "intent_id": "pi.p.ihck0jyzyhvp",
+    "invoice_id": "inv.i.uxr462jt8hi3",
+    "amount": 22.61,
+    "currency": "EUR",
+    "status": "created",
+    "processor": "stripe",
+    "processor_ref": null,
+    "idempotency_key": "idem.k.49iiykf5r9tx",
+    "ts": "2026-01-04T01:20:00Z",
+    "version": "1.0.0"
+  },
+  "receipt": {
+    "receipt_id": "rc.r.lp97peqwfu0g",
+    "invoice_id": "inv.i.d2gyw48qaqiq",
+    "intent_id": "pi.p.65thgfhdlvum",
+    "paid_at": "2026-01-04T01:20:00Z",
+    "amount": 22.61,
+    "currency": "EUR",
+    "processor_ref": "ch_123",
+    "version": "1.0.0"
+  },
+  "vendor_ledger": {
+    "vendor_id": "ven.v.ekndq4ztq9tg",
+    "currency": "EUR",
+    "entries": [
+      {
+        "ts": "2026-01-04T01:20:00Z",
+        "type": "sale_share",
+        "amount": 5.0,
+        "ref": "tx.1"
+      },
+      {
+        "ts": "2026-01-04T01:20:00Z",
+        "type": "fee",
+        "amount": -0.5,
+        "ref": "fee.1"
+      }
+    ],
+    "balance": 4.5,
+    "available": 3.5,
+    "reserves": 1.0,
+    "version": "1.0.0"
+  },
+  "payout": {
+    "payout_id": "po.p.gqonz1k75m3h",
+    "vendor_id": "ven.v.spm32z546iuy",
+    "amount": 3.5,
+    "currency": "EUR",
+    "status": "queued",
+    "period": {
+      "from": "2025-12-01",
+      "to": "2025-12-31"
+    },
+    "method": "SEPA",
+    "tx_refs": [
+      "tx.1",
+      "fee.1"
+    ],
+    "ts": "2026-01-04T01:20:00Z",
+    "version": "1.0.0"
+  },
+  "refund": {
+    "refund_id": "rf.r.s7oki6262v7x",
+    "intent_id": "pi.p.ssxktkbovaw9",
+    "invoice_id": "inv.i.92mde7h0rjo9",
+    "amount": 5.0,
+    "currency": "EUR",
+    "reason": "service_issue",
+    "status": "requested",
+    "ts": "2026-01-04T01:20:00Z",
+    "version": "1.0.0"
+  },
+  "chargeback": {
+    "chargeback_id": "cb.c.cf1uyh7ujosr",
+    "intent_id": "pi.p.6n7norsim87h",
+    "status": "opened",
+    "reason": "fraud",
+    "evidence_refs": [
+      "pack.*",
+      "invoice.*",
+      "logs.*"
+    ],
+    "opened_at": "2026-01-04T01:20:00Z",
+    "version": "1.0.0"
+  },
+  "tax_vat": {
+    "tax_id": "tax.t.ibuin5i83r5e",
+    "zone": "EU",
+    "rules": [
+      {
+        "country": "DE",
+        "vat_rate": 0.19,
+        "reverse_charge": true
+      }
+    ],
+    "provider_hook": {
+      "name": "tax_provider_stub",
+      "endpoint": "https://tax.local/calc"
+    },
+    "version": "1.0.0"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Trial Token Schema v1",
+  "type": "object",
+  "required": [
+    "token_id",
+    "scopes",
+    "ttl_seconds",
+    "version"
+  ],
+  "properties": {
+    "token_id": {
+      "type": "string"
+    },
+    "scopes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ttl_seconds": {
+      "type": "integer"
+    },
+    "max_cost_units": {
+      "type": "integer"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

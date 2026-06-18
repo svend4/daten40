@@ -1,0 +1,28 @@
+{
+  "contract_id": "evidence_freshness_status.v1",
+  "fields": {
+    "environment": "string",
+    "policy_pack": "string",
+    "control": "string",
+    "evidence_id": "string",
+    "scope_tags": "object",
+    "status": "string",
+    "cadence": "string",
+    "last_collected_at": "datetime",
+    "age_seconds": "integer",
+    "expires_at": "datetime",
+    "artifact_sha256": "string",
+    "artifact_uri": "string",
+    "registry_event_id": "string",
+    "verification": {
+      "hash_ok": "boolean",
+      "signature_ok": "boolean",
+      "attestation_ok": "boolean"
+    },
+    "computed_at": "datetime",
+    "details": "object"
+  },
+  "privacy_level": "internal",
+  "retention_policy": "security_default",
+  "audit": "required"
+}

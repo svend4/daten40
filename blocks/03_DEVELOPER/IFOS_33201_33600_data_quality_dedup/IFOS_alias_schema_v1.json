@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Alias Schema v1",
+  "type": "object",
+  "required": [
+    "alias_id",
+    "canonical_id",
+    "alias",
+    "kind",
+    "version"
+  ],
+  "properties": {
+    "alias_id": {
+      "type": "string"
+    },
+    "canonical_id": {
+      "type": "string"
+    },
+    "alias": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "name",
+        "url",
+        "package",
+        "slug",
+        "legacy_id"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

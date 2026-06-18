@@ -1,0 +1,152 @@
+{
+  "artifact_set": "IFOS_62801_63200",
+  "entries": [
+    {
+      "name": "IFOS_environment_network_os_62801_63200_v1.md",
+      "ref": "file://IFOS_environment_network_os_62801_63200_v1.md",
+      "hash": "sha256:f7ace13bcc7da05718aaae7959df2bfd16742a3f2ca101c92b9f3ecad46c992f"
+    },
+    {
+      "name": "IFOS_network_control_plane_api_v1.yaml",
+      "ref": "file://IFOS_network_control_plane_api_v1.yaml",
+      "hash": "sha256:852a727e3be0a04f2e52289dc101987d3fd2b5db89f61838239b4dd40b96d790"
+    },
+    {
+      "name": "IFOS_environment_network_examples_62801_63200_v1.json",
+      "ref": "file://IFOS_environment_network_examples_62801_63200_v1.json",
+      "hash": "sha256:bf9312fd199d22aaeb2acc3b30cf8acb7da44f4f096e1974ec9eaa979cfb62c4"
+    },
+    {
+      "name": "IFOS_env_profiles_seed_62801_63200_v1.csv",
+      "ref": "file://IFOS_env_profiles_seed_62801_63200_v1.csv",
+      "hash": "sha256:a79b74f8595de9e0bb768079a52e2a2b3af76848cdc8985003837506a3ae36a1"
+    },
+    {
+      "name": "IFOS_dns_records_seed_62801_63200_v1.csv",
+      "ref": "file://IFOS_dns_records_seed_62801_63200_v1.csv",
+      "hash": "sha256:455ff8cb4941c2b5492097b6a2e242dd06f36a010a2140ee367c87bffef87a71"
+    },
+    {
+      "name": "IFOS_egress_policies_seed_62801_63200_v1.csv",
+      "ref": "file://IFOS_egress_policies_seed_62801_63200_v1.csv",
+      "hash": "sha256:c78f3f06f5d333abfa5ca812bebab50646f72d39270db1f0d4c0931e03b16496"
+    },
+    {
+      "name": "IFOS_private_networks_services_seed_62801_63200_v1.csv",
+      "ref": "file://IFOS_private_networks_services_seed_62801_63200_v1.csv",
+      "hash": "sha256:e5fe57f2598b68c219e9e39d4bcae860f9153a7892d0d9e1f162c97aedfdb1be"
+    },
+    {
+      "name": "IFOS_gateway_routes_seed_62801_63200_v1.csv",
+      "ref": "file://IFOS_gateway_routes_seed_62801_63200_v1.csv",
+      "hash": "sha256:2d28772585d4b7650f75d82f694f9805e29ea2c09ccc27bc69f92fa6f148cf8b"
+    },
+    {
+      "name": "IFOS_network_debug_playbook_seed_62801_63200_v1.csv",
+      "ref": "file://IFOS_network_debug_playbook_seed_62801_63200_v1.csv",
+      "hash": "sha256:47112a8aab0a0e2a4ff65ac6ec22798a583fa35c0cffe40ed9dfba7c0ad3ffc6"
+    },
+    {
+      "name": "IFOS_environment_model_spec_v1.md",
+      "ref": "file://IFOS_environment_model_spec_v1.md",
+      "hash": "sha256:2a11bd62047adba3fe77fdd341f1c8dbb45168c4d8f19615f6b7a923f4d41d2f"
+    },
+    {
+      "name": "IFOS_dns_certificates_spec_v1.md",
+      "ref": "file://IFOS_dns_certificates_spec_v1.md",
+      "hash": "sha256:a5ce07a342cef616db3e3e5b5d24c3c101030d8f59e5f64f97bd03c5b29edc71"
+    },
+    {
+      "name": "IFOS_egress_nat_allowlist_spec_v1.md",
+      "ref": "file://IFOS_egress_nat_allowlist_spec_v1.md",
+      "hash": "sha256:56e8f1664b81beca2b2811e4f700123a3088db243b0c9ed9ae3118cf7bcc5398"
+    },
+    {
+      "name": "IFOS_vpc_private_network_service_discovery_spec_v1.md",
+      "ref": "file://IFOS_vpc_private_network_service_discovery_spec_v1.md",
+      "hash": "sha256:ac92514e6642e71b6afcb890410759267aa4664f368b38d9e288263b8f7451d1"
+    },
+    {
+      "name": "IFOS_env_secrets_injection_spec_v1.md",
+      "ref": "file://IFOS_env_secrets_injection_spec_v1.md",
+      "hash": "sha256:84df3b881e62ddb758cfb53de7f7cfd2d4a0c4e33937ad3491bd5a70de5b1cac"
+    },
+    {
+      "name": "IFOS_api_gateway_reverse_proxy_spec_v1.md",
+      "ref": "file://IFOS_api_gateway_reverse_proxy_spec_v1.md",
+      "hash": "sha256:1d6a12e1421e3ccdb39e97406af615f99615994ee988e44a4e8d077ce5ebdbac"
+    },
+    {
+      "name": "IFOS_network_observability_debug_spec_v1.md",
+      "ref": "file://IFOS_network_observability_debug_spec_v1.md",
+      "hash": "sha256:3b5880bf68455380e6c077621bcec0e83176733c2166c323745112131256a7f7"
+    },
+    {
+      "name": "IFOS_regions_latency_data_residency_spec_v1.md",
+      "ref": "file://IFOS_regions_latency_data_residency_spec_v1.md",
+      "hash": "sha256:1059732e1a0f4351140410fc0eaebad925506ab43d291e74256805a4d61d8968"
+    },
+    {
+      "name": "IFOS_zero_trust_access_spec_v1.md",
+      "ref": "file://IFOS_zero_trust_access_spec_v1.md",
+      "hash": "sha256:3a4f09d926ecfdee3117150be7258bceda712528b0defd1c3d376b039142cf3c"
+    },
+    {
+      "name": "IFOS_env_profile_schema_v1.json",
+      "ref": "file://IFOS_env_profile_schema_v1.json",
+      "hash": "sha256:74f07f964b4f70b017e7fb514026396c923855fc50b4902ceebcf97656a86afa"
+    },
+    {
+      "name": "IFOS_network_policy_schema_v1.json",
+      "ref": "file://IFOS_network_policy_schema_v1.json",
+      "hash": "sha256:978ba87d8dbe6f87b3afdbdadc3c07e8a204c34dd241398243bef938aa3bd7d5"
+    },
+    {
+      "name": "IFOS_dns_record_schema_v1.json",
+      "ref": "file://IFOS_dns_record_schema_v1.json",
+      "hash": "sha256:b96d99622bb14b5d5923280f305ff8d8cb63d376f464fcb2069b2c0cdfceafe4"
+    },
+    {
+      "name": "IFOS_certificate_schema_v1.json",
+      "ref": "file://IFOS_certificate_schema_v1.json",
+      "hash": "sha256:064de57e5a7706f90c315503cd5ccdb6dd22a9d779294489db89107df372f211"
+    },
+    {
+      "name": "IFOS_egress_policy_schema_v1.json",
+      "ref": "file://IFOS_egress_policy_schema_v1.json",
+      "hash": "sha256:b06dcc9e104e9b102e650dd59ecbb46ae000ae1c52bc1554dc66feb6a3e2ce31"
+    },
+    {
+      "name": "IFOS_service_discovery_schema_v1.json",
+      "ref": "file://IFOS_service_discovery_schema_v1.json",
+      "hash": "sha256:07cd85c860b400d32b3c359f431a14d701cabe85c06d540450a4610cc0869abd"
+    },
+    {
+      "name": "IFOS_gateway_route_schema_v1.json",
+      "ref": "file://IFOS_gateway_route_schema_v1.json",
+      "hash": "sha256:4db761d3edfadbce7b75f304af37390f25a6be0b29210940347db60ec5025623"
+    },
+    {
+      "name": "IFOS_network_trace_schema_v1.json",
+      "ref": "file://IFOS_network_trace_schema_v1.json",
+      "hash": "sha256:93a05ca9de648a6f9843c556edccc1d2cad40a39010a9129e8759b620e0c8e40"
+    },
+    {
+      "name": "ifos_dns_check_stub_v1.py",
+      "ref": "file://ifos_dns_check_stub_v1.py",
+      "hash": "sha256:6938523608c62e87788b1e54ac7525a0a5e49a6dd040def324175e38d5880f8e"
+    },
+    {
+      "name": "ifos_egress_check_stub_v1.py",
+      "ref": "file://ifos_egress_check_stub_v1.py",
+      "hash": "sha256:2b7040eafc68da764bc2c6326c2e6f01ef3c9ef02a7b0052611d2d63f21d979b"
+    },
+    {
+      "name": "ifos_trace_id_middleware_snippets_v1.py",
+      "ref": "file://ifos_trace_id_middleware_snippets_v1.py",
+      "hash": "sha256:478ff44ffbf35f9fe4cb872b14514474d45ea3eb12a24f7816ed368037d4a820"
+    }
+  ],
+  "created_at": "2026-01-02T16:12:15Z",
+  "version": "1.0.0"
+}

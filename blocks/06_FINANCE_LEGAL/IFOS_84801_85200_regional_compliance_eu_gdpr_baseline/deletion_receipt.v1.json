@@ -1,0 +1,12 @@
+{
+  "contract_id": "deletion_receipt.v1",
+  "fields": {
+    "receipt_id": "string",
+    "subject_id": "string",
+    "deleted_systems": "array[string]",
+    "completed_at": "datetime"
+  },
+  "privacy_level": "confidential",
+  "retention_policy": "personal_data_default",
+  "audit": "required"
+}

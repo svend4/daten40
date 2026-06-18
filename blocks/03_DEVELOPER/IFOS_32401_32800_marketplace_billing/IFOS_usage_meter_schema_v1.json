@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UsageMeter Schema v1",
+  "type": "object",
+  "required": [
+    "meter_id",
+    "name",
+    "unit",
+    "price_per_unit",
+    "currency",
+    "granularity",
+    "version"
+  ],
+  "properties": {
+    "meter_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "unit": {
+      "type": "string",
+      "enum": [
+        "api_call",
+        "task_run",
+        "minute",
+        "gb_month",
+        "message",
+        "email",
+        "request"
+      ]
+    },
+    "price_per_unit": {
+      "type": "number",
+      "minimum": 0
+    },
+    "currency": {
+      "type": "string"
+    },
+    "granularity": {
+      "type": "string",
+      "enum": [
+        "event",
+        "hour",
+        "day",
+        "month"
+      ]
+    },
+    "free_allowance": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

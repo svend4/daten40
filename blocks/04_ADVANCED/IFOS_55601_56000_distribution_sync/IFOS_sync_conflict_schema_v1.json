@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Sync Conflict Schema v1",
+  "type": "object",
+  "required": [
+    "conflict_id",
+    "object_ref",
+    "type",
+    "strategy",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "conflict_id": {
+      "type": "string"
+    },
+    "object_ref": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "metadata",
+        "document",
+        "bundle",
+        "policy"
+      ]
+    },
+    "strategy": {
+      "type": "string",
+      "enum": [
+        "lww",
+        "three_way_merge",
+        "fork_reconcile",
+        "require_approval"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "resolved"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "artifact_set": "IFOS_56801_57200",
+  "entries": [
+    {
+      "name": "IFOS_learning_certification_os_56801_57200_v1.md",
+      "ref": "file://IFOS_learning_certification_os_56801_57200_v1.md",
+      "hash": "sha256:9036237e139419366adeb5478a1d0d08baeee64c5645ce20b393d37797a30c0a"
+    },
+    {
+      "name": "IFOS_learning_certification_api_v1.yaml",
+      "ref": "file://IFOS_learning_certification_api_v1.yaml",
+      "hash": "sha256:1a1ab8141617fefc883bce52eadc623adb39afcb5781a13120dd42cd7cd044d9"
+    },
+    {
+      "name": "IFOS_learning_certification_examples_v1.json",
+      "ref": "file://IFOS_learning_certification_examples_v1.json",
+      "hash": "sha256:0aeece9f2bcdea8e09582e8b14d9fb4fc14c4f810a248837e2ab4a540e49db34"
+    },
+    {
+      "name": "IFOS_courses_seed_56801_57200_v1.csv",
+      "ref": "file://IFOS_courses_seed_56801_57200_v1.csv",
+      "hash": "sha256:aeff34671d8214daf5f17752c7b25e7a1d25ae82bcbd7e0a5112a335282eeeca"
+    },
+    {
+      "name": "IFOS_learning_overview_spec_v1.md",
+      "ref": "file://IFOS_learning_overview_spec_v1.md",
+      "hash": "sha256:b80f48f7f7a587970276872838cf21e96eb6a604d05e855608cc563410d006f6"
+    },
+    {
+      "name": "IFOS_learning_paths_spec_v1.md",
+      "ref": "file://IFOS_learning_paths_spec_v1.md",
+      "hash": "sha256:e11c702f8999d779a84427b67366f1b170d671fcdc11d3e1fe39466e849ceffe"
+    },
+    {
+      "name": "IFOS_learning_lessons_spec_v1.md",
+      "ref": "file://IFOS_learning_lessons_spec_v1.md",
+      "hash": "sha256:3591dc8be0b4c62f1507a3fa68a6eb80f625858dd2fb59bc5008498bb664b7ce"
+    },
+    {
+      "name": "IFOS_learning_labs_spec_v1.md",
+      "ref": "file://IFOS_learning_labs_spec_v1.md",
+      "hash": "sha256:a45da85b1fd43b78cdf79a6577e1dc2d18a08a05ce010ba1a764e27da5f8fed0"
+    },
+    {
+      "name": "IFOS_learning_assessments_spec_v1.md",
+      "ref": "file://IFOS_learning_assessments_spec_v1.md",
+      "hash": "sha256:82cf0e5c0bd6c1b6526932e621c52f8570727788693251023d4849f0d727d5eb"
+    },
+    {
+      "name": "IFOS_learning_badges_credentials_spec_v1.md",
+      "ref": "file://IFOS_learning_badges_credentials_spec_v1.md",
+      "hash": "sha256:a08583b11650c267586515b70c5a26a3f857b19eef5cb170df647c83ae4a75f3"
+    },
+    {
+      "name": "IFOS_learning_skillmap_clusters_spec_v1.md",
+      "ref": "file://IFOS_learning_skillmap_clusters_spec_v1.md",
+      "hash": "sha256:24522e2becf617e8d23ec3fbb8c17775a30f1a841d59296eb23c7099b270974b"
+    },
+    {
+      "name": "IFOS_learning_recommendations_spec_v1.md",
+      "ref": "file://IFOS_learning_recommendations_spec_v1.md",
+      "hash": "sha256:de96a3a3cb237a343e8ec0adfeccfe4e35b864e80d386ac2d5efd959a973f2c2"
+    },
+    {
+      "name": "IFOS_learning_enterprise_training_spec_v1.md",
+      "ref": "file://IFOS_learning_enterprise_training_spec_v1.md",
+      "hash": "sha256:04d4b6a672a294fd77e62aac8a40e5eaa2aca488d35e2a8bff2633d946f87ded"
+    },
+    {
+      "name": "IFOS_learning_quality_governance_spec_v1.md",
+      "ref": "file://IFOS_learning_quality_governance_spec_v1.md",
+      "hash": "sha256:ef84e2dfd1378116cc18a8058ed164271cb361ef95a9e88304b9734097f660fb"
+    },
+    {
+      "name": "IFOS_learning_integrations_spec_v1.md",
+      "ref": "file://IFOS_learning_integrations_spec_v1.md",
+      "hash": "sha256:975a74190ff375eac5fb763d98f5ed61b49a2682153861da1800fe2d4c851b72"
+    },
+    {
+      "name": "IFOS_course_schema_v1.json",
+      "ref": "file://IFOS_course_schema_v1.json",
+      "hash": "sha256:9c7eba36f5677f6af61cbb27df065472e4782f392a123f94fa862fd69b9ede4f"
+    },
+    {
+      "name": "IFOS_lesson_schema_v1.json",
+      "ref": "file://IFOS_lesson_schema_v1.json",
+      "hash": "sha256:0e19ffe470ba98fb2e6e008b5b5e802f8ee2a3e5b90aca2dd1919a1fbf358f35"
+    },
+    {
+      "name": "IFOS_lab_schema_v1.json",
+      "ref": "file://IFOS_lab_schema_v1.json",
+      "hash": "sha256:7a3d7a438b13446741b6ad1009238ee7a8895d54d66e27bc702eb4305261f73c"
+    },
+    {
+      "name": "IFOS_assessment_schema_v1.json",
+      "ref": "file://IFOS_assessment_schema_v1.json",
+      "hash": "sha256:cd4cc5916fb087ddf45290b465b9b110a2d711ee9d8de986f3dff166640afd42"
+    },
+    {
+      "name": "IFOS_badge_schema_v1.json",
+      "ref": "file://IFOS_badge_schema_v1.json",
+      "hash": "sha256:6a617f9556a6f64fed6358c20031d023425e597aa5dab9ead94cd91654bc00ef"
+    },
+    {
+      "name": "IFOS_skill_schema_v1.json",
+      "ref": "file://IFOS_skill_schema_v1.json",
+      "hash": "sha256:503b26b5318a1c82958b9d794f41b8e8dc0d693786ad63515ae883208315fd47"
+    },
+    {
+      "name": "ifos_learning_auto_grader_stub_v1.py",
+      "ref": "file://ifos_learning_auto_grader_stub_v1.py",
+      "hash": "sha256:46d3ada6f6ab96f401f9ea40a0e8a9fe60935ef49f8e780b6e5bd7cafbeb9743"
+    },
+    {
+      "name": "ifos_learning_recommender_stub_v1.py",
+      "ref": "file://ifos_learning_recommender_stub_v1.py",
+      "hash": "sha256:98c6fed8050f74e3a17ae242c02c9d2b2368cd376cfa6e727b345903f1352966"
+    },
+    {
+      "name": "ifos_learning_lab_runner_stub_v1.py",
+      "ref": "file://ifos_learning_lab_runner_stub_v1.py",
+      "hash": "sha256:311e61bd8da946d14c515c6216a5284070f811c17e6e5093556f946d618bd371"
+    }
+  ],
+  "created_at": "2026-01-04T21:35:00Z",
+  "version": "1.0.0"
+}

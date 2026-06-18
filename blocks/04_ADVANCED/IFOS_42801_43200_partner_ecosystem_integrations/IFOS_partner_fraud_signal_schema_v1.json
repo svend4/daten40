@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS PartnerFraudSignal Schema v1",
+  "type": "object",
+  "required": [
+    "signal_id",
+    "partner_id",
+    "type",
+    "severity",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "signal_id": {
+      "type": "string"
+    },
+    "partner_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "bot_traffic",
+        "geo_mismatch",
+        "refund_abuse",
+        "chargeback_spike",
+        "fake_installs",
+        "other"
+      ]
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "evidence": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

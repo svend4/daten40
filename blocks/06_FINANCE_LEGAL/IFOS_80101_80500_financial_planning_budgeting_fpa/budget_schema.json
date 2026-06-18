@@ -1,0 +1,10 @@
+{
+  "id": "string",
+  "scenario_id": "string",
+  "entity_id": "string",
+  "account": "string",
+  "period": "string",
+  "amount": "number",
+  "currency": "string",
+  "version": "string"
+}

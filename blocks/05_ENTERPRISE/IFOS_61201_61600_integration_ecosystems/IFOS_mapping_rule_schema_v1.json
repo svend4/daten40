@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Mapping Rule Schema v1",
+  "type": "object",
+  "required": [
+    "rule_id",
+    "ecosystem",
+    "match",
+    "map_to",
+    "version"
+  ],
+  "properties": {
+    "rule_id": {
+      "type": "string"
+    },
+    "ecosystem": {
+      "type": "string"
+    },
+    "match": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "map_to": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "contract_id": "patient.v1",
+  "fields": {
+    "patient_id": "string",
+    "name": "string",
+    "dob": "date",
+    "contact": "object"
+  },
+  "privacy_level": "restricted"
+}

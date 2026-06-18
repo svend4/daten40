@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS BiasRiskNote Schema v1",
+  "type": "object",
+  "required": [
+    "note_id",
+    "target_id",
+    "signals",
+    "version"
+  ],
+  "properties": {
+    "note_id": {
+      "type": "string"
+    },
+    "target_id": {
+      "type": "string"
+    },
+    "signals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

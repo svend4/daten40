@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DataQualityCheck Schema v1",
+  "type": "object",
+  "required": [
+    "check_id",
+    "tenant_id",
+    "dataset",
+    "type",
+    "rule",
+    "on_fail",
+    "version"
+  ],
+  "properties": {
+    "check_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "dataset": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "completeness",
+        "uniqueness",
+        "validity",
+        "referential",
+        "drift"
+      ]
+    },
+    "rule": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "on_fail": {
+      "type": "string",
+      "enum": [
+        "warn",
+        "quarantine",
+        "block",
+        "incident"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

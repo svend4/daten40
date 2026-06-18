@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "entry_id",
+    "entity_id",
+    "amount",
+    "currency",
+    "type"
+  ],
+  "properties": {
+    "entry_id": {
+      "type": "string"
+    },
+    "entity_id": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "number"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "ic_elimination",
+        "fx_adjustment",
+        "minority_interest"
+      ]
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

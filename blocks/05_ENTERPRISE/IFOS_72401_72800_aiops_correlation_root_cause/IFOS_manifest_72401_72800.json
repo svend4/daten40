@@ -1,0 +1,28 @@
+{
+  "package_type": "ifos_block_pack",
+  "block": {
+    "block_no": 73,
+    "range_start": 72401,
+    "range_end": 72800,
+    "slug": "aiops_correlation_root_cause",
+    "title": "AIOps: Correlation, Regression Detection & Root Cause",
+    "category": "Observability & Reliability",
+    "priority": "P2",
+    "version": "0.31.0",
+    "status": "DONE"
+  },
+  "files": [
+    {
+      "path": "IFOS_aiops_correlation_root_cause_os_72401_72800_v1.md",
+      "role": "spec_md"
+    },
+    {
+      "path": "IFOS_aiops_rules_seed_72401_72800_v1.csv",
+      "role": "seed_csv"
+    },
+    {
+      "path": "IFOS_aiops_playbooks_seed_72401_72800_v1.json",
+      "role": "seed_json"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "pack_id": "cp_compliance_ui_dev_tooling",
+  "name": "Compliance UI & Developer Tooling",
+  "version": "1.0.0",
+  "status": "production",
+  "layer": "ComplianceTooling",
+  "compatibility": {
+    "ifos_min_version": "v30",
+    "required_blocks": [
+      "IFOS_00001_00400",
+      "IFOS_85601_86000"
+    ]
+  },
+  "exports": [
+    "ui.policy_debugger",
+    "ui.evidence_inspector",
+    "api.policy.simulate",
+    "api.policy.explain",
+    "cli.ifos_policy"
+  ]
+}

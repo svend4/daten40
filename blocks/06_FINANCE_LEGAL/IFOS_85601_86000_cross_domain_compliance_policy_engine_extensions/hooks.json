@@ -1,0 +1,16 @@
+{
+  "hooks": [
+    {
+      "event": "before_step",
+      "handler": "policy.evaluate"
+    },
+    {
+      "event": "after_step",
+      "handler": "policy.evidence_hook"
+    },
+    {
+      "event": "on_violation",
+      "handler": "policy.enforce"
+    }
+  ]
+}

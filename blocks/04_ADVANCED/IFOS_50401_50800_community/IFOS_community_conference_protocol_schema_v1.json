@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS CommunityConferenceProtocol Schema v1",
+  "type": "object",
+  "required": [
+    "protocol_id",
+    "topic",
+    "clusters",
+    "actions",
+    "version"
+  ],
+  "properties": {
+    "protocol_id": {
+      "type": "string"
+    },
+    "topic": {
+      "type": "string"
+    },
+    "clusters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

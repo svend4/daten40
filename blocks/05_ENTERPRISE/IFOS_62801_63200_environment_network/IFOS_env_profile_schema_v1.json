@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Env Profile Schema v1",
+  "type": "object",
+  "required": [
+    "env_id",
+    "name",
+    "stage",
+    "domains",
+    "policies",
+    "region",
+    "version"
+  ],
+  "properties": {
+    "env_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "stage": {
+      "type": "string",
+      "enum": [
+        "dev",
+        "stage",
+        "prod"
+      ]
+    },
+    "domains": {
+      "type": "object",
+      "properties": {
+        "app": {
+          "type": "string"
+        },
+        "api": {
+          "type": "string"
+        },
+        "webhooks": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "origins": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "policies": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "region": {
+      "type": "string"
+    },
+    "data_residency": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

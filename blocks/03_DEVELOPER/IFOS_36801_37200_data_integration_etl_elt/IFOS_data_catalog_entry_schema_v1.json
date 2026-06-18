@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DataCatalogEntry Schema v1",
+  "type": "object",
+  "required": [
+    "catalog_id",
+    "tenant_id",
+    "dataset",
+    "owner",
+    "freshness",
+    "schemas",
+    "version"
+  ],
+  "properties": {
+    "catalog_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "dataset": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "freshness": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "schemas": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "pipelines": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RunArtifact Schema v1",
+  "type": "object",
+  "required": [
+    "artifact_id",
+    "run_id",
+    "type",
+    "ref",
+    "hash",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "artifact_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "file",
+        "url",
+        "dataset",
+        "report",
+        "snapshot"
+      ]
+    },
+    "ref": {
+      "type": "string"
+    },
+    "hash": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

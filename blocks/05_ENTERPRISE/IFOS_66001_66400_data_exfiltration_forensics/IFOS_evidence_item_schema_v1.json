@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS EvidenceItem Schema v1",
+  "type": "object",
+  "required": [
+    "evidence_id",
+    "case_id",
+    "kind",
+    "created_at",
+    "hash",
+    "storage",
+    "version"
+  ],
+  "properties": {
+    "evidence_id": {
+      "type": "string"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "receipt_bundle",
+        "log_export",
+        "policy_snapshot",
+        "attestation_report",
+        "connector_hashes",
+        "other"
+      ]
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "hash": {
+      "type": "string"
+    },
+    "storage": {
+      "type": "object",
+      "required": [
+        "uri",
+        "immutability"
+      ],
+      "properties": {
+        "uri": {
+          "type": "string"
+        },
+        "immutability": {
+          "type": "string",
+          "enum": [
+            "worm",
+            "immutable_bucket",
+            "signed_archive"
+          ]
+        }
+      }
+    },
+    "notes": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

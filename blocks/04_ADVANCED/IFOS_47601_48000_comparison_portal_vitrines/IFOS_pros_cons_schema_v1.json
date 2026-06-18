@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ProsCons Schema v1",
+  "type": "object",
+  "required": [
+    "pc_id",
+    "card_id",
+    "pros",
+    "cons",
+    "when_not",
+    "alternatives",
+    "version"
+  ],
+  "properties": {
+    "pc_id": {
+      "type": "string"
+    },
+    "card_id": {
+      "type": "string"
+    },
+    "pros": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "when_not": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "alternatives": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

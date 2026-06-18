@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DeIdProfile Schema v1",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "name",
+    "methods",
+    "version"
+  ],
+  "properties": {
+    "profile_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "methods": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "op"
+        ],
+        "properties": {
+          "op": {
+            "type": "string",
+            "enum": [
+              "suppression",
+              "generalization",
+              "pseudonymize",
+              "masking",
+              "k_anonymity",
+              "noise"
+            ]
+          },
+          "params": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    "leakage_checks": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "uniqueness",
+          "k_anonymity",
+          "membership_inference_smoke",
+          "rare_values"
+        ]
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

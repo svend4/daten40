@@ -1,0 +1,254 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "IFOS Evidence Registry API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/evidence/append": {
+      "post": {
+        "summary": "Append evidence item to registry (append-only)",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EvidenceAppendRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Append event",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EvidenceAppendResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/evidence/query": {
+      "post": {
+        "summary": "Query evidence register (filters, freshness, controls)",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EvidenceQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Query result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EvidenceQueryResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/evidence/verify": {
+      "post": {
+        "summary": "Verify artifact hash and optional signature/attestation",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EvidenceVerifyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Verification result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EvidenceVerifyResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/evidence/export/audit-pack": {
+      "post": {
+        "summary": "Create export bundle for audit (zip with manifests)",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuditPackRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Audit pack manifest",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditPackManifest"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "EvidenceItem": {
+        "type": "object",
+        "properties": {
+          "evidence_id": {
+            "type": "string"
+          },
+          "artifact_sha256": {
+            "type": "string"
+          },
+          "artifact_uri": {
+            "type": "string"
+          },
+          "collected_at": {
+            "type": "string"
+          },
+          "collector": {
+            "type": "string"
+          }
+        }
+      },
+      "EvidenceAppendRequest": {
+        "type": "object",
+        "properties": {
+          "actor": {
+            "type": "string"
+          },
+          "evidence_item": {
+            "$ref": "#/components/schemas/EvidenceItem"
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "actor",
+          "evidence_item"
+        ]
+      },
+      "EvidenceAppendResponse": {
+        "type": "object",
+        "properties": {
+          "event_id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "event_type": {
+            "type": "string"
+          }
+        }
+      },
+      "EvidenceQuery": {
+        "type": "object",
+        "properties": {
+          "filters": {
+            "type": "object"
+          },
+          "limit": {
+            "type": "integer"
+          }
+        }
+      },
+      "EvidenceQueryResult": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EvidenceItem"
+            }
+          },
+          "next_cursor": {
+            "type": "string"
+          }
+        }
+      },
+      "EvidenceVerifyRequest": {
+        "type": "object",
+        "properties": {
+          "artifact_uri": {
+            "type": "string"
+          },
+          "artifact_sha256": {
+            "type": "string"
+          },
+          "signature": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "artifact_uri",
+          "artifact_sha256"
+        ]
+      },
+      "EvidenceVerifyResult": {
+        "type": "object",
+        "properties": {
+          "hash_ok": {
+            "type": "boolean"
+          },
+          "signature_ok": {
+            "type": "boolean"
+          },
+          "attestation_ok": {
+            "type": "boolean"
+          },
+          "details": {
+            "type": "object"
+          }
+        }
+      },
+      "AuditPackRequest": {
+        "type": "object",
+        "properties": {
+          "scope": {
+            "type": "object"
+          },
+          "filters": {
+            "type": "object"
+          }
+        }
+      },
+      "AuditPackManifest": {
+        "type": "object",
+        "properties": {
+          "pack_id": {
+            "type": "string"
+          },
+          "export_uri": {
+            "type": "string"
+          },
+          "hash": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

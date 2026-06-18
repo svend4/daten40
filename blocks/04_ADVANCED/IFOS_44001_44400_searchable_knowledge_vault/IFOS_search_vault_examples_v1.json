@@ -1,0 +1,245 @@
+{
+  "index_source": {
+    "index_source_id": "is.is.nugw9r63j1wp",
+    "kinds": [
+      "article",
+      "review",
+      "repo"
+    ],
+    "include": {
+      "status": "active",
+      "tenant": "public"
+    },
+    "exclude": {
+      "languages": [
+        "und"
+      ]
+    },
+    "update_mode": "incremental",
+    "version": "1.0.0"
+  },
+  "document_chunk": {
+    "chunk_id": "ch.c.k05zxthwbgxl",
+    "item_id": "it.i.mbedb8n93ibi",
+    "chunk_text": "Это пример фрагмента текста для индексации...",
+    "offsets": {
+      "start": 0,
+      "end": 48
+    },
+    "hash": "sha256:...",
+    "meta": {
+      "lang": "ru-RU",
+      "section": "Intro"
+    },
+    "version": "1.0.0"
+  },
+  "embedding_record": {
+    "embedding_id": "emb.e.0tel361liewd",
+    "chunk_id": "ch.*",
+    "model_id": "text-embedding-3-large",
+    "dim": 3072,
+    "vector_ref": "qdrant://tenant_public/ch.*",
+    "created_at": "2026-01-04T04:45:00Z",
+    "version": "1.0.0"
+  },
+  "vector_index": {
+    "index_id": "vx.v.sux7k4jt5ugp",
+    "engine": "qdrant",
+    "collection": "tenant_public_chunks",
+    "schema": {
+      "distance": "cosine",
+      "dim": 3072
+    },
+    "version": "1.0.0"
+  },
+  "fulltext_index": {
+    "index_id": "ft.f.pbv7qvbpq8p3",
+    "engine": "opensearch",
+    "lang": [
+      "ru",
+      "de",
+      "en"
+    ],
+    "schema": {
+      "analyzers": [
+        "ru",
+        "de",
+        "en"
+      ],
+      "highlights": true
+    },
+    "version": "1.0.0"
+  },
+  "facet_config": {
+    "facet_id": "fc.f.66peh0awddp9",
+    "fields": [
+      {
+        "name": "category",
+        "type": "keyword"
+      },
+      {
+        "name": "source_id",
+        "type": "keyword"
+      },
+      {
+        "name": "lang",
+        "type": "keyword"
+      }
+    ],
+    "ranges": [
+      {
+        "name": "published_at",
+        "type": "date",
+        "buckets": [
+          "P7D",
+          "P30D",
+          "P365D"
+        ]
+      }
+    ],
+    "sorts": [
+      {
+        "name": "freshness",
+        "by": "published_at:desc"
+      },
+      {
+        "name": "trust",
+        "by": "source_trust:desc"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "query": {
+    "query_id": "q.q.6lq38vhhmb1e",
+    "text": "макросы make.com шаблоны one-click",
+    "mode": "hybrid",
+    "filters": {
+      "lang": "ru",
+      "category": "automation"
+    },
+    "tenant": "public",
+    "top_k": 50,
+    "version": "1.0.0"
+  },
+  "query_plan": {
+    "plan_id": "qp.p.sahpubq5n59o",
+    "query_id": "q.*",
+    "steps": [
+      {
+        "op": "fulltext_candidate",
+        "k": 200
+      },
+      {
+        "op": "semantic_candidate",
+        "k": 200
+      },
+      {
+        "op": "merge",
+        "strategy": "rrf"
+      },
+      {
+        "op": "rerank",
+        "model": "cross_encoder",
+        "k": 50
+      }
+    ],
+    "merge": {
+      "strategy": "rrf",
+      "weights": {
+        "fulltext": 1,
+        "semantic": 1
+      }
+    },
+    "limits": {
+      "latency_ms": 250,
+      "max_candidates": 400
+    },
+    "version": "1.0.0"
+  },
+  "search_result": {
+    "result_id": "sr.r.iscq4zxxzb46",
+    "query_id": "q.*",
+    "hits": [
+      {
+        "item_id": "it.*",
+        "score": 0.91,
+        "highlights": [
+          "...макросы..."
+        ],
+        "citations": [
+          "cit.*"
+        ]
+      }
+    ],
+    "facets": {
+      "category": {
+        "automation": 120,
+        "plugins": 80
+      }
+    },
+    "ts": "2026-01-04T04:45:00Z",
+    "version": "1.0.0"
+  },
+  "citation": {
+    "citation_id": "cit.c.aet514v8evp8",
+    "item_id": "it.*",
+    "chunk_id": "ch.*",
+    "source_ref": "https://example.com/article",
+    "offsets": {
+      "start": 120,
+      "end": 180
+    },
+    "hash": "sha256:...",
+    "ts": "2026-01-04T04:45:00Z",
+    "version": "1.0.0"
+  },
+  "export_job": {
+    "export_id": "ex.x.2stxepl5y02j",
+    "selector": {
+      "type": "collection",
+      "id": "public:automation_top"
+    },
+    "format": "zip",
+    "status": "queued",
+    "ts": "2026-01-04T04:45:00Z",
+    "output_ref": null,
+    "version": "1.0.0"
+  },
+  "relevance_signal": {
+    "signal_id": "sig.s.uxj3iz9qnwug",
+    "name": "trust",
+    "definition": "репутация источника (0..1)",
+    "range": {
+      "min": 0,
+      "max": 1
+    },
+    "version": "1.0.0"
+  },
+  "ranking_config": {
+    "config_id": "rk.r.e4ux31jgqnnr",
+    "weights": {
+      "freshness": 0.25,
+      "trust": 0.35,
+      "popularity": 0.25,
+      "completeness": 0.15
+    },
+    "rules": [
+      {
+        "if": {
+          "dedup": true
+        },
+        "then": {
+          "penalty": 0.3
+        }
+      }
+    ],
+    "ab": {
+      "enabled": true,
+      "variants": [
+        "A",
+        "B"
+      ]
+    },
+    "version": "1.0.0"
+  }
+}

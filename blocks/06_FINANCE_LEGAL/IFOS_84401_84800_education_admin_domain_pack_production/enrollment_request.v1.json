@@ -1,0 +1,13 @@
+{
+  "contract_id": "enrollment_request.v1",
+  "fields": {
+    "request_id": "string",
+    "student": "student.v1",
+    "program": "string",
+    "submitted_at": "datetime",
+    "status": "string"
+  },
+  "privacy_level": "internal",
+  "retention_policy": "edu_default",
+  "audit": "required"
+}

@@ -1,0 +1,25 @@
+{
+  "apply_to": ">= v30",
+  "delta": {
+    "section": "COMPLIANCE_SHARING",
+    "add": [
+      {
+        "id_range": "IFOS_88401_88800",
+        "name": "Auditor Portal + Secure Sharing (links, access, watermarks, expiration)",
+        "slug": "auditor_portal_secure_sharing_links_access_watermarks_expiration",
+        "type": "Service/Portal",
+        "layer": "ComplianceSharing",
+        "status": "Production",
+        "dependencies": [
+          "IFOS_88001_88400",
+          "IFOS_36001_36400",
+          "IFOS_61601_62000"
+        ],
+        "artifacts": [
+          "IFOS_88401_88800_auditor_portal_secure_sharing_links_access_watermarks_expiration_os_pack.zip"
+        ],
+        "notes": "Time-limited share links, portal sessions, download audit trail, watermarking spec"
+      }
+    ]
+  }
+}

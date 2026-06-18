@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS KW Comment Schema v1",
+  "type": "object",
+  "required": [
+    "comment_id",
+    "doc_id",
+    "author",
+    "anchor",
+    "text",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "comment_id": {
+      "type": "string"
+    },
+    "doc_id": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "anchor": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "text": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "resolved"
+      ]
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS MigrationJob Schema v1",
+  "type": "object",
+  "required": [
+    "job_id",
+    "source",
+    "target",
+    "mapping",
+    "dry_run",
+    "rollback",
+    "version"
+  ],
+  "properties": {
+    "job_id": {
+      "type": "string"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "mapping": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "dry_run": {
+      "type": "boolean"
+    },
+    "rollback": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

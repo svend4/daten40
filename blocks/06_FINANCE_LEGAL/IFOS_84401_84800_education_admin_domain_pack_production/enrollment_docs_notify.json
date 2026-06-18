@@ -1,0 +1,67 @@
+{
+  "bundle_id": "enrollment_docs_notify",
+  "name": "Enrollment → Documents → Notify",
+  "version": "1.0.0",
+  "connectors": [
+    "webhook",
+    "doc_generator",
+    "doc_storage",
+    "email",
+    "notification",
+    "google_sheets"
+  ],
+  "secrets_required": [],
+  "entrypoint": {
+    "trigger": "webhook.http_post",
+    "plan_id": "plan_enrollment_docs_notify"
+  },
+  "policies": [
+    "privacy.internal",
+    "audit.logging"
+  ],
+  "steps": [
+    {
+      "id": "capture_enrollment",
+      "capability": "capture_enrollment_request",
+      "outputs": [
+        "enrollment_request.v1"
+      ]
+    },
+    {
+      "id": "generate_docs",
+      "capability": "generate_enrollment_documents",
+      "inputs": [
+        "enrollment_request.v1"
+      ],
+      "outputs": [
+        "document.v1"
+      ]
+    },
+    {
+      "id": "store_docs",
+      "capability": "store_documents",
+      "inputs": [
+        "document.v1"
+      ]
+    },
+    {
+      "id": "notify",
+      "capability": "send_notifications",
+      "inputs": [
+        "enrollment_request.v1",
+        "document.v1"
+      ],
+      "outputs": [
+        "notification.v1"
+      ]
+    },
+    {
+      "id": "log",
+      "capability": "append_enrollment_log",
+      "inputs": [
+        "enrollment_request.v1"
+      ],
+      "target": "google_sheets"
+    }
+  ]
+}

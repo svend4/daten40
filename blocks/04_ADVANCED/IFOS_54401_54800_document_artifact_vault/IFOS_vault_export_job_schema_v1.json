@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Vault Export Job Schema v1",
+  "type": "object",
+  "required": [
+    "export_id",
+    "scope",
+    "format",
+    "status",
+    "pack_ref",
+    "version"
+  ],
+  "properties": {
+    "export_id": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string"
+    },
+    "format": {
+      "type": "string",
+      "enum": [
+        "artifact",
+        "project_pack",
+        "release_pack",
+        "audit_pack"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "queued",
+        "running",
+        "done",
+        "failed"
+      ]
+    },
+    "pack_ref": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "connector_source": {
+    "source_id": "src.s.dm7qqgjvnupz",
+    "kind": "openapi",
+    "location": "https://api.vendor.com/openapi.yaml",
+    "owner": {
+      "org": "vendor_inc",
+      "contact": "devrel@vendor.com"
+    },
+    "created_at": "2026-01-04T06:45:00Z",
+    "notes": "Main public API",
+    "version": "1.0.0"
+  },
+  "openapi_source": {
+    "source_id": "src.*",
+    "openapi_version": "3.0.3",
+    "title": "Vendor API",
+    "servers": [
+      "https://api.vendor.com"
+    ],
+    "security": [
+      {
+        "ApiKeyAuth": []
+      }
+    ],
+    "hash": "sha256:...",
+    "version": "1.0.0"
+  },
+  "build_job": {
+    "build_id": "bld.b.qgks2yff4p1t",
+    "source_id": "src.*",
+    "target": "python",
+    "state": "queued",
+    "ts": "2026-01-04T06:45:00Z",
+    "outputs": null,
+    "version": "1.0.0"
+  },
+  "mock_server": {
+    "mock_id": "mock.m.9tohec9d4hvl",
+    "source_id": "src.*",
+    "routes": [
+      {
+        "method": "GET",
+        "path": "/v1/items",
+        "mode": "ok"
+      }
+    ],
+    "modes": [
+      "ok",
+      "timeouts",
+      "rate_limit",
+      "errors"
+    ],
+    "version": "1.0.0"
+  },
+  "test_suite": {
+    "suite_id": "ts.t.p0vxzuqzo1kb",
+    "connector_id": "con.c.eivzug6fha8l",
+    "tests": [
+      {
+        "name": "schema_validation"
+      },
+      {
+        "name": "auth_smoke"
+      },
+      {
+        "name": "rate_limit"
+      }
+    ],
+    "coverage": {
+      "ops": 0.72
+    },
+    "version": "1.0.0"
+  },
+  "package": {
+    "package_id": "pkg.p.j35rs87seuvw",
+    "connector_id": "con.*",
+    "artifacts": [
+      {
+        "type": "wheel",
+        "ref": "file://connector.whl"
+      }
+    ],
+    "sbom": {
+      "format": "spdx",
+      "ref": "file://sbom.spdx.json"
+    },
+    "signature": {
+      "method": "sigstore",
+      "digest": "sha256:..."
+    },
+    "version": "1.0.0"
+  },
+  "publish_job": {
+    "publish_id": "pub.p.292m7dhrwve7",
+    "package_id": "pkg.*",
+    "checks": [
+      {
+        "name": "tests_passed",
+        "ok": true
+      },
+      {
+        "name": "signature_valid",
+        "ok": true
+      },
+      {
+        "name": "security_scan",
+        "ok": true
+      }
+    ],
+    "state": "queued",
+    "ts": "2026-01-04T06:45:00Z",
+    "version": "1.0.0"
+  }
+}

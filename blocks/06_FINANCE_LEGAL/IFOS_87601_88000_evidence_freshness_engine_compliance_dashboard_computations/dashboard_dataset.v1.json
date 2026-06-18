@@ -1,0 +1,13 @@
+{
+  "contract_id": "dashboard_dataset.v1",
+  "fields": {
+    "dataset_id": "string",
+    "widget": "string",
+    "environment": "string",
+    "generated_at": "datetime",
+    "payload": "object",
+    "cache_ttl_seconds": "integer"
+  },
+  "privacy_level": "internal",
+  "retention_policy": "security_default"
+}

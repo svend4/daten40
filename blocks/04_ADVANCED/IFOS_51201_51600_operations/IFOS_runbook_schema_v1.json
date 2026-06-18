@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Runbook Schema v1",
+  "type": "object",
+  "required": [
+    "runbook_id",
+    "symptoms",
+    "checks",
+    "fixes",
+    "verify",
+    "rollback",
+    "version"
+  ],
+  "properties": {
+    "runbook_id": {
+      "type": "string"
+    },
+    "symptoms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "fixes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "verify": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rollback": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
