@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Side Effect Declaration Schema v1",
+  "type": "object",
+  "required": [
+    "decl_id",
+    "subject_ref",
+    "effects",
+    "pii",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "decl_id": {
+      "type": "string"
+    },
+    "subject_ref": {
+      "type": "string"
+    },
+    "effects": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "external_call",
+          "write_db",
+          "send_message",
+          "file_upload",
+          "create_resource",
+          "delete_resource",
+          "money_movement",
+          "pii_processing"
+        ]
+      }
+    },
+    "pii": {
+      "type": "object",
+      "properties": {
+        "contains_pii": {
+          "type": "boolean"
+        },
+        "pii_types": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "no_log_fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
