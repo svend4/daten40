@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS VitrineCard Schema v1",
+  "type": "object",
+  "required": [
+    "vitrine_id",
+    "title",
+    "goal",
+    "bundle",
+    "install_order",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "vitrine_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "goal": {
+      "type": "string"
+    },
+    "bundle": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "package ids"
+    },
+    "install_order": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "demo_data_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "quickstart": {
+      "type": "string"
+    },
+    "expected_outcome": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
