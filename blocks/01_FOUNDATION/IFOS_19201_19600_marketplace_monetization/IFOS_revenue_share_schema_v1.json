@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Revenue Share Schema v1",
+  "type": "object",
+  "required": [
+    "revshare_id",
+    "publisher_id",
+    "base_percent",
+    "fees_policy",
+    "min_payout",
+    "reserve_percent",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "revshare_id": {
+      "type": "string"
+    },
+    "publisher_id": {
+      "type": "string"
+    },
+    "base_percent": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "fees_policy": {
+      "type": "object",
+      "properties": {
+        "platform_fee_percent": {
+          "type": "number"
+        },
+        "who_pays": {
+          "type": "string",
+          "enum": [
+            "publisher",
+            "buyer",
+            "platform"
+          ]
+        }
+      }
+    },
+    "min_payout": {
+      "type": "number"
+    },
+    "reserve_percent": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
