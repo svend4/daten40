@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ReliabilityPolicy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "defaults",
+    "autofix_limits",
+    "version"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "defaults": {
+      "type": "object",
+      "properties": {
+        "health_interval_sec": {
+          "type": "integer"
+        },
+        "alert_channels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "slo_window": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "autofix_limits": {
+      "type": "object",
+      "properties": {
+        "allow_high_risk": {
+          "type": "boolean"
+        },
+        "max_autofix_per_day": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
