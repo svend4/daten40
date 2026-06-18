@@ -1,0 +1,122 @@
+{
+  "job": {
+    "job_id": "job.rss_to_telegram.001",
+    "listing_id": "lst.telegram_rss_digest.001",
+    "item_ref": "recipe.rss_to_telegram.digest_v1",
+    "item_version": "1.0.0",
+    "mode": "sandbox",
+    "trigger": {
+      "kind": "cron",
+      "cron": "*/10 * * * *"
+    },
+    "inputs": {
+      "rss_url": "https://example.com/feed.xml",
+      "chat_id": "-1001234567890",
+      "max_items": 5
+    },
+    "secrets": {
+      "TELEGRAM_BOT_TOKEN": "vault://pub.ifos.demo/telegram_bot_token"
+    },
+    "sandbox_policy": {
+      "allow_hosts": [
+        "api.telegram.org",
+        "example.com"
+      ],
+      "deny_methods": [
+        "DELETE",
+        "PUT",
+        "PATCH"
+      ],
+      "max_requests_per_run": 50,
+      "max_run_runtime_sec": 300
+    },
+    "max_runtime_sec": 300,
+    "status": "active",
+    "created_at": "2026-01-02T09:00:00Z",
+    "updated_at": "2026-01-02T09:00:00Z"
+  },
+  "run_record": {
+    "run_id": "run.rss_to_telegram.0001",
+    "job_id": "job.rss_to_telegram.001",
+    "attempt": 1,
+    "started_at": "2026-01-02T09:00:00Z",
+    "finished_at": "2026-01-02T09:00:00Z",
+    "status": "PASS",
+    "mode": "sandbox",
+    "policy": {
+      "redaction_applied": true,
+      "pii": false,
+      "money": false,
+      "security_sensitive": false
+    },
+    "steps": [
+      {
+        "step_id": "read_rss",
+        "kind": "action",
+        "uses": "rss.read_feed",
+        "status": "PASS",
+        "started_at": "2026-01-02T09:00:00Z",
+        "finished_at": "2026-01-02T09:00:00Z",
+        "duration_ms": 120,
+        "request_redacted": {
+          "url": "https://example.com/feed.xml"
+        },
+        "response_redacted": {
+          "items_count": 12
+        }
+      },
+      {
+        "step_id": "format",
+        "kind": "transform",
+        "status": "PASS",
+        "started_at": "2026-01-02T09:00:00Z",
+        "finished_at": "2026-01-02T09:00:00Z",
+        "duration_ms": 10,
+        "request_redacted": {
+          "expr": "format items into markdown"
+        },
+        "response_redacted": {
+          "text_len": 980
+        }
+      },
+      {
+        "step_id": "send",
+        "kind": "action",
+        "uses": "telegram.send_message",
+        "status": "PASS",
+        "started_at": "2026-01-02T09:00:00Z",
+        "finished_at": "2026-01-02T09:00:00Z",
+        "duration_ms": 200,
+        "request_redacted": {
+          "chat_id": "-1001234567890",
+          "text": "(redacted preview)"
+        },
+        "response_redacted": {
+          "ok": true,
+          "message_id": 123
+        }
+      }
+    ],
+    "artifacts": [
+      {
+        "name": "rendered_preview.txt",
+        "sha256": "(stub)",
+        "uri": "artifact://run.rss_to_telegram.0001/preview.txt",
+        "redacted": true
+      },
+      {
+        "name": "run_log.json",
+        "sha256": "(stub)",
+        "uri": "artifact://run.rss_to_telegram.0001/run_log.json",
+        "redacted": true
+      }
+    ],
+    "state_updates": [
+      {
+        "key": "rss.last_seen",
+        "value": "guid:abc123"
+      }
+    ],
+    "notes": "Example run record for sandbox mode."
+  }
+}
