@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Policy Bundle Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "name",
+    "rules",
+    "enforcement",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "if": {
+            "type": "object"
+          },
+          "then": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "enforcement": {
+      "type": "object",
+      "properties": {
+        "default": {
+          "type": "string",
+          "enum": [
+            "allow",
+            "deny",
+            "warn"
+          ]
+        },
+        "strictness": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
