@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DataClassification Schema v1",
+  "type": "object",
+  "required": [
+    "classification_id",
+    "name",
+    "level",
+    "rules",
+    "version"
+  ],
+  "properties": {
+    "classification_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "enum": [
+        "PUBLIC",
+        "INTERNAL",
+        "CONFIDENTIAL",
+        "PERSONAL",
+        "RESTRICTED"
+      ]
+    },
+    "level": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4
+    },
+    "rules": {
+      "type": "object",
+      "properties": {
+        "default_retention_days": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "export_allowed": {
+          "type": "boolean"
+        },
+        "requires_encryption": {
+          "type": "boolean"
+        },
+        "requires_approval_for_publish": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
