@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Conversion Plan Schema v1",
+  "type": "object",
+  "required": [
+    "plan_id",
+    "source_platform",
+    "target_platform",
+    "subject_id",
+    "steps",
+    "manual_flags",
+    "test_vectors",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "plan_id": {
+      "type": "string"
+    },
+    "source_platform": {
+      "type": "string",
+      "enum": [
+        "make",
+        "n8n",
+        "wordpress",
+        "custom"
+      ]
+    },
+    "target_platform": {
+      "type": "string",
+      "enum": [
+        "make",
+        "n8n",
+        "wordpress",
+        "custom"
+      ]
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "node",
+          "adapter_id",
+          "status"
+        ],
+        "properties": {
+          "node": {
+            "type": "string"
+          },
+          "adapter_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "planned",
+              "converted",
+              "needs_manual",
+              "failed"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "manual_flags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "test_vectors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
