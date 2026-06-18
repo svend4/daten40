@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS PackageSignature Schema v1",
+  "type": "object",
+  "required": [
+    "package_id",
+    "manifest_sha256",
+    "signer_id",
+    "algo",
+    "signature",
+    "signed_at",
+    "version"
+  ],
+  "properties": {
+    "package_id": {
+      "type": "string"
+    },
+    "manifest_sha256": {
+      "type": "string"
+    },
+    "signer_id": {
+      "type": "string"
+    },
+    "algo": {
+      "type": "string",
+      "enum": [
+        "ed25519",
+        "ecdsa",
+        "rsa",
+        "other"
+      ]
+    },
+    "signature": {
+      "type": "string",
+      "description": "Base64 signature over manifest hash"
+    },
+    "signed_at": {
+      "type": "string"
+    },
+    "transparency_log_ref": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
