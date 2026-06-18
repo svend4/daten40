@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS README Template Schema v1",
+  "type": "object",
+  "required": [
+    "template_id",
+    "name",
+    "blocks",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "template_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "blocks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "source"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "static",
+              "contract",
+              "install_plan",
+              "runtime_profile",
+              "tests",
+              "trust",
+              "policy",
+              "compat"
+            ]
+          },
+          "required": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
