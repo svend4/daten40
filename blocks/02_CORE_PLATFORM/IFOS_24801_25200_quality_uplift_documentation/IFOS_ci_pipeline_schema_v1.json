@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS CI Pipeline Schema v1",
+  "type": "object",
+  "required": [
+    "ci_id",
+    "subject_id",
+    "steps",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "ci_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "kind"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "lint",
+              "schema_validate",
+              "dry_run_install",
+              "sandbox_run",
+              "coverage"
+            ]
+          },
+          "required": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
