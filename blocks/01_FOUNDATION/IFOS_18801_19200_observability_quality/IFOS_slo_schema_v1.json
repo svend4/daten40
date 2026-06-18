@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SLO Schema v1",
+  "type": "object",
+  "required": [
+    "slo_id",
+    "subject",
+    "sli_ref",
+    "target",
+    "breach",
+    "policy",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "slo_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "sli_ref": {
+      "type": "string"
+    },
+    "target": {
+      "type": "object",
+      "properties": {
+        "operator": {
+          "type": "string",
+          "enum": [
+            ">=",
+            "<="
+          ]
+        },
+        "value": {
+          "type": "number"
+        },
+        "unit": {
+          "type": "string"
+        }
+      }
+    },
+    "breach": {
+      "type": "object",
+      "properties": {
+        "budget": {
+          "type": "number",
+          "description": "error budget in percent or minutes"
+        },
+        "action_on_breach": {
+          "type": "string",
+          "enum": [
+            "degrade_score",
+            "block_release",
+            "notify",
+            "open_incident"
+          ]
+        }
+      }
+    },
+    "policy": {
+      "type": "object",
+      "properties": {
+        "severity": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
