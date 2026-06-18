@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Collection Schema v1",
+  "type": "object",
+  "required": [
+    "collection_id",
+    "name",
+    "description",
+    "filters",
+    "storage_policy_id",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "collection_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "filters": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "storage_policy_id": {
+      "type": "string"
+    },
+    "pii_classification_id": {
+      "type": "string"
+    },
+    "index_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
