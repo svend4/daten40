@@ -1,0 +1,70 @@
+openapi: 3.0.3
+info:
+  title: IFOS Marketplace API
+  version: "1.0.0"
+  description: "Browse listings, publish packages, check compatibility, install, review and rate."
+servers:
+  - url: https://market.ifos.local/v1
+tags:
+  - name: Listings
+  - name: Packages
+  - name: Publishers
+  - name: Install
+  - name: Reviews
+paths:
+  /listings:
+    get:
+      tags: [Listings]
+      summary: Search listings
+      parameters:
+        - name: q
+          in: query
+          required: false
+          schema: {type: string}
+        - name: category
+          in: query
+          required: false
+          schema: {type: string}
+        - name: tag
+          in: query
+          required: false
+          schema: {type: string}
+      responses: {"200": {description: OK}}
+  /packages:
+    post:
+      tags: [Packages]
+      summary: Publish package
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"201": {description: Created}}
+  /packages/{package_id}/compatibility/check:
+    post:
+      tags: [Packages]
+      summary: Check compatibility for a target workspace
+      parameters:
+        - name: package_id
+          in: path
+          required: true
+          schema: {type: string}
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"200": {description: OK}}
+  /install:
+    post:
+      tags: [Install]
+      summary: One-click install package into workspace
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"202": {description: Accepted}}
+  /reviews:
+    post:
+      tags: [Reviews]
+      summary: Create review
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"201": {description: Created}}
+    get:
+      tags: [Reviews]
+      summary: List reviews for package
+      parameters:
+        - name: package_id
+          in: query
+          required: true
+          schema: {type: string}
+      responses: {"200": {description: OK}}
