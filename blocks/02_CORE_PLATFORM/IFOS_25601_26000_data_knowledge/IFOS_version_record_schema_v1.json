@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS VersionRecord Schema v1",
+  "type": "object",
+  "required": [
+    "revision_id",
+    "object_ref",
+    "parent_revision_id",
+    "actor",
+    "change_kind",
+    "created_at",
+    "version"
+  ],
+  "properties": {
+    "revision_id": {
+      "type": "string"
+    },
+    "object_ref": {
+      "type": "string"
+    },
+    "parent_revision_id": {
+      "type": "string"
+    },
+    "actor": {
+      "type": "object",
+      "required": [
+        "kind",
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "user",
+            "agent",
+            "pipeline"
+          ]
+        },
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "change_kind": {
+      "type": "string",
+      "enum": [
+        "ingest",
+        "normalize",
+        "enrich",
+        "redact",
+        "fix",
+        "merge",
+        "index"
+      ]
+    },
+    "diff_ref": {
+      "type": "string"
+    },
+    "snapshot_ref": {
+      "type": "string"
+    },
+    "note": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
