@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RuntimeRequirements Schema v1",
+  "type": "object",
+  "required": [
+    "runtime",
+    "resources",
+    "services",
+    "permissions",
+    "version"
+  ],
+  "properties": {
+    "runtime": {
+      "type": "string",
+      "enum": [
+        "wordpress",
+        "make",
+        "n8n",
+        "node_red",
+        "fastapi",
+        "local",
+        "docker",
+        "other"
+      ]
+    },
+    "resources": {
+      "type": "object",
+      "required": [
+        "min_ram_mb",
+        "min_cpu_cores"
+      ],
+      "properties": {
+        "min_ram_mb": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "min_cpu_cores": {
+          "type": "number",
+          "minimum": 0
+        },
+        "min_disk_mb": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "services": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "db",
+          "vector_store",
+          "queue",
+          "cache",
+          "object_store",
+          "secrets",
+          "none",
+          "other"
+        ]
+      }
+    },
+    "permissions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "net",
+          "fs_read",
+          "fs_write",
+          "secrets_read",
+          "exec",
+          "none",
+          "other"
+        ]
+      }
+    },
+    "ports": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
