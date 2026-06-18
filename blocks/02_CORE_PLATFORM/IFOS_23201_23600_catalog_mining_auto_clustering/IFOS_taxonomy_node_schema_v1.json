@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Taxonomy Node Schema v1",
+  "type": "object",
+  "required": [
+    "node_id",
+    "path",
+    "labels",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "node_id": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
+    },
+    "labels": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
