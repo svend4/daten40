@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DataSource Schema v1",
+  "type": "object",
+  "required": [
+    "source_id",
+    "workspace_id",
+    "kind",
+    "config",
+    "update_strategy",
+    "created_at",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string"
+    },
+    "workspace_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "rss",
+        "html",
+        "api",
+        "file",
+        "github",
+        "appstore",
+        "webhook",
+        "other"
+      ]
+    },
+    "config": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "auth": {
+      "type": "object",
+      "properties": {
+        "secret_ref": {
+          "type": "string"
+        },
+        "headers": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "rate_limit_ref": {
+      "type": "string"
+    },
+    "trust_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "notes": {
+      "type": "string"
+    },
+    "update_strategy": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "poll",
+            "push",
+            "manual"
+          ]
+        },
+        "interval_seconds": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "etag": {
+          "type": "string"
+        },
+        "last_modified": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
