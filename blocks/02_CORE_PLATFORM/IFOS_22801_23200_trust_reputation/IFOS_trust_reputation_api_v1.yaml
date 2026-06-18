@@ -1,0 +1,85 @@
+openapi: 3.0.3
+info:
+  title: IFOS Trust & Reputation API
+  version: "1.0.0"
+  description: "Quality ladder, trust signals, verification/signatures/SBOM, reviews/ratings, antifraud, trust policies, appeals."
+servers:
+  - url: https://trust.ifos.local/v1
+tags:
+  - name: Quality
+  - name: Signals
+  - name: Verification
+  - name: Reviews
+  - name: Ratings
+  - name: AntiFraud
+  - name: Policies
+  - name: Appeals
+paths:
+  /quality/ladder/get:
+    get:
+      tags: [Quality]
+      summary: Get quality ladder definition
+      responses:
+        "200": {description: OK}
+  /signals/ingest:
+    post:
+      tags: [Signals]
+      summary: Ingest trust signals
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
+  /verification/run:
+    post:
+      tags: [Verification]
+      summary: Run verification checks for subject (signature, SBOM, license, hashes)
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /reviews/create:
+    post:
+      tags: [Reviews]
+      summary: Create review
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /ratings/get:
+    get:
+      tags: [Ratings]
+      summary: Get rating aggregate for subject
+      responses:
+        "200": {description: OK}
+  /antifraud/check:
+    post:
+      tags: [AntiFraud]
+      summary: Run antifraud checks for subject/reviews
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /policies/get:
+    get:
+      tags: [Policies]
+      summary: Get trust policy
+      responses:
+        "200": {description: OK}
+  /appeals/submit:
+    post:
+      tags: [Appeals]
+      summary: Submit moderation appeal
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
