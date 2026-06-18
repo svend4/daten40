@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UICard Schema v1",
+  "type": "object",
+  "required": [
+    "card_id",
+    "title",
+    "summary",
+    "inputs",
+    "outputs",
+    "widgets",
+    "actions",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "card_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "type"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "secret_ref",
+              "connector",
+              "collection",
+              "file",
+              "text",
+              "number",
+              "toggle",
+              "other"
+            ]
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "hint": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "type"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "artifact",
+              "collection",
+              "message",
+              "report",
+              "other"
+            ]
+          },
+          "hint": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "widgets": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ok",
+        "degraded",
+        "broken",
+        "unknown"
+      ]
+    },
+    "docs_ref": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
