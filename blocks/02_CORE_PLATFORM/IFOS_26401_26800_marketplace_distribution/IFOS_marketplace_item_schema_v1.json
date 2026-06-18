@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS MarketplaceItem Schema v1",
+  "type": "object",
+  "required": [
+    "item_id",
+    "name",
+    "publisher",
+    "category",
+    "tags",
+    "short_description",
+    "supported_runtimes",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "item_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "publisher": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "short_description": {
+      "type": "string"
+    },
+    "long_description": {
+      "type": "string"
+    },
+    "pricing": {
+      "type": "string",
+      "enum": [
+        "free",
+        "paid",
+        "subscription",
+        "unknown"
+      ]
+    },
+    "links": {
+      "type": "object",
+      "properties": {
+        "docs": {
+          "type": "string"
+        },
+        "demo": {
+          "type": "string"
+        },
+        "repo": {
+          "type": "string"
+        },
+        "support": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "trust_badges": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "supported_runtimes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "wordpress",
+          "make",
+          "n8n",
+          "node_red",
+          "fastapi",
+          "local",
+          "docker",
+          "other"
+        ]
+      }
+    },
+    "latest_package_id": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
