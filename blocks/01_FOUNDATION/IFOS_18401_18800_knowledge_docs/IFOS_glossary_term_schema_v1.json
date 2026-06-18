@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Glossary Term Schema v1",
+  "type": "object",
+  "required": [
+    "term_id",
+    "term",
+    "simple_definition",
+    "technical_definition",
+    "examples",
+    "related_terms",
+    "refs",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "term_id": {
+      "type": "string"
+    },
+    "term": {
+      "type": "string"
+    },
+    "simple_definition": {
+      "type": "string"
+    },
+    "technical_definition": {
+      "type": "string"
+    },
+    "examples": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "related_terms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
