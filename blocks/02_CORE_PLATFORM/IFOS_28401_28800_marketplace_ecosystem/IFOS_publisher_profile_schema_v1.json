@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS PublisherProfile Schema v1",
+  "type": "object",
+  "required": [
+    "publisher_id",
+    "name",
+    "verification",
+    "signing_key_ref",
+    "stats",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "publisher_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "contacts": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "verification": {
+      "type": "string",
+      "enum": [
+        "unverified",
+        "verified",
+        "trusted"
+      ]
+    },
+    "signing_key_ref": {
+      "type": "string"
+    },
+    "support": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "stats": {
+      "type": "object",
+      "properties": {
+        "installs": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "active_installs": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "avg_support_response_hours": {
+          "type": "number",
+          "minimum": 0
+        },
+        "reported_issues": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
