@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ImportJob Schema v1",
+  "type": "object",
+  "required": [
+    "import_id",
+    "workspace_id",
+    "kind",
+    "input_uri",
+    "status",
+    "started_at",
+    "finished_at",
+    "report_artifact_ref",
+    "version"
+  ],
+  "properties": {
+    "import_id": {
+      "type": "string"
+    },
+    "workspace_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "csv",
+        "json",
+        "bundle",
+        "evidence_pack"
+      ]
+    },
+    "input_uri": {
+      "type": "string"
+    },
+    "mapping": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "validation": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "queued",
+        "running",
+        "succeeded",
+        "failed"
+      ]
+    },
+    "started_at": {
+      "type": "string"
+    },
+    "finished_at": {
+      "type": "string"
+    },
+    "report_artifact_ref": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
