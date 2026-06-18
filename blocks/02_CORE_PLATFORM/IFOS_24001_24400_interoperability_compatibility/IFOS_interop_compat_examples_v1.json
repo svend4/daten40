@@ -1,0 +1,402 @@
+{
+  "type_system": {
+    "type_system_id": "ts.t.s8knccrpug",
+    "types": [
+      {
+        "name": "string",
+        "kind": "primitive",
+        "definition": {}
+      },
+      {
+        "name": "number",
+        "kind": "primitive",
+        "definition": {}
+      },
+      {
+        "name": "boolean",
+        "kind": "primitive",
+        "definition": {}
+      },
+      {
+        "name": "datetime",
+        "kind": "primitive",
+        "definition": {}
+      },
+      {
+        "name": "url",
+        "kind": "primitive",
+        "definition": {
+          "format": "uri"
+        }
+      },
+      {
+        "name": "object",
+        "kind": "compound",
+        "definition": {
+          "properties": "free"
+        }
+      },
+      {
+        "name": "array<T>",
+        "kind": "compound",
+        "definition": {
+          "item": "T"
+        }
+      },
+      {
+        "name": "secret_ref",
+        "kind": "special",
+        "definition": {
+          "pattern": "^secret://"
+        }
+      },
+      {
+        "name": "file_ref",
+        "kind": "special",
+        "definition": {
+          "pattern": "^file://"
+        }
+      },
+      {
+        "name": "pii_string",
+        "kind": "special",
+        "definition": {
+          "redact": "hash/last4"
+        }
+      }
+    ],
+    "updated_at": "2026-01-03T00:55:00Z",
+    "version": "1.0.0"
+  },
+  "contract_send_telegram": {
+    "contract_id": "ctr.t.d130t8nlih",
+    "action": "send_telegram_message",
+    "title": "Send Telegram Message",
+    "description": "Отправляет сообщение в Telegram по chat_id.",
+    "inputs": [
+      {
+        "name": "chat_id",
+        "type": "pii_string",
+        "required": true,
+        "constraints": {
+          "minLength": 1
+        },
+        "semantics": [
+          "chat_id",
+          "pii"
+        ],
+        "example": "-100123"
+      },
+      {
+        "name": "text",
+        "type": "string",
+        "required": true,
+        "constraints": {
+          "maxLength": 4096
+        },
+        "semantics": [
+          "message"
+        ],
+        "example": "Hello!"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "message_id",
+        "type": "string",
+        "constraints": {},
+        "example": "42"
+      }
+    ],
+    "errors": [
+      {
+        "code": "RATE_LIMIT",
+        "handling": "backoff",
+        "idempotent": false
+      },
+      {
+        "code": "AUTH_FAIL",
+        "handling": "fail_fast",
+        "idempotent": true
+      }
+    ],
+    "tags": [
+      "communication",
+      "telegram"
+    ],
+    "policy": {
+      "no_log_fields": [
+        "chat_id"
+      ],
+      "requires_secret": [
+        "secret://telegram/bot_token"
+      ]
+    },
+    "updated_at": "2026-01-03T00:55:00Z",
+    "version": "1.0.0"
+  },
+  "capabilities": [
+    {
+      "cap_id": "cap.m.l5h5bcq7uq",
+      "platform": "make",
+      "connector": "telegram.sendMessage",
+      "supports": {
+        "webhooks": false,
+        "files": true,
+        "dry_run": true,
+        "retry_policy": true
+      },
+      "auth": [
+        "token"
+      ],
+      "limits": {
+        "rate_limit": "platform/telegram dependent"
+      },
+      "field_coverage": 0.95,
+      "updated_at": "2026-01-03T00:55:00Z",
+      "version": "1.0.0"
+    },
+    {
+      "cap_id": "cap.n.6hjwe5dd4x",
+      "platform": "n8n",
+      "connector": "n8n-nodes-base.telegram",
+      "supports": {
+        "webhooks": true,
+        "files": true,
+        "dry_run": true,
+        "retry_policy": true
+      },
+      "auth": [
+        "token"
+      ],
+      "limits": {
+        "rate_limit": "telegram dependent"
+      },
+      "field_coverage": 0.98,
+      "updated_at": "2026-01-03T00:55:00Z",
+      "version": "1.0.0"
+    }
+  ],
+  "mapping_rules": [
+    {
+      "rule_id": "mr.r.ysvl6y7a2a",
+      "kind": "field_map",
+      "from": "chat_id",
+      "to": "chatId",
+      "transform": "",
+      "severity": "info",
+      "updated_at": "2026-01-03T00:55:00Z",
+      "version": "1.0.0"
+    },
+    {
+      "rule_id": "mr.r.qcvzalqgu3",
+      "kind": "field_map",
+      "from": "text",
+      "to": "text",
+      "transform": "",
+      "severity": "info",
+      "updated_at": "2026-01-03T00:55:00Z",
+      "version": "1.0.0"
+    }
+  ],
+  "adapters": [
+    {
+      "adapter_id": "ad.a.ikzn9tq3le",
+      "from_contract_id": "ctr.t.d130t8nlih",
+      "to_platform": "make",
+      "connector": "telegram.sendMessage",
+      "mapping_rules": [
+        "mr.r.ysvl6y7a2a",
+        "mr.r.qcvzalqgu3"
+      ],
+      "error_mapping": [
+        {
+          "platform_error": "429",
+          "contract_error": "RATE_LIMIT"
+        }
+      ],
+      "updated_at": "2026-01-03T00:55:00Z",
+      "version": "1.0.0"
+    },
+    {
+      "adapter_id": "ad.a.62jgth6rxy",
+      "from_contract_id": "ctr.t.d130t8nlih",
+      "to_platform": "n8n",
+      "connector": "n8n-nodes-base.telegram",
+      "mapping_rules": [
+        "mr.r.ysvl6y7a2a",
+        "mr.r.qcvzalqgu3"
+      ],
+      "error_mapping": [
+        {
+          "platform_error": "429",
+          "contract_error": "RATE_LIMIT"
+        }
+      ],
+      "updated_at": "2026-01-03T00:55:00Z",
+      "version": "1.0.0"
+    }
+  ],
+  "test_vector": {
+    "vector_id": "tv.v.eitnexn2d9",
+    "contract_id": "ctr.t.d130t8nlih",
+    "inputs": {
+      "chat_id": "-100123",
+      "text": "test"
+    },
+    "expected_outputs": {
+      "message_id": "<string>"
+    },
+    "updated_at": "2026-01-03T00:55:00Z",
+    "version": "1.0.0"
+  },
+  "conversion_plan": {
+    "plan_id": "cp.p.0btgvr6knl",
+    "source_platform": "make",
+    "target_platform": "n8n",
+    "subject_id": "cl.news_digest_demo",
+    "steps": [
+      {
+        "node": "telegram_send",
+        "adapter_id": "ad.a.62jgth6rxy",
+        "status": "planned",
+        "notes": "map chat_id -> chatId"
+      },
+      {
+        "node": "rss_fetch",
+        "adapter_id": "ad.rss_read_demo",
+        "status": "needs_manual",
+        "notes": "adapter missing in demo pack"
+      }
+    ],
+    "manual_flags": [
+      "rss_fetch needs adapter"
+    ],
+    "test_vectors": [
+      "tv.v.eitnexn2d9"
+    ],
+    "updated_at": "2026-01-03T00:55:00Z",
+    "version": "1.0.0"
+  },
+  "conversion_job": {
+    "job_id": "cj.j.33psixb53p",
+    "plan_id": "cp.p.0btgvr6knl",
+    "status": "running",
+    "artifacts": [
+      {
+        "kind": "workflow_json",
+        "ref": "n8n://workflow/generated/news_digest_v1"
+      }
+    ],
+    "updated_at": "2026-01-03T00:55:00Z",
+    "version": "1.0.0"
+  },
+  "compat_matrix": {
+    "matrix_id": "mx.x.mvi8sajems",
+    "subject_id": "cl.news_digest_demo",
+    "variants": [
+      {
+        "platform": "make",
+        "ref": "make://template/news_digest_v1",
+        "quality_level": "L2",
+        "requirements": {
+          "hosting": "cloud_ok",
+          "secrets": [
+            "secret://telegram/bot_token"
+          ]
+        },
+        "risks": [
+          "vendor lock-in"
+        ]
+      },
+      {
+        "platform": "n8n",
+        "ref": "n8n://workflow/news_digest_v1",
+        "quality_level": "L3",
+        "requirements": {
+          "hosting": "self_hosted",
+          "secrets": [
+            "secret://telegram/bot_token"
+          ]
+        },
+        "risks": [
+          "requires server"
+        ]
+      },
+      {
+        "platform": "wordpress",
+        "ref": "wp://plugin/news_digest",
+        "quality_level": "L1",
+        "requirements": {
+          "hosting": "wp_hosting",
+          "secrets": [
+            "secret://telegram/bot_token"
+          ]
+        },
+        "risks": [
+          "plugin conflicts"
+        ]
+      }
+    ],
+    "updated_at": "2026-01-03T00:55:00Z",
+    "version": "1.0.0"
+  },
+  "compat_scores": [
+    {
+      "score_id": "cs.s.irzmbvsyun",
+      "subject_id": "cl.news_digest_demo",
+      "platform": "make",
+      "profile_id": "profile.sandbox.safe",
+      "score": 88.0,
+      "reasons": [
+        "dry_run supported",
+        "high field coverage",
+        "cloud_ok matches profile",
+        "recent sandbox receipt ok"
+      ],
+      "breakdown": {
+        "field_coverage": 0.95,
+        "auth": 1.0,
+        "quality_level": 0.6,
+        "trust": 0.7,
+        "sandbox": 1.0
+      },
+      "updated_at": "2026-01-03T00:55:00Z",
+      "version": "1.0.0"
+    },
+    {
+      "score_id": "cs.s.vmpqaxjbjv",
+      "subject_id": "cl.news_digest_demo",
+      "platform": "n8n",
+      "profile_id": "profile.prod.strict",
+      "score": 92.0,
+      "reasons": [
+        "quality L3 fits prod gate",
+        "self_hosted required by policy",
+        "webhooks supported",
+        "better receipts stability window"
+      ],
+      "breakdown": {
+        "field_coverage": 0.98,
+        "auth": 1.0,
+        "quality_level": 0.8,
+        "trust": 0.75,
+        "sandbox": 0.9
+      },
+      "updated_at": "2026-01-03T00:55:00Z",
+      "version": "1.0.0"
+    }
+  ],
+  "contract_validation_report": {
+    "report_id": "vr.r.6axt4l7d1w",
+    "contract_id": "ctr.t.d130t8nlih",
+    "status": "pass",
+    "findings": [
+      "types resolved",
+      "pii_string has redaction rule",
+      "error handling declared"
+    ],
+    "updated_at": "2026-01-03T00:55:00Z",
+    "version": "1.0.0"
+  }
+}
