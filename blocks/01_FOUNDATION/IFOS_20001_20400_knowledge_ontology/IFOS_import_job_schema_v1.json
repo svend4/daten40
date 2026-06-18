@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Import Job Schema v1",
+  "type": "object",
+  "required": [
+    "job_id",
+    "source",
+    "status",
+    "steps",
+    "stats",
+    "created_at",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "job_id": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string",
+      "description": "provenance source_id"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "created",
+        "fetching",
+        "parsing",
+        "normalizing",
+        "resolving",
+        "graph_building",
+        "completed",
+        "failed"
+      ]
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pass",
+              "fail",
+              "running",
+              "skip"
+            ]
+          },
+          "details": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "stats": {
+      "type": "object",
+      "properties": {
+        "entities": {
+          "type": "integer"
+        },
+        "relations": {
+          "type": "integer"
+        },
+        "deduped": {
+          "type": "integer"
+        },
+        "errors": {
+          "type": "integer"
+        }
+      }
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
