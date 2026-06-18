@@ -1,0 +1,189 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Dispute Case Schema v1",
+  "type": "object",
+  "required": [
+    "case_id",
+    "jurisdiction",
+    "status",
+    "created_at",
+    "claimant",
+    "respondent",
+    "subject",
+    "requests",
+    "evidence_refs"
+  ],
+  "properties": {
+    "case_id": {
+      "type": "string"
+    },
+    "jurisdiction": {
+      "type": "string",
+      "description": "node/community/enterprise scope"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "investigating",
+        "resolved",
+        "appealed",
+        "closed"
+      ]
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "claimant": {
+      "type": "object",
+      "required": [
+        "type",
+        "id"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "user",
+            "publisher",
+            "tenant",
+            "node"
+          ]
+        },
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "respondent": {
+      "type": "object",
+      "required": [
+        "type",
+        "id"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "publisher",
+            "tenant",
+            "node"
+          ]
+        },
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "subject": {
+      "type": "object",
+      "required": [
+        "kind",
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "listing",
+            "publisher",
+            "rating",
+            "evidence",
+            "license"
+          ]
+        },
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "requests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "take_down",
+              "re_score",
+              "label_risky",
+              "quarantine",
+              "ban_publisher",
+              "remove_reviews",
+              "license_fix",
+              "other"
+            ]
+          },
+          "details": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "timeline": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "ts",
+          "event"
+        ],
+        "properties": {
+          "ts": {
+            "type": "string"
+          },
+          "event": {
+            "type": "string"
+          },
+          "actor": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "decision": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "upheld",
+            "rejected",
+            "partial"
+          ]
+        },
+        "reasoning": {
+          "type": "string"
+        },
+        "sanctions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "effective_from": {
+          "type": "string"
+        }
+      }
+    },
+    "appeal_ref": {
+      "type": "string"
+    }
+  }
+}
