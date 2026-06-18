@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Publisher Profile Schema v1",
+  "type": "object",
+  "required": [
+    "publisher_id",
+    "name",
+    "verification_level",
+    "keys",
+    "contacts",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "publisher_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "verification_level": {
+      "type": "string",
+      "enum": [
+        "unverified",
+        "email_verified",
+        "org_verified",
+        "audited"
+      ]
+    },
+    "keys": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kid": {
+            "type": "string"
+          },
+          "alg": {
+            "type": "string"
+          },
+          "public_key": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "contacts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
