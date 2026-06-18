@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Attestation Schema v1",
+  "type": "object",
+  "required": [
+    "attestation_id",
+    "kind",
+    "subject_ref",
+    "hash",
+    "issuer",
+    "signature",
+    "created_at",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "attestation_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "artifact_signature",
+        "receipt_signature",
+        "publisher_claim",
+        "reproducible_build"
+      ]
+    },
+    "subject_ref": {
+      "type": "string"
+    },
+    "hash": {
+      "type": "string"
+    },
+    "issuer": {
+      "type": "string"
+    },
+    "signature": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
