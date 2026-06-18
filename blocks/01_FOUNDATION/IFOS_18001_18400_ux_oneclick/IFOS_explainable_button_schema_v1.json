@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Explainable Button Schema v1",
+  "type": "object",
+  "required": [
+    "explain_id",
+    "action_id",
+    "why",
+    "what",
+    "risk",
+    "undo_ref",
+    "proof_refs",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "explain_id": {
+      "type": "string"
+    },
+    "action_id": {
+      "type": "string"
+    },
+    "why": {
+      "type": "object",
+      "properties": {
+        "recommendation_trace_ref": {
+          "type": "string"
+        },
+        "reason_bullets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "what": {
+      "type": "object",
+      "properties": {
+        "install_plan_ref": {
+          "type": "string"
+        },
+        "changes_summary": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "risk": {
+      "type": "object",
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "risks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "policy_decision_ref": {
+          "type": "string"
+        }
+      }
+    },
+    "undo_ref": {
+      "type": "string"
+    },
+    "proof_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
