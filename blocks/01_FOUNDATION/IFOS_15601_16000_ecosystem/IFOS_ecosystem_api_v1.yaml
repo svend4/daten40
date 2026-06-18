@@ -1,0 +1,92 @@
+openapi: 3.0.3
+info:
+  title: IFOS Ecosystem API
+  version: "1.0.0"
+  description: "Capabilities, component ratings, clusters, vitrines, recommendations."
+servers:
+  - url: https://ecosystem.ifos.local/v1
+tags:
+  - name: Contracts
+  - name: Ratings
+  - name: Clusters
+  - name: Vitrines
+  - name: Recommendations
+paths:
+  /contracts/{target}/{id}:
+    get:
+      tags: [Contracts]
+      summary: Get capability contract for a component
+      parameters:
+        - {name: target, in: path, required: true, schema: {type: string}}
+        - {name: id, in: path, required: true, schema: {type: string}}
+      responses:
+        "200": {description: OK}
+    put:
+      tags: [Contracts]
+      summary: Upsert capability contract
+      parameters:
+        - {name: target, in: path, required: true, schema: {type: string}}
+        - {name: id, in: path, required: true, schema: {type: string}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "200": {description: OK}
+  /ratings/{component_type}/{id}:
+    get:
+      tags: [Ratings]
+      summary: Get component rating
+      parameters:
+        - {name: component_type, in: path, required: true, schema: {type: string}}
+        - {name: id, in: path, required: true, schema: {type: string}}
+      responses:
+        "200": {description: OK}
+  /clusters:
+    get:
+      tags: [Clusters]
+      summary: List clusters (filter by domain)
+      parameters:
+        - {name: domain, in: query, schema: {type: string}}
+      responses:
+        "200": {description: OK}
+    post:
+      tags: [Clusters]
+      summary: Trigger clustering pipeline run (manual)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object, description: "pipeline parameters"}
+      responses:
+        "202": {description: Accepted}
+  /vitrines:
+    get:
+      tags: [Vitrines]
+      summary: List vitrines
+      parameters:
+        - {name: domain, in: query, schema: {type: string}}
+      responses:
+        "200": {description: OK}
+    post:
+      tags: [Vitrines]
+      summary: Generate vitrine (best-of) for domain
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "201": {description: Created}
+  /recommendations/events:
+    post:
+      tags: [Recommendations]
+      summary: Submit a recommendation event and get suggestions
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "200": {description: OK}
