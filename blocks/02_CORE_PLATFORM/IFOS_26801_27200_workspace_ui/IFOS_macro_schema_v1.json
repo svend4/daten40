@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Macro Schema v1",
+  "type": "object",
+  "required": [
+    "macro_id",
+    "name",
+    "input_schema",
+    "output_schema",
+    "snippet_flow",
+    "compat",
+    "version"
+  ],
+  "properties": {
+    "macro_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "input_schema": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "output_schema": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "snippet_flow": {
+      "type": "object",
+      "description": "FlowGraph fragment",
+      "additionalProperties": true
+    },
+    "compat": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
