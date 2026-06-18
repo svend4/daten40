@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Metrics Snapshot Schema v1",
+  "type": "object",
+  "required": [
+    "metrics_id",
+    "job_id",
+    "at",
+    "counters",
+    "timers",
+    "cost",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "metrics_id": {
+      "type": "string"
+    },
+    "job_id": {
+      "type": "string"
+    },
+    "at": {
+      "type": "string"
+    },
+    "counters": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "timers": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "cost": {
+      "type": "object",
+      "properties": {
+        "llm_tokens_in": {
+          "type": "number"
+        },
+        "llm_tokens_out": {
+          "type": "number"
+        },
+        "estimated_usd": {
+          "type": "number"
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
