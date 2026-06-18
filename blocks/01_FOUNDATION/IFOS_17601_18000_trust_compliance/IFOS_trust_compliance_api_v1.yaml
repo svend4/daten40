@@ -1,0 +1,140 @@
+openapi: 3.0.3
+info:
+  title: IFOS Trust & Compliance API
+  version: "1.0.0"
+  description: "Licenses, provenance, SBOM, signatures, RBAC/policies, audit log, attestations, vulnerabilities, consent."
+servers:
+  - url: https://trust.ifos.local/v1
+tags:
+  - name: Licenses
+  - name: Provenance
+  - name: SBOM
+  - name: Signatures
+  - name: Policies
+  - name: Permissions
+  - name: Audit
+  - name: Attestations
+  - name: Vulnerabilities
+  - name: Consent
+  - name: Gates
+paths:
+  /licenses:
+    post:
+      tags: [Licenses]
+      summary: Register a LicenseRef
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /provenance/attach:
+    post:
+      tags: [Provenance]
+      summary: Attach provenance record to an artifact
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /sbom/generate:
+    post:
+      tags: [SBOM]
+      summary: Generate SBOM for an asset
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /signatures/sign:
+    post:
+      tags: [Signatures]
+      summary: Sign an artifact hash
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /signatures/verify:
+    post:
+      tags: [Signatures]
+      summary: Verify a signature envelope
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /policies/profiles:
+    post:
+      tags: [Policies]
+      summary: Create/update policy profile
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /permissions/roles:
+    post:
+      tags: [Permissions]
+      summary: Create/update RBAC role
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /audit/events:
+    post:
+      tags: [Audit]
+      summary: Append audit event
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
+  /attestations/issue:
+    post:
+      tags: [Attestations]
+      summary: Issue compliance attestation
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /vulnerabilities/advisories:
+    post:
+      tags: [Vulnerabilities]
+      summary: Publish vulnerability advisory
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /consent/accept:
+    post:
+      tags: [Consent]
+      summary: Record acceptance of policy profile
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /gates/check:
+    post:
+      tags: [Gates]
+      summary: Evaluate whether an asset can be installed/published/featured under a policy mode
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
