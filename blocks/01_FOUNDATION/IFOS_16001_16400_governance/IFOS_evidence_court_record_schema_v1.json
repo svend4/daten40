@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Evidence Court Record Schema v1",
+  "type": "object",
+  "required": [
+    "court_record_id",
+    "claim",
+    "verdict",
+    "evidence_refs",
+    "computed_at",
+    "method_version",
+    "jurisdiction",
+    "trace_id"
+  ],
+  "properties": {
+    "court_record_id": {
+      "type": "string"
+    },
+    "jurisdiction": {
+      "type": "string"
+    },
+    "claim": {
+      "type": "object",
+      "required": [
+        "claim_id",
+        "statement",
+        "target"
+      ],
+      "properties": {
+        "claim_id": {
+          "type": "string"
+        },
+        "statement": {
+          "type": "string"
+        },
+        "target": {
+          "type": "object",
+          "required": [
+            "kind",
+            "id"
+          ],
+          "properties": {
+            "kind": {
+              "type": "string",
+              "enum": [
+                "listing",
+                "function",
+                "adapter",
+                "bundle",
+                "recipe"
+              ]
+            },
+            "id": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            }
+          }
+        },
+        "criteria": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "WARN",
+        "FAIL"
+      ]
+    },
+    "reasoning": {
+      "type": "string"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "computed_at": {
+      "type": "string"
+    },
+    "method_version": {
+      "type": "string"
+    },
+    "trace_id": {
+      "type": "string"
+    },
+    "hash_chain": {
+      "type": "object",
+      "properties": {
+        "prev_hash": {
+          "type": "string"
+        },
+        "this_hash": {
+          "type": "string"
+        },
+        "alg": {
+          "type": "string",
+          "default": "sha256"
+        }
+      }
+    },
+    "signatures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "signer": {
+            "type": "string"
+          },
+          "sig": {
+            "type": "string"
+          },
+          "alg": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
