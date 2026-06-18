@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Artifact Store Schema v1",
+  "type": "object",
+  "required": [
+    "store_id",
+    "kind",
+    "base_path",
+    "retention_days",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "store_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "filesystem",
+        "s3",
+        "gcs",
+        "minio"
+      ]
+    },
+    "base_path": {
+      "type": "string"
+    },
+    "retention_days": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
