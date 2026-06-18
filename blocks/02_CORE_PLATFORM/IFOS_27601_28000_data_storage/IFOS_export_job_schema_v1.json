@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ExportJob Schema v1",
+  "type": "object",
+  "required": [
+    "export_id",
+    "workspace_id",
+    "kind",
+    "selection",
+    "status",
+    "output_artifact_ref",
+    "started_at",
+    "finished_at",
+    "version"
+  ],
+  "properties": {
+    "export_id": {
+      "type": "string"
+    },
+    "workspace_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "csv",
+        "json",
+        "bundle",
+        "evidence_pack"
+      ]
+    },
+    "selection": {
+      "type": "object",
+      "properties": {
+        "collections": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "query": {
+          "type": "string"
+        },
+        "include_artifacts": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "queued",
+        "running",
+        "succeeded",
+        "failed"
+      ]
+    },
+    "output_artifact_ref": {
+      "type": "string"
+    },
+    "started_at": {
+      "type": "string"
+    },
+    "finished_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
