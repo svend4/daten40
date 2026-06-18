@@ -1,0 +1,75 @@
+openapi: 3.0.3
+info:
+  title: IFOS Install & Sandbox API
+  version: "1.0.0"
+  description: "Install planning, sandbox execution, smoke tests, policy gates, promotion and rollback."
+servers:
+  - url: https://install.ifos.local/v1
+tags:
+  - name: Plan
+  - name: Sandbox
+  - name: Smoke
+  - name: Gate
+  - name: Promote
+  - name: Rollback
+paths:
+  /install/plan/create:
+    post:
+      tags: [Plan]
+      summary: Create deterministic install plan for a subject and target platform
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /sandbox/run/start:
+    post:
+      tags: [Sandbox]
+      summary: Start sandbox run for a plan
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
+  /smoke/tests/run:
+    post:
+      tags: [Smoke]
+      summary: Run smoke tests for a sandbox run
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /gate/evaluate:
+    post:
+      tags: [Gate]
+      summary: Evaluate policy gate for promotion to prod
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /promote/to-prod:
+    post:
+      tags: [Promote]
+      summary: Promote sandbox deployment to prod (if gate passes)
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
+  /rollback/execute:
+    post:
+      tags: [Rollback]
+      summary: Execute rollback plan
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
