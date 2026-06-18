@@ -1,0 +1,2306 @@
+[
+  {
+    "phase": "PREFACE",
+    "first_step": 1,
+    "last_step": 43,
+    "count": 43
+  },
+  {
+    "phase": "Фаза B — Новости v1 (простое рабочее) [21-45]",
+    "first_step": 44,
+    "last_step": 45,
+    "count": 2
+  },
+  {
+    "phase": "Фаза C — Новости v2 (среднее: дедуп по смыслу + качество) [46-60]",
+    "first_step": 46,
+    "last_step": 60,
+    "count": 15
+  },
+  {
+    "phase": "Фаза D — Портал сравнения v1 (среднее) [61-85]",
+    "first_step": 61,
+    "last_step": 85,
+    "count": 25
+  },
+  {
+    "phase": "Фаза E — Affiliate Hub v1 (сложнее: интеграции и нормализация) [86-105]",
+    "first_step": 86,
+    "last_step": 105,
+    "count": 20
+  },
+  {
+    "phase": "Фаза F — Дропшиппинг цифровых товаров (самое сложное: деньги/доступ/антифрод) [106-120]",
+    "first_step": 106,
+    "last_step": 120,
+    "count": 15
+  },
+  {
+    "phase": "Фаза G — Платформа: “правила игры” и контроль качества (самое первое для платформы) [121-145]",
+    "first_step": 121,
+    "last_step": 145,
+    "count": 25
+  },
+  {
+    "phase": "Фаза H — Тестовый стенд и автопроверка (начинаем с простого) [146-175]",
+    "first_step": 146,
+    "last_step": 175,
+    "count": 30
+  },
+  {
+    "phase": "Фаза I — Рейтинги, отзывы, репутация (средний уровень) [176-200]",
+    "first_step": 176,
+    "last_step": 200,
+    "count": 25
+  },
+  {
+    "phase": "Фаза J — One-click пакеты и воспроизводимые сборки (сложнее: упаковка) [201-225]",
+    "first_step": 201,
+    "last_step": 225,
+    "count": 25
+  },
+  {
+    "phase": "Фаза K — CI/CD, безопасность, ИИ-паспортизатор (самое сложное: автоматика + интеллект) [226-240]",
+    "first_step": 226,
+    "last_step": 240,
+    "count": 15
+  },
+  {
+    "phase": "Фаза L — Витрина и поиск (Market UI: “как магазин приложений”) [241-270]",
+    "first_step": 241,
+    "last_step": 270,
+    "count": 30
+  },
+  {
+    "phase": "Фаза M — Мульти-тенантность и рабочие пространства (team/org) [271-295]",
+    "first_step": 271,
+    "last_step": 295,
+    "count": 25
+  },
+  {
+    "phase": "Фаза N — Подписки, биллинг, коммерческая модель (средне-сложно) [296-310]",
+    "first_step": 296,
+    "last_step": 310,
+    "count": 15
+  },
+  {
+    "phase": "Фаза O — SDK, экосистема, supply-chain безопасность (самое сложное) [311-320]",
+    "first_step": 311,
+    "last_step": 320,
+    "count": 10
+  },
+  {
+    "phase": "Фаза P — Визуальный конструктор кластеров (Builder UI: “drag&amp;drop”) [321-350]",
+    "first_step": 321,
+    "last_step": 350,
+    "count": 30
+  },
+  {
+    "phase": "Фаза Q — Автосборка по требованиям (Requirements → Blueprint) [351-372]",
+    "first_step": 351,
+    "last_step": 372,
+    "count": 22
+  },
+  {
+    "phase": "Фаза R — AI-архитектор и помощник (не фантазёр, а инженер) [373-386]",
+    "first_step": 373,
+    "last_step": 386,
+    "count": 14
+  },
+  {
+    "phase": "Фаза S — Governance, антискам, качество экосистемы (очень важно) [387-400]",
+    "first_step": 387,
+    "last_step": 400,
+    "count": 14
+  },
+  {
+    "phase": "Фаза T — Enterprise Identity: SSO / SAML / OIDC / SCIM [401-430]",
+    "first_step": 401,
+    "last_step": 430,
+    "count": 30
+  },
+  {
+    "phase": "Фаза U — DLP / SIEM / Security Monitoring (защита от утечек) [431-460]",
+    "first_step": 431,
+    "last_step": 460,
+    "count": 30
+  },
+  {
+    "phase": "Фаза V — Data lineage, provenance, explainability (внутренняя “бухгалтерия данных”) [461-485]",
+    "first_step": 461,
+    "last_step": 485,
+    "count": 25
+  },
+  {
+    "phase": "Фаза W — High Availability, Multi-region, DR (катастрофоустойчивость) [486-500]",
+    "first_step": 486,
+    "last_step": 500,
+    "count": 15
+  },
+  {
+    "phase": "Фаза X — Data Governance и “совет данных” (организация, правила, ответственность) [501-530]",
+    "first_step": 501,
+    "last_step": 530,
+    "count": 30
+  },
+  {
+    "phase": "Фаза Y — Отраслевые “ОС-каталоги”: News OS / Travel OS / Insurance OS [531-560]",
+    "first_step": 531,
+    "last_step": 560,
+    "count": 30
+  },
+  {
+    "phase": "Фаза Z — Федерация маркетплейсов (несколько каталогов, синхронизация, доверие) [561-590]",
+    "first_step": 561,
+    "last_step": 590,
+    "count": 30
+  },
+  {
+    "phase": "Фаза AA — Реальный one-click (IaC): инфраструктура + конфиг + тесты полностью автоматически [591-620]",
+    "first_step": 591,
+    "last_step": 620,
+    "count": 30
+  },
+  {
+    "phase": "Фаза AB — Авто-оптимизация, эксперименты, экономика качества (научная рационализация) [621-650]",
+    "first_step": 621,
+    "last_step": 650,
+    "count": 30
+  },
+  {
+    "phase": "Фаза AC — Федерация данных между организациями (Data Federation: обмен данными с политиками) [651-700]",
+    "first_step": 651,
+    "last_step": 700,
+    "count": 50
+  },
+  {
+    "phase": "Фаза AD — BPM слой: конструктор бизнес-процессов поверх кластеров (Process OS) [701-750]",
+    "first_step": 701,
+    "last_step": 750,
+    "count": 50
+  },
+  {
+    "phase": "Фаза AE — “Профессии” внутри ОС (операторы, архитекторы, аудиторы, кураторы) [751-780]",
+    "first_step": 751,
+    "last_step": 780,
+    "count": 30
+  },
+  {
+    "phase": "Фаза AF — Индустриальные стандарты и сертификация пакетов (как “знак качества”) [781-800]",
+    "first_step": 781,
+    "last_step": 800,
+    "count": 20
+  },
+  {
+    "phase": "Фаза AG — Федерация процессов (BPM между организациями) [801-850]",
+    "first_step": 801,
+    "last_step": 850,
+    "count": 50
+  },
+  {
+    "phase": "Фаза AH — Рынок профессий и услуг (операторы/архитекторы/аудиторы как сервис) [851-900]",
+    "first_step": 851,
+    "last_step": 900,
+    "count": 50
+  },
+  {
+    "phase": "Фаза AI — Институциональные контуры доверия (палаты/ассоциации/гос-профили/закупки) [901-950]",
+    "first_step": 901,
+    "last_step": 950,
+    "count": 50
+  },
+  {
+    "phase": "Фаза AJ — Международная федерация и юрисдикции (multi-country) [951-980]",
+    "first_step": 951,
+    "last_step": 980,
+    "count": 30
+  },
+  {
+    "phase": "Фаза AK — FUNC-ID как “DNS для действий” (универсальный язык функций) [981-1010]",
+    "first_step": 981,
+    "last_step": 1010,
+    "count": 30
+  },
+  {
+    "phase": "Фаза AL — Компилятор вертикалей из онтологий (Vertical Compiler) [1011-1040]",
+    "first_step": 1011,
+    "last_step": 1040,
+    "count": 30
+  },
+  {
+    "phase": "Фаза AM — Исполнительная ткань: edge/offline/agents (как реально исполнять везде) [1041-1070]",
+    "first_step": 1041,
+    "last_step": 1070,
+    "count": 30
+  },
+  {
+    "phase": "Фаза AN — Непрерывная аттестация, формальная уверенность, red-team (самое сложное) [1071-1100]",
+    "first_step": 1071,
+    "last_step": 1100,
+    "count": 30
+  },
+  {
+    "phase": "Фаза AO — Глобальная сеть каталогов и функций (как инфраструктурный стандарт) [1101-1140]",
+    "first_step": 1101,
+    "last_step": 1140,
+    "count": 40
+  },
+  {
+    "phase": "Фаза AP — Capabilities: “функции-как-права” и экономика разрешений [1141-1185]",
+    "first_step": 1141,
+    "last_step": 1185,
+    "count": 45
+  },
+  {
+    "phase": "Фаза AQ — Авто-рефакторинг интернета: дедупликация, кластеризация, переупаковка на уровне сети [1186-1235]",
+    "first_step": 1186,
+    "last_step": 1235,
+    "count": 50
+  },
+  {
+    "phase": "Фаза AR — Мировые индексы качества/доверия и “счётчик зрелости интернета” [1236-1250]",
+    "first_step": 1236,
+    "last_step": 1250,
+    "count": 15
+  },
+  {
+    "phase": "Фаза AS — Knowledge Refactoring: “переписывание документации мира” (упорядочивание знаний) [1251-1305]",
+    "first_step": 1251,
+    "last_step": 1305,
+    "count": 55
+  },
+  {
+    "phase": "Фаза AT — Персональный узел “Экзонет” (домашняя ОС интернета как частный хаб) [1306-1360]",
+    "first_step": 1306,
+    "last_step": 1360,
+    "count": 55
+  },
+  {
+    "phase": "Фаза AU — Anti-Chaos режим: система сама собирает кластеры/процессы под жизненные задачи [1361-1400]",
+    "first_step": 1361,
+    "last_step": 1400,
+    "count": 40
+  },
+  {
+    "phase": "Фаза AV — Живые стандарты (Standards-as-Code): спецификации, тесты, совместимость как код [1401-1450]",
+    "first_step": 1401,
+    "last_step": 1450,
+    "count": 50
+  },
+  {
+    "phase": "Фаза AW — Автоматические миграции по всей экосистеме (Global Auto-Migration) [1451-1500]",
+    "first_step": 1451,
+    "last_step": 1500,
+    "count": 50
+  },
+  {
+    "phase": "Фаза AX — Персональный агент-архитектор (CTO-режим для вашего узла) [1501-1535]",
+    "first_step": 1501,
+    "last_step": 1535,
+    "count": 35
+  },
+  {
+    "phase": "Фаза AY — Люди и культура рационализации: обучение, профессии, “фабрика шаблонов” [1536-1550]",
+    "first_step": 1536,
+    "last_step": 1550,
+    "count": 15
+  },
+  {
+    "phase": "Фаза AZ — Самообновляющийся интернет (Autopilot) как нормальное состояние [1551-1600]",
+    "first_step": 1551,
+    "last_step": 1600,
+    "count": 50
+  },
+  {
+    "phase": "Фаза BA — Защита экосистемы от злоупотреблений и “грязи” (anti-abuse) [1601-1640]",
+    "first_step": 1601,
+    "last_step": 1640,
+    "count": 40
+  },
+  {
+    "phase": "Фаза BB — Экономика устойчивости: финансирование общего, мотивация поддержки, “рынок качества” [1641-1670]",
+    "first_step": 1641,
+    "last_step": 1670,
+    "count": 30
+  },
+  {
+    "phase": "Фаза BC — Человекоцентричность и доступность: “интернет-ОС для всех” [1671-1690]",
+    "first_step": 1671,
+    "last_step": 1690,
+    "count": 20
+  },
+  {
+    "phase": "Фаза BD — Финальная интеграция: зрелость v2, устойчивость к катастрофам, “интернет как ОС” [1691-1700]",
+    "first_step": 1691,
+    "last_step": 1700,
+    "count": 10
+  },
+  {
+    "phase": "Фаза BE — Semantic Composition Engine: сборка решений по смыслу, а не по брендам [1701-1760]",
+    "first_step": 1701,
+    "last_step": 1760,
+    "count": 60
+  },
+  {
+    "phase": "Фаза BF — “Сделать как у лучших”: эталоны, копирование с доказательствами, а не с рекламой [1761-1810]",
+    "first_step": 1761,
+    "last_step": 1810,
+    "count": 50
+  },
+  {
+    "phase": "Фаза BG — Семантическая компоновка публичного кода/плагинов безопасно: “не копировать мусор” [1811-1840]",
+    "first_step": 1811,
+    "last_step": 1840,
+    "count": 30
+  },
+  {
+    "phase": "Фаза BH — Итоговый слой: “кнопка сделать” для любой задачи + глобальное распространение шаблонов [1841-1850]",
+    "first_step": 1841,
+    "last_step": 1850,
+    "count": 10
+  },
+  {
+    "phase": "Фаза BI — Knowledge-as-Infrastructure: утверждения, доказательства, воспроизводимость [1851-1910]",
+    "first_step": 1851,
+    "last_step": 1910,
+    "count": 60
+  },
+  {
+    "phase": "Фаза BJ — Глобальная онтология + “компилятор смысла”: знание управляет компоновкой решений [1911-1960]",
+    "first_step": 1911,
+    "last_step": 1960,
+    "count": 50
+  },
+  {
+    "phase": "Фаза BK — “Пакеты знаний” как товар и как стандарт: рынок науки/инструкций, а не только кода [1961-2000]",
+    "first_step": 1961,
+    "last_step": 2000,
+    "count": 40
+  },
+  {
+    "phase": "Фаза BL — Process-as-Package (PaaP): процесс как устанавливаемый модуль [2001-2060]",
+    "first_step": 2001,
+    "last_step": 2060,
+    "count": 60
+  },
+  {
+    "phase": "Фаза BM — Мировая карта процессов: таксономия, кластеры, вертикали, переиспользование [2061-2100]",
+    "first_step": 2061,
+    "last_step": 2100,
+    "count": 40
+  },
+  {
+    "phase": "Фаза BN — Тестирование процессов как продукта: симуляции, регрессии, “process CI/CD” [2101-2130]",
+    "first_step": 2101,
+    "last_step": 2130,
+    "count": 30
+  },
+  {
+    "phase": "Фаза BO — Marketplace процессов: эталоны, отзывы “с фактами”, борьба с накруткой [2131-2140]",
+    "first_step": 2131,
+    "last_step": 2140,
+    "count": 10
+  },
+  {
+    "phase": "Фаза BP — Межорганизационные процессы и комплаенс: перенос между компаниями/узлами безопасно [2141-2150]",
+    "first_step": 2141,
+    "last_step": 2150,
+    "count": 10
+  },
+  {
+    "phase": "Фаза BQ — Data-as-Package (DaP): данные как устанавливаемые пакеты [2151-2210]",
+    "first_step": 2151,
+    "last_step": 2210,
+    "count": 60
+  },
+  {
+    "phase": "Фаза BR — Registry данных: глобальный “словарь полей” и “каталог схем” [2211-2260]",
+    "first_step": 2211,
+    "last_step": 2260,
+    "count": 50
+  },
+  {
+    "phase": "Фаза BS — Transformations-as-Package: конвертеры, нормализаторы, ETL как модуль [2261-2290]",
+    "first_step": 2261,
+    "last_step": 2290,
+    "count": 30
+  },
+  {
+    "phase": "Фаза BT — Data Quality, Lineage, Governance: качество и управление данными как стандарт [2291-2300]",
+    "first_step": 2291,
+    "last_step": 2300,
+    "count": 10
+  },
+  {
+    "phase": "Фаза BU — UI-as-Package (UaP): интерфейс как пакет, связанный с данными и процессами [2301-2360]",
+    "first_step": 2301,
+    "last_step": 2360,
+    "count": 60
+  },
+  {
+    "phase": "Фаза BV — Мировая карта интерфейсов: кластеры UI по задачам, вертикалям, уровням сложности [2361-2410]",
+    "first_step": 2361,
+    "last_step": 2410,
+    "count": 50
+  },
+  {
+    "phase": "Фаза BW — UI для разработки/рационализации: “компоновка как IDE” (сборка функций/процессов/данных визуально) [2411-2450]",
+    "first_step": 2411,
+    "last_step": 2450,
+    "count": 40
+  },
+  {
+    "phase": "Фаза BX — Identity-as-Package: идентичность как объект, ключи, роли, владение [2451-2510]",
+    "first_step": 2451,
+    "last_step": 2510,
+    "count": 60
+  },
+  {
+    "phase": "Фаза BY — Trust Graph &amp; Reputation: доверие как граф, отзывы “по факту”, аттестации [2511-2560]",
+    "first_step": 2511,
+    "last_step": 2560,
+    "count": 50
+  },
+  {
+    "phase": "Фаза BZ — Anti-scam, Abuse Resistance, Supply Chain Security: защита экосистемы [2561-2600]",
+    "first_step": 2561,
+    "last_step": 2600,
+    "count": 40
+  },
+  {
+    "phase": "Фаза CA — Pricing &amp; Billing primitives: базовые объекты оплаты [2601-2660]",
+    "first_step": 2601,
+    "last_step": 2660,
+    "count": 60
+  },
+  {
+    "phase": "Фаза CB — Incentives for Rationalization: стимулы именно за компоновку/документацию/поддержку [2661-2710]",
+    "first_step": 2661,
+    "last_step": 2710,
+    "count": 50
+  },
+  {
+    "phase": "Фаза CC — Marketplace governance: управление рынком, борьба со спамом, устойчивый рост [2711-2750]",
+    "first_step": 2711,
+    "last_step": 2750,
+    "count": 40
+  },
+  {
+    "phase": "Фаза CD — Knowledge Package Core: знания как устанавливаемые пакеты [2751-2800]",
+    "first_step": 2751,
+    "last_step": 2800,
+    "count": 50
+  },
+  {
+    "phase": "Фаза CE — Claims/Evidence: доказательства для знаний (чтобы “обзор” был проверяемым) [2801-2850]",
+    "first_step": 2801,
+    "last_step": 2850,
+    "count": 50
+  },
+  {
+    "phase": "Фаза CF — Knowledge Registry &amp; Search: каталог знаний, поиск, граф связей [2851-2885]",
+    "first_step": 2851,
+    "last_step": 2885,
+    "count": 35
+  },
+  {
+    "phase": "Фаза CG — Knowledge-to-Action: знания превращаются в действия, обучение и “рационализаторские кампании” [2886-2900]",
+    "first_step": 2886,
+    "last_step": 2900,
+    "count": 15
+  },
+  {
+    "phase": "Фаза CH — Experiment Package Core: эксперимент как устанавливаемый пакет [2901-2950]",
+    "first_step": 2901,
+    "last_step": 2950,
+    "count": 50
+  },
+  {
+    "phase": "Фаза CI — Measurement &amp; Benchmark-as-Package: измерения и сравнения решений [2951-3000]",
+    "first_step": 2951,
+    "last_step": 3000,
+    "count": 50
+  },
+  {
+    "phase": "Фаза CJ — Lab Notebook &amp; Reproducibility: журнал, протоколы, воспроизводимость “как в лаборатории” [3001-3030]",
+    "first_step": 3001,
+    "last_step": 3030,
+    "count": 30
+  },
+  {
+    "phase": "Фаза CK — Meta-analysis &amp; Decision-as-Package: мета-анализ, выбор решений, “научные решения” как пакеты [3031-3050]",
+    "first_step": 3031,
+    "last_step": 3050,
+    "count": 20
+  },
+  {
+    "phase": "Фаза CL — Policy Package Core: политика как устанавливаемый пакет [3051-3100]",
+    "first_step": 3051,
+    "last_step": 3100,
+    "count": 50
+  },
+  {
+    "phase": "Фаза CM — Governance workflows: управление, модерация, апелляции, процедуры [3101-3150]",
+    "first_step": 3101,
+    "last_step": 3150,
+    "count": 50
+  },
+  {
+    "phase": "Фаза CN — Compliance &amp; Contracts: комплаенс, контракты, закупки как код [3151-3200]",
+    "first_step": 3151,
+    "last_step": 3200,
+    "count": 50
+  },
+  {
+    "phase": "Фаза CO — Connector Core: коннектор как стандартный “драйвер” [3201-3250]",
+    "first_step": 3201,
+    "last_step": 3250,
+    "count": 50
+  },
+  {
+    "phase": "Фаза CP — Universal Adapters: универсальные адаптеры (API↔Make↔n8n↔WP) [3251-3300]",
+    "first_step": 3251,
+    "last_step": 3300,
+    "count": 50
+  },
+  {
+    "phase": "Фаза CQ — One-Click Clusters UX: сборка кластера из коннекторов/пакетов [3301-3350]",
+    "first_step": 3301,
+    "last_step": 3350,
+    "count": 50
+  },
+  {
+    "phase": "Фаза CR — App Suite Definition: набор приложений и их границы [3351-3385]",
+    "first_step": 3351,
+    "last_step": 3385,
+    "count": 35
+  },
+  {
+    "phase": "Фаза CS — MVP Apps: от простого к сложному (минимум работающих приложений) [3386-3450]",
+    "first_step": 3386,
+    "last_step": 3450,
+    "count": 65
+  },
+  {
+    "phase": "Фаза CT — Go-to-Market &amp; Ecosystem hooks: как это становится рынком [3451-3500]",
+    "first_step": 3451,
+    "last_step": 3500,
+    "count": 50
+  },
+  {
+    "phase": "Фаза CU — Reference Program Core: как делать эталонные кластеры правильно [3501-3530]",
+    "first_step": 3501,
+    "last_step": 3530,
+    "count": 30
+  },
+  {
+    "phase": "Фаза CV — RC#1 Personal Macro Pack: личные “макросы” без тяжёлых рисков [3531-3560]",
+    "first_step": 3531,
+    "last_step": 3560,
+    "count": 30
+  },
+  {
+    "phase": "Фаза CW — RC#2 WordPress Content Ops: плагины+формы+контент как кластер [3561-3590]",
+    "first_step": 3561,
+    "last_step": 3590,
+    "count": 30
+  },
+  {
+    "phase": "Фаза CX — RC#3 News Digest / News Conference: сводка, сравнение, “новостные конференции” [3591-3620]",
+    "first_step": 3591,
+    "last_step": 3620,
+    "count": 30
+  },
+  {
+    "phase": "Фаза CY — RC#4 Comparison Portal Starter: сравнение услуг/товаров как инженерный пакет [3621-3650]",
+    "first_step": 3621,
+    "last_step": 3650,
+    "count": 30
+  },
+  {
+    "phase": "Фаза CZ — RC#5 Support Desk &amp; CRM: тикеты, каналы, SLA, база знаний [3651-3725]",
+    "first_step": 3651,
+    "last_step": 3710,
+    "count": 60
+  },
+  {
+    "phase": "Фаза DA — RC#6 B2B Billing &amp; Contracts: счета, подписки, контракты, комплаенс [3726-3800]",
+    "first_step": 3726,
+    "last_step": 3800,
+    "count": 75
+  },
+  {
+    "phase": "Фаза DB — IFG Core: уровни языка, базовые понятия [3801-3830]",
+    "first_step": 3801,
+    "last_step": 3830,
+    "count": 30
+  },
+  {
+    "phase": "Фаза DC — IFG Dictionaries: глаголы, сущности, модификаторы [3831-3870]",
+    "first_step": 3831,
+    "last_step": 3870,
+    "count": 40
+  },
+  {
+    "phase": "Фаза DD — IFG Linting &amp; Quality: правила грамматики, метрики, тесты [3871-3910]",
+    "first_step": 3871,
+    "last_step": 3910,
+    "count": 40
+  },
+  {
+    "phase": "Фаза DE — IFG Composition &amp; Autocompose: автосборка “фраз” и “текстов” [3911-3950]",
+    "first_step": 3911,
+    "last_step": 3950,
+    "count": 40
+  },
+  {
+    "phase": "Фаза DF — Governance Foundations: роли, правила, артефакты [3951-3980]",
+    "first_step": 3951,
+    "last_step": 3980,
+    "count": 30
+  },
+  {
+    "phase": "Фаза DG — Marketplace Governance: публикация, модерация, доверие [3981-4020]",
+    "first_step": 3981,
+    "last_step": 4010,
+    "count": 30
+  },
+  {
+    "phase": "Фаза DH — Federation &amp; Enterprise Control: частные каталоги, зеркала, доверенные цепочки [4021-4060]",
+    "first_step": 4021,
+    "last_step": 4050,
+    "count": 30
+  },
+  {
+    "phase": "Фаза DI — Change Management &amp; Dispute Resolution: как жить с конфликтами и эволюцией [4061-4100]",
+    "first_step": 4061,
+    "last_step": 4100,
+    "count": 40
+  },
+  {
+    "phase": "Фаза DJ — Runtime Core: минимальный движок исполнения [4101-4130]",
+    "first_step": 4101,
+    "last_step": 4130,
+    "count": 30
+  },
+  {
+    "phase": "Фаза DK — Queue &amp; Event Model: очереди, триггеры, дедупликация [4131-4160]",
+    "first_step": 4131,
+    "last_step": 4160,
+    "count": 30
+  },
+  {
+    "phase": "Фаза DL — State, Idempotency, Snapshots: “не ломать данные” [4161-4190]",
+    "first_step": 4161,
+    "last_step": 4190,
+    "count": 30
+  },
+  {
+    "phase": "Фаза DM — Errors, Retries, Sagas: сложная надёжность [4191-4220]",
+    "first_step": 4191,
+    "last_step": 4210,
+    "count": 20
+  },
+  {
+    "phase": "Фаза DN — Observability &amp; Cost: видеть всё, считать всё [4221-4250]",
+    "first_step": 4221,
+    "last_step": 4250,
+    "count": 30
+  },
+  {
+    "phase": "Фаза DO — Studio Core: минимальный редактор “фраз” и “текстов” [4251-4280]",
+    "first_step": 4251,
+    "last_step": 4280,
+    "count": 30
+  },
+  {
+    "phase": "Фаза DP — Builder Wizard: “одна кнопка” для Blueprints [4281-4320]",
+    "first_step": 4281,
+    "last_step": 4310,
+    "count": 30
+  },
+  {
+    "phase": "Фаза DQ — Intent-to-Blueprint: “скажи словами — получи процесс” [4321-4360]",
+    "first_step": 4321,
+    "last_step": 4350,
+    "count": 30
+  },
+  {
+    "phase": "Фаза DR — Publish &amp; Marketplace UX: карточки, отзывы, доказательства, “слава” функций [4361-4400]",
+    "first_step": 4361,
+    "last_step": 4400,
+    "count": 40
+  },
+  {
+    "phase": "Фаза DS — Registry Core: минимальная модель реестра [4401-4430]",
+    "first_step": 4401,
+    "last_step": 4430,
+    "count": 30
+  },
+  {
+    "phase": "Фаза DT — Schemas &amp; Typing: универсальные схемы, нормализация, контракты [4431-4460]",
+    "first_step": 4431,
+    "last_step": 4460,
+    "count": 30
+  },
+  {
+    "phase": "Фаза DU — Registry Search &amp; Ranking: поиск, сравнение, “прославление” по фактам [4461-4500]",
+    "first_step": 4461,
+    "last_step": 4490,
+    "count": 30
+  },
+  {
+    "phase": "Фаза DV — Data Products &amp; Reviews: отзывы, рейтинги, данные как артефакты [4501-4550]",
+    "first_step": 4501,
+    "last_step": 4550,
+    "count": 38
+  },
+  {
+    "phase": "Фаза DW — Domain App Shell: общий каркас для любых порталов [4551-4580]",
+    "first_step": 4551,
+    "last_step": 4580,
+    "count": 30
+  },
+  {
+    "phase": "Фаза DX — Compare Portal (как Check24, но “для всего”): модели, потоки, кластеры [4581-4620]",
+    "first_step": 4581,
+    "last_step": 4620,
+    "count": 30
+  },
+  {
+    "phase": "Фаза DY — News Portal / News Conference: поток новостей, “дайджесты”, сравнение источников [4621-4660]",
+    "first_step": 4621,
+    "last_step": 4660,
+    "count": 28
+  },
+  {
+    "phase": "Фаза DZ — Dropshipping Portal (товары/услуги/цифра): партнёрки как “поставщики функций” [4661-4700]",
+    "first_step": 4661,
+    "last_step": 4700,
+    "count": 29
+  },
+  {
+    "phase": "Фаза EA — Cross-Domain Backbone: общие шины, идентичности, контракты [4701-4730]",
+    "first_step": 4701,
+    "last_step": 4730,
+    "count": 20
+  },
+  {
+    "phase": "Фаза EB — Pipeline #1: Trend → Shortlist → Campaign (самый простой сквозной сценарий) [4731-4760]",
+    "first_step": 4731,
+    "last_step": 4760,
+    "count": 20
+  },
+  {
+    "phase": "Фаза EC — Pipeline #2: News Conference → Verify → Update Compare (качество данных) [4761-4790]",
+    "first_step": 4761,
+    "last_step": 4790,
+    "count": 19
+  },
+  {
+    "phase": "Фаза ED — Pipeline #3: Portfolio Optimization Loop (кампании → сравнение → контент) [4791-4820]",
+    "first_step": 4791,
+    "last_step": 4820,
+    "count": 18
+  },
+  {
+    "phase": "Фаза EE — Super Blueprints &amp; Scale: большие кластеры, SLA, федерация [4821-4850]",
+    "first_step": 4821,
+    "last_step": 4850,
+    "count": 30
+  },
+  {
+    "phase": "Фаза EF — Простейшая монетизация: тарифы, лимиты, биллинг [4851-4880]",
+    "first_step": 4851,
+    "last_step": 4880,
+    "count": 28
+  },
+  {
+    "phase": "Фаза EG — Marketplace экономика: комиссии, ревшэр, правила выплат [4881-4910]",
+    "first_step": 4881,
+    "last_step": 4910,
+    "count": 27
+  },
+  {
+    "phase": "Фаза EH — Сертификация и бейджи: Verified, Secure, Compliant, Stable [4911-4940]",
+    "first_step": 4911,
+    "last_step": 4940,
+    "count": 27
+  },
+  {
+    "phase": "Фаза EI — Support &amp; SLA: платная поддержка, MSP, эксплуатация [4941-4970]",
+    "first_step": 4941,
+    "last_step": 4970,
+    "count": 20
+  },
+  {
+    "phase": "Фаза EJ — Incentives: как заставить систему “самоочищаться” и расти качеством [4971-5000]",
+    "first_step": 4971,
+    "last_step": 5000,
+    "count": 29
+  },
+  {
+    "phase": "Фаза EK — Governance Core: ответственность, роли, правила. [5001-5030]",
+    "first_step": 5001,
+    "last_step": 5030,
+    "count": 20
+  },
+  {
+    "phase": "Фаза EL — Privacy/GDPR: данные, права, удаление, минимизация. [5031-5060]",
+    "first_step": 5031,
+    "last_step": 5060,
+    "count": 20
+  },
+  {
+    "phase": "Фаза EM — Security: угрозы, supply chain, sandbox, секреты. [5061-5090]",
+    "first_step": 5061,
+    "last_step": 5090,
+    "count": 19
+  },
+  {
+    "phase": "Фаза EN — Legal/IP/ToS: лицензии, авторство, ответственность. [5091-5120]",
+    "first_step": 5091,
+    "last_step": 5120,
+    "count": 17
+  },
+  {
+    "phase": "Фаза EO — Risk Management: карта рисков, контроль, страхование, непрерывность. [5121-5150]",
+    "first_step": 5121,
+    "last_step": 5150,
+    "count": 16
+  },
+  {
+    "phase": "Фаза EP — День 0–30: “узкий, но рабочий MVP”. [5151-5180]",
+    "first_step": 5151,
+    "last_step": 5180,
+    "count": 19
+  },
+  {
+    "phase": "Фаза EQ — День 31–60: “качество, доказательства, первые доменные порталы”. [5181-5210]",
+    "first_step": 5181,
+    "last_step": 5210,
+    "count": 17
+  },
+  {
+    "phase": "Фаза ER — День 61–90: “публичный marketplace + сертификация + супер-бандлы”. [5211-5240]",
+    "first_step": 5211,
+    "last_step": 5240,
+    "count": 16
+  },
+  {
+    "phase": "Фаза ES — Масштаб 6–12 месяцев: федерация каталогов, стандарты, “учёт мира”. [5241-5300]",
+    "first_step": 5241,
+    "last_step": 5300,
+    "count": 20
+  },
+  {
+    "phase": "Фаза ET — Base Docs Pack: минимум юридики и правил [5301-5330]",
+    "first_step": 5301,
+    "last_step": 5330,
+    "count": 27
+  },
+  {
+    "phase": "Фаза EU — GDPR Pack: DSAR, DPA, RoPA, retention [5331-5360]",
+    "first_step": 5331,
+    "last_step": 5360,
+    "count": 20
+  },
+  {
+    "phase": "Фаза EV — Security Pack: IR, SBOM, сканы, runbooks [5361-5390]",
+    "first_step": 5361,
+    "last_step": 5390,
+    "count": 19
+  },
+  {
+    "phase": "Фаза EW — Certification &amp; Review Pack: чек-листы бейджей и публикаций [5391-5420]",
+    "first_step": 5391,
+    "last_step": 5420,
+    "count": 17
+  },
+  {
+    "phase": "Фаза EX — DocGen &amp; Policy-as-Code: автогенерация “бумаги” из реестра [5421-5450]",
+    "first_step": 5421,
+    "last_step": 5450,
+    "count": 20
+  },
+  {
+    "phase": "Фаза EY — Unified Import: общий импортёр для “всего”. [5451-5480]",
+    "first_step": 5451,
+    "last_step": 5480,
+    "count": 27
+  },
+  {
+    "phase": "Фаза EZ — Dedup &amp; Canonicalization: убрать “миллион одинаковых”. [5481-5510]",
+    "first_step": 5481,
+    "last_step": 5510,
+    "count": 17
+  },
+  {
+    "phase": "Фаза FA — Clusters &amp; One-Click Bundles: “макросы интернета”. [5511-5540]",
+    "first_step": 5511,
+    "last_step": 5540,
+    "count": 20
+  },
+  {
+    "phase": "Фаза FB — Reputation by Evidence: отзывы и рейтинг “по факту работы”. [5541-5570]",
+    "first_step": 5541,
+    "last_step": 5570,
+    "count": 18
+  },
+  {
+    "phase": "Фаза FC — Enterprise Adoption: миграции, импорт “под ключ”, федерация. [5571-5600]",
+    "first_step": 5571,
+    "last_step": 5600,
+    "count": 18
+  },
+  {
+    "phase": "Фаза FD — WP Taxonomy &amp; Mapping: как превратить плагин в “функцию ОС”. [5601-5630]",
+    "first_step": 5601,
+    "last_step": 5630,
+    "count": 20
+  },
+  {
+    "phase": "Фаза FE — WP Compatibility Matrix &amp; Compare: “почему этот плагин не работает?”. [5631-5655]",
+    "first_step": 5631,
+    "last_step": 5655,
+    "count": 17
+  },
+  {
+    "phase": "Фаза FF — WP Clusters &amp; One-Click Stacks: “наборы под задачу”. [5656-5675]",
+    "first_step": 5656,
+    "last_step": 5675,
+    "count": 13
+  },
+  {
+    "phase": "Фаза FG — Workflow Normalization: узлы, типы, контракты. [5676-5705]",
+    "first_step": 5676,
+    "last_step": 5705,
+    "count": 16
+  },
+  {
+    "phase": "Фаза FH — Pattern Library: типовые паттерны как “интернет-макросы”. [5706-5730]",
+    "first_step": 5706,
+    "last_step": 5730,
+    "count": 13
+  },
+  {
+    "phase": "Фаза FI — One-Click Bundles for Automation: пакеты для команд и компаний. [5731-5750]",
+    "first_step": 5731,
+    "last_step": 5750,
+    "count": 14
+  },
+  {
+    "phase": "Фаза FJ — Mobile Primitives: базовые строительные блоки “интернет-макросов” на телефоне [5751-5780]",
+    "first_step": 5751,
+    "last_step": 5780,
+    "count": 28
+  },
+  {
+    "phase": "Фаза FK — Android Integration Mechanisms: intents, deep links, share, providers, webhooks [5781-5810]",
+    "first_step": 5781,
+    "last_step": 5810,
+    "count": 27
+  },
+  {
+    "phase": "Фаза FL — Mobile Runtime: исполнение, очереди, фоновые ограничения, Termux [5811-5840]",
+    "first_step": 5811,
+    "last_step": 5840,
+    "count": 27
+  },
+  {
+    "phase": "Фаза FM — Mobile Macro UX: быстро, понятно, “одной кнопкой” [5841-5865]",
+    "first_step": 5841,
+    "last_step": 5865,
+    "count": 18
+  },
+  {
+    "phase": "Фаза FN — Mobile Security &amp; Privacy: разрешения, песочницы, риски L4 [5866-5885]",
+    "first_step": 5866,
+    "last_step": 5885,
+    "count": 15
+  },
+  {
+    "phase": "Фаза FO — Distribution &amp; Enterprise: пакеты, синхронизация, MDM-подход [5886-5900]",
+    "first_step": 5886,
+    "last_step": 5900,
+    "count": 13
+  },
+  {
+    "phase": "Фаза FP — Unified Execution Model: единая модель выполнения “где угодно” [5901-5930]",
+    "first_step": 5901,
+    "last_step": 5930,
+    "count": 21
+  },
+  {
+    "phase": "Фаза FQ — Step Routing &amp; Orchestration: “куда отправить этот шаг?” [5931-5960]",
+    "first_step": 5931,
+    "last_step": 5960,
+    "count": 18
+  },
+  {
+    "phase": "Фаза FR — Shared Data &amp; References: файлы/объекты как ссылки, а не копии [5961-5990]",
+    "first_step": 5961,
+    "last_step": 5990,
+    "count": 18
+  },
+  {
+    "phase": "Фаза FS — Cross-Device UX: один процесс, разные экраны [5991-6020]",
+    "first_step": 5991,
+    "last_step": 6020,
+    "count": 18
+  },
+  {
+    "phase": "Фаза FT — Enterprise Control Plane: политики, аудит, федерация устройств [6021-6050]",
+    "first_step": 6021,
+    "last_step": 6050,
+    "count": 18
+  },
+  {
+    "phase": "Фаза FU — Vertical Factory Core: общий “завод вертикалей” [6051-6075]",
+    "first_step": 6051,
+    "last_step": 6075,
+    "count": 25
+  },
+  {
+    "phase": "Фаза FV — Travel OS: сравнение поездок, страховок путешествий, партнёрки [6076-6100]",
+    "first_step": 6076,
+    "last_step": 6100,
+    "count": 21
+  },
+  {
+    "phase": "Фаза FW — Insurance/Finance OS: сравнение страховок/тарифов/банковских продуктов [6101-6125]",
+    "first_step": 6101,
+    "last_step": 6125,
+    "count": 17
+  },
+  {
+    "phase": "Фаза FX — E-commerce/Retail OS: сравнение товаров + реальный “dropship stack” [6126-6150]",
+    "first_step": 6126,
+    "last_step": 6150,
+    "count": 20
+  },
+  {
+    "phase": "Фаза FY — Care/Legal/Social OS: услуги, права, документы, маршрутизация кейсов [6151-6175]",
+    "first_step": 6151,
+    "last_step": 6175,
+    "count": 16
+  },
+  {
+    "phase": "Фаза FZ — Scaling the Vertical Factory: как выпускать вертикали серийно [6176-6200]",
+    "first_step": 6176,
+    "last_step": 6200,
+    "count": 23
+  },
+  {
+    "phase": "Фаза GA — Core News Model: от “статей” к “событиям” [6201-6230]",
+    "first_step": 6201,
+    "last_step": 6230,
+    "count": 20
+  },
+  {
+    "phase": "Фаза GB — Source Compare &amp; Trust: доверие не по “мнению”, а по сигналам [6231-6260]",
+    "first_step": 6231,
+    "last_step": 6260,
+    "count": 20
+  },
+  {
+    "phase": "Фаза GC — News Conference UX: событие как “конференция” [6261-6290]",
+    "first_step": 6261,
+    "last_step": 6290,
+    "count": 19
+  },
+  {
+    "phase": "Фаза GD — News → Action Bridge: новость вызывает макрос/сравнение/кампанию [6291-6320]",
+    "first_step": 6291,
+    "last_step": 6320,
+    "count": 17
+  },
+  {
+    "phase": "Фаза GE — Scale &amp; Quality: тысячи источников, анти-манипуляции, “интернет как учётная система” [6321-6350]",
+    "first_step": 6321,
+    "last_step": 6350,
+    "count": 18
+  },
+  {
+    "phase": "Фаза GF — IFG Core Vocabulary: словарь действий и объектов [6351-6380]",
+    "first_step": 6351,
+    "last_step": 6380,
+    "count": 19
+  },
+  {
+    "phase": "Фаза GG — IFG Compilation: “функция как слово” → исполняемый план [6381-6410]",
+    "first_step": 6381,
+    "last_step": 6410,
+    "count": 18
+  },
+  {
+    "phase": "Фаза GH — IFG Registry &amp; Thesaurus: каталог “слов” и “макросов” [6411-6440]",
+    "first_step": 6411,
+    "last_step": 6440,
+    "count": 18
+  },
+  {
+    "phase": "Фаза GI — Rationalization Pipeline: как “переписать интернет грамматически” [6441-6470]",
+    "first_step": 6441,
+    "last_step": 6470,
+    "count": 17
+  },
+  {
+    "phase": "Фаза GJ — Governance &amp; Evolution: как язык не превратить в бардак [6471-6500]",
+    "first_step": 6471,
+    "last_step": 6500,
+    "count": 18
+  },
+  {
+    "phase": "Фаза GK — NL Ingestion: как “сырой текст” превращается в структуру [6501-6530]",
+    "first_step": 6501,
+    "last_step": 6530,
+    "count": 18
+  },
+  {
+    "phase": "Фаза GL — NL→IFG Translation: из “русского текста” в “язык функций” [6531-6560]",
+    "first_step": 6531,
+    "last_step": 6560,
+    "count": 17
+  },
+  {
+    "phase": "Фаза GM — IFG→Plan: компиляция в workflow + размещение по устройствам [6561-6590]",
+    "first_step": 6561,
+    "last_step": 6590,
+    "count": 17
+  },
+  {
+    "phase": "Фаза GN — Plan→Docs: автоматическая документация, как в “офисных приложениях” [6591-6620]",
+    "first_step": 6591,
+    "last_step": 6620,
+    "count": 17
+  },
+  {
+    "phase": "Фаза GO — IFG→NL: объяснять планы “человеческим языком” и обучать [6621-6650]",
+    "first_step": 6621,
+    "last_step": 6650,
+    "count": 18
+  },
+  {
+    "phase": "Фаза GP — Reputation Primitives: основы “славы по заслугам” [6651-6680]",
+    "first_step": 6651,
+    "last_step": 6680,
+    "count": 18
+  },
+  {
+    "phase": "Фаза GQ — Reviews &amp; Evidence: отзывы не “болтовня”, а измерение [6681-6710]",
+    "first_step": 6681,
+    "last_step": 6710,
+    "count": 17
+  },
+  {
+    "phase": "Фаза GR — Marketplace Ranking: иерархия качества “сверху вниз” [6711-6740]",
+    "first_step": 6711,
+    "last_step": 6740,
+    "count": 17
+  },
+  {
+    "phase": "Фаза GS — Bounties &amp; Work Markets: оплачиваемая рационализация [6741-6770]",
+    "first_step": 6741,
+    "last_step": 6770,
+    "count": 17
+  },
+  {
+    "phase": "Фаза GT — Business Models: B2B OS для интернета без “изобретения велосипеда” [6771-6800]",
+    "first_step": 6771,
+    "last_step": 6800,
+    "count": 18
+  },
+  {
+    "phase": "Фаза GU — WP Inventory: учёт плагинов/тем/хуков как “функций” [6801-6825]",
+    "first_step": 6801,
+    "last_step": 6825,
+    "count": 19
+  },
+  {
+    "phase": "Фаза GV — WP→IFG Mapping: “плагин = набор лексем и макросов” [6826-6850]",
+    "first_step": 6826,
+    "last_step": 6850,
+    "count": 15
+  },
+  {
+    "phase": "Фаза GW — WP Bundles: кластеры “одной кнопкой” вместо 20 плагинов [6851-6875]",
+    "first_step": 6851,
+    "last_step": 6875,
+    "count": 16
+  },
+  {
+    "phase": "Фаза GX — Make Inventory: сценарии/модули как “микрофункции” [6876-6900]",
+    "first_step": 6876,
+    "last_step": 6900,
+    "count": 15
+  },
+  {
+    "phase": "Фаза GY — Make→IFG + Scenario Bundles: “макросы Make” как пакеты [6901-6925]",
+    "first_step": 6901,
+    "last_step": 6925,
+    "count": 16
+  },
+  {
+    "phase": "Фаза GZ — WP↔Make Bridge: “сайт” + “автоматизация” как единый продукт [6926-6950]",
+    "first_step": 6926,
+    "last_step": 6950,
+    "count": 23
+  },
+  {
+    "phase": "Фаза HA — База: “локальный Make” как продукт [6951-6975]",
+    "first_step": 6951,
+    "last_step": 6975,
+    "count": 17
+  },
+  {
+    "phase": "Фаза HB — Установка “по-взрослому”: Docker/Reverse-Proxy/Домены [6976-7000]",
+    "first_step": 6976,
+    "last_step": 7000,
+    "count": 20
+  },
+  {
+    "phase": "Фаза HC — Абстракция исполнителя: n8n vs Node-RED + общий слой [7001-7025]",
+    "first_step": 7001,
+    "last_step": 7025,
+    "count": 16
+  },
+  {
+    "phase": "Фаза HD — Secrets, PII, Audit: чтобы можно было в бизнесе и госе [7026-7050]",
+    "first_step": 7026,
+    "last_step": 7050,
+    "count": 15
+  },
+  {
+    "phase": "Фаза HE — Packages/Bundles/One-Click: библиотека макросов как продукт [7051-7075]",
+    "first_step": 7051,
+    "last_step": 7075,
+    "count": 16
+  },
+  {
+    "phase": "Фаза HF — Android / Mini-PC Deployment: “раннер в кармане” [7076-7100]",
+    "first_step": 7076,
+    "last_step": 7100,
+    "count": 23
+  },
+  {
+    "phase": "Фаза IA — Minimal Registry: “таблица как истина” [7101-7125]",
+    "first_step": 7101,
+    "last_step": 7125,
+    "count": 16
+  },
+  {
+    "phase": "Фаза IB — Relationship Graph: “как всё связано” [7126-7150]",
+    "first_step": 7126,
+    "last_step": 7150,
+    "count": 15
+  },
+  {
+    "phase": "Фаза IC — Search &amp; Retrieval: “найти лучшее, а не просто найти” [7151-7175]",
+    "first_step": 7151,
+    "last_step": 7175,
+    "count": 16
+  },
+  {
+    "phase": "Фаза ID — Evidence &amp; Telemetry: “система отзывов на основе фактов” [7176-7200]",
+    "first_step": 7176,
+    "last_step": 7200,
+    "count": 15
+  },
+  {
+    "phase": "Фаза IE — Data Contracts: общий язык данных между системами [7201-7250]",
+    "first_step": 7201,
+    "last_step": 7250,
+    "count": 20
+  },
+  {
+    "phase": "Фаза JA — Template Core: один шаблон вертикали для всех рынков [7251-7275]",
+    "first_step": 7251,
+    "last_step": 7275,
+    "count": 15
+  },
+  {
+    "phase": "Фаза JB — Travel Compare OS: поездка как объект + сравнение как процесс [7276-7300]",
+    "first_step": 7276,
+    "last_step": 7300,
+    "count": 14
+  },
+  {
+    "phase": "Фаза JC — Insurance Compare OS: полис как контракт + сравнение по рискам [7301-7325]",
+    "first_step": 7301,
+    "last_step": 7325,
+    "count": 14
+  },
+  {
+    "phase": "Фаза JD — News Conference OS: вертикаль “события” [7326-7350]",
+    "first_step": 7326,
+    "last_step": 7350,
+    "count": 10
+  },
+  {
+    "phase": "Фаза JE — Dropship Hub OS: посредничество как “логистика функций” [7351-7400]",
+    "first_step": 7351,
+    "last_step": 7400,
+    "count": 22
+  },
+  {
+    "phase": "Фаза KA — UI Core: единые принципы интерфейса [7401-7425]",
+    "first_step": 7401,
+    "last_step": 7425,
+    "count": 16
+  },
+  {
+    "phase": "Фаза KB — Registry UI: “Excel для функций” [7426-7450]",
+    "first_step": 7426,
+    "last_step": 7450,
+    "count": 15
+  },
+  {
+    "phase": "Фаза KC — Compare UI: “Check24-режим” как отдельное приложение внутри пакета [7451-7475]",
+    "first_step": 7451,
+    "last_step": 7475,
+    "count": 15
+  },
+  {
+    "phase": "Фаза KD — Conference UI: “новостная конференция” как Reader+Минуты [7476-7500]",
+    "first_step": 7476,
+    "last_step": 7500,
+    "count": 14
+  },
+  {
+    "phase": "Фаза KE — Builder UI: “PowerPoint/Visio для макросов и процессов” [7501-7550]",
+    "first_step": 7501,
+    "last_step": 7550,
+    "count": 18
+  },
+  {
+    "phase": "Фаза LA — Standards Core: минимальные стандарты для всех пакетов [7551-7575]",
+    "first_step": 7551,
+    "last_step": 7575,
+    "count": 15
+  },
+  {
+    "phase": "Фаза LB — Certification: уровни “проверено” [7576-7600]",
+    "first_step": 7576,
+    "last_step": 7600,
+    "count": 14
+  },
+  {
+    "phase": "Фаза LC — Governance: кто принимает решения и как не скатиться [7601-7625]",
+    "first_step": 7601,
+    "last_step": 7625,
+    "count": 15
+  },
+  {
+    "phase": "Фаза LD — Legal &amp; Ethics: чтобы B2B и EU не боялись [7626-7650]",
+    "first_step": 7626,
+    "last_step": 7650,
+    "count": 14
+  },
+  {
+    "phase": "Фаза LE — Supply Chain Security: защита от “троянов в пакетах” [7651-7700]",
+    "first_step": 7651,
+    "last_step": 7700,
+    "count": 18
+  },
+  {
+    "phase": "Фаза MA — Core Runtime: единый рантайм для запуска функций [7701-7725]",
+    "first_step": 7701,
+    "last_step": 7725,
+    "count": 16
+  },
+  {
+    "phase": "Фаза MB — Horizontal Scaling: много раннеров и балансировка [7726-7750]",
+    "first_step": 7726,
+    "last_step": 7750,
+    "count": 15
+  },
+  {
+    "phase": "Фаза MC — Observability: мониторинг как нервная система [7751-7775]",
+    "first_step": 7751,
+    "last_step": 7775,
+    "count": 15
+  },
+  {
+    "phase": "Фаза MD — Data Plane &amp; Caching: скорость и цена [7776-7800]",
+    "first_step": 7776,
+    "last_step": 7800,
+    "count": 14
+  },
+  {
+    "phase": "Фаза ME — Multi-Tenant &amp; Enterprise Ops: много клиентов, один движок [7801-7850]",
+    "first_step": 7801,
+    "last_step": 7850,
+    "count": 18
+  },
+  {
+    "phase": "Фаза NA — Определения и рамки: “что именно мы делаем” [7851-7875]",
+    "first_step": 7851,
+    "last_step": 7875,
+    "count": 14
+  },
+  {
+    "phase": "Фаза NB — Метрики: как измерять прогресс и качество [7876-7900]",
+    "first_step": 7876,
+    "last_step": 7900,
+    "count": 14
+  },
+  {
+    "phase": "Фаза NC — Лаборатория: “эксперименты рационализации” как конвейер [7901-7925]",
+    "first_step": 7901,
+    "last_step": 7925,
+    "count": 14
+  },
+  {
+    "phase": "Фаза ND — Публикации и знания: “статьи, каталоги, учебник” [7926-7950]",
+    "first_step": 7926,
+    "last_step": 7950,
+    "count": 9
+  },
+  {
+    "phase": "Фаза NE — Экономика рационализации: рынок “пакетов” вместо рынка “приложений” [7951-8000]",
+    "first_step": 7951,
+    "last_step": 8000,
+    "count": 16
+  },
+  {
+    "phase": "Фаза OA — MVP за 1 неделю: “первый рабочий контур” [8001-8050]",
+    "first_step": 8001,
+    "last_step": 8050,
+    "count": 16
+  },
+  {
+    "phase": "Фаза OB — 1 месяц: “вертикаль + доверие + 1-клик” [8051-8100]",
+    "first_step": 8051,
+    "last_step": 8100,
+    "count": 16
+  },
+  {
+    "phase": "Фаза OC — 3 месяца: “платформа + 2–3 вертикали + B2B” [8101-8125]",
+    "first_step": 8101,
+    "last_step": 8125,
+    "count": 11
+  },
+  {
+    "phase": "Фаза OD — 12 месяцев: “миллион функций, но управляемых” [8126-8150]",
+    "first_step": 8126,
+    "last_step": 8150,
+    "count": 12
+  },
+  {
+    "phase": "Фаза PA — 10 экранов (UI) как офисный пакет v1.0 [8151-8200]",
+    "first_step": 8151,
+    "last_step": 8200,
+    "count": 16
+  },
+  {
+    "phase": "Фаза PB — 20 таблиц/сущностей (данные) [8201-8250]",
+    "first_step": 8201,
+    "last_step": 8250,
+    "count": 22
+  },
+  {
+    "phase": "Фаза PC — 30 bundles (готовые пакеты “одной кнопкой”) [8251-8300]",
+    "first_step": 8251,
+    "last_step": 8300,
+    "count": 34
+  },
+  {
+    "phase": "Фаза QA — API Foundations: единый стиль, чтобы потом не ломать всё [8301-8320]",
+    "first_step": 8301,
+    "last_step": 8320,
+    "count": 20
+  },
+  {
+    "phase": "Фаза QB — Auth &amp; RBAC: кто что может и где границы тенанта [8321-8340]",
+    "first_step": 8321,
+    "last_step": 8340,
+    "count": 20
+  },
+  {
+    "phase": "Фаза QC — Registry API: CRUD, поиск, версии, алиасы [8341-8370]",
+    "first_step": 8341,
+    "last_step": 8370,
+    "count": 30
+  },
+  {
+    "phase": "Фаза QD — Graph API: связи, зависимости, пути, “что сломает что” [8371-8390]",
+    "first_step": 8371,
+    "last_step": 8390,
+    "count": 16
+  },
+  {
+    "phase": "Фаза QE — Bundles &amp; Workflows API: публикация пакетов, манифесты, установка [8391-8410]",
+    "first_step": 8391,
+    "last_step": 8410,
+    "count": 20
+  },
+  {
+    "phase": "Фаза QF — Runner, Jobs, Runs API: выполнение, очереди, логи, replay [8411-8430]",
+    "first_step": 8411,
+    "last_step": 8430,
+    "count": 20
+  },
+  {
+    "phase": "Фаза QG — Vertical APIs: Compare и News Conference как “приложения поверх платформы” [8431-8440]",
+    "first_step": 8431,
+    "last_step": 8440,
+    "count": 10
+  },
+  {
+    "phase": "Фаза QH — Events/Webhooks/SDK: сквозные события и интеграции [8441-8450]",
+    "first_step": 8441,
+    "last_step": 8600,
+    "count": 160
+  },
+  {
+    "phase": "Фаза RA — Позиционирование и упаковка “что это такое” [8601-8625]",
+    "first_step": 8601,
+    "last_step": 8625,
+    "count": 16
+  },
+  {
+    "phase": "Фаза RB — Каналы привлечения: где брать первых пользователей [8626-8650]",
+    "first_step": 8626,
+    "last_step": 8650,
+    "count": 15
+  },
+  {
+    "phase": "Фаза RC — Partner Flywheel: программа интеграторов [8651-8675]",
+    "first_step": 8651,
+    "last_step": 8675,
+    "count": 15
+  },
+  {
+    "phase": "Фаза RD — Вертикали как “продукты”: быстрый запуск 3–5 направлений [8676-8700]",
+    "first_step": 8676,
+    "last_step": 8700,
+    "count": 14
+  },
+  {
+    "phase": "Фаза RE — Наполнение реестра и качество: “миллион записей, но не мусор” [8701-8725]",
+    "first_step": 8701,
+    "last_step": 8725,
+    "count": 15
+  },
+  {
+    "phase": "Фаза RF — Enterprise GTM: комплаенс, закупки, долгие циклы [8726-8750]",
+    "first_step": 8726,
+    "last_step": 8750,
+    "count": 13
+  },
+  {
+    "phase": "Фаза SA — Минимальная команда и роли [8751-8775]",
+    "first_step": 8751,
+    "last_step": 8775,
+    "count": 25
+  },
+  {
+    "phase": "Фаза SB — RACI и Governance [8776-8795]",
+    "first_step": 8776,
+    "last_step": 8795,
+    "count": 20
+  },
+  {
+    "phase": "Фаза SC — Content &amp; Curation Ops [8796-8820]",
+    "first_step": 8796,
+    "last_step": 8820,
+    "count": 25
+  },
+  {
+    "phase": "Фаза SD — Release &amp; Change Management [8821-8840]",
+    "first_step": 8821,
+    "last_step": 8840,
+    "count": 20
+  },
+  {
+    "phase": "Фаза SE — Support &amp; Incident Response [8841-8865]",
+    "first_step": 8841,
+    "last_step": 8865,
+    "count": 25
+  },
+  {
+    "phase": "Фаза SF — Security &amp; Compliance Ops [8866-8885]",
+    "first_step": 8866,
+    "last_step": 8885,
+    "count": 20
+  },
+  {
+    "phase": "Фаза SG — Partner &amp; Marketplace Ops [8886-8895]",
+    "first_step": 8886,
+    "last_step": 8895,
+    "count": 10
+  },
+  {
+    "phase": "Фаза SH — KPI/OKR и непрерывное улучшение [8896-8900]",
+    "first_step": 8896,
+    "last_step": 8900,
+    "count": 5
+  },
+  {
+    "phase": "Фаза TA — Test Strategy: “качество как система” [8901-8930]",
+    "first_step": 8901,
+    "last_step": 8930,
+    "count": 30
+  },
+  {
+    "phase": "Фаза TB — Load &amp; Performance: “быстро и предсказуемо” [8931-8960]",
+    "first_step": 8931,
+    "last_step": 8960,
+    "count": 30
+  },
+  {
+    "phase": "Фаза TC — Reliability &amp; DR: “не умираем и восстанавливаемся” [8961-8990]",
+    "first_step": 8961,
+    "last_step": 8990,
+    "count": 30
+  },
+  {
+    "phase": "Фаза TD — Security in Depth: “защита на каждом слое” [8991-9020]",
+    "first_step": 8991,
+    "last_step": 9020,
+    "count": 30
+  },
+  {
+    "phase": "Фаза TE — Observability &amp; FinOps: “видим всё и считаем деньги” [9021-9050]",
+    "first_step": 9021,
+    "last_step": 9050,
+    "count": 30
+  },
+  {
+    "phase": "Фаза BA — Базовая модель blueprint: что такое “кластер” и как он живёт [9051-9075]",
+    "first_step": 9051,
+    "last_step": 9075,
+    "count": 25
+  },
+  {
+    "phase": "Фаза BB — Структура библиотеки: как разложить 200+ blueprints, чтобы не утонуть [9076-9100]",
+    "first_step": 9076,
+    "last_step": 9100,
+    "count": 21
+  },
+  {
+    "phase": "Фаза BC — Core Blueprints (первые 40): “операционная база для всех” [9101-9140]",
+    "first_step": 9101,
+    "last_step": 9140,
+    "count": 31
+  },
+  {
+    "phase": "Фаза BD — WP Vertical Blueprints (первые 40): “хаос плагинов → готовые наборы” [9141-9175]",
+    "first_step": 9141,
+    "last_step": 9175,
+    "count": 21
+  },
+  {
+    "phase": "Фаза BE — Make/n8n Vertical Blueprints (первые 40) + News/Compare задел [9176-9200]",
+    "first_step": 9176,
+    "last_step": 9200,
+    "count": 25
+  },
+  {
+    "phase": "Фаза LA — Минимальный словарь функций: “из хаоса в 200–500 понятий” [9201-9225]",
+    "first_step": 9201,
+    "last_step": 9225,
+    "count": 25
+  },
+  {
+    "phase": "Фаза LB — Нормализация данных: “100 источников → один формат” [9226-9255]",
+    "first_step": 9226,
+    "last_step": 9255,
+    "count": 30
+  },
+  {
+    "phase": "Фаза LC — Семантика: embeddings + семантический поиск по функциям [9256-9285]",
+    "first_step": 9256,
+    "last_step": 9285,
+    "count": 30
+  },
+  {
+    "phase": "Фаза LD — Грамматика сборки: Function Graph и совместимость [9286-9320]",
+    "first_step": 9286,
+    "last_step": 9320,
+    "count": 35
+  },
+  {
+    "phase": "Фаза LE — Governance и масштаб: “лексикон живёт и растёт до 5k функций” [9321-9350]",
+    "first_step": 9321,
+    "last_step": 9350,
+    "count": 30
+  },
+  {
+    "phase": "Фаза CA — Минимальная модель сравнения: что сравниваем и по каким правилам [9351-9375]",
+    "first_step": 9351,
+    "last_step": 9375,
+    "count": 25
+  },
+  {
+    "phase": "Фаза CB — Сбор данных (Ingest) для сравнения: источники, парсинг, легальность [9376-9400]",
+    "first_step": 9376,
+    "last_step": 9400,
+    "count": 21
+  },
+  {
+    "phase": "Фаза CC — Нормализация для сравнения: метрики “цена/качество/риск/совместимость” [9401-9430]",
+    "first_step": 9401,
+    "last_step": 9430,
+    "count": 26
+  },
+  {
+    "phase": "Фаза CD — Ранжирование и оптимизация: “лучшее под цель, а не в среднем” [9431-9460]",
+    "first_step": 9431,
+    "last_step": 9460,
+    "count": 26
+  },
+  {
+    "phase": "Фаза CE — Анти-фрод и отзывы: “отзывы только если реально работало” [9461-9485]",
+    "first_step": 9461,
+    "last_step": 9485,
+    "count": 21
+  },
+  {
+    "phase": "Фаза CF — Протокол сравнения + интеграция с News Conference [9486-9500]",
+    "first_step": 9486,
+    "last_step": 9500,
+    "count": 15
+  },
+  {
+    "phase": "Фаза NA — Минимальная модель новости и потока [9501-9525]",
+    "first_step": 9501,
+    "last_step": 9525,
+    "count": 25
+  },
+  {
+    "phase": "Фаза NB — Сбор новостей: источники, расписание, устойчивость [9526-9550]",
+    "first_step": 9526,
+    "last_step": 9550,
+    "count": 21
+  },
+  {
+    "phase": "Фаза NC — Conference Mode: “главное дня/недели/месяца” + обсуждение [9551-9585]",
+    "first_step": 9551,
+    "last_step": 9585,
+    "count": 35
+  },
+  {
+    "phase": "Фаза ND — Проверка фактов, анти-фрод новостей, качество источников [9586-9620]",
+    "first_step": 9586,
+    "last_step": 9610,
+    "count": 25
+  },
+  {
+    "phase": "Фаза NE — Замкнутый цикл: News → Compare → Blueprint → Telemetry → Knowledge [9611-9650]",
+    "first_step": 9611,
+    "last_step": 9650,
+    "count": 31
+  },
+  {
+    "phase": "Фаза DA — Базовая модель оффера и программы [9651-9675]",
+    "first_step": 9651,
+    "last_step": 9675,
+    "count": 25
+  },
+  {
+    "phase": "Фаза DB — Фиды и каталоги: “100 фидов → один каталог” [9676-9705]",
+    "first_step": 9676,
+    "last_step": 9705,
+    "count": 26
+  },
+  {
+    "phase": "Фаза DC — Storefront Engine: “one-click витрина/портал” [9706-9735]",
+    "first_step": 9706,
+    "last_step": 9735,
+    "count": 26
+  },
+  {
+    "phase": "Фаза DD — Tracking &amp; Attribution: клики, конверсии, под-ID, сервер-сайд [9736-9770]",
+    "first_step": 9736,
+    "last_step": 9770,
+    "count": 31
+  },
+  {
+    "phase": "Фаза DE — Анти-фрод партнёрок: безопасность денег и репутации [9771-9790]",
+    "first_step": 9771,
+    "last_step": 9790,
+    "count": 16
+  },
+  {
+    "phase": "Фаза DF — Интеграция: News → Offers → Compare → Storefront → Actions [9791-9800]",
+    "first_step": 9791,
+    "last_step": 9800,
+    "count": 10
+  },
+  {
+    "phase": "Фаза EA — Тенанты и изоляция: “много клиентов в одной системе” [9801-9825]",
+    "first_step": 9801,
+    "last_step": 9825,
+    "count": 25
+  },
+  {
+    "phase": "Фаза EB — Identity: SSO, SCIM, группы, политики доступа [9826-9850]",
+    "first_step": 9826,
+    "last_step": 9850,
+    "count": 21
+  },
+  {
+    "phase": "Фаза EC — Политики, approvals, guardrails: “что можно, что нельзя” [9851-9885]",
+    "first_step": 9851,
+    "last_step": 9885,
+    "count": 31
+  },
+  {
+    "phase": "Фаза ED — Audit, Compliance, Legal: “можно доказать всё” [9886-9920]",
+    "first_step": 9886,
+    "last_step": 9920,
+    "count": 31
+  },
+  {
+    "phase": "Фаза EE — FinOps/Billing: квоты, бюджеты, стоимость решений [9921-9950]",
+    "first_step": 9921,
+    "last_step": 9950,
+    "count": 26
+  },
+  {
+    "phase": "Фаза PA — Минимальный SDK: “как создать bundle за 1 час” [9951-9975]",
+    "first_step": 9951,
+    "last_step": 9975,
+    "count": 25
+  },
+  {
+    "phase": "Фаза PB — Тестирование и сертификация: “не верим словам — верим run’ам” [9976-10010]",
+    "first_step": 9976,
+    "last_step": 10010,
+    "count": 31
+  },
+  {
+    "phase": "Фаза PC — Marketplace: публикация, ревью, версии, совместимость [10011-10050]",
+    "first_step": 10011,
+    "last_step": 10050,
+    "count": 36
+  },
+  {
+    "phase": "Фаза PD — Bridges: WordPress/Make/n8n/Node-RED как источники bundles [10051-10100]",
+    "first_step": 10051,
+    "last_step": 10100,
+    "count": 26
+  },
+  {
+    "phase": "Фаза RA — Минимальный рантайм: выполнить 1 blueprint безопасно [10101-10125]",
+    "first_step": 10101,
+    "last_step": 10125,
+    "count": 25
+  },
+  {
+    "phase": "Фаза RB — Очереди и диспетчеризация: много запусков без хаоса [10126-10160]",
+    "first_step": 10126,
+    "last_step": 10160,
+    "count": 31
+  },
+  {
+    "phase": "Фаза RC — Планировщик: cron, события, триггеры [10161-10195]",
+    "first_step": 10161,
+    "last_step": 10195,
+    "count": 31
+  },
+  {
+    "phase": "Фаза RD — Secure Runtime: изоляция, egress, секреты, PII [10196-10230]",
+    "first_step": 10196,
+    "last_step": 10230,
+    "count": 31
+  },
+  {
+    "phase": "Фаза RE — Observability + SLA: метрики, трассировка, инциденты [10231-10250]",
+    "first_step": 10231,
+    "last_step": 10250,
+    "count": 16
+  },
+  {
+    "phase": "Фаза KA — Канонический реестр: “одна функция = одна запись” [10251-10280]",
+    "first_step": 10251,
+    "last_step": 10280,
+    "count": 26
+  },
+  {
+    "phase": "Фаза KB — Graph Layer: зависимости, связи, “карта интернета” [10281-10320]",
+    "first_step": 10281,
+    "last_step": 10320,
+    "count": 36
+  },
+  {
+    "phase": "Фаза KC — Provenance: “каждое утверждение имеет след” [10321-10355]",
+    "first_step": 10321,
+    "last_step": 10355,
+    "count": 31
+  },
+  {
+    "phase": "Фаза KD — Search + Embeddings + RAG: “найди лучшее решение” [10356-10400]",
+    "first_step": 10356,
+    "last_step": 10400,
+    "count": 31
+  },
+  {
+    "phase": "Фаза UA — Базовый интерфейс объектов: Registry / Bundle / Blueprint / Run [10401-10425]",
+    "first_step": 10401,
+    "last_step": 10425,
+    "count": 25
+  },
+  {
+    "phase": "Фаза UB — Табличный режим: “как Excel/Notion: фильтры, формулы, макросы” [10426-10460]",
+    "first_step": 10426,
+    "last_step": 10460,
+    "count": 31
+  },
+  {
+    "phase": "Фаза UC — Wizards: one-click установка, мастера интеграций, пресеты [10461-10495]",
+    "first_step": 10461,
+    "last_step": 10495,
+    "count": 31
+  },
+  {
+    "phase": "Фаза UD — Evidence UI: отзывы, сравнение, “покажи доказательства” [10496-10550]",
+    "first_step": 10496,
+    "last_step": 10550,
+    "count": 31
+  },
+  {
+    "phase": "Фаза GA — Кураторство: как из хаоса сделать “лучшие наборы” [10551-10585]",
+    "first_step": 10551,
+    "last_step": 10585,
+    "count": 31
+  },
+  {
+    "phase": "Фаза GB — Модерация, доверие, отзывы с evidence [10586-10620]",
+    "first_step": 10586,
+    "last_step": 10620,
+    "count": 31
+  },
+  {
+    "phase": "Фаза GC — Developer Programs: мотивация делать качественно [10621-10660]",
+    "first_step": 10621,
+    "last_step": 10660,
+    "count": 36
+  },
+  {
+    "phase": "Фаза GD — Partnerships + GTM: как продавать “операционку для интернета” [10661-10700]",
+    "first_step": 10661,
+    "last_step": 10700,
+    "count": 21
+  },
+  {
+    "phase": "Фаза AA — “AI-ассистент документации”: автосводки без фантазий [10701-10725]",
+    "first_step": 10701,
+    "last_step": 10725,
+    "count": 21
+  },
+  {
+    "phase": "Фаза AB — Dedup + Normalize: выявление дублей, алиасов, “одинаковых плагинов” [10726-10755]",
+    "first_step": 10726,
+    "last_step": 10755,
+    "count": 26
+  },
+  {
+    "phase": "Фаза AC — Авто-кластеризация: из функций → в “стеки одной кнопкой” [10756-10805]",
+    "first_step": 10756,
+    "last_step": 10805,
+    "count": 46
+  },
+  {
+    "phase": "Фаза AD — Auto-Blueprints: из “задачи” → в исполняемую схему [10806-10850]",
+    "first_step": 10806,
+    "last_step": 10850,
+    "count": 26
+  },
+  {
+    "phase": "Фаза HA — Нагрузочное моделирование и базовые лимиты [10851-10880]",
+    "first_step": 10851,
+    "last_step": 10880,
+    "count": 26
+  },
+  {
+    "phase": "Фаза HB — Масштабирование данных: индексы, кэш, шардинг [10881-10920]",
+    "first_step": 10881,
+    "last_step": 10920,
+    "count": 36
+  },
+  {
+    "phase": "Фаза HC — Resilience: отказоустойчивость сервисов и рантайма [10921-10960]",
+    "first_step": 10921,
+    "last_step": 10960,
+    "count": 36
+  },
+  {
+    "phase": "Фаза HD — Multi-Region + Data Residency + DR [10961-10995]",
+    "first_step": 10961,
+    "last_step": 10995,
+    "count": 31
+  },
+  {
+    "phase": "Фаза HE — On-Prem / Private Cloud: “платформа как коробка” [10996-11000]",
+    "first_step": 10996,
+    "last_step": 11000,
+    "count": 5
+  },
+  {
+    "phase": "Фаза SA — Идентификация и доступ: SSO, RBAC, ABAC [11001-11035]",
+    "first_step": 11001,
+    "last_step": 11035,
+    "count": 31
+  },
+  {
+    "phase": "Фаза SB — Zero-Trust: сеть, сервисные идентичности, mTLS [11036-11070]",
+    "first_step": 11036,
+    "last_step": 11070,
+    "count": 31
+  },
+  {
+    "phase": "Фаза SC — Secrets + Data Security: шифрование, классификация, DLP [11071-11105]",
+    "first_step": 11071,
+    "last_step": 11105,
+    "count": 31
+  },
+  {
+    "phase": "Фаза SD — Supply Chain + Secure SDLC: SBOM, подписи, сканирование [11106-11150]",
+    "first_step": 11106,
+    "last_step": 11150,
+    "count": 26
+  },
+  {
+    "phase": "Фаза EA — Измерение ценности: cost, usage, value metrics [11151-11185]",
+    "first_step": 11151,
+    "last_step": 11185,
+    "count": 31
+  },
+  {
+    "phase": "Фаза EB — Pricing &amp; Packaging: планы, SKU, B2B контракты [11186-11220]",
+    "first_step": 11186,
+    "last_step": 11220,
+    "count": 31
+  },
+  {
+    "phase": "Фаза EC — Marketplace Economics: revenue share, лицензии, “платные стеки” [11221-11260]",
+    "first_step": 11221,
+    "last_step": 11260,
+    "count": 36
+  },
+  {
+    "phase": "Фаза ED — Quality Incentives + “Trust Tokens” (без спекуляции) [11261-11300]",
+    "first_step": 11261,
+    "last_step": 11300,
+    "count": 26
+  },
+  {
+    "phase": "Фаза VP0 — Общая “вертикальная упаковка”: как из стека сделать продукт [11301-11325]",
+    "first_step": 11301,
+    "last_step": 11325,
+    "count": 21
+  },
+  {
+    "phase": "Фаза VP1 — Продукт 1: Compare Portal (типа Check24) [11326-11370]",
+    "first_step": 11326,
+    "last_step": 11370,
+    "count": 41
+  },
+  {
+    "phase": "Фаза VP2 — Продукт 2: News “Conference” (сводка/сравнение новостей как заседание) [11371-11410]",
+    "first_step": 11371,
+    "last_step": 11410,
+    "count": 36
+  },
+  {
+    "phase": "Фаза VP3 — Продукт 3: Affiliate / Dropshipping OS [11411-11450]",
+    "first_step": 11411,
+    "last_step": 11450,
+    "count": 26
+  },
+  {
+    "phase": "Фаза IB0 — Общий “Bridge Framework”: единая схема для всех мостов [11451-11475]",
+    "first_step": 11451,
+    "last_step": 11475,
+    "count": 21
+  },
+  {
+    "phase": "Фаза IB1 — WordPress Bridge: плагины → функции, сайт → витрина [11476-11510]",
+    "first_step": 11476,
+    "last_step": 11510,
+    "count": 31
+  },
+  {
+    "phase": "Фаза IB2 — Make.com Bridge: сценарии → blueprints, модули → функции [11511-11545]",
+    "first_step": 11511,
+    "last_step": 11545,
+    "count": 27
+  },
+  {
+    "phase": "Фаза IB3 — n8n Bridge + Node-RED Bridge: open-source флоу как “инфраструктура” [11546-11580]",
+    "first_step": 11546,
+    "last_step": 11580,
+    "count": 31
+  },
+  {
+    "phase": "Фаза IB4 — GitHub Bridge: из репозиториев в “приложения/бандлы”, CI→Marketplace [11581-11600]",
+    "first_step": 11581,
+    "last_step": 11600,
+    "count": 20
+  },
+  {
+    "phase": "Фаза GW0 — Общий Workspace-адаптер и модель документов [11601-11620]",
+    "first_step": 11601,
+    "last_step": 11620,
+    "count": 16
+  },
+  {
+    "phase": "Фаза GW1 — Gmail Bridge: “почта как очередь задач” [11621-11645]",
+    "first_step": 11621,
+    "last_step": 11645,
+    "count": 21
+  },
+  {
+    "phase": "Фаза GW2 — Drive + Docs Bridge: “документы как база знаний и отчётов” [11646-11705]",
+    "first_step": 11646,
+    "last_step": 11680,
+    "count": 31
+  },
+  {
+    "phase": "Фаза GW3 — Sheets Bridge: “таблицы как реестр, биллинг, каталоги” [11706-11730]",
+    "first_step": 11706,
+    "last_step": 11730,
+    "count": 21
+  },
+  {
+    "phase": "Фаза GW4 — Calendar Bridge + Telegram Bot: “единый интерфейс для людей” [11731-11750]",
+    "first_step": 11731,
+    "last_step": 12050,
+    "count": 220
+  },
+  {
+    "phase": "Фаза TR0 — “Зачем и что считаем функцией” [12051-12070]",
+    "first_step": 12051,
+    "last_step": 12070,
+    "count": 20
+  },
+  {
+    "phase": "Фаза TR1 — Схема Mega-Registry (таблично + граф) [12071-12105]",
+    "first_step": 12071,
+    "last_step": 12105,
+    "count": 35
+  },
+  {
+    "phase": "Фаза TR2 — Harvest: импорт из WordPress/Make/n8n/GitHub и др. [12106-12145]",
+    "first_step": 12106,
+    "last_step": 12145,
+    "count": 40
+  },
+  {
+    "phase": "Фаза TR3 — Кластеры и иерархия “вертикаль власти” [12146-12180]",
+    "first_step": 12146,
+    "last_step": 12180,
+    "count": 35
+  },
+  {
+    "phase": "Фаза TR4 — Trust, Reviews, Evidence-based рейтинги [12181-12210]",
+    "first_step": 12181,
+    "last_step": 12200,
+    "count": 20
+  },
+  {
+    "phase": "Фаза UI0 — Единый каркас интерфейса [12201-12220]",
+    "first_step": 12201,
+    "last_step": 12220,
+    "count": 20
+  },
+  {
+    "phase": "Фаза UI1 — Registry Explorer (аналог “Проводник + энциклопедия”) [12221-12255]",
+    "first_step": 12221,
+    "last_step": 12255,
+    "count": 35
+  },
+  {
+    "phase": "Фаза UI2 — Blueprint Studio (аналог “визуальный редактор/IDE”) [12256-12295]",
+    "first_step": 12256,
+    "last_step": 12295,
+    "count": 40
+  },
+  {
+    "phase": "Фаза UI3 — Stack Builder (аналог “установщик + продуктовый конструктор”) [12296-12320]",
+    "first_step": 12296,
+    "last_step": 12320,
+    "count": 25
+  },
+  {
+    "phase": "Фаза UI4 — News Conference (новости как “брифинг/конференция”) [12321-12335]",
+    "first_step": 12321,
+    "last_step": 12335,
+    "count": 15
+  },
+  {
+    "phase": "Фаза UI5 — Compare Portal Builder (сравнение как продукт) [12336-12350]",
+    "first_step": 12336,
+    "last_step": 12350,
+    "count": 15
+  },
+  {
+    "phase": "Фаза EV0 — Evidence Center как отдельное “приложение” [12351-12375]",
+    "first_step": 12351,
+    "last_step": 12375,
+    "count": 25
+  },
+  {
+    "phase": "Фаза GOV0 — Governance: роли, статусы, жизненный цикл [12376-12405]",
+    "first_step": 12376,
+    "last_step": 12405,
+    "count": 30
+  },
+  {
+    "phase": "Фаза GOV1 — Анти-мусор, анти-накрутка, качество по фактам [12406-12435]",
+    "first_step": 12406,
+    "last_step": 12435,
+    "count": 30
+  },
+  {
+    "phase": "Фаза GOV2 — Сертификация: Verified и Enterprise-Ready [12436-12470]",
+    "first_step": 12436,
+    "last_step": 12470,
+    "count": 35
+  },
+  {
+    "phase": "Фаза GOV3 — Экономика и рынок рационализации [12471-12500]",
+    "first_step": 12471,
+    "last_step": 12500,
+    "count": 30
+  },
+  {
+    "phase": "Фаза MVP0 — рамки и минимальные решения [12501-12520]",
+    "first_step": 12501,
+    "last_step": 12520,
+    "count": 20
+  },
+  {
+    "phase": "Фаза MVP1 — Data Layer: реестр, таксономия, связи [12521-12550]",
+    "first_step": 12521,
+    "last_step": 12550,
+    "count": 30
+  },
+  {
+    "phase": "Фаза MVP2 — API Services: поиск, карточки, ревью, evidence [12551-12580]",
+    "first_step": 12551,
+    "last_step": 12580,
+    "count": 30
+  },
+  {
+    "phase": "Фаза MVP3 — UI v1: 5 экранов “как офисный пакет” [12581-12610]",
+    "first_step": 12581,
+    "last_step": 12610,
+    "count": 30
+  },
+  {
+    "phase": "Фаза MVP4 — Runner: выполнение blueprints + логи + безопасность [12611-12630]",
+    "first_step": 12611,
+    "last_step": 12630,
+    "count": 20
+  },
+  {
+    "phase": "Фаза MVP5 — Marketplace v0 + запуск [12631-12650]",
+    "first_step": 12631,
+    "last_step": 12950,
+    "count": 200
+  }
+]
