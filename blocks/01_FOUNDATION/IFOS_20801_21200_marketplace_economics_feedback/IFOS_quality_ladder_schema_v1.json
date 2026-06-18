@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Quality Ladder Schema v1",
+  "type": "object",
+  "required": [
+    "subject_id",
+    "level",
+    "badges",
+    "requirements",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "subject_id": {
+      "type": "string"
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "L0_DRAFT",
+        "L1_SANDBOX_VERIFIED",
+        "L2_SAFE",
+        "L3_RELIABLE",
+        "L4_PROVEN",
+        "L5_CURATED"
+      ]
+    },
+    "badges": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
