@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Affiliate Program Schema v1",
+  "type": "object",
+  "required": [
+    "affiliate_id",
+    "subject_id",
+    "tracking",
+    "payout",
+    "compliance",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "affiliate_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "tracking": {
+      "type": "object",
+      "properties": {
+        "tracking_id": {
+          "type": "string"
+        },
+        "cookie_window_days": {
+          "type": "integer"
+        },
+        "allowed_channels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "payout": {
+      "type": "object",
+      "properties": {
+        "model": {
+          "type": "string",
+          "enum": [
+            "cpa",
+            "cpc",
+            "revshare"
+          ]
+        },
+        "rate": {
+          "type": "number"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "compliance": {
+      "type": "object",
+      "properties": {
+        "forbidden_traffic": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "kyc_required": {
+          "type": "boolean"
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
