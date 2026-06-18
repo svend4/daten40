@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ItemRecord Schema v1",
+  "type": "object",
+  "required": [
+    "canonical_id",
+    "collection_id",
+    "source_ref",
+    "url",
+    "title",
+    "content",
+    "language",
+    "hashes",
+    "provenance",
+    "created_at",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "canonical_id": {
+      "type": "string"
+    },
+    "collection_id": {
+      "type": "string"
+    },
+    "source_ref": {
+      "type": "string"
+    },
+    "source_item_id": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "published_at": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "hashes": {
+      "type": "object",
+      "required": [
+        "url_hash",
+        "content_hash"
+      ],
+      "properties": {
+        "url_hash": {
+          "type": "string"
+        },
+        "content_hash": {
+          "type": "string"
+        },
+        "title_hash": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "ingest_run_id": {
+          "type": "string"
+        },
+        "parser": {
+          "type": "string"
+        },
+        "parser_version": {
+          "type": "string"
+        },
+        "raw_ref": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "revisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "rev",
+          "ts",
+          "diff"
+        ],
+        "properties": {
+          "rev": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "ts": {
+            "type": "string"
+          },
+          "diff": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
