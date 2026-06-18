@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS InstallRecipe Schema v1",
+  "type": "object",
+  "required": [
+    "recipe_id",
+    "package_id",
+    "steps",
+    "sanity_check",
+    "ui_finish",
+    "version"
+  ],
+  "properties": {
+    "recipe_id": {
+      "type": "string"
+    },
+    "package_id": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "name"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "create_secret_ref",
+              "create_source",
+              "create_collection",
+              "create_index",
+              "import_flow",
+              "apply_policy",
+              "create_vitrine",
+              "other"
+            ]
+          },
+          "name": {
+            "type": "string"
+          },
+          "params": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "sanity_check": {
+      "type": "object",
+      "properties": {
+        "run_flow_ref": {
+          "type": "string"
+        },
+        "expected": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "ui_finish": {
+      "type": "object",
+      "properties": {
+        "show_card_ref": {
+          "type": "string"
+        },
+        "primary_action": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
