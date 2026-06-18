@@ -1,0 +1,76 @@
+openapi: 3.0.3
+info:
+  title: IFOS Automation & Scheduling API
+  version: "1.0.0"
+  description: "Schedules, triggers, jobs, queues, runs, monitoring and alerts."
+servers:
+  - url: https://auto.ifos.local/v1
+tags:
+  - name: Schedules
+  - name: Triggers
+  - name: Jobs
+  - name: Runs
+  - name: Queues
+  - name: Monitoring
+paths:
+  /schedules:
+    post:
+      tags: [Schedules]
+      summary: Create schedule
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"201": {description: Created}}
+    get:
+      tags: [Schedules]
+      summary: List schedules
+      responses: {"200": {description: OK}}
+  /triggers:
+    post:
+      tags: [Triggers]
+      summary: Create trigger
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"201": {description: Created}}
+  /jobs:
+    post:
+      tags: [Jobs]
+      summary: Create job
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"201": {description: Created}}
+    get:
+      tags: [Jobs]
+      summary: List jobs by workspace
+      parameters:
+        - name: workspace_id
+          in: query
+          required: true
+          schema: {type: string}
+      responses: {"200": {description: OK}}
+  /jobs/{job_id}/enqueue:
+    post:
+      tags: [Jobs]
+      summary: Enqueue job for execution
+      parameters:
+        - name: job_id
+          in: path
+          required: true
+          schema: {type: string}
+      responses: {"202": {description: Accepted}}
+  /runs/{run_id}:
+    get:
+      tags: [Runs]
+      summary: Get job run status
+      parameters:
+        - name: run_id
+          in: path
+          required: true
+          schema: {type: string}
+      responses: {"200": {description: OK}}
+  /alerts:
+    get:
+      tags: [Monitoring]
+      summary: List alerts by workspace
+      parameters:
+        - name: workspace_id
+          in: query
+          required: true
+          schema: {type: string}
+      responses: {"200": {description: OK}}
