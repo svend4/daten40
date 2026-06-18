@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Job Schema v1",
+  "type": "object",
+  "required": [
+    "job_id",
+    "workspace_id",
+    "name",
+    "target",
+    "bindings",
+    "enabled",
+    "version"
+  ],
+  "properties": {
+    "job_id": {
+      "type": "string"
+    },
+    "workspace_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "target": {
+      "type": "object",
+      "required": [
+        "kind",
+        "ref"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "flow",
+            "package",
+            "macro_batch"
+          ]
+        },
+        "ref": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "bindings": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "trigger_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "retry_policy_ref": {
+      "type": "string"
+    },
+    "sla_policy_ref": {
+      "type": "string"
+    },
+    "rate_limit_ref": {
+      "type": "string"
+    },
+    "idempotency_strategy": {
+      "type": "string",
+      "enum": [
+        "none",
+        "by_inputs",
+        "by_time_window",
+        "custom"
+      ]
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
