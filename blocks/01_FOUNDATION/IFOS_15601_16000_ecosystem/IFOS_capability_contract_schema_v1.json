@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Capability Contract Schema v1",
+  "type": "object",
+  "required": [
+    "contract_id",
+    "target",
+    "applies_to",
+    "inputs",
+    "outputs",
+    "features",
+    "limits",
+    "side_effects",
+    "permissions",
+    "version"
+  ],
+  "properties": {
+    "contract_id": {
+      "type": "string"
+    },
+    "target": {
+      "type": "string",
+      "enum": [
+        "function",
+        "adapter",
+        "bundle",
+        "recipe"
+      ]
+    },
+    "applies_to": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "type"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "description": "string|number|object|array|file|url|email|json|..."
+          },
+          "required": {
+            "type": "boolean",
+            "default": false
+          },
+          "max_bytes": {
+            "type": "integer"
+          },
+          "schema_ref": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "type"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "schema_ref": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "features": {
+      "type": "object",
+      "properties": {
+        "supports_markdown": {
+          "type": "boolean"
+        },
+        "supports_html": {
+          "type": "boolean"
+        },
+        "supports_attachments": {
+          "type": "boolean"
+        },
+        "supports_batching": {
+          "type": "boolean"
+        },
+        "idempotent": {
+          "type": "boolean"
+        },
+        "streaming": {
+          "type": "boolean"
+        }
+      }
+    },
+    "limits": {
+      "type": "object",
+      "properties": {
+        "rate_limit_per_min": {
+          "type": "integer"
+        },
+        "max_message_len": {
+          "type": "integer"
+        },
+        "max_items_per_call": {
+          "type": "integer"
+        },
+        "timeout_sec": {
+          "type": "integer"
+        }
+      }
+    },
+    "side_effects": {
+      "type": "object",
+      "properties": {
+        "writes": {
+          "type": "boolean"
+        },
+        "deletes": {
+          "type": "boolean"
+        },
+        "charges_money": {
+          "type": "boolean"
+        },
+        "creates_users": {
+          "type": "boolean"
+        }
+      }
+    },
+    "permissions": {
+      "type": "object",
+      "properties": {
+        "scopes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "requires_admin": {
+          "type": "boolean"
+        }
+      }
+    },
+    "compatibility": {
+      "type": "object",
+      "description": "rules for substitution & wiring",
+      "properties": {
+        "input_aliases": {
+          "type": "object"
+        },
+        "output_aliases": {
+          "type": "object"
+        },
+        "substitutable_with": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
