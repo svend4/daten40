@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Billing Event Schema v1",
+  "type": "object",
+  "required": [
+    "event_id",
+    "type",
+    "at",
+    "ref",
+    "payload",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "purchase_created",
+        "payment_succeeded",
+        "payment_failed",
+        "usage_reported",
+        "refund_issued",
+        "chargeback",
+        "payout_scheduled",
+        "payout_paid"
+      ]
+    },
+    "at": {
+      "type": "string"
+    },
+    "ref": {
+      "type": "string",
+      "description": "order_id/entitlement_id/payout_id"
+    },
+    "payload": {
+      "type": "object"
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
