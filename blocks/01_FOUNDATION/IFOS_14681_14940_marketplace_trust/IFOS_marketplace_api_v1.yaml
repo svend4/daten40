@@ -1,0 +1,133 @@
+openapi: 3.0.3
+info:
+  title: IFOS Marketplace & Trust API
+  version: "1.0.0"
+  description: "Marketplace listings for functions/recipes/bundles + reviews + evidence + moderation + trust scores."
+servers:
+  - url: https://api.ifos.local/v1
+tags:
+  - name: Marketplace
+  - name: Reviews
+  - name: Evidence
+  - name: Moderation
+  - name: Trust
+paths:
+  /marketplace/listings:
+    get:
+      tags: [Marketplace]
+      summary: List marketplace items
+      parameters:
+        - name: q
+          in: query
+          schema: {type: string}
+        - name: item_type
+          in: query
+          schema: {type: string, enum: [function, recipe, bundle]}
+        - name: tag
+          in: query
+          schema: {type: string}
+        - name: domain
+          in: query
+          schema: {type: string}
+        - name: target
+          in: query
+          schema: {type: string}
+        - name: min_trust
+          in: query
+          schema: {type: number, minimum: 0, maximum: 100}
+      responses:
+        "200": {description: OK}
+    post:
+      tags: [Marketplace]
+      summary: Create listing (publisher)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "201": {description: Created}
+  /marketplace/listings/{listing_id}:
+    get:
+      tags: [Marketplace]
+      summary: Get listing by id
+      parameters:
+        - name: listing_id
+          in: path
+          required: true
+          schema: {type: string}
+      responses:
+        "200": {description: OK}
+  /marketplace/listings/{listing_id}/reviews:
+    get:
+      tags: [Reviews]
+      summary: List reviews for listing
+      parameters:
+        - name: listing_id
+          in: path
+          required: true
+          schema: {type: string}
+      responses:
+        "200": {description: OK}
+    post:
+      tags: [Reviews]
+      summary: Create review (user)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "201": {description: Created}
+  /marketplace/listings/{listing_id}/evidence:
+    get:
+      tags: [Evidence]
+      summary: List evidence records for listing
+      parameters:
+        - name: listing_id
+          in: path
+          required: true
+          schema: {type: string}
+      responses:
+        "200": {description: OK}
+    post:
+      tags: [Evidence]
+      summary: Submit evidence record (user/verifier)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "201": {description: Created}
+  /moderation/tickets:
+    get:
+      tags: [Moderation]
+      summary: List moderation tickets
+      parameters:
+        - name: status
+          in: query
+          schema: {type: string, enum: [open, needs_changes, approved, rejected, banned]}
+      responses:
+        "200": {description: OK}
+    post:
+      tags: [Moderation]
+      summary: Create moderation ticket
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "201": {description: Created}
+  /trust/score/{listing_id}:
+    get:
+      tags: [Trust]
+      summary: Get trust score for listing
+      parameters:
+        - name: listing_id
+          in: path
+          required: true
+          schema: {type: string}
+      responses:
+        "200": {description: OK}
