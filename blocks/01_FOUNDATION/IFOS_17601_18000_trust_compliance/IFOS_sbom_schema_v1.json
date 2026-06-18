@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SBOM Schema v1",
+  "type": "object",
+  "required": [
+    "sbom_id",
+    "subject",
+    "components",
+    "generated_at",
+    "format",
+    "version"
+  ],
+  "properties": {
+    "sbom_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "format": {
+      "type": "string",
+      "enum": [
+        "cyclonedx",
+        "spdx",
+        "ifos-min"
+      ]
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "version"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "purl": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string"
+          },
+          "license_ref": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "library",
+              "service",
+              "plugin",
+              "adapter",
+              "bundle",
+              "runtime"
+            ]
+          }
+        }
+      }
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
