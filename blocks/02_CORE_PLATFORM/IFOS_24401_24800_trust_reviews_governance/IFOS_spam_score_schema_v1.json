@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Spam Score Schema v1",
+  "type": "object",
+  "required": [
+    "spam_id",
+    "target_id",
+    "target_type",
+    "score",
+    "features",
+    "computed_at",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "spam_id": {
+      "type": "string"
+    },
+    "target_id": {
+      "type": "string"
+    },
+    "target_type": {
+      "type": "string",
+      "enum": [
+        "review",
+        "publisher",
+        "subject"
+      ]
+    },
+    "score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "features": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "computed_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
