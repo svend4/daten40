@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RBAC Role Schema v1",
+  "type": "object",
+  "required": [
+    "role_id",
+    "name",
+    "permissions",
+    "scope",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "role_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "permissions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "actions allowed"
+    },
+    "scope": {
+      "type": "string",
+      "enum": [
+        "tenant",
+        "project",
+        "cluster",
+        "global"
+      ]
+    },
+    "inherits": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
