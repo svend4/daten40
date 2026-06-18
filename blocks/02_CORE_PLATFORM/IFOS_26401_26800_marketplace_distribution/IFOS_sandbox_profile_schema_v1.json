@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SandboxProfile Schema v1",
+  "type": "object",
+  "required": [
+    "sandbox_id",
+    "mode",
+    "limits",
+    "network",
+    "filesystem",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "sandbox_id": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "preview",
+        "safe",
+        "prod"
+      ]
+    },
+    "limits": {
+      "type": "object",
+      "required": [
+        "max_seconds",
+        "max_ram_mb"
+      ],
+      "properties": {
+        "max_seconds": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_ram_mb": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_cpu": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "network": {
+      "type": "object",
+      "properties": {
+        "allow_external": {
+          "type": "boolean"
+        },
+        "allowlist_domains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "denylist_domains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "filesystem": {
+      "type": "object",
+      "properties": {
+        "allow_write": {
+          "type": "boolean"
+        },
+        "write_paths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
