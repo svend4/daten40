@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Runtime Run Record Schema v1",
+  "type": "object",
+  "required": [
+    "run_id",
+    "job_id",
+    "attempt",
+    "started_at",
+    "status",
+    "steps",
+    "artifacts",
+    "policy"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string"
+    },
+    "job_id": {
+      "type": "string"
+    },
+    "attempt": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "started_at": {
+      "type": "string"
+    },
+    "finished_at": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "RUNNING",
+        "PASS",
+        "WARN",
+        "FAIL",
+        "CANCELLED"
+      ]
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "dry_run",
+        "sandbox",
+        "production"
+      ]
+    },
+    "policy": {
+      "type": "object",
+      "properties": {
+        "redaction_applied": {
+          "type": "boolean"
+        },
+        "pii": {
+          "type": "boolean"
+        },
+        "money": {
+          "type": "boolean"
+        },
+        "security_sensitive": {
+          "type": "boolean"
+        }
+      }
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "step_id",
+          "kind",
+          "status",
+          "started_at"
+        ],
+        "properties": {
+          "step_id": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "uses": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "PASS",
+              "WARN",
+              "FAIL",
+              "SKIP"
+            ]
+          },
+          "started_at": {
+            "type": "string"
+          },
+          "finished_at": {
+            "type": "string"
+          },
+          "duration_ms": {
+            "type": "integer"
+          },
+          "request_redacted": {
+            "type": "object"
+          },
+          "response_redacted": {
+            "type": "object"
+          },
+          "error": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "sha256"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string"
+          },
+          "uri": {
+            "type": "string"
+          },
+          "redacted": {
+            "type": "boolean",
+            "default": true
+          }
+        }
+      }
+    },
+    "state_updates": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
