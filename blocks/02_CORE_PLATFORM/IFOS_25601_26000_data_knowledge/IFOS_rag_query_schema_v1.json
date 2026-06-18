@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RAGQuery Schema v1",
+  "type": "object",
+  "required": [
+    "query_id",
+    "question",
+    "collection_id",
+    "filters",
+    "top_k",
+    "mode",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "query_id": {
+      "type": "string"
+    },
+    "question": {
+      "type": "string"
+    },
+    "collection_id": {
+      "type": "string"
+    },
+    "filters": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "top_k": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 200
+    },
+    "rerank": {
+      "type": "boolean"
+    },
+    "citations_required": {
+      "type": "boolean"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "preview",
+        "safe",
+        "prod"
+      ]
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
