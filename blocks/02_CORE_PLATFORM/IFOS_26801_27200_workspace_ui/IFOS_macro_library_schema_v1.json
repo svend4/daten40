@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS MacroLibrary Schema v1",
+  "type": "object",
+  "required": [
+    "library_id",
+    "workspace_id",
+    "macros",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "library_id": {
+      "type": "string"
+    },
+    "workspace_id": {
+      "type": "string"
+    },
+    "macros": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
