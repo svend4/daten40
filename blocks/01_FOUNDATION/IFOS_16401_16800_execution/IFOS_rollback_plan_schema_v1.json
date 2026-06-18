@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Rollback Plan Schema v1",
+  "type": "object",
+  "required": [
+    "rollback_id",
+    "target",
+    "subject",
+    "steps",
+    "created_at"
+  ],
+  "properties": {
+    "rollback_id": {
+      "type": "string"
+    },
+    "target": {
+      "type": "string",
+      "enum": [
+        "make",
+        "n8n",
+        "wp",
+        "native"
+      ]
+    },
+    "subject": {
+      "type": "object",
+      "required": [
+        "kind",
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "job",
+            "install_plan",
+            "bundle"
+          ]
+        },
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at": {
+      "type": "string"
+    }
+  }
+}
