@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Reputation Profile Schema v1",
+  "type": "object",
+  "required": [
+    "entity_id",
+    "entity_type",
+    "trust_score",
+    "badges",
+    "history",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "entity_id": {
+      "type": "string"
+    },
+    "entity_type": {
+      "type": "string",
+      "enum": [
+        "publisher",
+        "subject"
+      ]
+    },
+    "trust_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "badges": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "ts",
+          "event",
+          "delta"
+        ],
+        "properties": {
+          "ts": {
+            "type": "string"
+          },
+          "event": {
+            "type": "string"
+          },
+          "delta": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
