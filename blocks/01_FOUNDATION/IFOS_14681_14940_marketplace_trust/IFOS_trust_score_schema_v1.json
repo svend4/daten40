@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Trust Score Schema v1",
+  "type": "object",
+  "required": [
+    "listing_id",
+    "score",
+    "breakdown",
+    "computed_at",
+    "version"
+  ],
+  "properties": {
+    "version": {
+      "type": "string",
+      "default": "1.0.0"
+    },
+    "listing_id": {
+      "type": "string"
+    },
+    "score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "breakdown": {
+      "type": "object",
+      "required": [
+        "evidence",
+        "security",
+        "popularity",
+        "freshness",
+        "support"
+      ],
+      "properties": {
+        "evidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "security": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "popularity": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "freshness": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "support": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        }
+      }
+    },
+    "explain": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "computed_at": {
+      "type": "string"
+    }
+  }
+}
