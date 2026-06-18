@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS NavigationTree Schema v1",
+  "type": "object",
+  "required": [
+    "nav_id",
+    "root",
+    "version"
+  ],
+  "properties": {
+    "nav_id": {
+      "type": "string"
+    },
+    "root": {
+      "type": "object",
+      "required": [
+        "title",
+        "children"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "title",
+              "kind",
+              "ref"
+            ],
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "section",
+                  "vitrine",
+                  "dashboard",
+                  "card",
+                  "link"
+                ]
+              },
+              "ref": {
+                "type": "string"
+              },
+              "children": {
+                "type": "array",
+                "items": {
+                  "type": "object"
+                }
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
