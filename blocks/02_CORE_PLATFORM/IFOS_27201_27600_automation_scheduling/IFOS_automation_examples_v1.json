@@ -1,0 +1,176 @@
+{
+  "schedule": {
+    "schedule_id": "sch.s.nf3rjf9b67",
+    "kind": "cron",
+    "timezone": "Europe/Berlin",
+    "spec": {
+      "cron": "0 9 * * *"
+    },
+    "start_at": "2026-01-03T04:40:00Z",
+    "end_at": "",
+    "enabled": true,
+    "version": "1.0.0"
+  },
+  "retry_policy": {
+    "retry_policy_id": "rp.r.7cjo3gmu4w",
+    "max_attempts": 5,
+    "backoff": {
+      "kind": "exponential",
+      "base_seconds": 10,
+      "max_seconds": 600,
+      "jitter": true
+    },
+    "retry_on": [
+      "429",
+      "500",
+      "network"
+    ],
+    "version": "1.0.0"
+  },
+  "sla_policy": {
+    "sla_policy_id": "sla.s.8jvqsgpaff",
+    "max_start_delay_seconds": 300,
+    "max_runtime_seconds": 180,
+    "maintenance_windows": [
+      {
+        "rrule": "FREQ=DAILY;BYHOUR=2;BYMINUTE=0;BYSECOND=0",
+        "max_runtime_seconds": 600
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "rate_limit": {
+    "rate_limit_id": "rl.r.t9i7daaate",
+    "scope": "workspace",
+    "limit": 60,
+    "window_seconds": 60,
+    "burst": 10,
+    "version": "1.0.0"
+  },
+  "macro_batch": {
+    "macro_batch_id": "mb.m.4i4o8l5ppg",
+    "name": "Ежедневный бриф",
+    "description": "RSS→бриф→Telegram→архив",
+    "steps": [
+      {
+        "kind": "flow",
+        "ref": "flow.news.ingest",
+        "params": {}
+      },
+      {
+        "kind": "macro",
+        "ref": "macro.summarize",
+        "params": {
+          "mode": "daily"
+        }
+      },
+      {
+        "kind": "package",
+        "ref": "pkg.telegram.send",
+        "params": {
+          "chat_id": "${CHAT_ID}"
+        }
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "job": {
+    "job_id": "job.j.5bk6p5pzgw",
+    "workspace_id": "ws.w.j1uadqr5d5",
+    "name": "Бриф каждый день 09:00",
+    "target": {
+      "kind": "macro_batch",
+      "ref": "mb.m.4i4o8l5ppg"
+    },
+    "bindings": {
+      "CHAT_ID": "secretref.telegram_chat"
+    },
+    "trigger_refs": [
+      "trg.t.f8vcp4gqkw"
+    ],
+    "retry_policy_ref": "rp.r.7cjo3gmu4w",
+    "sla_policy_ref": "sla.s.8jvqsgpaff",
+    "rate_limit_ref": "rl.r.t9i7daaate",
+    "idempotency_strategy": "by_time_window",
+    "enabled": true,
+    "version": "1.0.0"
+  },
+  "trigger": {
+    "trigger_id": "trg.t.f8vcp4gqkw",
+    "kind": "schedule",
+    "target_job_id": "job.j.5bk6p5pzgw",
+    "schedule_ref": "sch.s.nf3rjf9b67",
+    "filters": {},
+    "enabled": true,
+    "version": "1.0.0"
+  },
+  "queue": {
+    "queue_id": "q.q.fxc0x2mhuy",
+    "name": "default",
+    "priority": "normal",
+    "concurrency": 5,
+    "visibility_timeout_seconds": 300,
+    "dead_letter_queue_id": "q.q.775tqmk93p",
+    "version": "1.0.0"
+  },
+  "worker": {
+    "worker_id": "wrk.w.j01q3iy9pm",
+    "capabilities": [
+      "fastapi",
+      "docker",
+      "local"
+    ],
+    "status": "idle",
+    "limits": {
+      "max_ram_mb": 1024,
+      "max_cpu": 2
+    },
+    "heartbeat_at": "2026-01-03T04:40:00Z",
+    "version": "1.0.0"
+  },
+  "job_run": {
+    "run_id": "run.r.wwio0rnkxz",
+    "job_id": "job.j.5bk6p5pzgw",
+    "status": "queued",
+    "queue_id": "q.q.fxc0x2mhuy",
+    "worker_id": "",
+    "queued_at": "2026-01-03T04:40:00Z",
+    "started_at": "",
+    "finished_at": "",
+    "attempt": 1,
+    "error_code": "",
+    "error_message": "",
+    "artifacts": [],
+    "metrics": {
+      "expected_sla_start_delay": 300
+    },
+    "version": "1.0.0"
+  },
+  "monitor_rule": {
+    "rule_id": "mr.m.1x8dl200gc",
+    "workspace_id": "ws.w.j1uadqr5d5",
+    "kind": "no_success",
+    "condition": {
+      "job_id": "job.j.5bk6p5pzgw",
+      "threshold_seconds": 86400
+    },
+    "window_seconds": 86400,
+    "severity": "critical",
+    "enabled": true,
+    "version": "1.0.0"
+  },
+  "alert": {
+    "alert_id": "al.a.dwwvpzgon5",
+    "rule_id": "mr.m.1x8dl200gc",
+    "ts": "2026-01-03T04:40:00Z",
+    "severity": "critical",
+    "message": "Нет успешных запусков за 24 часа",
+    "channels": [
+      "telegram",
+      "ui"
+    ],
+    "dedupe_key": "no_success:job.j.5bk6p5pzgw",
+    "status": "open",
+    "version": "1.0.0"
+  }
+}
