@@ -1,0 +1,97 @@
+{
+  "registry_id": "reg.r.kfzrrdtkin",
+  "entries": [
+    {
+      "name": "IFOS_quality_level_schema_v1.json",
+      "ref": "file://IFOS_quality_level_schema_v1.json",
+      "hash": "sha256:a22fa53b59bd43800c6b389217e225b4c8b1784bf973f6f93ea37865c66b136c"
+    },
+    {
+      "name": "IFOS_quality_assessment_schema_v1.json",
+      "ref": "file://IFOS_quality_assessment_schema_v1.json",
+      "hash": "sha256:10bc8ec81312dd8806e1a06201578bb315d858413fa9dfb49d0f49bcf1137ec0"
+    },
+    {
+      "name": "IFOS_doc_bundle_schema_v1.json",
+      "ref": "file://IFOS_doc_bundle_schema_v1.json",
+      "hash": "sha256:ef8493c4803b54c98baca9c586f2595c699dc3fe6b742e6a2758b2985a5c3043"
+    },
+    {
+      "name": "IFOS_readme_template_schema_v1.json",
+      "ref": "file://IFOS_readme_template_schema_v1.json",
+      "hash": "sha256:efdda13c25945b69d0730a26c13953b544527fa3aeb43462e3bc28bde5eb779d"
+    },
+    {
+      "name": "IFOS_readme_generation_job_schema_v1.json",
+      "ref": "file://IFOS_readme_generation_job_schema_v1.json",
+      "hash": "sha256:d97ebffcd2f684285d9a18a2cd32c631af0ca06494980d9203ce9104d01544d1"
+    },
+    {
+      "name": "IFOS_example_pack_schema_v1.json",
+      "ref": "file://IFOS_example_pack_schema_v1.json",
+      "hash": "sha256:39571512d71fa3f20cb8d6cfce148867536ac8b8a10d4390b2c3e358dd78cc99"
+    },
+    {
+      "name": "IFOS_test_suite_schema_v1.json",
+      "ref": "file://IFOS_test_suite_schema_v1.json",
+      "hash": "sha256:36a61044299c551baca43fe1f8af5da27745149b1e9a51ca9e103bcb5110fcda"
+    },
+    {
+      "name": "IFOS_test_case_schema_v1.json",
+      "ref": "file://IFOS_test_case_schema_v1.json",
+      "hash": "sha256:a9826fc9a6b2331a5f608845c906f1b180888fab92af8527ac2de5c591c0cd55"
+    },
+    {
+      "name": "IFOS_test_result_schema_v1.json",
+      "ref": "file://IFOS_test_result_schema_v1.json",
+      "hash": "sha256:0e2faf5eb4a84458378487754bac6714ab4b354737d8aad1dadb060332912b4a"
+    },
+    {
+      "name": "IFOS_ci_pipeline_schema_v1.json",
+      "ref": "file://IFOS_ci_pipeline_schema_v1.json",
+      "hash": "sha256:1dfc50ee348c9cf699e4cd90d8f2b7716a597f20b3ab54d36625c1226a6ce4c1"
+    },
+    {
+      "name": "IFOS_lint_rule_schema_v1.json",
+      "ref": "file://IFOS_lint_rule_schema_v1.json",
+      "hash": "sha256:e45387c9cc571fae56cf5f918a8955e079ed515cb4ed569045bafe80fc497dba"
+    },
+    {
+      "name": "IFOS_lint_report_schema_v1.json",
+      "ref": "file://IFOS_lint_report_schema_v1.json",
+      "hash": "sha256:20e6414c7a11440479bb468c126f77ae75500d4c0b28e7461009fd2ae77e5d3a"
+    },
+    {
+      "name": "IFOS_coverage_report_schema_v1.json",
+      "ref": "file://IFOS_coverage_report_schema_v1.json",
+      "hash": "sha256:7788d98201d265a7404af6b74ae6b515c53ea9974b23f3f7e67e9a85d2853738"
+    },
+    {
+      "name": "IFOS_quality_uplift_plan_schema_v1.json",
+      "ref": "file://IFOS_quality_uplift_plan_schema_v1.json",
+      "hash": "sha256:1675923af226b7a42af11ece0e349b5bafb99c4a4cf3d3531738937b0610251a"
+    },
+    {
+      "name": "IFOS_quality_uplift_job_schema_v1.json",
+      "ref": "file://IFOS_quality_uplift_job_schema_v1.json",
+      "hash": "sha256:4afd89bc368690138eb3a8627a3c22b620a26c30813e7b2aff030a079dd9458e"
+    },
+    {
+      "name": "IFOS_tutorial_schema_v1.json",
+      "ref": "file://IFOS_tutorial_schema_v1.json",
+      "hash": "sha256:d4c01cdf52e54baaa1141501f5844a1702fe3254b5217dbe094f968af4ea3bce"
+    },
+    {
+      "name": "IFOS_faq_schema_v1.json",
+      "ref": "file://IFOS_faq_schema_v1.json",
+      "hash": "sha256:114caa75ab43c5b9c2a0f2a623fd0699119745765d3f375fc6b2121d7601511a"
+    },
+    {
+      "name": "IFOS_changelog_schema_v1.json",
+      "ref": "file://IFOS_changelog_schema_v1.json",
+      "hash": "sha256:ab90734f9bc5d1db41224874399b46f3c5b5083dcbde54ef55d583a37ef49088"
+    }
+  ],
+  "updated_at": "2026-01-03T01:55:00Z",
+  "version": "1.0.0"
+}
