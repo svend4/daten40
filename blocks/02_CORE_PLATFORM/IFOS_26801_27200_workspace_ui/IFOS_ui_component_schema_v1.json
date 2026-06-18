@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UIComponent Schema v1",
+  "type": "object",
+  "required": [
+    "component_id",
+    "kind",
+    "props_schema",
+    "version"
+  ],
+  "properties": {
+    "component_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "Input",
+        "Select",
+        "Table",
+        "Chart",
+        "Timeline",
+        "SourceList",
+        "DiffView",
+        "LogPanel",
+        "Button",
+        "Markdown",
+        "Other"
+      ]
+    },
+    "props_schema": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
