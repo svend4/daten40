@@ -1,0 +1,220 @@
+{
+  "license_policy": {
+    "license_id": "lic.mit.v1",
+    "name": "MIT License (policy)",
+    "spdx_like": "MIT",
+    "permissions": {
+      "commercial_use": true,
+      "redistribution": true,
+      "modifications": true,
+      "private_use": true,
+      "ai_training_allowed": true
+    },
+    "obligations": {
+      "attribution_required": true,
+      "notice_required": true,
+      "share_alike": false,
+      "source_disclosure": false
+    },
+    "restrictions": {
+      "patent_grant": false,
+      "no_warranty": true,
+      "export_restrictions": "",
+      "field_of_use_limitations": ""
+    },
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T12:00:00Z"
+  },
+  "claim": {
+    "claim_id": "claim.rss_to_telegram.stable",
+    "statement": "Recipe 'rss_to_telegram.digest_v1' sends daily RSS digest to Telegram reliably with no secret leakage.",
+    "target": {
+      "kind": "recipe",
+      "id": "recipe.rss_to_telegram.digest_v1",
+      "version": "1.2.0"
+    },
+    "criteria": [
+      "pass_rate>=0.97",
+      "no_secret_in_logs",
+      "telegram_rate_limit_handled"
+    ]
+  },
+  "evidence_court_record": {
+    "court_record_id": "court.rec.9peh10cs",
+    "jurisdiction": "node.community.01",
+    "claim": {
+      "claim_id": "claim.rss_to_telegram.stable",
+      "statement": "Recipe 'rss_to_telegram.digest_v1' sends daily RSS digest to Telegram reliably with no secret leakage.",
+      "target": {
+        "kind": "recipe",
+        "id": "recipe.rss_to_telegram.digest_v1",
+        "version": "1.2.0"
+      },
+      "criteria": [
+        "pass_rate>=0.97",
+        "no_secret_in_logs",
+        "telegram_rate_limit_handled"
+      ]
+    },
+    "verdict": "PASS",
+    "reasoning": "Observed 300 runs in 30 days, pass_rate 0.983; redaction check passed; rate-limit retries configured.",
+    "evidence_refs": [
+      "evid.recipe.rss_to_telegram.L2",
+      "evid.recipe.rss_to_telegram.L3"
+    ],
+    "computed_at": "2026-01-02T12:00:00Z",
+    "method_version": "court.v1",
+    "trace_id": "trace_court_0001",
+    "hash_chain": {
+      "prev_hash": "(prev)",
+      "this_hash": "(this)",
+      "alg": "sha256"
+    },
+    "signatures": [
+      {
+        "signer": "node.community.01",
+        "sig": "(sig)",
+        "alg": "ed25519"
+      }
+    ]
+  },
+  "dispute_case": {
+    "case_id": "case.dsp.fi9gngo7",
+    "jurisdiction": "node.community.01",
+    "status": "investigating",
+    "created_at": "2026-01-02T12:00:00Z",
+    "updated_at": "2026-01-02T12:00:00Z",
+    "claimant": {
+      "type": "user",
+      "id": "usr.reporter01"
+    },
+    "respondent": {
+      "type": "publisher",
+      "id": "pub.fastgrowth"
+    },
+    "subject": {
+      "kind": "listing",
+      "id": "lst.super_ai_bundle.001",
+      "version": "0.9.1"
+    },
+    "requests": [
+      {
+        "type": "remove_reviews",
+        "details": "Suspicious review ring and install spike without usage."
+      },
+      {
+        "type": "freeze_score",
+        "details": "Freeze trust score until investigation completes."
+      }
+    ],
+    "evidence_refs": [
+      "aud.review.spike.001",
+      "sig.antifraud.001"
+    ],
+    "timeline": [
+      {
+        "ts": "2026-01-02T12:00:00Z",
+        "event": "Case filed",
+        "actor": "usr.reporter01"
+      }
+    ]
+  },
+  "review_fraud_signal": {
+    "signal_id": "sig.fraud.ko6iw2dn",
+    "listing_id": "lst.super_ai_bundle.001",
+    "signal_kind": "no_usage",
+    "score": 84.0,
+    "features": {
+      "reviews_count": 120,
+      "unique_ips": 18,
+      "dup_text_ratio": 0.42,
+      "runs_after_install_ratio": 0.05,
+      "context_attached_ratio": 0.08,
+      "time_window_hours": 24
+    },
+    "computed_at": "2026-01-02T12:00:00Z",
+    "method_version": "antifraud.v1",
+    "recommended_action": "freeze_score"
+  },
+  "sanction": {
+    "sanction_id": "san.s.91a5ndoz",
+    "jurisdiction": "node.community.01",
+    "target": {
+      "kind": "listing",
+      "id": "lst.super_ai_bundle.001"
+    },
+    "type": "freeze_score",
+    "status": "active",
+    "issued_at": "2026-01-02T12:00:00Z",
+    "expires_at": "2026-02-01T00:00:00Z",
+    "reason": "Antifraud signals indicate review manipulation; awaiting moderator decision.",
+    "evidence_refs": [
+      "sig.antifraud.001",
+      "aud.review.spike.001"
+    ],
+    "appeal_ref": ""
+  },
+  "appeal": {
+    "appeal_id": "app.a.zs1m0q1w",
+    "case_ref": "case.dsp.fi9gngo7",
+    "status": "filed",
+    "filed_at": "2026-01-02T12:00:00Z",
+    "resolved_at": "",
+    "appellant": {
+      "type": "publisher",
+      "id": "pub.fastgrowth"
+    },
+    "grounds": "Requests re-evaluation; provides run logs and customer references.",
+    "new_evidence_refs": [
+      "evid.publisher.provided.001"
+    ],
+    "decision": {}
+  },
+  "constitution": {
+    "constitution_id": "const.node.community.01",
+    "jurisdiction": "node.community.01",
+    "version": "1.0.0",
+    "principles": [
+      "Evidence-weighted trust over raw reviews",
+      "Contracts + licenses required for publish",
+      "Due process and appealability",
+      "Federation-safe replication: no secrets/PII"
+    ],
+    "publication_minimum": {
+      "requires_license": true,
+      "requires_contracts": true,
+      "requires_flags": true,
+      "requires_contact": true,
+      "requires_security_scan": false
+    },
+    "moderation_process": {
+      "stages": [
+        "auto",
+        "moderator",
+        "panel",
+        "federation"
+      ],
+      "sla_hours": 72
+    },
+    "sanctions_catalog": [
+      "warning",
+      "delist",
+      "quarantine",
+      "ban_publisher",
+      "federation_ban",
+      "freeze_score",
+      "remove_reviews"
+    ],
+    "appeal_process": {
+      "deadline_days": 14,
+      "panel": "independent_panel_v1",
+      "public_summary": true
+    },
+    "transparency": {
+      "public_reports": true,
+      "publish_sanctions_summary": true,
+      "publish_method_versions": true
+    },
+    "updated_at": "2026-01-02T12:00:00Z"
+  }
+}
