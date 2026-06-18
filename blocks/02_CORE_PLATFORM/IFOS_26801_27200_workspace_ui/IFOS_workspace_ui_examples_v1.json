@@ -1,0 +1,229 @@
+{
+  "workspace": {
+    "workspace_id": "ws.w.c8sc3y9i1t",
+    "name": "Новости и брифы",
+    "mode": "personal",
+    "purpose": "RSS → дедуп → бриф → Q&A",
+    "policies": {
+      "safe_mode": true,
+      "citations_required": true,
+      "export_allowed": false,
+      "default_language": "ru"
+    },
+    "tags": [
+      "news",
+      "rag"
+    ],
+    "created_at": "2026-01-03T04:05:00Z",
+    "updated_at": "2026-01-03T04:05:00Z",
+    "version": "1.0.0"
+  },
+  "form_schema": {
+    "form_id": "form.f.jwu0qx8zul",
+    "fields": [
+      {
+        "key": "RSS_URL",
+        "label": "RSS URL",
+        "type": "url",
+        "required": true,
+        "help": "Вставьте RSS-ленту"
+      },
+      {
+        "key": "QUESTION",
+        "label": "Вопрос",
+        "type": "string",
+        "required": true,
+        "default": "Главные новости недели"
+      }
+    ],
+    "validation": {},
+    "version": "1.0.0"
+  },
+  "layout": {
+    "layout_id": "lay.l.fnsfnwrzc1",
+    "grid": {
+      "columns": 12,
+      "gap": 12
+    },
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Ввод",
+        "components": [
+          "Input:RSS_URL",
+          "Input:QUESTION"
+        ],
+        "tab": "Настройка"
+      },
+      {
+        "id": "s2",
+        "title": "Результат",
+        "components": [
+          "Markdown:answer",
+          "SourceList:sources"
+        ],
+        "tab": "Результат"
+      },
+      {
+        "id": "s3",
+        "title": "Логи",
+        "components": [
+          "LogPanel:logs"
+        ],
+        "tab": "История"
+      }
+    ],
+    "responsive": {
+      "mobile_columns": 4,
+      "collapse_tabs": true
+    },
+    "presentation_mode": false,
+    "version": "1.0.0"
+  },
+  "flow_graph": {
+    "flow_id": "flow.f.hyqomwbhsr",
+    "workspace_id": "ws.w.c8sc3y9i1t",
+    "nodes": [
+      {
+        "node_id": "n1",
+        "type": "ingest",
+        "params": {
+          "source": "rss",
+          "url": "${RSS_URL}"
+        },
+        "on_error": "retry",
+        "version": "1.0.0"
+      },
+      {
+        "node_id": "n2",
+        "type": "dedupe",
+        "params": {
+          "by": [
+            "url",
+            "title",
+            "published_at"
+          ]
+        },
+        "on_error": "skip",
+        "version": "1.0.0"
+      },
+      {
+        "node_id": "n3",
+        "type": "rag_query",
+        "params": {
+          "question": "${QUESTION}",
+          "citations": true
+        },
+        "on_error": "fallback",
+        "version": "1.0.0"
+      }
+    ],
+    "edges": [
+      {
+        "from": "n1",
+        "to": "n2"
+      },
+      {
+        "from": "n2",
+        "to": "n3"
+      }
+    ],
+    "triggers": [
+      {
+        "kind": "manual",
+        "spec": {}
+      }
+    ],
+    "updated_at": "2026-01-03T04:05:00Z",
+    "version": "1.0.0"
+  },
+  "ui_card": {
+    "card_id": "card.c.2m29tcb2wt",
+    "workspace_id": "ws.w.c8sc3y9i1t",
+    "title": "Новости недели (с цитатами)",
+    "kind": "rag_qa",
+    "summary": "Импорт RSS → дедуп → ответы с источниками.",
+    "status": "needs_config",
+    "inputs_form_ref": "form.f.jwu0qx8zul",
+    "flow_ref": "flow.f.hyqomwbhsr",
+    "layout_ref": "lay.l.fnsfnwrzc1",
+    "outputs": [
+      {
+        "name": "answer",
+        "type": "text",
+        "ref": "artifact://runs/${run_id}/answer.md"
+      },
+      {
+        "name": "sources",
+        "type": "sources",
+        "ref": "artifact://runs/${run_id}/sources.json"
+      }
+    ],
+    "actions": [
+      "configure",
+      "run",
+      "open_sources",
+      "open_logs"
+    ],
+    "updated_at": "2026-01-03T04:05:00Z",
+    "version": "1.0.0"
+  },
+  "template": {
+    "template_id": "tmpl.t.vo81z3834e",
+    "name": "Новости дня: 1-клик",
+    "goal": "Создать workspace + карточку + поток + форму для новостей.",
+    "cards": [
+      {
+        "ref": "ui_card",
+        "id": "card.c.2m29tcb2wt"
+      }
+    ],
+    "flows": [
+      {
+        "ref": "flow_graph",
+        "id": "flow.f.hyqomwbhsr"
+      }
+    ],
+    "forms": [
+      {
+        "ref": "form_schema",
+        "id": "form.f.jwu0qx8zul"
+      }
+    ],
+    "requires_packages": [
+      "pkg.news.ingest",
+      "pkg.rag.core"
+    ],
+    "updated_at": "2026-01-03T04:05:00Z",
+    "version": "1.0.0"
+  },
+  "demo_session": {
+    "demo_id": "demo.d.ayff897wam",
+    "template_id": "tmpl.t.vo81z3834e",
+    "workspace_id": "ws.w.c8sc3y9i1t",
+    "status": "created",
+    "steps": [
+      {
+        "id": "st1",
+        "title": "Откройте карточку",
+        "done": false,
+        "hint": "Нажмите на плитку 'Новости недели'"
+      },
+      {
+        "id": "st2",
+        "title": "Вставьте RSS",
+        "done": false,
+        "hint": "Вставьте URL RSS и нажмите Run"
+      },
+      {
+        "id": "st3",
+        "title": "Посмотрите источники",
+        "done": false,
+        "hint": "Откройте вкладку Sources"
+      }
+    ],
+    "started_at": "2026-01-03T04:05:00Z",
+    "completed_at": "",
+    "version": "1.0.0"
+  }
+}
