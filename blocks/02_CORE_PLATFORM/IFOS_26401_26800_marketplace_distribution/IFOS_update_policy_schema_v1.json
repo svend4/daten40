@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS UpdatePolicy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "channel",
+    "auto_update",
+    "constraints",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "channel": {
+      "type": "string",
+      "enum": [
+        "stable",
+        "beta",
+        "nightly"
+      ]
+    },
+    "auto_update": {
+      "type": "boolean"
+    },
+    "constraints": {
+      "type": "object",
+      "properties": {
+        "allow_breaking": {
+          "type": "boolean"
+        },
+        "max_downtime_seconds": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "block_when_active_jobs": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
