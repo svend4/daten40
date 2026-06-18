@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Runtime Job Schema v1",
+  "type": "object",
+  "required": [
+    "job_id",
+    "listing_id",
+    "item_ref",
+    "item_version",
+    "mode",
+    "trigger",
+    "inputs",
+    "secrets",
+    "created_at",
+    "status"
+  ],
+  "properties": {
+    "job_id": {
+      "type": "string"
+    },
+    "listing_id": {
+      "type": "string"
+    },
+    "item_ref": {
+      "type": "string",
+      "description": "recipe_id or bundle_id (expanded to recipes)"
+    },
+    "item_version": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "dry_run",
+        "sandbox",
+        "production"
+      ]
+    },
+    "trigger": {
+      "type": "object",
+      "required": [
+        "kind"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "cron",
+            "webhook",
+            "manual",
+            "queue"
+          ]
+        },
+        "cron": {
+          "type": "string"
+        },
+        "webhook_path": {
+          "type": "string"
+        },
+        "queue_name": {
+          "type": "string"
+        }
+      }
+    },
+    "inputs": {
+      "type": "object",
+      "description": "user inputs (non-secret)"
+    },
+    "secrets": {
+      "type": "object",
+      "description": "map of secret key -> secret_ref (vault handle)"
+    },
+    "sandbox_policy": {
+      "type": "object",
+      "description": "inline overrides or policy_ref"
+    },
+    "max_runtime_sec": {
+      "type": "integer",
+      "default": 300
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "paused",
+        "deleted"
+      ]
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
