@@ -1,0 +1,268 @@
+{
+  "metric": {
+    "metric_id": "m.m.tjlob4w2yi",
+    "name": "job.success_rate",
+    "kind": "gauge",
+    "unit": "ratio",
+    "series": "job.daily_brief",
+    "labels": {
+      "package_id": "pkg.daily_news",
+      "workspace": "ws.demo"
+    },
+    "ts": "2026-01-03T07:10:00Z",
+    "value": 0.98,
+    "version": "1.0.0"
+  },
+  "log_event": {
+    "event_id": "log.l.jz20ygzfm8",
+    "ts": "2026-01-03T07:10:00Z",
+    "level": "error",
+    "message": "Telegram send failed: missing secret_ref",
+    "context": {
+      "job_id": "job.daily_brief",
+      "connector": "Telegram"
+    },
+    "code": "E_SECRET_MISSING",
+    "hint": "Создайте secret_ref 'secretref.telegram.bot' и заполните значение в secret store.",
+    "version": "1.0.0"
+  },
+  "trace_span": {
+    "trace_id": "tr.t.v95duwwj5z",
+    "span_id": "sp.s.mrnef0pa5g",
+    "parent_span_id": "",
+    "name": "send.telegram",
+    "ts_start": "2026-01-03T07:10:00Z",
+    "ts_end": "2026-01-03T07:10:00Z",
+    "duration_ms": 12.4,
+    "attributes": {
+      "job_id": "job.daily_brief",
+      "step": "send",
+      "bytes": 2048
+    },
+    "status": "error",
+    "version": "1.0.0"
+  },
+  "health_check": {
+    "check_id": "hc.h.aaqrdkr2q6",
+    "target": {
+      "kind": "connector",
+      "id": "Telegram"
+    },
+    "kind": "secret",
+    "interval_sec": 300,
+    "timeout_sec": 10,
+    "last_result": {
+      "ts": "2026-01-03T07:10:00Z",
+      "status": "broken",
+      "details": {
+        "missing": "secretref.telegram.bot"
+      }
+    },
+    "version": "1.0.0"
+  },
+  "slo": {
+    "slo_id": "slo.s.16zc82ivid",
+    "target": {
+      "kind": "job",
+      "id": "job.daily_brief"
+    },
+    "window": "7d",
+    "objectives": [
+      {
+        "name": "success_rate",
+        "threshold": 0.99,
+        "comparison": ">="
+      },
+      {
+        "name": "latency_p95_ms",
+        "threshold": 30000,
+        "comparison": "<="
+      }
+    ],
+    "error_budget": {
+      "remaining_pct": 42.0,
+      "burn_rate": 1.8
+    },
+    "version": "1.0.0"
+  },
+  "alert_rule": {
+    "rule_id": "al.a.osyw903w02",
+    "target": {
+      "kind": "job",
+      "id": "job.daily_brief"
+    },
+    "severity": "critical",
+    "condition": {
+      "metric": "job.failure_rate",
+      "op": ">",
+      "value": 0.1,
+      "window": "1h"
+    },
+    "channels": [
+      {
+        "kind": "ui",
+        "target": "me"
+      },
+      {
+        "kind": "telegram",
+        "target": "channel://me"
+      }
+    ],
+    "runbook_ref": "docs://runbooks/job.daily_brief",
+    "enabled": true,
+    "version": "1.0.0"
+  },
+  "incident": {
+    "incident_id": "inc.i.xo8cxvupro",
+    "target": {
+      "kind": "job",
+      "id": "job.daily_brief"
+    },
+    "started_at": "2026-01-03T07:10:00Z",
+    "resolved_at": "",
+    "status": "open",
+    "impact": {
+      "users_affected": 1,
+      "runs_failed": 3,
+      "severity": "medium"
+    },
+    "timeline": [
+      {
+        "ts": "2026-01-03T07:10:00Z",
+        "event": "Alert fired: failure_rate>0.1"
+      },
+      {
+        "ts": "2026-01-03T07:10:00Z",
+        "event": "Autodiag: missing secret_ref"
+      }
+    ],
+    "rca": "",
+    "version": "1.0.0"
+  },
+  "run_report": {
+    "run_id": "run.r.sddi22a9vs",
+    "target": {
+      "kind": "job",
+      "id": "job.daily_brief"
+    },
+    "started_at": "2026-01-03T07:10:00Z",
+    "ended_at": "2026-01-03T07:10:00Z",
+    "status": "error",
+    "metrics": [
+      {
+        "name": "latency_ms",
+        "value": 12000
+      }
+    ],
+    "logs_ref": "logs://runs/run.r.sddi22a9vs",
+    "trace_id": "tr.t.v95duwwj5z",
+    "artifacts": [],
+    "version": "1.0.0"
+  },
+  "diagnostic_finding": {
+    "finding_id": "fd.f.m41hbx097v",
+    "target": {
+      "kind": "job",
+      "id": "job.daily_brief"
+    },
+    "symptom": "Сообщения не отправляются в Telegram",
+    "probable_causes": [
+      {
+        "cause": "Отсутствует secret_ref токена бота",
+        "code": "E_SECRET_MISSING",
+        "fix_hint": "Создать secret_ref и заполнить в secret store"
+      },
+      {
+        "cause": "Квота Telegram ограничена",
+        "code": "E_QUOTA",
+        "fix_hint": "Подождать/уменьшить частоту"
+      }
+    ],
+    "evidence": [
+      {
+        "kind": "log",
+        "ref": "log://log.l.jz20ygzfm8"
+      },
+      {
+        "kind": "health_check",
+        "ref": "hc://hc.h.aaqrdkr2q6"
+      },
+      {
+        "kind": "trace",
+        "ref": "trace://tr.t.v95duwwj5z"
+      }
+    ],
+    "confidence": 0.86,
+    "suggested_actions": [
+      {
+        "action_id": "a.a.5zt1t89o2d",
+        "kind": "other",
+        "label": "Create secret_ref",
+        "target": {
+          "kind": "other",
+          "id": "secretref.telegram.bot"
+        },
+        "params": {},
+        "guards": {
+          "requires_role": [
+            "Admin"
+          ]
+        },
+        "version": "1.0.0"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "auto_fix_plan": {
+    "plan_id": "fix.p.jcst6cdxc4",
+    "target": {
+      "kind": "job",
+      "id": "job.daily_brief"
+    },
+    "risk": "low",
+    "steps": [
+      {
+        "kind": "create_secret_ref",
+        "description": "Создать secret_ref 'secretref.telegram.bot' (без значения)",
+        "action": {
+          "kind": "create_secret_ref",
+          "name": "Telegram bot token"
+        }
+      },
+      {
+        "kind": "update_config",
+        "description": "Обновить конфиг job.daily_brief, указав secret_ref",
+        "action": {
+          "kind": "update_config"
+        }
+      }
+    ],
+    "requires_approval": true,
+    "rollback": {
+      "supported": true,
+      "steps": [
+        "restore previous config"
+      ]
+    },
+    "post_check": {
+      "health_check_ref": "hc://hc.h.aaqrdkr2q6"
+    },
+    "version": "1.0.0"
+  },
+  "reliability_policy": {
+    "policy_id": "rel.default",
+    "defaults": {
+      "health_interval_sec": 300,
+      "alert_channels": [
+        "ui",
+        "telegram"
+      ],
+      "slo_window": "7d"
+    },
+    "autofix_limits": {
+      "allow_high_risk": false,
+      "max_autofix_per_day": 3
+    },
+    "version": "1.0.0"
+  }
+}
