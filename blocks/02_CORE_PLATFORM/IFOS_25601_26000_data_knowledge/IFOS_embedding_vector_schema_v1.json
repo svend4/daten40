@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS EmbeddingVector Schema v1",
+  "type": "object",
+  "required": [
+    "vector_id",
+    "record_id",
+    "model_id",
+    "dims",
+    "vector_ref",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "vector_id": {
+      "type": "string"
+    },
+    "record_id": {
+      "type": "string"
+    },
+    "model_id": {
+      "type": "string"
+    },
+    "dims": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "vector_ref": {
+      "type": "string",
+      "description": "ref to stored vector (binary/json)"
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
