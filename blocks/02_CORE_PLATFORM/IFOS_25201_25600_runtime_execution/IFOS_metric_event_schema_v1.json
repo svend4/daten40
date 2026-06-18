@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Metric Event Schema v1",
+  "type": "object",
+  "required": [
+    "metric_id",
+    "job_id",
+    "name",
+    "value",
+    "unit",
+    "ts",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "metric_id": {
+      "type": "string"
+    },
+    "job_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "value": {
+      "type": "number"
+    },
+    "unit": {
+      "type": "string"
+    },
+    "labels": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "ts": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
