@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS ModerationDecision Schema v1",
+  "type": "object",
+  "required": [
+    "decision_id",
+    "workspace_id",
+    "target",
+    "decision",
+    "reasons",
+    "by",
+    "confidence",
+    "ts",
+    "version"
+  ],
+  "properties": {
+    "decision_id": {
+      "type": "string"
+    },
+    "workspace_id": {
+      "type": "string"
+    },
+    "target": {
+      "type": "object",
+      "required": [
+        "kind",
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "record",
+            "artifact",
+            "package",
+            "source",
+            "domain",
+            "other"
+          ]
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "allow",
+        "block",
+        "quarantine",
+        "needs_review"
+      ]
+    },
+    "reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "by": {
+      "type": "object",
+      "required": [
+        "kind",
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "human",
+            "ai",
+            "system"
+          ]
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "ts": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
