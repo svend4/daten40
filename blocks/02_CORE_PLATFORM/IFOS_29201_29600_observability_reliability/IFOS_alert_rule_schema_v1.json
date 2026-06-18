@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS AlertRule Schema v1",
+  "type": "object",
+  "required": [
+    "rule_id",
+    "target",
+    "severity",
+    "condition",
+    "channels",
+    "enabled",
+    "version"
+  ],
+  "properties": {
+    "rule_id": {
+      "type": "string"
+    },
+    "target": {
+      "type": "object",
+      "required": [
+        "kind",
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "job",
+            "package",
+            "vitrine",
+            "system"
+          ]
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "info",
+        "warn",
+        "critical"
+      ]
+    },
+    "condition": {
+      "type": "object",
+      "required": [
+        "metric",
+        "op",
+        "value",
+        "window"
+      ],
+      "properties": {
+        "metric": {
+          "type": "string"
+        },
+        "op": {
+          "type": "string",
+          "enum": [
+            ">",
+            "<",
+            ">=",
+            "<=",
+            "=="
+          ]
+        },
+        "value": {
+          "type": "number"
+        },
+        "window": {
+          "type": "string",
+          "enum": [
+            "5m",
+            "15m",
+            "1h",
+            "24h"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "channels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "target"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "ui",
+              "telegram",
+              "email",
+              "webhook"
+            ]
+          },
+          "target": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "runbook_ref": {
+      "type": "string"
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
