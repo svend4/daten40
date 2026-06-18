@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS FAQ Item Schema v1",
+  "type": "object",
+  "required": [
+    "faq_id",
+    "question",
+    "answer",
+    "actions",
+    "refs",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "faq_id": {
+      "type": "string"
+    },
+    "question": {
+      "type": "string"
+    },
+    "answer": {
+      "type": "string"
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "label",
+          "type"
+        ],
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "open_wizard_step",
+              "test_connection",
+              "show_example",
+              "open_issue",
+              "open_troubleshooting_case",
+              "open_docs_page"
+            ]
+          },
+          "ref": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
