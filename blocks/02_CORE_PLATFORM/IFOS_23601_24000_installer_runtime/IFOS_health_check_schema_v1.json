@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Health Check Schema v1",
+  "type": "object",
+  "required": [
+    "check_id",
+    "name",
+    "kind",
+    "criteria",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "check_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "connectivity",
+        "auth",
+        "e2e",
+        "performance"
+      ]
+    },
+    "criteria": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
