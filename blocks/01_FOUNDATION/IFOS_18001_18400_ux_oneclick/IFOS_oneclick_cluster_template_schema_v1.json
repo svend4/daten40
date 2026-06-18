@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS One‑Click Cluster Template Schema v1",
+  "type": "object",
+  "required": [
+    "template_id",
+    "title",
+    "goal",
+    "components",
+    "defaults",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "template_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "goal": {
+      "type": "string",
+      "enum": [
+        "news_digest",
+        "compare_portal",
+        "dropship_store",
+        "crm_min",
+        "helpdesk_min",
+        "social_hub_min",
+        "custom"
+      ]
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "bundle",
+              "recipe",
+              "function",
+              "adapter",
+              "plugin"
+            ]
+          },
+          "id": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "required": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "defaults": {
+      "type": "object",
+      "description": "preset params; may refer to auto-forms"
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
