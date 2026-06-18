@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Review Schema v1",
+  "type": "object",
+  "required": [
+    "review_id",
+    "subject_id",
+    "subject_type",
+    "author_id",
+    "platform",
+    "profile_id",
+    "text",
+    "signals",
+    "created_at",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "review_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "subject_type": {
+      "type": "string",
+      "enum": [
+        "atom",
+        "bundle",
+        "cluster",
+        "publisher"
+      ]
+    },
+    "author_id": {
+      "type": "string"
+    },
+    "platform": {
+      "type": "string",
+      "enum": [
+        "make",
+        "n8n",
+        "wordpress",
+        "custom",
+        "unknown"
+      ]
+    },
+    "profile_id": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "ratings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "signals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "spam_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
