@@ -1,0 +1,57 @@
+{
+  "registry_id": "reg.r.cnnvfbo1c5",
+  "entries": [
+    {
+      "name": "IFOS_ui_card_schema_v1.json",
+      "ref": "file://IFOS_ui_card_schema_v1.json",
+      "hash": "sha256:a894d2ab3e3b1eee4071cb1564bba9c6c9e3a3e7d923dae3cbf34801ad14aa8d"
+    },
+    {
+      "name": "IFOS_ui_widget_schema_v1.json",
+      "ref": "file://IFOS_ui_widget_schema_v1.json",
+      "hash": "sha256:5f024d4e603aa4f6a6539b536130228b9a81dc060c3d77a7cf6d33b2ffb0132c"
+    },
+    {
+      "name": "IFOS_ui_action_schema_v1.json",
+      "ref": "file://IFOS_ui_action_schema_v1.json",
+      "hash": "sha256:14646b67f57ccfa6125b4a123def25050a4eed31b543b1e5f664058d99206811"
+    },
+    {
+      "name": "IFOS_vitrine_schema_v1.json",
+      "ref": "file://IFOS_vitrine_schema_v1.json",
+      "hash": "sha256:54dc7b837920c0d7a497436465bf29cc1f1f257dfea814c1b0cdff8acab89dcd"
+    },
+    {
+      "name": "IFOS_dashboard_schema_v1.json",
+      "ref": "file://IFOS_dashboard_schema_v1.json",
+      "hash": "sha256:89dd1b902c45dcd6036a86fdf092089c34a0d8cf3590e51641cc09b2c4a3623c"
+    },
+    {
+      "name": "IFOS_compare_view_schema_v1.json",
+      "ref": "file://IFOS_compare_view_schema_v1.json",
+      "hash": "sha256:2264a6090e50de85c15f4a74c8a77769ef388023d9b41a16bbe8a7232b01235e"
+    },
+    {
+      "name": "IFOS_news_conference_schema_v1.json",
+      "ref": "file://IFOS_news_conference_schema_v1.json",
+      "hash": "sha256:037a9a37c000d926d229f4cf5731f38ef12ae89562c123871584def8fe9dd8c7"
+    },
+    {
+      "name": "IFOS_navigation_tree_schema_v1.json",
+      "ref": "file://IFOS_navigation_tree_schema_v1.json",
+      "hash": "sha256:02bbad35936a7aa8103c9b5c311bc86cd5636ad5715038fc94e6b96fe285c119"
+    },
+    {
+      "name": "IFOS_user_preferences_schema_v1.json",
+      "ref": "file://IFOS_user_preferences_schema_v1.json",
+      "hash": "sha256:00339a1af6d29e1cb920d635cc4aedfb109eb17507524cc141fb253c3879fd82"
+    },
+    {
+      "name": "IFOS_i18n_bundle_schema_v1.json",
+      "ref": "file://IFOS_i18n_bundle_schema_v1.json",
+      "hash": "sha256:03a09885b609a8aa92cf19c142ed57227a2032ba7daa366014a9bc7c7979990d"
+    }
+  ],
+  "updated_at": "2026-01-03T06:40:00Z",
+  "version": "1.0.0"
+}
