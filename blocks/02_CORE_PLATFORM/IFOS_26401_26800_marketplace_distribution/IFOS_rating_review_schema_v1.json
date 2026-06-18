@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS RatingReview Schema v1",
+  "type": "object",
+  "required": [
+    "review_id",
+    "item_id",
+    "rating",
+    "ts",
+    "runtime",
+    "verified_install",
+    "version"
+  ],
+  "properties": {
+    "review_id": {
+      "type": "string"
+    },
+    "item_id": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "pros": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "runtime": {
+      "type": "string"
+    },
+    "runtime_version": {
+      "type": "string"
+    },
+    "verified_install": {
+      "type": "boolean"
+    },
+    "ts": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
