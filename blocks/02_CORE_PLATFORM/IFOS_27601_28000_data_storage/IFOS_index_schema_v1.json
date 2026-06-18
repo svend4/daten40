@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Index Schema v1",
+  "type": "object",
+  "required": [
+    "index_id",
+    "workspace_id",
+    "kind",
+    "collections",
+    "update_mode",
+    "status",
+    "metrics",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "index_id": {
+      "type": "string"
+    },
+    "workspace_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "fulltext",
+        "facet",
+        "embeddings",
+        "diff",
+        "other"
+      ]
+    },
+    "collections": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "update_mode": {
+      "type": "string",
+      "enum": [
+        "incremental",
+        "full_rebuild",
+        "manual"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "idle",
+        "building",
+        "ready",
+        "error"
+      ]
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
