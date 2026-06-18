@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Connector Capability Schema v1",
+  "type": "object",
+  "required": [
+    "cap_id",
+    "platform",
+    "connector",
+    "supports",
+    "auth",
+    "limits",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "cap_id": {
+      "type": "string"
+    },
+    "platform": {
+      "type": "string",
+      "enum": [
+        "make",
+        "n8n",
+        "wordpress",
+        "custom"
+      ]
+    },
+    "connector": {
+      "type": "string"
+    },
+    "supports": {
+      "type": "object",
+      "properties": {
+        "webhooks": {
+          "type": "boolean"
+        },
+        "files": {
+          "type": "boolean"
+        },
+        "dry_run": {
+          "type": "boolean"
+        },
+        "retry_policy": {
+          "type": "boolean"
+        }
+      }
+    },
+    "auth": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "api_key",
+          "oauth2",
+          "basic",
+          "none",
+          "token"
+        ]
+      }
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "field_coverage": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
