@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS EmbeddingIndex Schema v1",
+  "type": "object",
+  "required": [
+    "index_id",
+    "collection_id",
+    "strategy",
+    "model_id",
+    "filters",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "index_id": {
+      "type": "string"
+    },
+    "collection_id": {
+      "type": "string"
+    },
+    "strategy": {
+      "type": "string",
+      "enum": [
+        "flat",
+        "hnsw",
+        "ivf",
+        "pq"
+      ]
+    },
+    "model_id": {
+      "type": "string"
+    },
+    "update_mode": {
+      "type": "string",
+      "enum": [
+        "batch",
+        "stream"
+      ]
+    },
+    "filters": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "version_tag": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
