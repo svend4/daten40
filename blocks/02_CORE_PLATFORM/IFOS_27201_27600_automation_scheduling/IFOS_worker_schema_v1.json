@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Worker Schema v1",
+  "type": "object",
+  "required": [
+    "worker_id",
+    "capabilities",
+    "status",
+    "heartbeat_at",
+    "version"
+  ],
+  "properties": {
+    "worker_id": {
+      "type": "string"
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "wordpress",
+          "make",
+          "n8n",
+          "fastapi",
+          "local",
+          "docker",
+          "other"
+        ]
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "idle",
+        "busy",
+        "offline"
+      ]
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "heartbeat_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
