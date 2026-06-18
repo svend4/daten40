@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Provenance Source Schema v1",
+  "type": "object",
+  "required": [
+    "source_id",
+    "kind",
+    "location",
+    "retrieved_at",
+    "checksum",
+    "license",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "github_repo",
+        "npm",
+        "pypi",
+        "wordpress_plugin",
+        "make_template",
+        "n8n_workflow",
+        "webpage",
+        "document"
+      ]
+    },
+    "location": {
+      "type": "string"
+    },
+    "retrieved_at": {
+      "type": "string"
+    },
+    "checksum": {
+      "type": "string"
+    },
+    "license": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
