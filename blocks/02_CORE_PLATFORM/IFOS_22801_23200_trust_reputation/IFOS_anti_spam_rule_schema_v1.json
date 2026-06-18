@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Anti-Spam Rule Schema v1",
+  "type": "object",
+  "required": [
+    "rule_id",
+    "name",
+    "type",
+    "params",
+    "action",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "rule_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "rate_limit",
+        "min_fields",
+        "dedupe_text",
+        "ban_pattern"
+      ]
+    },
+    "params": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "reject",
+        "shadow",
+        "flag",
+        "throttle"
+      ]
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
