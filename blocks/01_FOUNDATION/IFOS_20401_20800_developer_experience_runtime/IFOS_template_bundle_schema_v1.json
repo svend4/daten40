@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Template Bundle Schema v1",
+  "type": "object",
+  "required": [
+    "template_id",
+    "intent",
+    "subject_skeleton",
+    "files",
+    "smoke_checks",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "template_id": {
+      "type": "string"
+    },
+    "intent": {
+      "type": "string"
+    },
+    "subject_skeleton": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "content_ref": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "smoke_checks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
