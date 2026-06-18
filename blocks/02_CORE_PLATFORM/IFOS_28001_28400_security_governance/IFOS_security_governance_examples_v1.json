@@ -1,0 +1,206 @@
+{
+  "data_classification": {
+    "classification_id": "cls.public",
+    "name": "PUBLIC",
+    "level": 0,
+    "rules": {
+      "default_retention_days": 365,
+      "export_allowed": true,
+      "requires_encryption": false,
+      "requires_approval_for_publish": false
+    },
+    "version": "1.0.0"
+  },
+  "secret_store": {
+    "store_id": "store.k.krze0v4825",
+    "kind": "local_encrypted",
+    "config": {
+      "path": "./secrets.db"
+    },
+    "encryption": {
+      "at_rest": true,
+      "method": "age",
+      "key_ref": "key.main"
+    },
+    "enabled": true,
+    "version": "1.0.0"
+  },
+  "secret_ref": {
+    "secret_ref": "secretref.s.hwy2h3sel5",
+    "type": "api_key",
+    "scope": "workspace",
+    "store_ref": "store.k.krze0v4825",
+    "rotation": {
+      "enabled": true,
+      "interval_days": 60,
+      "last_rotated_at": ""
+    },
+    "labels": [
+      "telegram",
+      "bot"
+    ],
+    "version": "1.0.0"
+  },
+  "role": {
+    "role_id": "role.r.1avfwmqwux",
+    "workspace_id": "ws.w.d9qrwqxdfv",
+    "name": "Operator",
+    "permissions": [
+      "job.run",
+      "runs.read",
+      "artifacts.read"
+    ],
+    "description": "Запуск и наблюдение без управления секретами",
+    "version": "1.0.0"
+  },
+  "acl_binding": {
+    "binding_id": "bind.b.6eh87jqzjk",
+    "workspace_id": "ws.w.d9qrwqxdfv",
+    "subject": {
+      "kind": "user",
+      "id": "user.123"
+    },
+    "resource": {
+      "kind": "collection",
+      "id": "col.news"
+    },
+    "actions": [
+      "read",
+      "export"
+    ],
+    "effect": "allow",
+    "reason": "Аналитик читает новости",
+    "version": "1.0.0"
+  },
+  "policy": {
+    "policy_id": "pol.p.dvpql13w74",
+    "workspace_id": "ws.w.d9qrwqxdfv",
+    "name": "Запрет экспорта PERSONAL без approval",
+    "description": "Экспорт персональных данных требует ручного подтверждения.",
+    "effect": "require",
+    "actions": [
+      "export.bundle",
+      "export.csv",
+      "export.json"
+    ],
+    "resources": [
+      "collection:*:classification=PERSONAL"
+    ],
+    "conditions": {
+      "approval_required": true
+    },
+    "enforced_measures": [
+      "approval",
+      "audit",
+      "encryption"
+    ],
+    "enabled": true,
+    "version": "1.0.0"
+  },
+  "audit_event": {
+    "event_id": "ae.e.qcd0up7qjb",
+    "ts": "2026-01-03T05:35:00Z",
+    "workspace_id": "ws.w.d9qrwqxdfv",
+    "actor": {
+      "kind": "user",
+      "id": "user.123",
+      "role": "Operator"
+    },
+    "action": "job.run",
+    "resource": {
+      "kind": "job",
+      "id": "job.daily_brief"
+    },
+    "outcome": "success",
+    "context": {
+      "ip": "203.0.113.10",
+      "user_agent": "IFOS-UI",
+      "correlation_id": "corr.c.h2v1l6begx"
+    },
+    "version": "1.0.0"
+  },
+  "moderation_decision": {
+    "decision_id": "md.m.qchxiucrtu",
+    "workspace_id": "ws.w.d9qrwqxdfv",
+    "target": {
+      "kind": "source",
+      "id": "src.rss.example"
+    },
+    "decision": "needs_review",
+    "reasons": [
+      "low_trust",
+      "inconsistent_metadata"
+    ],
+    "by": {
+      "kind": "ai",
+      "id": "mod.ai.v1"
+    },
+    "confidence": 0.63,
+    "ts": "2026-01-03T05:35:00Z",
+    "notes": "Требуется ручная проверка домена.",
+    "version": "1.0.0"
+  },
+  "trust_list": {
+    "trust_list_id": "tl.t.w7zidyoq4k",
+    "workspace_id": "ws.w.d9qrwqxdfv",
+    "name": "Trusted publishers",
+    "entries": [
+      {
+        "kind": "domain",
+        "value": "example.com",
+        "trust_score": 0.9,
+        "notes": "Проверено вручную"
+      },
+      {
+        "kind": "signer",
+        "value": "signer.companyA",
+        "trust_score": 0.95,
+        "notes": "Подписывает пакеты"
+      }
+    ],
+    "updated_at": "2026-01-03T05:35:00Z",
+    "version": "1.0.0"
+  },
+  "package_signature": {
+    "package_id": "pkg.p.mnza6jsi9m",
+    "manifest_sha256": "sha256:...",
+    "signer_id": "signer.companyA",
+    "algo": "ed25519",
+    "signature": "BASE64_SIGNATURE",
+    "signed_at": "2026-01-03T05:35:00Z",
+    "transparency_log_ref": "tlog://ifos/entry/123",
+    "version": "1.0.0"
+  },
+  "compliance_profile": {
+    "profile_id": "cp.c.ms5cvz9uln",
+    "workspace_id": "ws.w.d9qrwqxdfv",
+    "name": "Default EU-friendly",
+    "requirements": {
+      "encryption_in_transit": true,
+      "encryption_at_rest": true,
+      "audit_mandatory": true,
+      "pii_minimization": true,
+      "export_controls": true
+    },
+    "enabled": true,
+    "version": "1.0.0"
+  },
+  "consent_record": {
+    "consent_id": "cn.c.ybfsaf13l9",
+    "workspace_id": "ws.w.d9qrwqxdfv",
+    "subject_id": "customer.456",
+    "purposes": [
+      "support",
+      "analytics"
+    ],
+    "data_categories": [
+      "contact",
+      "usage"
+    ],
+    "granted_at": "2026-01-03T05:35:00Z",
+    "expires_at": "2027-01-03T00:00:00Z",
+    "revoked_at": "",
+    "status": "granted",
+    "version": "1.0.0"
+  }
+}
