@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Reputation Summary Schema v1",
+  "type": "object",
+  "required": [
+    "rep_id",
+    "listing_ref",
+    "rating",
+    "evidence_score",
+    "quality_score",
+    "review_counts",
+    "signals",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "rep_id": {
+      "type": "string"
+    },
+    "listing_ref": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "evidence_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "quality_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "review_counts": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "type": "integer"
+        },
+        "verified": {
+          "type": "integer"
+        },
+        "with_usecase": {
+          "type": "integer"
+        }
+      }
+    },
+    "signals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
