@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DataItem Schema v1",
+  "type": "object",
+  "required": [
+    "item_id",
+    "kind",
+    "status",
+    "source_id",
+    "payload_ref",
+    "meta",
+    "created_at",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "item_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "text",
+        "html",
+        "json",
+        "pdf",
+        "image",
+        "audio",
+        "video",
+        "file",
+        "webpage",
+        "api_response"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "raw",
+        "normalized",
+        "enriched",
+        "deduped",
+        "indexed",
+        "archived"
+      ]
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "payload_ref": {
+      "type": "string",
+      "description": "uri to stored payload (blob/s3/file)"
+    },
+    "meta": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "lang": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "published_at": {
+          "type": "string"
+        },
+        "canonical_url": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "category": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "policy_ref": {
+      "type": "string"
+    },
+    "provenance_ref": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
