@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Postmortem Schema v1",
+  "type": "object",
+  "required": [
+    "postmortem_id",
+    "incident_id",
+    "what_happened",
+    "root_cause",
+    "impact",
+    "fixes",
+    "followups",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "postmortem_id": {
+      "type": "string"
+    },
+    "incident_id": {
+      "type": "string"
+    },
+    "what_happened": {
+      "type": "string"
+    },
+    "root_cause": {
+      "type": "string"
+    },
+    "impact": {
+      "type": "string"
+    },
+    "fixes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "followups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "due": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "learned": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
