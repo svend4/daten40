@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS DiagnosticFinding Schema v1",
+  "type": "object",
+  "required": [
+    "finding_id",
+    "target",
+    "symptom",
+    "probable_causes",
+    "evidence",
+    "confidence",
+    "suggested_actions",
+    "version"
+  ],
+  "properties": {
+    "finding_id": {
+      "type": "string"
+    },
+    "target": {
+      "type": "object",
+      "required": [
+        "kind",
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "job",
+            "connector",
+            "package",
+            "vitrine",
+            "system"
+          ]
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "symptom": {
+      "type": "string"
+    },
+    "probable_causes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "cause",
+          "code"
+        ],
+        "properties": {
+          "cause": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "fix_hint": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "ref"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "log",
+              "trace",
+              "health_check",
+              "metric",
+              "config"
+            ]
+          },
+          "ref": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "suggested_actions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
