@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Quality Uplift Task Schema v1",
+  "type": "object",
+  "required": [
+    "task_id",
+    "subject_id",
+    "from_level",
+    "to_level_target",
+    "steps",
+    "status",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "from_level": {
+      "type": "string",
+      "enum": [
+        "L0",
+        "L1",
+        "L2",
+        "L3",
+        "L4",
+        "L5"
+      ]
+    },
+    "to_level_target": {
+      "type": "string",
+      "enum": [
+        "L1",
+        "L2",
+        "L3",
+        "L4",
+        "L5"
+      ]
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "autodoc",
+          "autotest_plan",
+          "sandbox_run",
+          "signals_collect",
+          "label_level"
+        ]
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "queued",
+        "running",
+        "failed",
+        "completed"
+      ]
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
