@@ -1,0 +1,108 @@
+openapi: 3.0.3
+info:
+  title: IFOS Security & Governance API
+  version: "1.0.0"
+  description: "Secrets (metadata), roles/ACL, policies, audit, moderation and trust."
+servers:
+  - url: https://sec.ifos.local/v1
+tags:
+  - name: Secrets
+  - name: RolesACL
+  - name: Policies
+  - name: Audit
+  - name: Moderation
+  - name: Trust
+  - name: Packages
+paths:
+  /secrets/refs:
+    get:
+      tags: [Secrets]
+      summary: List secret refs (no values)
+      parameters:
+        - name: workspace_id
+          in: query
+          required: true
+          schema: {type: string}
+      responses: {"200": {description: OK}}
+    post:
+      tags: [Secrets]
+      summary: Register a secret reference
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"201": {description: Created}}
+  /roles:
+    get:
+      tags: [RolesACL]
+      summary: List roles
+      parameters:
+        - name: workspace_id
+          in: query
+          required: true
+          schema: {type: string}
+      responses: {"200": {description: OK}}
+    post:
+      tags: [RolesACL]
+      summary: Create role
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"201": {description: Created}}
+  /acl/bindings:
+    post:
+      tags: [RolesACL]
+      summary: Create ACL binding
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"201": {description: Created}}
+  /policies:
+    get:
+      tags: [Policies]
+      summary: List policies
+      parameters:
+        - name: workspace_id
+          in: query
+          required: true
+          schema: {type: string}
+      responses: {"200": {description: OK}}
+    post:
+      tags: [Policies]
+      summary: Create policy
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"201": {description: Created}}
+  /audit/events:
+    get:
+      tags: [Audit]
+      summary: Query audit events
+      parameters:
+        - name: workspace_id
+          in: query
+          required: true
+          schema: {type: string}
+        - name: since
+          in: query
+          required: false
+          schema: {type: string}
+      responses: {"200": {description: OK}}
+  /moderation/decisions:
+    post:
+      tags: [Moderation]
+      summary: Create moderation decision
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"201": {description: Created}}
+  /trust/lists:
+    get:
+      tags: [Trust]
+      summary: List trust lists
+      parameters:
+        - name: workspace_id
+          in: query
+          required: true
+          schema: {type: string}
+      responses: {"200": {description: OK}}
+    post:
+      tags: [Trust]
+      summary: Create trust list
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"201": {description: Created}}
+  /packages/verify:
+    post:
+      tags: [Packages]
+      summary: Verify bundle/package signatures and checksums
+      requestBody: {required: true, content: {application/json: {schema: {type: object}}}}
+      responses: {"200": {description: Verification result}}
