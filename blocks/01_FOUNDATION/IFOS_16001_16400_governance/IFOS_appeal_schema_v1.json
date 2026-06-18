@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Appeal Schema v1",
+  "type": "object",
+  "required": [
+    "appeal_id",
+    "case_ref",
+    "status",
+    "filed_at",
+    "appellant",
+    "grounds"
+  ],
+  "properties": {
+    "appeal_id": {
+      "type": "string"
+    },
+    "case_ref": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "filed",
+        "accepted",
+        "rejected",
+        "resolved"
+      ]
+    },
+    "filed_at": {
+      "type": "string"
+    },
+    "resolved_at": {
+      "type": "string"
+    },
+    "appellant": {
+      "type": "object",
+      "required": [
+        "type",
+        "id"
+      ],
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "grounds": {
+      "type": "string"
+    },
+    "new_evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "decision": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "upheld",
+            "overturned",
+            "modified"
+          ]
+        },
+        "reasoning": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
