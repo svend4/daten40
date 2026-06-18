@@ -1,0 +1,289 @@
+{
+  "log_events": [
+    {
+      "event_id": "ev.l.1tptzbz2nc",
+      "ts": "2026-01-02T22:35:00Z",
+      "level": "info",
+      "subject_id": "bundle.news_digest_cluster",
+      "platform": "make",
+      "event_type": "run_started",
+      "message": "Scenario run started",
+      "data": {
+        "scenario_id": "make.scn.123"
+      },
+      "trace_id": "tr.x.4l488k9qmr",
+      "version": "1.0.0",
+      "updated_at": "2026-01-02T22:35:00Z"
+    },
+    {
+      "event_id": "ev.l.3wx08lpkrd",
+      "ts": "2026-01-02T22:35:00Z",
+      "level": "error",
+      "subject_id": "bundle.news_digest_cluster",
+      "platform": "make",
+      "event_type": "run_failed",
+      "message": "Telegram send failed: RATE_LIMIT",
+      "data": {
+        "step": "telegram_send",
+        "retry_in_s": 60
+      },
+      "trace_id": "tr.x.4l488k9qmr",
+      "error_code": "RATE_LIMIT",
+      "version": "1.0.0",
+      "updated_at": "2026-01-02T22:35:00Z"
+    }
+  ],
+  "metric_points": [
+    {
+      "metric_id": "m.m.ip02nnwila",
+      "ts": "2026-01-02T22:35:00Z",
+      "name": "runs_failed_ratio",
+      "value": 0.12,
+      "unit": "ratio",
+      "labels": {
+        "platform": "make",
+        "bundle": "news_digest"
+      },
+      "subject_id": "bundle.news_digest_cluster",
+      "version": "1.0.0",
+      "updated_at": "2026-01-02T22:35:00Z"
+    },
+    {
+      "metric_id": "m.m.9yh6v4oc9c",
+      "ts": "2026-01-02T22:35:00Z",
+      "name": "delivery_success_ratio",
+      "value": 0.88,
+      "unit": "ratio",
+      "labels": {
+        "platform": "make",
+        "bundle": "news_digest"
+      },
+      "subject_id": "bundle.news_digest_cluster",
+      "version": "1.0.0",
+      "updated_at": "2026-01-02T22:35:00Z"
+    }
+  ],
+  "trace_spans": [
+    {
+      "trace_id": "tr.x.4l488k9qmr",
+      "span_id": "sp.s.v38kfz7cep",
+      "parent_span_id": "",
+      "ts_start": "2026-01-02T22:35:00Z",
+      "duration_ms": 430,
+      "name": "ingest_rss",
+      "status": "ok",
+      "subject_id": "asset.make.news_digest_scenario",
+      "attributes": {
+        "items": 10
+      },
+      "version": "1.0.0",
+      "updated_at": "2026-01-02T22:35:00Z"
+    },
+    {
+      "trace_id": "tr.x.4l488k9qmr",
+      "span_id": "sp.s.agrqierc11",
+      "parent_span_id": "",
+      "ts_start": "2026-01-02T22:35:00Z",
+      "duration_ms": 980,
+      "name": "summarize",
+      "status": "ok",
+      "subject_id": "asset.make.news_digest_scenario",
+      "attributes": {
+        "digest_chars": 900
+      },
+      "version": "1.0.0",
+      "updated_at": "2026-01-02T22:35:00Z"
+    },
+    {
+      "trace_id": "tr.x.4l488k9qmr",
+      "span_id": "sp.s.7ffap5iar5",
+      "parent_span_id": "",
+      "ts_start": "2026-01-02T22:35:00Z",
+      "duration_ms": 120,
+      "name": "telegram_send",
+      "status": "error",
+      "error_code": "RATE_LIMIT",
+      "subject_id": "asset.make.news_digest_scenario",
+      "attributes": {
+        "chat_id": "redacted"
+      },
+      "version": "1.0.0",
+      "updated_at": "2026-01-02T22:35:00Z"
+    }
+  ],
+  "runbook": {
+    "runbook_id": "rb.telegram.rate_limit",
+    "name": "Telegram RATE_LIMIT mitigation",
+    "triggers": [
+      "error_code=RATE_LIMIT",
+      "delivery_success_ratio<0.95"
+    ],
+    "steps": [
+      "Включить reduce_frequency (x2) на 60 минут",
+      "Включить enable_offline_queue для сообщений",
+      "Проверить лимиты Telegram и включить backoff",
+      "Если продолжается: switch_variant Make→n8n (self-hosted)"
+    ],
+    "links": [
+      "doc://telegram_api_limits",
+      "policy://no_pii_logs"
+    ],
+    "updated_at": "2026-01-02T22:35:00Z",
+    "version": "1.0.0"
+  },
+  "alert_rule": {
+    "rule_id": "al.a.unn4a262d9",
+    "name": "Delivery success ratio low",
+    "severity": "P2",
+    "condition": {
+      "metric": "delivery_success_ratio",
+      "op": "<",
+      "threshold": 0.95
+    },
+    "window_s": 600,
+    "routing": [
+      "chan.telegram.oncall"
+    ],
+    "suppression": {
+      "cooldown_s": 900,
+      "max_per_hour": 4
+    },
+    "runbook_ref": "rb.telegram.rate_limit",
+    "updated_at": "2026-01-02T22:35:00Z",
+    "version": "1.0.0"
+  },
+  "slo": {
+    "slo_id": "slo.o.qpkf2alobs",
+    "name": "News Digest Delivery SLO",
+    "objective": 0.98,
+    "window_days": 30,
+    "indicator": {
+      "metric": "delivery_success_ratio",
+      "good_op": ">=0.98",
+      "bad_op": "<0.98"
+    },
+    "error_budget": {
+      "remaining": 0.32,
+      "burn_rate": 2.1
+    },
+    "alerts": [
+      "al.a.unn4a262d9"
+    ],
+    "updated_at": "2026-01-02T22:35:00Z",
+    "version": "1.0.0"
+  },
+  "incident": {
+    "incident_id": "inc.i.osbngaafq0",
+    "title": "News Digest Telegram delivery degraded",
+    "severity": "P2",
+    "status": "open",
+    "started_at": "2026-01-02T22:35:00Z",
+    "affected": [
+      "bundle.news_digest_cluster"
+    ],
+    "owner": "oncall://primary",
+    "summary": "Delivery success dropped to 88% due to RATE_LIMIT.",
+    "suspected_cause": "Telegram rate limiting + burst traffic",
+    "links": {
+      "alert": "al.a.unn4a262d9",
+      "trace": "tr.x.4l488k9qmr",
+      "runbook": "rb.telegram.rate_limit"
+    },
+    "updated_at": "2026-01-02T22:35:00Z",
+    "version": "1.0.0"
+  },
+  "timeline": {
+    "incident_id": "inc.i.osbngaafq0",
+    "entries": [
+      {
+        "ts": "2026-01-02T22:35:00Z",
+        "type": "alert",
+        "text": "Alert fired: Delivery success ratio low",
+        "ref": "al.a.unn4a262d9"
+      },
+      {
+        "ts": "2026-01-02T22:35:00Z",
+        "type": "action",
+        "text": "Applied reduce_frequency x2 for 60min",
+        "ref": "act.reduce_frequency"
+      },
+      {
+        "ts": "2026-01-02T22:35:00Z",
+        "type": "fallback",
+        "text": "Enabled offline queue for messages",
+        "ref": "act.enable_offline_queue"
+      }
+    ],
+    "updated_at": "2026-01-02T22:35:00Z",
+    "version": "1.0.0"
+  },
+  "fallback_policy": {
+    "policy_id": "fb.f.pfd470tfil",
+    "subject_id": "bundle.news_digest_cluster",
+    "strategies": [
+      {
+        "when": "incident.severity>=P1 OR slo.burn_rate>2.0",
+        "then": [
+          "enable_offline_queue",
+          "reduce_frequency"
+        ]
+      },
+      {
+        "when": "delivery_success_ratio<0.85 for 15m",
+        "then": [
+          "switch_variant:make->n8n"
+        ]
+      }
+    ],
+    "updated_at": "2026-01-02T22:35:00Z",
+    "version": "1.0.0"
+  },
+  "postmortem": {
+    "postmortem_id": "pm.p.krjvndy8is",
+    "incident_id": "inc.i.osbngaafq0",
+    "what_happened": "Delivery dropped after burst of news items; Telegram throttled sends.",
+    "root_cause": "No adaptive backoff and batching in current Make scenario; insufficient rate-limit handling.",
+    "impact": "Users received delayed digest; 일부 missed notifications.",
+    "fixes": [
+      "Add batching + exponential backoff node",
+      "Add dry-run mode for testing bursts",
+      "Add SLO burn-rate alert P1 for severe cases"
+    ],
+    "followups": [
+      {
+        "task": "Update bundle to v1.0.1 with backoff and queue",
+        "owner": "team://catalog",
+        "due": "2026-01-09"
+      },
+      {
+        "task": "Add sandbox fixture for burst traffic",
+        "owner": "team://qa",
+        "due": "2026-01-08"
+      }
+    ],
+    "learned": [
+      "No-code workflows need explicit resilience patterns",
+      "SLO budgets should block risky updates automatically"
+    ],
+    "updated_at": "2026-01-02T22:35:00Z",
+    "version": "1.0.0"
+  },
+  "redaction_rules": [
+    {
+      "rule_id": "red.r.09pw3qs1js",
+      "pattern": "(\\b\\d{10,}\\b)",
+      "replacement": "[redacted_id]",
+      "scope": "both",
+      "updated_at": "2026-01-02T22:35:00Z",
+      "version": "1.0.0"
+    },
+    {
+      "rule_id": "red.r.4xbrjjelzr",
+      "pattern": "(bot\\w{20,})",
+      "replacement": "[redacted_token]",
+      "scope": "logs",
+      "updated_at": "2026-01-02T22:35:00Z",
+      "version": "1.0.0"
+    }
+  ]
+}
