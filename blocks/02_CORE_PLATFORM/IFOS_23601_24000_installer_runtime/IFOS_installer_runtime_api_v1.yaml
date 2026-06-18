@@ -1,0 +1,94 @@
+openapi: 3.0.3
+info:
+  title: IFOS Installer & Runtime API
+  version: "1.0.0"
+  description: "One-click installation, sandbox sessions, secrets, migrations, rollback, receipts."
+servers:
+  - url: https://runtime.ifos.local/v1
+tags:
+  - name: Install
+  - name: Sandbox
+  - name: Secrets
+  - name: Receipts
+  - name: Rollback
+paths:
+  /install/plan:
+    post:
+      tags: [Install]
+      summary: Create install plan (dry-run report + plan)
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /install/apply:
+    post:
+      tags: [Install]
+      summary: Apply install plan
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
+  /sandbox/start:
+    post:
+      tags: [Sandbox]
+      summary: Start sandbox session
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /sandbox/run:
+    post:
+      tags: [Sandbox]
+      summary: Run a subject in sandbox (run_once)
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /sandbox/stop:
+    post:
+      tags: [Sandbox]
+      summary: Stop sandbox session
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /secrets/register:
+    post:
+      tags: [Secrets]
+      summary: Register a secret reference (vault will store actual secret out-of-band)
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /receipts/get:
+    get:
+      tags: [Receipts]
+      summary: Get execution receipt
+      parameters:
+        - in: query
+          name: receipt_id
+          schema: {type: string}
+      responses:
+        "200": {description: OK}
+  /rollback/apply:
+    post:
+      tags: [Rollback]
+      summary: Apply rollback plan for subject
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
