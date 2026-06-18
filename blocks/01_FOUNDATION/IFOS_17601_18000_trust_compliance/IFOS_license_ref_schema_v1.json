@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS LicenseRef Schema v1",
+  "type": "object",
+  "required": [
+    "license_id",
+    "spdx",
+    "name",
+    "text_url",
+    "permissions",
+    "obligations",
+    "restrictions",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "license_id": {
+      "type": "string"
+    },
+    "spdx": {
+      "type": "string",
+      "description": "SPDX identifier if applicable"
+    },
+    "name": {
+      "type": "string"
+    },
+    "text_url": {
+      "type": "string"
+    },
+    "permissions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "e.g. commercial-use, distribution, modification"
+    },
+    "obligations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "e.g. include-notice, disclose-source"
+    },
+    "restrictions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "e.g. copyleft, patent-termination"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
