@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS MarketplacePolicy Schema v1",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "rules",
+    "version"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "enforced"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "enum": [
+              "signed_packages_only",
+              "verified_publishers_only",
+              "review_verification_required",
+              "malware_scan_required",
+              "data_classification_declared"
+            ]
+          },
+          "enforced": {
+            "type": "boolean"
+          },
+          "details": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
