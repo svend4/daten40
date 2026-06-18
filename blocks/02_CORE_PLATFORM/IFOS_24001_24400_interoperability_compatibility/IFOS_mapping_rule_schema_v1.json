@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Mapping Rule Schema v1",
+  "type": "object",
+  "required": [
+    "rule_id",
+    "kind",
+    "from",
+    "to",
+    "transform",
+    "severity",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "rule_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "field_map",
+        "transform",
+        "default",
+        "guard"
+      ]
+    },
+    "from": {
+      "type": "string"
+    },
+    "to": {
+      "type": "string"
+    },
+    "transform": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "info",
+        "warn",
+        "fail"
+      ]
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
