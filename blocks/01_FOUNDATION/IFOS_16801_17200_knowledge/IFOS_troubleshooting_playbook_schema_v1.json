@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Troubleshooting Playbook Schema v1",
+  "type": "object",
+  "required": [
+    "playbook_id",
+    "subject",
+    "symptom_tree",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "playbook_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "object",
+      "required": [
+        "kind",
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "symptom_tree": {
+      "type": "object",
+      "description": "decision tree",
+      "properties": {
+        "symptom": {
+          "type": "string"
+        },
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "check": {
+                "type": "string"
+              },
+              "how": {
+                "type": "string"
+              },
+              "if_fail": {
+                "type": "string"
+              },
+              "fix": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "next": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
