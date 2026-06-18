@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Install Transaction Schema v1",
+  "type": "object",
+  "required": [
+    "tx_id",
+    "subject",
+    "listing_ref",
+    "plan_ref",
+    "status",
+    "steps",
+    "rollback",
+    "evidence_ref",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "tx_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "tenant",
+            "user",
+            "device"
+          ]
+        },
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "listing_ref": {
+      "type": "string"
+    },
+    "plan_ref": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "created",
+        "precheck",
+        "resolving",
+        "applying",
+        "verifying",
+        "committed",
+        "rolled_back",
+        "failed"
+      ]
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pass",
+              "fail",
+              "running",
+              "skip"
+            ]
+          },
+          "details": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "rollback": {
+      "type": "object",
+      "properties": {
+        "available": {
+          "type": "boolean"
+        },
+        "snapshot_ref": {
+          "type": "string"
+        }
+      }
+    },
+    "evidence_ref": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
