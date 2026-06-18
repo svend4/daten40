@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "IFOS Pre-Block Step Registry Schema",
+  "description": "Schema for conceptual steps 1-14240 defined before the first OS_PACK block (IFOS_14241+)",
+  "type": "object",
+  "required": [
+    "phase",
+    "step_num",
+    "action",
+    "consequence",
+    "result"
+  ],
+  "properties": {
+    "phase": {
+      "type": "string",
+      "description": "Phase identifier, e.g. 'Фаза DJ — Runtime Core [4101-4130]'"
+    },
+    "step_num": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 14240
+    },
+    "action": {
+      "type": "string",
+      "description": "What is defined/implemented"
+    },
+    "consequence": {
+      "type": "string",
+      "description": "What system property is achieved"
+    },
+    "result": {
+      "type": "string",
+      "description": "Acceptance criterion / verification statement"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "conceptual",
+        "implemented",
+        "lost"
+      ],
+      "default": "conceptual"
+    },
+    "os_pack_ref": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Reference to implementing OS_PACK block, e.g. IFOS_14241_14440"
+    }
+  }
+}
