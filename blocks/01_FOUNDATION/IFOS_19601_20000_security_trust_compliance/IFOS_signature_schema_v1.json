@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Signature Schema v1",
+  "type": "object",
+  "required": [
+    "signature_id",
+    "subject",
+    "publisher_id",
+    "algorithm",
+    "key_id",
+    "digest",
+    "signature",
+    "signed_at",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "signature_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "publisher_id": {
+      "type": "string"
+    },
+    "algorithm": {
+      "type": "string",
+      "enum": [
+        "ed25519",
+        "rsa-pss",
+        "ecdsa-p256"
+      ]
+    },
+    "key_id": {
+      "type": "string"
+    },
+    "digest": {
+      "type": "string",
+      "description": "hash of bundle contents"
+    },
+    "signature": {
+      "type": "string",
+      "description": "base64 signature bytes"
+    },
+    "signed_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
