@@ -1,0 +1,244 @@
+{
+  "raw_record": {
+    "raw_id": "raw.r.wd7y3in7o8",
+    "source_id": "src.rss.tech",
+    "fetched_at": "2026-01-03T07:40:00Z",
+    "payload": {
+      "text": "<item><title>Example</title></item>",
+      "url": "https://example.com/a"
+    },
+    "content_hash": "sha256:50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c",
+    "meta": {
+      "content_type": "rss",
+      "http_status": 200
+    },
+    "version": "1.0.0"
+  },
+  "normalized_record": {
+    "norm_id": "norm.n.y6miiw41uh",
+    "source_id": "src.rss.tech",
+    "canonical_url": "https://example.com/a",
+    "title": "Example",
+    "summary": "Короткое описание новости.",
+    "published_at": "2026-01-03T07:40:00Z",
+    "language": "ru",
+    "region": "EU",
+    "tags": [
+      "news",
+      "tech"
+    ],
+    "entities": [],
+    "canonical_id": "can.c.4xzsbesiyg",
+    "version": "1.0.0"
+  },
+  "taxonomy": {
+    "taxonomy_id": "tax.t.hseddpd0th",
+    "categories": [
+      {
+        "id": "cat.news",
+        "name": "Новости",
+        "parent": ""
+      },
+      {
+        "id": "cat.market",
+        "name": "Маркетплейс",
+        "parent": ""
+      },
+      {
+        "id": "cat.automation",
+        "name": "Автоматизация",
+        "parent": ""
+      }
+    ],
+    "tags": [
+      {
+        "id": "tag.rss",
+        "name": "rss",
+        "category": "cat.news"
+      },
+      {
+        "id": "tag.telegram",
+        "name": "telegram",
+        "category": "cat.automation"
+      }
+    ],
+    "synonyms": [
+      {
+        "a": "integromat",
+        "b": "make.com",
+        "kind": "rename"
+      },
+      {
+        "a": "wordpress",
+        "b": "wp",
+        "kind": "alias"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "tagging_rule": {
+    "rule_id": "tag.g.y1lioe1u5v",
+    "match": {
+      "keywords": [
+        "telegram",
+        "бот"
+      ],
+      "regex": ""
+    },
+    "tag": "tag.telegram",
+    "confidence": 0.8,
+    "priority": 10,
+    "version": "1.0.0"
+  },
+  "dedupe_cluster": {
+    "cluster_id": "cl.d.l0p261dlww",
+    "canonical_id": "can.c.4xzsbesiyg",
+    "members": [
+      "norm.n.y6miiw41uh"
+    ],
+    "method": "url",
+    "similarity": 1.0,
+    "reason": "Same canonical_url",
+    "version": "1.0.0"
+  },
+  "entity": {
+    "entity_id": "ent.e.3ext4fvsem",
+    "type": "service",
+    "name": "Make",
+    "aliases": [
+      "Integromat",
+      "make.com"
+    ],
+    "refs": {
+      "home": "https://www.make.com/"
+    },
+    "version": "1.0.0"
+  },
+  "entity_link": {
+    "link_id": "ln.l.9zfuh472u5",
+    "a": "ent.make",
+    "b": "ent.integromat",
+    "relation": "alias_of",
+    "evidence": [
+      "rename history"
+    ],
+    "confidence": 0.9,
+    "version": "1.0.0"
+  },
+  "provenance": {
+    "prov_id": "prov.p.mvjsl4ujeg",
+    "object_ref": "norm://norm.n.y6miiw41uh",
+    "source_id": "src.rss.tech",
+    "collected_at": "2026-01-03T07:40:00Z",
+    "transform_chain": [
+      {
+        "step": "ingest_raw",
+        "ts": "2026-01-03T07:40:00Z",
+        "tool": "ingestor",
+        "params": {
+          "source": "rss"
+        }
+      },
+      {
+        "step": "normalize",
+        "ts": "2026-01-03T07:40:00Z",
+        "tool": "normalizer",
+        "params": {
+          "lang": "ru"
+        }
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "trust_score": {
+    "trust_id": "trust.t.9j4vepingt",
+    "object_ref": "norm://norm.n.y6miiw41uh",
+    "score": 0.72,
+    "factors": [
+      {
+        "name": "source_reputation",
+        "value": 0.8,
+        "weight": 0.35
+      },
+      {
+        "name": "recency",
+        "value": 0.9,
+        "weight": 0.25
+      },
+      {
+        "name": "cross_source_agreement",
+        "value": 0.3,
+        "weight": 0.2
+      },
+      {
+        "name": "spam_risk",
+        "value": 0.2,
+        "weight": 0.1
+      },
+      {
+        "name": "originality",
+        "value": 0.6,
+        "weight": 0.1
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "explanation": {
+    "explain_id": "ex.x.7bmhwehth0",
+    "object_ref": "cmp://hosting#top1",
+    "why": "Выбран как лучший по цене и надёжности при выполнении ограничений EU + webhooks.",
+    "factors": [
+      {
+        "name": "price_month",
+        "contribution": 0.33,
+        "details": "Ниже среднего по выборке"
+      },
+      {
+        "name": "uptime_score",
+        "contribution": 0.29,
+        "details": "Высокий рейтинг и подтверждение метриками"
+      },
+      {
+        "name": "avg_rating",
+        "contribution": 0.08,
+        "details": "Отзывы > 4.5 при достаточном числе"
+      }
+    ],
+    "evidence": [
+      {
+        "kind": "source",
+        "ref": "listing://hostA"
+      },
+      {
+        "kind": "metric",
+        "ref": "metric://uptime.hostA"
+      },
+      {
+        "kind": "rule",
+        "ref": "rule://filter.eu_webhooks"
+      }
+    ],
+    "alternatives": [
+      "hostB",
+      "hostC"
+    ],
+    "version": "1.0.0"
+  },
+  "dataset_version": {
+    "dataset_id": "ds.marketplace_listings",
+    "version_id": "v2026.01.03",
+    "created_at": "2026-01-03T07:40:00Z",
+    "snapshot_refs": [
+      "artifact://datasets/marketplace_listings/v2026.01.03.json"
+    ],
+    "diff_summary": "Добавлено 120 листингов, обновлены цены у 43, удалено 2 неактуальных.",
+    "migration": {
+      "from": "v2026.01.02",
+      "steps": [
+        "recompute trust scores",
+        "rebuild compare indices"
+      ]
+    },
+    "version": "1.0.0"
+  }
+}
