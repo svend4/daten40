@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS TaggingRule Schema v1",
+  "type": "object",
+  "required": [
+    "rule_id",
+    "match",
+    "tag",
+    "confidence",
+    "priority",
+    "version"
+  ],
+  "properties": {
+    "rule_id": {
+      "type": "string"
+    },
+    "match": {
+      "type": "object",
+      "properties": {
+        "regex": {
+          "type": "string"
+        },
+        "keywords": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "entity_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "tag": {
+      "type": "string"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "priority": {
+      "type": "integer"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
