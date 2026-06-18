@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Execution Receipt Schema v1",
+  "type": "object",
+  "required": [
+    "receipt_id",
+    "plan_id",
+    "subject_id",
+    "profile_id",
+    "result",
+    "health",
+    "links",
+    "ts_start",
+    "ts_end",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "receipt_id": {
+      "type": "string"
+    },
+    "plan_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "profile_id": {
+      "type": "string"
+    },
+    "result": {
+      "type": "string",
+      "enum": [
+        "success",
+        "fail"
+      ]
+    },
+    "reason": {
+      "type": "string"
+    },
+    "health": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "check",
+          "status"
+        ],
+        "properties": {
+          "check": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pass",
+              "fail",
+              "warn"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "links": {
+      "type": "object",
+      "properties": {
+        "logs": {
+          "type": "string"
+        },
+        "trace": {
+          "type": "string"
+        },
+        "metrics": {
+          "type": "string"
+        },
+        "postmortem": {
+          "type": "string"
+        }
+      }
+    },
+    "lockfile_hash": {
+      "type": "string"
+    },
+    "ts_start": {
+      "type": "string"
+    },
+    "ts_end": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
