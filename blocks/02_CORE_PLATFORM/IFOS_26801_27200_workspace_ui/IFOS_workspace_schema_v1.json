@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Workspace Schema v1",
+  "type": "object",
+  "required": [
+    "workspace_id",
+    "name",
+    "mode",
+    "purpose",
+    "policies",
+    "created_at",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "workspace_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "personal",
+        "team"
+      ]
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "policies": {
+      "type": "object",
+      "properties": {
+        "safe_mode": {
+          "type": "boolean"
+        },
+        "citations_required": {
+          "type": "boolean"
+        },
+        "export_allowed": {
+          "type": "boolean"
+        },
+        "default_language": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
