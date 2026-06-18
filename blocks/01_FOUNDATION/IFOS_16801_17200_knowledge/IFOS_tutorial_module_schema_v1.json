@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Tutorial Module Schema v1",
+  "type": "object",
+  "required": [
+    "tutorial_id",
+    "title",
+    "goal",
+    "prerequisites",
+    "steps",
+    "checkpoints",
+    "common_pitfalls",
+    "difficulty",
+    "estimated_minutes",
+    "version"
+  ],
+  "properties": {
+    "tutorial_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "goal": {
+      "type": "string"
+    },
+    "prerequisites": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "n",
+          "action"
+        ],
+        "properties": {
+          "n": {
+            "type": "integer"
+          },
+          "action": {
+            "type": "string"
+          },
+          "expected": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "checkpoints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "common_pitfalls": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "pitfall": {
+            "type": "string"
+          },
+          "fix": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "mini_quiz": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "q": {
+            "type": "string"
+          },
+          "a": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "L0",
+        "L1",
+        "L2",
+        "L3"
+      ]
+    },
+    "estimated_minutes": {
+      "type": "integer"
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
