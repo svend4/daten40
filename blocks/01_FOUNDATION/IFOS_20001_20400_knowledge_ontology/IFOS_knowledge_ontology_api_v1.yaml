@@ -1,0 +1,71 @@
+openapi: 3.0.3
+info:
+  title: IFOS Knowledge & Ontology API
+  version: "1.0.0"
+  description: "Vocabulary terms, taxonomies, normalization, entity resolution, graph snapshots, explainable search."
+servers:
+  - url: https://knowledge.ifos.local/v1
+tags:
+  - name: Vocabulary
+  - name: Taxonomy
+  - name: Normalize
+  - name: Entities
+  - name: Graph
+  - name: Search
+paths:
+  /vocab/terms/upsert:
+    post:
+      tags: [Vocabulary]
+      summary: Create or update a canonical term
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /taxonomy/get:
+    get:
+      tags: [Taxonomy]
+      summary: Get taxonomy tree
+      responses:
+        "200": {description: OK}
+  /normalize/tags:
+    post:
+      tags: [Normalize]
+      summary: Normalize tags to canonical form
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /entities/resolve:
+    post:
+      tags: [Entities]
+      summary: Resolve entity duplicates and return cluster id
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /graph/snapshot/build:
+    post:
+      tags: [Graph]
+      summary: Build knowledge graph snapshot
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
+  /search/explain:
+    post:
+      tags: [Search]
+      summary: Search and return explainable ranking for top results
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
