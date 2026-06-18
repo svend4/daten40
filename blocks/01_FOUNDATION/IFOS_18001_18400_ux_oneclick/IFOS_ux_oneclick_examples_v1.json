@@ -1,0 +1,512 @@
+{
+  "ui_card": {
+    "card_id": "card.c.m4etpkih",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.news_digest.core",
+      "version": "1.0.0"
+    },
+    "title": "News Digest Cluster (Telegram)",
+    "summary": "Собирает новости из RSS/сайтов, нормализует, делает краткое резюме и шлёт в Telegram.",
+    "bullets": [
+      "Выбор источников + фильтры (темы/страны)",
+      "Сводка дня/недели, топ-5",
+      "Анти-дубликаты и метки важности"
+    ],
+    "badges": [
+      "Verified+Stable",
+      "SBOM Present",
+      "Signed Artifact",
+      "License OK"
+    ],
+    "metrics": {
+      "ttfs_seconds": 180,
+      "install_success_rate": 0.93,
+      "evidence_score": 0.84,
+      "rating": 4.6
+    },
+    "requirements": [
+      {
+        "name": "Telegram Bot Token",
+        "type": "secret",
+        "required": true,
+        "help": "Нужен бот для отправки сообщений."
+      },
+      {
+        "name": "RSS sources list",
+        "type": "text",
+        "required": true,
+        "help": "Список URL (можно начать с 5)."
+      },
+      {
+        "name": "LLM API (optional)",
+        "type": "secret",
+        "required": false,
+        "help": "Для более умных суммаризаций (можно выключить)."
+      }
+    ],
+    "actions": [
+      {
+        "id": "act.install",
+        "label": "Установить",
+        "type": "install",
+        "explain_ref": "exp.install.1"
+      },
+      {
+        "id": "act.plan",
+        "label": "Показать план",
+        "type": "view_plan",
+        "explain_ref": "exp.plan.1"
+      },
+      {
+        "id": "act.undo",
+        "label": "Откатить",
+        "type": "undo",
+        "explain_ref": "exp.undo.1"
+      },
+      {
+        "id": "act.docs",
+        "label": "Документация",
+        "type": "docs",
+        "explain_ref": ""
+      }
+    ],
+    "sections": [
+      {
+        "id": "s.req",
+        "title": "Что нужно",
+        "content_ref": "reqs.bundle.news_digest.core"
+      },
+      {
+        "id": "s.trust",
+        "title": "Доверие и доказательства",
+        "content_ref": "trust.bundle.news_digest.core"
+      },
+      {
+        "id": "s.tutorial",
+        "title": "Быстрый старт",
+        "content_ref": "tutorial.bundle.news_digest.core"
+      }
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T17:00:00Z"
+  },
+  "install_wizard": {
+    "wizard_id": "wiz.w.225yjimg",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.news_digest.core",
+      "version": "1.0.0"
+    },
+    "mode": "personal",
+    "steps": [
+      {
+        "id": "st.mode",
+        "title": "Проверка режима",
+        "kind": "mode_check",
+        "ui": {
+          "help": "Проверяем политики и ограничения.",
+          "fields_ref": "",
+          "buttons": [
+            "Далее"
+          ]
+        }
+      },
+      {
+        "id": "st.req",
+        "title": "Подключение аккаунтов",
+        "kind": "requirements",
+        "ui": {
+          "help": "Введите токены/URL.",
+          "fields_ref": "form.telegram+rss",
+          "buttons": [
+            "Проверить",
+            "Далее"
+          ]
+        }
+      },
+      {
+        "id": "st.adapter",
+        "title": "Выбор платформы",
+        "kind": "adapter_select",
+        "ui": {
+          "help": "Make / n8n / WP / native.",
+          "fields_ref": "form.platform",
+          "buttons": [
+            "Далее"
+          ]
+        }
+      },
+      {
+        "id": "st.dry",
+        "title": "Dry-run (smoke test)",
+        "kind": "dry_run",
+        "ui": {
+          "help": "Запуск тестового workflow без побочных эффектов.",
+          "fields_ref": "",
+          "buttons": [
+            "Запустить тест",
+            "Далее"
+          ]
+        }
+      },
+      {
+        "id": "st.plan",
+        "title": "План установки",
+        "kind": "plan_review",
+        "ui": {
+          "help": "Покажем, что будет создано.",
+          "fields_ref": "",
+          "buttons": [
+            "Применить"
+          ]
+        }
+      },
+      {
+        "id": "st.apply",
+        "title": "Установка",
+        "kind": "apply",
+        "ui": {
+          "help": "Создаём ресурсы.",
+          "fields_ref": "",
+          "buttons": [
+            "Готово"
+          ]
+        }
+      },
+      {
+        "id": "st.post",
+        "title": "Первый запуск",
+        "kind": "post_install",
+        "ui": {
+          "help": "Запускаем первый digest и фиксируем успех.",
+          "fields_ref": "",
+          "buttons": [
+            "Запустить сейчас"
+          ]
+        }
+      }
+    ],
+    "install_plan_ref": "plan.install.news_digest.core.001",
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T17:00:00Z"
+  },
+  "auto_form": {
+    "form_id": "form.telegram+rss",
+    "title": "Подключение Telegram и RSS",
+    "fields": [
+      {
+        "id": "telegram_bot_token",
+        "label": "Telegram Bot Token",
+        "type": "password",
+        "required": true,
+        "help": "Токен от BotFather",
+        "secret": true,
+        "test_connection": {
+          "endpoint": "/adapters/telegram/test",
+          "method": "POST"
+        }
+      },
+      {
+        "id": "chat_id",
+        "label": "Chat ID",
+        "type": "text",
+        "required": true,
+        "help": "Куда отправлять digest",
+        "secret": false
+      },
+      {
+        "id": "rss_urls",
+        "label": "RSS URL list",
+        "type": "textarea",
+        "required": true,
+        "help": "1 URL в строке",
+        "secret": false
+      },
+      {
+        "id": "schedule",
+        "label": "Расписание",
+        "type": "select",
+        "required": true,
+        "options": [
+          "daily 09:00",
+          "daily 18:00",
+          "weekly Monday 09:00"
+        ],
+        "help": "Можно изменить позже.",
+        "secret": false
+      }
+    ],
+    "validation": {
+      "schema_ref": "schema.news_digest.inputs",
+      "rules": [
+        "telegram_bot_token must be valid",
+        "rss_urls must be URLs"
+      ]
+    },
+    "storage": {
+      "secret_store": "vault",
+      "redaction": true,
+      "ttl_days": 0
+    },
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T17:00:00Z"
+  },
+  "onboarding_flow": {
+    "flow_id": "onb.n.s7bnkyvb",
+    "title": "Быстрый старт: News Digest",
+    "steps": [
+      {
+        "id": "g1",
+        "kind": "choose_goal",
+        "title": "Выберите цель",
+        "content": "News Digest (сводка новостей)",
+        "refs": [
+          "goal.news_digest"
+        ]
+      },
+      {
+        "id": "g2",
+        "kind": "choose_platform",
+        "title": "Выберите платформу",
+        "content": "Рекомендуем n8n для self-host; Make для быстрого старта.",
+        "refs": [
+          "platform.n8n",
+          "platform.make"
+        ]
+      },
+      {
+        "id": "g3",
+        "kind": "select_template",
+        "title": "Выберите шаблон кластера",
+        "content": "News Digest Cluster (Telegram)",
+        "refs": [
+          "tpl.news_digest.telegram"
+        ]
+      },
+      {
+        "id": "g4",
+        "kind": "connect_accounts",
+        "title": "Подключите аккаунты",
+        "content": "Заполните форму Telegram+RSS.",
+        "refs": [
+          "form.telegram+rss"
+        ]
+      },
+      {
+        "id": "g5",
+        "kind": "first_run",
+        "title": "Первый запуск",
+        "content": "Сделаем тестовый digest из 2 источников.",
+        "refs": [
+          "wiz.w.225yjimg"
+        ]
+      },
+      {
+        "id": "g6",
+        "kind": "next_improvements",
+        "title": "Следующие улучшения",
+        "content": "Добавьте анти-дубликаты и топ-5 важного.",
+        "refs": [
+          "feat.dedup",
+          "feat.top5"
+        ]
+      }
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T17:00:00Z"
+  },
+  "undo_plan": {
+    "undo_id": "undo.u.7ymzzk8j",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.news_digest.core",
+      "version": "1.0.0"
+    },
+    "steps": [
+      {
+        "id": "u1",
+        "title": "Отключить расписание",
+        "action": "disable_job",
+        "ref": "job.news_digest.daily",
+        "requires_confirmation": false
+      },
+      {
+        "id": "u2",
+        "title": "Удалить webhook (если был)",
+        "action": "remove_webhook",
+        "ref": "webhook.news_digest.in",
+        "requires_confirmation": false
+      },
+      {
+        "id": "u3",
+        "title": "Удалить workflow",
+        "action": "delete_workflow",
+        "ref": "n8n.workflow.123",
+        "requires_confirmation": true
+      },
+      {
+        "id": "u4",
+        "title": "Отозвать Telegram token",
+        "action": "revoke_token",
+        "ref": "secret.telegram_bot_token",
+        "requires_confirmation": true
+      }
+    ],
+    "safety": {
+      "no_data_loss_by_default": true,
+      "backup_refs": [
+        "backup.workflow.123.json"
+      ]
+    },
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T17:00:00Z"
+  },
+  "explainable_button": {
+    "explain_id": "exp.install.1",
+    "action_id": "act.install",
+    "why": {
+      "recommendation_trace_ref": "trace.rec.001",
+      "reason_bullets": [
+        "Лучший TTFS среди аналогов (3 мин)",
+        "Высокий evidence score (0.84) и стабильность",
+        "Подходит для Telegram и self-host (n8n)"
+      ]
+    },
+    "what": {
+      "install_plan_ref": "plan.install.news_digest.core.001",
+      "changes_summary": [
+        "Создаст workflow в n8n/Make",
+        "Добавит расписание запуска",
+        "Сохранит токены в secret store"
+      ]
+    },
+    "risk": {
+      "level": "medium",
+      "risks": [
+        "Нужен network access для RSS",
+        "Нельзя хранить токены в логах"
+      ],
+      "policy_decision_ref": "policy.decision.001"
+    },
+    "undo_ref": "undo.u.7ymzzk8j",
+    "proof_refs": [
+      "sbom.bundle.news_digest.core",
+      "sig.bundle.news_digest.core",
+      "audit.install.001"
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T17:00:00Z"
+  },
+  "cluster_template": {
+    "template_id": "tpl.news_digest.telegram",
+    "title": "News Digest Cluster (Telegram) — one-click",
+    "goal": "news_digest",
+    "components": [
+      {
+        "kind": "bundle",
+        "id": "bundle.news_digest.core",
+        "version": "1.0.0",
+        "required": true
+      },
+      {
+        "kind": "adapter",
+        "id": "adapter.telegram",
+        "version": "1.0.2",
+        "required": true
+      },
+      {
+        "kind": "function",
+        "id": "function.rss.parse",
+        "version": "1.1.0",
+        "required": true
+      },
+      {
+        "kind": "recipe",
+        "id": "recipe.dedup.basic",
+        "version": "1.0.0",
+        "required": false
+      }
+    ],
+    "defaults": {
+      "forms": [
+        "form.telegram+rss"
+      ],
+      "schedule": "daily 09:00",
+      "max_sources": 20
+    },
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T17:00:00Z"
+  },
+  "telemetry_event": {
+    "event_id": "tel.t.k3w7q7nz",
+    "tenant_id": "ten.travelhub.001",
+    "session_id": "sess.s.vlonpden",
+    "event": "wizard_error",
+    "properties": {
+      "step_id": "st.req",
+      "error_code": "TOKEN_INVALID",
+      "message": "Telegram token test failed"
+    },
+    "at": "2026-01-02T17:00:00Z",
+    "consent_ref": "consent.ui.telemetry.001",
+    "version": "1.0.0"
+  },
+  "accessibility_profile": {
+    "a11y_id": "a11y.a.4onhs86m",
+    "name": "Large Text + Simple Language",
+    "settings": {
+      "font_scale": 1.6,
+      "high_contrast": false,
+      "simple_language": true,
+      "reduce_steps": true,
+      "screen_reader_hints": true
+    },
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T17:00:00Z"
+  },
+  "ui_state_machine": {
+    "machine_id": "sm.wizard.v1",
+    "states": [
+      "idle",
+      "step_active",
+      "step_complete",
+      "error",
+      "completed"
+    ],
+    "initial": "idle",
+    "transitions": [
+      {
+        "from": "idle",
+        "to": "step_active",
+        "on": "start",
+        "guard_ref": "guard.policy_ok"
+      },
+      {
+        "from": "step_active",
+        "to": "step_complete",
+        "on": "complete_step",
+        "guard_ref": "guard.validation_ok"
+      },
+      {
+        "from": "step_active",
+        "to": "error",
+        "on": "error",
+        "guard_ref": ""
+      },
+      {
+        "from": "error",
+        "to": "step_active",
+        "on": "retry",
+        "guard_ref": "guard.policy_ok"
+      },
+      {
+        "from": "step_complete",
+        "to": "completed",
+        "on": "finish",
+        "guard_ref": ""
+      }
+    ],
+    "version": "1.0.0"
+  }
+}
