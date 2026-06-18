@@ -1,0 +1,80 @@
+openapi: 3.0.3
+info:
+  title: IFOS Marketplace Economics & Feedback API
+  version: "1.0.0"
+  description: "Reviews, ratings, comparisons, recommendations, pricing, licensing, affiliates, anti-fraud, vitrines, experiments."
+servers:
+  - url: https://marketplace.ifos.local/v1
+tags:
+  - name: Reviews
+  - name: Compare
+  - name: Recommend
+  - name: Economics
+  - name: Trust
+  - name: Vitrines
+  - name: Experiments
+paths:
+  /reviews/submit:
+    post:
+      tags: [Reviews]
+      summary: Submit a review (with optional verified usage evidence)
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /ratings/get:
+    get:
+      tags: [Reviews]
+      summary: Get rating aggregate for subject
+      responses:
+        "200": {description: OK}
+  /compare/run:
+    post:
+      tags: [Compare]
+      summary: Compare candidates for an intent
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /recommend/run:
+    post:
+      tags: [Recommend]
+      summary: Get recommendations for intent and constraints
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /economics/pricing/get:
+    get:
+      tags: [Economics]
+      summary: Get pricing plans for a subject
+      responses:
+        "200": {description: OK}
+  /trust/anti-fraud/signals:
+    get:
+      tags: [Trust]
+      summary: Get anti-fraud signals for subject
+      responses:
+        "200": {description: OK}
+  /vitrines/get:
+    get:
+      tags: [Vitrines]
+      summary: Get curated vitrines and portfolio selections
+      responses:
+        "200": {description: OK}
+  /experiments/create:
+    post:
+      tags: [Experiments]
+      summary: Create an A/B experiment for ranking
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
