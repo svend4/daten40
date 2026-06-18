@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Scheduler Job Schema v1",
+  "type": "object",
+  "required": [
+    "sched_id",
+    "plan_id",
+    "rrule",
+    "status",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "sched_id": {
+      "type": "string"
+    },
+    "plan_id": {
+      "type": "string"
+    },
+    "rrule": {
+      "type": "string"
+    },
+    "timezone": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "enabled",
+        "disabled"
+      ]
+    },
+    "on_fail": {
+      "type": "object",
+      "properties": {
+        "notify": {
+          "type": "boolean"
+        },
+        "auto_rollback": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
