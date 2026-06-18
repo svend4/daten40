@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Synonym Set Schema v1",
+  "type": "object",
+  "required": [
+    "synset_id",
+    "canonical",
+    "members",
+    "scope",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "synset_id": {
+      "type": "string"
+    },
+    "canonical": {
+      "type": "string"
+    },
+    "members": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "scope": {
+      "type": "string",
+      "enum": [
+        "tags",
+        "terms",
+        "capabilities",
+        "mixed"
+      ]
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
