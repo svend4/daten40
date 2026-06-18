@@ -1,0 +1,68 @@
+openapi: 3.0.3
+info:
+  title: IFOS Genesis Step Registry API
+  version: 1.0.0
+  description: API for querying conceptual steps 1-14240 from the IFOS founding chat
+
+paths:
+  /steps:
+    get:
+      summary: List steps
+      parameters:
+        - name: phase
+          in: query
+          schema: {type: string}
+        - name: step_from
+          in: query
+          schema: {type: integer}
+        - name: step_to
+          in: query
+          schema: {type: integer}
+        - name: keyword
+          in: query
+          schema: {type: string}
+      responses:
+        '200':
+          description: List of steps
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Step'
+
+  /steps/{step_num}:
+    get:
+      summary: Get single step
+      parameters:
+        - name: step_num
+          in: path
+          required: true
+          schema: {type: integer}
+      responses:
+        '200':
+          description: Step record
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Step'
+
+  /phases:
+    get:
+      summary: List all phases
+      responses:
+        '200':
+          description: Phase index
+
+components:
+  schemas:
+    Step:
+      type: object
+      properties:
+        phase:       {type: string}
+        step_num:    {type: integer}
+        action:      {type: string}
+        consequence: {type: string}
+        result:      {type: string}
+        status:      {type: string, enum: [conceptual, implemented, lost]}
+        os_pack_ref: {type: string, nullable: true}
