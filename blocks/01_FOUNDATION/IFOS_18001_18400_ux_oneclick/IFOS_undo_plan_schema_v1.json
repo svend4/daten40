@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Undo Plan Schema v1",
+  "type": "object",
+  "required": [
+    "undo_id",
+    "subject",
+    "steps",
+    "safety",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "undo_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "action"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string",
+            "description": "e.g. delete_job, revoke_token, remove_webhook"
+          },
+          "ref": {
+            "type": "string"
+          },
+          "requires_confirmation": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "safety": {
+      "type": "object",
+      "properties": {
+        "no_data_loss_by_default": {
+          "type": "boolean"
+        },
+        "backup_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
