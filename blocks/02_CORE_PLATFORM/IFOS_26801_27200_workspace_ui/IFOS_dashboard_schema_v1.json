@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Dashboard Schema v1",
+  "type": "object",
+  "required": [
+    "dashboard_id",
+    "workspace_id",
+    "widgets",
+    "layout_ref",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "dashboard_id": {
+      "type": "string"
+    },
+    "workspace_id": {
+      "type": "string"
+    },
+    "widgets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/widget"
+      }
+    },
+    "layout_ref": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "widget": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "IFOS DashboardWidget Schema v1",
+      "type": "object",
+      "required": [
+        "widget_id",
+        "kind",
+        "title",
+        "data_ref",
+        "version"
+      ],
+      "properties": {
+        "widget_id": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "kpi",
+            "table",
+            "chart",
+            "timeline",
+            "activity",
+            "recommendations"
+          ]
+        },
+        "title": {
+          "type": "string"
+        },
+        "data_ref": {
+          "type": "string"
+        },
+        "options": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
