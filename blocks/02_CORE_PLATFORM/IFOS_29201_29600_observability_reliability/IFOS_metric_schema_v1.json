@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Metric Schema v1",
+  "type": "object",
+  "required": [
+    "metric_id",
+    "name",
+    "kind",
+    "unit",
+    "series",
+    "labels",
+    "ts",
+    "value",
+    "version"
+  ],
+  "properties": {
+    "metric_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "counter",
+        "gauge",
+        "histogram",
+        "summary"
+      ]
+    },
+    "unit": {
+      "type": "string"
+    },
+    "series": {
+      "type": "string",
+      "description": "Scope: job/package/vitrine/system"
+    },
+    "labels": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "ts": {
+      "type": "string"
+    },
+    "value": {
+      "type": "number"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
