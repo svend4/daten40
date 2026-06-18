@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Autodoc Bundle Schema v1",
+  "type": "object",
+  "required": [
+    "doc_id",
+    "subject_id",
+    "sections",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "doc_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "title",
+          "content"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
