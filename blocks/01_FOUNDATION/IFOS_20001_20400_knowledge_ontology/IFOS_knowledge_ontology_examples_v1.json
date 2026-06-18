@@ -1,0 +1,349 @@
+{
+  "terms": [
+    {
+      "term_id": "term.plugin.cezggy3co5",
+      "canonical": "plugin",
+      "synonyms": [
+        "addon",
+        "extension",
+        "module"
+      ],
+      "definition": "Расширение приложения, добавляющее функции без изменения ядра.",
+      "examples": [
+        "WordPress plugin",
+        "Browser extension",
+        "n8n community node"
+      ],
+      "relations": [
+        {
+          "type": "related_to",
+          "target": "workflow"
+        },
+        {
+          "type": "is_a",
+          "target": "component"
+        }
+      ],
+      "version": "1.0.0",
+      "updated_at": "2026-01-02T19:50:00Z"
+    },
+    {
+      "term_id": "term.workflow.wp7i7vd5u1",
+      "canonical": "workflow",
+      "synonyms": [
+        "scenario",
+        "flow",
+        "pipeline"
+      ],
+      "definition": "Последовательность шагов/узлов, выполняющих автоматизацию.",
+      "examples": [
+        "Make scenario",
+        "n8n workflow",
+        "GitHub Actions pipeline"
+      ],
+      "relations": [
+        {
+          "type": "related_to",
+          "target": "automation"
+        }
+      ],
+      "version": "1.0.0",
+      "updated_at": "2026-01-02T19:50:00Z"
+    }
+  ],
+  "taxonomy": {
+    "taxonomy_id": "tax.main.jmtb75inte",
+    "name": "IFOS Main Taxonomy",
+    "nodes": [
+      {
+        "id": "automation",
+        "label": "Automation"
+      },
+      {
+        "id": "integration",
+        "label": "Integration",
+        "parent_id": "automation"
+      },
+      {
+        "id": "workflow",
+        "label": "Workflow",
+        "parent_id": "automation"
+      },
+      {
+        "id": "content",
+        "label": "Content"
+      },
+      {
+        "id": "news",
+        "label": "News",
+        "parent_id": "content"
+      },
+      {
+        "id": "publishing",
+        "label": "Publishing",
+        "parent_id": "content"
+      },
+      {
+        "id": "commerce",
+        "label": "Commerce"
+      },
+      {
+        "id": "affiliate",
+        "label": "Affiliate",
+        "parent_id": "commerce"
+      }
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:50:00Z"
+  },
+  "synonym_set": {
+    "synset_id": "syn.plugin.ufk9xcafto",
+    "canonical": "plugin",
+    "members": [
+      "plugin",
+      "addon",
+      "extension",
+      "module"
+    ],
+    "scope": "terms",
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:50:00Z"
+  },
+  "tag_normalization_rules": {
+    "rules_id": "rules.tags.hggy7q0ilh",
+    "steps": [
+      "lower",
+      "trim",
+      "punctuation_to_space",
+      "collapse_spaces",
+      "alias_to_canonical",
+      "remove_stop_tags"
+    ],
+    "alias_map": {
+      "tg": "telegram",
+      "newsfeed": "rss",
+      "rss-feed": "rss",
+      "add-on": "plugin"
+    },
+    "stop_tags": [
+      "test",
+      "misc",
+      "aaa",
+      "tmp"
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:50:00Z"
+  },
+  "entities": [
+    {
+      "entity_id": "ent.listing.news_digest",
+      "kind": "listing",
+      "display": {
+        "title": "News Digest Cluster",
+        "summary": "RSS→AI summary→Telegram/Email"
+      },
+      "identifiers": {
+        "url": "market://listing.news_digest",
+        "repo": "github:acme/news-digest",
+        "slug": "news-digest",
+        "external_ids": [
+          "wp:",
+          "make:"
+        ]
+      },
+      "fingerprints": {
+        "content_digest": "sha256:aaa",
+        "structure_digest": "sha256:bbb",
+        "dependency_digest": "sha256:ccc"
+      },
+      "tags": [
+        "rss",
+        "telegram",
+        "email",
+        "digest",
+        "automation"
+      ],
+      "capabilities": [
+        "ingest.rss",
+        "dedupe",
+        "summarize.llm",
+        "deliver.telegram",
+        "deliver.email",
+        "schedule.daily"
+      ],
+      "version": "1.0.0",
+      "updated_at": "2026-01-02T19:50:00Z"
+    },
+    {
+      "entity_id": "ent.connector.telegram",
+      "kind": "connector",
+      "display": {
+        "title": "Telegram Bot API connector",
+        "summary": "Send messages via bot token"
+      },
+      "identifiers": {
+        "url": "connector://telegram",
+        "repo": "npm:telegram-bot-api",
+        "slug": "telegram",
+        "external_ids": [
+          "make:telegram",
+          "n8n:telegram"
+        ]
+      },
+      "fingerprints": {
+        "content_digest": "sha256:ddd",
+        "structure_digest": "sha256:eee",
+        "dependency_digest": "sha256:fff"
+      },
+      "tags": [
+        "telegram",
+        "messaging",
+        "delivery"
+      ],
+      "capabilities": [
+        "deliver.telegram"
+      ],
+      "version": "1.0.0",
+      "updated_at": "2026-01-02T19:50:00Z"
+    }
+  ],
+  "relations": [
+    {
+      "rel_id": "rel.c1.pu57w1bni2",
+      "from": "ent.listing.news_digest",
+      "type": "HAS_CAPABILITY",
+      "to": "capability.ingest.rss",
+      "weight": 1.0,
+      "evidence": [
+        "manifest.capabilities"
+      ],
+      "version": "1.0.0",
+      "updated_at": "2026-01-02T19:50:00Z"
+    },
+    {
+      "rel_id": "rel.c2.0gmagz3wce",
+      "from": "ent.listing.news_digest",
+      "type": "CALLS",
+      "to": "ent.connector.telegram",
+      "weight": 0.9,
+      "evidence": [
+        "workflow.graph.edge"
+      ],
+      "version": "1.0.0",
+      "updated_at": "2026-01-02T19:50:00Z"
+    },
+    {
+      "rel_id": "rel.cat.8hwrf5cy0a",
+      "from": "ent.listing.news_digest",
+      "type": "IN_CATEGORY",
+      "to": "taxonomy.news",
+      "weight": 1.0,
+      "evidence": [
+        "publisher.category"
+      ],
+      "version": "1.0.0",
+      "updated_at": "2026-01-02T19:50:00Z"
+    }
+  ],
+  "dedupe_cluster": {
+    "cluster_id": "dup.news.qggsv4rb19",
+    "primary": "ent.listing.news_digest",
+    "duplicates": [
+      "ent.listing.news_digest.mirror1",
+      "ent.listing.news_digest.mirror2"
+    ],
+    "confidence": 0.92,
+    "evidence": [
+      "structure_digest match",
+      "capability overlap > 0.9"
+    ],
+    "actions": {
+      "merge_reviews": true,
+      "merge_quality": true,
+      "merge_incidents": true,
+      "redirect_slugs": true
+    },
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:50:00Z"
+  },
+  "knowledge_graph_snapshot": {
+    "snapshot_id": "kgs.s.49rt29ypkn",
+    "at": "2026-01-02T19:50:00Z",
+    "nodes": [
+      "ent.listing.news_digest",
+      "ent.connector.telegram",
+      "term.plugin.cezggy3co5",
+      "term.workflow.wp7i7vd5u1",
+      "capability.ingest.rss",
+      "taxonomy.news"
+    ],
+    "edges": [
+      "rel.c1.pu57w1bni2",
+      "rel.c2.0gmagz3wce",
+      "rel.cat.8hwrf5cy0a"
+    ],
+    "stats": {
+      "node_count": 6,
+      "edge_count": 3,
+      "dedupe_clusters": 1
+    },
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:50:00Z"
+  },
+  "search_explanation": {
+    "query": "rss дайджест в telegram",
+    "result_id": "ent.listing.news_digest",
+    "final_score": 0.87,
+    "breakdown": [
+      {
+        "component": "tag_match",
+        "score": 0.25,
+        "notes": "rss, telegram matched (normalized)"
+      },
+      {
+        "component": "capability_match",
+        "score": 0.3,
+        "notes": "ingest.rss + deliver.telegram"
+      },
+      {
+        "component": "graph_boost",
+        "score": 0.1,
+        "notes": "calls telegram connector"
+      },
+      {
+        "component": "quality_boost",
+        "score": 0.15,
+        "notes": "smoke PASS, SLO ok"
+      },
+      {
+        "component": "trust_penalty",
+        "score": -0.03,
+        "notes": "1 medium vuln warning"
+      }
+    ],
+    "matches": {
+      "terms": [
+        "rss",
+        "telegram",
+        "digest"
+      ],
+      "capabilities": [
+        "ingest.rss",
+        "deliver.telegram"
+      ],
+      "tags": [
+        "rss",
+        "telegram"
+      ]
+    },
+    "penalties": [
+      {
+        "reason": "trust.warn",
+        "value": 0.03,
+        "notes": "medium vuln present"
+      }
+    ],
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T19:50:00Z"
+  }
+}
