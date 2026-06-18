@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Run→Tutorial Mapping Schema v1",
+  "type": "object",
+  "required": [
+    "map_id",
+    "run_id",
+    "tutorial_id",
+    "sanitization",
+    "evidence_refs",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "map_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "tutorial_id": {
+      "type": "string"
+    },
+    "sanitization": {
+      "type": "object",
+      "properties": {
+        "pii_redacted": {
+          "type": "boolean"
+        },
+        "secrets_removed": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
