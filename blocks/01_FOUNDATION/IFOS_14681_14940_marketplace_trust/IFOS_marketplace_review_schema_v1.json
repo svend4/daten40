@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Marketplace Review Schema v1",
+  "type": "object",
+  "required": [
+    "review_id",
+    "listing_id",
+    "rating",
+    "text",
+    "target",
+    "created_at"
+  ],
+  "properties": {
+    "review_id": {
+      "type": "string"
+    },
+    "listing_id": {
+      "type": "string"
+    },
+    "user_ref": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "text": {
+      "type": "string",
+      "maxLength": 4000
+    },
+    "target": {
+      "type": "string",
+      "description": "make_cloud / n8n_selfhost / wp / cli"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_ref": {
+      "type": "string",
+      "description": "optional link to evidence_record_id"
+    },
+    "created_at": {
+      "type": "string"
+    }
+  }
+}
