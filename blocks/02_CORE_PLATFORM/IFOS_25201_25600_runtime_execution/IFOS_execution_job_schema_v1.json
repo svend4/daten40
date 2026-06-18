@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Execution Job Schema v1",
+  "type": "object",
+  "required": [
+    "job_id",
+    "plan_id",
+    "status",
+    "created_at",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "job_id": {
+      "type": "string"
+    },
+    "plan_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "queued",
+        "running",
+        "succeeded",
+        "failed",
+        "canceled"
+      ]
+    },
+    "started_at": {
+      "type": "string"
+    },
+    "ended_at": {
+      "type": "string"
+    },
+    "receipt_ref": {
+      "type": "string"
+    },
+    "logs_ref": {
+      "type": "string"
+    },
+    "metrics_ref": {
+      "type": "string"
+    },
+    "traces_ref": {
+      "type": "string"
+    },
+    "error": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
