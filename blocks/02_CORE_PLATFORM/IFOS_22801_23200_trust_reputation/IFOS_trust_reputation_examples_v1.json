@@ -1,0 +1,381 @@
+{
+  "quality_ladder": {
+    "ladder_id": "lad.q.u1p4vg65hb",
+    "levels": [
+      {
+        "level": "L0",
+        "name": "Draft",
+        "requirements": [
+          "no requirements"
+        ]
+      },
+      {
+        "level": "L1",
+        "name": "Basic",
+        "requirements": [
+          "docs_present",
+          "dependencies_declared"
+        ]
+      },
+      {
+        "level": "L2",
+        "name": "Verified",
+        "requirements": [
+          "smoke_tests_passed",
+          "install_receipt_present"
+        ]
+      },
+      {
+        "level": "L3",
+        "name": "Reliable",
+        "requirements": [
+          "rollback_plan_present",
+          "observed_fail_ratio<0.02 over 30d",
+          "slo_defined"
+        ]
+      },
+      {
+        "level": "L4",
+        "name": "Audited",
+        "requirements": [
+          "signature_valid",
+          "sbom_present",
+          "license_ok",
+          "policy_ok"
+        ]
+      },
+      {
+        "level": "L5",
+        "name": "Enterprise/Gov",
+        "requirements": [
+          "offline_profile_supported",
+          "change_control_enabled",
+          "two_person_review"
+        ]
+      }
+    ],
+    "updated_at": "2026-01-02T23:10:00Z",
+    "version": "1.0.0"
+  },
+  "publisher_profile": {
+    "publisher_id": "pub.p.vok94sfnnt",
+    "name": "IFOS Verified Publisher",
+    "verification_level": "org_verified",
+    "keys": [
+      {
+        "kid": "kid1",
+        "alg": "ed25519",
+        "public_key": "BASE64_PUBLIC_KEY_PLACEHOLDER"
+      }
+    ],
+    "contacts": [
+      "support@example.org"
+    ],
+    "updated_at": "2026-01-02T23:10:00Z",
+    "version": "1.0.0"
+  },
+  "signature_envelope": {
+    "envelope_id": "sig.s.fedow5i3vr",
+    "subject_id": "bundle.news_digest_cluster",
+    "hash": "sha256:demo_hash",
+    "publisher_id": "pub.p.vok94sfnnt",
+    "kid": "kid1",
+    "signature": "BASE64_SIGNATURE_PLACEHOLDER",
+    "ts": "2026-01-02T23:10:00Z",
+    "updated_at": "2026-01-02T23:10:00Z",
+    "version": "1.0.0"
+  },
+  "sbom_record": {
+    "sbom_id": "sbom.b.3wxmii7wmn",
+    "subject_id": "bundle.news_digest_cluster",
+    "components": [
+      {
+        "name": "make:telegram",
+        "version": "latest",
+        "type": "connector"
+      },
+      {
+        "name": "make:rss",
+        "version": "latest",
+        "type": "connector"
+      },
+      {
+        "name": "llm:summarizer",
+        "version": "v0",
+        "type": "service"
+      }
+    ],
+    "licenses": [
+      "MIT",
+      "Apache-2.0"
+    ],
+    "ts": "2026-01-02T23:10:00Z",
+    "updated_at": "2026-01-02T23:10:00Z",
+    "version": "1.0.0"
+  },
+  "provenance_chain": {
+    "chain_id": "prov.c.w1ajqoagun",
+    "subject_id": "bundle.news_digest_cluster",
+    "entries": [
+      {
+        "kind": "repo",
+        "ref": "github://org/repo",
+        "ts": "2026-01-02T23:10:00Z",
+        "actor": "pub.p.vok94sfnnt"
+      },
+      {
+        "kind": "commit",
+        "ref": "sha:abcd1234",
+        "ts": "2026-01-02T23:10:00Z",
+        "actor": "pub.p.vok94sfnnt"
+      },
+      {
+        "kind": "build",
+        "ref": "build:ci#55",
+        "ts": "2026-01-02T23:10:00Z",
+        "actor": "ci://runner"
+      },
+      {
+        "kind": "publish",
+        "ref": "exchange://bundle/1.0.0",
+        "ts": "2026-01-02T23:10:00Z",
+        "actor": "pub.p.vok94sfnnt"
+      },
+      {
+        "kind": "verify",
+        "ref": "ver.v.fpjx3r1nv2",
+        "ts": "2026-01-02T23:10:00Z",
+        "actor": "system://verifier"
+      },
+      {
+        "kind": "install",
+        "ref": "rcpt.001",
+        "ts": "2026-01-02T23:10:00Z",
+        "actor": "node://customerA"
+      }
+    ],
+    "updated_at": "2026-01-02T23:10:00Z",
+    "version": "1.0.0"
+  },
+  "trust_signals": [
+    {
+      "signal_id": "sg.g.5jdr11dfpo",
+      "subject_id": "bundle.news_digest_cluster",
+      "type": "stability_fail_ratio",
+      "value": 0.012,
+      "source": {
+        "kind": "observability",
+        "ref": "metric:runs_failed_ratio"
+      },
+      "ts": "2026-01-02T23:10:00Z",
+      "confidence": 0.9,
+      "updated_at": "2026-01-02T23:10:00Z",
+      "version": "1.0.0"
+    },
+    {
+      "signal_id": "sg.g.ids3tuu3p4",
+      "subject_id": "bundle.news_digest_cluster",
+      "type": "security_signed",
+      "value": true,
+      "source": {
+        "kind": "system",
+        "ref": "sig.s.fedow5i3vr"
+      },
+      "ts": "2026-01-02T23:10:00Z",
+      "confidence": 0.95,
+      "updated_at": "2026-01-02T23:10:00Z",
+      "version": "1.0.0"
+    },
+    {
+      "signal_id": "sg.g.pc16uq08qv",
+      "subject_id": "bundle.news_digest_cluster",
+      "type": "security_sbom",
+      "value": true,
+      "source": {
+        "kind": "system",
+        "ref": "sbom.b.3wxmii7wmn"
+      },
+      "ts": "2026-01-02T23:10:00Z",
+      "confidence": 0.95,
+      "updated_at": "2026-01-02T23:10:00Z",
+      "version": "1.0.0"
+    },
+    {
+      "signal_id": "sg.g.8z1akx1bsx",
+      "subject_id": "bundle.news_digest_cluster",
+      "type": "adoption_installs",
+      "value": 154,
+      "source": {
+        "kind": "system",
+        "ref": "installs_counter"
+      },
+      "ts": "2026-01-02T23:10:00Z",
+      "confidence": 0.7,
+      "updated_at": "2026-01-02T23:10:00Z",
+      "version": "1.0.0"
+    }
+  ],
+  "evidence_items": [
+    {
+      "evidence_id": "ev.e.rjpcte1wkb",
+      "kind": "install_receipt",
+      "ref": "rcpt.001",
+      "ts": "2026-01-02T23:10:00Z",
+      "updated_at": "2026-01-02T23:10:00Z",
+      "version": "1.0.0"
+    },
+    {
+      "evidence_id": "ev.e.0zj7cj711m",
+      "kind": "trace_id",
+      "ref": "tr.xxxxx",
+      "ts": "2026-01-02T23:10:00Z",
+      "updated_at": "2026-01-02T23:10:00Z",
+      "version": "1.0.0"
+    },
+    {
+      "evidence_id": "ev.e.1x7n7ipufa",
+      "kind": "sbom",
+      "ref": "sbom.b.3wxmii7wmn",
+      "ts": "2026-01-02T23:10:00Z",
+      "updated_at": "2026-01-02T23:10:00Z",
+      "version": "1.0.0"
+    }
+  ],
+  "verification_record": {
+    "verification_id": "ver.v.fpjx3r1nv2",
+    "subject_id": "bundle.news_digest_cluster",
+    "checks": [
+      {
+        "name": "signature_valid",
+        "status": "pass",
+        "notes": "publisher key kid1"
+      },
+      {
+        "name": "sbom_present",
+        "status": "pass",
+        "notes": "sbom.b.3wxmii7wmn"
+      },
+      {
+        "name": "license_ok",
+        "status": "pass",
+        "notes": "MIT/Apache-2.0"
+      },
+      {
+        "name": "policy_ok",
+        "status": "pass",
+        "notes": "No PII export enabled"
+      },
+      {
+        "name": "hash_match",
+        "status": "pass",
+        "notes": "sha256 matches envelope"
+      }
+    ],
+    "result": "pass",
+    "ts": "2026-01-02T23:10:00Z",
+    "updated_at": "2026-01-02T23:10:00Z",
+    "version": "1.0.0"
+  },
+  "review": {
+    "review_id": "rv.r.is0rp3whhv",
+    "subject_id": "bundle.news_digest_cluster",
+    "author": {
+      "user_id": "user.42",
+      "reputation": 0.8
+    },
+    "context": {
+      "platform": "make",
+      "platform_version": "2025.12",
+      "profile": "staging.allowlist",
+      "install_receipt_id": "rcpt.001"
+    },
+    "scores": {
+      "reliability": 4.6,
+      "docs": 4.0,
+      "support": 3.8,
+      "value": 4.4,
+      "risk": 1.4
+    },
+    "text": "Стабильно работает. Был RATE_LIMIT в Telegram, но включили batching+backoff и стало ок. Хотелось бы больше примеров.",
+    "evidence": [
+      "ev.e.rjpcte1wkb",
+      "ev.e.0zj7cj711m",
+      "ev.e.1x7n7ipufa"
+    ],
+    "ts": "2026-01-02T23:10:00Z",
+    "updated_at": "2026-01-02T23:10:00Z",
+    "version": "1.0.0"
+  },
+  "rating_aggregate": {
+    "subject_id": "bundle.news_digest_cluster",
+    "counts": {
+      "reviews": 12,
+      "installs": 154,
+      "active_instances": 87
+    },
+    "scores": {
+      "reliability": 4.4,
+      "docs": 3.9,
+      "support": 3.6,
+      "value": 4.2,
+      "risk": 1.6,
+      "trust_overall": 0.78
+    },
+    "updated_at": "2026-01-02T23:10:00Z",
+    "version": "1.0.0"
+  },
+  "compat_score": {
+    "subject_id": "bundle.news_digest_cluster",
+    "platform": "make",
+    "score": 0.92,
+    "basis": {
+      "installs": 154,
+      "fail_ratio": 0.012,
+      "last_test": "2026-01-02T23:10:00Z"
+    },
+    "updated_at": "2026-01-02T23:10:00Z",
+    "version": "1.0.0"
+  },
+  "antifraud_finding": {
+    "finding_id": "fd.f.zmjxa0r8uy",
+    "subject_id": "bundle.news_digest_cluster",
+    "signals": [
+      "burst_reviews_without_installs:false",
+      "contradiction_failratio_vs_5stars:false"
+    ],
+    "score": 0.12,
+    "label": "clean",
+    "ts": "2026-01-02T23:10:00Z",
+    "updated_at": "2026-01-02T23:10:00Z",
+    "version": "1.0.0"
+  },
+  "trust_policy": {
+    "policy_id": "tp.t.h2x4qktksv",
+    "name": "Default production policy",
+    "min_level_for_sandbox": "L2",
+    "min_level_for_prod": "L3",
+    "requirements": [
+      "signature_valid OR publisher_verified>=org_verified",
+      "observed_fail_ratio<0.02 over 30d",
+      "rollback_plan_present",
+      "pii_export_disallowed by default"
+    ],
+    "updated_at": "2026-01-02T23:10:00Z",
+    "version": "1.0.0"
+  },
+  "moderation_appeal": {
+    "appeal_id": "ap.a.rjfsq7bh2z",
+    "subject_id": "bundle.news_digest_cluster",
+    "reason": "Просим поднять уровень до L4: добавили подпись, SBOM, отчёт аудита.",
+    "evidence": [
+      "ev.e.rjpcte1wkb",
+      "ev.e.0zj7cj711m",
+      "ev.e.1x7n7ipufa",
+      "ev.audit.report.2026-01"
+    ],
+    "status": "submitted",
+    "ts": "2026-01-02T23:10:00Z",
+    "updated_at": "2026-01-02T23:10:00Z",
+    "version": "1.0.0"
+  }
+}
