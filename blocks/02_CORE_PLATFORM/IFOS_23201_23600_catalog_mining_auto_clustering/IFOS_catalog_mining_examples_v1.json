@@ -1,0 +1,423 @@
+{
+  "source_ref": {
+    "source_id": "src.s.9njsaiepcv",
+    "type": "make_scenario",
+    "ref": "make://scenario/export/news_digest_v0.json",
+    "license": "proprietary-export",
+    "hash": "sha256:demo",
+    "publisher_id": "pub.demo",
+    "ts_discovered": "2026-01-02T23:55:00Z",
+    "updated_at": "2026-01-02T23:55:00Z",
+    "version": "1.0.0"
+  },
+  "ingest_job": {
+    "job_id": "job.j.0yps0bmjby",
+    "source_id": "src.s.9njsaiepcv",
+    "status": "running",
+    "stages": [
+      {
+        "name": "fetch",
+        "status": "completed",
+        "metrics": {
+          "bytes": 120000
+        },
+        "notes": ""
+      },
+      {
+        "name": "normalize",
+        "status": "completed",
+        "metrics": {
+          "nodes": 8
+        },
+        "notes": ""
+      },
+      {
+        "name": "extract",
+        "status": "completed",
+        "metrics": {
+          "atoms": 3
+        },
+        "notes": "rss_fetch, summarize, telegram_send"
+      },
+      {
+        "name": "dedupe",
+        "status": "completed",
+        "metrics": {
+          "merged": 1
+        },
+        "notes": "telegram_send merged with existing"
+      },
+      {
+        "name": "embed",
+        "status": "completed",
+        "metrics": {
+          "model": "text-embed"
+        },
+        "notes": ""
+      },
+      {
+        "name": "cluster",
+        "status": "running",
+        "metrics": {},
+        "notes": ""
+      },
+      {
+        "name": "publish",
+        "status": "queued",
+        "metrics": {},
+        "notes": ""
+      }
+    ],
+    "created_at": "2026-01-02T23:55:00Z",
+    "updated_at": "2026-01-02T23:55:00Z",
+    "version": "1.0.0"
+  },
+  "atoms": [
+    {
+      "atom_id": "atom.a.yj3cz6xpgf",
+      "action": "fetch_rss",
+      "title": "Fetch RSS Feed",
+      "description": "Забирает ленту RSS и отдаёт список items.",
+      "inputs": [
+        {
+          "name": "feed_url",
+          "type": "url",
+          "required": true,
+          "example": "https://example.com/rss"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "items",
+          "type": "array",
+          "example": "[{title,link,date}]"
+        }
+      ],
+      "deps": [
+        "make:rss",
+        "n8n:rssRead",
+        "wp:fetch_feed"
+      ],
+      "constraints": {
+        "rate_limit": "source-dependent"
+      },
+      "cost_model": {
+        "compute": "low",
+        "network": "medium"
+      },
+      "sources": [
+        "src.s.9njsaiepcv"
+      ],
+      "updated_at": "2026-01-02T23:55:00Z",
+      "version": "1.0.0"
+    },
+    {
+      "atom_id": "atom.a.inqn9606nq",
+      "action": "summarize_text",
+      "title": "Summarize Text",
+      "description": "Суммаризация набора текстов в дайджест.",
+      "inputs": [
+        {
+          "name": "texts",
+          "type": "array<string>",
+          "required": true,
+          "example": "[...]"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "digest",
+          "type": "string",
+          "example": "Top 5 news..."
+        }
+      ],
+      "deps": [
+        "llm:summarizer"
+      ],
+      "constraints": {
+        "pii": "avoid sending PII to external LLM"
+      },
+      "cost_model": {
+        "llm_tokens": "depends",
+        "compute": "medium"
+      },
+      "sources": [
+        "src.s.9njsaiepcv"
+      ],
+      "updated_at": "2026-01-02T23:55:00Z",
+      "version": "1.0.0"
+    },
+    {
+      "atom_id": "atom.a.9g19az0mh3",
+      "action": "send_telegram_message",
+      "title": "Send Telegram Message",
+      "description": "Отправка сообщения в Telegram чат.",
+      "inputs": [
+        {
+          "name": "chat_id",
+          "type": "string",
+          "required": true,
+          "example": "-100123"
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "required": true,
+          "example": "Hello!"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "message_id",
+          "type": "string",
+          "example": "42"
+        }
+      ],
+      "deps": [
+        "make:telegram",
+        "n8n:telegram",
+        "wp:telegram_bot"
+      ],
+      "constraints": {
+        "rate_limit": "telegram throttling",
+        "pii": "do not log chat_id"
+      },
+      "cost_model": {
+        "network": "low"
+      },
+      "sources": [
+        "src.s.9njsaiepcv"
+      ],
+      "updated_at": "2026-01-02T23:55:00Z",
+      "version": "1.0.0"
+    }
+  ],
+  "dedupe_record": {
+    "dedupe_id": "dd.d.41yxj64btm",
+    "canonical_id": "atom.a.9g19az0mh3",
+    "candidates": [
+      "atom.a.9g19az0mh3",
+      "atom.existing.telegram_send"
+    ],
+    "method": "embedding_similarity",
+    "notes": "IO signature matched; kept canonical from newest source",
+    "updated_at": "2026-01-02T23:55:00Z",
+    "version": "1.0.0"
+  },
+  "taxonomy_nodes": [
+    {
+      "node_id": "tx.t.dxz196ymak",
+      "path": "Communication/Messaging/Telegram",
+      "labels": [
+        "telegram",
+        "message"
+      ],
+      "updated_at": "2026-01-02T23:55:00Z",
+      "version": "1.0.0"
+    },
+    {
+      "node_id": "tx.t.l05rrlyv6e",
+      "path": "Data/Ingest/RSS",
+      "labels": [
+        "rss",
+        "feed"
+      ],
+      "updated_at": "2026-01-02T23:55:00Z",
+      "version": "1.0.0"
+    },
+    {
+      "node_id": "tx.t.ghtfr91r5c",
+      "path": "AI/Text/Summarization",
+      "labels": [
+        "summary",
+        "digest"
+      ],
+      "updated_at": "2026-01-02T23:55:00Z",
+      "version": "1.0.0"
+    }
+  ],
+  "function_cluster": {
+    "cluster_id": "cl.c.6gfx21117z",
+    "name": "News Digest Cluster",
+    "atoms": [
+      "atom.a.yj3cz6xpgf",
+      "atom.a.inqn9606nq",
+      "atom.a.9g19az0mh3"
+    ],
+    "variants": [
+      {
+        "platform": "make",
+        "ref": "make://template/news_digest_v1",
+        "quality_level": "L1"
+      },
+      {
+        "platform": "n8n",
+        "ref": "n8n://workflow/news_digest_v1",
+        "quality_level": "L1"
+      }
+    ],
+    "taxonomy": [
+      "Data/Ingest/RSS",
+      "AI/Text/Summarization",
+      "Communication/Messaging/Telegram"
+    ],
+    "signals": [],
+    "updated_at": "2026-01-02T23:55:00Z",
+    "version": "1.0.0"
+  },
+  "autodoc_bundle": {
+    "doc_id": "doc.d.4i2xrk13vz",
+    "subject_id": "cl.c.6gfx21117z",
+    "sections": [
+      {
+        "title": "What it does",
+        "content": "Собирает RSS, суммаризирует, отправляет дайджест в Telegram."
+      },
+      {
+        "title": "Inputs",
+        "content": "feed_url, chat_id, schedule, model."
+      },
+      {
+        "title": "Safety",
+        "content": "Не логировать chat_id; включить rate-limit backoff."
+      },
+      {
+        "title": "Variants",
+        "content": "Make / n8n / WP (future)."
+      }
+    ],
+    "updated_at": "2026-01-02T23:55:00Z",
+    "version": "1.0.0"
+  },
+  "autotest_plan": {
+    "plan_id": "test.t.a620ks490d",
+    "subject_id": "cl.c.6gfx21117z",
+    "tests": [
+      {
+        "name": "smoke_fetch_rss",
+        "kind": "smoke",
+        "inputs": {
+          "feed_url": "https://example.com/rss"
+        },
+        "expected": {
+          "items_min": 1
+        }
+      },
+      {
+        "name": "smoke_send_telegram_dry_run",
+        "kind": "contract",
+        "inputs": {
+          "chat_id": "redacted",
+          "text": "test"
+        },
+        "expected": {
+          "status": "dry_run_logged"
+        }
+      },
+      {
+        "name": "integration_end_to_end_sandbox",
+        "kind": "integration",
+        "inputs": {
+          "schedule": "once"
+        },
+        "expected": {
+          "receipt": "present",
+          "fail_ratio_max": 0.05
+        }
+      }
+    ],
+    "updated_at": "2026-01-02T23:55:00Z",
+    "version": "1.0.0"
+  },
+  "quality_uplift_task": {
+    "task_id": "up.u.gx3ix5qb99",
+    "subject_id": "cl.c.6gfx21117z",
+    "from_level": "L0",
+    "to_level_target": "L2",
+    "steps": [
+      "autodoc",
+      "autotest_plan",
+      "sandbox_run",
+      "signals_collect",
+      "label_level"
+    ],
+    "status": "running",
+    "updated_at": "2026-01-02T23:55:00Z",
+    "version": "1.0.0"
+  },
+  "cluster_vitrine": {
+    "vitrine_id": "vit.v.qcy0uvlg8f",
+    "cluster_id": "cl.c.6gfx21117z",
+    "headline": "Автоматический новостной дайджест: RSS → ИИ‑сводка → Telegram",
+    "cards": [
+      {
+        "title": "Сбор источников",
+        "bullets": [
+          "RSS/Atom ленты",
+          "Фильтры по ключевым словам"
+        ],
+        "evidence": [
+          "src.s.9njsaiepcv"
+        ],
+        "risk": "low"
+      },
+      {
+        "title": "Сводка",
+        "bullets": [
+          "Сжатие 10→3 пункта",
+          "Контроль PII"
+        ],
+        "evidence": [
+          "test.t.a620ks490d"
+        ],
+        "risk": "medium"
+      },
+      {
+        "title": "Доставка",
+        "bullets": [
+          "Telegram отправка",
+          "Backoff против RATE_LIMIT"
+        ],
+        "evidence": [],
+        "risk": "medium"
+      }
+    ],
+    "cta": {
+      "install": "action://install?cluster=news_digest",
+      "sandbox": "action://sandbox?cluster=news_digest",
+      "docs": "doc://doc.d.4i2xrk13vz"
+    },
+    "updated_at": "2026-01-02T23:55:00Z",
+    "version": "1.0.0"
+  },
+  "labeling_decision": {
+    "decision_id": "lb.l.u3hmr2mics",
+    "subject_id": "cl.c.6gfx21117z",
+    "labels": [
+      "cluster",
+      "news",
+      "digest",
+      "telegram",
+      "rss"
+    ],
+    "reason": "Taxonomy + extracted actions + user demand",
+    "ts": "2026-01-02T23:55:00Z",
+    "updated_at": "2026-01-02T23:55:00Z",
+    "version": "1.0.0"
+  },
+  "feedback_loop": {
+    "loop_id": "fl.f.4d0lb3uvoe",
+    "inputs": [
+      "review signals",
+      "incident postmortems",
+      "search queries"
+    ],
+    "actions": [
+      "update extractor rules",
+      "update dedupe thresholds",
+      "spawn uplift tasks"
+    ],
+    "updated_at": "2026-01-02T23:55:00Z",
+    "version": "1.0.0"
+  }
+}
