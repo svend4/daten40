@@ -1,0 +1,105 @@
+openapi: 3.0.3
+info:
+  title: IFOS Knowledge API
+  version: "1.0.0"
+  description: "Auto-docs, tutorials, skill graphs, diagnostics, knowledge packs, glossary, KB ingest."
+servers:
+  - url: https://knowledge.ifos.local/v1
+tags:
+  - name: Docs
+  - name: Tutorials
+  - name: Skills
+  - name: Diagnostics
+  - name: KnowledgePacks
+  - name: Glossary
+  - name: KBIngest
+  - name: Recommendations
+paths:
+  /docs/generate:
+    post:
+      tags: [Docs]
+      summary: Generate a doc card for an asset
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "201": {description: Created}
+  /tutorials/generate:
+    post:
+      tags: [Tutorials]
+      summary: Generate a tutorial module for a goal
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "201": {description: Created}
+  /skills/graph:
+    post:
+      tags: [Skills]
+      summary: Build or update skill graph for a domain/bundle
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "201": {description: Created}
+  /diagnostics/analyze:
+    post:
+      tags: [Diagnostics]
+      summary: Analyze a failed run and return diagnostics report
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "200": {description: OK}
+  /knowledge-packs/build:
+    post:
+      tags: [KnowledgePacks]
+      summary: Build a knowledge pack from docs + tutorials + playbooks
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "201": {description: Created}
+  /glossary/entry:
+    post:
+      tags: [Glossary]
+      summary: Add glossary entry
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "201": {description: Created}
+  /kb/ingest:
+    post:
+      tags: [KBIngest]
+      summary: Ingest artifacts into KB (RAG index)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "202": {description: Accepted}
+  /recommendations/trace:
+    post:
+      tags: [Recommendations]
+      summary: Record a recommendation trace for transparency
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object}
+      responses:
+        "201": {description: Created}
