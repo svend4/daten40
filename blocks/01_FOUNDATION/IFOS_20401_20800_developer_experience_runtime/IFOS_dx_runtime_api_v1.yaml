@@ -1,0 +1,89 @@
+openapi: 3.0.3
+info:
+  title: IFOS DX & Runtime API
+  version: "1.0.0"
+  description: "Templates, SDK manifests, runtime jobs, logs/metrics/traces, debug sessions, migrations, one-command publish."
+servers:
+  - url: https://runtime.ifos.local/v1
+tags:
+  - name: Templates
+  - name: SDK
+  - name: Runtime
+  - name: Tests
+  - name: Observability
+  - name: Publish
+paths:
+  /templates/list:
+    get:
+      tags: [Templates]
+      summary: List available templates by intent
+      responses:
+        "200": {description: OK}
+  /sdk/manifest/get:
+    get:
+      tags: [SDK]
+      summary: Get SDK manifest and capability contracts
+      responses:
+        "200": {description: OK}
+  /runtime/jobs/run:
+    post:
+      tags: [Runtime]
+      summary: Run a workflow job
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
+  /tests/run:
+    post:
+      tags: [Tests]
+      summary: Run test harness for subject
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
+  /obs/logs/query:
+    post:
+      tags: [Observability]
+      summary: Query structured logs by job_id/correlation_id
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "200": {description: OK}
+  /obs/metrics/get:
+    get:
+      tags: [Observability]
+      summary: Get metrics snapshot for job
+      responses:
+        "200": {description: OK}
+  /obs/traces/get:
+    get:
+      tags: [Observability]
+      summary: Get trace spans for job
+      responses:
+        "200": {description: OK}
+  /debug/sessions/create:
+    post:
+      tags: [Observability]
+      summary: Create a debug session with breakpoints
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "201": {description: Created}
+  /publish/run:
+    post:
+      tags: [Publish]
+      summary: One-command publish pipeline
+      requestBody:
+        required: true
+        content:
+          application/json: {schema: {type: object}}
+      responses:
+        "202": {description: Accepted}
