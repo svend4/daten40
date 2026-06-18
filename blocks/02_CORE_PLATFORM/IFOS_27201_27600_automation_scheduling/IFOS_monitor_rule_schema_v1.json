@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS MonitorRule Schema v1",
+  "type": "object",
+  "required": [
+    "rule_id",
+    "workspace_id",
+    "kind",
+    "condition",
+    "window_seconds",
+    "severity",
+    "enabled",
+    "version"
+  ],
+  "properties": {
+    "rule_id": {
+      "type": "string"
+    },
+    "workspace_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "error_rate",
+        "no_success",
+        "sla_breach",
+        "latency_spike",
+        "custom"
+      ]
+    },
+    "condition": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "window_seconds": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "info",
+        "warning",
+        "critical"
+      ]
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
