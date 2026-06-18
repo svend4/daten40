@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Ledger Entry Schema v1",
+  "type": "object",
+  "required": [
+    "entry_id",
+    "at",
+    "party",
+    "direction",
+    "amount",
+    "currency",
+    "reason",
+    "refs",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "entry_id": {
+      "type": "string"
+    },
+    "at": {
+      "type": "string"
+    },
+    "party": {
+      "type": "object",
+      "properties": {
+        "platform": {
+          "type": "boolean"
+        },
+        "publisher_id": {
+          "type": "string"
+        },
+        "buyer_id": {
+          "type": "string"
+        }
+      }
+    },
+    "direction": {
+      "type": "string",
+      "enum": [
+        "credit",
+        "debit"
+      ]
+    },
+    "amount": {
+      "type": "number"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string",
+      "enum": [
+        "sale",
+        "platform_fee",
+        "tax_withholding",
+        "refund",
+        "chargeback_reserve",
+        "payout"
+      ]
+    },
+    "refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
