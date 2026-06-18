@@ -1,0 +1,232 @@
+{
+  "capability_contract": {
+    "contract_id": "ctr.telegram.send_message.v1",
+    "target": "function",
+    "applies_to": {
+      "id": "telegram.send_message",
+      "version": "1.0.0"
+    },
+    "inputs": [
+      {
+        "name": "chat_id",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "text",
+        "type": "string",
+        "required": true,
+        "max_bytes": 4096
+      }
+    ],
+    "outputs": [
+      {
+        "name": "message_id",
+        "type": "string"
+      }
+    ],
+    "features": {
+      "supports_markdown": true,
+      "supports_html": false,
+      "supports_attachments": false,
+      "supports_batching": false,
+      "idempotent": false,
+      "streaming": false
+    },
+    "limits": {
+      "rate_limit_per_min": 30,
+      "max_message_len": 4096,
+      "timeout_sec": 10
+    },
+    "side_effects": {
+      "writes": true,
+      "deletes": false,
+      "charges_money": false,
+      "creates_users": false
+    },
+    "permissions": {
+      "scopes": [
+        "telegram:send"
+      ],
+      "requires_admin": false
+    },
+    "compatibility": {
+      "input_aliases": {
+        "message": "text"
+      },
+      "output_aliases": {},
+      "substitutable_with": [
+        "telegram.send_message_v2"
+      ]
+    },
+    "version": "1.0.0",
+    "updated_at": "2026-01-02T11:00:00Z"
+  },
+  "component_rating": {
+    "rating_id": "rat.h4cjnxqy",
+    "component_type": "function",
+    "component_id": "telegram.send_message",
+    "score": 86.2,
+    "breakdown": {
+      "reliability": 90,
+      "security": 88,
+      "performance": 80,
+      "interoperability": 85,
+      "maintainability": 75,
+      "freshness": 90,
+      "support": 70,
+      "popularity": 92
+    },
+    "signals": {
+      "runs_pass_rate": 0.985,
+      "avg_duration_ms": 210,
+      "sandbox_denies": 2,
+      "signed_artifacts_ratio": 0.9,
+      "compatibility_violations": 1,
+      "last_update_days": 12
+    },
+    "evidence_refs": [
+      "evid.telegram.send_message.L2",
+      "evid.telegram.send_message.L3"
+    ],
+    "computed_at": "2026-01-02T11:00:00Z",
+    "method_version": "rating.v1"
+  },
+  "cluster": {
+    "cluster_id": "cl.notify.001",
+    "name": "Notifications (Messaging)",
+    "domain": "ops",
+    "members": [
+      {
+        "component_type": "function",
+        "component_id": "telegram.send_message",
+        "weight": 0.8
+      },
+      {
+        "component_type": "function",
+        "component_id": "email.send",
+        "weight": 0.7
+      },
+      {
+        "component_type": "function",
+        "component_id": "slack.post_message",
+        "weight": 0.65
+      }
+    ],
+    "centroid": {
+      "keywords": [
+        "notify",
+        "message",
+        "alert",
+        "send"
+      ],
+      "vector_ref": "vec://clusters/cl.notify.001"
+    },
+    "typical_blueprints": [
+      "bp.alerting.basic",
+      "bp.rss.digest.notify"
+    ],
+    "human_labels": [
+      "notify",
+      "alerts",
+      "messaging"
+    ],
+    "created_at": "2026-01-02T11:00:00Z",
+    "updated_at": "2026-01-02T11:00:00Z",
+    "method_version": "cluster.hybrid.v1"
+  },
+  "vitrine": {
+    "vitrine_id": "vit.travelhub.starter.001",
+    "name": "Travel Hub Starter",
+    "domain": "travel",
+    "coverage_model": {
+      "stages": [
+        "ingest",
+        "transform",
+        "store",
+        "notify",
+        "monitor",
+        "admin"
+      ]
+    },
+    "selection_rules": {
+      "min_trust_score": 70,
+      "min_component_rating": 75,
+      "require_signed": false,
+      "deny_flags": {
+        "pii": true,
+        "money": false,
+        "security_sensitive": false
+      },
+      "prefer_targets": [
+        "make",
+        "n8n",
+        "wp",
+        "native"
+      ]
+    },
+    "outputs": {
+      "bundles": [
+        "bundle.travelhub.core",
+        "bundle.travelhub.alerts"
+      ],
+      "recipes": [
+        "recipe.rss_to_telegram.digest_v1",
+        "recipe.price_compare.daily_v1"
+      ],
+      "adapters": [
+        "telegram",
+        "rss",
+        "sheets",
+        "http"
+      ],
+      "notes": "Auto-generated vitrine; includes sandbox presets and evidence checklist."
+    },
+    "generated_at": "2026-01-02T11:00:00Z",
+    "method_version": "vitrine.coverage.v1"
+  },
+  "recommendation_event": {
+    "event_id": "rec.22vxn7w3",
+    "tenant_id": "ten.travelhub.001",
+    "user_id": "usr.bob",
+    "kind": "run_fail",
+    "context": {
+      "domain": "ops",
+      "job_id": "job.rss_to_telegram.001",
+      "run_id": "run.rss_to_telegram.0002",
+      "failed_function_id": "telegram.send_message",
+      "flags": {
+        "pii": false,
+        "money": false,
+        "security_sensitive": false
+      }
+    },
+    "recommendations": [
+      {
+        "type": "doc",
+        "id": "doc.telegram.rate_limits",
+        "reason": "Похоже на rate limit; включите batching/окно 10 минут.",
+        "constraints": {
+          "safe": true
+        }
+      },
+      {
+        "type": "adapter",
+        "id": "telegram.send_message_v2",
+        "reason": "Версия v2 поддерживает batching и auto-retry.",
+        "constraints": {
+          "requires_contract": "supports_batching"
+        }
+      },
+      {
+        "type": "cluster",
+        "id": "cl.notify.001",
+        "reason": "Посмотрите альтернативы: email/slack для fallback.",
+        "constraints": {
+          "policy_ok": true
+        }
+      }
+    ],
+    "ts": "2026-01-02T11:00:00Z"
+  }
+}
