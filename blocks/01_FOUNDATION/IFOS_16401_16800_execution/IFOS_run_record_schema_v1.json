@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Run Record Schema v1",
+  "type": "object",
+  "required": [
+    "run_id",
+    "job_id",
+    "status",
+    "started_at",
+    "finished_at",
+    "metrics",
+    "artifacts",
+    "logs_ref",
+    "audit_refs"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string"
+    },
+    "job_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "queued",
+        "running",
+        "success",
+        "warn",
+        "fail",
+        "cancelled"
+      ]
+    },
+    "started_at": {
+      "type": "string"
+    },
+    "finished_at": {
+      "type": "string"
+    },
+    "error": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "step": {
+          "type": "string"
+        }
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "properties": {
+        "duration_ms": {
+          "type": "integer"
+        },
+        "cpu_ms": {
+          "type": "integer"
+        },
+        "mem_mb_peak": {
+          "type": "integer"
+        },
+        "network_bytes": {
+          "type": "integer"
+        },
+        "steps_total": {
+          "type": "integer"
+        },
+        "steps_failed": {
+          "type": "integer"
+        }
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "uri": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "logs_ref": {
+      "type": "string"
+    },
+    "audit_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_update": {
+      "type": "object",
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": [
+            "L0",
+            "L1",
+            "L2",
+            "L3"
+          ]
+        },
+        "ref": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
