@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Vocabulary Term Schema v1",
+  "type": "object",
+  "required": [
+    "term_id",
+    "canonical",
+    "synonyms",
+    "definition",
+    "examples",
+    "relations",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "term_id": {
+      "type": "string"
+    },
+    "canonical": {
+      "type": "string"
+    },
+    "synonyms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "definition": {
+      "type": "string"
+    },
+    "examples": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "is_a",
+              "related_to",
+              "opposite_of"
+            ]
+          },
+          "target": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
