@@ -1,0 +1,386 @@
+{
+  "subject": {
+    "kind": "bundle",
+    "id": "bundle.news_digest_cluster",
+    "version": "1.0.0"
+  },
+  "install_plan": {
+    "plan_id": "plan.p.5qj2aaqi95",
+    "subject": {
+      "kind": "bundle",
+      "id": "bundle.news_digest_cluster",
+      "version": "1.0.0"
+    },
+    "target_platform": "make",
+    "mode": "sandbox_first",
+    "steps": [
+      {
+        "step_id": "st.s.yfsmp1161j",
+        "type": "fetch_payload",
+        "status": "planned",
+        "inputs": {
+          "ref": "ref://payload/make-scenario.json"
+        },
+        "outputs": {},
+        "retries": 2,
+        "timeout_s": 120,
+        "updated_at": "2026-01-02T22:05:00Z",
+        "version": "1.0.0"
+      },
+      {
+        "step_id": "st.s.qizzyj3ens",
+        "type": "verify_signatures",
+        "status": "planned",
+        "inputs": {
+          "alg": "ed25519",
+          "key_id": "key.publisher.demo"
+        },
+        "outputs": {},
+        "retries": 0,
+        "timeout_s": 30,
+        "updated_at": "2026-01-02T22:05:00Z",
+        "version": "1.0.0"
+      },
+      {
+        "step_id": "st.s.w8f1eq2juv",
+        "type": "apply_policy_precheck",
+        "status": "planned",
+        "inputs": {
+          "offline": false,
+          "allowed_platforms": [
+            "make",
+            "n8n"
+          ]
+        },
+        "outputs": {},
+        "retries": 0,
+        "timeout_s": 30,
+        "updated_at": "2026-01-02T22:05:00Z",
+        "version": "1.0.0"
+      },
+      {
+        "step_id": "st.s.z50om7z4s0",
+        "type": "import_workflow",
+        "status": "planned",
+        "inputs": {
+          "platform": "make",
+          "workspace": "staging",
+          "file": "make-scenario.json"
+        },
+        "outputs": {},
+        "retries": 1,
+        "timeout_s": 180,
+        "updated_at": "2026-01-02T22:05:00Z",
+        "version": "1.0.0"
+      },
+      {
+        "step_id": "st.s.0ygky10vf7",
+        "type": "configure_credentials",
+        "status": "planned",
+        "inputs": {
+          "platform": "make",
+          "capability": "deliver.telegram"
+        },
+        "outputs": {},
+        "retries": 0,
+        "timeout_s": 120,
+        "updated_at": "2026-01-02T22:05:00Z",
+        "version": "1.0.0"
+      },
+      {
+        "step_id": "st.s.1by9lm0lc9",
+        "type": "run_smoke_tests",
+        "status": "planned",
+        "inputs": {
+          "tests": [
+            "tg_send",
+            "rss_ingest"
+          ]
+        },
+        "outputs": {},
+        "retries": 0,
+        "timeout_s": 600,
+        "updated_at": "2026-01-02T22:05:00Z",
+        "version": "1.0.0"
+      }
+    ],
+    "credential_bindings": [
+      {
+        "binding_id": "bind.b.veaobb4vn9",
+        "capability": "cap.deliver.telegram",
+        "platform": "make",
+        "secret_ref": "secret://vault/telegram_bot_token",
+        "scope": {
+          "env": "staging",
+          "workspace": "make_ws_1",
+          "asset_id": "asset.make.news_digest_scenario"
+        },
+        "status": "planned",
+        "updated_at": "2026-01-02T22:05:00Z",
+        "version": "1.0.0"
+      }
+    ],
+    "migrations": [
+      {
+        "migration_id": "mig.m.mlh6hvjiue",
+        "kind": "config",
+        "direction": "up",
+        "target": "make_scenario_env_vars",
+        "status": "planned",
+        "notes": "set SUMMARY_STYLE=brief",
+        "updated_at": "2026-01-02T22:05:00Z",
+        "version": "1.0.0"
+      }
+    ],
+    "rollback_plan_ref": "rb.rb.loby54t3mc",
+    "expected_smoke_tests": [
+      "rss_ingest",
+      "tg_send"
+    ],
+    "updated_at": "2026-01-02T22:05:00Z",
+    "version": "1.0.0"
+  },
+  "sandbox_run": {
+    "run_id": "run.r.ln0earq76i",
+    "plan_id": "plan.p.5qj2aaqi95",
+    "environment": {
+      "env_id": "env.e.tf0halx3og",
+      "kind": "platform_staging",
+      "platform": "make",
+      "resources": {
+        "cpu": "shared",
+        "memory": "shared",
+        "disk": "managed"
+      },
+      "network": {
+        "egress_allowed": true,
+        "allow_domains": [
+          "api.telegram.org",
+          "*"
+        ]
+      },
+      "updated_at": "2026-01-02T22:05:00Z",
+      "version": "1.0.0"
+    },
+    "network_policy": {
+      "offline": false,
+      "allow_domains": [
+        "api.telegram.org"
+      ]
+    },
+    "status": "running",
+    "artifacts": [
+      "artifact://logs/run.log",
+      "artifact://exports/make-scenario-staging.json"
+    ],
+    "logs_ref": "artifact://logs/run.log",
+    "started_at": "2026-01-02T22:05:00Z",
+    "updated_at": "2026-01-02T22:05:00Z",
+    "version": "1.0.0"
+  },
+  "smoke_test_result": {
+    "test_id": "test.t.69g2oaa3mt",
+    "run_id": "run.r.ln0earq76i",
+    "name": "news_digest_smoke",
+    "status": "pass",
+    "checks": [
+      {
+        "check": "rss_ingest",
+        "status": "pass",
+        "details": "Fetched 12 items from sample feed"
+      },
+      {
+        "check": "tg_send",
+        "status": "pass",
+        "details": "Sent message to test chat_id"
+      }
+    ],
+    "duration_ms": 4200,
+    "updated_at": "2026-01-02T22:05:00Z",
+    "version": "1.0.0"
+  },
+  "policy_gate_decision": {
+    "decision_id": "gate.g.l9lhq0njbh",
+    "plan_id": "plan.p.5qj2aaqi95",
+    "run_id": "run.r.ln0earq76i",
+    "decision": "pass",
+    "reasons": [
+      "Signatures valid (ed25519)",
+      "SBOM present",
+      "Smoke tests pass",
+      "Policy allows egress to api.telegram.org"
+    ],
+    "remediation": [],
+    "risks": [
+      "Telegram rate limits may vary in production",
+      "No long-run reliability stats yet for this publisher"
+    ],
+    "updated_at": "2026-01-02T22:05:00Z",
+    "version": "1.0.0"
+  },
+  "rollback_plan": {
+    "rollback_id": "rb.rb.loby54t3mc",
+    "subject": {
+      "id": "bundle.news_digest_cluster",
+      "version": "1.0.0"
+    },
+    "strategy": "fast_switch",
+    "steps": [
+      "disable_new_workflow",
+      "re-enable_previous_workflow",
+      "rebind_credentials_previous"
+    ],
+    "updated_at": "2026-01-02T22:05:00Z",
+    "version": "1.0.0"
+  },
+  "install_report": {
+    "report_id": "rep.rep.sg9bex6fsa",
+    "plan_id": "plan.p.5qj2aaqi95",
+    "run_id": "run.r.ln0earq76i",
+    "status": "success",
+    "steps": [
+      {
+        "step_id": "st.s.yfsmp1161j",
+        "type": "fetch_payload",
+        "status": "planned",
+        "inputs": {
+          "ref": "ref://payload/make-scenario.json"
+        },
+        "outputs": {},
+        "retries": 2,
+        "timeout_s": 120,
+        "updated_at": "2026-01-02T22:05:00Z",
+        "version": "1.0.0"
+      },
+      {
+        "step_id": "st.s.qizzyj3ens",
+        "type": "verify_signatures",
+        "status": "planned",
+        "inputs": {
+          "alg": "ed25519",
+          "key_id": "key.publisher.demo"
+        },
+        "outputs": {},
+        "retries": 0,
+        "timeout_s": 30,
+        "updated_at": "2026-01-02T22:05:00Z",
+        "version": "1.0.0"
+      },
+      {
+        "step_id": "st.s.w8f1eq2juv",
+        "type": "apply_policy_precheck",
+        "status": "planned",
+        "inputs": {
+          "offline": false,
+          "allowed_platforms": [
+            "make",
+            "n8n"
+          ]
+        },
+        "outputs": {},
+        "retries": 0,
+        "timeout_s": 30,
+        "updated_at": "2026-01-02T22:05:00Z",
+        "version": "1.0.0"
+      },
+      {
+        "step_id": "st.s.z50om7z4s0",
+        "type": "import_workflow",
+        "status": "planned",
+        "inputs": {
+          "platform": "make",
+          "workspace": "staging",
+          "file": "make-scenario.json"
+        },
+        "outputs": {},
+        "retries": 1,
+        "timeout_s": 180,
+        "updated_at": "2026-01-02T22:05:00Z",
+        "version": "1.0.0"
+      },
+      {
+        "step_id": "st.s.0ygky10vf7",
+        "type": "configure_credentials",
+        "status": "planned",
+        "inputs": {
+          "platform": "make",
+          "capability": "deliver.telegram"
+        },
+        "outputs": {},
+        "retries": 0,
+        "timeout_s": 120,
+        "updated_at": "2026-01-02T22:05:00Z",
+        "version": "1.0.0"
+      },
+      {
+        "step_id": "st.s.1by9lm0lc9",
+        "type": "run_smoke_tests",
+        "status": "planned",
+        "inputs": {
+          "tests": [
+            "tg_send",
+            "rss_ingest"
+          ]
+        },
+        "outputs": {},
+        "retries": 0,
+        "timeout_s": 600,
+        "updated_at": "2026-01-02T22:05:00Z",
+        "version": "1.0.0"
+      }
+    ],
+    "smoke_tests": [
+      {
+        "test_id": "test.t.69g2oaa3mt",
+        "run_id": "run.r.ln0earq76i",
+        "name": "news_digest_smoke",
+        "status": "pass",
+        "checks": [
+          {
+            "check": "rss_ingest",
+            "status": "pass",
+            "details": "Fetched 12 items from sample feed"
+          },
+          {
+            "check": "tg_send",
+            "status": "pass",
+            "details": "Sent message to test chat_id"
+          }
+        ],
+        "duration_ms": 4200,
+        "updated_at": "2026-01-02T22:05:00Z",
+        "version": "1.0.0"
+      }
+    ],
+    "gate_decision": {
+      "decision_id": "gate.g.l9lhq0njbh",
+      "plan_id": "plan.p.5qj2aaqi95",
+      "run_id": "run.r.ln0earq76i",
+      "decision": "pass",
+      "reasons": [
+        "Signatures valid (ed25519)",
+        "SBOM present",
+        "Smoke tests pass",
+        "Policy allows egress to api.telegram.org"
+      ],
+      "remediation": [],
+      "risks": [
+        "Telegram rate limits may vary in production",
+        "No long-run reliability stats yet for this publisher"
+      ],
+      "updated_at": "2026-01-02T22:05:00Z",
+      "version": "1.0.0"
+    },
+    "created_at": "2026-01-02T22:05:00Z",
+    "updated_at": "2026-01-02T22:05:00Z",
+    "version": "1.0.0"
+  },
+  "artifact_store": {
+    "store_id": "store.local",
+    "kind": "filesystem",
+    "base_path": "/var/lib/ifos/artifacts",
+    "retention_days": 30,
+    "updated_at": "2026-01-02T22:05:00Z",
+    "version": "1.0.0"
+  }
+}
