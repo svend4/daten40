@@ -1,0 +1,211 @@
+{
+  "install_request": {
+    "request_id": "req.r.3z34c9gwlu",
+    "subject_id": "cl.news_digest_demo",
+    "subject_type": "cluster",
+    "profile_id": "profile.sandbox.safe",
+    "mode": "dry_run",
+    "constraints": {
+      "privacy": "no_pii_export",
+      "cost_cap_tokens": 5000,
+      "hosting": "cloud_ok"
+    },
+    "version_strategy": "stable",
+    "ts": "2026-01-03T00:25:00Z",
+    "updated_at": "2026-01-03T00:25:00Z",
+    "version": "1.0.0"
+  },
+  "dry_run_report": {
+    "report_id": "dry.d.omgyvh6tjj",
+    "request_id": "req.r.3z34c9gwlu",
+    "will_install": [
+      "cl.news_digest_demo",
+      "atom.fetch_rss",
+      "atom.summarize_text",
+      "atom.send_telegram_message"
+    ],
+    "permissions": [
+      "telegram:send_message",
+      "http:fetch",
+      "llm:completion"
+    ],
+    "secrets_needed": [
+      "secret://telegram/bot_token",
+      "secret://llm/api_key"
+    ],
+    "risks": [
+      "telegram rate_limit",
+      "pii leakage if chat_id logged"
+    ],
+    "policy_gates": [
+      "sandbox:allow unsigned L1+",
+      "sandbox:no_pii_export enforced"
+    ],
+    "updated_at": "2026-01-03T00:25:00Z",
+    "version": "1.0.0"
+  },
+  "dependency_lockfile": {
+    "lock_id": "lock.l.3m4jp7yjy1",
+    "subject_id": "cl.news_digest_demo",
+    "resolved": {
+      "make:rss": "1.2.0",
+      "make:telegram": "4.1.0",
+      "llm:summarizer": "0.3.1"
+    },
+    "hash": "sha256:lock_demo",
+    "updated_at": "2026-01-03T00:25:00Z",
+    "version": "1.0.0"
+  },
+  "install_plan": {
+    "plan_id": "plan.p.2qrkefn1do",
+    "request_id": "req.r.3z34c9gwlu",
+    "steps": [
+      {
+        "name": "resolve_deps",
+        "status": "planned",
+        "notes": ""
+      },
+      {
+        "name": "lock_versions",
+        "status": "planned",
+        "notes": "sha256:lock_demo"
+      },
+      {
+        "name": "request_permissions",
+        "status": "planned",
+        "notes": "show UI consent"
+      },
+      {
+        "name": "request_secrets",
+        "status": "planned",
+        "notes": "vault refs only"
+      },
+      {
+        "name": "apply_migrations",
+        "status": "planned",
+        "notes": "none"
+      },
+      {
+        "name": "install_artifacts",
+        "status": "planned",
+        "notes": "import Make template"
+      },
+      {
+        "name": "configure_runtime",
+        "status": "planned",
+        "notes": "set test channel"
+      },
+      {
+        "name": "health_checks",
+        "status": "planned",
+        "notes": "connectivity/auth/e2e"
+      },
+      {
+        "name": "write_receipt",
+        "status": "planned",
+        "notes": ""
+      }
+    ],
+    "lockfile_hash": "sha256:lock_demo",
+    "permissions": [
+      "telegram:send_message",
+      "http:fetch",
+      "llm:completion"
+    ],
+    "secrets": [
+      "secret://telegram/bot_token",
+      "secret://llm/api_key"
+    ],
+    "policy_gates": [
+      "gate.sandbox.001"
+    ],
+    "created_at": "2026-01-03T00:25:00Z",
+    "updated_at": "2026-01-03T00:25:00Z",
+    "version": "1.0.0"
+  },
+  "sandbox_session": {
+    "session_id": "sb.s.bm79w4tlld",
+    "profile_id": "profile.sandbox.safe",
+    "status": "running",
+    "limits": {
+      "max_calls": 200,
+      "max_runtime_sec": 120,
+      "network_allowlist": [
+        "api.telegram.org",
+        "example.com",
+        "llm.provider.tld"
+      ]
+    },
+    "created_at": "2026-01-03T00:25:00Z",
+    "updated_at": "2026-01-03T00:25:00Z",
+    "version": "1.0.0"
+  },
+  "execution_receipt_sandbox": {
+    "receipt_id": "rcpt.c.pprry5e9z0",
+    "plan_id": "plan.p.2qrkefn1do",
+    "subject_id": "cl.news_digest_demo",
+    "profile_id": "profile.sandbox.safe",
+    "result": "success",
+    "reason": "",
+    "health": [
+      {
+        "check": "connectivity",
+        "status": "pass",
+        "notes": "rss ok"
+      },
+      {
+        "check": "auth",
+        "status": "pass",
+        "notes": "telegram token ok"
+      },
+      {
+        "check": "e2e",
+        "status": "pass",
+        "notes": "posted to test channel"
+      },
+      {
+        "check": "performance",
+        "status": "warn",
+        "notes": "llm latency 2.8s"
+      }
+    ],
+    "links": {
+      "logs": "log://sandbox/run/123",
+      "trace": "tr://sandbox/abc",
+      "metrics": "m://sandbox/news_digest"
+    },
+    "lockfile_hash": "sha256:lock_demo",
+    "ts_start": "2026-01-03T00:25:00Z",
+    "ts_end": "2026-01-03T00:25:00Z",
+    "updated_at": "2026-01-03T00:25:00Z",
+    "version": "1.0.0"
+  },
+  "policy_gate_prod": {
+    "gate_id": "gate.g.07b1ujuneb",
+    "subject_id": "cl.news_digest_demo",
+    "policy_id": "policy.prod.default",
+    "status": "warn",
+    "findings": [
+      "quality_level=L2 below required L3; allow with manual override"
+    ],
+    "updated_at": "2026-01-03T00:25:00Z",
+    "version": "1.0.0"
+  },
+  "rollback_plan": {
+    "rollback_id": "rb.b.1ixd7po823",
+    "subject_id": "cl.news_digest_demo",
+    "strategy": "previous_version",
+    "steps": [
+      "restore previous template version",
+      "revert webhook routes",
+      "revoke new secrets"
+    ],
+    "triggers": [
+      "health_check_fail",
+      "incident_declared",
+      "slo_burn_rate>2x"
+    ],
+    "updated_at": "2026-01-03T00:25:00Z",
+    "version": "1.0.0"
+  }
+}
