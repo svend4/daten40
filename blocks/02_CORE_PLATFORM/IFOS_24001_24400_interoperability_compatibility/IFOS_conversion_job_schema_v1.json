@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Conversion Job Schema v1",
+  "type": "object",
+  "required": [
+    "job_id",
+    "plan_id",
+    "status",
+    "artifacts",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "job_id": {
+      "type": "string"
+    },
+    "plan_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "queued",
+        "running",
+        "failed",
+        "completed"
+      ]
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "ref"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "workflow_json",
+              "plugin_stub",
+              "wrapper_api",
+              "docs"
+            ]
+          },
+          "ref": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
