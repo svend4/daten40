@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Install Report Schema v1",
+  "type": "object",
+  "required": [
+    "report_id",
+    "plan_id",
+    "run_id",
+    "status",
+    "steps",
+    "smoke_tests",
+    "gate_decision",
+    "created_at",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "report_id": {
+      "type": "string"
+    },
+    "plan_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "success",
+        "fail",
+        "partial"
+      ]
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "smoke_tests": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "gate_decision": {
+      "type": "object"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
