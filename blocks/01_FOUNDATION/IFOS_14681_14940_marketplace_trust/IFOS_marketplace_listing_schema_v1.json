@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Marketplace Listing Schema v1",
+  "type": "object",
+  "required": [
+    "listing_id",
+    "item_type",
+    "item_ref",
+    "title",
+    "summary",
+    "version",
+    "targets_supported",
+    "policy_flags"
+  ],
+  "properties": {
+    "listing_id": {
+      "type": "string"
+    },
+    "item_type": {
+      "type": "string",
+      "enum": [
+        "function",
+        "recipe",
+        "bundle"
+      ]
+    },
+    "item_ref": {
+      "type": "string",
+      "description": "reference id: function_id / recipe_id / bundle_id"
+    },
+    "title": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "authors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "publisher": {
+      "type": "string"
+    },
+    "license": {
+      "type": "string"
+    },
+    "price": {
+      "type": "object",
+      "properties": {
+        "model": {
+          "type": "string",
+          "enum": [
+            "free",
+            "subscription",
+            "one_time",
+            "usage_based"
+          ]
+        },
+        "amount": {
+          "type": "number"
+        },
+        "currency": {
+          "type": "string"
+        }
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "domains": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "targets_supported": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_secrets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "policy_flags": {
+      "type": "object",
+      "properties": {
+        "pii": {
+          "type": "boolean"
+        },
+        "money": {
+          "type": "boolean"
+        },
+        "security_sensitive": {
+          "type": "boolean"
+        }
+      }
+    },
+    "evidence_summary": {
+      "type": "object",
+      "properties": {
+        "min_level": {
+          "type": "string",
+          "enum": [
+            "L0_schema",
+            "L1_dry_run",
+            "L2_integration",
+            "L3_production"
+          ]
+        },
+        "runs_verified": {
+          "type": "integer"
+        },
+        "last_verified_at": {
+          "type": "string"
+        }
+      }
+    },
+    "trust_score": {
+      "type": "object",
+      "properties": {
+        "score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "breakdown": {
+          "type": "object"
+        }
+      }
+    },
+    "links": {
+      "type": "object",
+      "properties": {
+        "docs": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "artifact_bundle": {
+          "type": "string"
+        }
+      }
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
