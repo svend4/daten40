@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Recommendation Schema v1",
+  "type": "object",
+  "required": [
+    "reco_id",
+    "intent",
+    "context",
+    "results",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "reco_id": {
+      "type": "string"
+    },
+    "intent": {
+      "type": "string"
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "subject_id",
+          "score",
+          "why",
+          "risks",
+          "cost"
+        ],
+        "properties": {
+          "subject_id": {
+            "type": "string"
+          },
+          "score": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "why": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "risks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "cost": {
+            "type": "object",
+            "properties": {
+              "estimated_usd": {
+                "type": "number"
+              },
+              "estimated_seconds": {
+                "type": "number"
+              },
+              "notes": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
