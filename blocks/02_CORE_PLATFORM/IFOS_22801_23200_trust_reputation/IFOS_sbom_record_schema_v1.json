@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS SBOM Record Schema v1",
+  "type": "object",
+  "required": [
+    "sbom_id",
+    "subject_id",
+    "components",
+    "licenses",
+    "ts",
+    "updated_at",
+    "version"
+  ],
+  "properties": {
+    "sbom_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "licenses": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ts": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}
