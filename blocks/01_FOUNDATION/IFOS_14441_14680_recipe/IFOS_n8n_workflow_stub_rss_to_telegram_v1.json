@@ -1,0 +1,56 @@
+{
+  "name": "RSS to Telegram Digest (IFOS stub)",
+  "recipe_id": "recipe.rss_to_telegram.digest_v1",
+  "notes": [
+    "Это заглушка формата. Реальный n8n workflow содержит nodes с credentials и connections.",
+    "State store (last_seen) нужно реализовать через staticData или Data Store."
+  ],
+  "nodes": [
+    {
+      "name": "Read RSS",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "parameters": {
+        "url": "={{$json.rss_url}}"
+      }
+    },
+    {
+      "name": "Format",
+      "type": "n8n-nodes-base.function",
+      "parameters": {
+        "functionCode": "// format items to markdown"
+      }
+    },
+    {
+      "name": "Send Telegram",
+      "type": "n8n-nodes-base.telegram",
+      "parameters": {
+        "chatId": "={{$json.chat_id}}",
+        "text": "={{$json.text}}"
+      }
+    }
+  ],
+  "connections": {
+    "Read RSS": {
+      "main": [
+        [
+          {
+            "node": "Format",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format": {
+      "main": [
+        [
+          {
+            "node": "Send Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}
