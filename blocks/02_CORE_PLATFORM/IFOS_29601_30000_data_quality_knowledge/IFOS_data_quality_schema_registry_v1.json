@@ -1,0 +1,62 @@
+{
+  "registry_id": "reg.r.7iheemt60o",
+  "entries": [
+    {
+      "name": "IFOS_raw_record_schema_v1.json",
+      "ref": "file://IFOS_raw_record_schema_v1.json",
+      "hash": "sha256:25c753dbcabeba48d996c520f62900e3293c304285f44884404a33cbfe3c2a8f"
+    },
+    {
+      "name": "IFOS_normalized_record_schema_v1.json",
+      "ref": "file://IFOS_normalized_record_schema_v1.json",
+      "hash": "sha256:12f0cf2e79849e48f0c2c6852f7c8b68156bc18132b8ae0e0609052a2191d583"
+    },
+    {
+      "name": "IFOS_entity_schema_v1.json",
+      "ref": "file://IFOS_entity_schema_v1.json",
+      "hash": "sha256:023e2d752fb37fd71df6068c687dae365aa9e1b4e7f9c83b9e998201f1cce3f3"
+    },
+    {
+      "name": "IFOS_entity_link_schema_v1.json",
+      "ref": "file://IFOS_entity_link_schema_v1.json",
+      "hash": "sha256:184384b8ab9349f0edb3b48853d652dfadc0e54e215bcdb2039ee172bf05aae6"
+    },
+    {
+      "name": "IFOS_taxonomy_schema_v1.json",
+      "ref": "file://IFOS_taxonomy_schema_v1.json",
+      "hash": "sha256:29957e8ac69231ebe0b42c780c3ce77215ab1b718e993fba281613b8211b8805"
+    },
+    {
+      "name": "IFOS_tagging_rule_schema_v1.json",
+      "ref": "file://IFOS_tagging_rule_schema_v1.json",
+      "hash": "sha256:3c200fba3f3c6a277523c2d319e2a96d0975e1aca3d99cd9819526c7ee7fb3c2"
+    },
+    {
+      "name": "IFOS_dedupe_cluster_schema_v1.json",
+      "ref": "file://IFOS_dedupe_cluster_schema_v1.json",
+      "hash": "sha256:5768f91a49fc78a87623a507132044e17d4bba1429f3e634a327061f54bbae33"
+    },
+    {
+      "name": "IFOS_provenance_schema_v1.json",
+      "ref": "file://IFOS_provenance_schema_v1.json",
+      "hash": "sha256:5dd74002a3f7541e74746388812d5112060cb5c2a8415cdd3050b5b95c25e85c"
+    },
+    {
+      "name": "IFOS_trust_score_schema_v1.json",
+      "ref": "file://IFOS_trust_score_schema_v1.json",
+      "hash": "sha256:511d35f9a2524aac55962d025baaf38b68b0a1c72358ed16ee579a365910987f"
+    },
+    {
+      "name": "IFOS_explanation_schema_v1.json",
+      "ref": "file://IFOS_explanation_schema_v1.json",
+      "hash": "sha256:16e128232baf759d7eaa1ed49a96696ca0fe19ba82b27dfe6201f2b3387dbcf3"
+    },
+    {
+      "name": "IFOS_dataset_version_schema_v1.json",
+      "ref": "file://IFOS_dataset_version_schema_v1.json",
+      "hash": "sha256:c9acb76b0614e1a3bfed5ab90f57f5af389efe9851c5e6831f2bf87aaef941bf"
+    }
+  ],
+  "updated_at": "2026-01-03T07:40:00Z",
+  "version": "1.0.0"
+}
