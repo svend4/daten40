@@ -1,0 +1,77 @@
+{
+  "registry_id": "reg.r.bp2x837l3c",
+  "entries": [
+    {
+      "name": "IFOS_schedule_schema_v1.json",
+      "ref": "file://IFOS_schedule_schema_v1.json",
+      "hash": "sha256:e04efb3d34b82865d759d2f533c40065b2d8eb5cdb1e5ee0a01fa2b0ecda970c"
+    },
+    {
+      "name": "IFOS_trigger_schema_v1.json",
+      "ref": "file://IFOS_trigger_schema_v1.json",
+      "hash": "sha256:dd31d9b0dcb02c158a9fef30753030a68a3d822956f8d27140235271a9e5dfd0"
+    },
+    {
+      "name": "IFOS_job_schema_v1.json",
+      "ref": "file://IFOS_job_schema_v1.json",
+      "hash": "sha256:3191e33bed2e84700af1020151d7b5a86556ae55feffa1a759fe2ed8d8ed7d4e"
+    },
+    {
+      "name": "IFOS_job_run_schema_v1.json",
+      "ref": "file://IFOS_job_run_schema_v1.json",
+      "hash": "sha256:fa509ee2cea648e743d61bf19587c190d56c13c66923206323033d2ced676986"
+    },
+    {
+      "name": "IFOS_queue_schema_v1.json",
+      "ref": "file://IFOS_queue_schema_v1.json",
+      "hash": "sha256:78636805242f7fc8aa76a72107ffcb8805991df7384d9b231181bde9fa41fe8a"
+    },
+    {
+      "name": "IFOS_worker_schema_v1.json",
+      "ref": "file://IFOS_worker_schema_v1.json",
+      "hash": "sha256:21e65996b04c8c78243c7bf8a716c6d7cbaa7a89504a230b9d1a5b942bf4c18e"
+    },
+    {
+      "name": "IFOS_retry_policy_schema_v1.json",
+      "ref": "file://IFOS_retry_policy_schema_v1.json",
+      "hash": "sha256:032277cd843f64442e5e89299e6efb82c658363d33e371ba2f096bc01893d6d2"
+    },
+    {
+      "name": "IFOS_sla_policy_schema_v1.json",
+      "ref": "file://IFOS_sla_policy_schema_v1.json",
+      "hash": "sha256:b89971e953460122b90d59039b6b39938ef05f399ec743343e611f5af7624b52"
+    },
+    {
+      "name": "IFOS_monitor_rule_schema_v1.json",
+      "ref": "file://IFOS_monitor_rule_schema_v1.json",
+      "hash": "sha256:b8f8c4a3f16f5613f13260c2e54dad2499de310aed40c010de3cb3ec39361452"
+    },
+    {
+      "name": "IFOS_alert_schema_v1.json",
+      "ref": "file://IFOS_alert_schema_v1.json",
+      "hash": "sha256:1f23566612a4c8061f872487229a153d76c6d371411e658e675209cf423b7c21"
+    },
+    {
+      "name": "IFOS_cron_library_schema_v1.json",
+      "ref": "file://IFOS_cron_library_schema_v1.json",
+      "hash": "sha256:4bdea9cfd19bce377dd4e57cf4d73cfea79eb5aa5a1d0b311c459c4e10f430b0"
+    },
+    {
+      "name": "IFOS_macro_batch_schema_v1.json",
+      "ref": "file://IFOS_macro_batch_schema_v1.json",
+      "hash": "sha256:e1cc0beea73ee96d9106db8126524c689ec664e4a2dad17c2631c0fe280c3080"
+    },
+    {
+      "name": "IFOS_idempotency_key_schema_v1.json",
+      "ref": "file://IFOS_idempotency_key_schema_v1.json",
+      "hash": "sha256:f225649609ee6dc6e0a41fb7e2bee4b3ebd81ac7c9c0e2723d798f71e70a0f6d"
+    },
+    {
+      "name": "IFOS_rate_limit_schema_v1.json",
+      "ref": "file://IFOS_rate_limit_schema_v1.json",
+      "hash": "sha256:dcc004599d20a1e3f479e3264e3eb72831431ca0f2eaf5a54d783a091e8e8402"
+    }
+  ],
+  "updated_at": "2026-01-03T04:40:00Z",
+  "version": "1.0.0"
+}
