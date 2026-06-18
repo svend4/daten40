@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IFOS Skill Graph Schema v1",
+  "type": "object",
+  "required": [
+    "graph_id",
+    "subject_scope",
+    "nodes",
+    "edges",
+    "version",
+    "updated_at"
+  ],
+  "properties": {
+    "graph_id": {
+      "type": "string"
+    },
+    "subject_scope": {
+      "type": "object",
+      "properties": {
+        "bundle_id": {
+          "type": "string"
+        },
+        "domain": {
+          "type": "string"
+        },
+        "target": {
+          "type": "string",
+          "enum": [
+            "make",
+            "n8n",
+            "wp",
+            "native",
+            "any"
+          ]
+        }
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "skill_id",
+          "name",
+          "level"
+        ],
+        "properties": {
+          "skill_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "level": {
+            "type": "string",
+            "enum": [
+              "L0",
+              "L1",
+              "L2",
+              "L3"
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "mapped_assets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "from",
+          "to",
+          "type"
+        ],
+        "properties": {
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "prereq",
+              "enables",
+              "optional"
+            ]
+          }
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
